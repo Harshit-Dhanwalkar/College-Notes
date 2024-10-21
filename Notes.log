@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.10.7)  21 OCT 2024 13:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.10.7)  21 OCT 2024 18:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2880,8 +2880,141 @@ Underfull \vbox (badness 5741) has occurred while \output is active []
 
 Overfull \vbox (14.0477pt too high) has occurred while \output is active []
 
- [39] [40
+ [39]
+./Notes.tex:3065: Missing $ inserted.
+<inserted text> 
+                $
+l.3065 ...rature range from $-30^\circ$C \leqslant
+                                                   T \leqslant $35^\circ$C
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
+./Notes.tex:3065: Missing $ inserted.
+<inserted text> 
+                $
+l.3065 ... $-30^\circ$C \leqslant T \leqslant $35^
+                                                  \circ$C
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Notes.tex:3068: Double subscript.
+<argument> T_c_
+               243.5
+l.3068 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./Notes.tex:3068: Double subscript.
+<argument> T_c_
+               243.5
+l.3068 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./Notes.tex:3079: Undefined control sequence.
+\pgfkeyscurrentkey ->\labe 
+                           :19.1
+l.3079 ...5$K; find the value of $e_i$ and $e_s$.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./Notes.tex:3079: Package pgfkeys Error: I do not know the key '/tcb/:19.1' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3079 ...5$K; find the value of $e_i$ and $e_s$.}
+                                                  
+(That was another \errmessage.)
+
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@question.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3079 ...5$K; find the value of $e_i$ and $e_s$.}
+                                                  
+./Notes.tex:3080: Missing $ inserted.
+<inserted text> 
+                $
+l.3080     \Rightarrow
+                       e_i(T) &= 611.2 \times 10^{12} \times e^{-\frac{6130}...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Notes.tex:3080: Misplaced alignment tab character &.
+l.3080     \Rightarrow e_i(T) &
+                               = 611.2 \times 10^{12} \times e^{-\frac{6130}...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./Notes.tex:3081: Misplaced alignment tab character &.
+<recently read> &
+                 
+l.3081                        &
+                               = 3060.65 Pa
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./Notes.tex:3082: Missing $ inserted.
+<inserted text> 
+                $
+l.3082 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Notes.tex:3083: Missing $ inserted.
+<inserted text> 
+                $
+l.3083     \Rightarrow
+                       e_s(T) &= 2.53 \times 10^{11} \times e^{-\frac{5420}{...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Notes.tex:3083: Misplaced alignment tab character &.
+l.3083     \Rightarrow e_s(T) &
+                               = 2.53 \times 10^{11} \times e^{-\frac{5420}{...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./Notes.tex:3084: Misplaced alignment tab character &.
+<recently read> &
+                 
+l.3084                        &
+                               = 331.56 Pa
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./Notes.tex:3085: Missing $ inserted.
+<inserted text> 
+                $
+l.3085 \end{question}
+                     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+[40
 
 ] 
 AED: lastpage setting LastPage
@@ -2890,18 +3023,18 @@ Package rerunfilecheck Info: File `Notes.out' has not changed.
 (rerunfilecheck)             Checksum: 5C8054DE4032BC62DB44806084DB3D04;14113.
  ) 
 Here is how much of TeX's memory you used:
- 44847 strings out of 480247
- 1026903 string characters out of 5896151
- 1489933 words of memory out of 5000000
- 61063 multiletter control sequences out of 15000+600000
- 563613 words of font info for 419 fonts, out of 8000000 for 9000
+ 44869 strings out of 480247
+ 1027223 string characters out of 5896151
+ 1490034 words of memory out of 5000000
+ 61067 multiletter control sequences out of 15000+600000
+ 563732 words of font info for 421 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  98i,21n,94p,1002b,2816s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Notes.pdf (40 pages, 4884055 bytes).
+Output written on Notes.pdf (40 pages, 4888337 bytes).
 PDF statistics:
- 1402 PDF objects out of 1440 (max. 8388607)
- 1225 compressed objects within 13 object streams
- 595 named destinations out of 1000 (max. 500000)
+ 1419 PDF objects out of 1440 (max. 8388607)
+ 1242 compressed objects within 13 object streams
+ 610 named destinations out of 1000 (max. 500000)
  125095 words of extra memory for PDF output out of 128383 (max. 10000000)
 

@@ -87,8 +87,8 @@
 
 \PaperTitle{Lecture Notes on Atmospheric Thermodynamics and Cloud Physics} % Article title
 
-\Authors{Harshit Prahant Dhanwalkar (SC21B164)\textsuperscript{1}*} % Authors
-\affiliation{\textsuperscript{1}\textit{MTech, Earth Sciences System (ESS), 1$^{st}$ year, Department of Physics, Indian Institute Of Spacescience and Technology (IIST)}} % Author affiliation
+\Authors{Harshit Prashant Dhanwalkar (SC21B164)\textsuperscript{1}*} % Authors
+\affiliation{\textsuperscript{1}\textit{MTech, Earth System Sciences (ESS), 1$^{st}$ year, Department of Physics, Indian Institute Of Spacescience and Technology (IIST)}} % Author affiliation
 \affiliation{*\textbf{email}: harshitpd1729@gamil.com} % Corresponding author
 
 \Keywords{} % Keywords - if you don't want any simply remove all the text between the curly brackets
@@ -2990,13 +2990,14 @@ Latent heat of sublimation of water at STP $=2.83 \times 10^6 J/Kg$
     \end{align*}
 \end{question}
 
+% WARN: INCOMPLETE L-18 que.
 % NOTE: COMPLETE L-18
 % --------------------------------------------------------------------------------------
 \clearpage
 
 \section{Leture 19 21/10/2024}
 \subsection{The Clausius-Clapeyron equation}
-Let $L$ is latent heat associated with phase change of a liquid to vapor:
+Let $L$ is latent heat associated with phase change of a liquid($i$) to vapor($f$) state:
 \begin{align}
     L &= \int dq \\
     L &= \int^f_i du + \int^f_i Pd\alpha \\
@@ -3020,8 +3021,71 @@ From Eq\myeqref{eq:latent_heat_1} and Eq\myeqref{eq:latent_heat_2}
 where $G$ is Gibbs energy
 
 However, Gibbs energy is not constant when pressure and temperature changes.
+\begin{align}
+    dG &= du + e_s d\alpha + \alpha de_s - Tds - sdT \\
+    dG &= \cancel{Tds} + \alpha de_s - \cancel{Tds} -sdT \\
+    dG &= \alpha de_s - sdT
+\end{align}
 
-% WARN: INCOMPLETE L-19
+consider a situation when liquid phase and vapor phase are in equilibrium 
+\begin{align}
+    dG_1 &=dG_2 \\
+    \alpha_i de_s - S_idT &= \alpha_f de_s - S_fdT \\
+    \frac{S_f - S_i}{\alpha_f - \alpha_i} &= \frac{de_s}{dT}\\
+    \frac{L}{T(\alpha_f-\alpha_i)} &= \frac{de_s}{dT} \label{eq:clasuius-clapeyron}
+\end{align}
+Eq \myeqref{eq:clasuius-clapeyron} is called Clasuius-Clapeyron equation.
+
+Let initial state($i$) be liquid state and final state($f$) be vapor state (evaporation)
+\begin{align}
+    \frac{e_s}{dT} &= \frac{L}{T(\alpha_v - \alpha_l)}
+\end{align}
+For atmosphere $\alpha_v \ll \alpha_l$. therefore,
+\begin{align}
+    \frac{e_s}{dT} &\approx \frac{L}{T\alpha_v}
+\end{align}
+Using ideal gas equation $e_s\alpha_v = R_vT$,
+\begin{align}
+    \frac{e_s}{dT} &= \frac{Le_s}{R_vT^2}
+\end{align}
+
+Integrate form of Clausius-Clapeyron equation:
+\begin{align}
+    \int^{e_s}_{e_0}\frac{e_s}{e_s} &= \int^{T}_{T_0}\frac{LdT}{R_vT^2} \\
+    \ln\frac{e_s}{e_0} &= \frac{L}{R_v} \Big[\frac{1}{T_0} - \frac{1}{T}\Big] \\
+    e_s &= e_0\exp\Big(\frac{L}{R_v} \Big[\frac{1}{T_0} - \frac{1}{T}\Big]\Big)
+\end{align}
+
+Standard values $T_0 = 273$ K, $e_0=611$ Pa or $6.11$ hPa,
+
+$L= 2.5 \times 10^6$ J/kg, $R_v=461$ JK$^{-1}$kg
+
+$e_s(T)\approx Ae^{-B/T}$, where $A=2.53\times10^{11}$Pa, $B=5420$K.
+
+This gives more accurate equation for temperature range from $-30^\circ$C \leqslant T \leqslant $35^\circ$C
+\begin{align}
+    e_s(T) = 611.2\Big[\frac{17.69T_c}{T_c_243.5}\Big]
+\end{align}
+where $T_c$ is temperature in celcius scale
+
+For Ice,
+\begin{align}
+    e_i(T) &= e_{i0}\exp\Big(\frac{L_s}{R_v} \Big[\frac{1}{T_0} - \frac{1}{T}\Big]\Big)
+\end{align}
+where $T_c$ is temperature in celcius scale and $L_s$ is latent heat of sublimation.
+
+$e_s(T)\approx A_ie^{-B_i/T}$, where $A=3.41\times10^{12}$Pa, $B=6130$K.
+
+\begin{question}[\labe:19.1]{For T of $265$K; find the value of $e_i$ and $e_s$.}
+    \Rightarrow e_i(T) &= 611.2 \times 10^{12} \times e^{-\frac{6130}{265}} \\
+                       &= 3060.65 Pa
+
+    \Rightarrow e_s(T) &= 2.53 \times 10^{11} \times e^{-\frac{5420}{265}} \\
+                       &= 331.56 Pa
+\end{question}
+
+$e_i < e_s \rightarrow$ at subfreezing temperatures, the environment that is saturated w.r.t liquid water is supersaturated w.r.t ice.
+% NOTE: COMPLETE L-19
 % --------------------------------------------------------------------------------------
 \clearpage
 % \begin{tikzpicture}
