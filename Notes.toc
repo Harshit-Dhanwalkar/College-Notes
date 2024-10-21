@@ -74,4 +74,6 @@
 \contentsline {subsection}{\numberline {18.3}. Relative humidity}{38}{subsection.18.3}%
 \contentsline {subsection}{\numberline {18.4}. Dew point temperature}{39}{subsection.18.4}%
 \contentsline {subsection}{\numberline {18.5}. Latent heat}{39}{subsection.18.5}%
+\contentsline {section}{\numberline {19}Leture 19 21/10/2024}{40}{section.19}%
+\contentsline {subsection}{\numberline {19.1}The Clausius-Clapeyron equation}{40}{subsection.19.1}%
 \contentsfinish 

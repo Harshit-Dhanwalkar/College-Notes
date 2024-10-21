@@ -2993,6 +2993,37 @@ Latent heat of sublimation of water at STP $=2.83 \times 10^6 J/Kg$
 % NOTE: COMPLETE L-18
 % --------------------------------------------------------------------------------------
 \clearpage
+
+\section{Leture 19 21/10/2024}
+\subsection{The Clausius-Clapeyron equation}
+Let $L$ is latent heat associated with phase change of a liquid to vapor:
+\begin{align}
+    L &= \int dq \\
+    L &= \int^f_i du + \int^f_i Pd\alpha \\
+    L &= u_f - u_i + e_s(\alpha_f - \alpha_i) \label{eq:latent_heat_1}
+\end{align}
+where $e_s \rightarrow$ saturation vapor pressure
+
+When phase cahnge happen, temperature remains constant, therefore
+\begin{align} 
+    L &= T\int \frac{\delta q}{T} \\
+    L &= T \int^f_i ds \\
+    L &= T (S_f -S_i) \label{eq:latent_heat_2}
+\end{align}
+
+From Eq\myeqref{eq:latent_heat_1} and Eq\myeqref{eq:latent_heat_2}
+\begin{align}
+    T(S_f-S_i) &= U_f-U_i + e_s(\alpha_f - \alpha_i) \\
+    TS_f - U_f - e_s\alpha_f &= TS_i - U_i - e_s\alpha_i \\
+    U + e_s\alpha - TS &= \text{Const.} = G
+\end{align}
+where $G$ is Gibbs energy
+
+However, Gibbs energy is not constant when pressure and temperature changes.
+
+% WARN: INCOMPLETE L-19
+% --------------------------------------------------------------------------------------
+\clearpage
 % \begin{tikzpicture}
 %     [tdplot_main_coords,
 %     grid/.style={very thin,gray},
