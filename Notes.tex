@@ -3085,7 +3085,74 @@ $e_s(T)\approx A_ie^{-B_i/T}$, where $A=3.41\times10^{12}$Pa, $B=6130$K.
 \end{question}
 
 $e_i < e_s \rightarrow$ at subfreezing temperatures, the environment that is saturated w.r.t liquid water is supersaturated w.r.t ice.
+
 % NOTE: COMPLETE L-19
+% --------------------------------------------------------------------------------------
+\clearpage
+
+\section{Lecture 20 23/10/2024}
+\subsection{Saturation mixing ratio}
+
+\textbf{Mixing ratio:}
+\begin{align}
+    \omega &= \frac{m_v}{m_d} \\
+    \omega &= \frac{\rho_v}{\rho_d}
+\end{align}
+
+\begin{align}
+    \omega &= \frac{\epsilon e}{P - e} \\
+    \omega &\approx \frac{\epsilon e}{P}
+\end{align}
+where $e=\frac{R_d}{R_v}=$ 0.622 \\
+\newline
+\textbf{Saturation mixing ratio:}
+\begin{align}
+    \omega_s(T,P) &\approx \frac{\epsilon e_s(T)}{P} \quad \text{Unit: g/kg} \\
+    \omega_s(T,P=622\text{hPa}) &\approx \frac{0.622 e_s(T)}{622} = 0.001 \; \text{kg/kg} \\
+    \omega_s(T,P=622\text{hPa}) &\approx 0.001 \; \text{kg/kg} \\
+    \omega_s(T,P=622\text{hPa}) &\approx e_s(T) \; \text{g/kg} 
+\end{align}
+
+\begin{question}[\label:20.1]{Using skew-T diagram determine the saturation vapor pressure at -10$^\circ$C.}
+    \Rightarrow $e_s=$2.75hPa
+\end{question}
+\begin{figure}[!ht]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis lines=middle,
+            xlabel=$T$, ylabel=$P$,
+            domain=-2:3,
+            samples=100,
+            xmin=-2, xmax=3, ymin=-1, ymax=10,
+            legend pos=north east
+        ]
+
+        % Horizontal line at y = 4
+        \addplot[red, thick] {4};
+        \addlegendentry{$P = 622hPa$}
+
+        % Exponential functions
+        \addplot[blue, thick, dashed] {exp(x) - exp(1) + 4};
+        \addlegendentry{$e_s \approx 2.75hPa$}
+
+        \addplot[green, thick, dashed] {exp(0.5*x) - exp(0.5) + 4};
+        \addlegendentry{$T = -10^\circ C$}
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+\begin{question}[\label:20.2]{Using Skew-T diagram determine the relative humidity of air parcel having temperature 20$^\circ$C and dew point  Temperature of 10$^\circ$C at presssure 850hPa}
+    \Rightarrow \omega_s(20$^\circ$C,850\;hPa) = 18\;hPa \\
+    \omega_s= \frac{\epsilon e_s(T)}{P} \\
+    \frac{\omega}{\omega_s} \approx \frac{e}{e_s(T)}\\
+    RH = \frac{e}{e_s(T)}\times 100 \% \\
+    RH = \frac{\omega}{\omega_s}\times 100 \% \\
+    RH = \frac{9}{18}\times 100 \% \\
+    RH = 50\%
+\end{question}
+
+% NOTE: COMPLETE L-20
 % --------------------------------------------------------------------------------------
 \clearpage
 % \begin{tikzpicture}
@@ -3150,19 +3217,18 @@ $e_i < e_s \rightarrow$ at subfreezing temperatures, the environment that is sat
 %                 ylabel style={at={(ticklabel* cs:1)},anchor=south west},
 %                 ]
 %                 % Function f(x) = 1/x
-%                 
-%                 
-%                 
+%
+%
 %                 \addplot[color=red1,ultra thick,samples=100]{\maxwellboltzmann{100}};
-%                 
+%
 %                 \addplot[color=red2,ultra thick,samples=100]{\maxwellboltzmann{300}};
-%                 
+%
 %                 \addplot[color=red3,ultra thick,samples=100]{\maxwellboltzmann{1000}};
 %                 \legend{\SI{100}{\kelvin}, \SI{300}{\kelvin}, \SI{1000}{\kelvin}}
 %         \end{axis}
 %         \node at (3.5,-0.3) {Velocity};
 %         \node[rotate=90] at (-0.3,1.65) {Probability};
-%         
+%
 % \end{tikzpicture}
 %\end{minipage}
 % \hspace{5pt}\begin{minipage}{0.55\textwidth}
@@ -3180,28 +3246,28 @@ $e_i < e_s \rightarrow$ at subfreezing temperatures, the environment that is sat
 %         {
 %                 \draw[grid] (\x,-0.5) -- (\x,2.5);
 %                 \draw[grid] (-0.5,\y) -- (2.5,\y);
-%         }			
+%         }
 %         %draw the bottom of the cube
 %         \draw[cube,fill=pag!80] (0,0,0) -- (0,2,0) -- (2,2,0) -- (2,0,0) -- cycle;
-%         
+%
 %         %draw the back-right of the cube
 %         \draw[cube,fill=pag!80] (0,0,0) -- (0,2,0) -- (0,2,2) -- (0,0,2) -- cycle;
-%         
+%
 %         %draw the back-left of the cube
 %         \draw[cube,fill=pag!80] (0,0,0) -- (2,0,0) -- (2,0,2) -- (0,0,2) -- cycle;
-%         
+%
 %         \foreach \z in {0,0.125,...,1}
 %         \foreach \x in {0,0.125,...,1}
 %         \foreach \y in {0,0.125,...,1}{\pgfmathsetmacro{\myangle}{360*rnd}
 %                 \pic[rotate =\myangle] at ({(0*\x)+1+0.99*rand},{(0*\y)+1+0.99*rand},{(0*\z)+1+0.99*rand}) {threedballs}; }
 %         %draw the axes
-%         
+%
 %         %draw the front-right of the cube
 %         \draw[cube] (2,0,0) -- (2,2,0) -- (2,2,2) -- (2,0,2) -- cycle;
-%         
+%
 %         %draw the front-left of the cube
 %         \draw[cube] (0,2,0) -- (2,2,0) -- (2,2,2) -- (0,2,2) -- cycle;
-%         
+%
 %         %draw the top of the cube
 %         \draw[cube] (0,0,2) -- (0,2,2) -- (2,2,2) -- (2,0,2) -- cycle;
 % \end{tikzpicture}
@@ -3217,10 +3283,10 @@ $e_i < e_s \rightarrow$ at subfreezing temperatures, the environment that is sat
 %		First name & Last Name & Grade \\
 %		\midrule
 %		John & Doe & $7.5$ \\
-% 		Richard & Miles & $2$ \\
-% 		\bottomrule
-% 	\end{tabular}
-% 	\label{tab:label}
+%		Richard & Miles & $2$ \\
+%		\bottomrule
+%	\end{tabular}
+%	\label{tab:label}
 % \end{table}
 
 % \begin{figure*}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
