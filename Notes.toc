@@ -81,5 +81,6 @@
 \contentsline {section}{\numberline {21}Lecture 21 24/102024}{42}{section.21}%
 \contentsline {subsection}{\numberline {21.1}Lifting Conduction Level (LCL)}{42}{subsection.21.1}%
 \contentsline {section}{\numberline {22}Leture 22 25/10/2024}{43}{section.22}%
-\contentsline {subsection}{\numberline {22.1}Saturation Adiabatic Lapse Rate }{43}{subsection.22.1}%
+\contentsline {subsection}{\numberline {22.1}. Saturation Adiabatic Lapse Rate }{43}{subsection.22.1}%
+\contentsline {subsection}{\numberline {22.2}. Equivalent potential temperature ($\theta _e$)}{43}{subsection.22.2}%
 \contentsfinish 
