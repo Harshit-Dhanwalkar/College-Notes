@@ -3046,7 +3046,7 @@ For atmosphere $\alpha_v \ll \alpha_l$. therefore,
 \end{align}
 Using ideal gas equation $e_s\alpha_v = R_vT$,
 \begin{align}
-    \frac{e_s}{dT} &= \frac{Le_s}{R_vT^2}
+    \frac{de_s}{dT} &= \frac{Le_s}{R_vT^2} \label{eq:clasuius-clapeyron_0}
 \end{align}
 
 Integrate form of Clausius-Clapeyron equation:
@@ -3153,6 +3153,143 @@ where $e=\frac{R_d}{R_v}=$ 0.622 \\
 \end{question}
 
 % NOTE: COMPLETE L-20
+% --------------------------------------------------------------------------------------
+\clearpage
+
+\section{Lecture 21 24/102024}
+\subsection{Lifting Conduction Level (LCL)}
+\begin{align*}
+    \omega_s &= \frac{\epsilon e_s(T)}{P}
+\end{align*}
+
+As $P$ decrease $T$ decrease.
+
+$\frac{d\omega_s}{dp}$ decides how saturation vapor pressuredepends on pressure only (not on both Temperature and Pressure)
+
+\begin{align}
+    \frac{d\omega_s}{dP} &= \frac{d}{dP}\Big[\frac{\epsilon e_s(T)}{P}\Big] \\
+                         &= \epsilon\Big[\frac{1}{P}\frac{de_s(T)}{dP}-\frac{e_s}{P^2}\Big] \\
+                         &= \frac{\epsilon e_s}{P}\Big[\frac{1}{e_s}\frac{de_s(T)}{dP}-\frac{1}{P}\Big] \\
+                         &= \frac{\epsilon e_s}{P}\Big[\frac{1}{e_s}\frac{de_s(T)}{dT}\frac{dT}{dP}-\frac{1}{P}\Big]
+\end{align}
+Using Clausius-Clapeyron equation Eq\myeqref{eq:clasuius-clapeyron_0}
+\begin{align}
+    \frac{d\omega_s}{dP} &= \frac{\epsilon e_s}{P}\Big[\frac{1}{\cancel{e_s}}\frac{L\cancel{e_s}}{R_vT^2}\frac{dT}{dP}-\frac{1}{P}\Big] \\
+    \frac{d\omega_s}{dP} &= \frac{\epsilon e_s}{P}\Big[\frac{L}{R_vT^2}\frac{dT}{dP}-\frac{1}{P}\Big] \label{eq:dwdp}
+\end{align}
+Since process is adiabatic (Lifting of moist air):
+\begin{align}
+    C_p dT-\alpha dP &= 0 \\
+    C_p \frac{dT}{dP}-\alpha &= 0 \\
+    \frac{dT}{dP} &= \frac{\alpha}{C_p} \\
+    \frac{dT}{dP} &=\frac{R_dT}{C_pP} \label{eq:dTdP}
+\end{align}
+Substiting Eq\myeqref{eq:dTdP} in Eq\myeqref{eq:dwdp}, we get
+\begin{align}
+    \frac{d\omega_s}{dP} &= \frac{\epsilon e_s}{P}\Big[\frac{L}{R_vT^2}\frac{\alpha}{C_p}-\frac{1}{P}\Big] \\
+    \frac{d\omega_s}{dP} &= \frac{\epsilon e_s}{P}\Big[\frac{L}{R_vT^{\cancel{2}}}\frac{R_d\cancel{T}}{C_pP}-\frac{1}{P}\Big] \\
+    \frac{d\omega_s}{dP} &= \frac{\epsilon e_s}{P^2}\Big[\frac{L}{R_vT}\frac{R_d}{C_p}-1\Big] \\
+    \frac{d\omega_s}{dP} &= \frac{\omega_s}{P}\Big[\frac{R_dL}{R_vC_pT}-1\Big] \\
+    \frac{d\omega_s}{dP} &= \frac{\omega_s}{P}\Big[\frac{\epsilon L}{C_pT}-1\Big]
+\end{align}
+
+$\omega_s$ decreases w.r.t height (Since $P$ decrease with height). $\omega_s$ decreases for any adiabatic uplift of air parcel.
+
+Lifting Conduction Level is at $\omega =\omega_s$ 
+
+Lifting Conduction Level is a level at which cloud start forming. It could be either Presure level or Temperature level).
+
+\begin{question}[\label=21.1]{Find out LCL for an air parcel which has a temperature of 30$^\circ$C and dew point temperature of 0$^\circ$C at 1000hPa.}
+    \Rightarrow 650hPa
+\end{question}
+
+\begin{question}[\label=21.2]{Find out LCL for an air parcel which has a temperature of 25$^\circ$C and dew point temperature of 18$^\circ$C at 900hPa.}
+    \Rightarrow 920hPa
+\end{question}
+
+\begin{align}
+    \text{LCL(Km)} &\approx \frac{T-T_0}{8} \\
+    \text{LCL(hPa)} &= p \exp(-0.044\Delta T_d)
+\end{align}
+where $\Delta T_d$ is dew point depression which is eequal to $(T-T_d)$.
+
+Just above LCL $\rightarrow$ phase change happen $\rightarrow$ release of latent heat which provides extra amount of energy, therefore, parcel will no longer follow dry adibat , but \textbf{moist adiabatic lapse rate}. It depends upon moisture content present in air.
+
+This process is called \textbf{pseudo-adiabatic process} because mass get lost in precipitation. \newline
+
+Dry adiabat lapse rate (DALR):
+\begin{align*}
+    \Gamma_d = \frac{g}{c_p}= 9.8^\circ C/km
+\end{align*}
+Above LCL, parcel will follow \textbf{saturated adiabatic lapse rate $\Gamma_s$} which is always less than dry adiabatic lapse rate, i.e. ($\Gamma_s < \Gamma_d$)
+
+% NOTE: COMPLETE L-21
+% --------------------------------------------------------------------------------------
+\clearpage
+
+\section{Leture 22 25/10/2024}
+\subsection{Saturation Adiabatic Lapse Rate }
+\begin{align}
+    \delta q &= C_p dT - \alpha dP
+\end{align}
+
+$\delta q =0$ since process is adiabatic for dry adiabat $\Gamma_d$, but for aturation adiabatic ($\Gamma_s$) $\delta q \neq 0$
+
+Additon of heat from latent heat of water vapor 
+\begin{align}
+    \delta q &= -Ld\omega_s
+\end{align}
+where $\omega_s$ is saturation mixing ratio.
+
+Therefore,
+\begin{align}
+    -Ld\omega_s &= C_pdT - \alpha dP
+\end{align}
+
+The term $\omega_s$ changes w.r.t pressure and temperature,
+\begin{align}
+    d\omega_s = \frac{\patial \omega_s}{\partial P} dP +  \frac{\patial \omega_s}{\partial T} dT
+\end{align}
+
+Using the expression $\omega_s \approx \frac{\epsilon e_s}{P}$
+\begin{align}
+    d\omega_s &= -\frac{\epsilon e_s}{P^2} dP + \frac{\epsilon e_s}{P} \frac{1}{e_s}\frac{de_s}{dT}dT \\
+    d\omega_s &= -\omega_s \frac{dP}{P} + \omega_s \frac{L}{R_v T^2}dT \\
+    -Ld\omega_s &= L\omega_s\frac{dP}{P} - \omega_s \frac{L^2}{R_v T^2}dT \\
+    c_pdT - \alpha dP &= L\omega_s \frac{dP}{P} - \frac{L^2\omega_s}{R_vT^2}dT
+\end{align}
+
+Invoking hydrostatic approximation
+\begin{align}
+    \frac{\partial P}{\partial z} &= -\rho g \\
+    gdz &= -\alpha dP
+\end{align}
+\begin{align}
+    \frac{c_pdT}{gdz} - \frac{\alpha dP}{-\alpha dP} &= \frac{L\omega_s \frac{dP}{P}}{-\alpha dP} - \frac{\frac{L^2\omega_s}{R_vT^2}dT}{gdz} \\
+    \frac{c_pdT}{gdz} - \frac{\cancel{\alpha dP}}{-\cancel{\alpha dP}} &= \frac{L\omega_s \frac{\cancel{dP}}{P}}{-\alpha \cancel{dP}} - \frac{\frac{L^2\omega_s}{R_vT^2}dT}{gdz} \\
+    \frac{c_pdT}{gdz} + 1 &= \frac{L\omega_s}{-\alpha P} - \frac{L^2\omega_sdT}{R_v T^2 gdz}\\
+    \Big(\frac{L^2\omega_s}{R_v g T^2} + \frac{c_p}{g}\Big)\frac{dT}{dz} &= \frac{L\omega_s}{\alpha P} +1 \label{eq:lapse_rate}
+\end{align}
+
+Recall $\Gamma_d=\frac{g}{c_p}\frac{T'}{T} \approx \frac{g}{c_p}$
+
+where $T'$ is temperature of parcel and $T$ is temperature of atmosphere.
+
+Multipling $\frac{g}{c_p}$ to Eq\myeqref{eq:lapse_rate}
+\begin{align}
+    \Big(\frac{L^2\omega_s}{R_v g T^2}\frac{g}{c_p} + \frac{c_p}{g}\frac{g}{c_p} \Big)\frac{dT}{dz} &= \frac{L\omega_s}{\alpha P}\frac{g}{c_p} + \frac{g}{c_p}
+\end{align}
+Using ideal gas eq, $P\alpha = R_dT$
+\begin{align}
+    \Big(\frac{L^2\omega_s}{R_v c_p T^2} + 1\Big)\frac{dT}{dz} &= \frac{L\omega_s}{R_d T}\Gamma_d + \Gamma_d \\
+   \Gamma_s = \frac{dT}{dz} &= \frac{\Gamma_d \Big(\frac{L\omega_s}{R_d T} + 1\Big)}{\Big(\frac{L^2\omega_s}{R_v c_p T^2} + 1\Big)}
+\end{align}
+
+If $\omega_s=0$, which mean air is not moist$\rightarrow$$\Gamma_s=\Gamma_d=9.8^\circ C/km$
+\begin{align}
+    \Gamma_s = \frac{d\ln T}{d\ln P} \approx \frac{\Big(\frac{L\omega_s}{R_dT} + 1\Big)}{\Big(\frac{L^2\omega_s}{R_v c_p T^2} + 1\Big)}\frac{R_d}{c_p}
+\end{align}
+% WARN: INCOMPLETE L-22
 % --------------------------------------------------------------------------------------
 \clearpage
 % \begin{tikzpicture}
