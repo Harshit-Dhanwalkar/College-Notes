@@ -3,6 +3,6 @@
 Engineering Physics branch
 Earth science and system 
 
-This repo contain my lecture notes of cource `Thermodynamic and Cloud Physics`
+This repo contain my lecture notes on cource `Thermodynamic and Cloud Physics`.
 
 Note: Multiple complilation might require to produce pdf output.
