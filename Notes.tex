@@ -1,9 +1,9 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Original author: Harshit Prashant Dhanwalkar
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                        Author: Harshit Prashant Dhanwalkar                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %-------------------------------------------------------------------------------------
-%      PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%                    PACKAGES AND OTHER DOCUMENT CONFIGURATIONS                      %
 %-------------------------------------------------------------------------------------
 
 \documentclass[fleqn,10pt]{SelfArx} % Document font size and equations flushed left
@@ -22,29 +22,29 @@
 \pgfplotsset{compat=1.18}
 
 %-------------------------------------------------------------------------------------
-%	COLUMNS
+%                                       COLUMNS                                      %
 %-------------------------------------------------------------------------------------
 \setlength{\columnsep}{0.55cm} % Distance between the two columns of text
 \setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
 
 %-------------------------------------------------------------------------------------
-%	COLORS
+%                                        COLORS                                      %
 %-------------------------------------------------------------------------------------
 \definecolor{color1}{RGB}{0,0,90} % Color of the article title and sections
 \definecolor{color2}{RGB}{0,20,20} % Color of the boxes behind the abstract and headings
 
 %-------------------------------------------------------------------------------------
-%	EQUATIONS
+%                                       EQUATIONS                                    %
 %-------------------------------------------------------------------------------------
 \usepackage{cancel} % for crossing the word showing it is cancelled or is zero
 
 %-------------------------------------------------------------------------------------
-%	EQUATIONLINKS
+%                                     EQUATIONLINKS                                  %
 %-------------------------------------------------------------------------------------
 \newcommand{\myeqref}[1]{\textcolor{blue}{\textup{(\getrefnumber{#1})}}}
 
 %-------------------------------------------------------------------------------------
-%	HYPERLINKS
+%                                       HYPERLINKS                                   %
 %-------------------------------------------------------------------------------------
 
 \usepackage{xcolor}
@@ -75,12 +75,12 @@
 }
 
 % ------------------------------------------------------------------------------------
-%       CUSTOM	SYMBOLS
+%                                       CUSTOM  SYMBOLS                              %
 %-------------------------------------------------------------------------------------
 \newcommand{\zbar}{\raisebox{0.2ex}{--}\kern-0.6em Z}
 
 %-------------------------------------------------------------------------------------
-%	ARTICLE INFORMATION
+%                                       ARTICLE INFORMATION                          %
 %-------------------------------------------------------------------------------------
 \JournalInfo{Dual Degree Engineering Physics, 7$^{th}$ Semester, 2024} % Journal information
 \Archive{Mtech, Earth System Sciences (ESS), 1$^{st}$ year} % Additional notes (e.g. copyright, DOI, review/research article)
@@ -95,12 +95,12 @@
 \newcommand{\keywordname}{Keywords} % Defines the keywords heading name
 
 %-------------------------------------------------------------------------------------
-%	ABSTRACT
+%                                           ABSTRACT                                 %
 %-------------------------------------------------------------------------------------
 \Abstract{Notes of Lectures plus addional information from books.}
 
 %-------------------------------------------------------------------------------------
-%	DOCUMENT
+%                                            DOCUMENT                                %
 %-------------------------------------------------------------------------------------
 \begin{document}
 \maketitle % Output the title and abstract box
@@ -110,11 +110,11 @@
 \clearpage
 
 %-------------------------------------------------------------------------------------
-%	DOCUMENT CONTENTS
+%                                       DOCUMENT CONTENTS                           %
 %-------------------------------------------------------------------------------------
-\section{Lecture 1 09/08/2024} % The \section*{} command stops section numbering
-
 %\addcontentsline{toc}{section}{Introduction} % Adds this section to the table of contents
+%-------------------------------------------------------------------------------------
+\section{Lecture 1 09/08/2024}
 
 \begin{itemize}[noitemsep]
     \item System: Specific chunk of matter we are interested in.
@@ -3091,7 +3091,7 @@ $e_i < e_s \rightarrow$ at subfreezing temperatures, the environment that is sat
 \clearpage
 
 \section{Lecture 20 23/10/2024}
-\subsection{Saturation mixing ratio}
+\subsection{. Saturation mixing ratio}
 
 \textbf{Mixing ratio:}
 \begin{align}
@@ -3157,7 +3157,7 @@ where $e=\frac{R_d}{R_v}=$ 0.622 \\
 \clearpage
 
 \section{Lecture 21 24/102024}
-\subsection{Lifting Conduction Level (LCL)}
+\subsection{. Lifting Conduction Level (LCL)}
 \begin{align*}
     \omega_s &= \frac{\epsilon e_s(T)}{P}
 \end{align*}
@@ -3303,6 +3303,96 @@ $\theta_e$ is conserved during moist adiabatic process.
     \Rightarrow \text{770hPa and 650hPa}
 \end{question}
 % NOTE: COMPLETE L-22
+% --------------------------------------------------------------------------------------
+\clearpage
+
+\section{Lecture 23 30/10/2024}
+\subsection{. Psychrometer}
+\begin{figure}[ht!]
+    \centering
+    \begin{tikzpicture}
+        % Draw dry bulb thermometer with color gradient
+        \begin{scope}
+            \clip (-0.1,0) rectangle (0.1,3.5); % Clip between the lines
+            \shade[top color=red!80, bottom color=red!10] (-0.1,0) rectangle (0.1,3);
+        \end{scope}
+        \draw[thick] (-0.1,0) -- (-0.1,3.5);
+        \draw[thick] (0.1,0) -- (0.1,3.5);
+        \draw (0.2,3) node[right] {$T_d$};
+        \draw[fill=red!50] (0,0) circle (0.4);
+        \node[below] at (0, -0.5) {Dry Bulb Thermometer};
+
+        % Draw wet bulb thermometer with color gradient
+        \begin{scope}
+            \clip (3.9,0) rectangle (4.1,3); % Clip between the lines
+            \shade[top color=blue!80, bottom color=blue!10] (3.9,0) rectangle (4.1,2.5);
+        \end{scope}
+        \draw[thick] (3.9,0) -- (3.9,3.5);
+        \draw[thick] (4.1,0) -- (4.1,3.5);
+        \draw (4.2,2.5) node[right] {$T_w$};
+        \draw[fill=blue!50] (4,0) circle (0.4);
+        % Outer layers for moist cotton
+        \draw[thick, blue!30] (4,0) circle (0.45); 
+        \draw[thick, blue!30] (4,0) circle (0.5);
+        \draw (4.5,0.5) node[right] {\small Moist cotton};
+        \node[below] at (4, -0.5) {Wet Bulb Thermometer};
+
+    \end{tikzpicture}
+    \caption{Psychrometer}
+\end{figure}
+
+At saturated air (100\% moist air) $\rightarrow$ $T_d=T_w$
+
+$\therefore$ It gives information about relative humidity.
+
+% FIX: add Skew-T diagram to show T_d \leq T_w \leq T
+\begin{figure}[ht!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=10cm, height=8cm,
+            xlabel={Temperature (°C)},
+            ylabel={Pressure (hPa)},
+            ymin=850, ymax=1050,
+            xmin=-20, xmax=40,
+            axis lines=middle,
+            legend style={at={(1.05,1)}, anchor=north west},
+            every axis y label/.style={at={(axis description cs:0.1,1.05)},anchor=south},
+            every axis x label/.style={at={(axis description cs:1.05,0.05)},anchor=west},
+        ]
+
+        % Plot constant isobars at 1000 hPa and 900 hPa
+        \addplot[dashed, color=black] coordinates {(-20, 1000) (40, 1000)} node[pos=0.95, anchor=south west] {1000 hPa};
+        \addplot[dashed, color=black] coordinates {(-20, 900) (40, 900)} node[pos=0.95, anchor=south west] {900 hPa};
+
+        % Plot dry adiabat (straight line)
+        \addplot[thick, color=red] coordinates {(-10, 1000) (10, 900)} node[pos=0.5, anchor=north east] {Dry Adiabat};
+
+        % Plot moist adiabat (curved line)
+        \addplot[thick, color=blue, domain=-10:20, samples=100] 
+            {1000 - (100 * ln(1 + 0.02 * (x + 10)))}
+            node[pos=0.7, anchor=south east] {Moist Adiabat};
+
+        % Add legend
+        \legend{Isobars, Dry Adiabat, Moist Adiabat}
+        
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Atmospheric Diagram with Isobars, Dry and Moist Adiabat}
+\end{figure}
+
+\subsection{. Normand's rule}
+\begin{align}
+    T_d \leq T_w \leq T
+\end{align}
+where
+\begin{align*}
+    &\text{$T_d$ is dew point temperature.}\\
+    &\text{$T_w$ is wet bulb temperature.}\\
+    &\text{$T$ is parcel temperature.}
+\end{align*}
+
+% WARN: INCOMPLETE L-23
 % --------------------------------------------------------------------------------------
 \clearpage
 % \begin{tikzpicture}

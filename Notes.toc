@@ -77,10 +77,13 @@
 \contentsline {section}{\numberline {19}Leture 19 21/10/2024}{40}{section.19}%
 \contentsline {subsection}{\numberline {19.1}The Clausius-Clapeyron equation}{40}{subsection.19.1}%
 \contentsline {section}{\numberline {20}Lecture 20 23/10/2024}{41}{section.20}%
-\contentsline {subsection}{\numberline {20.1}Saturation mixing ratio}{41}{subsection.20.1}%
+\contentsline {subsection}{\numberline {20.1}. Saturation mixing ratio}{41}{subsection.20.1}%
 \contentsline {section}{\numberline {21}Lecture 21 24/102024}{42}{section.21}%
-\contentsline {subsection}{\numberline {21.1}Lifting Conduction Level (LCL)}{42}{subsection.21.1}%
+\contentsline {subsection}{\numberline {21.1}. Lifting Conduction Level (LCL)}{42}{subsection.21.1}%
 \contentsline {section}{\numberline {22}Leture 22 25/10/2024}{43}{section.22}%
 \contentsline {subsection}{\numberline {22.1}. Saturation Adiabatic Lapse Rate }{43}{subsection.22.1}%
 \contentsline {subsection}{\numberline {22.2}. Equivalent potential temperature ($\theta _e$)}{43}{subsection.22.2}%
+\contentsline {section}{\numberline {23}Lecture 23 30/10/2024}{44}{section.23}%
+\contentsline {subsection}{\numberline {23.1}. Psychrometer}{44}{subsection.23.1}%
+\contentsline {subsection}{\numberline {23.2}. Normand's rule}{44}{subsection.23.2}%
 \contentsfinish 
