@@ -3417,6 +3417,53 @@ Assumpution considered are:
     \item Air contains only vapor and liquid water. There is no ice in air.
     \item Water does not precipitate during the process.
 \end{itemize}
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.5\textwidth,
+            height=0.4\textwidth,
+            xlabel={Temperature (°C)},
+            ylabel={Pressure (hPa)},
+            ymin=850, ymax=1250,
+            xmin=-10, xmax=30,
+            axis lines=middle,
+            legend style={at={(1.05,1)}, anchor=north west},
+            every axis y label/.style={at={(axis description cs:0,1)},anchor=south},
+            every axis x label/.style={at={(axis description cs:0.5,-0.1)},anchor=north},
+        ]
+
+        % Plot constant isobars at 1000 hPa and 900 hPa
+        \addplot[dashed, color=black] coordinates {(-10, 1100) (40, 1100)}
+                    node[pos=0.7, anchor=south, xshift=5, yshift=3] {$P_1$};
+        \addplot[dashed, color=black] coordinates {(-10, 1000) (40, 1000)}
+                    node[pos=0.7, anchor=south, xshift=5, yshift=3] {LCL};
+        \addplot[dashed, color=black] coordinates {(-10, 900) (40, 900)}
+                    node[pos=0.7, anchor=south, xshift=5, yshift=3] {$P_2$};
+
+        % Plot constant mixing ratios
+        \addplot[dashed, color=blue] coordinates {(1, 900) (20, 1150)}
+                    node[pos=0, anchor=south, xshift=0, yshift=-15] {$T_d$}
+                    node[pos=0, anchor=south, xshift=95, yshift=95] {$\omega_0$};
+        \addplot[dashed, color=blue] coordinates {(-13.5, 900) (6.5, 1150)}
+                    node[pos=0, anchor=south, xshift=95, yshift=95] {$\omega_1$};
+
+        % Plot dry adiabat (straight line) from P1 to an intermediate pressure level
+        \addplot[thick, color=red] coordinates {(15, 900) (10, 1000)}
+            node[pos=0.7, anchor=south, xshift=35, yshift=-20] {Dry Adiabat}
+            node[pos=0, anchor=south, xshift=2, yshift=-15] {$T$};
+        \addplot[dashed, color=red] coordinates {(5, 1100) (10, 1000)};
+
+        % Plot moist adiabat (curved line) from the top of dry adiabat down to lower pressure
+        \addplot[thick, color=green, domain=2:10, samples=100] 
+            {1000 + 70 * ln(1 + 0.4 * (10 - x))}
+            node[pos=0.7, anchor=south, xshift=25, yshift=5] {Moist Adiabat};
+
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Atmospheric Diagram with Isobars, Dry and Moist Adiabat}
+\end{figure}
 % WARN: INCOMPLETE
 
 \subsection{. Flow over terrain}
@@ -3433,6 +3480,13 @@ Assumpution considered are:
 \end{question}
 
 \subsection{. Atmospheric stability}
+Hydrostatic inbalance in small-scale scenarios such as tornados.
+\begin{itemize}
+    \item Stable
+    \item Unstable
+    \item Neutral
+    \item Metastable
+\end{itemize}
 % WARN: INCOMPLETE L-24
 % --------------------------------------------------------------------------------------
 \clearpage
@@ -3569,7 +3623,7 @@ Assumpution considered are:
 %	\end{tabular}
 %	\label{tab:label}
 % \end{table}
-
+%
 % \begin{figure*}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
 % 	\includegraphics[width=\linewidth]{view}
 % 	\caption{Wide Picture}
