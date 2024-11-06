@@ -91,7 +91,7 @@
 \contentsline {subsection}{\numberline {24.2}. Flow over terrain}{45}{subsection.24.2}%
 \contentsline {subsection}{\numberline {24.3}. Atmospheric stability}{45}{subsection.24.3}%
 \contentsline {section}{\numberline {25}Lecture 25 06/11/2024}{47}{section.25}%
-\contentsline {subsection}{\numberline {25.1}. Atmosheric stability}{47}{subsection.25.1}%
+\contentsline {subsection}{\numberline {25.1}. Atmospheric stability}{47}{subsection.25.1}%
 \contentsline {subsubsection}{Convection/small scale process}{47}{equation.25.475}%
 \contentsline {subsubsection}{Three conditions}{47}{Item.50}%
 \contentsline {subsection}{\numberline {25.2}Equation of motion for the parcel}{47}{subsection.25.2}%
