@@ -86,7 +86,7 @@
 \contentsline {section}{\numberline {23}Lecture 23 30/10/2024}{44}{section.23}%
 \contentsline {subsection}{\numberline {23.1}. Psychrometer}{44}{subsection.23.1}%
 \contentsline {subsection}{\numberline {23.2}. Normand's rule}{44}{subsection.23.2}%
-\contentsline {section}{\numberline {24}Lecture 04/11/2024}{45}{section.24}%
+\contentsline {section}{\numberline {24}Lecture 24 04/11/2024}{45}{section.24}%
 \contentsline {subsection}{\numberline {24.1}. Adiabatic cloud water content}{45}{subsection.24.1}%
 \contentsline {subsubsection}{Liquid water content (LWC)}{45}{figure.caption.20}%
 \contentsline {subsection}{\numberline {24.2}. Flow over terrain}{45}{subsection.24.2}%
@@ -96,4 +96,7 @@
 \contentsline {subsubsection}{Convection/small scale process}{46}{equation.25.476}%
 \contentsline {subsubsection}{Three conditions}{46}{Item.50}%
 \contentsline {subsection}{\numberline {25.2}. Equation of motion for the parcel}{46}{subsection.25.2}%
+\contentsline {section}{\numberline {26}Leture 26 07/11/2024}{48}{section.26}%
+\contentsline {subsection}{\numberline {26.1}. Stabitity analysis}{48}{subsection.26.1}%
+\contentsline {subsection}{\numberline {26.2}Convective instability or Potential instability}{48}{subsection.26.2}%
 \contentsfinish 

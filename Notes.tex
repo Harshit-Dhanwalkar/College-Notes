@@ -3438,7 +3438,7 @@ where
 % --------------------------------------------------------------------------------------
 \clearpage
 
-\section{Lecture 04/11/2024}
+\section{Lecture 24 04/11/2024}
 
 \subsection{. Adiabatic cloud water content}
 
@@ -3853,6 +3853,32 @@ where $\omega = \sqrt{\frac{g}{T_{v_0}}(\Gamma_v - \Gamma_v')}$
             \frac{dz(t)}{dt} &= A
         \end{align}
         Time period of oscillation is \textbf{not defined}.
+\end{enumerate}
+
+% FIX: add content
+
+\subsection{Convective instability or Potential instability}
+Potential temperature $(\theta_e)$:
+\begin{align}
+    \theta_e &= T\Big(\frac{1000}{P}\Big)^{\frac{R_d}{C_p}}
+\end{align}
+Taking logorithm on both sides,
+\begin{align}
+    \ln{\theta_e} &= \ln{T} + {\frac{R_d}{C_p}}\ln{(1000)} - {\frac{R_d}{C_p}}\ln{P}
+\end{align}
+Differentiating above Eq. w.r.t $z$
+\begin{align}
+    \frac{1}{\theta_e}\frac{\theta}{dz} &= \frac{1}{T}\frac{dT}{dz} - \frac{R_d}{C_p}\Big(\frac{-dp}{dz}\Big) \\
+    \frac{1}{\theta_e}\frac{\theta}{dz} &= \frac{1}{T}\frac{dT}{dz} - \frac{\cancel{R_d}}{C_p \cancel{p}}\Big(\frac{-\cancel{p}g}{\cancel{R_d}T}\Big) \\
+    \frac{1}{\theta_e}\frac{\theta}{dz} &= \frac{1}{T}\frac{dT}{dz} + \frac{1}{T}\Big(\frac{g}{C_p}\Big) \\
+    \frac{1}{\theta_e}\frac{\theta}{dz} &= -\frac{1}{T}\Gamma + \frac{1}{T}\Gamma_d \\
+    \frac{1}{\theta_e}\frac{\theta}{dz} &= \frac{1}{T}(\Gamma_d - \Gamma)
+\end{align}
+
+\begin{enumerate}[noitemsep]
+    \item $\frac{d\theta_e}{dz} > 0 \rightarrow $ Stable
+    \item $\frac{d\theta_e}{dz} < 0 \rightarrow $ Unstable
+    \item $\frac{d\theta_e}{dz} = 0 \rightarrow $ Neutral
 \end{enumerate}
 
 % WARN: INCOMPLETE L-26
