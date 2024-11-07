@@ -3755,6 +3755,45 @@ Neglect the higher order terms;
     \Gamma_v' &= -\frac{dT_v'}{dz} \quad{\rightarrow \quad \text{Parcel lapse rate}}
 \end{align}
 
+\begin{align}
+    \frac{d^2z}{dt^2} &= g \frac{(\Gamma_v - \Gamma_v')}{(T_{v_0}-\Gamma_vz)}z \label{eq:d2zdt2}
+\end{align}
+
+Taking $\frac{1}{T_{v_0}-\Gamma_vz}$ for simplification;
+\begin{align}
+    \frac{1}{T_{v_0}-\Gamma_vz} &= \frac{1}{T_{v_0}}\Big(\frac{1}{1-\frac{\Gamma_vz}{T_{v_0}}}\Big) \\
+    \frac{1}{T_{v_0}-\Gamma_vz} &= \frac{1}{T_{v_0}}\Big(1-\frac{\Gamma_vz}{T_{v_0}}\Big)^{-1} \\
+\end{align}
+since, $\frac{\Gamma_v z}{T_{v_0}} \ll 1$, we can rewrite above equation as:
+\begin{align}
+    \frac{1}{T_{v_0}-\Gamma_vz} &\approx \frac{1}{T_{v_0}}\Big(1+\frac{\Gamma_vz}{T_{v_0}}\Big)
+\end{align}
+
+Therefore, Eq\myeqref{eq:d2zdt2}
+\begin{align}
+    \frac{d^2z}{dt^2} &\approx g (\Gamma_v - \Gamma_v') \times \frac{1}{T_{v_0}}\Big(1+\frac{\Gamma_vz}{T_{v_0}}\Big) \\
+    \frac{d^2z}{dt^2} &\approx \frac{g}{T_{v_0}}\Big(\Gamma_vz + \frac{\Gamma_v^2z^2}{T_{v_0}}- \Gamma_v'z -\frac{\Gamma_v'\Gamma_vz^2}{T_{v_0}}\Big)
+\end{align}
+Ignoring $z^2$ terms, we get;
+\begin{align}
+    \frac{d^2z}{dt^2} &\approx \frac{g}{T_{v_0}}(\Gamma_v - \Gamma_v')z \\
+    \frac{d^2z}{dt^2} &- \frac{g}{T_{v_0}}(\Gamma_v - \Gamma_v')z  = 0 \label{eq:2ndordereq}
+\end{align}
+The above Eq\myeqref{eq:2ndordereq} is 2$^{nd}$ order diffreential equation, therefore we can rewrite equation as:
+\begin{align}
+    \frac{d^2z}{dt^2} - \omega^2 z  &= 0
+\end{align}
+where $\omega = \sqrt{\frac{g}{T_{v_0}}(\Gamma_v - \Gamma_v')}$
+
+\subsection{Stabitity analysis}
+3 possible solutions exists:
+\begin{enumerate}[noitemsep]
+    \item Stable solution i.e. ($\Gamma_v' - \Gamma_v) > 0$ 
+    \item Unstable solution i.e. ($\Gamma_v' - \Gamma_v) < 0$ 
+    \item Neutral solution i.e. ($\Gamma_v' - \Gamma_v) = 0$ 
+\end{enumerate}
+
+
 
 % WARN: INCOMPLETE L-25
 % --------------------------------------------------------------------------------------
