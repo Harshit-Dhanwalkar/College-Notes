@@ -3002,7 +3002,7 @@ Latent heat of sublimation of water at STP $=2.83 \times 10^6 J/Kg$
 \clearpage
 
 \section{Leture 19 21/10/2024}
-\subsection{The Clausius-Clapeyron equation}
+\subsection{. The Clausius-Clapeyron equation}
 Let $L$ is latent heat associated with phase change of a liquid($i$) to vapor($f$) state:
 \begin{align}
     L &= \int dq \\
@@ -3205,6 +3205,28 @@ Lifting Conduction Level is at $\omega =\omega_s$
 
 Lifting Conduction Level is a level at which cloud start forming. It could be either Presure level or Temperature level).
 
+\begin{tikzpicture}
+    % Draw mountain
+    \fill[gray!30] (-2,0) -- (0,3) -- (2,0) -- cycle;
+
+    % Draw ground
+    \draw[thick] (-4,0) -- (3,0);
+
+    % Lifting Condensation Level (LCL) line
+    \draw[dashed, thick, blue] (-4,1) -- (3,1);
+    \node[blue, below] at (-3,1) {LCL};
+
+    % Clouds above LCL
+    \foreach \x in {-3, -2, -1} {
+        \draw[cloud, cloud puffs=10, cloud ignores aspect, fill=gray!20] (\x,1.8) ellipse (1 and 0.5);
+    }
+
+    % Label mountain and clouds
+    \node at (0,0.5) {Mountain};
+    \node[above] at (-2,2.3) {Clouds};
+
+\end{tikzpicture}
+
 \begin{question}[\label=21.1]{Find out LCL for an air parcel which has a temperature of 30$^\circ$C and dew point temperature of 0$^\circ$C at 1000hPa.}
     \Rightarrow 650hPa
 \end{question}
@@ -3340,9 +3362,9 @@ $\theta_e$ is conserved during moist adiabatic process.
         % Outer layers for moist cotton
         \draw[thick, blue!30] (4,0) circle (0.45); 
         \draw[thick, blue!30] (4,0) circle (0.5);
+        \draw[thick, blue!30] (4,0) circle (0.55);
         \draw (4.5,0.5) node[right] {\small Moist cotton};
         \node[below] at (4, -0.5) {Wet Bulb Thermometer};
-
     \end{tikzpicture}
     \caption{Psychrometer}
 \end{figure}
@@ -3351,40 +3373,54 @@ At saturated air (100\% moist air) $\rightarrow$ $T_d=T_w$
 
 $\therefore$ It gives information about relative humidity.
 
-% FIX: add Skew-T diagram to show T_d \leq T_w \leq T
-\begin{figure}[ht!]
+\begin{figure}[ht]
     \centering
     \begin{tikzpicture}
         \begin{axis}[
-            width=10cm, height=8cm,
-            xlabel={Temperature (°C)},
+            width=0.5\textwidth,
+            height=0.4\textwidth,
             ylabel={Pressure (hPa)},
-            ymin=850, ymax=1050,
-            xmin=-20, xmax=40,
+            ymin=850, ymax=1250,
+            xmin=-10, xmax=30,
             axis lines=middle,
             legend style={at={(1.05,1)}, anchor=north west},
-            every axis y label/.style={at={(axis description cs:0.1,1.05)},anchor=south},
-            every axis x label/.style={at={(axis description cs:1.05,0.05)},anchor=west},
+            every axis y label/.style={at={(axis description cs:0.25,1)},anchor=south},
+            every axis x label/.style={at={(axis description cs:0.5,-0.1)},anchor=north},
+            xtick = \empty,
         ]
 
         % Plot constant isobars at 1000 hPa and 900 hPa
-        \addplot[dashed, color=black] coordinates {(-20, 1000) (40, 1000)} node[pos=0.95, anchor=south west] {1000 hPa};
-        \addplot[dashed, color=black] coordinates {(-20, 900) (40, 900)} node[pos=0.95, anchor=south west] {900 hPa};
+        \addplot[dashed, color=black] coordinates {(-10, 1100) (40, 1100)}
+                    node[pos=0.7, anchor=south, xshift=-164, yshift=-14] {Isobars}
+                    node[pos=0.7, anchor=south, xshift=5, yshift=3] {$P_1$};
+        \addplot[dashed, color=black] coordinates {(-10, 1000) (40, 1000)}
+                    node[pos=0.7, anchor=south, xshift=5, yshift=3] {LCL};
+        \addplot[dashed, color=black] coordinates {(-10, 900) (40, 900)}
+                    node[pos=0.7, anchor=south, xshift=5, yshift=3] {$P_2$};
 
-        % Plot dry adiabat (straight line)
-        \addplot[thick, color=red] coordinates {(-10, 1000) (10, 900)} node[pos=0.5, anchor=north east] {Dry Adiabat};
+        % Plot dry adiabat (straight line) from P1 to an intermediate pressure level
+        \addplot[thick, color=red!70] coordinates {(18, 900) (10, 1000)}
+            node[pos=0.7, anchor=south, xshift=50, yshift=-15] {Dry Adiabat}
+            node[pos=0, anchor=south, xshift=2, yshift=-15] {$T$};
+        \addplot[dashed, color=red!70] coordinates {(10, 1000) (6, 1050)};
+        \addplot[thick, color=red!70] coordinates {(20, 900) (3, 1100)}
+            node[pos=0, anchor=south, xshift=2, yshift=-15] {$T_e$};
 
-        % Plot moist adiabat (curved line)
-        \addplot[thick, color=blue, domain=-10:20, samples=100] 
-            {1000 - (100 * ln(1 + 0.02 * (x + 10)))}
-            node[pos=0.7, anchor=south east] {Moist Adiabat};
+        % Plot moist adiabat (curved line) from the top of dry adiabat down to lower pressure
+        \addplot[thick, color=green!90, domain=2:10, samples=100] 
+            {1000 + 70 * ln(1 + 0.4 * (10 - x))}
+            node[pos=0.7, anchor=south, xshift=25, yshift=5] {Moist Adiabat};
 
-        % Add legend
-        \legend{Isobars, Dry Adiabat, Moist Adiabat}
-        
+        % Plot constant mixing ratios
+        \addplot[dashed, color=blue!90] coordinates {(1, 900) (20, 1150)}
+                    node[pos=0, anchor=south, xshift=0, yshift=-15] {$T_d$}
+                    node[pos=0, anchor=south, xshift=95, yshift=95] {$\omega_0$};
+        \addplot[dashed, color=blue] coordinates {(-13.5, 900) (6.5, 1150)}
+                    node[pos=0.7, anchor=south, xshift=70, yshift=35] {Saturation mixing ratio}
+                    node[pos=0, anchor=south, xshift=95, yshift=95] {$\omega_1$};
         \end{axis}
     \end{tikzpicture}
-    \caption{Atmospheric Diagram with Isobars, Dry and Moist Adiabat}
+    \caption{Skew-T diagram with Isobars, Dry and Moist Adiabat}
 \end{figure}
 
 \subsection{. Normand's rule}
@@ -3398,7 +3434,7 @@ where
     &\text{$T$ is parcel temperature.}
 \end{align*}
 
-% WARN: INCOMPLETE L-23
+% NOTE: COMPLETE L-23
 % --------------------------------------------------------------------------------------
 \clearpage
 
@@ -3430,7 +3466,6 @@ Assumpution considered are:
         \begin{axis}[
             width=0.5\textwidth,
             height=0.4\textwidth,
-            xlabel={Temperature (°C)},
             ylabel={Pressure (hPa)},
             ymin=850, ymax=1250,
             xmin=-10, xmax=30,
@@ -3438,6 +3473,7 @@ Assumpution considered are:
             legend style={at={(1.05,1)}, anchor=north west},
             every axis y label/.style={at={(axis description cs:0.25,1)},anchor=south},
             every axis x label/.style={at={(axis description cs:0.5,-0.1)},anchor=north},
+            xtick = \empty,
         ]
 
         % Plot constant isobars at 1000 hPa and 900 hPa
@@ -3448,132 +3484,112 @@ Assumpution considered are:
         \addplot[dashed, color=black] coordinates {(-10, 900) (40, 900)}
                     node[pos=0.7, anchor=south, xshift=5, yshift=3] {$P_2$};
 
+        % Plot dry adiabat (straight line) from P1 to an intermediate pressure level
+        \addplot[thick, color=red!70] coordinates {(18, 900) (10, 1000)}
+            node[pos=0, anchor=south, xshift=2, yshift=-15] {$T$};
+        \addplot[dashed, color=red!70] coordinates {(10, 1000) (6, 1050)};
+        \addplot[thick, color=red!70] coordinates {(20, 900) (3, 1100)}
+            node[pos=0, anchor=south, xshift=2, yshift=-15] {$T_e$};
+
+        % Plot moist adiabat (curved line) from the top of dry adiabat down to lower pressure
+        \addplot[thick, color=green!90, domain=2:10, samples=100] 
+            {1000 + 70 * ln(1 + 0.4 * (10 - x))};
+
         % Plot constant mixing ratios
         \addplot[dashed, color=blue!90] coordinates {(1, 900) (20, 1150)}
                     node[pos=0, anchor=south, xshift=0, yshift=-15] {$T_d$}
                     node[pos=0, anchor=south, xshift=95, yshift=95] {$\omega_0$};
         \addplot[dashed, color=blue] coordinates {(-13.5, 900) (6.5, 1150)}
                     node[pos=0, anchor=south, xshift=95, yshift=95] {$\omega_1$};
-
-        % Plot dry adiabat (straight line) from P1 to an intermediate pressure level
-        \addplot[thick, color=orange!90] coordinates {(15, 900) (10, 1000)}
-            node[pos=0.7, anchor=south, xshift=35, yshift=-20] {Dry Adiabat}
-            node[pos=0, anchor=south, xshift=2, yshift=-15] {$T$};
-        \addplot[dashed, color=red] coordinates {(5, 1100) (10, 1000)};
-
-        % Plot moist adiabat (curved line) from the top of dry adiabat down to lower pressure
-        \addplot[thick, color=green!90, domain=2:10, samples=100] 
-            {1000 + 70 * ln(1 + 0.4 * (10 - x))}
-            node[pos=0.7, anchor=south, xshift=25, yshift=5] {Moist Adiabat};
-
         \end{axis}
     \end{tikzpicture}
     \caption{Skew-T diagram with Isobars, Dry and Moist Adiabat}
 \end{figure}
 
+\subsubsection*{Liquid water content (LWC)}
+\addcontentsline{toc}{subsubsection}{Liquid water content (LWC)}
+\begin{align}
+    \text{LWC} &= (\omega_0 - \omega_1)
+\end{align}
+
 \subsection{. Flow over terrain}
 \begin{enumerate}[noitemsep]
     \item Moist adaibatic process
-        \begin{figure}[ht]
+
+        \begin{tikzpicture}
             \centering
-            \begin{tikzpicture}
-                \begin{axis}[
-                    width=0.5\textwidth,
-                    height=0.4\textwidth,
-                    xlabel={Temperature (°C)},
-                    ylabel={Pressure (hPa)},
-                    ymin=850, ymax=1250,
-                    xmin=-10, xmax=30,
-                    axis lines=middle,
-                    legend style={at={(1.05,1)}, anchor=north west},
-                    every axis y label/.style={at={(axis description cs:0.25,1)},anchor=south},
-                    every axis x label/.style={at={(axis description cs:0.5,-0.1)},anchor=north},
-                ]
+            % Draw the mountain as a sine curve with multiple layers
+            \draw[thick, gray] plot[domain=-0.9:4, samples=100] (\x, {1.3*sin(\x*180/pi)});
+            \draw[thick, gray] plot[domain=-1.5:4.5, samples=100] (\x, {1.3*sin(\x*180/pi) + 1});
+            \draw[thick, gray] (-2.5,-0.5) -- (-1.5,-0.3);
 
-                % Plot constant isobars at 1000 hPa and 900 hPa
-                \addplot[dashed, color=black] coordinates {(-10, 1100) (40, 1100)}
-                            node[pos=0.7, anchor=south, xshift=5, yshift=3] {$P_1$};
-                \addplot[dashed, color=black] coordinates {(-10, 1000) (40, 1000)}
-                            node[pos=0.7, anchor=south, xshift=5, yshift=3] {LCL};
-                \addplot[dashed, color=black] coordinates {(-10, 900) (40, 900)}
-                            node[pos=0.7, anchor=south, xshift=5, yshift=3] {$P_2$};
+            % Ground level
+            \draw[thick] (-2.5,-1) -- (4.5,-1);
 
-                % Plot constant mixing ratios
-                \addplot[dashed, color=blue!90] coordinates {(1, 900) (20, 1150)}
-                            node[pos=0, anchor=south, xshift=0, yshift=-15] {$T_d$}
-                            node[pos=0, anchor=south, xshift=95, yshift=95] {$\omega_0$};
-                \addplot[dashed, color=blue] coordinates {(-13.5, 900) (6.5, 1150)}
-                            node[pos=0, anchor=south, xshift=95, yshift=95] {$\omega_1$};
+            % Lifting Condensation Level (LCL) line
+            \draw[dashed, thick, blue] (-2.5,0) -- (4.5,0);
+            \node[blue, below] at (3.5,0) {LCL};
 
-                % Plot dry adiabat (straight line) from P1 to an intermediate pressure level
-                \addplot[thick, color=orange!90] coordinates {(15, 900) (10, 1000)}
-                    node[pos=0.7, anchor=south, xshift=35, yshift=-20] {Dry Adiabat}
-                    node[pos=0, anchor=south, xshift=2, yshift=-15] {$T$};
-                \addplot[dashed, color=red] coordinates {(5, 1100) (10, 1000)};
+            % Clouds above the LCL
+            \foreach \x in {-1.5, -1, -0.5, 0.3, 1, 2, 3.1} {
+                \draw[cloud, cloud puffs=10, cloud ignores aspect, fill=gray!20] (\x,0.5) ellipse (0.8 and 0.4);
+            }
 
-                % Plot moist adiabat (curved line) from the top of dry adiabat down to lower pressure
-                \addplot[thick, color=green!90, domain=2:10, samples=100] 
-                    {1000 + 70 * ln(1 + 0.4 * (10 - x))}
-                    node[pos=0.7, anchor=south, xshift=25, yshift=5] {Moist Adiabat};
+            % Level marking A and B
+            \draw[dashed, thick, blue] (-2.3,-1) -- (-2.3,1);
+            \draw[dashed, thick, blue] (1.6,-1) -- (1.6,2.5);
 
-                \end{axis}
-            \end{tikzpicture}
-            \caption{Skew-T diagram with Isobars, Dry and Moist Adiabat}
-        \end{figure}
+            % Label mountain and clouds
+            \node at (1.6,-0.5) {Mountain};
+            \node[above] at (0.4,0.3) {Clouds};
+            \node[above] at (-2.3,1) {A};
+            \node[above] at (1.6,2.5) {B};
+
+        \end{tikzpicture}
     \item Pseudo adaibatic process
-        \begin{figure}[ht]
+
+        \begin{tikzpicture}
             \centering
-            \begin{tikzpicture}
-                \begin{axis}[
-                    width=0.5\textwidth,
-                    height=0.4\textwidth,
-                    xlabel={Temperature (°C)},
-                    ylabel={Pressure (hPa)},
-                    ymin=850, ymax=1250,
-                    xmin=-10, xmax=30,
-                    axis lines=middle,
-                    legend style={at={(1.05,1)}, anchor=north west},
-                    every axis y label/.style={at={(axis description cs:0.25,1)},anchor=south},
-                    every axis x label/.style={at={(axis description cs:0.5,-0.1)},anchor=north},
-                ]
+            % Draw the mountain as a sine curve with multiple layers
+            \draw[thick, gray] plot[domain=-0.9:4, samples=100] (\x, {1.3*sin(\x*180/pi)});
+            \draw[thick, gray] plot[domain=-1.5:4.5, samples=100] (\x, {1.3*sin(\x*180/pi) + 1});
+            \draw[thick, gray] (-2.5,-0.5) -- (-1.5,-0.3);
 
-                % Plot constant isobars at 1000 hPa and 900 hPa
-                \addplot[dashed, color=black] coordinates {(-10, 1100) (40, 1100)}
-                            node[pos=0.7, anchor=south, xshift=5, yshift=3] {$P_1$};
-                \addplot[dashed, color=black] coordinates {(-10, 1000) (40, 1000)}
-                            node[pos=0.7, anchor=south, xshift=5, yshift=3] {LCL};
-                \addplot[dashed, color=black] coordinates {(-10, 900) (40, 900)}
-                            node[pos=0.7, anchor=south, xshift=5, yshift=3] {$P_2$};
+            % Ground level
+            \draw[thick] (-2.5,-1) -- (4.5,-1);
 
-                % Plot constant mixing ratios
-                \addplot[dashed, color=blue!90] coordinates {(1, 900) (20, 1150)}
-                            node[pos=0, anchor=south, xshift=0, yshift=-15] {$T_d$}
-                            node[pos=0, anchor=south, xshift=95, yshift=95] {$\omega_0$};
-                \addplot[dashed, color=blue] coordinates {(-13.5, 900) (6.5, 1150)}
-                            node[pos=0, anchor=south, xshift=95, yshift=95] {$\omega_1$};
+            % Lifting Condensation Level (LCL) line
+            \draw[dashed, thick, blue] (-2.5,0) -- (4.5,0);
+            \node[blue, below] at (3.5,0) {LCL};
 
-                % Plot dry adiabat (straight line) from P1 to an intermediate pressure level
-                \addplot[thick, color=orange!90] coordinates {(15, 900) (10, 1000)}
-                    node[pos=0.7, anchor=south, xshift=35, yshift=-20] {Dry Adiabat}
-                    node[pos=0, anchor=south, xshift=2, yshift=-15] {$T$};
-                \addplot[dashed, color=red] coordinates {(5, 1100) (10, 1000)};
+            % Clouds above the LCL
+            \foreach \x in {-1.5, -1, -0.7, -0.5, -0.3} {
+                \draw[cloud, cloud puffs=10, cloud ignores aspect, fill=gray!20] (\x,0.5) ellipse (0.8 and 0.4);
+            }
+            % Precipitation lines
+            \foreach \x in {-1.5, -1.2, -0.9, -0.6, -0.3} {
+               \draw[dashed, thick, blue!70] (\x,0.1) -- (\x-0.2,-0.8);
+            }
 
-                % Plot moist adiabat (curved line) from the top of dry adiabat down to lower pressure
-                \addplot[thick, color=green!90, domain=2:10, samples=100] 
-                    {1000 + 70 * ln(1 + 0.4 * (10 - x))}
-                    node[pos=0.7, anchor=south, xshift=25, yshift=5] {Moist Adiabat};
+            % Level marking A and B
+            \draw[dashed, thick, blue] (-2.3,-1) -- (-2.3,1);
+            \draw[dashed, thick, blue] (1.6,-1) -- (1.6,2.5);
 
-                \end{axis}
-            \end{tikzpicture}
-            \caption{Skew-T diagram with Isobars, Dry and Moist Adiabat}
-        \end{figure}
+            % Label mountain and clouds
+            \node at (1.6,-0.5) {Mountain};
+            \node[above] at (-0.3,0.3) {Clouds};
+            \node[above] at (-1.2,-0.9) {Precipitation};
+            \node[above] at (-2.3,1) {A};
+            \node[above] at (1.6,2.5) {B};
+        \end{tikzpicture}
 \end{enumerate}
 % WARN: INCOMPLETE
 
 \begin{question}[\label:24.1]{Consider a situation in which moist air from Arabian sea is advented to western ghats undergoing irreversible pseudo-adiabatic process and the pressure level at which parcel asent is 850hPa and temperature of parcel is 20.6$^\circ$C; dew point temperature 15.7$^\circ$C. The minimum pressure at summit is 610hPa. \newline
     a. Find out the initial mixing ratio and relative humidity (RH) od air parcel before the asent. \newline
     b. Find out the final temperature and dew point temperature experienced by the parcel at the leeward side of the mountain at the same level.}
-    
+\Rightarrow
+
 \end{question}
 
 \subsection{. Atmospheric stability}
@@ -3714,7 +3730,7 @@ Following assumptions are made in order to asscess the stability condition:
         \end{tikzpicture}
 \end{figure}
 
-\subsection{Equation of motion for the parcel}
+\subsection{. Equation of motion for the parcel}
 Because the environment is in hydrostatic equlibrium given by Eq\myeqref{eq:hyfrostatic_eq}
  This does not hold wave equation for a parcel,  i.e.,
  \begin{align}
@@ -3785,17 +3801,7 @@ The above Eq\myeqref{eq:2ndordereq} is 2$^{nd}$ order diffreential equation, the
 \end{align}
 where $\omega = \sqrt{\frac{g}{T_{v_0}}(\Gamma_v - \Gamma_v')}$
 
-\subsection{Stabitity analysis}
-3 possible solutions exists:
-\begin{enumerate}[noitemsep]
-    \item Stable solution i.e. ($\Gamma_v' - \Gamma_v) > 0$ 
-    \item Unstable solution i.e. ($\Gamma_v' - \Gamma_v) < 0$ 
-    \item Neutral solution i.e. ($\Gamma_v' - \Gamma_v) = 0$ 
-\end{enumerate}
-
-
-
-% WARN: INCOMPLETE L-25
+% NOTE: COMPLETE L-25
 % --------------------------------------------------------------------------------------
 \clearpage
 % \begin{tikzpicture}

@@ -75,7 +75,7 @@
 \contentsline {subsection}{\numberline {18.4}. Dew point temperature}{39}{subsection.18.4}%
 \contentsline {subsection}{\numberline {18.5}. Latent heat}{39}{subsection.18.5}%
 \contentsline {section}{\numberline {19}Leture 19 21/10/2024}{40}{section.19}%
-\contentsline {subsection}{\numberline {19.1}The Clausius-Clapeyron equation}{40}{subsection.19.1}%
+\contentsline {subsection}{\numberline {19.1}. The Clausius-Clapeyron equation}{40}{subsection.19.1}%
 \contentsline {section}{\numberline {20}Lecture 20 23/10/2024}{41}{section.20}%
 \contentsline {subsection}{\numberline {20.1}. Saturation mixing ratio}{41}{subsection.20.1}%
 \contentsline {section}{\numberline {21}Lecture 21 24/102024}{42}{section.21}%
@@ -88,12 +88,12 @@
 \contentsline {subsection}{\numberline {23.2}. Normand's rule}{44}{subsection.23.2}%
 \contentsline {section}{\numberline {24}Lecture 04/11/2024}{45}{section.24}%
 \contentsline {subsection}{\numberline {24.1}. Adiabatic cloud water content}{45}{subsection.24.1}%
+\contentsline {subsubsection}{Liquid water content (LWC)}{45}{figure.caption.20}%
 \contentsline {subsection}{\numberline {24.2}. Flow over terrain}{45}{subsection.24.2}%
 \contentsline {subsection}{\numberline {24.3}. Atmospheric stability}{45}{subsection.24.3}%
-\contentsline {section}{\numberline {25}Lecture 25 06/11/2024}{47}{section.25}%
-\contentsline {subsection}{\numberline {25.1}. Atmospheric stability}{47}{subsection.25.1}%
-\contentsline {subsubsection}{Convection/small scale process}{47}{equation.25.475}%
-\contentsline {subsubsection}{Three conditions}{47}{Item.50}%
-\contentsline {subsection}{\numberline {25.2}Equation of motion for the parcel}{47}{subsection.25.2}%
-\contentsline {subsection}{\numberline {25.3}Stabitity analysis}{48}{subsection.25.3}%
+\contentsline {section}{\numberline {25}Lecture 25 06/11/2024}{46}{section.25}%
+\contentsline {subsection}{\numberline {25.1}. Atmospheric stability}{46}{subsection.25.1}%
+\contentsline {subsubsection}{Convection/small scale process}{46}{equation.25.476}%
+\contentsline {subsubsection}{Three conditions}{46}{Item.50}%
+\contentsline {subsection}{\numberline {25.2}. Equation of motion for the parcel}{46}{subsection.25.2}%
 \contentsfinish 

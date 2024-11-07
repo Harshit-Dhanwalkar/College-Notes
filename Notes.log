@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.10.7)  7 NOV 2024 06:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.10.7)  7 NOV 2024 17:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1114,21 +1114,21 @@ Overfull \hbox (1.4597pt too wide) detected at line 90
  []
 
 
-Overfull \hbox (1.4597pt too wide) detected at line 91
+Overfull \hbox (1.4597pt too wide) detected at line 92
 \OT1/phv/m/n/10 24.2 
  []
 
 
-Overfull \hbox (1.4597pt too wide) detected at line 92
+Overfull \hbox (1.4597pt too wide) detected at line 93
 \OT1/phv/m/n/10 24.3 
  []
 
 
-Overfull \hbox (1.4597pt too wide) detected at line 94
+Overfull \hbox (1.4597pt too wide) detected at line 95
 \OT1/phv/m/n/10 25.1 
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 96.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 97.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
@@ -1137,13 +1137,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (1.4597pt too wide) detected at line 97
-\OT1/phv/m/n/10 25.2 
- []
-
-
 Overfull \hbox (1.4597pt too wide) detected at line 98
-\OT1/phv/m/n/10 25.3 
+\OT1/phv/m/n/10 25.2 
  []
 
 )
@@ -3291,10 +3286,10 @@ Underfull \vbox (badness 2368) has occurred while \output is active []
  [41
 
 ]
-./Notes.tex:3208: Argument of \XC@definec@lor has an extra }.
+./Notes.tex:3230: Argument of \XC@definec@lor has an extra }.
 <inserted text> 
                 \par 
-l.3208 ...t temperature of 0$^\circ$C at 1000hPa.}
+l.3230 ...t temperature of 0$^\circ$C at 1000hPa.}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -3305,10 +3300,10 @@ your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
 {tcbcolframe}{\label@optarg }\def \reserved@b {\label@noarg }\futurelet \ETC.
-./Notes.tex:3208: Paragraph ended before \XC@definec@lor was complete.
+./Notes.tex:3230: Paragraph ended before \XC@definec@lor was complete.
 <to be read again> 
                    \par 
-l.3208 ...t temperature of 0$^\circ$C at 1000hPa.}
+l.3230 ...t temperature of 0$^\circ$C at 1000hPa.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -3316,37 +3311,37 @@ My plan is to forget the whole thing and hope for the best.
 
 Runaway argument?
 \let \reserved@d =[\def 
-./Notes.tex:3208: Paragraph ended before \pgfkeys@addpath was complete.
+./Notes.tex:3230: Paragraph ended before \pgfkeys@addpath was complete.
 <to be read again> 
                    \par 
-l.3208 ...t temperature of 0$^\circ$C at 1000hPa.}
+l.3230 ...t temperature of 0$^\circ$C at 1000hPa.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-./Notes.tex:3208: Missing \endcsname inserted.
+./Notes.tex:3230: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.3208 ...t temperature of 0$^\circ$C at 1000hPa.}
+l.3230 ...t temperature of 0$^\circ$C at 1000hPa.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./Notes.tex:3208: Missing \endcsname inserted.
+./Notes.tex:3230: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.3208 ...t temperature of 0$^\circ$C at 1000hPa.}
+l.3230 ...t temperature of 0$^\circ$C at 1000hPa.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
 Runaway argument?
 \let \reserved@d =[\def 
-./Notes.tex:3208: Paragraph ended before \pgfkeys@splitter was complete.
+./Notes.tex:3230: Paragraph ended before \pgfkeys@splitter was complete.
 <to be read again> 
                    \par 
-l.3208 ...t temperature of 0$^\circ$C at 1000hPa.}
+l.3230 ...t temperature of 0$^\circ$C at 1000hPa.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -3355,28 +3350,28 @@ My plan is to forget the whole thing and hope for the best.
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@question.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3208 ...t temperature of 0$^\circ$C at 1000hPa.}
+l.3230 ...t temperature of 0$^\circ$C at 1000hPa.}
                                                   
-./Notes.tex:3209: Missing $ inserted.
+./Notes.tex:3231: Missing $ inserted.
 <inserted text> 
                 $
-l.3209     \Rightarrow
+l.3231     \Rightarrow
                        650hPa
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./Notes.tex:3210: Missing $ inserted.
+./Notes.tex:3232: Missing $ inserted.
 <inserted text> 
                 $
-l.3210 \end{question}
+l.3232 \end{question}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./Notes.tex:3212: Argument of \XC@definec@lor has an extra }.
+./Notes.tex:3234: Argument of \XC@definec@lor has an extra }.
 <inserted text> 
                 \par 
-l.3212 ...t temperature of 18$^\circ$C at 900hPa.}
+l.3234 ...t temperature of 18$^\circ$C at 900hPa.}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -3387,10 +3382,10 @@ your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
 {tcbcolframe}{\label@optarg }\def \reserved@b {\label@noarg }\futurelet \ETC.
-./Notes.tex:3212: Paragraph ended before \XC@definec@lor was complete.
+./Notes.tex:3234: Paragraph ended before \XC@definec@lor was complete.
 <to be read again> 
                    \par 
-l.3212 ...t temperature of 18$^\circ$C at 900hPa.}
+l.3234 ...t temperature of 18$^\circ$C at 900hPa.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -3398,37 +3393,37 @@ My plan is to forget the whole thing and hope for the best.
 
 Runaway argument?
 \let \reserved@d =[\def 
-./Notes.tex:3212: Paragraph ended before \pgfkeys@addpath was complete.
+./Notes.tex:3234: Paragraph ended before \pgfkeys@addpath was complete.
 <to be read again> 
                    \par 
-l.3212 ...t temperature of 18$^\circ$C at 900hPa.}
+l.3234 ...t temperature of 18$^\circ$C at 900hPa.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-./Notes.tex:3212: Missing \endcsname inserted.
+./Notes.tex:3234: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.3212 ...t temperature of 18$^\circ$C at 900hPa.}
+l.3234 ...t temperature of 18$^\circ$C at 900hPa.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./Notes.tex:3212: Missing \endcsname inserted.
+./Notes.tex:3234: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.3212 ...t temperature of 18$^\circ$C at 900hPa.}
+l.3234 ...t temperature of 18$^\circ$C at 900hPa.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
 Runaway argument?
 \let \reserved@d =[\def 
-./Notes.tex:3212: Paragraph ended before \pgfkeys@splitter was complete.
+./Notes.tex:3234: Paragraph ended before \pgfkeys@splitter was complete.
 <to be read again> 
                    \par 
-l.3212 ...t temperature of 18$^\circ$C at 900hPa.}
+l.3234 ...t temperature of 18$^\circ$C at 900hPa.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -3437,36 +3432,36 @@ My plan is to forget the whole thing and hope for the best.
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@question.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3212 ...t temperature of 18$^\circ$C at 900hPa.}
+l.3234 ...t temperature of 18$^\circ$C at 900hPa.}
                                                   
-./Notes.tex:3213: Missing $ inserted.
+./Notes.tex:3235: Missing $ inserted.
 <inserted text> 
                 $
-l.3213     \Rightarrow
+l.3235     \Rightarrow
                        920hPa
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./Notes.tex:3214: Missing $ inserted.
+./Notes.tex:3236: Missing $ inserted.
 <inserted text> 
                 $
-l.3214 \end{question}
+l.3236 \end{question}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3224--3225
+Underfull \hbox (badness 10000) in paragraph at lines 3246--3247
 
  []
 
 [42
 
 ]
-./Notes.tex:3258: Undefined control sequence.
+./Notes.tex:3280: Undefined control sequence.
 <argument> \patial 
                    \omega _s
-l.3258 \end{align}
+l.3280 \end{align}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3474,10 +3469,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Notes.tex:3258: Undefined control sequence.
+./Notes.tex:3280: Undefined control sequence.
 <argument> \patial 
                    \omega _s
-l.3258 \end{align}
+l.3280 \end{align}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3485,10 +3480,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Notes.tex:3258: Undefined control sequence.
+./Notes.tex:3280: Undefined control sequence.
 <argument> \patial 
                    \omega _s
-l.3258 \end{align}
+l.3280 \end{align}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3496,10 +3491,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Notes.tex:3258: Undefined control sequence.
+./Notes.tex:3280: Undefined control sequence.
 <argument> \patial 
                    \omega _s
-l.3258 \end{align}
+l.3280 \end{align}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3508,30 +3503,30 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (10.10194pt too wide) in paragraph at lines 3294--3295
+Overfull \hbox (10.10194pt too wide) in paragraph at lines 3316--3317
 []\OT1/ptm/m/n/10 (-20) If $\OML/ztmcm/m/it/10 ![] \OT1/ztmcm/m/n/10 = 0$\OT1/ptm/m/n/10 (-20) , which mean air is not moist$\OMS/ztmcm/m/n/10 !$$\OT1/ztmcm/m/n/10 ^^@[] = ^^@[] = 9\OML/ztmcm/m/it/10 :\OT1/ztmcm/m/n/10 8[]\OML/ztmcm/m/it/10 C=km$ 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3302.
+(hyperref)                removing `math shift' on input line 3324.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\theta' on input line 3302.
+(hyperref)                removing `\theta' on input line 3324.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3302.
+(hyperref)                removing `subscript' on input line 3324.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3302.
+(hyperref)                removing `math shift' on input line 3324.
 
-./Notes.tex:3308: Argument of \XC@definec@lor has an extra }.
+./Notes.tex:3330: Argument of \XC@definec@lor has an extra }.
 <inserted text> 
                 \par 
-l.3308 ...00hPa; which then raises adiabatically.}
+l.3330 ...00hPa; which then raises adiabatically.}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -3542,10 +3537,10 @@ your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
 {tcbcolframe}{\label@optarg }\def \reserved@b {\label@noarg }\futurelet \ETC.
-./Notes.tex:3308: Paragraph ended before \XC@definec@lor was complete.
+./Notes.tex:3330: Paragraph ended before \XC@definec@lor was complete.
 <to be read again> 
                    \par 
-l.3308 ...00hPa; which then raises adiabatically.}
+l.3330 ...00hPa; which then raises adiabatically.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -3553,45 +3548,45 @@ My plan is to forget the whole thing and hope for the best.
 
 Runaway argument?
 \let \reserved@d =[\def 
-./Notes.tex:3308: Paragraph ended before \pgfkeys@addpath was complete.
+./Notes.tex:3330: Paragraph ended before \pgfkeys@addpath was complete.
 <to be read again> 
                    \par 
-l.3308 ...00hPa; which then raises adiabatically.}
+l.3330 ...00hPa; which then raises adiabatically.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-./Notes.tex:3308: Missing \endcsname inserted.
+./Notes.tex:3330: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.3308 ...00hPa; which then raises adiabatically.}
+l.3330 ...00hPa; which then raises adiabatically.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./Notes.tex:3308: Missing \endcsname inserted.
+./Notes.tex:3330: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.3308 ...00hPa; which then raises adiabatically.}
+l.3330 ...00hPa; which then raises adiabatically.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./Notes.tex:3308: Missing \endcsname inserted.
+./Notes.tex:3330: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.3308 ...00hPa; which then raises adiabatically.}
+l.3330 ...00hPa; which then raises adiabatically.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
 Runaway argument?
 \let \reserved@d =[\def 
-./Notes.tex:3308: Paragraph ended before \pgfkeys@splitter was complete.
+./Notes.tex:3330: Paragraph ended before \pgfkeys@splitter was complete.
 <to be read again> 
                    \par 
-l.3308 ...00hPa; which then raises adiabatically.}
+l.3330 ...00hPa; which then raises adiabatically.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -3600,39 +3595,34 @@ My plan is to forget the whole thing and hope for the best.
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@question.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3308 ...00hPa; which then raises adiabatically.}
+l.3330 ...00hPa; which then raises adiabatically.}
                                                   
-./Notes.tex:3309: Missing $ inserted.
+./Notes.tex:3331: Missing $ inserted.
 <inserted text> 
                 $
-l.3309     \Rightarrow
+l.3331     \Rightarrow
                        \text{770hPa and 650hPa}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./Notes.tex:3310: Missing $ inserted.
+./Notes.tex:3332: Missing $ inserted.
 <inserted text> 
                 $
-l.3310 \end{question}
+l.3332 \end{question}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 [43
 
-]
-Overfull \hbox (107.06847pt too wide) in paragraph at lines 3386--3387
- [][] 
- []
-
-[44
+] [44
 
 
 ]
-./Notes.tex:3575: Argument of \XC@definec@lor has an extra }.
+./Notes.tex:3590: Argument of \XC@definec@lor has an extra }.
 <inserted text> 
                 \par 
-l.3575 ...side of the mountain at the same level.}
+l.3590 ...side of the mountain at the same level.}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -3643,10 +3633,10 @@ your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
 {tcbcolframe}{\label@optarg }\def \reserved@b {\label@noarg }\futurelet \ETC.
-./Notes.tex:3575: Paragraph ended before \XC@definec@lor was complete.
+./Notes.tex:3590: Paragraph ended before \XC@definec@lor was complete.
 <to be read again> 
                    \par 
-l.3575 ...side of the mountain at the same level.}
+l.3590 ...side of the mountain at the same level.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -3654,45 +3644,45 @@ My plan is to forget the whole thing and hope for the best.
 
 Runaway argument?
 \let \reserved@d =[\def 
-./Notes.tex:3575: Paragraph ended before \pgfkeys@addpath was complete.
+./Notes.tex:3590: Paragraph ended before \pgfkeys@addpath was complete.
 <to be read again> 
                    \par 
-l.3575 ...side of the mountain at the same level.}
+l.3590 ...side of the mountain at the same level.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-./Notes.tex:3575: Missing \endcsname inserted.
+./Notes.tex:3590: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.3575 ...side of the mountain at the same level.}
+l.3590 ...side of the mountain at the same level.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./Notes.tex:3575: Missing \endcsname inserted.
+./Notes.tex:3590: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.3575 ...side of the mountain at the same level.}
+l.3590 ...side of the mountain at the same level.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./Notes.tex:3575: Missing \endcsname inserted.
+./Notes.tex:3590: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.3575 ...side of the mountain at the same level.}
+l.3590 ...side of the mountain at the same level.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
 Runaway argument?
 \let \reserved@d =[\def 
-./Notes.tex:3575: Paragraph ended before \pgfkeys@splitter was complete.
+./Notes.tex:3590: Paragraph ended before \pgfkeys@splitter was complete.
 <to be read again> 
                    \par 
-l.3575 ...side of the mountain at the same level.}
+l.3590 ...side of the mountain at the same level.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -3701,42 +3691,54 @@ My plan is to forget the whole thing and hope for the best.
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@question.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3575 ...side of the mountain at the same level.}
+l.3590 ...side of the mountain at the same level.}
                                                   
-Underfull \vbox (badness 3965) has occurred while \output is active []
+./Notes.tex:3591: Missing $ inserted.
+<inserted text> 
+                $
+l.3591 \Rightarrow
+                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
- [45
+./Notes.tex:3592: Missing $ inserted.
+<inserted text> 
+                $
+l.3592 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
-] [46
+[45
 
 ]
-Overfull \hbox (19.96196pt too wide) in paragraph at lines 3714--3715
+Overfull \hbox (19.96196pt too wide) in paragraph at lines 3730--3731
  [][] 
  []
 
-[47
+[46
 
-] [48
+] [47
 
 ] 
 AED: lastpage setting LastPage
 (./Notes.aux)
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: 79BAF71080545F2EE65D2AFCFF72A521;17752.
+(rerunfilecheck)             Checksum: EB4C38A4FCE133FA5AA1CFB1DC8A4E33;17837.
  ) 
 Here is how much of TeX's memory you used:
- 45287 strings out of 480247
- 1034534 string characters out of 5896151
- 1515508 words of memory out of 5000000
- 61350 multiletter control sequences out of 15000+600000
+ 45542 strings out of 480247
+ 1039828 string characters out of 5896151
+ 1504848 words of memory out of 5000000
+ 61611 multiletter control sequences out of 15000+600000
  562552 words of font info for 429 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  98i,21n,94p,1002b,2938s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Notes.pdf (48 pages, 4932856 bytes).
+Output written on Notes.pdf (47 pages, 4933275 bytes).
 PDF statistics:
- 1701 PDF objects out of 1728 (max. 8388607)
- 1492 compressed objects within 15 object streams
- 727 named destinations out of 1000 (max. 500000)
+ 1690 PDF objects out of 1728 (max. 8388607)
+ 1482 compressed objects within 15 object streams
+ 721 named destinations out of 1000 (max. 500000)
  127315 words of extra memory for PDF output out of 128383 (max. 10000000)
 
