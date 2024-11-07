@@ -3804,6 +3804,60 @@ where $\omega = \sqrt{\frac{g}{T_{v_0}}(\Gamma_v - \Gamma_v')}$
 % NOTE: COMPLETE L-25
 % --------------------------------------------------------------------------------------
 \clearpage
+
+\section{Leture 26 07/11/2024}
+\subsection{. Stabitity analysis}
+3 possible solutions exists:
+\begin{enumerate}[noitemsep]
+    \item Stable solution i.e. ($\Gamma_v' - \Gamma_v) > 0$ 
+        \begin{align}
+            \frac{d^2z}{dt^2} + \omega^2z &= 0
+        \end{align}
+        General solution is:
+        \begin{align}
+            z(t) &= A \sin{\omega t} + B \cos{\omega t}
+        \end{align}
+        Boundary conditions :
+        $t=0, z=0 \Rightarrow B=0$
+        \begin{align}
+            z(t) &= A \sin{\omega t}
+        \end{align}
+        Time period of oscillation $\Rightarrow$ \tau=\frac{2 \pi}{\omega}$ \\
+        % TODO: plot
+    \item Unstable solution i.e. ($\Gamma_v' - \Gamma_v) < 0$ 
+        \begin{align}
+            \frac{d^2z}{dt^2} - \omega^2z &= 0
+        \end{align}
+        General solution is:
+        \begin{align}
+            z(t) &= A \exp{(\omega t)} + B \exp{(-\omega t)}
+        \end{align}
+        Boundary conditions :
+        $t\rightarrow \infty \Rightarrow A=B\neq0$
+        \begin{align}
+            z(t) &= A \exp{(\omega t)}
+        \end{align}
+        Time period of oscillation $\rightarrow$ \tau=\frac{2 \pi}{\omega}$ \\
+        % TODO: plot
+    \item Neutral solution i.e. ($\Gamma_v' - \Gamma_v) = 0$ 
+        \begin{align}
+            \frac{d^2z}{dt} &= 0 
+        \end{align}
+        General solution is:
+        \begin{align}
+            z(t) &= A t + B
+        \end{align}
+        Boundary conditions :
+        $t=0 \Rightarrow A=0$
+        \begin{align}
+            \frac{dz(t)}{dt} &= A
+        \end{align}
+        Time period of oscillation is \textbf{not defined}.
+\end{enumerate}
+
+% WARN: INCOMPLETE L-26
+% --------------------------------------------------------------------------------------
+\clearpage
 % \begin{tikzpicture}
 %     [tdplot_main_coords,
 %     grid/.style={very thin,gray},
