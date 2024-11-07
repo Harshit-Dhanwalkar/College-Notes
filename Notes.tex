@@ -3854,10 +3854,33 @@ where $\omega = \sqrt{\frac{g}{T_{v_0}}(\Gamma_v - \Gamma_v')}$
         \end{align}
         Time period of oscillation is \textbf{not defined}.
 \end{enumerate}
+For unstaurated air parcel :
+\begin{enumerate}[noitemsep]
+    \item $\Gamma_{\text{EL}} > \Gamma_d \rightarrow$ atmosphere becomes unstable.
+    \item $\Gamma_{\text{EL}} < \Gamma_d \rightarrow$ atmosphere becomes stable.
+\end{enumerate}
+% FIX: add plot 
+For staurated air parcel :
+\begin{enumerate}[noitemsep]
+    \item $\Gamma_{\text{EL}} > \Gamma_s \rightarrow$ atmosphere becomes unstable.
+    \item $\Gamma_{\text{EL}} < \Gamma_s \rightarrow$ atmosphere becomes stable.
+    \item $\Gamma_{\text{EL}} = \Gamma_s \rightarrow$ atmosphere becomes neutral.
+\end{enumerate}
+% FIX: add plot 
+where,\vspace{-0.2cm}
+\begin{align*}
+    \Gamma_{\text{EL}} &= \text{environment lapse rate} \\
+    \Gamma_d &= 9.8^{\circ}\text{C/km} \\
+    \Gamma_s &\approx 6.5^{\circ}\text{C/km \quad (depends on place and humidity)}
+\end{align*}
+\begin{enumerate}[noitemsep]
+    \item $\Gamma_{\text{EL}} > \Gamma_d \rightarrow$ layer is absolutely unstable.
+    \item $\Gamma_{\text{EL}} < \Gamma_s \rightarrow$ layer is absolutely stable.
+    \item $\Gamma_d < \Gamma_{\text{EL}} < \Gamma_d \rightarrow$ layer is conditionally unstable (conditionlly instablilty).
+\end{enumerate}
+% FIX: add plot 
 
-% FIX: add content
-
-\subsection{Convective instability or Potential instability}
+\subsection{. Convective instability or Potential instability}
 Potential temperature $(\theta_e)$:
 \begin{align}
     \theta_e &= T\Big(\frac{1000}{P}\Big)^{\frac{R_d}{C_p}}
@@ -3881,6 +3904,113 @@ Differentiating above Eq. w.r.t $z$
     \item $\frac{d\theta_e}{dz} = 0 \rightarrow $ Neutral
 \end{enumerate}
 
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.5*\textwidth, height=8cm,
+            xlabel={Temperature (T) [°C]},
+            ylabel={Height (z) [m]},
+            xmin=-10, xmax=30,
+            ymin=0, ymax=15000,
+            thick,
+            grid=both,
+            major grid style={line width=0.2pt,draw=gray!30},
+            minor grid style={line width=0.2pt,draw=gray!20}
+            xtick=\empty,
+            ytick=\empty,
+            xticklabels=\empty,
+            yticklabels=\empty,
+        ]
+            \addplot[green!90, thick, domain=12.5:2.5] 
+                {6000} node[left, color=green] {LCL};
+
+            \addplot[red!80, thick, domain=-10:30] 
+                {7000} node[right, color=red] {650 hPa};
+
+            \addplot[red!80, thick, domain=-10:30, line width=2.5pt] 
+                {5000} node[right, color=orange] {750 hPa};
+
+            \addplot[blue!80, thick, dashed, domain=-10:30] 
+                {8000} node[right, color=red] {650 hPa};
+
+            \addplot[blue!80, thick, dashed, domain=-10:30] 
+                {10000} node[right, color=orange] {750 hPa};
+
+            % Plot the temperature vs height line
+            \addplot[blue, thick, mark=none] table {
+                 5  5000
+                 10 7000
+            };
+            \addplot[blue, thick, mark=none] table {
+                 3  8000
+                 -2 10000
+            };
+
+            % Add arrows to show the shift
+            \draw[->, thick, black!70] (axis cs:15,5000) -- (axis cs:15,8000);
+            \draw[->, thick, black!70] (axis cs:20,7000) -- (axis cs:20,10000);
+
+            \node[below] at (10,5000) {Mosit layer};
+            \node[below] at (-3,1500) {$\Gamma_s \approx 6.5^\circ$C/km};
+            \node[below] at (-3,2500) {$\Gamma = 9.8^\circ$C/km};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.5*\textwidth, height=8cm,
+            xlabel={Temperature (T) [°C]},
+            ylabel={Height (z) [m]},
+            xmin=-10, xmax=30,
+            ymin=0, ymax=15000,
+            thick,
+            grid=both,
+            major grid style={line width=0.2pt,draw=gray!30},
+            minor grid style={line width=0.2pt,draw=gray!20}
+            xtick=\empty,
+            ytick=\empty,
+            xticklabels=\empty,
+            yticklabels=\empty,
+        ]
+            \addplot[green!90, thick, domain=12.5:2.5] 
+                {6000} node[left, color=green] {LCL};
+
+            \addplot[red!80, thick, domain=-10:30] 
+                {7000} node[right, color=red] {650 hPa};
+
+            \addplot[red!80, thick, domain=-10:30, line width=2.5pt] 
+                {5000} node[right, color=orange] {750 hPa};
+
+            \addplot[blue!80, thick, dashed, domain=-10:30] 
+                {8000} node[right, color=red] {650 hPa};
+
+            \addplot[blue!80, thick, dashed, domain=-10:30] 
+                {10000} node[right, color=orange] {750 hPa};
+
+            % Plot the temperature vs height line
+            \addplot[blue, thick, mark=none] table {
+                 5  5000
+                 10 7000
+            };
+            \addplot[blue, thick, mark=none] table {
+                 3  10000
+                 -2 8000
+            };
+
+            % Add arrows to show the shift
+            \draw[->, thick, black!70] (axis cs:15,5000) -- (axis cs:15,8000);
+            \draw[->, thick, black!70] (axis cs:20,7000) -- (axis cs:20,10000);
+
+            \node[below] at (10,13000) {Dry layers};
+            \node[below] at (-3,2500) {$\Gamma = 9.8^\circ$C/km};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+% FIX: above 2 plots/figures
 % WARN: INCOMPLETE L-26
 % --------------------------------------------------------------------------------------
 \clearpage

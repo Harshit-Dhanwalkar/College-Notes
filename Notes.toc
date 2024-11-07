@@ -98,5 +98,5 @@
 \contentsline {subsection}{\numberline {25.2}. Equation of motion for the parcel}{46}{subsection.25.2}%
 \contentsline {section}{\numberline {26}Leture 26 07/11/2024}{48}{section.26}%
 \contentsline {subsection}{\numberline {26.1}. Stabitity analysis}{48}{subsection.26.1}%
-\contentsline {subsection}{\numberline {26.2}Convective instability or Potential instability}{48}{subsection.26.2}%
+\contentsline {subsection}{\numberline {26.2}. Convective instability or Potential instability}{48}{subsection.26.2}%
 \contentsfinish 
