@@ -98,5 +98,8 @@
 \contentsline {subsection}{\numberline {25.2}. Equation of motion for the parcel}{46}{subsection.25.2}%
 \contentsline {section}{\numberline {26}Leture 26 07/11/2024}{48}{section.26}%
 \contentsline {subsection}{\numberline {26.1}. Stabitity analysis}{48}{subsection.26.1}%
-\contentsline {subsection}{\numberline {26.2}. Convective instability or Potential instability}{48}{subsection.26.2}%
+\contentsline {subsection}{\numberline {26.2}. Convective instability or Potential instability}{49}{subsection.26.2}%
+\contentsline {section}{\numberline {27}Lecture 27 08/11/2024}{50}{section.27}%
+\contentsline {subsection}{\numberline {27.1}. Convective Available Potential Energy (CAPE) and Convective Inhibition (CIN)}{50}{subsection.27.1}%
+\contentsline {subsubsection}{Theritical maximum velocity}{50}{equation.27.527}%
 \contentsfinish 

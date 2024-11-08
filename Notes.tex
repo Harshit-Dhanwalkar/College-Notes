@@ -3751,7 +3751,7 @@ Because the environment is in hydrostatic equlibrium given by Eq\myeqref{eq:hyfr
 \end{align}
 Using Ideal gas equation,
 \begin{align}
-    \frac{d^2z}{dt^2} &= \Big(\frac{T_v'- T_v}{T_v}\Big)g
+    \frac{d^2z}{dt^2} &= \Big(\frac{T_v'- T_v}{T_v}\Big)g \label{eq:dzdt}
 \end{align}
 
 We consider a displacement of a parcel from its mean position ,such that $z \ll 1$.
@@ -3813,7 +3813,7 @@ where $\omega = \sqrt{\frac{g}{T_{v_0}}(\Gamma_v - \Gamma_v')}$
         \begin{align}
             \frac{d^2z}{dt^2} + \omega^2z &= 0
         \end{align}
-        General solution is:
+        General solution is :
         \begin{align}
             z(t) &= A \sin{\omega t} + B \cos{\omega t}
         \end{align}
@@ -3828,7 +3828,7 @@ where $\omega = \sqrt{\frac{g}{T_{v_0}}(\Gamma_v - \Gamma_v')}$
         \begin{align}
             \frac{d^2z}{dt^2} - \omega^2z &= 0
         \end{align}
-        General solution is:
+        General solution is :
         \begin{align}
             z(t) &= A \exp{(\omega t)} + B \exp{(-\omega t)}
         \end{align}
@@ -3859,16 +3859,35 @@ For unstaurated air parcel :
     \item $\Gamma_{\text{EL}} > \Gamma_d \rightarrow$ atmosphere becomes unstable.
     \item $\Gamma_{\text{EL}} < \Gamma_d \rightarrow$ atmosphere becomes stable.
 \end{enumerate}
+For staurated air parcel :
+\begin{enumerate}[noitemsep]
+    \item $\Gamma_{\text{EL}} > \Gamma_s \rightarrow$ atmosphere becomes unstable.
+    \item $\Gamma_{\text{EL}} < \Gamma_s \rightarrow$ atmosphere becomes stable.
+    \item $\Gamma_{\text{EL}} = \Gamma_s \rightarrow$ atmosphere becomes neutral.
+\end{enumerate}
+
+where,\vspace{-0.2cm}
+\begin{align*}
+    \Gamma_{\text{EL}} &= \text{environment lapse rate} \\
+    \Gamma_d &= 9.8^{\circ}\text{C/km} \\
+    \Gamma_s &\approx 6.5^{\circ}\text{C/km \quad (depends on place and humidity)}
+\end{align*}
+\begin{enumerate}[noitemsep]
+    \item $\Gamma_{\text{EL}} > \Gamma_d \rightarrow$ layer is absolutely unstable.
+    \item $\Gamma_{\text{EL}} < \Gamma_s \rightarrow$ layer is absolutely stable.
+    \item $\Gamma_d < \Gamma_{\text{EL}} < \Gamma_d \rightarrow$ layer is conditionally unstable (conditionlly instablilty).
+\end{enumerate}
+
 \begin{figure}[ht]
     \centering
     \begin{tikzpicture}
         \begin{axis}[
             width=0.5\textwidth,
-            height=0.4\textwidth,
+            height=0.3\textheight,
             xlabel={Temperature (°C)},
             ylabel={Height (km)},
             xmin=-15, xmax=15,
-            ymin=0, ymax=10,
+            ymin=2, ymax=9,
             % axis lines=middle,
             legend style={at={(0.316,1)}, anchor=north west},
             every axis y label/.style={at={(axis description cs:0,0.5)},rotate=90,anchor=south},
@@ -3883,7 +3902,6 @@ For unstaurated air parcel :
             xmajorgrids=true,
             grid=major,
             ]
-
             % Dry Adiabatic Lapse Rate (approx. -9.8 °C/km)
             \addplot[red!80, thick, domain=-10:10] {-x/9.8 + 5};
             \addlegendentry{Dry Adiabatic Lapse Rate}
@@ -3908,39 +3926,33 @@ For unstaurated air parcel :
             % \node[above left] at (axis cs: -3.6, 0) {$T_B$}; % Label T_B
         \end{axis}
     \end{tikzpicture}
-    %\caption{}
+    \caption{Case 1: $\Gamma_B > \Gamma_{dA}$}
 \end{figure}
-For staurated air parcel :
-\begin{enumerate}[noitemsep]
-    \item $\Gamma_{\text{EL}} > \Gamma_s \rightarrow$ atmosphere becomes unstable.
-    \item $\Gamma_{\text{EL}} < \Gamma_s \rightarrow$ atmosphere becomes stable.
-    \item $\Gamma_{\text{EL}} = \Gamma_s \rightarrow$ atmosphere becomes neutral.
-\end{enumerate}
+
 \begin{figure}[ht]
     \centering
     \begin{tikzpicture}
         \begin{axis}[
             width=0.5\textwidth,
-            height=0.4\textwidth,
+            height=0.3\textheight,
             xlabel={Temperature (°C)},
             ylabel={Height (km)},
             xmin=-15, xmax=15,
-            ymin=0, ymax=10,
+            ymin=2, ymax=9,
             % axis lines=middle,
             legend style={at={(0.316,1)}, anchor=north west},
             every axis y label/.style={at={(axis description cs:0,0.5)},rotate=90,anchor=south},
             every axis x label/.style={at={(axis description cs:0.5,-0.05)},anchor=north},
             xtick = \empty,
             ytick = \empty,
-            xtick={-7, -3.6}, % Tick positions for T_A and T_B
+            xtick={-7.5, -3.85}, % Tick positions for T_A and T_B
             xticklabels={$T_B$, $T_A$}, % Labels for the ticks
-            % ytick={5,5.6},
-            % yticklabels={}, % Labels for the ticks
+            ytick={5,5.35},
+            yticklabels={}, % Labels for the ticks
             ymajorgrids=true,
             xmajorgrids=true,
             grid=major,
             ]
-
             % Dry Adiabatic Lapse Rate (approx. -9.8 °C/km)
             \addplot[red!80, thick, domain=-10:10] {-x/9.8 + 5};
             \addlegendentry{Dry Adiabatic Lapse Rate}
@@ -3949,13 +3961,13 @@ For staurated air parcel :
             \addlegendentry{Moist Adiabatic Lapse Rate}
             % Vertical lines from arbitrary points on each curve
             \addplot[red!80, dashed] coordinates {(-4, 5.5) (-4, 0)};
-            \addplot[blue!80, dashed] coordinates {(-7.5, 5.5) (-7.5, 0)};
-            \addplot[black!80, dashed] coordinates {(-3.6, 5.65) (-15, 5.65)};
+            \addplot[blue!80, dashed] coordinates {(-7.5, 5.35) (-7.5, 0)};
+            \addplot[black!80, dashed] coordinates {(-3.6, 5.35) (-15, 5.35)};
             % Intersection point of the two lapse rates
             \addplot[black, dashed] coordinates {(0, 5) (0, 0)};
             % Markers at the intersection and arbitrary points
-            \addplot[mark=*] coordinates {(-7, 5.7)} node[above] {$B$}; % Point A on Dry Adiabatic
-            \addplot[mark=*] coordinates {(-3.6, 5.7)} node[above] {$A$}; % Point B on Moist Adiabatic
+            \addplot[mark=*] coordinates {(-7.5, 5.33)} node[above] {$B$}; % Point A on Dry Adiabatic
+            \addplot[mark=*] coordinates {(-3.85, 5.35)} node[above] {$A$}; % Point B on Moist Adiabatic
             \addplot[mark=*] coordinates {(0, 5)} node[above] {$O$}; % Intersection point O
             % Labels for Dry and Moist Adiabatic Lapse Rates
             \node[red!80] at (axis cs: 10, 3.5) {$\Gamma_d$}; % Label for Dry Adiabatic
@@ -3965,21 +3977,63 @@ For staurated air parcel :
             % \node[above left] at (axis cs: -3.6, 0) {$T_B$}; % Label T_B
         \end{axis}
     \end{tikzpicture}
-    \caption{Height vs Temperature for Dry and Moist Adiabatic Lapse Rates}
+    \caption{Case 2: $\Gamma_B < \Gamma_{dA}$}
 \end{figure}
-where,\vspace{-0.2cm}
-\begin{align*}
-    \Gamma_{\text{EL}} &= \text{environment lapse rate} \\
-    \Gamma_d &= 9.8^{\circ}\text{C/km} \\
-    \Gamma_s &\approx 6.5^{\circ}\text{C/km \quad (depends on place and humidity)}
-\end{align*}
-\begin{enumerate}[noitemsep]
-    \item $\Gamma_{\text{EL}} > \Gamma_d \rightarrow$ layer is absolutely unstable.
-    \item $\Gamma_{\text{EL}} < \Gamma_s \rightarrow$ layer is absolutely stable.
-    \item $\Gamma_d < \Gamma_{\text{EL}} < \Gamma_d \rightarrow$ layer is conditionally unstable (conditionlly instablilty).
-\end{enumerate}
-% FIX: add plot 
 
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.5\textwidth,
+            height=0.3\textheight,
+            xlabel={Temperature (°C)},
+            ylabel={Height (km)},
+            xmin=-15, xmax=15,
+            ymin=2, ymax=9,
+            % axis lines=middle,
+            legend style={at={(0.316,1)}, anchor=north west},
+            every axis y label/.style={at={(axis description cs:0,0.5)},rotate=90,anchor=south},
+            every axis x label/.style={at={(axis description cs:0.5,-0.05)},anchor=north},
+            xtick = \empty,
+            ytick = \empty,
+            xtick=-7.5, % Tick positions for T_A and T_B
+            xticklabels={}, % Labels for the ticks
+            ytick=5
+            yticklabels={}, % Labels for the ticks
+            ymajorgrids=true,
+            xmajorgrids=true,
+            grid=major,
+            ]
+            % Dry Adiabatic Lapse Rate (approx. -9.8 °C/km)
+            \addplot[red!80, thick, domain=-10:10] {-x/9.8 + 5};
+            \addlegendentry{Dry Adiabatic Lapse Rate}
+            % Moist (Saturated) Adiabatic Lapse Rate (approx. -15 °C/km)
+            \addplot[blue!80, thick, domain=-10:10] {-x/5 + 5};
+            \addlegendentry{Moist Adiabatic Lapse Rate}
+            % Vertical lines from arbitrary points on each curve
+            \addplot[red!80, dashed] coordinates {(-7.5, 5.35) (-7.5, 0)};
+            \addplot[blue!80, dashed] coordinates {(-7.5, 5.35) (-7.5, 0)};
+            \addplot[black!80, dashed] coordinates {(-15, 5) (0, 5)};
+            \addplot[black!80, dashed] coordinates {(-15, 5.75) (-7.5, 5.75)};
+            \addplot[black!80, dashed] coordinates {(-15, 6.53) (-7.5, 6.53)};
+            % Intersection point of the two lapse rates
+            \addplot[black, dashed] coordinates {(0, 5) (0, 0)};
+            % Markers at the intersection and arbitrary points
+            \addplot[mark=*] coordinates {(-7.5, 5.73)} node[above] {$A$};
+            \addplot[mark=*] coordinates {(-7.5, 6.53)} node[above] {$B$};
+            \addplot[mark=*] coordinates {(0, 5)} node[above] {$O$};
+            % Labels for Dry and Moist Adiabatic Lapse Rates
+            \node[red!80] at (axis cs: 10, 4.5) {$\Gamma_d$}; % Label for Dry Adiabatic
+            \node[blue!80] at (axis cs: 10, 3.5) {$\Gamma$};   % Label for Moist Adiabatic
+            % Labels at the foot of the projection lines for A and B
+            % \node[above left] at (axis cs: -7, 0) {$T_A$};  % Label T_A
+            % \node[above left] at (axis cs: -3.6, 0) {$T_B$}; % Label T_B
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Case 3: $\Gamma_B = \Gamma_{dA}$}
+\end{figure}
+
+\newpage
 \subsection{. Convective instability or Potential instability}
 Potential temperature $(\theta_e)$:
 \begin{align}
@@ -4008,11 +4062,11 @@ Differentiating above Eq. w.r.t $z$
     \centering
     \begin{tikzpicture}
         \begin{axis}[
-            width=0.5*\textwidth, height=8cm,
+            width=0.5*\textwidth, height=6cm,
             xlabel={Temperature (T) [°C]},
             ylabel={Height (z) [m]},
             xmin=-10, xmax=30,
-            ymin=0, ymax=15000,
+            ymin=0, ymax=13000,
             thick,
             grid=both,
             major grid style={line width=0.2pt,draw=gray!30},
@@ -4024,19 +4078,14 @@ Differentiating above Eq. w.r.t $z$
         ]
             \addplot[green!90, thick, domain=12.5:2.5] 
                 {6000} node[left, color=green] {LCL};
-
             \addplot[red!80, thick, domain=-10:30] 
                 {7000} node[right, color=red] {650 hPa};
-
             \addplot[red!80, thick, domain=-10:30, line width=2.5pt] 
                 {5000} node[right, color=orange] {750 hPa};
-
             \addplot[blue!80, thick, dashed, domain=-10:30] 
                 {8000} node[right, color=red] {650 hPa};
-
             \addplot[blue!80, thick, dashed, domain=-10:30] 
                 {10000} node[right, color=orange] {750 hPa};
-
             % Plot the temperature vs height line
             \addplot[blue, thick, mark=none] table {
                  5  5000
@@ -4046,11 +4095,9 @@ Differentiating above Eq. w.r.t $z$
                  3  8000
                  -2 10000
             };
-
             % Add arrows to show the shift
             \draw[->, thick, black!70] (axis cs:15,5000) -- (axis cs:15,8000);
             \draw[->, thick, black!70] (axis cs:20,7000) -- (axis cs:20,10000);
-
             \node[below] at (10,5000) {Mosit layer};
             \node[below] at (-3,1500) {$\Gamma_s \approx 6.5^\circ$C/km};
             \node[below] at (-3,2500) {$\Gamma = 9.8^\circ$C/km};
@@ -4062,11 +4109,11 @@ Differentiating above Eq. w.r.t $z$
     \centering
     \begin{tikzpicture}
         \begin{axis}[
-            width=0.5*\textwidth, height=8cm,
+            width=0.5*\textwidth, height=6cm,
             xlabel={Temperature (T) [°C]},
             ylabel={Height (z) [m]},
             xmin=-10, xmax=30,
-            ymin=0, ymax=15000,
+            ymin=0, ymax=13000,
             thick,
             grid=both,
             major grid style={line width=0.2pt,draw=gray!30},
@@ -4078,19 +4125,14 @@ Differentiating above Eq. w.r.t $z$
         ]
             \addplot[green!90, thick, domain=12.5:2.5] 
                 {6000} node[left, color=green] {LCL};
-
             \addplot[red!80, thick, domain=-10:30] 
                 {7000} node[right, color=red] {650 hPa};
-
             \addplot[red!80, thick, domain=-10:30, line width=2.5pt] 
                 {5000} node[right, color=orange] {750 hPa};
-
             \addplot[blue!80, thick, dashed, domain=-10:30] 
                 {8000} node[right, color=red] {650 hPa};
-
             \addplot[blue!80, thick, dashed, domain=-10:30] 
                 {10000} node[right, color=orange] {750 hPa};
-
             % Plot the temperature vs height line
             \addplot[blue, thick, mark=none] table {
                  5  5000
@@ -4100,18 +4142,91 @@ Differentiating above Eq. w.r.t $z$
                  3  10000
                  -2 8000
             };
-
             % Add arrows to show the shift
             \draw[->, thick, black!70] (axis cs:15,5000) -- (axis cs:15,8000);
             \draw[->, thick, black!70] (axis cs:20,7000) -- (axis cs:20,10000);
-
             \node[below] at (10,13000) {Dry layers};
             \node[below] at (-3,2500) {$\Gamma = 9.8^\circ$C/km};
         \end{axis}
     \end{tikzpicture}
 \end{figure}
-% FIX: above 2 plots/figures
-% WARN: INCOMPLETE L-26
+% NOTE: COMPLETE L-26
+% --------------------------------------------------------------------------------------
+\clearpage
+
+\section{Lecture 27 08/11/2024}
+\subsection{. Convective Available Potential Energy (CAPE) and Convective Inhibition (CIN)}
+\begin{align}
+    \delta \omega &= F\cdot dz \\
+    \delta \omega &= ma dz \\
+    \delta \omega &= m \frac{d^2z}{dt^2} dz 
+\end{align}
+
+Integrating above equation to get total work done by the parcel and using Eq\myeqref{eq:dzdt};
+\begin{align}
+    W &= \int^f_i mg \Big(\frac{T_v'-T_v}{T_v}\Big)dz \\
+    w &= \int^f_i g \Big(\frac{T_v'-T_v}{T_v}\Big)dz
+\end{align}
+Using hydrosattic equation/approximation Eq\myeqref{eq:hydrostatic_eq};
+\begin{align}
+    w &= \int^f_i \frac{-1}{\rho} \Big(\frac{T_v'-T_v}{T_v}\Big)dp
+\end{align}
+Using Ideal equation ($P = \rho R_dT_v$);
+\begin{align}
+    w &= \int^f_i -\Big(\frac{R_d \cancel{T_v}}{P}\Big) \Big(\frac{T_v'-T_v}{\cancel{T_v}}\Big)dp \\
+    w &= -R_d \int^f_i (T_v'-T_v)d(\ln(P))
+\end{align}
+Therefore,
+\begin{align}
+    \text{CAPE} &= -R_d \int^{Z_{\text{EL}}}_{Z_{\text{LFC}}} (T_v'-T_v)d(\ln(P)) \\
+    \text{CIN} &= -R_d \int^{Z_{\text{LFC}}}_{Z=0} (T_v'-T_v)d(\ln(P))
+\end{align}
+
+\subsubsection*{Theritical maximum velocity}
+\addcontentsline{toc}{subsubsection}{Theritical maximum velocity}
+\begin{align}
+    \frac{1}{2} w^2_{\text{max}} &= \text{CAPE} \\
+    w_{\text{max}} &= \sqrt{2 \times \text{CAPE}}
+\end{align}
+
+\begin{itemize}[noitemsep]
+    \item $<0 \rightarrow$ stable 
+    \item $0 - 1000 \rightarrow$ marginally unstable 
+    \item $1000 - 2500 \rightarrow$ morderately unstable 
+    \item $2500 - 3500 \rightarrow$ highly unstable 
+    \item $>3500 \rightarrow$ extremely unstable (wind speed may reach upto 50-70m/s indicating storms)
+\end{itemize}
+
+\begin{question}[\label{27.1}]{Given an air parcel at $850$hPa with temperature T is $13^\circ \text{C}$ and dew point temperature T_d is $8^\circ$C}
+\end{question}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Pressue level} & \textbf{Env. Temeperature} \\
+\hline
+800 & Data \\
+750 & Data \\
+700 & Data \\
+650 & Data \\
+600 & Data \\
+550 & Data \\
+500 & Data \\
+450 & Data \\
+400 & Data \\
+350 & Data \\
+300 & Data \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[ht]
+    \centering
+        \includegraphics[width=0.4\textwidth]{Figures/Solution_L27_q1.png}
+        \caption{Solution of Question {27.1}}
+\end{figure}
+% NOTE: COMPLETE L-27
 % --------------------------------------------------------------------------------------
 \clearpage
 % \begin{tikzpicture}
