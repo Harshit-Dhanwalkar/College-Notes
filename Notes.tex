@@ -3859,14 +3859,114 @@ For unstaurated air parcel :
     \item $\Gamma_{\text{EL}} > \Gamma_d \rightarrow$ atmosphere becomes unstable.
     \item $\Gamma_{\text{EL}} < \Gamma_d \rightarrow$ atmosphere becomes stable.
 \end{enumerate}
-% FIX: add plot 
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.5\textwidth,
+            height=0.4\textwidth,
+            xlabel={Temperature (°C)},
+            ylabel={Height (km)},
+            xmin=-15, xmax=15,
+            ymin=0, ymax=10,
+            % axis lines=middle,
+            legend style={at={(0.316,1)}, anchor=north west},
+            every axis y label/.style={at={(axis description cs:0,0.5)},rotate=90,anchor=south},
+            every axis x label/.style={at={(axis description cs:0.5,-0.05)},anchor=north},
+            xtick = \empty,
+            ytick = \empty,
+            xtick={-7, -3.6}, % Tick positions for T_A and T_B
+            xticklabels={$T_A$, $T_B$}, % Labels for the ticks
+            ytick={5,5.6},
+            yticklabels={}, % Labels for the ticks
+            ymajorgrids=true,
+            xmajorgrids=true,
+            grid=major,
+            ]
+
+            % Dry Adiabatic Lapse Rate (approx. -9.8 °C/km)
+            \addplot[red!80, thick, domain=-10:10] {-x/9.8 + 5};
+            \addlegendentry{Dry Adiabatic Lapse Rate}
+            % Moist (Saturated) Adiabatic Lapse Rate (approx. -5 °C/km)
+            \addplot[blue!80, thick, domain=-10:10] {-x/5 + 5};
+            \addlegendentry{Moist Adiabatic Lapse Rate}
+            % Vertical lines from arbitrary points on each curve
+            \addplot[red!80, dashed] coordinates {(-7, 5.6) (-7, 0)};
+            \addplot[blue!80, dashed] coordinates {(-3.6, 5.6) (-3.6, 0)};
+            \addplot[black!80, dashed] coordinates {(-3.6, 5.65) (-15, 5.65)};
+            % Intersection point of the two lapse rates
+            \addplot[black, dashed] coordinates {(0, 5) (0, 0)};
+            % Markers at the intersection and arbitrary points
+            \addplot[mark=*] coordinates {(-7, 5.7)} node[above] {$A$}; % Point A on Dry Adiabatic
+            \addplot[mark=*] coordinates {(-3.6, 5.7)} node[above] {$B$}; % Point B on Moist Adiabatic
+            \addplot[mark=*] coordinates {(0, 5)} node[above] {$O$}; % Intersection point O
+            % Labels for Dry and Moist Adiabatic Lapse Rates
+            \node[red!80] at (axis cs: 10, 4.5) {$\Gamma_d$}; % Label for Dry Adiabatic
+            \node[blue!80] at (axis cs: 10, 3.5) {$\Gamma$};   % Label for Moist Adiabatic
+            % Labels at the foot of the projection lines for A and B
+            % \node[above left] at (axis cs: -7, 0) {$T_A$};  % Label T_A
+            % \node[above left] at (axis cs: -3.6, 0) {$T_B$}; % Label T_B
+        \end{axis}
+    \end{tikzpicture}
+    %\caption{}
+\end{figure}
 For staurated air parcel :
 \begin{enumerate}[noitemsep]
     \item $\Gamma_{\text{EL}} > \Gamma_s \rightarrow$ atmosphere becomes unstable.
     \item $\Gamma_{\text{EL}} < \Gamma_s \rightarrow$ atmosphere becomes stable.
     \item $\Gamma_{\text{EL}} = \Gamma_s \rightarrow$ atmosphere becomes neutral.
 \end{enumerate}
-% FIX: add plot 
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.5\textwidth,
+            height=0.4\textwidth,
+            xlabel={Temperature (°C)},
+            ylabel={Height (km)},
+            xmin=-15, xmax=15,
+            ymin=0, ymax=10,
+            % axis lines=middle,
+            legend style={at={(0.316,1)}, anchor=north west},
+            every axis y label/.style={at={(axis description cs:0,0.5)},rotate=90,anchor=south},
+            every axis x label/.style={at={(axis description cs:0.5,-0.05)},anchor=north},
+            xtick = \empty,
+            ytick = \empty,
+            xtick={-7, -3.6}, % Tick positions for T_A and T_B
+            xticklabels={$T_B$, $T_A$}, % Labels for the ticks
+            % ytick={5,5.6},
+            % yticklabels={}, % Labels for the ticks
+            ymajorgrids=true,
+            xmajorgrids=true,
+            grid=major,
+            ]
+
+            % Dry Adiabatic Lapse Rate (approx. -9.8 °C/km)
+            \addplot[red!80, thick, domain=-10:10] {-x/9.8 + 5};
+            \addlegendentry{Dry Adiabatic Lapse Rate}
+            % Moist (Saturated) Adiabatic Lapse Rate (approx. -15 °C/km)
+            \addplot[blue!80, thick, domain=-10:10] {-x/25 + 5};
+            \addlegendentry{Moist Adiabatic Lapse Rate}
+            % Vertical lines from arbitrary points on each curve
+            \addplot[red!80, dashed] coordinates {(-4, 5.5) (-4, 0)};
+            \addplot[blue!80, dashed] coordinates {(-7.5, 5.5) (-7.5, 0)};
+            \addplot[black!80, dashed] coordinates {(-3.6, 5.65) (-15, 5.65)};
+            % Intersection point of the two lapse rates
+            \addplot[black, dashed] coordinates {(0, 5) (0, 0)};
+            % Markers at the intersection and arbitrary points
+            \addplot[mark=*] coordinates {(-7, 5.7)} node[above] {$B$}; % Point A on Dry Adiabatic
+            \addplot[mark=*] coordinates {(-3.6, 5.7)} node[above] {$A$}; % Point B on Moist Adiabatic
+            \addplot[mark=*] coordinates {(0, 5)} node[above] {$O$}; % Intersection point O
+            % Labels for Dry and Moist Adiabatic Lapse Rates
+            \node[red!80] at (axis cs: 10, 3.5) {$\Gamma_d$}; % Label for Dry Adiabatic
+            \node[blue!80] at (axis cs: 10, 5) {$\Gamma$};   % Label for Moist Adiabatic
+            % Labels at the foot of the projection lines for A and B
+            % \node[above left] at (axis cs: -7, 0) {$T_A$};  % Label T_A
+            % \node[above left] at (axis cs: -3.6, 0) {$T_B$}; % Label T_B
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Height vs Temperature for Dry and Moist Adiabatic Lapse Rates}
+\end{figure}
 where,\vspace{-0.2cm}
 \begin{align*}
     \Gamma_{\text{EL}} &= \text{environment lapse rate} \\
