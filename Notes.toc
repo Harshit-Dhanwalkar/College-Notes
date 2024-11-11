@@ -1,105 +1,108 @@
 \babel@toc {english}{}\relax 
-\contentsline {section}{\numberline {1}Lecture 1 09/08/2024}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Equilibrium State}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Transformation}{3}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Exact and Inexact differentiable}{3}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Exntensive and Intrincive variables}{3}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Laws of Thermodynamics}{4}{subsection.1.5}%
-\contentsline {section}{\numberline {2}Lecture 2 14/08/2024}{5}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Kinetic molecular therory of gases}{5}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Ideal gas}{5}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Early experiments and laws}{5}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Lecture 3 16/08/2024}{7}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Another form of Gay-Lussac's Law}{7}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Boyle's Law}{7}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Avagadro's Law}{7}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Ideal gas Law}{7}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Van Der Waal's equation}{8}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Meteorological form of Ideal gas}{8}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Composition of Earth's Atmosphere}{8}{subsection.3.7}%
-\contentsline {section}{\numberline {4}Lecture 4 19/08/2024}{9}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Pressure}{9}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Mass of the Atmosphere}{9}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Lecture 5 21/08/2024}{11}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Dalton's law of partial pressure}{11}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Humidity}{11}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Ideal gas equation for moist gas}{11}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Lecture 6 28/08/2024}{13}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Archimedes Principle}{13}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Buoyancy}{13}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Hydrostatic equation}{14}{subsection.6.3}%
-\contentsline {section}{\numberline {7}Lecture 7 29/08/2024}{15}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Ideal gas equation with Hydostatic equation}{15}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Geopotential}{15}{subsection.7.2}%
-\contentsline {section}{\numberline {8}Lecture 8 30/08/2024}{17}{section.8}%
-\contentsline {subsection}{Pressure profiles in the idealized atmosphere}{17}{tcb@cnt@question.2}%
-\contentsline {subsection}{\numberline {8.1}Constant density atmosphere}{17}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Constant temperature atmosphere}{18}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Constant lapse rate atmosphere}{18}{subsection.8.3}%
-\contentsline {section}{\numberline {9}Lecture 9 04/09/2024}{19}{section.9}%
-\contentsline {subsection}{\numberline {9.1}1$^{st}$ law of thermodynamics and it's application}{19}{subsection.9.1}%
-\contentsline {section}{\numberline {10}Lecture 10 05/09/2024}{20}{section.10}%
-\contentsline {subsection}{\numberline {10.1}. 1$^{st}$ law of thermodynamics and it's application}{20}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}. Heat capacity}{20}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}. Heat capacity at constant volume}{21}{subsection.10.3}%
-\contentsline {section}{\numberline {11}Lecture 11 06/09/2024}{22}{section.11}%
-\contentsline {subsection}{\numberline {11.1}. Specific heat capacity}{22}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}. Specific heat at constant volume}{22}{subsection.11.2}%
-\contentsline {subsection}{\numberline {11.3}. Specific heat at constant pressure}{22}{subsection.11.3}%
-\contentsline {subsection}{\numberline {11.4}. Special forms of 1$^{st}$ laaw of thermodynamics}{22}{subsection.11.4}%
-\contentsline {section}{\numberline {12}Lecture 12 11/09/2024}{24}{section.12}%
-\contentsline {subsection}{\numberline {12.1}. Poisson's equation for adiabatic transformation}{24}{subsection.12.1}%
-\contentsline {section}{\numberline {13}Lecture 13 12/09/2024}{26}{section.13}%
-\contentsline {subsection}{\numberline {13.1}. Adiabatic transformation - Poisson's equation}{26}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}. Adiabatic Lapse Rate}{26}{subsection.13.2}%
-\contentsline {subsection}{\numberline {13.3}. Dry Adiabatic Lapse Rate (DALR)}{26}{subsection.13.3}%
-\contentsline {subsection}{\numberline {13.4}. Possion's equations}{26}{subsection.13.4}%
-\contentsline {section}{\numberline {14}Lecture 14 20/09/2024}{28}{section.14}%
-\contentsline {subsection}{\numberline {14.1}. Heat Engines}{28}{subsection.14.1}%
-\contentsline {subsection}{\numberline {14.2}. Efficiency}{28}{subsection.14.2}%
-\contentsline {subsection}{\numberline {14.3}. Carnot Cycle}{28}{subsection.14.3}%
-\contentsline {subsection}{\numberline {14.4}. Skew T - log P diagram}{29}{subsection.14.4}%
-\contentsline {section}{\numberline {15}Lecture 15 03/10/2024}{33}{section.15}%
-\contentsline {subsection}{\numberline {15.1}. Cyclones}{33}{subsection.15.1}%
-\contentsline {subsection}{\numberline {15.2}. Specific enthaphy}{33}{subsection.15.2}%
-\contentsline {section}{\numberline {16}Lecture 16 07/10/2024}{35}{section.16}%
-\contentsline {subsection}{\numberline {16.1}. Lesson learnt from carnot cycle}{35}{subsection.16.1}%
-\contentsline {subsection}{\numberline {16.2}. Entropy}{35}{subsection.16.2}%
-\contentsline {section}{\numberline {17}Lecture 17 10/10/2024}{36}{section.17}%
-\contentsline {subsection}{\numberline {17.1}. Entropy}{36}{subsection.17.1}%
-\contentsline {subsection}{\numberline {17.2}. 2$^{nd}$ law of themodynamics}{36}{subsection.17.2}%
-\contentsline {section}{\numberline {18}Lecture 18 10/10/2024}{38}{section.18}%
-\contentsline {subsection}{\numberline {18.1}. Special Forms of 2$^{rd}$ law of Thermodynamics}{38}{subsection.18.1}%
-\contentsline {subsection}{\numberline {18.2}. Moist Processes}{38}{subsection.18.2}%
-\contentsline {subsection}{\numberline {18.3}. Relative humidity}{38}{subsection.18.3}%
-\contentsline {subsection}{\numberline {18.4}. Dew point temperature}{39}{subsection.18.4}%
-\contentsline {subsection}{\numberline {18.5}. Latent heat}{39}{subsection.18.5}%
-\contentsline {section}{\numberline {19}Leture 19 21/10/2024}{40}{section.19}%
-\contentsline {subsection}{\numberline {19.1}. The Clausius-Clapeyron equation}{40}{subsection.19.1}%
-\contentsline {section}{\numberline {20}Lecture 20 23/10/2024}{41}{section.20}%
-\contentsline {subsection}{\numberline {20.1}. Saturation mixing ratio}{41}{subsection.20.1}%
-\contentsline {section}{\numberline {21}Lecture 21 24/102024}{42}{section.21}%
-\contentsline {subsection}{\numberline {21.1}. Lifting Conduction Level (LCL)}{42}{subsection.21.1}%
-\contentsline {section}{\numberline {22}Leture 22 25/10/2024}{43}{section.22}%
-\contentsline {subsection}{\numberline {22.1}. Saturation Adiabatic Lapse Rate }{43}{subsection.22.1}%
-\contentsline {subsection}{\numberline {22.2}. Equivalent potential temperature ($\theta _e$)}{43}{subsection.22.2}%
-\contentsline {section}{\numberline {23}Lecture 23 30/10/2024}{44}{section.23}%
-\contentsline {subsection}{\numberline {23.1}. Psychrometer}{44}{subsection.23.1}%
-\contentsline {subsection}{\numberline {23.2}. Normand's rule}{44}{subsection.23.2}%
-\contentsline {section}{\numberline {24}Lecture 24 04/11/2024}{45}{section.24}%
-\contentsline {subsection}{\numberline {24.1}. Adiabatic cloud water content}{45}{subsection.24.1}%
-\contentsline {subsubsection}{Liquid water content (LWC)}{45}{figure.caption.20}%
-\contentsline {subsection}{\numberline {24.2}. Flow over terrain}{45}{subsection.24.2}%
-\contentsline {subsection}{\numberline {24.3}. Atmospheric stability}{45}{subsection.24.3}%
-\contentsline {section}{\numberline {25}Lecture 25 06/11/2024}{46}{section.25}%
-\contentsline {subsection}{\numberline {25.1}. Atmospheric stability}{46}{subsection.25.1}%
-\contentsline {subsubsection}{Convection/small scale process}{46}{equation.25.476}%
-\contentsline {subsubsection}{Three conditions}{46}{Item.50}%
-\contentsline {subsection}{\numberline {25.2}. Equation of motion for the parcel}{46}{subsection.25.2}%
-\contentsline {section}{\numberline {26}Leture 26 07/11/2024}{48}{section.26}%
-\contentsline {subsection}{\numberline {26.1}. Stabitity analysis}{48}{subsection.26.1}%
-\contentsline {subsection}{\numberline {26.2}. Convective instability or Potential instability}{49}{subsection.26.2}%
-\contentsline {section}{\numberline {27}Lecture 27 08/11/2024}{50}{section.27}%
-\contentsline {subsection}{\numberline {27.1}. Convective Available Potential Energy (CAPE) and Convective Inhibition (CIN)}{50}{subsection.27.1}%
-\contentsline {subsubsection}{Theritical maximum velocity}{50}{equation.27.527}%
+\contentsline {section}{\numberline {1}Lecture 1 09/08/2024}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Equilibrium State}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Transformation}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Exact and Inexact differentiable}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Exntensive and Intrincive variables}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Laws of Thermodynamics}{5}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Lecture 2 14/08/2024}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Kinetic molecular therory of gases}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Ideal gas}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Early experiments and laws}{6}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Lecture 3 16/08/2024}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Another form of Gay-Lussac's Law}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Boyle's Law}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Avagadro's Law}{8}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Ideal gas Law}{8}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Van Der Waal's equation}{9}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Meteorological form of Ideal gas}{9}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Composition of Earth's Atmosphere}{9}{subsection.3.7}%
+\contentsline {section}{\numberline {4}Lecture 4 19/08/2024}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Pressure}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Mass of the Atmosphere}{10}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Lecture 5 21/08/2024}{12}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Dalton's law of partial pressure}{12}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Humidity}{12}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Ideal gas equation for moist gas}{12}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Lecture 6 28/08/2024}{14}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Archimedes Principle}{14}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Buoyancy}{14}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Hydrostatic equation}{15}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Lecture 7 29/08/2024}{16}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Ideal gas equation with Hydostatic equation}{16}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Geopotential}{16}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Lecture 8 30/08/2024}{18}{section.8}%
+\contentsline {subsection}{Pressure profiles in the idealized atmosphere}{18}{tcb@cnt@question.2}%
+\contentsline {subsection}{\numberline {8.1}Constant density atmosphere}{18}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Constant temperature atmosphere}{19}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Constant lapse rate atmosphere}{19}{subsection.8.3}%
+\contentsline {section}{\numberline {9}Lecture 9 04/09/2024}{20}{section.9}%
+\contentsline {subsection}{\numberline {9.1}1$^{st}$ law of thermodynamics and it's application}{20}{subsection.9.1}%
+\contentsline {section}{\numberline {10}Lecture 10 05/09/2024}{21}{section.10}%
+\contentsline {subsection}{\numberline {10.1}. 1$^{st}$ law of thermodynamics and it's application}{21}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}. Heat capacity}{21}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}. Heat capacity at constant volume}{22}{subsection.10.3}%
+\contentsline {section}{\numberline {11}Lecture 11 06/09/2024}{23}{section.11}%
+\contentsline {subsection}{\numberline {11.1}. Specific heat capacity}{23}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}. Specific heat at constant volume}{23}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}. Specific heat at constant pressure}{23}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}. Special forms of 1$^{st}$ laaw of thermodynamics}{23}{subsection.11.4}%
+\contentsline {section}{\numberline {12}Lecture 12 11/09/2024}{25}{section.12}%
+\contentsline {subsection}{\numberline {12.1}. Poisson's equation for adiabatic transformation}{25}{subsection.12.1}%
+\contentsline {section}{\numberline {13}Lecture 13 12/09/2024}{27}{section.13}%
+\contentsline {subsection}{\numberline {13.1}. Adiabatic transformation - Poisson's equation}{27}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}. Adiabatic Lapse Rate}{27}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}. Dry Adiabatic Lapse Rate (DALR)}{27}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}. Possion's equations}{27}{subsection.13.4}%
+\contentsline {section}{\numberline {14}Lecture 14 20/09/2024}{29}{section.14}%
+\contentsline {subsection}{\numberline {14.1}. Heat Engines}{29}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}. Efficiency}{29}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}. Carnot Cycle}{29}{subsection.14.3}%
+\contentsline {subsection}{\numberline {14.4}. Skew T - log P diagram}{30}{subsection.14.4}%
+\contentsline {section}{\numberline {15}Lecture 15 03/10/2024}{34}{section.15}%
+\contentsline {subsection}{\numberline {15.1}. Cyclones}{34}{subsection.15.1}%
+\contentsline {subsection}{\numberline {15.2}. Specific enthaphy}{34}{subsection.15.2}%
+\contentsline {section}{\numberline {16}Lecture 16 07/10/2024}{36}{section.16}%
+\contentsline {subsection}{\numberline {16.1}. Lesson learnt from carnot cycle}{36}{subsection.16.1}%
+\contentsline {subsection}{\numberline {16.2}. Entropy}{36}{subsection.16.2}%
+\contentsline {section}{\numberline {17}Lecture 17 10/10/2024}{37}{section.17}%
+\contentsline {subsection}{\numberline {17.1}. Entropy}{37}{subsection.17.1}%
+\contentsline {subsection}{\numberline {17.2}. 2$^{nd}$ law of themodynamics}{37}{subsection.17.2}%
+\contentsline {section}{\numberline {18}Lecture 18 10/10/2024}{39}{section.18}%
+\contentsline {subsection}{\numberline {18.1}. Special Forms of 2$^{rd}$ law of Thermodynamics}{39}{subsection.18.1}%
+\contentsline {subsection}{\numberline {18.2}. Moist Processes}{39}{subsection.18.2}%
+\contentsline {subsection}{\numberline {18.3}. Relative humidity}{39}{subsection.18.3}%
+\contentsline {subsection}{\numberline {18.4}. Dew point temperature}{40}{subsection.18.4}%
+\contentsline {subsection}{\numberline {18.5}. Latent heat}{40}{subsection.18.5}%
+\contentsline {section}{\numberline {19}Leture 19 21/10/2024}{41}{section.19}%
+\contentsline {subsection}{\numberline {19.1}. The Clausius-Clapeyron equation}{41}{subsection.19.1}%
+\contentsline {section}{\numberline {20}Lecture 20 23/10/2024}{42}{section.20}%
+\contentsline {subsection}{\numberline {20.1}. Saturation mixing ratio}{42}{subsection.20.1}%
+\contentsline {section}{\numberline {21}Lecture 21 24/102024}{43}{section.21}%
+\contentsline {subsection}{\numberline {21.1}. Lifting Conduction Level (LCL)}{43}{subsection.21.1}%
+\contentsline {section}{\numberline {22}Leture 22 25/10/2024}{44}{section.22}%
+\contentsline {subsection}{\numberline {22.1}. Saturation Adiabatic Lapse Rate }{44}{subsection.22.1}%
+\contentsline {subsection}{\numberline {22.2}. Equivalent potential temperature ($\theta _e$)}{44}{subsection.22.2}%
+\contentsline {section}{\numberline {23}Lecture 23 30/10/2024}{45}{section.23}%
+\contentsline {subsection}{\numberline {23.1}. Psychrometer}{45}{subsection.23.1}%
+\contentsline {subsection}{\numberline {23.2}. Normand's rule}{45}{subsection.23.2}%
+\contentsline {section}{\numberline {24}Lecture 24 04/11/2024}{46}{section.24}%
+\contentsline {subsection}{\numberline {24.1}. Adiabatic cloud water content}{46}{subsection.24.1}%
+\contentsline {subsubsection}{Liquid water content (LWC)}{46}{figure.caption.20}%
+\contentsline {subsection}{\numberline {24.2}. Flow over terrain}{46}{subsection.24.2}%
+\contentsline {subsection}{\numberline {24.3}. Atmospheric stability}{46}{subsection.24.3}%
+\contentsline {section}{\numberline {25}Lecture 25 06/11/2024}{47}{section.25}%
+\contentsline {subsection}{\numberline {25.1}. Atmospheric stability}{47}{subsection.25.1}%
+\contentsline {subsubsection}{Convection/small scale process}{47}{equation.25.476}%
+\contentsline {subsubsection}{Three conditions}{47}{Item.50}%
+\contentsline {subsection}{\numberline {25.2}. Equation of motion for the parcel}{47}{subsection.25.2}%
+\contentsline {section}{\numberline {26}Leture 26 07/11/2024}{49}{section.26}%
+\contentsline {subsection}{\numberline {26.1}. Stabitity analysis}{49}{subsection.26.1}%
+\contentsline {subsection}{\numberline {26.2}. Convective instability or Potential instability}{50}{subsection.26.2}%
+\contentsline {section}{\numberline {27}Lecture 27 08/11/2024}{51}{section.27}%
+\contentsline {subsection}{\numberline {27.1}. Convective Available Potential Energy (CAPE) and Convective Inhibition (CIN)}{51}{subsection.27.1}%
+\contentsline {subsubsection}{Theritical maximum velocity}{51}{equation.27.527}%
+\contentsline {section}{\numberline {28}Lecture 28 11/11/2024}{52}{section.28}%
+\contentsline {subsection}{\numberline {28.1}Clasisus-Clapeyron Equation}{52}{subsection.28.1}%
+\contentsline {subsection}{\numberline {28.2}Weigner-Bergeron-Findeisn Therory}{52}{subsection.28.2}%
 \contentsfinish 
