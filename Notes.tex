@@ -12,7 +12,6 @@
 
 \usepackage{tikz}
 \usetikzlibrary{trees, positioning, shapes}
-
 \usepackage{tikz-3dplot}
 
 \usepackage{amsmath}
@@ -4198,6 +4197,7 @@ Therefore,
     \item $>3500 \rightarrow$ extremely unstable (wind speed may reach upto 50-70m/s indicating storms)
 \end{itemize}
 
+\newpage
 \begin{question}[\label{27.1}]{Given an air parcel at $850$hPa with temperature T is $13^\circ \text{C}$ and dew point temperature T_d is $8^\circ$C}
 \end{question}
 
@@ -4237,7 +4237,7 @@ Therefore,
     \item Rain drop size $\approx$ 1mm.
 \end{itemize}
 
-\subsection{Clasisus-Clapeyron Equation}
+\subsection{. Clasisus-Clapeyron Equation}
 Vapor to Water, condensation:
 \begin{align}
     \frac{e_s}{T} &= \frac{L}{T(\alpha_v - \alpha_w)} \approx \frac{L}{T\alpha_v}
@@ -4286,7 +4286,7 @@ Vapor to Ice, fusion:
     \end{tikzpicture}
 \end{figure}
 
-\subsection{Weigner-Bergeron-Findeisn Therory}
+\subsection{. Weigner-Bergeron-Findeisn Therory}
 Theory describes a process in mixed-phase clouds where ice crystals grow at the expense of surrounding supercooled water droplets. This theory explains how precipitation forms in cold clouds (those with temperatures below freezing) through the following mechanism:
 
 \begin{enumerate}
@@ -4296,10 +4296,64 @@ Theory describes a process in mixed-phase clouds where ice crystals grow at the 
 \end{enumerate}
 
 This process is particularly important in middle and high latitudes, where clouds are often mixed-phase, and it provides a primary mechanism for precipitation in cold clouds.
-% WARN: COMPLETE L-27
+
+% NOTE: COMPLETE L-28
 % --------------------------------------------------------------------------------------
 \clearpage
 
+\section{Lecture 29 13/11/2024}
+\subsection{. Classifiaction of cloulds}
+% \begin{tikzpicture}[
+%     edge from parent fork down, 
+%     sibling distance=1cm, 
+%     level 1/.style={sibling distance=3cm, level distance=1.5cm}, 
+%     level 2/.style={sibling distance=1cm, level distance=1cm}
+% ]
+%     \node {Cloud Classification}
+%         child { node {Texture}
+%             child { node {Cirriform} }
+%             child { node {Cumuliform} }
+%             child { node {Stratiform} }
+%         }
+%         child { node {Height}
+%             child { node {$0-2$ km} }
+%             child { node {$2-6$ km} }
+%             child { node {$>6$ km} }
+%         }
+%         child { node {Composition}
+%             child { node {Warm} }
+%             child { node {Cold} }
+%             child { node {Mixed} }
+%         };
+% \end{tikzpicture}
+
+\begin{tikzpicture}[
+    edge from parent fork right, 
+    sibling distance=0.25cm, level distance=0.5cm,
+    level 1/.style={sibling distance=1.75cm, level distance=3.25cm}, 
+    level 2/.style={sibling distance=0.5cm, level distance=2cm},
+    grow=right
+]
+    \node {Cloud Classification}
+        child { node {Composition}
+            child { node {Mixed} }
+            child { node {Cold} }
+            child { node {Warm} }
+        }
+        child { node {Height}
+            child { node {$>6$ km} }
+            child { node {$2-6$ km} }
+            child { node {$0-2$ km} }
+        }
+        child { node {Texture}
+            child { node {Stratiform} }
+            child { node {Cumuliform} }
+            child { node {Cirriform} }
+        };
+\end{tikzpicture}
+%WARN: INCOMPLETE L-29
+% --------------------------------------------------------------------------------------
+\clearpage
 % \begin{tikzpicture}
 %     [tdplot_main_coords,
 %     grid/.style={very thin,gray},
