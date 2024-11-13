@@ -4302,6 +4302,9 @@ This process is particularly important in middle and high latitudes, where cloud
 \clearpage
 
 \section{Lecture 29 13/11/2024}
+
+% TODO: clouds heights and names
+
 \subsection{. Classifiaction of cloulds}
 % \begin{tikzpicture}[
 %     edge from parent fork down, 
@@ -4563,7 +4566,26 @@ Eq\myeqref{eq:kelvins_eq} is called \textbf{Kelvin's equation}
         %     {min(0, 9*x^2-2*x^3)} \closedcycle;
     \end{axis}
 \end{tikzpicture}
-% WARN: INCOMPLETE L-29
+
+\begin{question}[\label:29.1]{Show that height of critical barrior ($\Delta E^*$) is given by $\frac{16\pi\sigma^3}{3\Big(nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+    \Rightarrow \text{ At } R=R^* \\
+    \Delta E = 4\pi (R^*)^2 \sigma - \frac{4}{3} \pi (R^*)^3 nKT\ln{\big(\frac{e}{e_s}\big)} \\
+    \Delta E = 4\pi\big(\frac{2\sigma}{nKT\ln{\frac{e}{e_s}}}\big)^2 \sigma - \frac{4}{3}\pi\big(\frac{2\sigma}{nKT\ln{\frac{e}{e_s}}}\big)^3 nKT\ln{\big(\frac{e}{e_s}\big)} \\
+    \Delta E = 4\pi\frac{4\sigma^3}{\big(nKT\ln{\frac{e}{e_s}}\big)^2} - \frac{4}{3}\pi\frac{8\sigma^3}{\big(nKT\ln{\frac{e}{e_s}}\big)^2} \\
+    \Delta E = 4\pi\frac{12\sigma^3}{3\big(nKT\ln{\frac{e}{e_s}}\big)^2} - 4\pi\frac{8\sigma^3}{3\big(nKT\ln{\frac{e}{e_s}}\big)^2} \\
+    \Delta E = 4\pi\frac{4\sigma^3}{3\big(nKT\ln{\frac{e}{e_s}}\big)^2} \\
+    \Delta E = \frac{16\pi\sigma^3}{3\big(nKT\ln{\frac{e}{e_s}}\big)^2} \\
+\end{question}
+
+\begin{question}[\label:29.2]{Determine the fractional changes in ($\Delta E^*$) and ($R^*$) if surface tension ($\sigma$) is reduced by $10\%$ by adding soap in pure water.}
+    \Rightarrow \sigma \text{ decreases by } 10\% \text{ by adding soap to pure water} \\
+    \frac{d(\Delta E^*)}{d\sigma} = \frac{16\pi \sigma^2}{nKT\ln{\big(\frac{e}{e_s}\big)}} = 3 \times 0.1 = 30\% \\
+    \frac{d(\Delta E^*)}{\Delta E^*} = \frac{3 d\sigma}{\sigma} \\ \newline
+    \frac{d(\Delta R^*)}{d\sigma} = \frac{2}{nKT\ln{\big(\frac{e}{e_s}\big)}} \\
+    \frac{d(\Delta R^*)}{R^*} = \frac{d\sigma}{\sigma} = 1 \times 0.1 = 10\% \\
+    \text{Fractional change in $\Delta E^*$ is 30\% and for $R^*$ is 10\%}
+\end{question}
+% NOTE:COMPLETE L-29
 % --------------------------------------------------------------------------------------
 \clearpage
 % \begin{tikzpicture}

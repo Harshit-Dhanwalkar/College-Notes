@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1731494741 "Notes.tex" "Notes.pdf" "Notes" 1731494741
+["pdflatex"] 1731497498 "Notes.tex" "Notes.pdf" "Notes" 1731497498
   "/etc/texmf/web2c/texmf.cnf" 1728313746 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -297,10 +297,10 @@
   "Figures/cyclone_air_circulation.png" 1729163443 1328245 adda33af203e6ee78ce84cd3829ce7cc ""
   "Figures/hurricane_structure.jpg" 1729163443 35800 2afb2e2ef7ab0435f6d660b8a82b75ab ""
   "Figures/skew_t.png" 1729163443 888958 204d82c7eb0fb181751fe3642dec348f ""
-  "Notes.aux" 1731494659 33454 7ac85a2963043f7f7b3110e7eb39f80b "pdflatex"
-  "Notes.out" 1731494659 20700 ba78d87f652c9f4a93899b3e0839462c "pdflatex"
-  "Notes.tex" 1731494740 195006 c68d4c91a03a14a6c595ffa925f8498f ""
-  "Notes.toc" 1731494659 9936 4c674ab18f27345de4fc24c164aa5f49 "pdflatex"
+  "Notes.aux" 1731497423 33454 7ac85a2963043f7f7b3110e7eb39f80b "pdflatex"
+  "Notes.out" 1731497423 20700 ba78d87f652c9f4a93899b3e0839462c "pdflatex"
+  "Notes.tex" 1731497497 196663 573f710df80b381e14ae24b7a2d04d1a ""
+  "Notes.toc" 1731497423 9936 4c674ab18f27345de4fc24c164aa5f49 "pdflatex"
   "SelfArx.cls" 1729163443 8924 c80b6f289f7445b07689e1d7c5881f16 ""
   (generated)
   "Notes.aux"
