@@ -4439,30 +4439,113 @@ If the droplet i sperical shaped with radius $R$.
 \begin{align}
     \Delta E &= (4\pi R^2)\sigma - \frac{4}{3}\pi R^3nKT \ln{\Big(\frac{e}{e_s}\Big)}
 \end{align}
+Where, $R^*$ is critical radius.
 
 \begin{enumerate}[noitemsep]
-    \item Under subsaturated condition ($e<e_s$) $\rightarrow$ $\Delta E > 0$
+    \item Under subsaturated condition ($e<e_s$) $\rightarrow$ $\Delta E > 0$ (Droplets will never form)
+
+        \begin{tikzpicture}
+            \begin{axis}[
+                xlabel={$R$ (Radius)},
+                ylabel={$\Delta E$ (Energy)},
+                domain=1:5.3,
+                samples=100,
+                legend pos=north east,
+                axis lines= middle,
+                enlargelimits=true,
+                thick,
+                grid=both,
+                width=0.45\textwidth, height=5cm,
+                xtick={3},
+                xticklabels={$R^*$},
+                ytick={27},
+                yticklabels={$\dealta E^*$},
+                yticklabel style={rotate=90},
+                %title={Plot of $\Delta E = 4\pi R^2 \sigma - \frac{4}{3}\pi R^3 n K T \ln{\left(\frac{e}{e_s}\right)}$}
+            ]
+                \addplot[
+                    domain=0.1:5,
+                    samples=100,
+                    thick,
+                    blue
+                ]
+                %{4*pi*x^2*\sigma - (4/3)*pi*x^3*\n*\K*\T*\logpart};
+                {x};
+                \addlegendentry{$\Delta E$};
+
+                % Highlight region for Delta E > 0 and < 0
+                \addplot[domain=0.1:5, samples=100, fill=blue, opacity=0.2] 
+                    {max(0, x} \closedcycle;
+                % \addplot[domain=0.1:5, samples=100, fill=blue, opacity=0.3] 
+                %     {min(0, 9*x^2-2*x^3} \closedcycle;
+            \end{axis}
+        \end{tikzpicture}
     \item Under supersaturated condition ($e>e_s$) $\rightarrow$ $\Delta E > 0$ uptill $R^*$ then $\Delta E < 0$
+
+        \begin{tikzpicture}
+            \begin{axis}[
+                xlabel={$R$ (Radius)},
+                ylabel={$\Delta E$ (Energy)},
+                domain=1:5.3,
+                samples=100,
+                legend pos=north east,
+                axis lines= middle,
+                enlargelimits=true,
+                thick,
+                grid=both,
+                width=0.45\textwidth, height=5cm,
+                xtick={3},
+                xticklabels={$R^*$},
+                ytick={27},
+                yticklabels={$\dealta E^*$},
+                yticklabel style={rotate=90},
+                %title={Plot of $\Delta E = 4\pi R^2 \sigma - \frac{4}{3}\pi R^3 n K T \ln{\left(\frac{e}{e_s}\right)}$}
+            ]
+                \addplot[
+                    domain=0.1:5,
+                    samples=100,
+                    thick,
+                    blue
+                ]
+                %{4*pi*x^2*\sigma - (4/3)*pi*x^3*\n*\K*\T*\logpart};
+                {9*x^2-2*x^3};
+                \addlegendentry{$\Delta E$};
+
+                % Highlight region for Delta E > 0 and < 0
+                \addplot[domain=0.1:5, samples=100, fill=blue, opacity=0.2] 
+                    {max(0, 9*x^2-2*x^3} \closedcycle;
+                \addplot[domain=0.1:5, samples=100, fill=blue, opacity=0.2] 
+                    {min(0, 9*x^2-2*x^3} \closedcycle;
+            \end{axis}
+        \end{tikzpicture}
 \end{enumerate}
-Where, $R^*$ is critical radius. \\
+
+To find critical radius of embreyo ($R^*$):
+\begin{align}
+    \frac{d(\Delta E)}{dR} &= \frac{d\Big[(4\pi R^2)\sigma - \frac{4}{3}\pi R^3nKT \ln{\Big(\frac{e}{e_s}\Big)\Big]}}{dt} = 0\\
+    \frac{d(\Delta E)}{dR} &= 8\pi R \sigma - 4 \pi R^2 nKT\ln \big(\frac{e}{e_s}\Big) =0 \\
+    R^* &= \frac{2\sigma}{nKT\ln\big(\frac{e}{e_s}\big)} \label{eq:kelvins_eq}
+\end{align}
+Eq\myeqref{eq:kelvins_eq} is called \textbf{Kelvin's equation}
+
 \begin{tikzpicture}
     \begin{axis}[
-        xlabel={$R$ (Radius)},
-        ylabel={$\Delta E$ (Energy)},
-        domain=1:5.3,
+        xlabel={Droplet radius ($\mu$m)},
+        ylabel={RH \%},
+        domain=0:1,
         samples=100,
         legend pos=north east,
-        axis lines= middle,
+        axis lines=bottom,
         enlargelimits=true,
         thick,
         grid=both,
         width=0.45\textwidth, height=5cm,
-        xtick={3},
-        xticklabels={$R^*$},
-        ytick={27},
-        yticklabels={$\dealta E^*$},
+        xtick={0,1,2,3,4,5},
+        xticklabels={0.01,0.08,0.1,0.3,0.5,1},
+        axis y line*=left,
+        ytick={0.001, 0.43, 0.9},
+        yticklabels={100,111, 112},
         yticklabel style={rotate=90},
-        %title={Plot of $\Delta E = 4\pi R^2 \sigma - \frac{4}{3}\pi R^3 n K T \ln{\left(\frac{e}{e_s}\right)}$}
     ]
         \addplot[
             domain=0.1:5,
@@ -4470,18 +4553,16 @@ Where, $R^*$ is critical radius. \\
             thick,
             blue
         ]
-        %{4*pi*x^2*\sigma - (4/3)*pi*x^3*\n*\K*\T*\logpart};
-        {9*x^2-2*x^3};
-        \addlegendentry{$\Delta E$};
+        {exp(-x)}; % Corrected the expression for e^-x
+        \addlegendentry{$\Delta E$}; % Legend entry
 
-        % Highlight region for Delta E > 0 and < 0
-        \addplot[domain=0.1:5, samples=100, fill=blue, opacity=0.3] 
-            {max(0, 9*x^2-2*x^3} \closedcycle;
-        \addplot[domain=0.1:5, samples=100, fill=blue, opacity=0.3] 
-            {min(0, 9*x^2-2*x^3} \closedcycle;
+        % Optional: Highlight region for Delta E > 0 and < 0
+        % \addplot[domain=0.1:5, samples=100, fill=blue, opacity=0.2] 
+        %     {max(0, 9*x^2-2*x^3)} \closedcycle;
+        % \addplot[domain=0.1:5, samples=100, fill=blue, opacity=0.2] 
+        %     {min(0, 9*x^2-2*x^3)} \closedcycle;
     \end{axis}
 \end{tikzpicture}
-
 % WARN: INCOMPLETE L-29
 % --------------------------------------------------------------------------------------
 \clearpage
