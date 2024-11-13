@@ -4351,7 +4351,138 @@ This process is particularly important in middle and high latitudes, where cloud
             child { node {Cirriform} }
         };
 \end{tikzpicture}
-%WARN: INCOMPLETE L-29
+
+\subsection{. Types of particles within the clouds}
+Collective condensed particle within the cloud \textbf{'hydrometeous'}
+\begin{enumerate}[noitemsep]
+    \item Cloud droplets $\rightarrow$ $\sim$ 400 $\mu$m to 10$\mu$m.
+    \item Raindrops $\rightarrow$ A few hundred of $\mu$m to 3nm $\sim$ 1nm.
+    \item Ice cystrals $\rightarrow$ Tens of $\mu$m to hundred of $\mu$m.
+    \item Snow flakes $\rightarrow$ Few cm, crystalline ice particles.
+    \item Grapel $\rightarrow$ Few cm, when supercooled water frezzes on the surface of ice crystals.
+    \item Hail $\rightarrow$ Ice, around 5mm $\sim$ 15cm.
+\end{enumerate}
+
+\subsection{Nucleation}
+Fundamental process of phase change is called as Nucleation.
+
+Small thermal purturbation/attenuation can disintegrate i-mer.
+
+Embreyo $\rightarrow$ collection of water molecule.
+
+Germ $\rightarrow$ activated embreyo (Started to show water droplet properties). \\
+
+\begin{tikzpicture}
+    % Cloud shape
+    \draw[fill=gray!20, rounded corners=15pt] (-3, -1) rectangle (4, 2.5);
+    \node at (0.75, 0.5) {Nucleation Cloud};
+
+    % Monomer
+    \node[circle, draw, fill=blue!30, minimum size=6mm] at (-1.5, 0) {};
+    \node[above=0.1cm] at (-1.25, -0.75) {Monomer};
+
+    % Dimer
+    \node[circle, draw, fill=green!30, minimum size=6mm] at (0, 2) {};
+    \node[circle, draw, fill=green!30, minimum size=6mm] at (0.5, 1.7) {};
+    \node[above=0.1cm] at (0.25, 1) {Dimer};
+
+    % i-mer (larger aggregate)
+    \node[circle, draw, fill=red!30, minimum size=6mm] at (3, 1) {};
+    \node[circle, draw, fill=red!30, minimum size=6mm] at (3.5, 1) {};
+    \node[circle, draw, fill=red!30, minimum size=6mm] at (3, 0.5) {};
+    \node[circle, draw, fill=red!30, minimum size=6mm] at (3.5, 0.5) {};
+    \node[below=0.2cm] at (3.25, 0.5) {i-mer};
+
+\end{tikzpicture}
+
+One basic assumption of classic nulcleation theory is that the population of i-mer embreyos follows \textbf{Boltman's distribution}.
+
+\begin{align}
+    N_i &= N \exp{\Big(\frac{-\Delta E_i}{KT}\Big)} \\
+    N_i &= N \exp{\Big(\frac{\mu_v-\mu_l}{KT}\Big)} \\
+    e &= e_{\text{sat}} \exp{\Big(\frac{\mu_v-\mu_l}{KT}\Big)} \\
+    \mu_v-\mu_l &= KT \ln{\Big(\frac{e}{e_{\text{sat}}}\Big)}
+\end{align}
+where,
+\begin{align*}
+    N &= \text{ number of molecules} \\
+    \mu_v \text{ and } \mu_l &= \text{ chemical potentials of vapor and liquid resp.}
+\end{align*}
+
+Let us suppose that a small embreyoic water droplet with volume ($V$) and surface ($A$) from from a pure supersaturated water vapor. \\
+Decrease in energy
+\begin{align}
+    \Delta E &= nV (\mu_v - \mu_l)
+\end{align}
+where,
+\begin{align*}
+    n = \text{No. of water vapor molecule.}
+\end{align*}
+
+Work needds to be done to create surface area:
+\begin{align}
+    A \sigma
+\end{align}
+where,
+\begin{align*}
+    A &= \text{ Area} \\
+    \sigma &= \text{ surface energy} \\
+\end{align*}
+
+Net increase in the energy of the system: 
+\begin{align}
+    \Delta E &= A\sigma - nV(\mu_v -\mu_l) \\
+    \Delta E &= A\sigma - nVKT \ln{\Big(\frac{e}{e_s}\Big)}
+\end{align}
+
+If the droplet i sperical shaped with radius $R$.
+\begin{align}
+    \Delta E &= (4\pi R^2)\sigma - \frac{4}{3}\pi R^3nKT \ln{\Big(\frac{e}{e_s}\Big)}
+\end{align}
+
+\begin{enumerate}[noitemsep]
+    \item Under subsaturated condition ($e<e_s$) $\rightarrow$ $\Delta E > 0$
+    \item Under supersaturated condition ($e>e_s$) $\rightarrow$ $\Delta E > 0$ uptill $R^*$ then $\Delta E < 0$
+\end{enumerate}
+Where, $R^*$ is critical radius. \\
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel={$R$ (Radius)},
+        ylabel={$\Delta E$ (Energy)},
+        domain=1:5.3,
+        samples=100,
+        legend pos=north east,
+        axis lines= middle,
+        enlargelimits=true,
+        thick,
+        grid=both,
+        width=0.45\textwidth, height=5cm,
+        xtick={3},
+        xticklabels={$R^*$},
+        ytick={27},
+        yticklabels={$\dealta E^*$},
+        yticklabel style={rotate=90},
+        %title={Plot of $\Delta E = 4\pi R^2 \sigma - \frac{4}{3}\pi R^3 n K T \ln{\left(\frac{e}{e_s}\right)}$}
+    ]
+        \addplot[
+            domain=0.1:5,
+            samples=100,
+            thick,
+            blue
+        ]
+        %{4*pi*x^2*\sigma - (4/3)*pi*x^3*\n*\K*\T*\logpart};
+        {9*x^2-2*x^3};
+        \addlegendentry{$\Delta E$};
+
+        % Highlight region for Delta E > 0 and < 0
+        \addplot[domain=0.1:5, samples=100, fill=blue, opacity=0.3] 
+            {max(0, 9*x^2-2*x^3} \closedcycle;
+        \addplot[domain=0.1:5, samples=100, fill=blue, opacity=0.3] 
+            {min(0, 9*x^2-2*x^3} \closedcycle;
+    \end{axis}
+\end{tikzpicture}
+
+% WARN: INCOMPLETE L-29
 % --------------------------------------------------------------------------------------
 \clearpage
 % \begin{tikzpicture}
