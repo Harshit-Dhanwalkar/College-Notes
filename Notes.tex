@@ -4557,8 +4557,8 @@ Eq\myeqref{eq:kelvins_eq} is called \textbf{Kelvin's equation}
             thick,
             blue
         ]
-        {exp(-x)}; % Corrected the expression for e^-x
-        \addlegendentry{$\Delta E$}; % Legend entry
+        {exp(-x)};
+        \addlegendentry{$\Delta E$};
 
         % Optional: Highlight region for Delta E > 0 and < 0
         % \addplot[domain=0.1:5, samples=100, fill=blue, opacity=0.2] 
@@ -4594,15 +4594,60 @@ Eq\myeqref{eq:kelvins_eq} is called \textbf{Kelvin's equation}
 
 \subsection{. Supersaturation with respect to plane surface of pure water}
 
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \fill[blue!20] (0,0) -- (0,1) -- (2,1) -- (2,0) -- cycle;
+
+        \draw[thick] (0, 0) -- (2, 0); % Bottom line
+        \draw[thick] (0, 0) -- (0, 2); % Left line
+        \draw[thick] (2, 0) -- (2, 2); % Right line
+        \draw[thick] (0, 1) -- (2, 1); % Top line
+
+        \draw[->, blue, thick] (0.75, 1) -- (0.75, 1.8) node[midway, left] {Eva};
+        \draw[->, blue, thick] (1.25, 1.8) -- (1.25, 1) node[midway, right] {Con};
+
+        \draw[thick] (1,1) circle(0.2) node {1};
+        \draw[thick] (1,0.3) circle(0.2) node {2};
+    \end{tikzpicture}
+\end{figure}
+
+\begin{enumerate}
+    \item Larger chance of escape$\rightarrow$rate of evaporation increases.
+    \begin{figure}[ht]
+        \centering
+        \begin{tikzpicture}
+            \draw[thick] (0,0) circle(0.7);
+            \draw[dotted, thick] (0,0.7) circle(0.7);
+            \draw[->, blue, thick] (0, 1) -- (0, 2) node[midway, left] {Eva};
+            \node at (0, -0.25) {Droplet};
+        \end{tikzpicture}
+    \end{figure}
+
+    \item Lower chance of escape$\rightarrow$rate of evaporation decreases.
+    \begin{figure}[ht]
+        \centering
+        \begin{tikzpicture}
+            \draw[thick] (1.25, 0) -- (3.75, 0);
+            \draw[thick] (2.5,0) circle(0.7);
+            \draw[->, blue, thick] (2.3, 0.8) -- (2.3, 1.8) node[midway, left] {Eva};
+            \draw[->, blue, thick] (2.7, 1.8) -- (2.7, 0.8) node[midway, right] {Con};
+        \end{tikzpicture}
+    \end{figure}
+\end{enumerate}
+
 $\therefore$ Saturation vapor pressure of pure water will be different for different geometry.
 
 The vapor pressure adjucent to solution droplet is reduced as compared to pure water droplet. 
+
+\subsection{. K\"{o}hler Equation}
+The K\"{o}hler equation describes the equilibrium vapor pressure over a curved water droplet, accounting for both curvature and solute effects.
 
 Fractional reduction in the vapor pressure is equivalent to mole fraction.
 
 \textbf{Mole fraction} of a pure water droplet is defined as number of moles of pure water in the solution by the total number of moles of the solution.
 \begin{align}
-    f &= \frac{n_{PW}}{n_{PW}+n_S}
+    \mathcal{F} &= \frac{n_{PW}}{n_{PW}+n_S} \label{eq:mole_fraction}
 \end{align}
 Consider a solution of droplet of radius $r$ that contains a mass $m$ (in kg) dissolved in material of molecular mass $M_S$.
 For example, take solution of common salt in water:
@@ -4613,13 +4658,53 @@ Each molecule of the material dissolves in $i$ ions in water.
 
 $\therefore$ Effective number of moles will be:
 \begin{align}
-    n_{\text{eff}} = i\frac{m}{M_S}
+    n_{\text{eff}} = n_{S} = i\frac{m}{M_S} \label{eq:n_S}
 \end{align}
 
 If we assume $\rho'$ is the density of solution, number of moles of pure water in the droplet is:
 \begin{align*}
-    \frac{\big(\frac{4}{3}\pi r^3 \rho' -M\big)}{M_w}
+    n_{\text{PW}} = \frac{\big(\frac{4}{3}\pi r^3 \rho' -M\big)}{M_w} \label{eq:n_PW}
 \end{align*}
+
+Mole fraction ($\mathcal{F}$) of water droplet, substitute Eq\myeqref{eq:n_S} and Eq\myeqref{eq:n_PW} in Eq\myeqref{eq:mole_fraction}:
+\begin{align}
+    \mathcal{F} &= \frac{\big(\frac{4}{3}\pi r^3 \rho' - M\big)/M_w}{\big(\frac{4}{3}\pi r^3 \rho' - M\big)/M_w + im/M_S} \\
+    \mathcal{F} &= \Big[1 + \frac{imM_w}{M_S\big(\frac{4}{3}\pi r^3 \rho' - M\big)}\Big]^{-1}
+\end{align}
+
+\begin{align}
+    \frac{e}{e_s} &= \exp\Big(\frac{2\sigma}{nkTr}\Big) \\
+    \frac{e}{e_s}\cdot\mathcal{F} &= \exp\Big(\frac{2\sigma}{nkTr}\Big)\Big[1 + \frac{imM_w}{M_S\big(\frac{4}{3}\pi r^3 \rho' - M\big)}\Big]^{-1}
+\end{align}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%             xlabel={X},
+%             ylabel={Y},
+%             samples=100,
+%             legend pos=north west,
+%             axis lines=middle,
+%             enlargelimits=true,
+%             thick,
+%             grid=both,
+%             width=0.45\textwidth, height=5cm,
+%             xmin=-2, xmax=6, % Adjust x-range to show full behavior
+%             ymin=0, ymax=15, % Adjust y-range to stabilize
+%             xtick={-2,-1,0,1,2,3,4,5,6},
+%             ytick={0,2,4,6,8,10,12,14,16}
+%         ]
+%             \addplot[
+%                 domain=-2:6, 
+%                 thick,
+%                 blue
+%             ]
+%             {10/(1 + exp(-8*(x - 0.05))) + 4*exp(-0.2*(x - 1)^2)}; % Sigmoid + Gaussian
+%         \end{axis}
+%     \end{tikzpicture}
+% \end{figure}
+% FIX: Plot the kohler eq
 % WARN: INCOMPLETE L-30
 % --------------------------------------------------------------------------------------
 \clearpage
