@@ -4366,7 +4366,7 @@ Collective condensed particle within the cloud \textbf{'hydrometeous'}
     \item Hail $\rightarrow$ Ice, around 5mm $\sim$ 15cm.
 \end{enumerate}
 
-\subsection{Nucleation}
+\subsection{. Nucleation}
 Fundamental process of phase change is called as Nucleation.
 
 Small thermal purturbation/attenuation can disintegrate i-mer.
@@ -4459,28 +4459,30 @@ Where, $R^*$ is critical radius.
                 thick,
                 grid=both,
                 width=0.45\textwidth, height=5cm,
-                xtick={3},
-                xticklabels={$R^*$},
+                xtick=\empty,
                 ytick={27},
                 yticklabels={$\dealta E^*$},
                 yticklabel style={rotate=90},
                 %title={Plot of $\Delta E = 4\pi R^2 \sigma - \frac{4}{3}\pi R^3 n K T \ln{\left(\frac{e}{e_s}\right)}$}
             ]
                 \addplot[
-                    domain=0.1:5,
+                    domain=1:5,
                     samples=100,
                     thick,
                     blue
                 ]
                 %{4*pi*x^2*\sigma - (4/3)*pi*x^3*\n*\K*\T*\logpart};
-                {x};
+                {ln(x)};
                 \addlegendentry{$\Delta E$};
 
-                % Highlight region for Delta E > 0 and < 0
-                \addplot[domain=0.1:5, samples=100, fill=blue, opacity=0.2] 
-                    {max(0, x} \closedcycle;
-                % \addplot[domain=0.1:5, samples=100, fill=blue, opacity=0.3] 
-                %     {min(0, 9*x^2-2*x^3} \closedcycle;
+                % Highlight region for ln(x) > 0
+                \addplot[
+                    domain=1:5,
+                    samples=100,
+                    fill=blue,
+                    opacity=0.2
+                ]
+                {ln(x)} \closedcycle;
             \end{axis}
         \end{tikzpicture}
     \item Under supersaturated condition ($e>e_s$) $\rightarrow$ $\Delta E > 0$ uptill $R^*$ then $\Delta E < 0$

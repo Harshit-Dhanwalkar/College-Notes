@@ -108,5 +108,5 @@
 \contentsline {section}{\numberline {29}Lecture 29 13/11/2024}{53}{section.29}%
 \contentsline {subsection}{\numberline {29.1}. Classifiaction of cloulds}{53}{subsection.29.1}%
 \contentsline {subsection}{\numberline {29.2}. Types of particles within the clouds}{53}{subsection.29.2}%
-\contentsline {subsection}{\numberline {29.3}Nucleation}{53}{subsection.29.3}%
+\contentsline {subsection}{\numberline {29.3}. Nucleation}{53}{subsection.29.3}%
 \contentsfinish 

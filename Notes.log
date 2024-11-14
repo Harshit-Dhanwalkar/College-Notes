@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.10.7)  13 NOV 2024 17:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.14)  14 NOV 2024 11:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -472,7 +472,7 @@ File: microtype.cfg 2021/12/10 v3.0b microtype main configuration file (RS)
 Package: babel 2022/01/26 3.70 The Babel package
 \babel@savecnt=\count307
 \U@D=\dimen283
-\l@unhyphenated=\language3
+\l@unhyphenated=\language7
  (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read4
 \bbl@dirlevel=\count308
@@ -3958,10 +3958,10 @@ Overfull \hbox (10.45168pt too wide) in paragraph at lines 4448--4449
 
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-./Notes.tex:4522: Undefined control sequence.
+./Notes.tex:4524: Undefined control sequence.
 <recently read> \dealta 
                         
-l.4522             \end{axis}
+l.4524             \end{axis}
                              
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3974,31 +3974,31 @@ and I'll forget about whatever was undefined.
 ]
 Missing character: There is no ; in font nullfont!
 
-./Notes.tex:4567: Package pgfkeys Error: Choice 'both' unknown in choice key '/pgfplots/axis y line'. I am going to ignore this key.
+./Notes.tex:4569: Package pgfkeys Error: Choice 'both' unknown in choice key '/pgfplots/axis y line'. I am going to ignore this key.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4567     \end{axis}
+l.4569     \end{axis}
                      
 (That was another \errmessage.)
 
 
-./Notes.tex:4567: Package pgfkeys Error: Choice 'both' unknown in choice key '/pgfplots/axis z line'. I am going to ignore this key.
+./Notes.tex:4569: Package pgfkeys Error: Choice 'both' unknown in choice key '/pgfplots/axis z line'. I am going to ignore this key.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4567     \end{axis}
+l.4569     \end{axis}
                      
 (That was another \errmessage.)
 
-./Notes.tex:4570: Argument of \XC@definec@lor has an extra }.
+./Notes.tex:4572: Argument of \XC@definec@lor has an extra }.
 <inserted text> 
                 \par 
-l.4570 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+l.4572 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -4009,10 +4009,10 @@ your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
 {tcbcolframe}{\label@optarg }\def \reserved@b {\label@noarg }\futurelet \ETC.
-./Notes.tex:4570: Paragraph ended before \XC@definec@lor was complete.
+./Notes.tex:4572: Paragraph ended before \XC@definec@lor was complete.
 <to be read again> 
                    \par 
-l.4570 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+l.4572 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -4020,45 +4020,45 @@ My plan is to forget the whole thing and hope for the best.
 
 Runaway argument?
 \let \reserved@d =[\def 
-./Notes.tex:4570: Paragraph ended before \pgfkeys@addpath was complete.
+./Notes.tex:4572: Paragraph ended before \pgfkeys@addpath was complete.
 <to be read again> 
                    \par 
-l.4570 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+l.4572 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-./Notes.tex:4570: Missing \endcsname inserted.
+./Notes.tex:4572: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.4570 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+l.4572 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./Notes.tex:4570: Missing \endcsname inserted.
+./Notes.tex:4572: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.4570 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+l.4572 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./Notes.tex:4570: Missing \endcsname inserted.
+./Notes.tex:4572: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.4570 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+l.4572 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
 Runaway argument?
 \let \reserved@d =[\def 
-./Notes.tex:4570: Paragraph ended before \pgfkeys@splitter was complete.
+./Notes.tex:4572: Paragraph ended before \pgfkeys@splitter was complete.
 <to be read again> 
                    \par 
-l.4570 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+l.4572 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -4067,33 +4067,33 @@ My plan is to forget the whole thing and hope for the best.
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@question.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4570 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+l.4572 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
                                                   
-./Notes.tex:4571: Missing $ inserted.
+./Notes.tex:4573: Missing $ inserted.
 <inserted text> 
                 $
-l.4571     \Rightarrow
+l.4573     \Rightarrow
                        \text{ At } R=R^* \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./Notes.tex:4578: Missing $ inserted.
+./Notes.tex:4580: Missing $ inserted.
 <inserted text> 
                 $
-l.4578 \end{question}
+l.4580 \end{question}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4571--4578
+Underfull \hbox (badness 10000) in paragraph at lines 4573--4580
 
  []
 
-./Notes.tex:4580: Argument of \XC@definec@lor has an extra }.
+./Notes.tex:4582: Argument of \XC@definec@lor has an extra }.
 <inserted text> 
                 \par 
-l.4580 ...by $10\%$ by adding soap in pure water.}
+l.4582 ...by $10\%$ by adding soap in pure water.}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -4104,10 +4104,10 @@ your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
 {tcbcolframe}{\label@optarg }\def \reserved@b {\label@noarg }\futurelet \ETC.
-./Notes.tex:4580: Paragraph ended before \XC@definec@lor was complete.
+./Notes.tex:4582: Paragraph ended before \XC@definec@lor was complete.
 <to be read again> 
                    \par 
-l.4580 ...by $10\%$ by adding soap in pure water.}
+l.4582 ...by $10\%$ by adding soap in pure water.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -4115,45 +4115,45 @@ My plan is to forget the whole thing and hope for the best.
 
 Runaway argument?
 \let \reserved@d =[\def 
-./Notes.tex:4580: Paragraph ended before \pgfkeys@addpath was complete.
+./Notes.tex:4582: Paragraph ended before \pgfkeys@addpath was complete.
 <to be read again> 
                    \par 
-l.4580 ...by $10\%$ by adding soap in pure water.}
+l.4582 ...by $10\%$ by adding soap in pure water.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-./Notes.tex:4580: Missing \endcsname inserted.
+./Notes.tex:4582: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.4580 ...by $10\%$ by adding soap in pure water.}
+l.4582 ...by $10\%$ by adding soap in pure water.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./Notes.tex:4580: Missing \endcsname inserted.
+./Notes.tex:4582: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.4580 ...by $10\%$ by adding soap in pure water.}
+l.4582 ...by $10\%$ by adding soap in pure water.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./Notes.tex:4580: Missing \endcsname inserted.
+./Notes.tex:4582: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.4580 ...by $10\%$ by adding soap in pure water.}
+l.4582 ...by $10\%$ by adding soap in pure water.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
 Runaway argument?
 \let \reserved@d =[\def 
-./Notes.tex:4580: Paragraph ended before \pgfkeys@splitter was complete.
+./Notes.tex:4582: Paragraph ended before \pgfkeys@splitter was complete.
 <to be read again> 
                    \par 
-l.4580 ...by $10\%$ by adding soap in pure water.}
+l.4582 ...by $10\%$ by adding soap in pure water.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -4162,20 +4162,20 @@ My plan is to forget the whole thing and hope for the best.
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@question.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4580 ...by $10\%$ by adding soap in pure water.}
+l.4582 ...by $10\%$ by adding soap in pure water.}
                                                   
-./Notes.tex:4581: Missing $ inserted.
+./Notes.tex:4583: Missing $ inserted.
 <inserted text> 
                 $
-l.4581     \Rightarrow
+l.4583     \Rightarrow
                        \sigma \text{ decreases by } 10\% \text{ by adding so...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./Notes.tex:4587: Missing $ inserted.
+./Notes.tex:4589: Missing $ inserted.
 <inserted text> 
                 $
-l.4587 \end{question}
+l.4589 \end{question}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -4186,18 +4186,18 @@ you left one out. Proceed, with fingers crossed.
 AED: lastpage setting LastPage
 (./Notes.aux)
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: BA78D87F652C9F4A93899B3E0839462C;20700.
+(rerunfilecheck)             Checksum: 4D5FEA9662EAF42B4CEE2134E28B902B;20713.
  ) 
 Here is how much of TeX's memory you used:
- 45953 strings out of 480247
- 1047321 string characters out of 5896151
- 1521269 words of memory out of 5000000
- 61910 multiletter control sequences out of 15000+600000
+ 45949 strings out of 480171
+ 1047234 string characters out of 5894488
+ 1521395 words of memory out of 5000000
+ 61915 multiletter control sequences out of 15000+600000
  563204 words of font info for 440 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
+ 59 hyphenation exceptions out of 8191
  98i,21n,94p,1002b,2938s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Notes.pdf (54 pages, 6192129 bytes).
+Output written on Notes.pdf (54 pages, 6192292 bytes).
 PDF statistics:
  1900 PDF objects out of 2073 (max. 8388607)
  1669 compressed objects within 17 object streams

@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1731497498 "Notes.tex" "Notes.pdf" "Notes" 1731497498
+["pdflatex"] 1731565100 "Notes.tex" "Notes.pdf" "Notes" 1731565100
   "/etc/texmf/web2c/texmf.cnf" 1728313746 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -284,8 +284,8 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1635798903 56029 3f7889dab51d620aa43177c391b7b190 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1728314037 128028 f533b797fba58d231669ea19e894e23e ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1728314042 1405649 dfa50ddcba054dec79f9c668d679378c ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1731525032 165012 f177baa1c39a3ebd62c3096a43521a0d ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1731525037 1435803 b2b82c7111785497bf4984a29468451c ""
   "Figures/Carnot_cycle.png" 1729163443 45905 1cbdfa0e50d833784da0360d8160a1c3 ""
   "Figures/Dry-adiabat-lines.png" 1729163443 748322 5c3846e569563ab8c0fc1f5b6aa541ea ""
   "Figures/Iso-baric-lines.png" 1729163443 54219 ca5047d5249255a8e2ff70128202a724 ""
@@ -297,10 +297,10 @@
   "Figures/cyclone_air_circulation.png" 1729163443 1328245 adda33af203e6ee78ce84cd3829ce7cc ""
   "Figures/hurricane_structure.jpg" 1729163443 35800 2afb2e2ef7ab0435f6d660b8a82b75ab ""
   "Figures/skew_t.png" 1729163443 888958 204d82c7eb0fb181751fe3642dec348f ""
-  "Notes.aux" 1731497423 33454 7ac85a2963043f7f7b3110e7eb39f80b "pdflatex"
-  "Notes.out" 1731497423 20700 ba78d87f652c9f4a93899b3e0839462c "pdflatex"
-  "Notes.tex" 1731497497 196663 573f710df80b381e14ae24b7a2d04d1a ""
-  "Notes.toc" 1731497423 9936 4c674ab18f27345de4fc24c164aa5f49 "pdflatex"
+  "Notes.aux" 1731565096 33458 4253d32eed5e8f22968d7b9e08d2918d "pdflatex"
+  "Notes.out" 1731565096 20713 4d5fea9662eaf42b4cee2134e28b902b "pdflatex"
+  "Notes.tex" 1731565098 196575 3e483bfe73cdaadf18af938597559131 ""
+  "Notes.toc" 1731565096 9938 3c5e19ac8c1303042853fea4285444df "pdflatex"
   "SelfArx.cls" 1729163443 8924 c80b6f289f7445b07689e1d7c5881f16 ""
   (generated)
   "Notes.aux"
