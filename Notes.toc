@@ -109,4 +109,6 @@
 \contentsline {subsection}{\numberline {29.1}. Classifiaction of cloulds}{53}{subsection.29.1}%
 \contentsline {subsection}{\numberline {29.2}. Types of particles within the clouds}{53}{subsection.29.2}%
 \contentsline {subsection}{\numberline {29.3}. Nucleation}{53}{subsection.29.3}%
+\contentsline {section}{\numberline {30}Lecture 30 14/11/2024}{55}{section.30}%
+\contentsline {subsection}{\numberline {30.1}. Supersaturation with respect to plane surface of pure water}{55}{subsection.30.1}%
 \contentsfinish 

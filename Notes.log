@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.14)  14 NOV 2024 11:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.14)  14 NOV 2024 12:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1184,6 +1184,11 @@ Overfull \hbox (1.4597pt too wide) detected at line 111
 \OT1/phv/m/n/10 29.3 
  []
 
+
+Overfull \hbox (1.4597pt too wide) detected at line 113
+\OT1/phv/m/n/10 30.1 
+ []
+
 )
 \tf@toc=\write5
 \openout5 = `Notes.toc'.
@@ -1195,7 +1200,7 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 12
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-<Figures/Rev_irr_process.jpg, id=693, 270.00874pt x 258.9675pt>
+<Figures/Rev_irr_process.jpg, id=706, 270.00874pt x 258.9675pt>
 File: Figures/Rev_irr_process.jpg Graphic file (type jpg)
 <use Figures/Rev_irr_process.jpg>
 Package pdftex.def Info: Figures/Rev_irr_process.jpg  used on input line 273.
@@ -2107,7 +2112,7 @@ Overfull \hbox (1.71555pt too wide) in paragraph at lines 2142--2143
 ] [28
 
 ]
-<Figures/Carnot_cycle.png, id=1152, 426.59375pt x 278.03876pt>
+<Figures/Carnot_cycle.png, id=1165, 426.59375pt x 278.03876pt>
 File: Figures/Carnot_cycle.png Graphic file (type png)
 <use Figures/Carnot_cycle.png>
 Package pdftex.def Info: Figures/Carnot_cycle.png  used on input line 2196.
@@ -2258,39 +2263,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 2295--2295
 [][][][][]$\OT1/pcr/m/n/8 https : / / www . noaa . gov / jetstream / upperair /
  []
 
-<Figures/Iso-thermal-lines.png, id=1187, 957.5775pt x 918.43124pt>
+<Figures/Iso-thermal-lines.png, id=1200, 957.5775pt x 918.43124pt>
 File: Figures/Iso-thermal-lines.png Graphic file (type png)
 <use Figures/Iso-thermal-lines.png>
 Package pdftex.def Info: Figures/Iso-thermal-lines.png  used on input line 2322.
 (pdftex.def)             Requested size: 240.23016pt x 230.40605pt.
-<Figures/Iso-baric-lines.png, id=1188, 958.58125pt x 917.4275pt>
+<Figures/Iso-baric-lines.png, id=1201, 958.58125pt x 917.4275pt>
 File: Figures/Iso-baric-lines.png Graphic file (type png)
 <use Figures/Iso-baric-lines.png>
 Package pdftex.def Info: Figures/Iso-baric-lines.png  used on input line 2328.
 (pdftex.def)             Requested size: 240.23016pt x 229.91626pt.
-<Figures/Dry-adiabat-lines.png, id=1189, 971.63pt x 940.51375pt>
+<Figures/Dry-adiabat-lines.png, id=1202, 971.63pt x 940.51375pt>
 File: Figures/Dry-adiabat-lines.png Graphic file (type png)
 <use Figures/Dry-adiabat-lines.png>
 Package pdftex.def Info: Figures/Dry-adiabat-lines.png  used on input line 2337.
 (pdftex.def)             Requested size: 240.23016pt x 232.53032pt.
-<Figures/Moist-adiabat-lines.png, id=1190, 870.25125pt x 665.48625pt>
+<Figures/Moist-adiabat-lines.png, id=1203, 870.25125pt x 665.48625pt>
 File: Figures/Moist-adiabat-lines.png Graphic file (type png)
 <use Figures/Moist-adiabat-lines.png>
 Package pdftex.def Info: Figures/Moist-adiabat-lines.png  used on input line 2343.
 (pdftex.def)             Requested size: 240.23016pt x 183.70486pt.
-<Figures/Mixing-ratio-lines.png, id=1191, 999.735pt x 678.535pt>
+<Figures/Mixing-ratio-lines.png, id=1204, 999.735pt x 678.535pt>
 File: Figures/Mixing-ratio-lines.png Graphic file (type png)
 <use Figures/Mixing-ratio-lines.png>
 Package pdftex.def Info: Figures/Mixing-ratio-lines.png  used on input line 2352.
 (pdftex.def)             Requested size: 240.23016pt x 163.04845pt.
 [30] [31 <./Figures/Iso-thermal-lines.png (PNG copy)> <./Figures/Iso-baric-lines.png (PNG copy)> <./Figures/Dry-adiabat-lines.png (PNG copy)> <./Figures/Moist-adiabat-lines.png (PNG copy)>] [32 <./Figures/Mixing-ratio-lines.png (PNG copy)>]
-<Figures/skew_t.png, id=1232, 976.64874pt x 831.105pt>
+<Figures/skew_t.png, id=1245, 976.64874pt x 831.105pt>
 File: Figures/skew_t.png Graphic file (type png)
 <use Figures/skew_t.png>
 Package pdftex.def Info: Figures/skew_t.png  used on input line 2359.
 (pdftex.def)             Requested size: 500.484pt x 425.89969pt.
  [33 <./Figures/skew_t.png (PNG copy)>]
-<Figures/hurricane_structure.jpg, id=1239, 1020.4524pt x 566.5968pt>
+<Figures/hurricane_structure.jpg, id=1252, 1020.4524pt x 566.5968pt>
 File: Figures/hurricane_structure.jpg Graphic file (type jpg)
 <use Figures/hurricane_structure.jpg>
 Package pdftex.def Info: Figures/hurricane_structure.jpg  used on input line 2380.
@@ -2300,7 +2305,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2384--2384
 [][][][][]$\OT1/pcr/m/n/8 https : / / web . mit . edu / []twcronin / Public / Lupit _
  []
 
-<Figures/cyclone_air_circulation.png, id=1243, 1377.145pt x 942.52126pt>
+<Figures/cyclone_air_circulation.png, id=1256, 1377.145pt x 942.52126pt>
 File: Figures/cyclone_air_circulation.png Graphic file (type png)
 <use Figures/cyclone_air_circulation.png>
 Package pdftex.def Info: Figures/cyclone_air_circulation.png  used on input line 2388.
@@ -3931,7 +3936,7 @@ l.4201 ...dew point temperature T_d is $8^\circ$C}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-<Figures/Solution_L27_q1.png, id=1600, 747.79375pt x 975.645pt>
+<Figures/Solution_L27_q1.png, id=1613, 747.79375pt x 975.645pt>
 File: Figures/Solution_L27_q1.png Graphic file (type png)
 <use Figures/Solution_L27_q1.png>
 Package pdftex.def Info: Figures/Solution_L27_q1.png  used on input line 4227.
@@ -3942,26 +3947,40 @@ Package pdftex.def Info: Figures/Solution_L27_q1.png  used on input line 4227.
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 4376--4377
-
+Overfull \hbox (0.66702pt too wide) in paragraph at lines 4356--4357
+[] 
  []
 
 
-Overfull \hbox (13.25456pt too wide) detected at line 4413
+Underfull \vbox (badness 3312) has occurred while \output is active []
+
+
+Overfull \hbox (13.25456pt too wide) detected at line 4412
 []
  []
 
 
-Overfull \hbox (10.45168pt too wide) in paragraph at lines 4448--4449
+Overfull \hbox (10.45168pt too wide) in paragraph at lines 4447--4448
 []\OT1/ptm/m/n/10 (-20) Under sub-sat-u-rated con-di-tion ($\OML/ztmcm/m/it/10 e < e[]$\OT1/ptm/m/n/10 (-20) ) $\OMS/ztmcm/m/n/10 !$ $\OT1/ztmcm/m/n/10 ^^A\OML/ztmcm/m/it/10 E > \OT1/ztmcm/m/n/10 0$ \OT1/ptm/m/n/10 (-20) (Droplets
  []
 
 Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-./Notes.tex:4524: Undefined control sequence.
+./Notes.tex:4485: Undefined control sequence.
 <recently read> \dealta 
                         
-l.4524             \end{axis}
+l.4485             \end{axis}
+                             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ; in font nullfont!
+./Notes.tex:4523: Undefined control sequence.
+<recently read> \dealta 
+                        
+l.4523             \end{axis}
                              
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3974,31 +3993,31 @@ and I'll forget about whatever was undefined.
 ]
 Missing character: There is no ; in font nullfont!
 
-./Notes.tex:4569: Package pgfkeys Error: Choice 'both' unknown in choice key '/pgfplots/axis y line'. I am going to ignore this key.
+./Notes.tex:4568: Package pgfkeys Error: Choice 'both' unknown in choice key '/pgfplots/axis y line'. I am going to ignore this key.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4569     \end{axis}
+l.4568     \end{axis}
                      
 (That was another \errmessage.)
 
 
-./Notes.tex:4569: Package pgfkeys Error: Choice 'both' unknown in choice key '/pgfplots/axis z line'. I am going to ignore this key.
+./Notes.tex:4568: Package pgfkeys Error: Choice 'both' unknown in choice key '/pgfplots/axis z line'. I am going to ignore this key.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4569     \end{axis}
+l.4568     \end{axis}
                      
 (That was another \errmessage.)
 
-./Notes.tex:4572: Argument of \XC@definec@lor has an extra }.
+./Notes.tex:4571: Argument of \XC@definec@lor has an extra }.
 <inserted text> 
                 \par 
-l.4572 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+l.4571 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -4009,10 +4028,10 @@ your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
 {tcbcolframe}{\label@optarg }\def \reserved@b {\label@noarg }\futurelet \ETC.
-./Notes.tex:4572: Paragraph ended before \XC@definec@lor was complete.
+./Notes.tex:4571: Paragraph ended before \XC@definec@lor was complete.
 <to be read again> 
                    \par 
-l.4572 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+l.4571 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -4020,45 +4039,45 @@ My plan is to forget the whole thing and hope for the best.
 
 Runaway argument?
 \let \reserved@d =[\def 
-./Notes.tex:4572: Paragraph ended before \pgfkeys@addpath was complete.
+./Notes.tex:4571: Paragraph ended before \pgfkeys@addpath was complete.
 <to be read again> 
                    \par 
-l.4572 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+l.4571 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-./Notes.tex:4572: Missing \endcsname inserted.
+./Notes.tex:4571: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.4572 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+l.4571 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./Notes.tex:4572: Missing \endcsname inserted.
+./Notes.tex:4571: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.4572 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+l.4571 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./Notes.tex:4572: Missing \endcsname inserted.
+./Notes.tex:4571: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.4572 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+l.4571 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
 Runaway argument?
 \let \reserved@d =[\def 
-./Notes.tex:4572: Paragraph ended before \pgfkeys@splitter was complete.
+./Notes.tex:4571: Paragraph ended before \pgfkeys@splitter was complete.
 <to be read again> 
                    \par 
-l.4572 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+l.4571 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -4067,33 +4086,33 @@ My plan is to forget the whole thing and hope for the best.
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@question.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4572 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+l.4571 ...nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
                                                   
-./Notes.tex:4573: Missing $ inserted.
+./Notes.tex:4572: Missing $ inserted.
 <inserted text> 
                 $
-l.4573     \Rightarrow
+l.4572     \Rightarrow
                        \text{ At } R=R^* \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./Notes.tex:4580: Missing $ inserted.
+./Notes.tex:4579: Missing $ inserted.
 <inserted text> 
                 $
-l.4580 \end{question}
+l.4579 \end{question}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4573--4580
+Underfull \hbox (badness 10000) in paragraph at lines 4572--4579
 
  []
 
-./Notes.tex:4582: Argument of \XC@definec@lor has an extra }.
+./Notes.tex:4581: Argument of \XC@definec@lor has an extra }.
 <inserted text> 
                 \par 
-l.4582 ...by $10\%$ by adding soap in pure water.}
+l.4581 ...by $10\%$ by adding soap in pure water.}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -4104,10 +4123,10 @@ your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
 {tcbcolframe}{\label@optarg }\def \reserved@b {\label@noarg }\futurelet \ETC.
-./Notes.tex:4582: Paragraph ended before \XC@definec@lor was complete.
+./Notes.tex:4581: Paragraph ended before \XC@definec@lor was complete.
 <to be read again> 
                    \par 
-l.4582 ...by $10\%$ by adding soap in pure water.}
+l.4581 ...by $10\%$ by adding soap in pure water.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -4115,45 +4134,45 @@ My plan is to forget the whole thing and hope for the best.
 
 Runaway argument?
 \let \reserved@d =[\def 
-./Notes.tex:4582: Paragraph ended before \pgfkeys@addpath was complete.
+./Notes.tex:4581: Paragraph ended before \pgfkeys@addpath was complete.
 <to be read again> 
                    \par 
-l.4582 ...by $10\%$ by adding soap in pure water.}
+l.4581 ...by $10\%$ by adding soap in pure water.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-./Notes.tex:4582: Missing \endcsname inserted.
+./Notes.tex:4581: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.4582 ...by $10\%$ by adding soap in pure water.}
+l.4581 ...by $10\%$ by adding soap in pure water.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./Notes.tex:4582: Missing \endcsname inserted.
+./Notes.tex:4581: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.4582 ...by $10\%$ by adding soap in pure water.}
+l.4581 ...by $10\%$ by adding soap in pure water.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./Notes.tex:4582: Missing \endcsname inserted.
+./Notes.tex:4581: Missing \endcsname inserted.
 <to be read again> 
                    \let 
-l.4582 ...by $10\%$ by adding soap in pure water.}
+l.4581 ...by $10\%$ by adding soap in pure water.}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
 Runaway argument?
 \let \reserved@d =[\def 
-./Notes.tex:4582: Paragraph ended before \pgfkeys@splitter was complete.
+./Notes.tex:4581: Paragraph ended before \pgfkeys@splitter was complete.
 <to be read again> 
                    \par 
-l.4582 ...by $10\%$ by adding soap in pure water.}
+l.4581 ...by $10\%$ by adding soap in pure water.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -4162,45 +4181,46 @@ My plan is to forget the whole thing and hope for the best.
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@question.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4582 ...by $10\%$ by adding soap in pure water.}
+l.4581 ...by $10\%$ by adding soap in pure water.}
                                                   
-./Notes.tex:4583: Missing $ inserted.
+./Notes.tex:4582: Missing $ inserted.
 <inserted text> 
                 $
-l.4583     \Rightarrow
+l.4582     \Rightarrow
                        \sigma \text{ decreases by } 10\% \text{ by adding so...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./Notes.tex:4589: Missing $ inserted.
+./Notes.tex:4588: Missing $ inserted.
 <inserted text> 
                 $
-l.4589 \end{question}
+l.4588 \end{question}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-[54
+[54] [55
+
 
 ] 
 AED: lastpage setting LastPage
 (./Notes.aux)
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: 4D5FEA9662EAF42B4CEE2134E28B902B;20713.
+(rerunfilecheck)             Checksum: 5F411B4A41C33CD69B80D816588D3548;21263.
  ) 
 Here is how much of TeX's memory you used:
- 45949 strings out of 480171
- 1047234 string characters out of 5894488
- 1521395 words of memory out of 5000000
- 61915 multiletter control sequences out of 15000+600000
- 563204 words of font info for 440 fonts, out of 8000000 for 9000
+ 45959 strings out of 480171
+ 1047348 string characters out of 5894488
+ 1521737 words of memory out of 5000000
+ 61917 multiletter control sequences out of 15000+600000
+ 563267 words of font info for 441 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  98i,21n,94p,1002b,2938s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Notes.pdf (54 pages, 6192292 bytes).
+Output written on Notes.pdf (55 pages, 6194986 bytes).
 PDF statistics:
- 1900 PDF objects out of 2073 (max. 8388607)
- 1669 compressed objects within 17 object streams
- 816 named destinations out of 1000 (max. 500000)
- 127424 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 1925 PDF objects out of 2073 (max. 8388607)
+ 1691 compressed objects within 17 object streams
+ 823 named destinations out of 1000 (max. 500000)
+ 127440 words of extra memory for PDF output out of 128383 (max. 10000000)
 

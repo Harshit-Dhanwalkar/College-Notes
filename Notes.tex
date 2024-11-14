@@ -4332,9 +4332,9 @@ This process is particularly important in middle and high latitudes, where cloud
 
 \begin{tikzpicture}[
     edge from parent fork right, 
-    sibling distance=0.25cm, level distance=0.5cm,
-    level 1/.style={sibling distance=1.75cm, level distance=3.25cm}, 
-    level 2/.style={sibling distance=0.5cm, level distance=2cm},
+    sibling distance=0.2cm, level distance=0.5cm,
+    level 1/.style={sibling distance=1.7cm, level distance=2.6cm}, 
+    level 2/.style={sibling distance=0.5cm, level distance=3cm},
     grow=right
 ]
     \node {Cloud Classification}
@@ -4344,9 +4344,9 @@ This process is particularly important in middle and high latitudes, where cloud
             child { node {Warm} }
         }
         child { node {Height}
-            child { node {$>6$ km} }
-            child { node {$2-6$ km} }
-            child { node {$0-2$ km} }
+            child { node {$>6$ km (high)} }
+            child { node {$2-6$ km (middle)} }
+            child { node {$0-2$ km (low)} }
         }
         child { node {Texture}
             child { node {Stratiform} }
@@ -4369,37 +4369,36 @@ Collective condensed particle within the cloud \textbf{'hydrometeous'}
 \subsection{. Nucleation}
 Fundamental process of phase change is called as Nucleation.
 
+Nulceation are of 2 types:
+\begin{enumerate}[noitemsep]
+    \item Homgeneous : Involve forign particles (aerosols), CNN (Cloud Condensation Nuclei)
+    \item Hetrogeneous
+\end{enumerate}
 Small thermal purturbation/attenuation can disintegrate i-mer.
-
 Embreyo $\rightarrow$ collection of water molecule.
 
-Germ $\rightarrow$ activated embreyo (Started to show water droplet properties). \\
+Germ $\rightarrow$ activated embreyo (Started to show water droplet properties).
 
 \begin{tikzpicture}
     % Cloud shape
     \draw[fill=gray!20, rounded corners=15pt] (-3, -1) rectangle (4, 2.5);
     \node at (0.75, 0.5) {Nucleation Cloud};
-
     % Monomer
     \node[circle, draw, fill=blue!30, minimum size=6mm] at (-1.5, 0) {};
     \node[above=0.1cm] at (-1.25, -0.75) {Monomer};
-
     % Dimer
     \node[circle, draw, fill=green!30, minimum size=6mm] at (0, 2) {};
     \node[circle, draw, fill=green!30, minimum size=6mm] at (0.5, 1.7) {};
     \node[above=0.1cm] at (0.25, 1) {Dimer};
-
     % i-mer (larger aggregate)
     \node[circle, draw, fill=red!30, minimum size=6mm] at (3, 1) {};
     \node[circle, draw, fill=red!30, minimum size=6mm] at (3.5, 1) {};
     \node[circle, draw, fill=red!30, minimum size=6mm] at (3, 0.5) {};
     \node[circle, draw, fill=red!30, minimum size=6mm] at (3.5, 0.5) {};
     \node[below=0.2cm] at (3.25, 0.5) {i-mer};
-
 \end{tikzpicture}
 
 One basic assumption of classic nulcleation theory is that the population of i-mer embreyos follows \textbf{Boltman's distribution}.
-
 \begin{align}
     N_i &= N \exp{\Big(\frac{-\Delta E_i}{KT}\Big)} \\
     N_i &= N \exp{\Big(\frac{\mu_v-\mu_l}{KT}\Big)} \\
@@ -4472,7 +4471,7 @@ Where, $R^*$ is critical radius.
                     blue
                 ]
                 %{4*pi*x^2*\sigma - (4/3)*pi*x^3*\n*\K*\T*\logpart};
-                {ln(x)};
+                {exp(x)};
                 \addlegendentry{$\Delta E$};
 
                 % Highlight region for ln(x) > 0
@@ -4482,7 +4481,7 @@ Where, $R^*$ is critical radius.
                     fill=blue,
                     opacity=0.2
                 ]
-                {ln(x)} \closedcycle;
+                {exp(x)} \closedcycle;
             \end{axis}
         \end{tikzpicture}
     \item Under supersaturated condition ($e>e_s$) $\rightarrow$ $\Delta E > 0$ uptill $R^*$ then $\Delta E < 0$
@@ -4588,6 +4587,40 @@ Eq\myeqref{eq:kelvins_eq} is called \textbf{Kelvin's equation}
     \text{Fractional change in $\Delta E^*$ is 30\% and for $R^*$ is 10\%}
 \end{question}
 % NOTE:COMPLETE L-29
+% --------------------------------------------------------------------------------------
+\clearpage
+
+\section{Lecture 30 14/11/2024}
+
+\subsection{. Supersaturation with respect to plane surface of pure water}
+
+$\therefore$ Saturation vapor pressure of pure water will be different for different geometry.
+
+The vapor pressure adjucent to solution droplet is reduced as compared to pure water droplet. 
+
+Fractional reduction in the vapor pressure is equivalent to mole fraction.
+
+\textbf{Mole fraction} of a pure water droplet is defined as number of moles of pure water in the solution by the total number of moles of the solution.
+\begin{align}
+    f &= \frac{n_{PW}}{n_{PW}+n_S}
+\end{align}
+Consider a solution of droplet of radius $r$ that contains a mass $m$ (in kg) dissolved in material of molecular mass $M_S$.
+For example, take solution of common salt in water:
+\begin{align*}
+    NaCl \rightarrow Na^{+} + Cl^{-}
+\end{align*}
+Each molecule of the material dissolves in $i$ ions in water.
+
+$\therefore$ Effective number of moles will be:
+\begin{align}
+    n_{\text{eff}} = i\frac{m}{M_S}
+\end{align}
+
+If we assume $\rho'$ is the density of solution, number of moles of pure water in the droplet is:
+\begin{align*}
+    \frac{\big(\frac{4}{3}\pi r^3 \rho' -M\big)}{M_w}
+\end{align*}
+% WARN: INCOMPLETE L-30
 % --------------------------------------------------------------------------------------
 \clearpage
 % \begin{tikzpicture}
