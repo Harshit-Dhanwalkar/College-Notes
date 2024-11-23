@@ -947,9 +947,9 @@ We define humidity using following parameters:
             \label{eq:mixingratio}
         \end{align}
         \text{Unit of mixing ratio is $g/Kg$}
-    \item Specific heat:
+    \item Specific humidity:
         \begin{align}
-            q &= \frac{ \text{Mass of water vapour}}{\text{Mass of dry air} + \text{Mass of water vapour}} \\
+            \omega &= \frac{ \text{Mass of water vapour}}{\text{Mass of dry air} + \text{Mass of water vapour}} \\
               &= \frac{M_v}{M_d} \\
               &= \frac{ \text{Density of water vapour}}{\text{Density of dry air} + \text{Density of water vapour}} \\
               &= \frac{\rho_v}{\rho_d+\rho_v} \\
@@ -3070,7 +3070,7 @@ $e_s(T)\approx Ae^{-B/T}$, where $A=2.53\times10^{11}$Pa, $B=5420$K.
 
 This gives more accurate equation for temperature range from $-30^\circ$C \leqslant T \leqslant $35^\circ$C
 \begin{align}
-    e_s(T) = 611.2\Big[\frac{17.69T_c}{T_c_243.5}\Big]
+    e_s(T) = 611.2\Big[\frac{17.69T_c}{T_c+243.5}\Big]
 \end{align}
 where $T_c$ is temperature in celcius scale
 

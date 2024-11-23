@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.14)  14 NOV 2024 15:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.14)  23 NOV 2024 17:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1856,7 +1856,7 @@ l.841 ...arily over the South Pole in Antarctica?}
 ] [11
 
 ]
-Overfull \hbox (5.13289pt too wide) detected at line 958
+Overfull \hbox (7.82283pt too wide) detected at line 958
 []
  []
 
@@ -3012,20 +3012,6 @@ l.3071 ... $-30^\circ$C \leqslant T \leqslant $35^
                                                   \circ$C
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
-
-./Notes.tex:3074: Double subscript.
-<argument> T_c_
-               243.5
-l.3074 \end{align}
-                  
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-./Notes.tex:3074: Double subscript.
-<argument> T_c_
-               243.5
-l.3074 \end{align}
-                  
-I treat `x_1_2' essentially like `x_1{}_2'.
 
 ./Notes.tex:3085: Undefined control sequence.
 \pgfkeyscurrentkey ->\labe 
@@ -4209,28 +4195,19 @@ you left one out. Proceed, with fingers crossed.
 ] 
 AED: lastpage setting LastPage
 (./Notes.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `Notes.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Notes.out':
-(rerunfilecheck)             Before: 1B1FFE506A24D12DB7E012D2F7C94EC3;21405
-(rerunfilecheck)             After:  36DD1E539631ECF3B10F6929E6C751E8;21418.
+Package rerunfilecheck Info: File `Notes.out' has not changed.
+(rerunfilecheck)             Checksum: 36DD1E539631ECF3B10F6929E6C751E8;21418.
  ) 
 Here is how much of TeX's memory you used:
  45978 strings out of 480171
  1047666 string characters out of 5894488
- 1522127 words of memory out of 5000000
+ 1522004 words of memory out of 5000000
  61926 multiletter control sequences out of 15000+600000
  563267 words of font info for 441 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  98i,21n,94p,1002b,2938s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Notes.pdf (55 pages, 6201314 bytes).
+Output written on Notes.pdf (55 pages, 6201304 bytes).
 PDF statistics:
  1948 PDF objects out of 2073 (max. 8388607)
  1710 compressed objects within 18 object streams
