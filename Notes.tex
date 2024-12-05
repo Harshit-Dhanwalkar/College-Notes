@@ -1356,7 +1356,7 @@ Simplifing Eq.\myeqref{eq:hypsometric_eq}, we get:
 \clearpage
 
 \section{Lecture 8 30/08/2024}
-\begin{question}[label=q:8.1]{On May 20\,2020  tropical cyclone Ampan of cetre pressure at ocean surface dropped to $920hPa$. The surrounding region away from influence of centre of cyclone had mean sea level pressure of $1010hPa$. The height depression associtated with centre of cyclone vanished at height of pressure level of $150hPa$. If the mean virtual temperature of the surrounding between the surface at $150hPa$ was $-10^{\circ}C$. What was the corresponding mean virtual temperature in the centre of storm?}
+\begin{question}[label=q:8.1]{On May 20\text{,} 2020 tropical cyclone Ampan of centre pressure at ocean surface dropped to $920hPa$. The surrounding region away from influence of centre of cyclone had mean sea level pressure of $1010hPa$. The height depression associtated with centre of cyclone vanished at height of pressure level of $150hPa$. If the mean virtual temperature of the surrounding between the surface at $150hPa$ was $-10^{\circ}C$. What was the corresponding mean virtual temperature in the centre of storm?}
     $\Rightarrow$ Given data:
     \begin{align*}
          P_1 &= 1010 hPa = 101000 Pa \\
@@ -1437,7 +1437,7 @@ where $34.1$ constant have an unit of $^\circ C/km$
 \begin{align}
     \Rightarrow \Gamma &= -\frac{dT}{dz} = -\frac{g}{R} = -34.1^\circ C/km 
 \end{align}
-This is Ideal/theoritical value, but \textbf{actual/pratical value for $Gamma$ is $6.5^\circ/km$} because of phenomenon called \textbf{auto-convetive lapse rate} i.e. $\rho$ varies with altitude, and warm are and cold air do vertical circulation.
+This is Ideal/theoritical value, but \textbf{actual/pratical value for $\Gamma$ is $6.5^\circ/km $} because of phenomenon called \textbf{auto-convective lapse rate} i.e. $\rho$ varies with altitude, and warm are and cold air do vertical circulation.
 
 \subsection{Constant temperature atmosphere}
 Assume atmosphere is at hydrostatic balance and Temperature $T$ to be constant.
@@ -1503,7 +1503,7 @@ Assuming Pressure $P$ constant at each step, and process is slow, incremental, i
     
     % Labels for points
     \node at (1.5, 0.5) {Area(A)}; % Point A above the piston
-    \node at (1.5, 2.75) {Piston}; % Label for piston
+    \node at (1.5, 3.5) {Piston}; % Label for piston
 
     % Annotate pressure and volume
     \draw[<->, blue, thick] (-0.5, 0) -- (-0.5, 2) node[midway, left] {V};
@@ -1688,7 +1688,6 @@ From Eq.\myeqref{eq:reduced_1st_law_of_thermo}
     C_v &= \Big(\frac{du}{dT}\Big)_{\alpha =\text{cont}}\\
     \Rightarrow du &= C_vdt
 \end{align}
-
 From Kinetic theory of gas
 $$ U = \frac{3}{2}P\alpha = \frac{3}{2}R_dT$$
 For monoatomic gas:
@@ -1710,7 +1709,7 @@ Specific heat = $\frac{\delta q}{dT}$
 \end{align}
 
 \subsection{. Specific heat at constant volume}
-Volume($V$) is constant ,i.e., specific density($\alpha$) = constant 
+Volume($V$) is constant, i.e., specific density($\alpha$) = constant 
 
 $\therefore$ $d \alpha = 0$
 \begin{align}
@@ -1726,7 +1725,6 @@ Hence,
 \begin{align}
    \Rightarrow \delta q = C_vdt + Pd\alpha     \label{eq:1st_law_with_const_volume}
 \end{align}
-
 \begin{align*}
 C_v = 
     \begin{cases} 
@@ -1831,7 +1829,6 @@ From Eq.\myeqref{eq:1st_law_with_const_volume} and Eq.\myeqref{eq:p_d_alpha}
     \delta q &= (C_v + R_d)dT-\alpha dP \\ 
     \Rightarrow \delta q &= C_pdT-\alpha dP
 \end{align}
-
 \begin{align*}
 C_p =
     \begin{cases}
@@ -1840,7 +1837,7 @@ C_p =
     \end{cases}
 \end{align*}
 
-\subsection{. Special forms of 1$^{st}$ laaw of thermodynamics}
+\subsection{. Special forms of 1$^{st}$ law of thermodynamics}
 \subsubsection*{I. Isobaric process}
 \begin{align}
     \delta q &= C_p dT \\
@@ -1855,8 +1852,7 @@ C_p =
     q &= \int^f_i \alpha dP \\
       &= \int^f_i \frac{R_d T}{P} dP \\
       &= -R_d T \ln P|^f_i \\
-      &= -R_d T \ln P|^f_i \\
-      &= R_d T \ln \alpha|^f_i = w \\
+      &= R_d T \ln \alpha|^f_i = w
 \end{align}
 
 \subsubsection*{III. Isochoric process}
@@ -1921,7 +1917,7 @@ For adiabatic processes:
 \begin{align}
     dq &= 0 \\
     c_p dT &= \alpha dP \\
-    c_p \frac{dT}{T} &= \alpha \frac{dP}{T} \\
+    c_p \frac{dT}{T} &= \alpha \frac{dP}{T}
 \end{align}
 From Ideal gas equations:
 \begin{align}
@@ -1932,7 +1928,7 @@ From Ideal gas equations:
     c_p \frac{dT}{T} &= \frac{R_d T}{P} \frac{dP}{T} \\
     c_p \frac{dT}{T} &= R_d \frac{dP}{P}
 \end{align}
-Integrating from an initial termerature $T_0$ and pressure $P_0$ to arbitary temperature and pressure $T$ and $P$
+Integrating from an initial termerature $T_0$ and pressure $P_0$ to arbitary temperature and pressure $T$ and $P$, we get:
 \begin{align}
     \int^{T}_{T_0} c_p \frac{dT}{T} &= \int^{P}_{P_0} R_d \frac{dP}{P} \\
     c_p \ln\Big(\frac{T}{T_0}\Big) &= R_d  \ln\Big(\frac{P}{P_0}\Big) \\
@@ -1941,7 +1937,7 @@ Integrating from an initial termerature $T_0$ and pressure $P_0$ to arbitary tem
     \Rightarrow \theta &= T\Big(\frac{1000}{P_0}\Big)^{k} \label{eq:poissonsEq}
 \end{align}
 where constant $k$ is $R_d/c_p$ which is equal to \textbf{0.286}, $P_0 = 1000 hPa$ which is \textbf{near surface pressure} and $\theta$ is known as \textbf{potential temperature}. \\
-$\theta$ known as \textbf{potential temperature} Eq.\myeqref{eq:poissonsEq} is defined when a adiabaticatly compressed parcel and bought to $1000hPa$ isobar (near surface) and temperature is measure. \\
+\textbf{Potential temperature}()$\theta$) in Eq.\myeqref{eq:poissonsEq} is defined as a adiabaticatly compressed parcel is bought to $1000hPa$ isobar (near surface) from that leveland temperature is measure. \\
 
 \newpage
 \begin{tikzpicture}
@@ -1951,8 +1947,8 @@ $\theta$ known as \textbf{potential temperature} Eq.\myeqref{eq:poissonsEq} is d
     \draw[thick] (0,-3) -- (6,-3); % Third line
 
     % Draw circles on the second and third lines
-    \draw[fill=white] (3,-1) circle [radius=0.2]; % Circle at (3, -1)
-    \draw[fill=white] (3,-3) circle [radius=0.2]; % Circle at (3, -3)
+    \draw[fill=blue!30] (3,-1) circle [radius=0.2]; % Circle at (3, -1)
+    \draw[fill=blue!30] (3,-3) circle [radius=0.2]; % Circle at (3, -3)
 
     % Label the circles
     \node at (4,-0.5) {$\text{Air parcel}$};
@@ -1968,11 +1964,12 @@ $\theta$ known as \textbf{potential temperature} Eq.\myeqref{eq:poissonsEq} is d
 \end{tikzpicture}
 
 Let us assume that 
-
 \begin{align}
     \theta &= ATP^{-k}
 \end{align}
-taking logorithm on both sides
+where $k$ is $R_d/C_p$.
+
+Taking logorithm on both sides
 \begin{align}
     d(\ln \theta) &= d(\ln A) + d(\ln T) - kd(\ln P) \\
     d(\ln \theta) &= d(\ln T) - \frac{R_d}{C_p}d(\ln P) \label{eq:potential_temperature_1}

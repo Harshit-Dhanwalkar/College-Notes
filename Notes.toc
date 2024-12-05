@@ -46,7 +46,7 @@
 \contentsline {subsection}{\numberline {11.1}. Specific heat capacity}{23}{subsection.11.1}%
 \contentsline {subsection}{\numberline {11.2}. Specific heat at constant volume}{23}{subsection.11.2}%
 \contentsline {subsection}{\numberline {11.3}. Specific heat at constant pressure}{23}{subsection.11.3}%
-\contentsline {subsection}{\numberline {11.4}. Special forms of 1$^{st}$ laaw of thermodynamics}{23}{subsection.11.4}%
+\contentsline {subsection}{\numberline {11.4}. Special forms of 1$^{st}$ law of thermodynamics}{23}{subsection.11.4}%
 \contentsline {section}{\numberline {12}Lecture 12 11/09/2024}{25}{section.12}%
 \contentsline {subsection}{\numberline {12.1}. Poisson's equation for adiabatic transformation}{25}{subsection.12.1}%
 \contentsline {section}{\numberline {13}Lecture 13 12/09/2024}{27}{section.13}%
@@ -93,7 +93,7 @@
 \contentsline {subsection}{\numberline {24.3}. Atmospheric stability}{46}{subsection.24.3}%
 \contentsline {section}{\numberline {25}Lecture 25 06/11/2024}{47}{section.25}%
 \contentsline {subsection}{\numberline {25.1}. Atmospheric stability}{47}{subsection.25.1}%
-\contentsline {subsubsection}{Convection/small scale process}{47}{equation.25.476}%
+\contentsline {subsubsection}{Convection/small scale process}{47}{equation.25.473}%
 \contentsline {subsubsection}{Three conditions}{47}{Item.50}%
 \contentsline {subsection}{\numberline {25.2}. Equation of motion for the parcel}{47}{subsection.25.2}%
 \contentsline {section}{\numberline {26}Leture 26 07/11/2024}{49}{section.26}%
@@ -101,7 +101,7 @@
 \contentsline {subsection}{\numberline {26.2}. Convective instability or Potential instability}{50}{subsection.26.2}%
 \contentsline {section}{\numberline {27}Lecture 27 08/11/2024}{51}{section.27}%
 \contentsline {subsection}{\numberline {27.1}. Convective Available Potential Energy (CAPE) and Convective Inhibition (CIN)}{51}{subsection.27.1}%
-\contentsline {subsubsection}{Theritical maximum velocity}{51}{equation.27.527}%
+\contentsline {subsubsection}{Theritical maximum velocity}{51}{equation.27.524}%
 \contentsline {section}{\numberline {28}Lecture 28 11/11/2024}{52}{section.28}%
 \contentsline {subsection}{\numberline {28.1}. Clasisus-Clapeyron Equation}{52}{subsection.28.1}%
 \contentsline {subsection}{\numberline {28.2}. Weigner-Bergeron-Findeisn Therory}{52}{subsection.28.2}%
