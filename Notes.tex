@@ -1287,7 +1287,7 @@ Let $g_0$ be accerleration due to gravity averaged over the surface.
     \frac{\phi(z)}{g_0} &= \int^{z}_{0} \frac{g}{g_0}dz \\
     \Rightarrow Z &= \frac{\phi(z)}{g_0} \label{eq:geopotential_height}
 \end{align}
-The \textbf{$Z$ in Eq\myeqref{eq:geopotential_height} is called Geopotential height}.
+The \textbf{$Z$ in Eq.\myeqref{eq:geopotential_height} is called Geopotential height}.
 
 \begin{table}[ht]
 \centering
@@ -1985,7 +1985,7 @@ Consider $1^{st}$ law of thermodynamics
     \frac{\delta q}{C_p T} &= d(\ln T) - \frac{R_d}{C_p} d(\ln P) \label{eq:potential_temperature_2}
 \end{align}
 
-from Eq.\myeqref{eq:potential_temperature_1} and Eq,\myeqref{eq:potential_temperature_2}
+from Eq.\myeqref{eq:potential_temperature_1} and Eq.\myeqref{eq:potential_temperature_2}
 \begin{align}
     d(\ln \theta) = \frac{\delta q}{C_p T}
 \end{align}
@@ -2271,7 +2271,7 @@ From Eq.\myeqref{eq:w12}, \myeqref{eq:w23}, \myeqref{eq:w34}, and \myeqref{eq:w4
                      &= R_d(T_1 - T_2) \ln\Big(\frac{\alpha_2}{\alpha_1}\Big) \quad \text{From Eq.\myeqref{eq:volume_ratio}} \label{eq:TotalWorkDone}
 \end{align}
 
-Finding the effeincy of carnot cycle using Eq.\myeqref{eq:effiency} and Eq\myeqref{eq:TotalWorkDone}
+Finding the effeincy of carnot cycle using Eq.\myeqref{eq:effiency} and Eq.\myeqref{eq:TotalWorkDone}
 \begin{align}
     \eta & = \frac{Q_1 + Q_2}{Q_1} \\
         &= 1 + \frac{Q_2}{Q_1} \\
@@ -2412,7 +2412,7 @@ At constant pressure
     \text{ also,} \\
     \delta q &= C_p dT - \alpha dP  \label{eq:enthalphy_heat_1}
 \end{align}
-From Eq\myeqref{eq:enthalphy_heat} and Eq\myeqref{eq:enthalphy_heat_1}
+From Eq.\myeqref{eq:enthalphy_heat} and Eq.\myeqref{eq:enthalphy_heat_1}
 \begin{align}
     dh - \alpha dP &= C_p -\alpha dP
 \end{align}
@@ -2536,13 +2536,11 @@ Let's recall that,
     q_1 &= R_dT_1\ln \Big(\frac{\alpha_2}{\alpha_1}\Big) \\
     \frac{q_1}{T_1} &= R_d\ln \Big(\frac{\alpha_2}{\alpha_1}\Big)
 \end{align}
-
 Similiarly,
 \begin{align}
     q_2 &= -R_dT_2\ln \Big(\frac{\alpha_2}{\alpha_1}\Big) \\
-    \frac{q_2}{T_2} &= R_d\ln \Big(\frac{\alpha_2}{\alpha_1}\Big) 
+    \frac{q_2}{T_2} &= -R_d\ln \Big(\frac{\alpha_2}{\alpha_1}\Big) 
 \end{align}
-
 \begin{align}
     \frac{q_1}{T_1} + \frac{q_2}{T_2}=0, \label{eq:q1t1+q2t2} \quad \quad \quad q_1>0, q_2<0 
 \end{align}
@@ -2551,23 +2549,23 @@ Efficency of heat engine:
 \begin{align}
     \eta_{\text{rev}} = 1- \frac{T_2}{T_1} \\
     \eta_{\text{rev}} = \frac{T_1 - T_2}{T_1} \\
-    T_1 \eta_{\text{rev}} = T_1 - T_2 \label{eq:eff_of_heat_engine}
+    T_1\cdot\eta_{\text{rev}} = T_1 - T_2 \label{eq:eff_of_heat_engine}
 \end{align}
 
 Multiply and divide Eq.\myeqref{eq:q1t1+q2t2} by $\eta_{\text{rev}}$ 
 \begin{align}
-    \frac{q_1}{T_1}\frac{\eta_\text{rev}}{\eta_\text{rev}} + \frac{q_2}{T_2}=0
+    \frac{q_1}{T_1}\cdot\frac{\eta_\text{rev}}{\eta_\text{rev}} + \frac{q_2}{T_2}=0
 \end{align}
 
 From Eq.\myeqref{eq:eff_of_heat_engine},
 \begin{align}
-    \frac{q_1}{T_1}\frac{\eta_\text{rev}}{(T_1-T_2)} + \frac{q_2}{T_2}=0
+    q_1\cdot\frac{\eta_\text{rev}}{(T_1-T_2)} + \frac{q_2}{T_2}=0
 \end{align}
 The above expression is applicable only if process is \textbf{perfectly reversible}.
 
 If process is not prefrectly reversible, i.e., irreversible
 \begin{align}
-    \frac{q_1}{T_1}\frac{\eta_\text{irrev}}{(T_1-T_2)} + \frac{q_2}{T_2}<0
+    q_1\cdot\frac{\eta_\text{irrev}}{(T_1-T_2)} + \frac{q_2}{T_2}<0
 \end{align}
 
 In general,
@@ -3181,7 +3179,7 @@ $\frac{d\omega_s}{dp}$ decides how saturation vapor pressuredepends on pressure 
                          &= \frac{\epsilon e_s}{P}\Big[\frac{1}{e_s}\frac{de_s(T)}{dP}-\frac{1}{P}\Big] \\
                          &= \frac{\epsilon e_s}{P}\Big[\frac{1}{e_s}\frac{de_s(T)}{dT}\frac{dT}{dP}-\frac{1}{P}\Big]
 \end{align}
-Using Clausius-Clapeyron equation Eq,\myeqref{eq:clasuius-clapeyron_0}
+Using Clausius-Clapeyron equation Eq.\myeqref{eq:clasuius-clapeyron_0}
 \begin{align}
     \frac{d\omega_s}{dP} &= \frac{\epsilon e_s}{P}\Big[\frac{1}{\cancel{e_s}}\frac{L\cancel{e_s}}{R_vT^2}\frac{dT}{dP}-\frac{1}{P}\Big] \\
     \frac{d\omega_s}{dP} &= \frac{\epsilon e_s}{P}\Big[\frac{L}{R_vT^2}\frac{dT}{dP}-\frac{1}{P}\Big] \label{eq:dwdp}
