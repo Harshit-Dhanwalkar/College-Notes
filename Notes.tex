@@ -1967,14 +1967,14 @@ Let us assume that
 \begin{align}
     \theta &= ATP^{-k}
 \end{align}
-where $k$ is $R_d/C_p$.
+where $k$ is $R_d/C_p=0.286$. \\
 
-Taking logorithm on both sides
+Taking logarithm on both sides
 \begin{align}
     d(\ln \theta) &= d(\ln A) + d(\ln T) - kd(\ln P) \\
     d(\ln \theta) &= d(\ln T) - \frac{R_d}{C_p}d(\ln P) \label{eq:potential_temperature_1}
 \end{align}
-where $A = (P_0)^k = (1000)^{0.286}$
+where $A = (P_0)^k = (1000)^{0.286}$ \\
 
 Consider $1^{st}$ law of thermodynamics
 \begin{align}
@@ -1996,13 +1996,16 @@ For adiabatic process $\delta q=0$
 \end{align}
 $\theta$ is constant, conserved for adiabatic process.
 
-\begin{question}[q:12.1]{Transcontinental airline flys at an altitude of 12km where the temperature outside is $-55^{\circ}C$ and the pressure is approxiately 200hPa \newline
+\newpage
+
+\begin{question}[q:12.1]{Transcontinental airline fly at an altitude of $12 km$ where the temperature outside is $-55^{\circ}C$ and the pressure is approxiately $200 hPa$ \newline
     a. Compute the potential temperature of air at this altitude. \newline
-    b. Cabin pressure is typically mentioned of $750 hPa$ corresponding to pressure alttitude of $2.24$km. when outside air is adiabatically compressed to cabin pressure, compute the air temperature if no corrective operation where taken.
+    b. Cabin pressure is typically mentioned of $750 hPa$ corresponding to pressure alttitude of $2.24 km$. when outside air is adiabatically compressed to cabin pressure$.$ Compute the air temperature if no corrective operation where taken.
 }
 $\Rightarrow$ Solution:
 
-a. \begin{align*}
+a. Potential temperature of air 
+\begin{align*}
     \theta &= T \Big(\frac{1000}{P}\Big)^k \\ 
            &= 218 \Big(\frac{1000}{200}\Big)^{0.286}\\ 
            &= 218 (5)^{0.286}\\ 
@@ -2010,7 +2013,8 @@ a. \begin{align*}
            &= 72.43 ^\circ C
 \end{align*}
 
-b. \begin{align*}
+b. Potential temperature of air 
+\begin{align*}
     \theta &= T \Big(\frac{1000}{P}\Big)^k \\ 
            &= 218 \Big(\frac{750}{200}\Big)^{0.286}\\ 
            &= 218 \Big(\frac{4}{3}\Big)^{0.286}\\ 
@@ -2036,8 +2040,8 @@ b. \begin{align*}
             \frac{dT}{T} &= \Big(1 - \frac{1}{\gamma}\Big) \frac{dP}{P}  \\
             \frac{dT}{T} &= \Big(\frac{\gamma - 1}{\gamma}\Big) \frac{dP}{P} \\
             \ln T &= \Big(\frac{\gamma - 1}{\gamma}\Big) \ln P + \ln C \\
-            T &= CP^{\Big(\frac{\gamma - 1}{\gamma}\Big)} \\
-            T P^{\Big(\frac{1 - \gamma}{\gamma}\Big)} &= C
+            T &= CP^{\big(\frac{\gamma - 1}{\gamma}\big)} \\
+            T P^{\big(\frac{1 - \gamma}{\gamma}\big)} &= C
         \end{align}
     \item Case II. 
         \begin{align}
@@ -2077,34 +2081,34 @@ Using the $1^{st}$ law of thermodynamics
     \delta q = C_pdT - \alpha dP 
 \end{equation}
 
-Adiabatic process
+Adiabatic process:
 \begin{align}
     \delta q &= 0 \\
     C_p dT &= \alpha dP \label{eq:C_pdT=adp}
 \end{align}
 
-Lapse rate
+Lapse rate:
 \begin{align}
-    \frac{dT}{dz} &= \frac{dT}{dP} \frac{dP}{dz} \label{eq:dTdz=dtdpdpdz}
+    \frac{dT}{dz} &= \frac{dT}{dP}\cdot\frac{dP}{dz} \label{eq:dTdz=dtdpdpdz}
 \end{align}
 
 From Eq.\myeqref{eq:C_pdT=adp} and \myeqref{eq:dTdz=dtdpdpdz}
 \begin{align}
-    \frac{dT}{dz} &= \frac{R_d T}{C_p P} \frac{dP}{dz} \label{eq:dTdz}
+    \frac{dT}{dz} &= \frac{R_d T}{C_p P}\cdot\frac{dP}{dz} \label{eq:dTdz}
 \end{align}
 
 \textbf{Note:} Hydrostatic balance is applied to surrounding not on parcel.
 
-Appling hydrostatic approximaion, The pressure of unconfined air pacel is same as that of the envirnoment, we get:
+Appling hydrostatic approximaion, the pressure of unconfined air pacel is same as that of the envirnoment (i.e. $P=P'$), we get:
 \begin{align}
     \frac{dP}{dz} = \frac{dP'}{dz} = \rho'g = -\frac{P'g}{R_d T'} \label{eq:dPdz}
 \end{align}
 where $P'$ and $T'$ are ambient pressure and temperature.
 
-From Eq.\myeqref{eq:C_pdT=adp}, Eq.\myeqref{eq:dTdz=dtdpdpdz} and \myeqref{eq:dPdz}
+From Eq.\myeqref{eq:C_pdT=adp}, Eq.\myeqref{eq:dTdz=dtdpdpdz} and Eq.\myeqref{eq:dPdz}
 \begin{align}
-    \frac{dT}{dz} &= \frac{R_dT}{C_pP} \times \Big(- \frac{P'g}{R_dT'} \Big) \\
-    \frac{dT}{dz} &= \frac{g}{C_p} \times \Big(- \frac{TP'}{T'P} \Big)\\
+    \frac{dT}{dz} &= \frac{R_dT}{C_pP}\cdot\Big(- \frac{P'g}{R_dT'} \Big) \\
+    \frac{dT}{dz} &= \frac{g}{C_p}\cdot\Big(- \frac{TP'}{T'P} \Big)\\
     \frac{dT}{dz} &= -\frac{g}{C_p}\Big(\frac{T}{T'} \Big) \\
     \Gamma_d = -\frac{dT}{dz} &= \frac{g}{C_p}\Big(\frac{T}{T'} \Big) \\
     \Gamma_d = -\frac{dT}{dz} &\approx \frac{g}{C_p}\\
@@ -2371,10 +2375,9 @@ In real world scenarios $0K$ is not acheivable and there is no process which is 
     \item Cumulonimbus clouds forms the eye ball of cyclone.
     \item Maximum height to where it can reaches is Tropopause
 \end{enumerate}
-
 \begin{figure}[ht]
     \begin{center}
-        \includegraphics[width=0.45\textwidth]{Figures/hurricane_structure.jpg}
+        \includegraphics[width=0.48\textwidth]{Figures/hurricane_structure.jpg}
     \end{center}
     \caption{Internal Structure of cyclone}\label{fig:cyclone_structure}
 \end{figure}
@@ -2382,7 +2385,7 @@ Image source: \myhref{https://web.mit.edu/~twcronin/Public/Lupit_Cross_Sections.
 
 \begin{figure}[ht]
     \begin{center}
-        \includegraphics[width=0.45\textwidth]{Figures/cyclone_air_circulation.png}
+        \includegraphics[width=0.48\textwidth]{Figures/cyclone_air_circulation.png}
     \end{center}
     \caption{ Air circulation in cyclone}\label{fig:cyclone_air_circulation}
 \end{figure}
@@ -2396,8 +2399,10 @@ Enthaphy is heat content of state.
     \Delta H & = \Delta U + P \Delta V + V \Delta P \\
     \Delta H & = Q - W + P \Delta V + V \Delta P \\
     \Delta H & = Q - \cancel{P \Delta V} + \cancel{P \Delta V} + V \Delta P \\
-    \Delta H & = Q + V \Delta P \\
-    \text{ At const. Pressure} \\
+    \Delta H & = Q + V \Delta P
+\end{align}
+At constant pressure
+\begin{align}
     \Delta H & = Q \\
     h        & = u+ P \alpha \\
     dh       & = du + d(PV) \\
@@ -2409,18 +2414,20 @@ Enthaphy is heat content of state.
 \end{align}
 From Eq\myeqref{eq:enthalphy_heat} and Eq\myeqref{eq:enthalphy_heat_1}
 \begin{align}
-    dh - \alpha dP &= C_p -\alpha dP \\
-    \text{ At const. Pressure} \\
+    dh - \alpha dP &= C_p -\alpha dP
+\end{align}
+At constant Pressure
+\begin{align}
     dh & = C_p dT
 \end{align}
 Enthalphy is "sensible heat" \\
 
-\textbf{Conservative property}\\
+\noindent \textbf{Conservative property} \\
 For a hydrostatic atmosphere:
 \begin{align}
     \frac{dp}{dz} = \rho g \Rightarrow dp = -\rho gdz \label{eq:hydrostaticeq}
 \end{align}
-Substitute Eq\myeqref{eq:enthalphy_heat_1} in Eq\myeqref{eq:hydrostaticeq}
+Substitute Eq.\myeqref{eq:enthalphy_heat_1} in Eq.\myeqref{eq:hydrostaticeq}
 \begin{align}
     \delta q &= C_p dT - \cancel{\alpha} \cancel{\rho} gdz \\
     \delta q &= C_p dT + gdz \\
@@ -2431,7 +2438,7 @@ If process is adiabatic $\delta q=0$
 \begin{align}
     h + \phi = \text{const} \label{eq:dry_static_equation}
 \end{align}
-Eq\myeqref{eq:dry_static_equation} called dry static equation.
+Eq.\myeqref{eq:dry_static_equation} called dry static equation.
 
 This implies that when air parcel goes up (in geopotential) by the expense of heat content (enthalphy), i.e. [$h \uparrow \phi \downarrow$]. \\
 
@@ -2510,13 +2517,13 @@ This implies that when air parcel goes up (in geopotential) by the expense of he
 
 \subsection{. Lesson learnt from carnot cycle}
 \begin{enumerate}[I]
-    \item Thermodynamic effeciency of cyclone depends on sources, given by Eq\myeqref{eq:eff_carnot}
+    \item Thermodynamic effeciency of cyclone depends on sources, given by Eq.\myeqref{eq:eff_carnot}
 
     When $T_1 =T_2$, carnot cycle does not exist called \textbf{Kelvin's Postulate}.
 
     Carnot engine is most effiecent at winter because of difference in termperature, casues diverse climate change.
 
-    \item Transformation of heat is not possible from cold body to hot body called \textbf{Clausius postulate}
+    \item Transformation of heat is not possible from cold body to hot body called \textbf{Clausius postulate}.
 
     \item Carnot cycle could give us definition for absolute zero temperature.
 
@@ -2547,12 +2554,12 @@ Efficency of heat engine:
     T_1 \eta_{\text{rev}} = T_1 - T_2 \label{eq:eff_of_heat_engine}
 \end{align}
 
-Multiply and divide Eq\myeqref{eq:q1t1+q2t2} by $\eta_{\text{rev}}$ 
+Multiply and divide Eq.\myeqref{eq:q1t1+q2t2} by $\eta_{\text{rev}}$ 
 \begin{align}
     \frac{q_1}{T_1}\frac{\eta_\text{rev}}{\eta_\text{rev}} + \frac{q_2}{T_2}=0
 \end{align}
 
-From Eq\myeqref{eq:eff_of_heat_engine},
+From Eq.\myeqref{eq:eff_of_heat_engine},
 \begin{align}
     \frac{q_1}{T_1}\frac{\eta_\text{rev}}{(T_1-T_2)} + \frac{q_2}{T_2}=0
 \end{align}
@@ -2577,7 +2584,6 @@ If $N$ \rightarrow $\infty$
 \begin{align}
     \underset{\substack{\text{cyclic}\\ \text{process}}}\oint \frac{\delta q}{T} \leq 0 \rightarrow \text{Entropy}
 \end{align}
-
 \begin{align}
     \delta q &= C_v dT +Pd\alpha \\
     \frac{\delta q}{T} &= C_v \frac{dT}{T} +P \frac{d\alpha}{T} \\
@@ -2731,7 +2737,7 @@ From 1$^{st}$ law of thermodynamic,
     ds &= C_p d\ln(T) - R d\ln(P) \label{eq:2ndLaw2}
 \end{align}
 
-Comparing Eq\myeqref{eq:2ndLaw1} and Eq\myeqref{eq:2ndLaw1} we can find that,
+Comparing Eq.\myeqref{eq:2ndLaw1} and Eq.\myeqref{eq:2ndLaw1} we can find that,
 \begin{align}
     ds &= C_pd(\ln \theta) \\
     S &= C_p \ln \theta + \text{const.} 
@@ -2998,7 +3004,7 @@ Latent heat of sublimation of water at STP $=2.83 \times 10^6 J/Kg$
 % --------------------------------------------------------------------------------------
 \clearpage
 
-\section{Leture 19 21/10/2024}
+\section{Lecture 19 21/10/2024}
 \subsection{. The Clausius-Clapeyron equation}
 Let $L$ is latent heat associated with phase change of a liquid($i$) to vapor($f$) state:
 \begin{align}
@@ -3015,7 +3021,7 @@ When phase cahnge happen, temperature remains constant, therefore
     L &= T (S_f -S_i) \label{eq:latent_heat_2}
 \end{align}
 
-From Eq\myeqref{eq:latent_heat_1} and Eq\myeqref{eq:latent_heat_2}
+From Eq.\myeqref{eq:latent_heat_1} and Eq.\myeqref{eq:latent_heat_2}
 \begin{align}
     T(S_f-S_i) &= U_f-U_i + e_s(\alpha_f - \alpha_i) \\
     TS_f - U_f - e_s\alpha_f &= TS_i - U_i - e_s\alpha_i \\
@@ -3037,7 +3043,7 @@ consider a situation when liquid phase and vapor phase are in equilibrium
     \frac{S_f - S_i}{\alpha_f - \alpha_i} &= \frac{de_s}{dT}\\
     \frac{L}{T(\alpha_f-\alpha_i)} &= \frac{de_s}{dT} \label{eq:clasuius-clapeyron}
 \end{align}
-Eq \myeqref{eq:clasuius-clapeyron} is called Clasuius-Clapeyron equation.
+Eq.\myeqref{eq:clasuius-clapeyron} is called Clasuius-Clapeyron equation.
 
 Let initial state($i$) be liquid state and final state($f$) be vapor state (evaporation)
 \begin{align}
@@ -3159,7 +3165,7 @@ where $e=\frac{R_d}{R_v}=$ 0.622 \\
 % --------------------------------------------------------------------------------------
 \clearpage
 
-\section{Lecture 21 24/102024}
+\section{Lecture 21 24/10/2024}
 \subsection{. Lifting Conduction Level (LCL)}
 \begin{align*}
     \omega_s &= \frac{\epsilon e_s(T)}{P}
@@ -3175,7 +3181,7 @@ $\frac{d\omega_s}{dp}$ decides how saturation vapor pressuredepends on pressure 
                          &= \frac{\epsilon e_s}{P}\Big[\frac{1}{e_s}\frac{de_s(T)}{dP}-\frac{1}{P}\Big] \\
                          &= \frac{\epsilon e_s}{P}\Big[\frac{1}{e_s}\frac{de_s(T)}{dT}\frac{dT}{dP}-\frac{1}{P}\Big]
 \end{align}
-Using Clausius-Clapeyron equation Eq\myeqref{eq:clasuius-clapeyron_0}
+Using Clausius-Clapeyron equation Eq,\myeqref{eq:clasuius-clapeyron_0}
 \begin{align}
     \frac{d\omega_s}{dP} &= \frac{\epsilon e_s}{P}\Big[\frac{1}{\cancel{e_s}}\frac{L\cancel{e_s}}{R_vT^2}\frac{dT}{dP}-\frac{1}{P}\Big] \\
     \frac{d\omega_s}{dP} &= \frac{\epsilon e_s}{P}\Big[\frac{L}{R_vT^2}\frac{dT}{dP}-\frac{1}{P}\Big] \label{eq:dwdp}
@@ -3187,7 +3193,7 @@ Since process is adiabatic (Lifting of moist air):
     \frac{dT}{dP} &= \frac{\alpha}{C_p} \\
     \frac{dT}{dP} &=\frac{R_dT}{C_pP} \label{eq:dTdP}
 \end{align}
-Substiting Eq\myeqref{eq:dTdP} in Eq\myeqref{eq:dwdp}, we get
+Substiting Eq.\myeqref{eq:dTdP} in Eq.\myeqref{eq:dwdp}, we get
 \begin{align}
     \frac{d\omega_s}{dP} &= \frac{\epsilon e_s}{P}\Big[\frac{L}{R_vT^2}\frac{\alpha}{C_p}-\frac{1}{P}\Big] \\
     \frac{d\omega_s}{dP} &= \frac{\epsilon e_s}{P}\Big[\frac{L}{R_vT^{\cancel{2}}}\frac{R_d\cancel{T}}{C_pP}-\frac{1}{P}\Big] \\
@@ -3252,7 +3258,7 @@ Above LCL, parcel will follow \textbf{saturated adiabatic lapse rate $\Gamma_s$}
 % --------------------------------------------------------------------------------------
 \clearpage
 
-\section{Leture 22 25/10/2024}
+\section{Lecture 22 25/10/2024}
 \subsection{. Saturation Adiabatic Lapse Rate }
 \begin{align}
     \delta q &= C_p dT - \alpha dP
@@ -3300,7 +3306,7 @@ Recall $\Gamma_d=\frac{g}{c_p}\frac{T'}{T} \approx \frac{g}{c_p}$
 
 where $T'$ is temperature of parcel and $T$ is temperature of atmosphere.
 
-Multipling $\frac{g}{c_p}$ to Eq\myeqref{eq:lapse_rate}
+Multipling $\frac{g}{c_p}$ to Eq.\myeqref{eq:lapse_rate}
 \begin{align}
     \Big(\frac{L^2\omega_s}{R_v g T^2}\frac{g}{c_p} + \frac{c_p}{g}\frac{g}{c_p} \Big)\frac{dT}{dz} &= \frac{L\omega_s}{\alpha P}\frac{g}{c_p} + \frac{g}{c_p}
 \end{align}
@@ -3728,7 +3734,7 @@ Following assumptions are made in order to asscess the stability condition:
 \end{figure}
 
 \subsection{. Equation of motion for the parcel}
-Because the environment is in hydrostatic equlibrium given by Eq\myeqref{eq:hyfrostatic_eq}
+Because the environment is in hydrostatic equlibrium given by Eq.\myeqref{eq:hyfrostatic_eq}
  This does not hold wave equation for a parcel,  i.e.,
  \begin{align}
      \rho' \frac{d^2z}{dt^2} &= -\frac{dp'}{dz} - \rho'g \\
@@ -3782,7 +3788,7 @@ since, $\frac{\Gamma_v z}{T_{v_0}} \ll 1$, we can rewrite above equation as:
     \frac{1}{T_{v_0}-\Gamma_vz} &\approx \frac{1}{T_{v_0}}\Big(1+\frac{\Gamma_vz}{T_{v_0}}\Big)
 \end{align}
 
-Therefore, Eq\myeqref{eq:d2zdt2}
+Therefore, Eq.\myeqref{eq:d2zdt2}
 \begin{align}
     \frac{d^2z}{dt^2} &\approx g (\Gamma_v - \Gamma_v') \times \frac{1}{T_{v_0}}\Big(1+\frac{\Gamma_vz}{T_{v_0}}\Big) \\
     \frac{d^2z}{dt^2} &\approx \frac{g}{T_{v_0}}\Big(\Gamma_vz + \frac{\Gamma_v^2z^2}{T_{v_0}}- \Gamma_v'z -\frac{\Gamma_v'\Gamma_vz^2}{T_{v_0}}\Big)
@@ -3792,7 +3798,7 @@ Ignoring $z^2$ terms, we get;
     \frac{d^2z}{dt^2} &\approx \frac{g}{T_{v_0}}(\Gamma_v - \Gamma_v')z \\
     \frac{d^2z}{dt^2} &- \frac{g}{T_{v_0}}(\Gamma_v - \Gamma_v')z  = 0 \label{eq:2ndordereq}
 \end{align}
-The above Eq\myeqref{eq:2ndordereq} is 2$^{nd}$ order diffreential equation, therefore we can rewrite equation as:
+The above Eq.\myeqref{eq:2ndordereq} is 2$^{nd}$ order diffreential equation, therefore we can rewrite equation as:
 \begin{align}
     \frac{d^2z}{dt^2} - \omega^2 z  &= 0
 \end{align}
@@ -3802,7 +3808,7 @@ where $\omega = \sqrt{\frac{g}{T_{v_0}}(\Gamma_v - \Gamma_v')}$
 % --------------------------------------------------------------------------------------
 \clearpage
 
-\section{Leture 26 07/11/2024}
+\section{Lecture 26 07/11/2024}
 \subsection{. Stabitity analysis}
 3 possible solutions exists:
 \begin{enumerate}[noitemsep]
@@ -4040,7 +4046,7 @@ Taking logorithm on both sides,
 \begin{align}
     \ln{\theta_e} &= \ln{T} + {\frac{R_d}{C_p}}\ln{(1000)} - {\frac{R_d}{C_p}}\ln{P}
 \end{align}
-Differentiating above Eq. w.r.t $z$
+Differentiating above Equation w.r.t $z$
 \begin{align}
     \frac{1}{\theta_e}\frac{\theta}{dz} &= \frac{1}{T}\frac{dT}{dz} - \frac{R_d}{C_p}\Big(\frac{-dp}{dz}\Big) \\
     \frac{1}{\theta_e}\frac{\theta}{dz} &= \frac{1}{T}\frac{dT}{dz} - \frac{\cancel{R_d}}{C_p \cancel{p}}\Big(\frac{-\cancel{p}g}{\cancel{R_d}T}\Big) \\
@@ -4159,12 +4165,12 @@ Differentiating above Eq. w.r.t $z$
     \delta \omega &= m \frac{d^2z}{dt^2} dz 
 \end{align}
 
-Integrating above equation to get total work done by the parcel and using Eq\myeqref{eq:dzdt};
+Integrating above equation to get total work done by the parcel and using Eq.\myeqref{eq:dzdt};
 \begin{align}
     W &= \int^f_i mg \Big(\frac{T_v'-T_v}{T_v}\Big)dz \\
     w &= \int^f_i g \Big(\frac{T_v'-T_v}{T_v}\Big)dz
 \end{align}
-Using hydrosattic equation/approximation Eq\myeqref{eq:hydrostatic_eq};
+Using hydrosattic equation/approximation Eq.\myeqref{eq:hydrostatic_eq};
 \begin{align}
     w &= \int^f_i \frac{-1}{\rho} \Big(\frac{T_v'-T_v}{T_v}\Big)dp
 \end{align}
@@ -4527,7 +4533,7 @@ To find critical radius of embreyo ($R^*$):
     \frac{d(\Delta E)}{dR} &= 8\pi R \sigma - 4 \pi R^2 nKT\ln \big(\frac{e}{e_s}\Big) =0 \\
     R^* &= \frac{2\sigma}{nKT\ln\big(\frac{e}{e_s}\big)} \label{eq:kelvins_eq}
 \end{align}
-Eq\myeqref{eq:kelvins_eq} is called \textbf{Kelvin's equation}
+Eq.\myeqref{eq:kelvins_eq} is called \textbf{Kelvin's equation}
 
 \begin{tikzpicture}
     \begin{axis}[
@@ -4663,7 +4669,7 @@ If we assume $\rho'$ is the density of solution, number of moles of pure water i
     n_{\text{PW}} = \frac{\big(\frac{4}{3}\pi r^3 \rho' -M\big)}{M_w} \label{eq:n_PW}
 \end{align*}
 
-Mole fraction ($\mathcal{F}$) of water droplet, substitute Eq\myeqref{eq:n_S} and Eq\myeqref{eq:n_PW} in Eq\myeqref{eq:mole_fraction}:
+Mole fraction ($\mathcal{F}$) of water droplet, substitute Eq.\myeqref{eq:n_S} and Eq.\myeqref{eq:n_PW} in Eq.\myeqref{eq:mole_fraction}:
 \begin{align}
     \mathcal{F} &= \frac{\big(\frac{4}{3}\pi r^3 \rho' - M\big)/M_w}{\big(\frac{4}{3}\pi r^3 \rho' - M\big)/M_w + im/M_S} \\
     \mathcal{F} &= \Big[1 + \frac{imM_w}{M_S\big(\frac{4}{3}\pi r^3 \rho' - M\big)}\Big]^{-1}
