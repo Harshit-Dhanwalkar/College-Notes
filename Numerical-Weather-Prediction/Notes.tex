@@ -147,5 +147,25 @@ Eq.\eqref{eq:simplependulum2} and initial conditions Eq.\eqref{eq:att=0} are tog
 7 independent variables \textbf{(u,v,w,T,$\boldsymbol{\rho}$,p,q)}.
 
 Surface area of Earth = $4\pi R^2$ = $4\pi (6.37 \times 10^{12})$ $\approx 5.1 \times 10^{14}$ m$^2$
+
+\section{Lecture 2 07/01/2025}
+7 independent variables \textbf{(u,v,w,T,$\boldsymbol{\rho}$,p,q)} therefore we need 7 Governing equations (system of 7 coupled non-linear partial differential equations):
+\begin{enumerate}[noitemsep]
+	\item Conservation of masss (continuity equation).
+	\item Conservation of momentum in rotating frame of refrence (3 scalar equations, one each corresponding to scalar component of velocity).
+	\item Conservation of energy (Thermodynamic energy equation).
+	\item Conservation of moisture (moisture continuity equation).
+	\item Equation of state (Ideal gas equation).
+\end{enumerate}
+
+Euler discription of fluid motion is more convinent becasue of dependance on time and above 7 equations.
+
+Total advective and convective time of lagrangian is given by:
+\begin{align*}
+  \underbrace{\frac{DT}{Dt}}_\text{Lagrangian Derivative} &= \underbrace{\underbrace{\frac{\partial T}{\partial t}}_\text{Local derivative} + \underbrace{\vec{V}\cdot \nabla T}_\text{Advective Term}}_\text{Euler Derivative} \\
+  \frac{DT}{Dt} &= \frac{\partial T}{\partial t} + u\frac{\partial T}{\partial x} + v\frac{\partial T}{\partial y} + w\frac{\partial T}{\partial z} \tag{5} \label{eq:lageuleq}
+\end{align*}
+
+
 %-------------------------------------------------------------------------------------
 \end{document}
