@@ -1,0 +1,151 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                        Author: Harshit Prashant Dhanwalkar                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------------------------------------
+%                    PACKAGES AND OTHER DOCUMENT CONFIGURATIONS                      %
+%-------------------------------------------------------------------------------------
+
+\documentclass[fleqn,10pt]{SelfArx} % Document font size and equations flushed left
+\usepackage[english]{babel} 
+\usepackage{enumitem}
+
+\usepackage{tikz}
+\usetikzlibrary{trees, positioning, shapes}
+\usepackage{tikz-3dplot}
+
+\usepackage{amsmath}
+\usepackage{array} % for tables
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+%-------------------------------------------------------------------------------------
+%                                       COLUMNS                                      %
+%-------------------------------------------------------------------------------------
+\setlength{\columnsep}{0.55cm} % Distance between the two columns of text
+\setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
+
+%-------------------------------------------------------------------------------------
+%                                        COLORS                                      %
+%-------------------------------------------------------------------------------------
+\definecolor{color1}{RGB}{0,0,90} % Color of the article title and sections
+\definecolor{color2}{RGB}{0,20,20} % Color of the boxes behind the abstract and headings
+
+%-------------------------------------------------------------------------------------
+%                                       EQUATIONS                                    %
+%-------------------------------------------------------------------------------------
+\usepackage{cancel} % for crossing the word showing it is cancelled or is zero
+
+%-------------------------------------------------------------------------------------
+%                                     EQUATIONLINKS                                  %
+%-------------------------------------------------------------------------------------
+\newcommand{\myeqref}[1]{\textcolor{blue}{\textup{(\getrefnumber{#1})}}}
+
+%-------------------------------------------------------------------------------------
+%                                       HYPERLINKS                                   %
+%-------------------------------------------------------------------------------------
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{footnote}
+
+%\newcommand{\myhref}[2]{\href{#1}{\textcolor{blue}{#2}}}
+\newcommand{\myhref}[2]{%
+  \href{#1}{\textcolor{blue}{#2}}%
+  \footnote{\url{#1}}%
+}
+
+\usepackage{cleveref}
+% Customize cleveref to use "Eq." for equations
+\crefname{equation}{Eq.}{Eq.}
+\Crefname{equation}{Eq.}{Eq.}
+
+\hypersetup{
+	hidelinks,
+	colorlinks,
+	breaklinks=true,
+	urlcolor=color2,
+	citecolor=color1,
+	linkcolor=color1,
+	bookmarksopen=false,
+	pdftitle={Title},
+	pdfauthor={Author},
+}
+
+% ------------------------------------------------------------------------------------
+%                                       CUSTOM  SYMBOLS                              %
+%-------------------------------------------------------------------------------------
+\newcommand{\zbar}{\raisebox{0.2ex}{--}\kern-0.6em Z}
+
+%-------------------------------------------------------------------------------------
+%                                       ARTICLE INFORMATION                          %
+%-------------------------------------------------------------------------------------
+\JournalInfo{Dual Degree Engineering Physics, 8$^{th}$ Semester, 2024} % Journal information
+\Archive{Mtech, Earth System Sciences (ESS), 1$^{st}$ year} % Additional notes (e.g. copyright, DOI, review/research article)
+
+\PaperTitle{Lecture Notes on Numerical Weather Prediction} % Article title
+
+\Authors{Harshit Prashant Dhanwalkar (SC21B164)\textsuperscript{1}*} % Authors
+\affiliation{\textsuperscript{1}\textit{MTech, Earth System Sciences (ESS), 1$^{st}$ year, Department of Physics, Indian Institute Of Spacescience and Technology (IIST)}} % Author affiliation
+\affiliation{*\textbf{email}: harshitpd1729@gamil.com} % Corresponding author
+
+\Keywords{} % Keywords - if you don't want any simply remove all the text between the curly brackets
+\newcommand{\keywordname}{Keywords} % Defines the keywords heading name
+
+%-------------------------------------------------------------------------------------
+%                                           ABSTRACT                                 %
+%-------------------------------------------------------------------------------------
+\Abstract{Notes of Lectures and addional information from books.}
+
+%-------------------------------------------------------------------------------------
+%                                            DOCUMENT                                %
+%-------------------------------------------------------------------------------------
+\begin{document}
+\maketitle % Output the title and abstract box
+\clearpage
+\tableofcontents % Output the contents section
+\clearpage
+\thispagestyle{empty} % Removes page numbering from the first page
+\clearpage
+
+%-------------------------------------------------------------------------------------
+%                                       DOCUMENT CONTENTS                           %
+%-------------------------------------------------------------------------------------
+%\addcontentsline{toc}{section}{Introduction} % Adds this section to the table of contents
+%-------------------------------------------------------------------------------------
+\section{Lecture 1 06/01/2025}
+Numerical Weathering Problem (NWP) was first proposed by Bjerkives around 1900. It is mathematical initial value problem (IVP).
+
+Initial value Problem (IVP) $\rightarrow$ simple pendulum.
+\begin{align}
+  \ddot{\theta} + \omega^2 \theta &= 0 \label{eq:simplependulum1} \\
+  \frac{d^2\theta}{dt^2} + \omega^2 \theta &= 0 \label{eq:simplependulum2} \\
+  \theta(t) &= A \cos(\omega t) + B \sin(\omega t) \label{eq:simplependulumsolution}
+\end{align}
+
+Eq.\eqref{eq:simplependulum1} and \eqref{eq:simplependulum2} are second order linear ordinary differential equation, whose solution Eq.\eqref{eq:simplependulumsolution} has 2 constants of integration $A$ and $B$. Here $\theta$ and $t$ are tge dependent and independent variable since Eq.\eqref{eq:simplependulum1} and \eqref{eq:simplependulum2} have only one independent variable.
+
+Values of $A$ and $B$ will depend on initial condition.
+
+Since ODE is second order, 2 initial condition are needed at initial time, say $t=0$. Which are:
+\begin{align}
+    \left.
+        \begin{aligned}
+	  \theta(t=0) = 1 \\
+	  \frac{\theta(t=0)}{dt} = 0
+        \end{aligned}
+     \right\} \quad \quad & \label{eq:att=0}
+\end{align}
+
+Eq.\eqref{eq:simplependulum2} and initial conditions Eq.\eqref{eq:att=0} are together called \textbf{Mathematical IVP}. For any physical system the following two requirements are needed:
+\begin{enumerate}[noitemsep]
+	\item The equation (ODE or PDE) that governs the evolution of the above system.
+	\item The initial state of the system.
+\end{enumerate}
+
+7 independent variables \textbf{(u,v,w,T,$\boldsymbol{\rho}$,p,q)}.
+
+Surface area of Earth = $4\pi R^2$ = $4\pi (6.37 \times 10^{12})$ $\approx 5.1 \times 10^{14}$ m$^2$
+%-------------------------------------------------------------------------------------
+\end{document}
