@@ -151,9 +151,9 @@ Eq.\eqref{eq:simplependulum2} and initial conditions Eq.\eqref{eq:att=0} are tog
 7 independent variables \textbf{(u,v,w,T,$\boldsymbol{\rho}$,p,q)}.
 
 Surface area of Earth = $4\pi R^2$ = $4\pi (6.37 \times 10^{12})$ $\approx 5.1 \times 10^{14}$ m$^2$
-
+%-------------------------------------------------------------------------------------
 \clearpage
-
+%-------------------------------------------------------------------------------------
 \section{Lecture 2 07/01/2025}
 7 independent variables \textbf{(u,v,w,T,$\boldsymbol{\rho}$,p,q)} therefore we need 7 Governing equations (system of 7 coupled non-linear partial differential equations):
 \begin{enumerate}[noitemsep]
@@ -382,4 +382,43 @@ These are even larger than entire country, which means that we can't above to fi
 	\caption{Figure showing the grid}
 \end{figure}
 %-------------------------------------------------------------------------------------
+\clearpage
+%-------------------------------------------------------------------------------------
+\section{Lecture 3 08/01/2025}
+\begin{align*}
+	u & = \bar{u} + u' \tag{8} \label{eq:u}
+\end{align*}
+
+Here, $u$ is the velocity field, which is decomposed into a mean component $\bar{u}$ and a fluctuating component $u'$.
+
+Navier-Stokes Equation
+The general Navier-Stokes equation is given by:
+\begin{align*}
+	\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} & + w \frac{\partial u}{\partial z} - f v = \frac{1}{\rho} \frac{\partial \bar{P}}{\partial x} \\ & + \gamma \left(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}+ \frac{\partial^2 u}{\partial z^2}\right) \tag{9} \label{eq:Navier-stokes}
+\end{align*}
+
+Reynolds-Averaged Navier-Stokes (RANS) Equation
+Applying Reynolds decomposition ($u = \bar{u} + u'$) and averaging leads to the RANS equation:
+\begin{align*}
+	\frac{\partial \bar{u}}{\partial t} & + \bar{u} \frac{\partial \bar{u}}{\partial x} + \bar{v} \frac{\partial \bar{u}}{\partial y} + \bar{w} \frac{\partial \bar{u}}{\partial z} - f\bar{v} = \frac{1}{\rho} \frac{\partial \bar{P}}{\partial x}                                                                                               \\
+	                                    & + \gamma \left(\frac{\partial^2 \bar{u}}{\partial x^2}+ \frac{\partial^2 \bar{u}}{\partial y^2}+ \frac{\partial^2 \bar{u}}{\partial z^2}\right)                                                                                                                                                         \\
+	                                    & + \underbrace{\frac{1}{\rho} \left(\frac{\partial \left(-\rho \overline{u'u'} \right)}{\partial x} + \frac{\partial \left(-\rho \overline{u'v'} \right)}{\partial y} + \frac{\partial \left(-\rho \overline{u'w'} \right)}{\partial z}\right)}_{\text{Reynolds stress tensor}} \tag{10} \label{eq:rans}
+\end{align*}
+
+The Reynolds stress tensor represents the transport of momentum due to turbulent fluctuations.
+
+Nonlinear Term Expansion
+Expanding the nonlinear term $u \frac{\partial u}{\partial x}$ using Reynolds decomposition:
+\begin{align*}
+	u \frac{\partial u}{\partial x} & = (\bar{u}+u') \frac{\partial(\bar{u}+u')}{\partial x}                                                                                                              \\
+	                                & = \bar{u} \frac{\partial \bar{u}}{\partial x}+ u' \frac{\partial \bar{u}}{\partial x} + \bar{u} \frac{\partial u'}{\partial x} + u' \frac{\partial u'}{\partial x}.
+\end{align*}
+
+Appliing Reynolds averaging rules:
+\begin{align*}
+	\overline{u} & = \overline{\bar{u} + u'} = \overline{\bar{u}} + \overline{u'}       \\
+	\overline{u} & = \bar{u} + \overline{u'} \quad \Rightarrow \quad \overline{u'} = 0.
+\end{align*}
+
+Thus, the fluctuating component $u'$ averages out to zero over time, leaving only the mean component $\bar{u}$ in the averaged equations.
 \end{document}
