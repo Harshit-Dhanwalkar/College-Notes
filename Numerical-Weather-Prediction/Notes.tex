@@ -363,8 +363,8 @@ These are even larger than entire country, which means that we can't above to fi
 		\DrawLatitudeCircle[\R]{\angBeta}
 		\DrawLatitudeCircle[\R]{0} % equator
 		%labelling north and south
-		\node[above=8pt] at (N) {$\mathbf{N}$};
-		\node[below=8pt] at (S) {$\mathbf{S}$};
+		\node[above=1pt] at (N) {$\mathbf{N}$};
+		\node[below=1pt] at (S) {$\mathbf{S}$};
 
 		\draw[-,dashed, thick] (N) -- (S);
 
@@ -416,9 +416,66 @@ Expanding the nonlinear term $u \frac{\partial u}{\partial x}$ using Reynolds de
 
 Appliing Reynolds averaging rules:
 \begin{align*}
-	\overline{u} & = \overline{\bar{u} + u'} = \overline{\bar{u}} + \overline{u'}       \\
+	\overline{u} & = \overline{\bar{u} + u'}                                            \\
+	\overline{u} & = \overline{\bar{u}} + \overline{u'}                                 \\
 	\overline{u} & = \bar{u} + \overline{u'} \quad \Rightarrow \quad \overline{u'} = 0.
 \end{align*}
 
 Thus, the fluctuating component $u'$ averages out to zero over time, leaving only the mean component $\bar{u}$ in the averaged equations.
+
+We have,
+\begin{align*}
+	\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} & =0 \tag{11} \label{eq:velocity}
+\end{align*}
+Substituting $u$, $v$ and $w$ in above Eq.\eqref{eq:velocity}, we get:
+
+\begin{align*}
+	\overline{\frac{\partial (\bar{u}+u')}{\partial x} + \frac{\partial (\bar{v}+v')}{\partial y} + \frac{\partial (\bar{w}+w')}{\partial z}} & =0 \\
+	\frac{\partial \bar{u}}{\partial x} + \frac{\partial \bar{v}}{\partial y} + \frac{\partial \bar{w}}{\partial z}                           & =0
+\end{align*}
+
+The term $\frac{\partial(\overline{u'u'})}{\partial t}$ represents the rate of change of kinetic energy per unit mass due to turbulent fluctuations. It can be expressed as:
+\begin{align*}
+	\frac{\partial (\overline{u'u'})}{\partial t}
+	 & = \frac{\partial \left( \rho \overline{u'v'} \right)}{\partial y} + \ldots
+\end{align*}
+
+This term involves higher-order correlations between velocity fluctuations, which complicates the equation system.
+
+The closure problem arises in the Reynolds-Averaged Navier-Stokes (RANS) equations because the number of dependent variables (unknowns) exceeds the number of equations available. For instance:
+- $\overline{u}$ is an unknown.
+- $\overline{u'v'}$ (a Reynolds stress term) introduces additional unknowns.
+
+To resolve this, closure modelsare used, which provide approximations for higher-order terms based on known variables.
+
+For example, consider the term $\overline{u'w'}$. Using a simple closure model:
+\begin{align*}
+	\overline{u'w'} & = -k \frac{\partial \bar{u}}{\partial x},
+\end{align*}
+where $k$ is a proportionality constant (often related to eddy viscosity). Here, $\overline{u}$ is already an unknown, so no additional variables are introduced, avoiding further complexity.
+
+This is an example of first-order closurewhere higher-order terms are approximated using first-order variables.
+
+Types of Closure Models
+\begin{enumerate}
+	\item \textbf{First-Order Closure}:
+
+	      - Simplifies higher-order terms using known variables and gradients (e.g., eddy viscosity models).
+
+	      - Example: $\overline{u'w'} = -k \frac{\partial \bar{u}}{\partial x}$.
+
+	      - Advantage: Computationally efficient but may lack accuracy in complex flows.
+	\item \textbf{One-Point Closure}:
+
+	      - Approximates turbulence at a single point using local flow properties.
+
+	      - Example: Mixing length models, where turbulent viscosity is proportional to local shear.
+	\item \textbf{Second-Order Closure}:
+
+	      - Directly models second-order correlations like $\overline{u'u'}$ and $\overline{u'v'}$ by solving additional transport equations.
+
+	      - Provides higher accuracy but increases computational cost.
+
+	      - Example: Reynolds stress models (RSM), where additional equations are solved for Reynolds stresses.
+\end{enumerate}
 \end{document}
