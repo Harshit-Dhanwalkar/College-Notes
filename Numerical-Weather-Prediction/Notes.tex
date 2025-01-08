@@ -124,7 +124,7 @@ Initial value Problem (IVP) $\rightarrow$ simple pendulum.
   \theta(t) &= A \cos(\omega t) + B \sin(\omega t) \label{eq:simplependulumsolution}
 \end{align}
 
-Eq.\eqref{eq:simplependulum1} and \eqref{eq:simplependulum2} are second order linear ordinary differential equation, whose solution Eq.\eqref{eq:simplependulumsolution} has 2 constants of integration $A$ and $B$. Here $\theta$ and $t$ are tge dependent and independent variable since Eq.\eqref{eq:simplependulum1} and \eqref{eq:simplependulum2} have only one independent variable.
+Eq.\eqref{eq:simplependulum1} and \eqref{eq:simplependulum2} are second order linear ordinary differential equation, whose solution Eq.\eqref{eq:simplependulumsolution} has 2 constants of integration $A$ and $B$. Here $\theta$ and $t$ are the dependent and independent variable since Eq.\eqref{eq:simplependulum1} and \eqref{eq:simplependulum2} have only one independent variable.
 
 Values of $A$ and $B$ will depend on initial condition.
 
@@ -148,6 +148,8 @@ Eq.\eqref{eq:simplependulum2} and initial conditions Eq.\eqref{eq:att=0} are tog
 
 Surface area of Earth = $4\pi R^2$ = $4\pi (6.37 \times 10^{12})$ $\approx 5.1 \times 10^{14}$ m$^2$
 
+\clearpage
+
 \section{Lecture 2 07/01/2025}
 7 independent variables \textbf{(u,v,w,T,$\boldsymbol{\rho}$,p,q)} therefore we need 7 Governing equations (system of 7 coupled non-linear partial differential equations):
 \begin{enumerate}[noitemsep]
@@ -166,6 +168,33 @@ Total advective and convective time of lagrangian is given by:
   \frac{DT}{Dt} &= \frac{\partial T}{\partial t} + u\frac{\partial T}{\partial x} + v\frac{\partial T}{\partial y} + w\frac{\partial T}{\partial z} \tag{5} \label{eq:lageuleq}
 \end{align*}
 
+Using first law of Thermodynamics, Rate of heat is given by:
+\begin{align*}
+  d\dot{q} &= d\dot{u} + d\dot{w}  \\
+  \frac{DU}{Dt} &= \frac{Dq}{Dt} - \frac{Dw}{Dt} \\ 
+  C_v\frac{DT}{Dt} &= \frac{Dq}{Dt} - p\frac{D\alpha}{Dt}
+\end{align*}
 
+where $\frac{Dq}{Dt}$ is rate at which heating of air parcel due to non-adiabatic process, this change can happen via radiation, convection, conduction, latent heat while phase change.
+
+\begin{align*}
+  \frac{DU}{Dt} &= \vec{F}_\text{net} + \vec{F}_\text{coriolis} \tag{6} \label{eq:convective_derivative}
+\end{align*}
+
+This above Eq.\eqref{eq:convective_derivative} is convective derivative equation involving non-linear terms (i.e. $u\frac{\partial T}{\partial x}$, $v\frac{\partial T}{\partial y}$, $w\frac{\partial T}{\partial z}$).
+
+Continuity equation:
+\begin{align*}
+  \frac{1}{\rho} \frac{D\rho}{Dt} + \nabla\cdot\vec{V} = 0  \tag{7} \label{eq:continuity_eq}
+\end{align*}
+
+Let grid of following resolutions:
+\begin{itemize}[noitemsep]
+	\item $1^\circ\times 1^\circ$ $\rightarrow$ $3\times 10^6$ grid cells $\therefore$ no. of variables $\rightarrow$ $7 \times 3\times 10^6$.
+	\item $5^\circ\times 5^\circ$ $\rightarrow$ $1.3\times 10^5$ grid cells $\therefore$ no. of variables $\rightarrow$ $7 \times 1.3\times 10^5$.
+	\item $20^\circ\times 20^\circ$ $\rightarrow$ $9\times 10^3$ grid cells $\therefore$ no. of variables $\rightarrow$ $7 \times 9\times 10^3$.
+	\item $25^\circ\times 25^\circ$ $\rightarrow$ $6\times 10^3$ grid cells $\therefore$ no. of variables $\rightarrow$ $7 \times 6\times 10^3$.
+\end{itemize}
+These are even larger than entire country, which means that we can't above to find the change of varibles with these grids. This we don't have a way to determine initial condition, if we try to use interpolation, it will cause errors which will grow with time since atmosphere is chaotic and dynamic system.
 %-------------------------------------------------------------------------------------
 \end{document}
