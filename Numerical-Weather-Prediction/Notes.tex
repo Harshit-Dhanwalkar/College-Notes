@@ -13,12 +13,16 @@
 \usepackage{tikz}
 \usetikzlibrary{trees, positioning, shapes}
 \usepackage{tikz-3dplot}
+\tikzstyle{vertex}=[draw,fill=black!15,circle,minimum size=20pt,inner sep=0pt]
+\tikzstyle{selected edge} = [draw,line width=5pt,-,red!50]
 
 \usepackage{amsmath}
 \usepackage{array} % for tables
 
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
+\tdplotsetmaincoords{60}{115}
+\pgfplotsset{compat=newest}
 
 %-------------------------------------------------------------------------------------
 %                                       COLUMNS                                      %
@@ -119,9 +123,9 @@ Numerical Weathering Problem (NWP) was first proposed by Bjerkives around 1900. 
 
 Initial value Problem (IVP) $\rightarrow$ simple pendulum.
 \begin{align}
-  \ddot{\theta} + \omega^2 \theta &= 0 \label{eq:simplependulum1} \\
-  \frac{d^2\theta}{dt^2} + \omega^2 \theta &= 0 \label{eq:simplependulum2} \\
-  \theta(t) &= A \cos(\omega t) + B \sin(\omega t) \label{eq:simplependulumsolution}
+	\ddot{\theta} + \omega^2 \theta          & = 0 \label{eq:simplependulum1}                                          \\
+	\frac{d^2\theta}{dt^2} + \omega^2 \theta & = 0 \label{eq:simplependulum2}                                          \\
+	\theta(t)                                & = A \cos(\omega t) + B \sin(\omega t) \label{eq:simplependulumsolution}
 \end{align}
 
 Eq.\eqref{eq:simplependulum1} and \eqref{eq:simplependulum2} are second order linear ordinary differential equation, whose solution Eq.\eqref{eq:simplependulumsolution} has 2 constants of integration $A$ and $B$. Here $\theta$ and $t$ are the dependent and independent variable since Eq.\eqref{eq:simplependulum1} and \eqref{eq:simplependulum2} have only one independent variable.
@@ -130,12 +134,12 @@ Values of $A$ and $B$ will depend on initial condition.
 
 Since ODE is second order, 2 initial condition are needed at initial time, say $t=0$. Which are:
 \begin{align}
-    \left.
-        \begin{aligned}
-	  \theta(t=0) = 1 \\
-	  \frac{\theta(t=0)}{dt} = 0
-        \end{aligned}
-     \right\} \quad \quad & \label{eq:att=0}
+	\left.
+	\begin{aligned}
+		\theta(t=0) = 1 \\
+		\frac{\theta(t=0)}{dt} = 0
+	\end{aligned}
+	\right\} \quad \quad & \label{eq:att=0}
 \end{align}
 
 Eq.\eqref{eq:simplependulum2} and initial conditions Eq.\eqref{eq:att=0} are together called \textbf{Mathematical IVP}. For any physical system the following two requirements are needed:
@@ -164,28 +168,28 @@ Euler discription of fluid motion is more convinent becasue of dependance on tim
 
 Total advective and convective time of lagrangian is given by:
 \begin{align*}
-  \underbrace{\frac{DT}{Dt}}_\text{Lagrangian Derivative} &= \underbrace{\underbrace{\frac{\partial T}{\partial t}}_\text{Local derivative} + \underbrace{\vec{V}\cdot \nabla T}_\text{Advective Term}}_\text{Euler Derivative} \\
-  \frac{DT}{Dt} &= \frac{\partial T}{\partial t} + u\frac{\partial T}{\partial x} + v\frac{\partial T}{\partial y} + w\frac{\partial T}{\partial z} \tag{5} \label{eq:lageuleq}
+	\underbrace{\frac{DT}{Dt}}_\text{Lagrangian Derivative} & = \underbrace{\underbrace{\frac{\partial T}{\partial t}}_\text{Local derivative} + \underbrace{\vec{V}\cdot \nabla T}_\text{Advective Term}}_\text{Euler Derivative} \\
+	\frac{DT}{Dt}                                           & = \frac{\partial T}{\partial t} + u\frac{\partial T}{\partial x} + v\frac{\partial T}{\partial y} + w\frac{\partial T}{\partial z} \tag{5} \label{eq:lageuleq}
 \end{align*}
 
 Using first law of Thermodynamics, Rate of heat is given by:
 \begin{align*}
-  d\dot{q} &= d\dot{u} + d\dot{w}  \\
-  \frac{DU}{Dt} &= \frac{Dq}{Dt} - \frac{Dw}{Dt} \\ 
-  C_v\frac{DT}{Dt} &= \frac{Dq}{Dt} - p\frac{D\alpha}{Dt}
+	d\dot{q}         & = d\dot{u} + d\dot{w}                 \\
+	\frac{DU}{Dt}    & = \frac{Dq}{Dt} - \frac{Dw}{Dt}       \\
+	C_v\frac{DT}{Dt} & = \frac{Dq}{Dt} - p\frac{D\alpha}{Dt}
 \end{align*}
 
 where $\frac{Dq}{Dt}$ is rate at which heating of air parcel due to non-adiabatic process, this change can happen via radiation, convection, conduction, latent heat while phase change.
 
 \begin{align*}
-  \frac{DU}{Dt} &= \vec{F}_\text{net} + \vec{F}_\text{coriolis} \tag{6} \label{eq:convective_derivative}
+	\frac{DU}{Dt} & = \vec{F}_\text{net} + \vec{F}_\text{coriolis} \tag{6} \label{eq:convective_derivative}
 \end{align*}
 
 This above Eq.\eqref{eq:convective_derivative} is convective derivative equation involving non-linear terms (i.e. $u\frac{\partial T}{\partial x}$, $v\frac{\partial T}{\partial y}$, $w\frac{\partial T}{\partial z}$).
 
 Continuity equation:
 \begin{align*}
-  \frac{1}{\rho} \frac{D\rho}{Dt} + \nabla\cdot\vec{V} = 0  \tag{7} \label{eq:continuity_eq}
+	\frac{1}{\rho} \frac{D\rho}{Dt} + \nabla\cdot\vec{V} = 0  \tag{7} \label{eq:continuity_eq}
 \end{align*}
 
 Let grid of following resolutions:
@@ -196,5 +200,186 @@ Let grid of following resolutions:
 	\item $25^\circ\times 25^\circ$ $\rightarrow$ $6\times 10^3$ grid cells $\therefore$ no. of variables $\rightarrow$ $7 \times 6\times 10^3$.
 \end{itemize}
 These are even larger than entire country, which means that we can't above to find the change of varibles with these grids. This we don't have a way to determine initial condition, if we try to use interpolation, it will cause errors which will grow with time since atmosphere is chaotic and dynamic system.
+
+% \begin{tikzpicture}[tdplot_main_coords, scale = 2]
+% 	% Create a point (P)
+% 	% \coordinate (P) at ({1/sqrt(3)},{1/sqrt(3)},{1/sqrt(3)});
+% 	% Draw shaded circle
+% 	\shade[ball color = lightgray,
+% 		opacity = 0.5
+% 	] (0,0,0) circle (1cm);
+% 	% draw arcs 
+% 	\tdplotsetrotatedcoords{0}{0}{0};
+% 	\draw[dashed,
+% 		tdplot_rotated_coords,
+% 		gray
+% 	] (0,0,0) circle (1);
+% 	\tdplotsetrotatedcoords{90}{90}{90};
+% 	\draw[dashed,
+% 		tdplot_rotated_coords,
+% 		gray
+% 		%] (1,0,0) arc (0:180:1);
+% 	] (0,0,0) circle (1);
+% 	\tdplotsetrotatedcoords{45}{45}{45};
+% 	\draw[dashed,
+% 		tdplot_rotated_coords,
+% 		gray
+% 		%] (1,0,0) arc (0:180:1);
+% 	] (0,0,0) circle (1);
+% 	% Projection of the point on X and y axes
+% 	%\draw[thin, dashed] (P) --++ (0,0,{-1/sqrt(3)});
+% 	% \draw[thin, dashed] ({1/sqrt(3)},{1/sqrt(3)},0) --++
+% 	% (0,{-1/sqrt(3)},0);
+% 	% \draw[thin, dashed] ({1/sqrt(3)},{1/sqrt(3)},0) --++
+% 	% ({-1/sqrt(3)},0,0);
+% 	% Axes in 3 d coordinate system
+% 	\draw[-stealth] (0,0,0) -- (1.80,0,0)
+% 	node[below left] {$x$};
+% 	\draw[-stealth] (0,0,0) -- (0,1.30,0)
+% 	node[below right] {$y$};
+% 	\draw[-stealth] (0,0,0) -- (0,0,1.30)
+% 	node[above] {$z$};
+% 	\draw[dashed, gray] (0,0,0) -- (-1,0,0);
+% 	\draw[dashed, gray] (0,0,0) -- (0,-1,0);
+% 	% Line from the origin to (P)
+% 	% \draw[thick, -stealth] (0,0,0) -- (P) node[right] {$P$};
+% 	% % Add small circle at (P)
+% 	% \draw[fill = lightgray!50] (P) circle (0.5pt);
+% \end{tikzpicture}
+
+%-------------------------------------------------------------------------------------
+\newcommand\pgfmathsinandcos[3]{%
+	\pgfmathsetmacro#1{sin(#3)}%
+	\pgfmathsetmacro#2{cos(#3)}%
+}
+\newcommand\LongitudePlane[3][current plane]{%
+	\pgfmathsinandcos\sinEl\cosEl{#2} % elevation
+	\pgfmathsinandcos\sint\cost{#3} % azimuth
+	\tikzset{#1/.style={cm={\cost,\sint*\sinEl,0,\cosEl,(0,0)}}}
+}
+\newcommand\LatitudePlane[3][current plane]{%
+	\pgfmathsinandcos\sinEl\cosEl{#2} % elevation
+	\pgfmathsinandcos\sint\cost{#3} % latitude
+	\pgfmathsetmacro\yshift{\cosEl*\sint}
+	\tikzset{#1/.style={cm={\cost,0,0,\cost*\sinEl,(0,\yshift)}}} %
+}
+\newcommand\DrawLongitudeCircle[2][1]{
+	\LongitudePlane{\angEl}{#2}
+	\tikzset{current plane/.prefix style={scale=#1}}
+	% angle of "visibility"
+	\pgfmathsetmacro\angVis{atan(sin(#2)*cos(\angEl)/sin(\angEl))} %
+	\draw[current plane,thin,black] (\angVis:1) arc (\angVis:\angVis+180:1);
+	\draw[current plane,thin,dashed] (\angVis-180:1) arc (\angVis-180:\angVis:1);
+}%this is fake: for drawing the grid
+\newcommand\DrawLongitudeCirclered[2][1]{
+	\LongitudePlane{\angEl}{#2}
+	\tikzset{current plane/.prefix style={scale=#1}}
+	% angle of "visibility"
+	\pgfmathsetmacro\angVis{atan(sin(#2)*cos(\angEl)/sin(\angEl))} %
+	\draw[current plane,red,thick] (150:1) arc (150:180:1);
+	%\draw[current plane,dashed] (-50:1) arc (-50:-35:1);
+}%for drawing the grid
+\newcommand\DLongredd[2][1]{
+	\LongitudePlane{\angEl}{#2}
+	\tikzset{current plane/.prefix style={scale=#1}}
+	% angle of "visibility"
+	\pgfmathsetmacro\angVis{atan(sin(#2)*cos(\angEl)/sin(\angEl))} %
+	\draw[current plane,black,dashed, ultra thick] (150:1) arc (150:180:1);
+}
+\newcommand\DLatred[2][1]{
+	\LatitudePlane{\angEl}{#2}
+	\tikzset{current plane/.prefix style={scale=#1}}
+	\pgfmathsetmacro\sinVis{sin(#2)/cos(#2)*sin(\angEl)/cos(\angEl)}
+	% angle of "visibility"
+	\pgfmathsetmacro\angVis{asin(min(1,max(\sinVis,-1)))}
+	\draw[current plane,dashed,black,ultra thick] (-50:1) arc (-50:-35:1);
+}
+\newcommand\fillred[2][1]{
+	\LongitudePlane{\angEl}{#2}
+	\tikzset{current plane/.prefix style={scale=#1}}
+	% angle of "visibility"
+	\pgfmathsetmacro\angVis{atan(sin(#2)*cos(\angEl)/sin(\angEl))} %
+	\draw[current plane,red,thin] (\angVis:1) arc (\angVis:\angVis+180:1);
+}
+\newcommand\DrawLatitudeCircle[2][1]{
+	\LatitudePlane{\angEl}{#2}
+	\tikzset{current plane/.prefix style={scale=#1}}
+	\pgfmathsetmacro\sinVis{sin(#2)/cos(#2)*sin(\angEl)/cos(\angEl)}
+	% angle of "visibility"
+	\pgfmathsetmacro\angVis{asin(min(1,max(\sinVis,-1)))}
+	\draw[current plane,thin,black] (\angVis:1) arc (\angVis:-\angVis-180:1);
+	\draw[current plane,thin,dashed] (180-\angVis:1) arc (180-\angVis:\angVis:1);
+}%Defining functions to draw limited latitude circles (for the red mesh)
+\newcommand\DrawLatitudeCirclered[2][1]{
+	\LatitudePlane{\angEl}{#2}
+	\tikzset{current plane/.prefix style={scale=#1}}
+	\pgfmathsetmacro\sinVis{sin(#2)/cos(#2)*sin(\angEl)/cos(\angEl)}
+	% angle of "visibility"
+	\pgfmathsetmacro\angVis{asin(min(1,max(\sinVis,-1)))}
+	%\draw[current plane,red,thick] (-\angVis-50:1) arc (-\angVis-50:-\angVis-20:1);
+	\draw[current plane,red,thick] (-50:1) arc (-50:-35:1);
+}
+
+\tikzset{%
+	>=latex,
+	inner sep=0pt,%
+	outer sep=2pt,%
+	mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=3pt,
+			fill=black,circle}%
+}
+\pagestyle{empty}
+
+\begin{figure}[ht!]
+	\centering
+	\begin{tikzpicture}[scale=0.5,every node/.style={minimum size=1cm}]
+		%% some definitions
+		\def\R{4} % sphere radius
+		\def\angEl{25} % elevation angle
+		\def\angAz{-100} % azimuth angle
+		\def\angPhiOne{-50} % longitude of point P
+		\def\angPhiTwo{-35} % longitude of point Q
+		\def\angBeta{30} % latitude of point P and Q
+
+		%% working planes
+		\pgfmathsetmacro\H{\R*cos(\angEl)} % distance to north pole
+		\LongitudePlane[xzplane]{\angEl}{\angAz}
+		\LongitudePlane[pzplane]{\angEl}{\angPhiOne}
+		\LongitudePlane[qzplane]{\angEl}{\angPhiTwo}
+		\LatitudePlane[equator]{\angEl}{0}
+		\fill[ball color=white!10] (0,0) circle (\R); % 3D lighting effect
+		\coordinate (O) at (0,0);
+		\coordinate[mark coordinate] (N) at (0,\H);
+		\coordinate[mark coordinate] (S) at (0,-\H);
+		\path[xzplane] (\R,0) coordinate (XE);
+
+		%defining points outsided the area bounded by the sphere
+		\path[pzplane] (\R,0) coordinate (PE);
+		\path[qzplane] (\angBeta:\R) coordinate (Q);
+		\path[qzplane] (\angBeta:\R) coordinate (Qd);%sfora di una quantità pari a 10 dopo la sfera
+		\path[qzplane] (\R,0) coordinate (QE);
+
+		\DrawLongitudeCircle[\R]{\angPhiOne} % pzplane
+		\DrawLongitudeCircle[\R]{\angPhiTwo} % qzplane
+		\DrawLatitudeCircle[\R]{\angBeta}
+		\DrawLatitudeCircle[\R]{0} % equator
+		%labelling north and south
+		\node[above=8pt] at (N) {$\mathbf{N}$};
+		\node[below=8pt] at (S) {$\mathbf{S}$};
+
+		\draw[-,dashed, thick] (N) -- (S);
+
+		\path[xzplane] (0:\R) node[below] {$$};
+		\path[xzplane] (\angBeta:\R) node[below left] {$$};
+		\foreach \t in {0,2,...,30} { \DrawLatitudeCirclered[\R]{\t} }
+		\foreach \t in {130,133,...,145} { \DrawLongitudeCirclered[\R]{\t} }
+
+		%drawing grids on the spere invoking DLongredd and DrawLongitudeCirclered
+		\foreach \t in {130,145,...,145} { \DLongredd[\R+3]{\t} }
+		\foreach \t in {130,133,...,145} { \DrawLongitudeCirclered[\R+3]{\t} }
+		\foreach \t in {0,30,...,30} { \DLatred[\R+3]{\t} }
+		\foreach \t in {0,2,...,30} { \DrawLatitudeCirclered[\R+3]{\t} }
+	\end{tikzpicture}
+	\caption{Figure showing the grid}
+\end{figure}
 %-------------------------------------------------------------------------------------
 \end{document}
