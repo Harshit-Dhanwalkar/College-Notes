@@ -49,7 +49,6 @@
 %-------------------------------------------------------------------------------------
 %                                       HYPERLINKS                                   %
 %-------------------------------------------------------------------------------------
-
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{footnote}
@@ -119,4 +118,54 @@
 %\addcontentsline{toc}{section}{Introduction} % Adds this section to the table of contents
 %-------------------------------------------------------------------------------------
 \section{Lecture 1 09/01/2025}
+\subsection{Introduction to Boundary Layer}
+The Boundary Layer can be defined as part of  the troposphere that is directly influenced by the presence of the Earth's surface and responds to surface forcings with a time scale of about an hour or less.
+
+\begin{tikzpicture}[scale=0.9]
+	%Free Atmosphere curve
+	\fill[cyan!20, opacity=0.5] (-0.5,0) rectangle (4.6,5);
+	\fill[cyan!20, opacity=0.5]
+	(-0.5,5) arc[start angle=140, end angle=40, radius=3.3cm] -- (4.6,5) -- cycle;
+	\draw[very thick, blue!90!black]
+	(-0.5,5) arc[start angle=140, end angle=40, radius=3.3cm];
+	\node[anchor=north] at (2,4.8) {Free Atmosphere};
+	%Topopause curve
+	\node[anchor=north] at (2,6.8) {Topopause};
+	%Clapping Inversion curve
+	\draw[thick,blue!80] plot [smooth] coordinates {(-0.5, 1.7) (0,2) (1,2.6) (2,2.2) (3,2.3) (4,2.3) (4.6,1.8)};
+	\fill[blue!20,opacity=0.5] (-0.5,0) -- plot [smooth] coordinates {(-0.5, 1.7) (0,2) (1,2.6) (2,2.2) (3,2.3) (4,2.3) (4.6,1.8)}  -- (4.6,0) -- cycle;
+	\node[anchor=north] at (2,3.3) {Clapping Inversion};
+	% Boundary layer curve
+	\node[anchor=north] at (2,2) {Boundary Layer};
+	% Earth's surface
+	\fill[green!40,opacity=0.5]
+	(2.5-3,0) arc[start angle=130, end angle=50, radius=4cm] -- (2.5,0) -- cycle;
+	\draw[very thick, green!50!black, shift={(2.5,0)}]
+	(-3,0) arc[start angle=130, end angle=50, radius=4cm];
+	\node[anchor=north] at (2.3,-0.3) {Earth's Surface};
+	% Axis label
+	\draw[-latex] (-0.5,0) -- (-0.5,7.5) node[anchor=east] {Altitude};
+	\draw[-latex] (4.6,0) -- (4.6,7.5) node[anchor=east] {};
+	% Labels
+	\node[anchor=east] at (-0.7,5.4) {\(\theta \approx 11 \, \mathrm{km}\)};
+	\node[anchor=east] at (-0.7,2) {\(\theta \approx 1 \, \mathrm{km}\)};
+\end{tikzpicture}
+
+\subsection{Boundary layer forcing mecchanism}
+What physical process modify boundary layer air parcel?
+\begin{enumerate}[noitemsep]
+	\item Heat transfer to.from the ground.
+	\item Frictional drag.
+	\item Evaporation/transpiration.
+	\item Terrain-induced flow modification.
+	\item Pollution emission.
+\end{enumerate}
+
+\subsection{Types of air flow or wind}
+Air flow or wind can be decomposed into following 3 types:
+\begin{enumerate}[noitemsep]
+	\item Mean wind
+	\item Turbulence
+	\item Waves
+\end{enumerate}
 \end{document}
