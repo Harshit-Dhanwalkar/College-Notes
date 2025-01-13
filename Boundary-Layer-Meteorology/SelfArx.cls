@@ -78,16 +78,16 @@
 
 % Define question box
 \newtcolorbox[auto counter, number within=section]{question}[2][]{%
-  colback=questioncolor!10, colframe=questioncolor!80!black, 
-  fonttitle=\bfseries, 
-  title=Question~\thetcbcounter: #2,#1
+	colback=questioncolor!10, colframe=questioncolor!80!black,
+	fonttitle=\bfseries,
+	title=Question~\thetcbcounter: #2,#1
 }
 
 % Define answer box
 \newtcolorbox[auto counter, number within=section]{answer}[2][]{%
-  colback=answercolor!10, colframe=answercolor!80!black, 
-  fonttitle=\bfseries, 
-  title=Answer~\thetcbcounter: #2,#1
+	colback=answercolor!10, colframe=answercolor!80!black,
+	fonttitle=\bfseries,
+	title=Answer~\thetcbcounter: #2,#1
 }
 
 %----------------------------------------------------------------------------------------
@@ -130,38 +130,38 @@
 \RequirePackage[explicit]{titlesec}
 
 \titleformat{\section}
-	{\color{color1}\large\sffamily\bfseries}
-	{}
-	{0em}
-	{\colorbox{color2!10}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\centering\thesection.\space#1}}}
-	[]
+{\color{color1}\large\sffamily\bfseries}
+{}
+{0em}
+{\colorbox{color2!10}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\centering\thesection.\space#1}}}
+[]
 
 \titleformat{name=\section,numberless}
-	{\color{color1}\large\sffamily\bfseries}
-	{}
-	{0em}
-	{\colorbox{color2!10}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\centering#1}}}
-	[]
+{\color{color1}\large\sffamily\bfseries}
+{}
+{0em}
+{\colorbox{color2!10}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\centering#1}}}
+[]
 
 \titleformat{\subsection}
-	{\color{color1}\sffamily\bfseries}
-	{\thesubsection}
-	{0.5em}
-	{#1}
-	[]
+{\color{color1}\sffamily\bfseries}
+{\thesubsection}
+{0.5em}
+{#1}
+[]
 
 \titleformat{\subsubsection}
-	{\sffamily\small\bfseries}
-	{\thesubsubsection}
-	{0.5em}
-	{#1}
-	[]
+{\sffamily\small\bfseries}
+{\thesubsubsection}
+{0.5em}
+{#1}
+[]
 
 \titleformat{\paragraph}[runin]
-	{\sffamily\small\bfseries}
-	{}
-	{0em}
-	{#1} 
+{\sffamily\small\bfseries}
+{}
+{0em}
+{#1}
 
 \titlespacing*{\section}{0pc}{3ex \@plus4pt \@minus3pt}{5pt}
 \titlespacing*{\subsection}{0pc}{2.5ex \@plus3pt \@minus2pt}{0pt}
@@ -172,7 +172,7 @@
 %	TABLE OF CONTENTS SETUP
 %----------------------------------------------------------------------------------------
 
-\newlength{\tocsep} 
+\newlength{\tocsep}
 \setlength\tocsep{1.5pc} % Sets the indentation of the sections in the table of contents
 \setcounter{tocdepth}{3} % Three levels in the table of contents section: sections, subsections and subsubsections
 
@@ -180,25 +180,25 @@
 \contentsmargin{0cm}
 
 \titlecontents{section}[\tocsep]
-	{\addvspace{4pt}\small\bfseries\sffamily}
-	{\contentslabel[\thecontentslabel]{\tocsep}}
-	{}
-	{\hfill\thecontentspage}
-	[]
+{\addvspace{4pt}\small\bfseries\sffamily}
+{\contentslabel[\thecontentslabel]{\tocsep}}
+{}
+{\hfill\thecontentspage}
+[]
 
 \titlecontents{subsection}[\tocsep]
-	{\addvspace{2pt}\sffamily}
-	{\contentslabel[\thecontentslabel]{\tocsep}}
-	{}
-	{\ \titlerule*[.5pc]{.}\ \thecontentspage}
-	[]
+{\addvspace{2pt}\sffamily}
+{\contentslabel[\thecontentslabel]{\tocsep}}
+{}
+{\ \titlerule*[.5pc]{.}\ \thecontentspage}
+[]
 
 \titlecontents*{subsubsection}[\tocsep]
-	{\footnotesize\sffamily}
-	{}
-	{}
-	{}
-	[\ \textbullet\ ]
+{\footnotesize\sffamily}
+{}
+{}
+{}
+[\ \textbullet\ ]
 
 %----------------------------------------------------------------------------------------
 %	MULTIPLE AUTHOR SET
@@ -209,9 +209,9 @@
 
 \def\@affiliation{%
 	\ifnum\@tmpcnt<\@authcnt
-		 \global\advance\@tmpcnt1
+		\global\advance\@tmpcnt1
 		\raggedright \csname @auth\romannumeral\the\@tmpcnt\endcsname\hfill\\%
-		 \let\next\@affiliation \vskip1pt
+		\let\next\@affiliation \vskip1pt
 	\else
 		\let\next\relax
 	\fi
@@ -245,36 +245,36 @@
 % ---------------------------------------------------------------------
 
 \renewcommand{\@maketitle}{%
-	\twocolumn[{%
-		\thispagestyle{empty}%
-		\vskip-36pt%
-		{\raggedleft\small\sffamily\bfseries\@JournalInfo\\\@Archive\par}%
-		\vskip20pt%
-		{\raggedright\color{color1}\sffamily\bfseries\fontsize{20}{25}\selectfont \@PaperTitle\par}%
-		\vskip10pt%
-		{\raggedright\color{color1}\sffamily\fontsize{12}{16}\selectfont \@Authors\par}%
-		\vskip18pt%
-		\fcolorbox{color1}{white}{%
-			\parbox{\textwidth-2\fboxsep-2\fboxrule}{\centering%
-				\colorbox{color2!10}{%
-					\parbox{\textwidth-4\fboxsep-2\fboxrule}{%
-						\ifx\@Keywords\@empty%
-							\sffamily\textbf{\abstractname}\\\@Abstract%
-						\else%
-							\sffamily\textbf{\abstractname}\\\@Abstract\\[4pt]%
-							\textbf{\keywordname}\\\@Keywords%
-						\fi%
-					}%
-				}%
-				\vskip4pt%
-				\begingroup%
-					\raggedright\sffamily\small%
-					\footnotesize\@affiliation\par%
-				\endgroup%%
+\twocolumn[{%
+\thispagestyle{empty}%
+\vskip-36pt%
+{\raggedleft\small\sffamily\bfseries\@JournalInfo\\\@Archive\par}%
+\vskip20pt%
+{\raggedright\color{color1}\sffamily\bfseries\fontsize{20}{25}\selectfont \@PaperTitle\par}%
+\vskip10pt%
+{\raggedright\color{color1}\sffamily\fontsize{12}{16}\selectfont \@Authors\par}%
+\vskip18pt%
+\fcolorbox{color1}{white}{%
+	\parbox{\textwidth-2\fboxsep-2\fboxrule}{\centering%
+		\colorbox{color2!10}{%
+			\parbox{\textwidth-4\fboxsep-2\fboxrule}{%
+				\ifx\@Keywords\@empty%
+					\sffamily\textbf{\abstractname}\\\@Abstract%
+				\else%
+					\sffamily\textbf{\abstractname}\\\@Abstract\\[4pt]%
+					\textbf{\keywordname}\\\@Keywords%
+				\fi%
 			}%
 		}%
-		\vskip25pt%
-	}]%
+		\vskip4pt%
+		\begingroup%
+		\raggedright\sffamily\small%
+		\footnotesize\@affiliation\par%
+		\endgroup%%
+	}%
+}%
+\vskip25pt%
+}]%
 }
 
 %----------------------------------------------------------------------------------------

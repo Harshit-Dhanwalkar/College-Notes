@@ -11,7 +11,8 @@
 \usepackage{enumitem}
 
 \usepackage{tikz}
-\usetikzlibrary{trees, positioning, shapes}
+\usetikzlibrary{trees, positioning}
+\usetikzlibrary{shapes, shadings}
 \usepackage{tikz-3dplot}
 \tikzstyle{vertex}=[draw,fill=black!15,circle,minimum size=20pt,inner sep=0pt]
 \tikzstyle{selected edge} = [draw,line width=5pt,-,red!50]
@@ -24,6 +25,7 @@
 \tdplotsetmaincoords{60}{115}
 \pgfplotsset{compat=newest}
 
+\usepackage{subfig}
 %-------------------------------------------------------------------------------------
 %                                       COLUMNS                                      %
 %-------------------------------------------------------------------------------------
@@ -164,8 +166,87 @@ What physical process modify boundary layer air parcel?
 \subsection{Types of air flow or wind}
 Air flow or wind can be decomposed into following 3 types:
 \begin{enumerate}[noitemsep]
-	\item Mean wind
-	\item Turbulence
-	\item Waves
+	\item \textbf{Mean Wind} $(\bar{u}, \bar{v}, \bar{w})$: Represents the average wind components in the horizontal ($\bar{u}, \bar{v}$) and vertical ($\bar{w}$) directions. It is important for the horizontal transport of quantities such as moisture, heat, momentum, and pollutants, a process known as advection.
+	\item \textbf{Waves}: Atmospheric waves, such as gravity waves, occur mostly at night in the nocturnal boundary layer (NBL). They can influence the structure of the boundary layer and the transport of energy.
+	\item \textbf{Turbulence}: The vertical transport of moisture, heat, momentum, and pollutants is primarily dominated by turbulence, which is characterized by chaotic and irregular motion.
 \end{enumerate}
+
+\begin{tikzpicture}[smooth, thick]
+	% Axes
+	\draw[dashed,->] (0,0.5) -- (7,0.5);
+	\draw[dashed,->] (0,3.5) -- (7,3.5);
+	\draw[dashed,->] (0,5.5) -- (7,5.5);
+	\draw[->] (0,0) -- (7,0) node[anchor=north] {Time};
+	\draw[->] (0,0) -- (0,7) node[anchor=south] {Energy};
+	% Mean Wind (Offset by +2 for vertical distance)
+	\draw[blue!70] plot coordinates {(0.5,1) (2,1.5) (4,1.8) (6,2.1)}
+	node[anchor=west] {Mean Wind};
+	% Wave (Sine curve, offset by +4)
+	\draw[red!70] plot[domain=0.5:6.28,samples=100]
+	({\x},{3.5 + sin((\x - 0.5) r)})
+	node[anchor=west] {Wave};
+	% Turbulence (Offset by +6)
+	\draw[green!80] plot coordinates {(0.5,5) (1,6) (1.5,5.5) (2.5,6.2) (3.5,5.7) (5.5,6)}
+	node[anchor=west] {Turbulence};
+\end{tikzpicture}
+
+\subsection{Eddies}
+Eddies are formed due to the interaction of currents with obstacles like coastlines, underwater topography, or other currents, as well as from the instability of larger current systems.
+Eddies exhibit a rotational flow pattern, either clockwise or counterclockwise.
+Eddies can vary from size 100 to 3000 metres and also can exists as small as few millimetres.
+Small eddies might last for seconds to minutes, while larger oceanic eddies can persist for weeks, months, or even years.
+
+\subsection{Turbulence Generation Mechanisms}
+\begin{itemize} [noitemsep]
+	\item \textbf{Solar Heating}: Solar heating generates thermals, which are essentially larger eddies that drive turbulence in the atmospheric boundary layer.
+	\item \textbf{Wind Shear}: Variations in wind speed or direction with height create wind shear, which is a significant source of turbulence.
+	\item \textbf{Obstacle-Induced Flow}: Deflected flow around obstacles such as trees, buildings, or other structures generates turbulent eddies downstream of these obstacles, creating turbulent wakes.
+\end{itemize}
+
+\begin{tikzpicture}
+	% Ground
+	\draw[thick] (-1,0) -- (7.5,0);
+	% Obstacle
+	\filldraw[thick, red!60!black!50] (1.3,0) .. controls (2.3,3.3) and (3.3,3.3) .. (4.3,0);
+	\draw[thick]  (1.3,0) .. controls (2.3,3.3) and (3.3,3.3) .. (4.3,0);
+	% Laminar flow arrows
+	\draw[->,thick] (-1,2.5) -- (0.5,2.5) node[midway,above] {Laminar flow};
+	\draw[->,thick] (-1,2) -- (0.5,2);
+	\draw[->,thick] (-1,1.5) -- (0.5,1.5);
+	\draw[->,thick] (-1,1) -- (0.5,1);
+	% b/w laminar and eddies
+	\draw[->,thick] (1,2) to[bend left] (5.4,2.8);
+	\draw[->,thick] (1,2.5) to[bend left] (6.5,2.5);
+	% Turbulent eddies
+	\foreach \x in {4, 4.5, 5}
+	\draw [>=stealth,->] (\x,2.5) arc (180:0:.2cm) -- +(270:0.1cm);
+	\draw [>=stealth,->] (5.6,2.7) arc (100:0:.2cm) -- +(270:0.1cm);
+	\foreach \x in {5, 6, 6.7}
+	\draw [>=stealth,->] (\x,2.3) arc (100:-150:.3cm) -- +(110:0.1cm);
+	\draw [>=stealth,->] (6.6,1.2) arc (100:-150:.3cm) -- +(110:0.1cm);
+	\foreach \x in {5,6}
+	\draw [>=stealth,->] (\x,1.2) arc (70:-210:.4cm) -- +(60:0.1cm);
+	\node at (5.5,1.4) {Turbulent eddies};
+\end{tikzpicture}
+
+Large eddies will break into smaller eddies after which small eddies dissipates from K.E. to thermal energy.
+
+\begin{tikzpicture}
+	% Axes
+	\draw[thick,->] (0,0) -- (7,0) node[above] {Size of eddy};
+	\draw[thick,->] (0,0) -- (0,3.5) node[above] {Turbulent KE};
+	% Curve
+	\filldraw[blue!50, thick, smooth](0.03,0.04) -- plot coordinates {(0.03,2) (1.2,2.7) (2.3,2.5) (4.4,0.6) (6.8,0.2)} -- (6.8,0.04) -- cycle;
+	\draw[thick,smooth] plot coordinates {(0,2) (1.2,2.7) (2.3,2.5) (4.4,0.6) (6.8,0.2)};
+	% Labels
+	\node at (1.5,3) {Production subrange};
+	\node at (3.5,2) {Inertial submerge};
+	\node at (5.5,1) {Dissipation};
+	\draw[thick, -stealth] (0.8,0.8) -- (2.5,0.8)
+	node[anchor=south] {Cascade energy};
+	% Size labels
+	\node[below] at (1.5,0) {Large eddies $\sim$2 km};
+	\node[below] at (4,-0.3) {Moderate eddies $\sim$100 m};
+	\node[below] at (5.5,0) {Small eddies $\sim$1 mm};
+\end{tikzpicture}
 \end{document}
