@@ -186,7 +186,7 @@ Air flow or wind can be decomposed into following 3 types:
 	({\x},{3.5 + sin((\x - 0.5) r)})
 	node[anchor=west] {Wave};
 	% Turbulence (Offset by +6)
-	\draw[green!80] plot coordinates {(0.5,5) (1,6) (1.5,5.5) (2.5,6.2) (3.5,5.7) (5.5,6)}
+	\draw[green!90!black] plot coordinates {(0.5,5) (1,6) (1.5,5.3) (2.5,6.2) (3.5,4.7) (4.5,6) (5,4.7) (6,6.5)}
 	node[anchor=west] {Turbulence};
 \end{tikzpicture}
 
@@ -239,7 +239,7 @@ Large eddies will break into smaller eddies after which small eddies dissipates 
 	\node[above, rotate=90] at (-0.2,1.25) {Turbulent KE};
 	% Curve
 	%\filldraw[blue!50, thick, smooth](0.03,0.04) -- plot coordinates {(0.03,2) (1.2,2.7) (2.3,2.5) (4.4,0.6) (6.8,0.2)} -- (6.8,0.04) -- cycle;
-	\shade[left color=red, right color=blue] (0.01,0.02) -- plot coordinates {(0.01,2) (1,2.62) (1.25, 2.7) (1.5,2.72) (1.75,2.72) (2,2.69) (2.5,2.33) (2.8,2.1) (2.9,2) (3,1.82) (4,0.9) (4.4,0.58) (5,0.39) (6.8,0.17)} -- (6.8,0.01) -- cycle;
+	\shade[left color=red!75, right color=blue!75] (0.01,0.02) -- plot coordinates {(0.01,2.05) (1,2.625) (1.25, 2.71) (1.5,2.73) (1.75,2.72) (2,2.69) (2.5,2.33) (2.8,2.1) (2.9,2) (3,1.82) (4,0.9) (4.4,0.58) (5,0.39) (6.8,0.17)} -- (6.8,0.01) -- cycle;
 	\draw[thick,smooth] plot coordinates {(0,2) (1.2,2.7) (2.3,2.5) (4.4,0.6) (6.8,0.2)};
 	% Labels
 	\node at (1.5,3) {Production subrange};
