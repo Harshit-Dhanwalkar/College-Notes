@@ -1,7 +1,7 @@
 # My college notes
 
 Engineering Physics branch
-Earth science and system 
+Earth Science and System (ESS)
 
 This repo contain my lecture notes on cource `Thermodynamic and Cloud Physics`, `Numerical Weather Prediction` and `Bounday Layer Meterology`.
 
