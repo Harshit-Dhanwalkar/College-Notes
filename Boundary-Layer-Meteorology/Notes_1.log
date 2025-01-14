@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  13 JAN 2025 17:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  14 JAN 2025 09:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**Notes.tex
-(./Notes.tex
+**Notes_1.tex
+(./Notes_1.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (./SelfArx.cls
 Document Class: SelfArx 22/10/2020, v2.2
@@ -786,8 +786,8 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count342
 \l__pdf_internal_box=\box98
-) (./Notes.aux)
-\openout1 = `Notes.aux'.
+) (./Notes_1.aux)
+\openout1 = `Notes_1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
 LaTeX Font Info:    ... okay on input line 109.
@@ -901,9 +901,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 109.
 LaTeX Info: Redefining \pageref on input line 109.
 LaTeX Info: Redefining \nameref on input line 109.
- (./Notes.out) (./Notes.out)
+ (./Notes_1.out) (./Notes_1.out)
 \@outlinefile=\write4
-\openout4 = `Notes.out'.
+\openout4 = `Notes_1.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+phv on input line 111.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
@@ -959,9 +959,9 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
 
 
 
-] (./Notes.toc)
+] (./Notes_1.toc)
 \tf@toc=\write5
-\openout5 = `Notes.toc'.
+\openout5 = `Notes_1.toc'.
 
  [2
 
@@ -983,11 +983,6 @@ Overfull \hbox (23.77904pt too wide) in paragraph at lines 230--231
  []
 
 
-Overfull \hbox (30.72235pt too wide) in paragraph at lines 251--252
-[][] 
- []
-
-
 AED: lastpage setting LastPage
 
 Underfull \vbox (badness 1348) has occurred while \output is active []
@@ -997,23 +992,23 @@ Underfull \vbox (badness 1348) has occurred while \output is active []
 
 ] [4
 
-] (./Notes.aux)
-Package rerunfilecheck Info: File `Notes.out' has not changed.
+] (./Notes_1.aux)
+Package rerunfilecheck Info: File `Notes_1.out' has not changed.
 (rerunfilecheck)             Checksum: 3D739D3F6AD412F30EC67B98B5658CCC;1103.
  ) 
 Here is how much of TeX's memory you used:
- 43092 strings out of 480171
- 994413 string characters out of 5894490
- 1442307 words of memory out of 5000000
- 60123 multiletter control sequences out of 15000+600000
+ 43111 strings out of 480171
+ 994966 string characters out of 5894490
+ 1442313 words of memory out of 5000000
+ 60142 multiletter control sequences out of 15000+600000
  529813 words of font info for 246 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 98i,11n,94p,1002b,642s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,11n,94p,1004b,642s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Notes.pdf (4 pages, 105773 bytes).
+Output written on Notes_1.pdf (4 pages, 106328 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
- 97 compressed objects within 1 object stream
+ 132 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
  19 named destinations out of 1000 (max. 500000)
- 94269 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 94275 words of extra memory for PDF output out of 106986 (max. 10000000)
 
