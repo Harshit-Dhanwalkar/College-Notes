@@ -144,13 +144,14 @@ The Boundary Layer can be defined as part of  the troposphere that is directly i
 	(2.5-3,0) arc[start angle=130, end angle=50, radius=4cm] -- (2.5,0) -- cycle;
 	\draw[very thick, green!50!black, shift={(2.5,0)}]
 	(-3,0) arc[start angle=130, end angle=50, radius=4cm];
-	\node[anchor=north] at (2.3,-0.3) {Earth's Surface};
+	\node[below] at (2.1,0) {Earth's Surface};
 	% Axis label
-	\draw[-latex] (-0.5,0) -- (-0.5,7.5) node[anchor=east] {Altitude};
-	\draw[-latex] (4.6,0) -- (4.6,7.5) node[anchor=east] {};
+	\draw[-latex] (-0.5,0) -- (-0.5,7.5);
+	\node[above, rotate=90] at (-0.7,3.25) {Altitude};
+	\draw[-latex] (4.6,0) -- (4.6,7.5);
 	% Labels
-	\node[anchor=east] at (-0.7,5.4) {\(\theta \approx 11 \, \mathrm{km}\)};
-	\node[anchor=east] at (-0.7,2) {\(\theta \approx 1 \, \mathrm{km}\)};
+	\node[anchor=east, rotate=90] at (-0.8,6) {\(\theta \approx 11 \, \mathrm{km}\)};
+	\node[anchor=east, rotate=90] at (-0.8,2.5) {\(\theta \approx 1 \, \mathrm{km}\)};
 \end{tikzpicture}
 
 \subsection{Boundary layer forcing mecchanism}
@@ -176,8 +177,10 @@ Air flow or wind can be decomposed into following 3 types:
 	\draw[dashed,->] (0,0.5) -- (7,0.5);
 	\draw[dashed,->] (0,3.5) -- (7,3.5);
 	\draw[dashed,->] (0,5.5) -- (7,5.5);
-	\draw[->] (0,0) -- (7,0) node[anchor=north] {Time};
-	\draw[->] (0,0) -- (0,7) node[anchor=south] {Energy};
+	\draw[->] (0,0) -- (7,0);
+	\node[below] at (3.5,0) {Time};
+	\draw[->] (0,0) -- (0,7);
+	\node[above, rotate=90] at (0,3.5) {Energy};
 	% Mean Wind (Offset by +2 for vertical distance)
 	\draw[blue!70] plot coordinates {(0.5,1) (2,1.5) (4,1.8) (6,2.1)}
 	node[anchor=west] {Mean Wind};

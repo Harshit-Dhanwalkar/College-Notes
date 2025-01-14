@@ -290,7 +290,7 @@ These are even larger than entire country, which means that we can't above to fi
 	\pgfmathsetmacro\sinVis{sin(#2)/cos(#2)*sin(\angEl)/cos(\angEl)}
 	% angle of "visibility"
 	\pgfmathsetmacro\angVis{asin(min(1,max(\sinVis,-1)))}
-	\draw[current plane,dashed,black,ultra thick] (-50:1) arc (-50:-35:1);
+	\draw[current plane,dashed,black,ultra thick] (-50:1) arc (-50:-20:1);
 }
 \newcommand\fillred[2][1]{
 	\LongitudePlane{\angEl}{#2}
@@ -315,7 +315,7 @@ These are even larger than entire country, which means that we can't above to fi
 	% angle of "visibility"
 	\pgfmathsetmacro\angVis{asin(min(1,max(\sinVis,-1)))}
 	%\draw[current plane,red,thick] (-\angVis-50:1) arc (-\angVis-50:-\angVis-20:1);
-	\draw[current plane,red,thick] (-50:1) arc (-50:-35:1);
+	\draw[current plane,red,thick] (-50:1) arc (-50:-20:1);
 }
 
 \tikzset{%
@@ -332,10 +332,10 @@ These are even larger than entire country, which means that we can't above to fi
 	\begin{tikzpicture}[scale=0.5,every node/.style={minimum size=1cm}]
 		%% some definitions
 		\def\R{4} % sphere radius
-		\def\angEl{25} % elevation angle
-		\def\angAz{-100} % azimuth angle
-		\def\angPhiOne{-50} % longitude of point P
-		\def\angPhiTwo{-35} % longitude of point Q
+		\def\angEl{30} % elevation angle
+		\def\angAz{-160} % azimuth angle
+		\def\angPhiOne{160} % longitude of point P
+		\def\angPhiTwo{130} % longitude of point Q
 		\def\angBeta{30} % latitude of point P and Q
 
 		%% working planes
@@ -366,16 +366,17 @@ These are even larger than entire country, which means that we can't above to fi
 
 		\draw[-,dashed, thick] (N) -- (S);
 
+
 		\path[xzplane] (0:\R) node[below] {$$};
 		\path[xzplane] (\angBeta:\R) node[below left] {$$};
-		\foreach \t in {0,2,...,30} { \DrawLatitudeCirclered[\R]{\t} }
-		\foreach \t in {130,133,...,145} { \DrawLongitudeCirclered[\R]{\t} }
+		\foreach \t in {0,2,...,\angBeta} { \DrawLatitudeCirclered[\R]{\t} } % change \DrawLatitudeCirclered commad at define/newcomd at top
+		\foreach \t in {\angPhiTwo,135,...,\angPhiOne} { \DrawLongitudeCirclered[\R]{\t} }
 
 		%drawing grids on the spere invoking DLongredd and DrawLongitudeCirclered
-		\foreach \t in {130,145,...,145} { \DLongredd[\R+3]{\t} }
-		\foreach \t in {130,133,...,145} { \DrawLongitudeCirclered[\R+3]{\t} }
-		\foreach \t in {0,30,...,30} { \DLatred[\R+3]{\t} }
-		\foreach \t in {0,2,...,30} { \DrawLatitudeCirclered[\R+3]{\t} }
+		\foreach \t in {\angPhiTwo,160,...,\angPhiOne} { \DLongredd[\R+3]{\t} }
+		\foreach \t in {\angPhiTwo,135,...,\angPhiOne} { \DrawLongitudeCirclered[\R+3]{\t} }
+		\foreach \t in {0,30,...,\angBeta} { \DLatred[\R+3]{\t} } % change \DLatred commad at define/newcomd at top
+		\foreach \t in {0,2,...,\angBeta} { \DrawLatitudeCirclered[\R+3]{\t} }
 	\end{tikzpicture}
 	\caption{Figure showing the grid}
 \end{figure}
@@ -476,4 +477,8 @@ Types of Closure Models
 
 	      - Example: Reynolds stress models (RSM), where additional equations are solved for Reynolds stresses.
 \end{enumerate}
+
+\clearpage
+\section{Lecture 4 13/01/2025}
+Solar raditation heats up ground/ocean surface, which in turn heats the surface atmosphere which generates unstable convective cells in the atmosphere. where the above air is cold and below layer (near ground) is warmer.
 \end{document}
