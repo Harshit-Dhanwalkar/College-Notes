@@ -6,6 +6,6 @@
 \contentsline {subsection}{\numberline {1.4}Eddies}{3}{subsection.1.4}%
 \contentsline {subsection}{\numberline {1.5}Turbulence Generation Mechanisms}{3}{subsection.1.5}%
 \contentsline {section}{\numberline {2}Leture 2 15/01/2025}{5}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Taylor's Hypothrsis}{5}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Virtual Potential Temperature $(\theta _v)$}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.1}Taylor's Hypothesis}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Virtual Potential Temperature}{5}{subsection.2.2}%
 \contentsfinish 

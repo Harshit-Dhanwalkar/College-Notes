@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  15 JAN 2025 17:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  15 JAN 2025 18:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1000,58 +1000,37 @@ Underfull \vbox (badness 3977) has occurred while \output is active []
 ] [4
 
 ]
-Overfull \hbox (29.85722pt too wide) in paragraph at lines 301--302
-[][] 
+Overfull \hbox (7.83122pt too wide) in paragraph at lines 273--306
+ [][] 
  []
 
 
-Overfull \hbox (29.85722pt too wide) in paragraph at lines 346--347
-[][] 
+Overfull \hbox (7.83122pt too wide) in paragraph at lines 310--356
+ [][] 
  []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 353.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\theta' on input line 353.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 353.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 353.
 
 Missing character: There is no ] in font nullfont!
-
-Overfull \hbox (15.3502pt too wide) in paragraph at lines 406--407
-[][] 
- []
-
 
 AED: lastpage setting LastPage
 [5
 
 ] (./Notes.aux)
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: 73EBC4DB5B9560FEE728A4944AB076A6;1639.
+(rerunfilecheck)             Checksum: 821741BEB78C9AC719C45FB72407F59E;1610.
  ) 
 Here is how much of TeX's memory you used:
- 43806 strings out of 480171
- 1013217 string characters out of 5894490
- 1455956 words of memory out of 5000000
- 60783 multiletter control sequences out of 15000+600000
- 537617 words of font info for 272 fonts, out of 8000000 for 9000
+ 43841 strings out of 480171
+ 1013888 string characters out of 5894490
+ 1463956 words of memory out of 5000000
+ 60810 multiletter control sequences out of 15000+600000
+ 538036 words of font info for 275 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  98i,25n,94p,1002b,2168s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Notes.pdf (5 pages, 141053 bytes).
+Output written on Notes.pdf (5 pages, 144285 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
- 137 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
+ 202 PDF objects out of 1000 (max. 8388607)
+ 141 compressed objects within 2 object streams
+ 29 named destinations out of 1000 (max. 500000)
  104635 words of extra memory for PDF output out of 106986 (max. 10000000)
 
