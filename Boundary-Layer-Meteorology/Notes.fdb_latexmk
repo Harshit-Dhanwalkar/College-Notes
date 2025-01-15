@@ -1,5 +1,12 @@
 # Fdb version 3
-["pdflatex"] 1736972218 "Notes.tex" "Notes.pdf" "Notes" 1736972219
+["bibtex Notes"] 1736974332 "Notes.aux" "Notes.bbl" "Notes" 1736974582
+  "/usr/share/texlive/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
+  "Notes.aux" 1736974582 2904 6ee173e1aba05881190a0d01bf9883fc "pdflatex"
+  "Reference.bib" 1736974332 210 b31c80cec2ff1bebaae1c84479420ffa ""
+  (generated)
+  "Notes.bbl"
+  "Notes.blg"
+["pdflatex"] 1736974580 "Notes.tex" "Notes.pdf" "Notes" 1736974582
   "/etc/texmf/web2c/texmf.cnf" 1728313746 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -51,6 +58,7 @@
   "/usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmbi7t.vf" 1136768653 1384 6ac0f8b839230f5d9389287365b243c0 ""
   "/usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf" 1136768653 1380 0ea3a3370054be6da6acd929ec569f06 ""
   "/usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf" 1136768653 3556 8a9a6dcbcd146ef985683f677f4758a6 ""
+  "/usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf" 1136768653 1384 a9d8adaf491ce34e5fba99dc7bbe5f39 ""
   "/usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf" 1136768653 1132 27520247d3fe18d4266a226b461885c2 ""
   "/usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf" 1136768653 1108 d271d6f9de4122c3f8d3b65666167fac ""
   "/usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7v.vf" 1136768653 1012 046369ac6a83af997c3aa05a43256ad5 ""
@@ -284,10 +292,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1734418184 4073795 a82a847ac97773bf4a607ab050efa3a1 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736325085 1435836 f91fb7a9941a454f193d6a5e108415c1 ""
-  "Notes.aux" 1736972219 2688 fe14b94ae0dd6abb061157fe07698631 "pdflatex"
-  "Notes.out" 1736972219 2001 cd4be98c3f629365e4480ce08228f7d1 "pdflatex"
-  "Notes.tex" 1736972218 23358 a0a88aeddb9627ae0da18545b74d973e ""
-  "Notes.toc" 1736972219 1018 cd213c1de073e73c5a9cf555cb4a1430 "pdflatex"
+  "Notes.aux" 1736974582 2904 6ee173e1aba05881190a0d01bf9883fc "pdflatex"
+  "Notes.bbl" 1736974332 233 b3363024a0e8fce58ebe43c733d6f4c4 "bibtex Notes"
+  "Notes.out" 1736974582 2176 a073663deddb93bda9ed52973a3cf106 "pdflatex"
+  "Notes.tex" 1736974578 23525 0083c0ae214b4dd53e42709e6ebf3242 ""
+  "Notes.toc" 1736974582 1088 a15256004df2047693a9e7327ab0b811 "pdflatex"
   "SelfArx.cls" 1736828802 8811 40f211158456a8c6d930487c420b0197 ""
   (generated)
   "Notes.aux"
