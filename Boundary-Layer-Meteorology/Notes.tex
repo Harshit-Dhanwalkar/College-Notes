@@ -96,18 +96,23 @@
 \newlength{\yellownotewidth}
 \setlength{\yellownotewidth}{2.5cm}
 \newlength{\yellownoteheight}
-\setlength{\yellownoteheight}{2.5cm}
+\setlength{\yellownoteheight}{2cm}
 
 % Yellow note...
 \newcommand{\yellownote}[1]{
-    \vspace{-0.2\yellownoteheight}
+    \vspace{0.2\yellownoteheight}
         \begin{center}
         \begin{tikzpicture}
-            \draw[white,fill=gray!25,opacity=0.75,shift={(-0.125,-0.125)}] 
-                (0,0) rectangle (\yellownotewidth,\yellownoteheight);
-            \draw[fill=yellow!35] (0,0) rectangle (\yellownotewidth,\yellownoteheight);
+            % Shadow effect
+            \draw[white,fill=gray!70,opacity=0.75,shift={(-0.15,-0.15)}]
+		    (0,0) -- (0.07, \yellownoteheight) -- (\yellownotewidth + 0.05, \yellownoteheight) -- (2.5, 0.4) -- (2.2,0.18) -- (2, 0) -- cycle;
+            % Yellow note background
+	    \draw[fill=yellow!35]
+		    (0,0) -- (0, \yellownoteheight) -- (\yellownotewidth, \yellownoteheight) -- (2.5, 0.4) -- (2.1,0.2) -- (1.7, 0) -- cycle;
+            % Folded corner
             \draw[opacity=0.45,fill=gray!50] (0.7\yellownotewidth,0) -- 
                 (0.9\yellownotewidth,0.45) -- (\yellownotewidth,0.4) -- cycle;
+            % Note content
             \node[blue,below] at (0.5\yellownotewidth,\yellownoteheight) {
                 \begin{minipage}{\yellownotewidth-1em}
                     \scriptsize\sf#1
@@ -122,11 +127,12 @@
     \begin{tikzpicture}[remember picture,overlay]
         \node[anchor=north west, xshift=#1, yshift=#2] at (current page.north west) {
             \begin{tikzpicture}
-                % Shadow effect
-                \draw[white,fill=gray!25,opacity=0.75,shift={(-0.125,-0.125)}] 
-                    (0,0) rectangle (\yellownotewidth,\yellownoteheight);
-                % Yellow note background
-                \draw[fill=yellow!35] (0,0) rectangle (\yellownotewidth,\yellownoteheight);
+            % Shadow effect
+            \draw[white,fill=gray!70,opacity=0.75,shift={(-0.15,-0.15)}]
+		    (0,0) -- (0.07, \yellownoteheight) -- (\yellownotewidth + 0.05, \yellownoteheight) -- (2.5, 0.4) -- (2.2,0.18) -- (2, 0) -- cycle;
+            % Yellow note background
+	    \draw[fill=yellow!35]
+		    (0,0) -- (0, \yellownoteheight) -- (\yellownotewidth, \yellownoteheight) -- (2.5, 0.4) -- (2.1,0.2) -- (1.7, 0) -- cycle;
                 % Folded corner
                 \draw[opacity=0.45,fill=gray!50] 
                     (0.7\yellownotewidth,0) -- 
@@ -267,59 +273,71 @@ Small eddies might last for seconds to minutes, while larger oceanic eddies can 
 	\item \textbf{Obstacle-Induced Flow}: Deflected flow around obstacles such as trees, buildings, or other structures generates turbulent eddies downstream of these obstacles, creating turbulent wakes.
 \end{itemize}
 
-\begin{tikzpicture}
-	% Ground
-	\draw[thick] (-1,0) -- (7.5,0);
-	% Obstacle
-	\filldraw[thick, red!60!black!50] (1.3,0) .. controls (2.3,3.3) and (3.3,3.3) .. (4.3,0);
-	\draw[thick]  (1.3,0) .. controls (2.3,3.3) and (3.3,3.3) .. (4.3,0);
-	% Laminar flow arrows
-	\draw[->,thick] (-1,2.5) -- (0.5,2.5) node[midway,above] {Laminar flow};
-	\draw[->,thick] (-1,2) -- (0.5,2);
-	\draw[->,thick] (-1,1.5) -- (0.5,1.5);
-	\draw[->,thick] (-1,1) -- (0.5,1);
-	% b/w laminar and eddies
-	\draw[->,thick] (1,2) to[bend left] (5.4,2.8);
-	\draw[->,thick] (1,2.5) to[bend left] (6.5,2.5);
-	% Turbulent eddies
-	\foreach \x in {4, 4.5, 5}
-	\draw [>=stealth,->] (\x,2.5) arc (180:0:.2cm) -- +(270:0.1cm);
-	\draw [>=stealth,->] (5.6,2.7) arc (100:0:.2cm) -- +(270:0.1cm);
-	\foreach \x in {5, 6, 6.7}
-	\draw [>=stealth,->] (\x,2.3) arc (100:-150:.3cm) -- +(110:0.1cm);
-	\draw [>=stealth,->] (6.6,1.2) arc (100:-150:.3cm) -- +(110:0.1cm);
-	\foreach \x in {5,6}
-	\draw [>=stealth,->] (\x,1.2) arc (70:-210:.4cm) -- +(60:0.1cm);
-	\node at (5.5,1.4) {Turbulent eddies};
-\end{tikzpicture}
+\begin{figure}[ht!]
+	\centering
+	\resizebox{0.45\textwidth}{!}{
+		\begin{tikzpicture}
+			% Ground
+			\draw[thick] (-1,0) -- (7.5,0);
+			% Obstacle
+			\filldraw[thick, red!60!black!50] (1.3,0) .. controls (2.3,3.3) and (3.3,3.3) .. (4.3,0);
+			\draw[thick]  (1.3,0) .. controls (2.3,3.3) and (3.3,3.3) .. (4.3,0);
+			% Laminar flow arrows
+			\draw[->,thick] (-1,2.5) -- (0.5,2.5) node[midway,above] {Laminar flow};
+			\draw[->,thick] (-1,2) -- (0.5,2);
+			\draw[->,thick] (-1,1.5) -- (0.5,1.5);
+			\draw[->,thick] (-1,1) -- (0.5,1);
+			% b/w laminar and eddies
+			\draw[->,thick] (1,2) to[bend left] (5.4,2.8);
+			\draw[->,thick] (1,2.5) to[bend left] (6.5,2.5);
+			% Turbulent eddies
+			\foreach \x in {4, 4.5, 5}
+			\draw [>=stealth,->] (\x,2.5) arc (180:0:.2cm) -- +(270:0.1cm);
+			\draw [>=stealth,->] (5.6,2.7) arc (100:0:.2cm) -- +(270:0.1cm);
+			\foreach \x in {5, 6, 6.7}
+			\draw [>=stealth,->] (\x,2.3) arc (100:-150:.3cm) -- +(110:0.1cm);
+			\draw [>=stealth,->] (6.6,1.2) arc (100:-150:.3cm) -- +(110:0.1cm);
+			\foreach \x in {5,6}
+			\draw [>=stealth,->] (\x,1.2) arc (70:-210:.4cm) -- +(60:0.1cm);
+			\node at (5.5,1.4) {Turbulent eddies};
+		\end{tikzpicture}
+	}
+\end{figure}
 
 Large eddies will break into smaller eddies after which small eddies dissipates from K.E. to thermal energy.
 
-\begin{tikzpicture}
-	% Axes
-	\draw[thick,->] (0,0) -- (7,0);
-	\node[below] at (3.5,-0.2) {Size of eddy};
-	\draw[thick,->] (0,0) -- (0,3.5);
-	\node[above, rotate=90] at (-0.2,1.25) {Turbulent KE};
-	% Curve
-	%\filldraw[blue!50, thick, smooth](0.03,0.04) -- plot coordinates {(0.03,2) (1.2,2.7) (2.3,2.5) (4.4,0.6) (6.8,0.2)} -- (6.8,0.04) -- cycle;
-	\shade[left color=red!75, right color=blue!75] (0.01,0.02) -- plot coordinates {(0.01,2.05) (1,2.625) (1.25, 2.71) (1.5,2.73) (1.75,2.72) (2,2.69) (2.5,2.33) (2.8,2.1) (2.9,2) (3,1.82) (4,0.9) (4.4,0.58) (5,0.39) (6.8,0.17)} -- (6.8,0.01) -- cycle;
-	\draw[thick,smooth] plot coordinates {(0,2) (1.2,2.7) (2.3,2.5) (4.4,0.6) (6.8,0.2)};
-	% Labels
-	\node at (1.5,3) {Production subrange};
-	\node at (3.5,2) {Inertial submerge};
-	\node at (5.5,1) {Dissipation};
-	\draw[thick, -stealth] (0.3,0.8) -- (3.3,0.8);
-	\node[below] at (1.8,1.3) {Cascade energy};
-	% Size labels
-	\node[below, rotate=-30] at (1.5,-1.4) {Large eddies $\sim$2 km};
-	\node[below, rotate=-30] at (3.5,-1.4) {Moderate eddies $\sim$100 m};
-	\node[below, rotate=-30] at (5.5,-1.4) {Small eddies $\sim$1 mm};
-\end{tikzpicture}
+\begin{figure}[ht!]
+	\centering
+	\resizebox{0.45\textwidth}{!}{
+		\begin{tikzpicture}
+			% Axes
+			\draw[thick,->] (0,0) -- (7,0);
+			\node[below] at (3.5,-0.2) {Size of eddy};
+			\draw[thick,->] (0,0) -- (0,3.5);
+			\node[above, rotate=90] at (-0.2,1.25) {Turbulent KE};
+			% Curve
+			%\filldraw[blue!50, thick, smooth](0.03,0.04) -- plot coordinates {(0.03,2) (1.2,2.7) (2.3,2.5) (4.4,0.6) (6.8,0.2)} -- (6.8,0.04) -- cycle;
+			\shade[left color=red!75, right color=blue!75] (0.01,0.02) -- plot coordinates {(0.01,2.05) (1,2.625) (1.25, 2.71) (1.5,2.73) (1.75,2.72) (2,2.69) (2.5,2.33) (2.8,2.1) (2.9,2) (3,1.82) (4,0.9) (4.4,0.58) (5,0.39) (6.8,0.17)} -- (6.8,0.01) -- cycle;
+			\draw[thick,smooth] plot coordinates {(0,2) (1.2,2.7) (2.3,2.5) (4.4,0.6) (6.8,0.2)};
+			% Labels
+			\node at (1.5,3) {Production subrange};
+			\node at (3.5,2) {Inertial submerge};
+			\node at (5.5,1) {Dissipation};
+			\draw[thick, -stealth] (0.3,0.8) -- (3.3,0.8);
+			\node[below] at (1.8,1.3) {Cascade energy};
+			% Size labels
+			\node[below, rotate=-30] at (1.5,-1.4) {Large eddies $\sim$2 km};
+			\node[below, rotate=-30] at (3.5,-1.4) {Moderate eddies $\sim$100 m};
+			\node[below, rotate=-30] at (5.5,-1.4) {Small eddies $\sim$1 mm};
+		\end{tikzpicture}
+	}
+\end{figure}
 
 \clearpage
 
 \section{Leture 2 15/01/2025}
+\freeyellownote{40}{-5}{Todo: \\ 1. BLD figure}
+
 \subsection{Taylor's Hypothesis}
 \begin{itemize}[noitemsep]
 	\item When studying atmospheric boundary layer (ABL), It is not easy to create a snapshot of turbulance in the Atmosphere.
@@ -330,7 +348,7 @@ Large eddies will break into smaller eddies after which small eddies dissipates 
 
 \begin{figure}[h!]
 	\centering
-	\resizebox{0.5\textwidth}{!}{
+	\resizebox{0.45\textwidth}{!}{
 		\begin{tikzpicture}
 			% ground
 			\begin{scope}[yshift=-60,yslant=0,xslant=1]
@@ -367,7 +385,7 @@ Large eddies will break into smaller eddies after which small eddies dissipates 
 
 \begin{figure}[h!]
 	\centering
-	\resizebox{0.5\textwidth}{!}{
+	\resizebox{0.45\textwidth}{!}{
 		\begin{tikzpicture}
 			% ground
 			\begin{scope}[yshift=-60,yslant=0,xslant=1]
@@ -420,7 +438,7 @@ Large eddies will break into smaller eddies after which small eddies dissipates 
 	\underbrace{\cancel{\frac{D T}{D t}}}_{\substack{\text{Total derivative = 0}                           \\ \text{ (Taylor's hypothesis)}}} =\underbrace{\frac{\partial T}{\partial t}}_{\text{Local derivative}} + \underbrace{u\frac{\partial T}{\partial x}}_{\text{Advective term}}
 \end{align*}
 
-
+\newpage
 \subsection{Virtual Potential Temperature}
 Virtual potential temperature:
 \begin{equation}
@@ -446,7 +464,6 @@ Virtual temperature:
 			yticklabels={100, 90, 85, 80, 75, 70, 65},
 			xticklabel style={rotate=70},
 			% yticklabel style={rotate=0}
-		]
 		]
 		\addplot[mark=o, blue, thick] coordinates {
 				(1,0) (1.1,0.5) (1.1,3) (0.5,3) (0.3,4.2) (0.47,4.9) (0.25,6)
@@ -490,6 +507,17 @@ Virtual temperature:
 	\end{align*}
 \end{answer}
 
+\newpage
+\subsection{Boundary Layer Depth}
+\begin{itemize}[noitemsep]
+	\item Mixed layer
+	\item Boundary layer
+	\item Residual layer
+	\item Capping Inversion
+	\item Nauturnal Boundary layer
+\end{itemize}
+
+\subsection{Stability and plumming behaviour}
+
 \yellownote{Incomplete}
-%\freeyellownote{2}{2}{Incomplete}
 \end{document}
