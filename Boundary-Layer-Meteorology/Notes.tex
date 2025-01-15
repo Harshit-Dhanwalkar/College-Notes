@@ -14,6 +14,7 @@
 \usetikzlibrary{trees, positioning}
 \usetikzlibrary{shapes, shadings}
 \usepackage{tikz-3dplot}
+\usetikzlibrary{3d,shapes.geometric,shadows.blur}
 \tikzstyle{vertex}=[draw,fill=black!15,circle,minimum size=20pt,inner sep=0pt]
 \tikzstyle{selected edge} = [draw,line width=5pt,-,red!50]
 
@@ -255,4 +256,109 @@ Large eddies will break into smaller eddies after which small eddies dissipates 
 	\node[below, rotate=-30] at (3.5,-1.4) {Moderate eddies $\sim$100 m};
 	\node[below, rotate=-30] at (5.5,-1.4) {Small eddies $\sim$1 mm};
 \end{tikzpicture}
+
+\clearpage
+
+\section{Leture 2 15/01/2025}
+\subsection{Taylor's Hypothrsis}
+\begin{itemize}[noitemsep]
+	\item When studying atmospheric boundary layer (ABL), It is not easy to create a snapshot of turbulance in the Atmosphere.
+	\item Hence it is easier and cheaper to make measurements of point in the atmoshpere for a longer time, then an instantaneous snapshot.
+	\item So we just consider the atmoshpere is frozen.
+	\item \textbf{\textit{Taylor suggested that turbulence may be considered frozen as it advects past sensor.}}
+\end{itemize}
+
+\begin{tikzpicture}
+	% ground
+	\begin{scope}[yshift=-60,yslant=0,xslant=1]
+		\filldraw[black!20,very thick] (-7,1) rectangle (0,3);
+		\draw[->, thick] (-6, 1) -- (-5, 1) node[right] {\( x \)};
+		\draw[->, thick] (-6, 1) -- (-6, 1.5) node[above] {\( y \)};
+		\draw[->, thick] (-6, 1) -- (-7, 2) node[above right] {\( z \)};
+	\end{scope}
+	% eddy
+	\filldraw[black!60!blue!20, very thick] (-1.5, 4) ellipse [x radius=2, y radius=0.5];
+	\draw[thick] (-1.5, 4) ellipse [x radius=2, y radius=0.5];
+	\node at (-2.5,4.1) {$5^\circ$};
+	\node at (-0.5,4.1) {$10^\circ$};
+	\draw[|<->|, thick] (-3.5, 5) -- (0.5, 5) node[midway, above] {$100m$};
+	% Slant lines
+	\draw[ultra thick] (-0.5, 0) -- (0, 4);
+	\draw[ultra thick] (-0.3, 0.3) -- (0, 4);
+	\draw[ultra thick] (0.5, 0) -- (0, 4);
+	\draw[ultra thick] (0.7, 0.3) -- (0, 4);
+	% Horizontal lines
+	\draw[thick] (-0.35, 1) -- (0.35, 1);
+	\draw[thick] (-0.25, 2) -- (0.25, 2);
+	\draw[thick] (-0.10, 3) -- (0.10, 3);
+	\draw[thick] (0.35, 1) -- (0.5, 1.4);
+	\draw[thick] (0.25, 2) -- (0.35, 2.2);
+	% Crosses at intersections
+	\draw[thick] (-0.35, 1) -- (0.25, 2);
+	\draw[thick] (-0.25, 2) -- (0.35, 1);
+	\draw[thick] (-0.10, 3) -- (0.25, 2);
+	\draw[thick] (-0.25, 2) -- (0.10, 3);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	% ground
+	\begin{scope}[yshift=-60,yslant=0,xslant=1]
+		\filldraw[black!20,very thick] (-5,1) rectangle (2,3);
+		\draw[->, thick] (-4, 1) -- (-3, 1) node[right] {\( x \)};
+		\draw[->, thick] (-4, 1) -- (-4, 1.5) node[above] {\( y \)};
+		\draw[->, thick] (-4, 1) -- (-5, 2) node[above right] {\( z \)};
+	\end{scope}
+	\begin{scope}[yshift=108,yslant=0,xslant=1]
+		\draw[fill=blue!90!black] (2.5,0.25) --  (4,0.25) coordinate (f1)
+		-- (4,0.6) coordinate (f2) -- (4.4,0) coordinate (f3)
+		-- (4,-0.6) coordinate (f4) -- (4,-0.25) coordinate (f5)
+		-- (2.5,-0.25) coordinate (f6) -- cycle;
+	\end{scope}
+	\begin{scope}[yshift=110,yslant=0,xslant=1]
+		\draw[fill=blue!50] (2.5,0.25) --  (4,0.25) coordinate (f1)
+		-- (4,0.6) coordinate (f2) -- (4.4,0) coordinate (f3)
+		-- (4,-0.6) coordinate (f4) -- (4,-0.25) coordinate (f5)
+		-- (2.5,-0.25) coordinate (f6) -- cycle;
+		\path (2, 0) -- (4, 0) node[pos=1, font=\sffamily, anchor=east]{$10m/s$};
+	\end{scope}
+	% eddy
+	\filldraw[black!60!blue!20, very thick] (0.5, 4) ellipse [x radius=2, y radius=0.5];
+	\draw[thick] (0.5, 4) ellipse [x radius=2, y radius=0.5];
+	\node at (-0.75,4.1) {$5^\circ$};
+	\node at (1.75,4.1) {$10^\circ$};
+	% Slant lines
+	\draw[ultra thick] (-0.9, 0) -- (-0.3, 4);
+	\draw[ultra thick] (-0.6, 0.3) -- (-0.3, 4);
+	\draw[ultra thick] (0.1, 0) -- (-0.3, 4);
+	\draw[ultra thick] (0.4, 0.3) -- (-0.3, 4);
+	% Horizontal lines
+	\draw[thick] (-0.73, 1) -- (0.05, 1);
+	\draw[thick] (-0.65, 2) -- (-0.08, 2);
+	\draw[thick] (-0.45, 3) -- (-0.2, 3);
+	\draw[thick] (0, 1) -- (0.18, 1.4);
+	\draw[thick] (-0.1, 2) -- (0.05, 2.2);
+	\draw[thick] (-0.2, 3) -- (-0.12,3.2);
+	% Crosses at intersections
+	\draw[thick] (-0.73, 1) -- (-0.08, 2);
+	\draw[thick] (-0.65, 2) -- (0.05, 1);
+	\draw[thick] (-0.65, 2) -- (-0.2, 3);
+	\draw[thick] (-0.45, 3) -- (-0.08, 2);
+\end{tikzpicture}
+
+\begin{align*}
+	\frac{\partial T}{\partial x} = 0.05 \text{K/m,} \quad \frac{\partial T}{\partial t} = -0.5 \text{K/s} \\
+	\underbrace{\cancel{\frac{D T}{D t}}}_{\substack{\text{Total derivative = 0}                           \\ \text{ (Taylor's hypothesis)}}} =\underbrace{\frac{\partial T}{\partial t}}_{\text{Local derivative}} + \underbrace{u\frac{\partial T}{\partial x}}_{\text{Advective term}}
+\end{align*}
+
+\subsection{Virtual Potential Temperature $(\theta_v)$}
+Virtual potential temperature:
+\begin{equation}
+	\theta_v = \theta(1+0.61r)
+	\label{eq:virtualpotentialtemp}
+\end{equation}
+Virtual temperature:
+\begin{equation}
+	T_v = T(1+0.61r)
+	\label{eq:virtualtemp}
+\end{equation}
 \end{document}
