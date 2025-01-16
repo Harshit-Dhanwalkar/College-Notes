@@ -572,14 +572,12 @@ Initial conditions:
 	\theta(t=t_0)       & =\theta_0 \\
 	\dot{\theta(t=t_0)} & =\omega_0
 \end{align*}
-
-we can rewrite this equation into two 1$^{st}$-order ODEs,
+We can rewrite this equation into two 1$^{st}$-order ODEs,
 
 Let $\frac{\theta}{dt}=p$, then
-
 \begin{align}
-	\frac{dp}{dt} + \omega^2\theta & = 0 \tag{i}  \\
-	\frac{d\theta}{dt}             & = p \tag{ii}
+	\frac{dp}{dt} + \omega^2\theta & = 0 \tag{i}  \label{eq:ic1} \\
+	\frac{d\theta}{dt}             & = p \tag{ii} \label{eq:ic2}
 \end{align}
 Initial conditions becomes:
 \begin{align*}
@@ -587,5 +585,73 @@ Initial conditions becomes:
 	p(t=t_0)      & =\omega_0
 \end{align*}
 
-\yellownote{incomplete}
+Invoking Taylor series expansion for $f(t+t_0)$:
+% \begin{align*}
+% 	f(t+t_0)      & = f(t_0) + (t+t_0)\frac{\partial f}{\partial t}\Big{|}_{t=t_0} + \frac{(t+t_0)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots      \\
+% 	f(t+\Delta t) & = f(t_0) + \Delta t \frac{\partial f}{\partial t}\Big{|}_{t=t_0} + \frac{(\Delta t)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots
+% \end{align*}
+
+\begin{align*}
+	f(t+t_0)      & = f(t_0) + (t+t_0)\frac{\partial f}{\partial t}\Big{|}_{t=t_0}                             \\
+	              & \qquad + \frac{(t+t_0)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0}	+ \cdots     \\
+	f(t+\Delta t) & = f(t_0) + \Delta t \frac{\partial f}{\partial t}\Big{|}_{t=t_0}                           \\
+	              & \qquad + \frac{(\Delta t)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots
+\end{align*}
+we will get;
+\begin{align*}
+	p(t+t_0)                                     & \approx p(t_0) + \Delta t \frac{\partial p}{\partial t}\Big{|}_{t=t_0}                                  \\
+	p(t+t_0)                                     & \approx p(t_0) + (t-t_0) \frac{\partial p}{\partial t}\Big{|}_{t=t_0}                                   \\
+	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t+t_0) - p(t_0)}{(t-t_0)}                              \tag{6} \label{eq:forwarddiff_p} \\
+	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t_1) - p(t_0)}{\Delta t}
+\end{align*}
+
+Eq.\myeqref{eq:forwarddiff_p} is called \textbf{Forward difference}.
+
+Order of Forward difference is $O(\Delta t)$.
+
+Similiarly,
+\begin{align*}
+	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} \tag{7} \label{eq:forwarddiff_theta}
+\end{align*}
+
+From Eq.\myeqref{eq:ic1} and Eq.\myeqref{eq:forwarddiff_p}:
+\begin{align*}
+	\frac{p(t+t_0) - p(t_0)}{(t-t_0)} + \omega^2 \theta(t_0) & = 0                                     \\
+	p(t+t_0)                                                 & = p(t_0) - (t-t_0)\omega^2 \theta(t_0)  \\
+	p(t_1)                                                   & = p(t_0) - \Delta t\omega^2 \theta(t_0)
+\end{align*}
+
+From Eq.\myeqref{eq:ic2} and Eq.\myeqref{eq:forwarddiff_theta}:
+\begin{align*}
+	\frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} & = p(t_0)                        \\
+	\theta(t+t_0)                               & = \theta(t_0) - (t-t_0) p(t_0)  \\
+	\theta(t_1)                                 & = \theta(t_0) - \Delta t p(t_0)
+\end{align*}
+
+Invoking Taylor series expansion for $f(t-t_0)$:
+\begin{align*}
+	f(t-t_0)      & = f(t_0) - (t-t_0)\frac{\partial f}{\partial t}\Big{|}_{t=t_0}                             \\
+	              & \qquad + \frac{(t-t_0)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots    \\
+	f(t-\Delta t) & = f(t_0) - \Delta t \frac{\partial f}{\partial t}\Big{|}_{t=t_0}                           \\
+	              & \qquad + \frac{(\Delta t)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots
+\end{align*}
+we will get;
+\begin{align*}
+	p(t-t_0)                                     & \approx p(t_0) - \Delta t \frac{\partial p}{\partial t}\Big{|}_{t=t_0}                                   \\
+	p(t-t_0)                                     & \approx p(t_0) - (t-t_0) \frac{\partial p}{\partial t}\Big{|}_{t=t_0}                                    \\
+	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t_0) - p(t-t_0)}{(t-t_0)}                              \tag{8} \label{eq:backwarddiff_p} \\
+	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t_0) - p(t_{-1})}{\Delta t}
+\end{align*}
+
+Eq.\myeqref{eq:backwarddiff_p} is called \textbf{Backward difference}.
+
+Order of Backward difference is $O(\Delta t)$.
+
+Similiarly,
+\begin{align*}
+	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t_0) - \theta(t_{-1})}{\Delta t} \tag{9} \label{eq:backwarddiff_theta}
+\end{align*}
+
+\yellownote{incomplete \\
+	fix equation no.s}
 \end{document}
