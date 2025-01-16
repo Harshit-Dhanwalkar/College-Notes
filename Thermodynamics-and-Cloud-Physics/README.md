@@ -22,4 +22,4 @@ Here’s a sneak peek of the lecture notes:
 
 | 📄 **Cover Page** | 📑 **Table of Contents** |
 |:-----------------:|:-----------------------:|
-| ![Preview of Coverpage](https://github.com/Harshit-Dhanwalkar/College-Notes/blob/main/Thermodynamics-and-Cloud-Physics/assets/page-01.png){:width="45%"} | ![Preview of Contents](https://github.com/Harshit-Dhanwalkar/College-Notes/blob/main/Thermodynamics-and-Cloud-Physics/assests/page-02.png){:width="45%"} |
+| ![Preview of Coverpage](https://github.com/Harshit-Dhanwalkar/College-Notes/blob/main/Thermodynamics-and-Cloud-Physics/assests/page-01.png) | ![Preview of Contents](https://github.com/Harshit-Dhanwalkar/College-Notes/blob/main/Thermodynamics-and-Cloud-Physics/assests/page-02.png) |
