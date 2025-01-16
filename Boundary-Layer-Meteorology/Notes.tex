@@ -542,7 +542,6 @@ Virtual temperature:
 	\end{align*}
 \end{answer}
 
-\newpage
 \subsection{Boundary Layer Depth and Structure}
 \begin{itemize}[noitemsep]
 	\item Mixed layer
@@ -552,56 +551,64 @@ Virtual temperature:
 	\item Nauturnal Boundary layer
 \end{itemize}
 
-\yellownote{FIGURE for BLD strcture}
-% \begin{figure*}[ht!]
-% 	\centering
-% 	\begin{tikzpicture}
-% 		% Axes
-% 		\draw[thick,->] (0,0) -- (12,0) node[below right] {Local Time (hours)};
-% 		\draw[thick,->] (0,0) -- (0,8) node[above left] {Height (km)};
-% 		% Time ticks
-% 		\foreach \x in {0,3,...,12} {
-% 				\draw[thick] (\x,0) -- (\x,-0.2) node[below] {\x};
-% 			}
-% 		% Height ticks
-% 		\foreach \y in {1,2,...,7} {
-% 				\draw[thick] (0,\y) -- (-0.2,\y) node[left] {\y};
-% 			}
-% 		% Stable Boundary Layer (Nocturnal)
-% 		\fill[blue!20] (0,0) -- (3,0.5) -- (6,0.5) -- (9,0.2) -- (12,0.2) -- (12,0) -- cycle;
-% 		\node[blue!70!black] at (2,0.8) {Stable Boundary Layer};
-% 		% Surface Layer
-% 		\fill[green!20] (0,0) -- (3,0.3) -- (6,0.3) -- (9,0.1) -- (12,0.1) -- (12,0) -- cycle;
-% 		\node[green!70!black] at (1,0.2) {Surface Layer};
-% 		% Residual Layer
-% 		\fill[orange!20] (3,0.5) -- (6,1.5) -- (9,1.2) -- (9,0.2) -- (6,0.5) -- (3,0.5) -- cycle;
-% 		\node[orange!70!black] at (7,1.3) {Residual Layer};
-% 		% Mixed Layer
-% 		\fill[red!20] (3,0.5) -- (6,3) -- (9,2.8) -- (12,1.5) -- (12,0.2) -- (9,0.2) -- (6,0.5) -- cycle;
-% 		\node[red!70!black] at (6,2.5) {Convective Mixed Layer};
-% 		% Capping Inversion
-% 		\draw[thick, dashed, red!70!black] (0,3.5) -- (12,3.5);
-% 		\node[red!70!black, above] at (10,3.5) {Capping Inversion};
-% 		% Entrainment Zone
-% 		\fill[cyan!30, opacity=0.5] (3,3) -- (6,3.5) -- (9,3.3) -- (12,3.1) -- (12,2.8) -- (9,2.8) -- (6,3) -- (3,3) -- cycle;
-% 		\node[cyan!70!black] at (6,3.3) {Entrainment Zone};
-% 		% Free Atmosphere
-% 		\fill[gray!20] (0,3.5) -- (12,3.5) -- (12,8) -- (0,8) -- cycle;
-% 		\node[gray!70!black] at (6,6) {Free Atmosphere};
-% 		% Sunrise and Sunset lines
-% 		\draw[dotted, thick] (3,0) -- (3,8);
-% 		\draw[dotted, thick] (9,0) -- (9,8);
-% 		% Day/Night Labels
-% 		\node[below, rotate=-30] at (3,-1) {Sunrise};
-% 		\node[below, rotate=-30] at (9,-1) {Sunset};
-% 		\node[below, rotate=-30] at (0,-1) {Noon};
-% 		\node[below, rotate=-30] at (6,-1) {Mignight};
-% 		\node[below, rotate=-30] at (12,-1) {Noon};
-% 	\end{tikzpicture}
-% 	\caption{Height vs Local Time Diagram of Atmospheric Boundary Layers.}
-% 	\label{fig:boundary_layer}
-% \end{figure*}
-
+\begin{figure*}
+	\centering
+	\begin{tikzpicture}
+		% Axes
+		\draw[thick,-] (-0.04,0) -- (12,0) node[below right] {Local Time (hours)};
+		\draw[thick,->] (-0.04,0) -- (-0.05,7) node[above left] {Height (km)};
+		% Time ticks
+		% \foreach \x in {0,1,...,12} {
+		% 		\draw[thick] (\x,0) -- (\x,-0.2) node[below] {\x};
+		% 	}
+		% Height ticks
+		\foreach \y/\label in {0/0, 2.7/1000, 5.7/2000} {
+				\draw[thick] (0,\y) -- (-0.2,\y) node[left] {\label};
+			}
+		% Free Atmosphere
+		\fill[gray!10] (0,3) -- (12,3) -- (12,6.5) -- (0,6.5) -- cycle;
+		\node[gray!90!black] at (6,5) {Free Atmosphere};
+		% Capping Inversion
+		\filldraw[blue!20] (0,3) -- (0,3.5) -- (1,3.8) -- (2,3.9) -- (4,4.1) -- (5.6,4.2) -- (6,4.25) -- (9,4.44) -- (12,4.6) -- (12, 3);
+		\node[blue!90, above] at (6,3.7) {Capping Inversion};
+		% % Entrainment Zone
+		% \fill[cyan!30, opacity=0.5] (3,3) -- (6,3.5) -- (9,3.3) -- (12,3.1) -- (12,2.8) -- (9,2.8) -- (6,3) -- (3,3) -- cycle;
+		% \node[cyan!70!black] at (6,3.3) {Entrainment Zone};
+		% Residual Layer
+		\filldraw[orange!20] (3.9,0.02) -- (3.9,3.5) -- (6, 3.7) -- (9,3.86) -- (10,4) -- (9.8, 3.7) -- (9.5, 2.8) -- (9,0.2);
+		\node[orange!70!black] at (7,2.5) {Residual Layer};
+		% Convective Mixed Layer
+		\fill[red!20] (0,0.02) -- (0,3) -- (1,3.2) -- (2,3.3) -- (4,3.5) -- (5.6,3.7) -- (4.5, 3.3) -- (4.1,3) -- (3.9,2.7) -- (3.9,0.02) -- cycle;
+		\node[red!70!black] at (2,2) {Convective Mixed Layer};
+		% Stable Boundary Layer (Nocturnal)
+		\fill[blue!75!black!75] (3.4,0) -- (4,0.8) -- (5,1.1) -- (8,1.4) -- (12,1.6) -- (12,0) -- cycle;
+		\node[blue!30] at (6.2,0.6) {Stable (Nocturnal) Boundary Layer};
+		% Entrainment Zone
+		\fill[blue!25] (8.5,0.02) -- (8.7, 0.3) -- (9.3,3) -- (9.6,3.9) -- (9.8,4.3) -- (10, 4.4) -- (10.9,4.95) -- (12, 5.2) -- (12, 0.02) -- cycle;
+		\node[blue!90] at (10,5) {Entrainment zone};
+		\node[blue!90] at (2.5,3.7) {Entrainment zone};
+		% Mixed Layer
+		\fill[red!20] (10,3.9) -- (9.8,3.7) -- (9.5,2.8) -- (9,0.02) -- (12, 0.02) -- (12, 5) -- (10.9,4.75) -- (10, 4.1) -- (9.8,3.7) -- cycle;
+		\node[red!70!black] at (10.7,2) {Mixed Layer};
+		% Surface Layer
+		\draw[green!70!black] (0,0.4) -- (3,0.55) -- (3.9,0.6);
+		\draw[green!70!black] (3.7,0.3) -- (9,0.35) -- (12,0.4);
+		\node[green!50!black] at (2,0.2) {Surface Layer};
+		\node[green!80] at (6,0.2) {Surface Layer};
+		\node[green!50!black] at (10.5,0.2) {Surface Layer};
+		% Sunrise and Sunset lines
+		\draw[dotted, thick] (4,0) -- (4,6.5);
+		\draw[dotted, thick] (8,0) -- (8,6.5);
+		% Day/Night Labels
+		\node[below] at (0,-0.3) {Noon};
+		\node[below] at (4,-0.3) {Sunset};
+		\node[below] at (6,-0.3) {Mignight};
+		\node[below] at (8,-0.3) {Sunrise};
+		\node[below] at (12,-0.3) {Noon};
+	\end{tikzpicture}
+	\caption{Height vs Local Time Diagram of Atmospheric Boundary Layers.}
+	\label{fig:boundary_layer}
+\end{figure*}
 
 \clearpage
 \section{Lecture 3 16/01/2025}
