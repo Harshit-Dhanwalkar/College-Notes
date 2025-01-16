@@ -190,36 +190,42 @@
 \subsection{Introduction to Boundary Layer}
 The Boundary Layer can be defined as part of  the troposphere that is directly influenced by the presence of the Earth's surface and responds to surface forcings with a time scale of about an hour or less.
 
-\begin{tikzpicture}[scale=0.9]
-	%Free Atmosphere curve
-	\fill[cyan!20, opacity=0.5] (-0.5,0) rectangle (4.6,5);
-	\fill[cyan!20, opacity=0.5]
-	(-0.5,5) arc[start angle=140, end angle=40, radius=3.3cm] -- (4.6,5) -- cycle;
-	\draw[very thick, blue!90!black]
-	(-0.5,5) arc[start angle=140, end angle=40, radius=3.3cm];
-	\node[anchor=north] at (2,4.8) {Free Atmosphere};
-	%Topopause curve
-	\node[anchor=north] at (2,6.8) {Topopause};
-	%Clapping Inversion curve
-	\draw[thick,blue!80] plot [smooth] coordinates {(-0.5, 1.7) (0,2) (1,2.6) (2,2.2) (3,2.3) (4,2.3) (4.6,1.8)};
-	\fill[blue!20,opacity=0.5] (-0.5,0) -- plot [smooth] coordinates {(-0.5, 1.7) (0,2) (1,2.6) (2,2.2) (3,2.3) (4,2.3) (4.6,1.8)}  -- (4.6,0) -- cycle;
-	\node[anchor=north] at (2,3.3) {Clapping Inversion};
-	% Boundary layer curve
-	\node[anchor=north] at (2,2) {Boundary Layer};
-	% Earth's surface
-	\fill[green!40,opacity=0.5]
-	(2.5-3,0) arc[start angle=130, end angle=50, radius=4cm] -- (2.5,0) -- cycle;
-	\draw[very thick, green!50!black, shift={(2.5,0)}]
-	(-3,0) arc[start angle=130, end angle=50, radius=4cm];
-	\node[below] at (2.1,0) {Earth's Surface};
-	% Axis label
-	\draw[-latex] (-0.5,0) -- (-0.5,7.5);
-	\node[above, rotate=90] at (-0.7,3.25) {Altitude};
-	\draw[-latex] (4.6,0) -- (4.6,7.5);
-	% Labels
-	\node[anchor=east, rotate=90] at (-0.8,6) {\(\theta \approx 11 \, \mathrm{km}\)};
-	\node[anchor=east, rotate=90] at (-0.8,2.5) {\(\theta \approx 1 \, \mathrm{km}\)};
-\end{tikzpicture}
+\begin{figure}[ht!]
+	\centering
+	\resizebox{0.35\textwidth}{!}{
+		\begin{tikzpicture}
+			%Free Atmosphere curve
+			\fill[cyan!20, opacity=0.5] (-0.5,0) rectangle (4.6,5);
+			\fill[cyan!20, opacity=0.5]
+			(-0.5,5) arc[start angle=140, end angle=40, radius=3.3cm] -- (4.6,5) -- cycle;
+			\draw[very thick, blue!90!black]
+			(-0.5,5) arc[start angle=140, end angle=40, radius=3.3cm];
+			\node[anchor=north] at (2,4.8) {Free Atmosphere};
+			%Topopause curve
+			\node[anchor=north] at (2,6.8) {Topopause};
+			%Clapping Inversion curve
+			\draw[thick,blue!80] plot [smooth] coordinates {(-0.5, 1.7) (0,2) (1,2.6) (2,2.2) (3,2.3) (4,2.3) (4.6,1.8)};
+			\fill[blue!20,opacity=0.5] (-0.5,0) -- plot [smooth] coordinates {(-0.5, 1.7) (0,2) (1,2.6) (2,2.2) (3,2.3) (4,2.3) (4.6,1.8)}  -- (4.6,0) -- cycle;
+			\node[anchor=north] at (2,3.3) {Clapping Inversion};
+			% Boundary layer curve
+			\node[anchor=north] at (2,2) {Boundary Layer};
+			% Earth's surface
+			\fill[green!40,opacity=0.5]
+			(2.5-3,0) arc[start angle=130, end angle=50, radius=4cm] -- (2.5,0) -- cycle;
+			\draw[very thick, green!50!black, shift={(2.5,0)}]
+			(-3,0) arc[start angle=130, end angle=50, radius=4cm];
+			\node[below] at (2.1,0) {Earth's Surface};
+			% Axis label
+			\draw[-latex] (-0.5,0) -- (-0.5,7.5);
+			\node[above, rotate=90] at (-0.7,3.25) {Altitude};
+			\draw[-latex] (4.6,0) -- (4.6,7.5);
+			% Labels
+			\node[anchor=east, rotate=90] at (-0.8,6) {\(\theta \approx 11 \, \mathrm{km}\)};
+			\node[anchor=east, rotate=90] at (-0.8,2.5) {\(\theta \approx 1 \, \mathrm{km}\)};
+		\end{tikzpicture}
+	}
+	\caption{Atmosphere can be divided into 2 parts: boundary layer near surface and free atmosphere above it.}
+\end{figure}
 
 \subsection{Boundary layer forcing mecchanism}
 What physical process modify boundary layer air parcel?
@@ -239,26 +245,51 @@ Air flow or wind can be decomposed into following 3 types:
 	\item \textbf{Turbulence}: The vertical transport of moisture, heat, momentum, and pollutants is primarily dominated by turbulence, which is characterized by chaotic and irregular motion.
 \end{enumerate}
 
-\begin{tikzpicture}[smooth, thick]
-	% Axes
-	\draw[dashed,->] (0,0.5) -- (7,0.5);
-	\draw[dashed,->] (0,3.5) -- (7,3.5);
-	\draw[dashed,->] (0,5.5) -- (7,5.5);
-	\draw[->] (0,0) -- (7,0);
-	\node[below] at (3.5,0) {Time};
-	\draw[->] (0,0) -- (0,7);
-	\node[above, rotate=90] at (0,3.5) {Energy};
-	% Mean Wind (Offset by +2 for vertical distance)
-	\draw[blue!70] plot coordinates {(0.5,1) (2,1.5) (4,1.8) (6,2.1)}
-	node[anchor=west] {Mean Wind};
-	% Wave (Sine curve, offset by +4)
-	\draw[red!70] plot[domain=0.5:6.28,samples=100]
-	({\x},{3.5 + sin((\x - 0.5) r)})
-	node[anchor=west] {Wave};
-	% Turbulence (Offset by +6)
-	\draw[green!90!black] plot coordinates {(0.5,5) (1,6) (1.5,5.3) (2.5,6.2) (3.5,4.7) (4.5,6) (5,4.7) (6,6.5)}
-	node[anchor=west] {Turbulence};
-\end{tikzpicture}
+\begin{figure}[ht!]
+	\centering
+	\resizebox{0.45\textwidth}{!}{
+		\begin{tikzpicture}[smooth, thick]
+			% Axes
+			\draw[->] (0,0.5) -- (0,2);
+			\draw[<->] (0,2.2) -- (0,4.8);
+			\draw[<->] (0,5) -- (0,7);
+			\node[above, rotate=90] at (-0.5,4) {Velocity $\longrightarrow$};
+			\draw[dashed,->] (0,0.7) -- (7.5,0.7);
+			\node[above, rotate=90] at (0,0.7) {0};
+			\draw[dashed,->] (0,3.5) -- (7.5,3.5);
+			\node[above, rotate=90] at (0,3.5) {0};
+			\draw[dashed,->] (0,6) -- (7.5,6);
+			\node[below] at (4,0.5) {Time $\longrightarrow$};
+			% dottted lines
+			%mean
+			\draw[dotted, thick] (0,1.8) -- (7,1.8);
+			\node[above, rotate=90] at (0,1.8) {10};
+			% wave
+			\draw[dotted, thick] (0,4.5) -- (7,4.5);
+			\node[above, rotate=90] at (0,4.5) {10};
+			\draw[dotted, thick] (0,2.5) -- (7,2.5);
+			\node[above, rotate=90] at (0,2.5) {-10};
+			%tur
+			\draw[dotted, thick] (0,5.5) -- (7,5.5);
+			\node[above, rotate=90] at (0,5.5) {-2};
+			\draw[dotted, thick] (0,6) -- (7,6);
+			\node[above, rotate=90] at (0,6) {0};
+			\draw[dotted, thick] (0,6.5) -- (7,6.5);
+			\node[above, rotate=90] at (0,6.5) {2};
+			% Mean Wind (Offset by +2 for vertical distance)
+			\draw[blue!70] plot coordinates {(0.5,0.8) (1.5,1.1) (3,1.5) (6,1.6) (7,1.65)}
+			node[anchor=west] {Mean Wind};
+			% Wave (Sine curve, offset by +4)
+			\draw[red!70] plot[domain=0.5:7,samples=100]
+			({\x},{3.5 + sin((\x - 0.5) r)})
+			node[anchor=west] {Wave};
+			% Turbulence (Offset by +6)
+			\draw[green!90!black] plot coordinates {(0.5,5.5) (1,6) (1.5,5.7) (2,6.5) (2.5,5.9) (3,5.5) (3.5,6.3) (4.2,5.6) (4.8,6.2) (5.5,5.6) (6,6.5) (6.4,6) (6.7,5.7)}
+			node[anchor=west] {Turbulence};
+		\end{tikzpicture}
+	}
+	\caption{Plot showing profiles of Mean, Wave and Turbulent winds}
+\end{figure}
 
 \subsection{Eddies}
 Eddies are formed due to the interaction of currents with obstacles like coastlines, underwater topography, or other currents, as well as from the instability of larger current systems.
@@ -302,6 +333,7 @@ Small eddies might last for seconds to minutes, while larger oceanic eddies can 
 			\node at (5.5,1.4) {Turbulent eddies};
 		\end{tikzpicture}
 	}
+	\caption{Eddy formation due to Turbulence caused by an obstacle}
 \end{figure}
 
 Large eddies will break into smaller eddies after which small eddies dissipates from K.E. to thermal energy.
@@ -331,6 +363,7 @@ Large eddies will break into smaller eddies after which small eddies dissipates 
 			\node[below, rotate=-30] at (5.5,-1.4) {Small eddies $\sim$1 mm};
 		\end{tikzpicture}
 	}
+	\caption{Variation of Turbulent Kinetic energy with change in Size of eddies}
 \end{figure}
 
 \clearpage
@@ -381,6 +414,7 @@ Large eddies will break into smaller eddies after which small eddies dissipates 
 			\draw[thick] (-0.25, 2) -- (0.10, 3);
 		\end{tikzpicture}
 	}
+	\caption{Eddy propagation}
 \end{figure}
 
 \begin{figure}[h!]
@@ -431,6 +465,7 @@ Large eddies will break into smaller eddies after which small eddies dissipates 
 			\draw[thick] (-0.45, 3) -- (-0.08, 2);
 		\end{tikzpicture}
 	}
+	\caption{Eddy passing by the sensor mounted on tower}
 \end{figure}
 
 \begin{align*}
@@ -517,7 +552,55 @@ Virtual temperature:
 	\item Nauturnal Boundary layer
 \end{itemize}
 
-\yellownote{FIGURE}
+\yellownote{FIGURE for BLD}
+% \begin{figure*}[ht!]
+% 	\centering
+% 	\begin{tikzpicture}
+% 		% Axes
+% 		\draw[thick,->] (0,0) -- (12,0) node[below right] {Local Time (hours)};
+% 		\draw[thick,->] (0,0) -- (0,8) node[above left] {Height (km)};
+% 		% Time ticks
+% 		\foreach \x in {0,3,...,12} {
+% 				\draw[thick] (\x,0) -- (\x,-0.2) node[below] {\x};
+% 			}
+% 		% Height ticks
+% 		\foreach \y in {1,2,...,7} {
+% 				\draw[thick] (0,\y) -- (-0.2,\y) node[left] {\y};
+% 			}
+% 		% Stable Boundary Layer (Nocturnal)
+% 		\fill[blue!20] (0,0) -- (3,0.5) -- (6,0.5) -- (9,0.2) -- (12,0.2) -- (12,0) -- cycle;
+% 		\node[blue!70!black] at (2,0.8) {Stable Boundary Layer};
+% 		% Surface Layer
+% 		\fill[green!20] (0,0) -- (3,0.3) -- (6,0.3) -- (9,0.1) -- (12,0.1) -- (12,0) -- cycle;
+% 		\node[green!70!black] at (1,0.2) {Surface Layer};
+% 		% Residual Layer
+% 		\fill[orange!20] (3,0.5) -- (6,1.5) -- (9,1.2) -- (9,0.2) -- (6,0.5) -- (3,0.5) -- cycle;
+% 		\node[orange!70!black] at (7,1.3) {Residual Layer};
+% 		% Mixed Layer
+% 		\fill[red!20] (3,0.5) -- (6,3) -- (9,2.8) -- (12,1.5) -- (12,0.2) -- (9,0.2) -- (6,0.5) -- cycle;
+% 		\node[red!70!black] at (6,2.5) {Convective Mixed Layer};
+% 		% Capping Inversion
+% 		\draw[thick, dashed, red!70!black] (0,3.5) -- (12,3.5);
+% 		\node[red!70!black, above] at (10,3.5) {Capping Inversion};
+% 		% Entrainment Zone
+% 		\fill[cyan!30, opacity=0.5] (3,3) -- (6,3.5) -- (9,3.3) -- (12,3.1) -- (12,2.8) -- (9,2.8) -- (6,3) -- (3,3) -- cycle;
+% 		\node[cyan!70!black] at (6,3.3) {Entrainment Zone};
+% 		% Free Atmosphere
+% 		\fill[gray!20] (0,3.5) -- (12,3.5) -- (12,8) -- (0,8) -- cycle;
+% 		\node[gray!70!black] at (6,6) {Free Atmosphere};
+% 		% Sunrise and Sunset lines
+% 		\draw[dotted, thick] (3,0) -- (3,8);
+% 		\draw[dotted, thick] (9,0) -- (9,8);
+% 		% Day/Night Labels
+% 		\node[below, rotate=-30] at (3,-1) {Sunrise};
+% 		\node[below, rotate=-30] at (9,-1) {Sunset};
+% 		\node[below, rotate=-30] at (0,-1) {Noon};
+% 		\node[below, rotate=-30] at (6,-1) {Mignight};
+% 		\node[below, rotate=-30] at (12,-1) {Noon};
+% 	\end{tikzpicture}
+% 	\caption{Height vs Local Time Diagram of Atmospheric Boundary Layers.}
+% 	\label{fig:boundary_layer}
+% \end{figure*}
 
 \subsection{Stability and Pluming Behaviour}
 \begin{enumerate}
