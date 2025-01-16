@@ -20,10 +20,7 @@ Welcome to the repository for my lecture notes on **Thermodynamics and Cloud Phy
 
 Here’s a sneak peek of the lecture notes:
 
-### 📄 **Cover Page**
-![Preview of Coverpage](https://github.com/Harshit-Dhanwalkar/College-Notes/blob/main/Thermodynamics-and-Cloud-Physics/assests/page-01.png)
-
-### 📑 **Table of Contents**
-| ![Preview of Contents](./assets/page-02.png) | ![Preview of Contents](./assets/page-03.png) |
+| ### 📄 **Cover Page** | ### 📑 **Table of Contents**
+| ![Preview of Coverpage](https://github.com/Harshit-Dhanwalkar/College-Notes/blob/main/Thermodynamics-and-Cloud-Physics/assests/page-01.png) | ![Preview of Contents](https://github.com/Harshit-Dhanwalkar/College-Notes/blob/main/Thermodynamics-and-Cloud-Physics/assests/page-02.png) | ![Preview of Contents](https://github.com/Harshit-Dhanwalkar/College-Notes/blob/main/Thermodynamics-and-Cloud-Physics/assests/page-02.png) |
 
 ---
