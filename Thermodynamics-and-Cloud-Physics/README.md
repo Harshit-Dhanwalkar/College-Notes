@@ -1,10 +1,29 @@
-# Thermodynamic and Cloud Physics Notes
+# 🌥️ Thermodynamics and Cloud Physics Notes 🌥️
 
-Engineering Physics branch
-Earth science and system 
+### 📚 Engineering Physics Branch  
+#### 🌍 Earth Science and System  
 
-This repo contain my lecture notes on cource `Thermodynamic and Cloud Physics`.
+Welcome to the repository for my lecture notes on **Thermodynamics and Cloud Physics**. Here you will find all the essential materials, including notes, images, and references.
 
-Folder 'Figures' contain all the images used in notes. sources of all those images are given in footnotes where they are used in pdf.
+---
 
-Note: Multiple complilation might require to produce pdf output.
+## 📂 **Repository Structure**
+
+- **Notes**: A comprehensive collection of lecture notes on the subject.  
+- **Figures**: This folder contains all the images used within the notes. The sources of these images are given in the footnotes within the PDF.
+
+> **Note:** Multiple compilations might be required to produce the final PDF output.
+
+---
+
+## 📖 **Preview of Notes**
+
+Here’s a sneak peek of the lecture notes:
+
+### 📄 **Cover Page**
+![Preview of Coverpage](./assets/page-01.png)
+
+### 📑 **Table of Contents**
+| ![Preview of Contents](./assets/page-02.png) | ![Preview of Contents](./assets/page-03.png) |
+
+---
