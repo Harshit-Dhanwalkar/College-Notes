@@ -183,6 +183,7 @@
 %\addcontentsline{toc}{section}{Introduction} % Adds this section to the table of contents
 %-------------------------------------------------------------------------------------
 \section{Lecture 1 06/01/2025}
+\subsection{Introduction to Numerical Weather Prediction}
 Numerical Weathering Problem (NWP) was first proposed by Bjerkives around 1900. It is mathematical initial value problem (IVP).
 
 Initial value Problem (IVP) $\rightarrow$ simple pendulum.
@@ -255,6 +256,8 @@ Continuity equation:
 \begin{align*}
 	\frac{1}{\rho} \frac{D\rho}{Dt} + \nabla\cdot\vec{V} = 0  \tag{7} \label{eq:continuity_eq}
 \end{align*}
+
+Consider grid on globe as shown in figure(\ref{fig:grid}).
 
 Let grid of following resolutions:
 \begin{itemize}[noitemsep]
@@ -445,6 +448,7 @@ These are even larger than entire country, which means that we can't above to fi
 		\foreach \t in {0,2,...,\angBeta} { \DrawLatitudeCirclered[\R+3]{\t} }
 	\end{tikzpicture}
 	\caption{Figure showing the grid}
+	\label{fig:grid}
 \end{figure}
 %-------------------------------------------------------------------------------------
 \clearpage
@@ -585,12 +589,8 @@ Initial conditions becomes:
 	p(t=t_0)      & =\omega_0
 \end{align*}
 
+\subsection{Forward difference}
 Invoking Taylor series expansion for $f(t+t_0)$:
-% \begin{align*}
-% 	f(t+t_0)      & = f(t_0) + (t+t_0)\frac{\partial f}{\partial t}\Big{|}_{t=t_0} + \frac{(t+t_0)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots      \\
-% 	f(t+\Delta t) & = f(t_0) + \Delta t \frac{\partial f}{\partial t}\Big{|}_{t=t_0} + \frac{(\Delta t)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots
-% \end{align*}
-
 \begin{align*}
 	f(t+t_0)      & = f(t_0) + (t+t_0)\frac{\partial f}{\partial t}\Big{|}_{t=t_0}                             \\
 	              & \qquad + \frac{(t+t_0)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0}	+ \cdots     \\
@@ -609,9 +609,10 @@ Eq.\myeqref{eq:forwarddiff_p} is called \textbf{Forward difference}.
 
 Order of Forward difference is $O(\Delta t)$.
 
-Similiarly,
+Similiarly Forward difference for $\theta$,
 \begin{align*}
-	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} \tag{7} \label{eq:forwarddiff_theta}
+	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} \tag{7} \label{eq:forwarddiff_theta} \\
+	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t_1) - \theta(t_0)}{\Delta t}
 \end{align*}
 
 From Eq.\myeqref{eq:ic1} and Eq.\myeqref{eq:forwarddiff_p}:
@@ -628,6 +629,7 @@ From Eq.\myeqref{eq:ic2} and Eq.\myeqref{eq:forwarddiff_theta}:
 	\theta(t_1)                                 & = \theta(t_0) - \Delta t p(t_0)
 \end{align*}
 
+\subsection{Backward difference}
 Invoking Taylor series expansion for $f(t-t_0)$:
 \begin{align*}
 	f(t-t_0)      & = f(t_0) - (t-t_0)\frac{\partial f}{\partial t}\Big{|}_{t=t_0}                             \\
@@ -647,10 +649,47 @@ Eq.\myeqref{eq:backwarddiff_p} is called \textbf{Backward difference}.
 
 Order of Backward difference is $O(\Delta t)$.
 
-Similiarly,
+Similiarly Backward difference for $\theta$,
 \begin{align*}
+	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t_0) - \theta(t-t_0)}{(t-t_0)}                                         \\
 	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t_0) - \theta(t_{-1})}{\Delta t} \tag{9} \label{eq:backwarddiff_theta}
 \end{align*}
+
+From Eq.\myeqref{eq:ic1} and Eq.\myeqref{eq:backwarddiff_p}:
+\yellownote{incomplete}
+% \begin{align*}
+% 	\frac{p(t+t_0) - p(t_0)}{(t-t_0)} + \omega^2 \theta(t_0) & = 0                                     \\
+% 	p(t+t_0)                                                 & = p(t_0) - (t-t_0)\omega^2 \theta(t_0)  \\
+% 	p(t_1)                                                   & = p(t_0) - \Delta t\omega^2 \theta(t_0)
+% \end{align*}
+
+From Eq.\myeqref{eq:ic2} and Eq.\myeqref{eq:backwarddiff_theta}:
+\yellownote{incomplete}
+% \begin{align*}
+% 	\frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} & = p(t_0)                        \\
+% 	\theta(t+t_0)                               & = \theta(t_0) - (t-t_0) p(t_0)  \\
+% 	\theta(t_1)                                 & = \theta(t_0) - \Delta t p(t_0)
+% \end{align*}
+
+\subsection{Current difference}
+Using forward difference,
+\begin{align*}
+	\frac{d\theta}{dt}\Big{|}_{t=t_0} = p(t_0) =\text{known} = p(t_0) - \Delta t \omega^2 \theta(t_0) \tag{10} \label{eq:fd}
+\end{align*}
+
+Using backward difference,
+\begin{align*}
+	\frac{d\theta}{dt}\Big{|}_{t=t_0} = \frac{\theta(t_1) - \theta(t-\Delta t)}{\Delta t}  \tag{11} \label{eq:bd}
+\end{align*}
+
+Form Eq.\myeqref{eq:fd} and Eq.\myeqref{eq:bd}
+\begin{align*}
+	\frac{\theta(t_1) - \theta(t-\Delta t)}{\Delta t}                      & = p(t_0) - \Delta t \omega^2 \theta(t_0)                                         \\
+	\theta(t_1)                                       = \theta(t-\Delta t) & + \Delta t [p(t_0) - \Delta t \omega^2 \theta(t_0)] \tag{12} \label{eq:knownrhs}
+\end{align*}
+In Eq.\myeqref{eq:knownrhs} all the terms on RHS are known. Hence we can find values for $\theta$ at time $(t_1)$
+
+
 
 \yellownote{incomplete \\
 	fix equation no.s}

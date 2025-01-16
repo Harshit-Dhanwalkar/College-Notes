@@ -1,7 +1,11 @@
 \babel@toc {english}{}\relax 
 \contentsline {section}{\numberline {1}Lecture 1 06/01/2025}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Introduction to Numerical Weather Prediction}{3}{subsection.1.1}%
 \contentsline {section}{\numberline {2}Lecture 2 07/01/2025}{4}{section.2}%
 \contentsline {section}{\numberline {3}Lecture 3 08/01/2025}{5}{section.3}%
 \contentsline {section}{\numberline {4}Lecture 4 13/01/2025}{6}{section.4}%
 \contentsline {section}{\numberline {5}Lecture 5 15/01/2025}{7}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Forward difference}{7}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Backward difference}{7}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Current difference}{8}{subsection.5.3}%
 \contentsfinish 
