@@ -9,8 +9,8 @@
 \contentsline {subsection}{\numberline {2.1}Taylor's Hypothesis}{5}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Virtual Potential Temperature}{5}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Boundary Layer Depth and Structure}{5}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Lecture 3 16/01/2025}{8}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Stability and Plume Behaviour}{8}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Importance of Boundary Layer}{8}{subsection.3.2}%
-\contentsline {section}{References}{10}{Item.26}%
+\contentsline {section}{\numberline {3}Lecture 3 16/01/2025}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Stability and Plume Behaviour}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Importance of Boundary Layer}{7}{subsection.3.2}%
+\contentsline {section}{References}{8}{table.caption.8}%
 \contentsfinish 

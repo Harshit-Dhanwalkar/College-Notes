@@ -21,6 +21,9 @@
 \usepackage{amsmath}
 \usepackage{array} % for tables
 
+% \usepackage[table,xcdraw]{xcolor}
+% \usepackage[table, dvipsnames]{xcolor}
+
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \tdplotsetmaincoords{60}{115}
@@ -87,7 +90,7 @@
 % ------------------------------------------------------------------------------------
 %                                       CUSTOM  YELLOW STICKY NOTES		     %
 %-------------------------------------------------------------------------------------
-\usepackage{color}
+\usepackage{color, colortbl}
 \usepackage{calc}
 
 \setlength{\parskip}{0ex}
@@ -150,6 +153,7 @@
     \end{tikzpicture}
 }
 
+\definecolor{LightCyan}{rgb}{0.88,1,1}
 %-------------------------------------------------------------------------------------
 %                                       ARTICLE INFORMATION                          %
 %-------------------------------------------------------------------------------------
@@ -369,8 +373,6 @@ Large eddies will break into smaller eddies after which small eddies dissipates 
 \clearpage
 
 \section{Leture 2 15/01/2025}
-\freeyellownote{40}{-5}{Todo: \\ 1. BLD figure}
-
 \subsection{Taylor's Hypothesis}
 \begin{itemize}[noitemsep]
 	\item When studying atmospheric boundary layer (ABL), It is not easy to create a snapshot of turbulance in the Atmosphere.
@@ -473,7 +475,6 @@ Large eddies will break into smaller eddies after which small eddies dissipates 
 	\underbrace{\cancel{\frac{D T}{D t}}}_{\substack{\text{Total derivative = 0}                           \\ \text{ (Taylor's hypothesis)}}} =\underbrace{\frac{\partial T}{\partial t}}_{\text{Local derivative}} + \underbrace{u\frac{\partial T}{\partial x}}_{\text{Advective term}}
 \end{align*}
 
-\newpage
 \subsection{Virtual Potential Temperature}
 Virtual potential temperature:
 \begin{equation}
@@ -491,11 +492,11 @@ Virtual temperature:
 			%axis lines=middle,
 			xlabel={\hspace{-1cm} ($g/kg$) \hspace{0.3cm}$\textbf{+}$ \hspace{1cm} Temperature (K)},
 			ylabel={Pressure (kPa)},
-			legend style={at={(0.5,-0.3)}, anchor=north},
+			legend style={at={(0.5,-0.25)}, anchor=north},
 			width=0.45\textwidth, height=7cm,
 			xtick=      {0.2, 1, 1.5, 2,    2.5, 3,   3.5,  4,   4.7,   5.3},
 			xticklabels={0,   5, 250, 260,  270, 280, 290,  300, 310, 320},
-			ytick=	    {0,   1,  2,  3,  4,  5,  6},
+			ytick=      {0,   1,  2,  3,  4,  5,  6},
 			yticklabels={100, 90, 85, 80, 75, 70, 65},
 			xticklabel style={rotate=70},
 			% yticklabel style={rotate=0}
@@ -616,11 +617,13 @@ Virtual temperature:
 \textbf{Ocean:} Variations are minimal, with only 10\% changes observed over 1000 km. Significant variations occur primarily during weather phenomena.
 
 \textbf{Land:} Day-to-day and diurnal variations are prominent, with distinct boundary layer structures:
+
+\vspace{-2.5cm}
 \begin{enumerate}[noitemsep]
 	\item \textbf{Convective Mixed Layer:} Thermodynamically unstable with intense vertical mixing.
 	\item \textbf{Residual Layer:} Neutral stratification with turbulence of equal intensity in all directions.
 	\item \textbf{Stable Boundary Layer (Nocturnal B.L.):}
-	      \begin{itemize}[noitemsep]
+	      \begin{itemize}[noitemsep, topsep=0pt, partopsep=0pt]
 		      \item Neutral stratification with nocturnal jets (~30 m/s, ~200 m width).
 		      \item Sporadic turbulence and internal gravity waves transporting air parcels vertically.
 	      \end{itemize}
@@ -628,29 +631,22 @@ Virtual temperature:
 	\item \textbf{Entrainment Zone:} Transition region from stable to unstable conditions, facilitating energy and mass exchange.
 \end{enumerate}
 
+\vspace{-5.5cm}
 \subsection{Stability and Plume Behaviour}
-\begin{enumerate}
-	\item \textbf{Looping plumes:} Looping plumes occur in highly unstable atmospheric conditions, often during the day when strong surface heating creates significant vertical mixing. In this scenario, warm air rising from the surface interacts turbulently with the cooler surrounding air, resulting in an oscillatory motion where the plume alternately rises and descends. This turbulence promotes widespread dispersion of pollutants in multiple directions and is commonly observed in arid or desert-like regions with intense solar heating.
-
-	\item \textbf{Fanning plumes:} Fanning plumes are characteristic of stable atmospheric conditions, especially during nighttime when surface radiational cooling leads to temperature inversions. Under these conditions, vertical mixing is suppressed, and the plume spreads laterally, forming a horizontal "fan" near the ground. This behavior often results in pollutants being dispersed over a larger horizontal area but concentrated closer to the surface, posing significant air quality concerns in urban or industrial areas.
-
-	\item \textbf{Coning plumes:} Coning plumes emerge under neutral atmospheric conditions, where vertical mixing is moderate. The plume exhibits a cone-like shape as it rises and spreads symmetrically in both vertical and horizontal directions. These plumes are typically observed during overcast days or in the early morning and late evening when temperature gradients are minimal, and turbulence levels are balanced.
-
-	\item \textbf{Lofting plumes:} Lofting plumes occur under conditions where the atmosphere is stable below the emission source and unstable above it. In this case, the pollutants rise and disperse above the stable layer, avoiding significant downward mixing. Lofting is advantageous for minimizing ground-level pollution, as the emissions remain elevated and do not contribute significantly to surface concentrations.
-
-	\item \textbf{Fumigation plumes:} Fumigation occurs when pollutants emitted into a stable layer above an unstable surface layer are entrained downward due to rising turbulence during the day. This results in high concentrations of pollutants at the surface, posing significant risks to air quality and human health, especially in industrial regions.
-
-	\item \textbf{Sigmoidal plumes:} Sigmoidal plumes form when the plume rises and bends due to wind shear or changing atmospheric stability with height. This creates an S-shaped dispersion pattern often observed in areas with layered winds or transitions in stability, such as near mountain ranges.
-
-	\item \textbf{Eruptive plumes:} Eruptive plumes are associated with highly energetic sources like volcanic eruptions, wildfires, or explosions. These plumes rise rapidly and explosively, often penetrating through the atmosphere's stable layers and dispersing pollutants at higher altitudes, leading to long-range transport.
+\begin{enumerate}[noitemsep]
+	\item \textbf{Looping plumes:} Occur in highly unstable conditions, usually during the day, when strong surface heating causes warm air to rise and interact turbulently with cooler air. This leads to an oscillatory motion that disperses pollutants in multiple directions, often seen in arid regions.
+	\item \textbf{Fanning plumes:} Form in stable conditions, typically at night, when surface cooling creates temperature inversions. The plume spreads horizontally, concentrating pollutants close to the surface, which can impact air quality in urban or industrial areas.
+	\item \textbf{Coning plumes:} Develop under neutral conditions, where vertical and horizontal mixing is balanced. The plume takes a cone-like shape, often observed on overcast days or in the early morning and evening, with moderate turbulence.
+	\item \textbf{Lofting plumes:} Occur when the atmosphere is stable near the ground but unstable above. Pollutants rise and disperse above the stable layer, reducing ground-level pollution and minimizing surface concentrations.
+	\item \textbf{Fumigation plumes:} Happen when pollutants are trapped in a stable layer and then forced downward due to rising turbulence. This leads to high concentrations at the surface, posing risks to air quality, especially in industrial areas.
 \end{enumerate}
 
-\yellownote{FIGURE for each}
+\freeyellownote{0}{-350}{FIGURE for each to be added later.}
 
 \subsection{Importance of Boundary Layer}
 The boundary layer plays a critical role in regulating interactions between the Earth's surface and the atmosphere. Its study is important in various fields, including:
 
-\begin{enumerate}
+\begin{enumerate}[noitemsep]
 	\item \textbf{Agricultural meteorology:} Understanding microclimates within the boundary layer aids in crop management, irrigation planning, and predicting the effects of extreme weather on agriculture.
 	\item \textbf{Air pollution meteorology:} Dispersion and concentration of pollutants are governed by boundary layer processes, making it crucial for air quality monitoring and pollution control strategies.
 	\item \textbf{Cloud nuclei meteorology:} The boundary layer provides a reservoir of aerosols and moisture that act as cloud condensation nuclei, influencing cloud formation, precipitation, and local weather patterns.
@@ -659,7 +655,28 @@ The boundary layer plays a critical role in regulating interactions between the 
 	\item \textbf{Renewable energy:} Wind energy potential and efficiency are heavily dependent on boundary layer dynamics, which dictate wind speed profiles and turbulence levels near the surface.
 \end{enumerate}
 
-\yellownote{Incomplete}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{|p{1.6cm}|p{3cm}|p{3cm}|}
+		\hline
+		\rowcolor{blue!20} \textbf{Property}            & \textbf{Boundary Layer}                & \textbf{Free Atmosphere}                \\
+		\hline
+		\cellcolor{blue!10} \textbf{Turbulence}         & Almost continuously turbulent          & Sporadic, CAT, turbulence within clouds \\
+		\hline
+		\cellcolor{blue!10} \textbf{Friction}           & Strong drag due to surface interaction & Small viscous dissipation               \\
+		\hline
+		\cellcolor{blue!10} \textbf{Dispersion}         & Rapid turbulent mixing                 & Small molecular diffusion               \\
+		\hline
+		\cellcolor{blue!10} \textbf{Winds}              & Near logarithmic profile               & Geostrophic winds                       \\
+		\hline
+		\cellcolor{blue!10} \textbf{Vertical Transport} & Turbulent vertical motion              & Horizontal transport by mean wind       \\
+		\hline
+		\cellcolor{blue!10} \textbf{Thickness}          & 100m - 3km (variable)                  & 8-16km (less variable)                  \\
+		\hline
+	\end{tabular}
+	\caption{Comparison of Boundary Layer and Free Atmosphere Properties}
+	\label{tab:boundary_free}
+\end{table}
 
 \clearpage
 \bibliographystyle{plain}
