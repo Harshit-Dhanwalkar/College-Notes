@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  16 JAN 2025 14:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  18 JAN 2025 22:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -962,30 +962,84 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 
 ] [6
 
+]
+Runaway argument?
+{align* 
+./Notes.tex:666: Paragraph ended before \align was complete.
+<to be read again> 
+                   \par 
+l.666 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
 
-] [7
+./Notes.tex:666: Missing $ inserted.
+<inserted text> 
+                $
+l.666 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
-] 
+./Notes.tex:666: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.666 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Notes.tex:666: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.666 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
 AED: lastpage setting LastPage
-[8
+[7
 
-] (./Notes.aux)
+]
+
+./Notes.tex:681: LaTeX Error: \begin{align} on input line 663 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.681 \end{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+(./Notes.aux)
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: 8F7DD0D21C86AA2C2486ED2EBB590606;1489.
- ) 
+(rerunfilecheck)             Checksum: 177B781DF3E0BFA236F0BA9636F3E2AE;1340.
+ )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 663 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 43132 strings out of 480171
- 992887 string characters out of 5894490
- 1447010 words of memory out of 5000000
- 60061 multiletter control sequences out of 15000+600000
- 541989 words of font info for 304 fonts, out of 8000000 for 9000
+ 43098 strings out of 480171
+ 992308 string characters out of 5894490
+ 1451010 words of memory out of 5000000
+ 60031 multiletter control sequences out of 15000+600000
+ 539330 words of font info for 294 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  98i,23n,94p,1002b,838s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Notes.pdf (8 pages, 152006 bytes).
+Output written on Notes.pdf (7 pages, 148494 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
- 178 compressed objects within 2 object streams
- 52 named destinations out of 1000 (max. 500000)
- 106587 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 221 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 100435 words of extra memory for PDF output out of 106986 (max. 10000000)
 

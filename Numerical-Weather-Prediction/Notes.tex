@@ -193,7 +193,7 @@ Initial value Problem (IVP) $\rightarrow$ simple pendulum.
 	\theta(t)                                & = A \cos(\omega t) + B \sin(\omega t) \label{eq:simplependulumsolution}
 \end{align}
 
-Eq.\eqref{eq:simplependulum1} and \eqref{eq:simplependulum2} are second order linear ordinary differential equation, whose solution Eq.\eqref{eq:simplependulumsolution} has 2 constants of integration $A$ and $B$. Here $\theta$ and $t$ are the dependent and independent variable since Eq.\eqref{eq:simplependulum1} and \eqref{eq:simplependulum2} have only one independent variable.
+Eq.\myeqref{eq:simplependulum1} and \myeqref{eq:simplependulum2} are second order linear ordinary differential equation, whose solution Eq.\myeqref{eq:simplependulumsolution} has 2 constants of integration $A$ and $B$. Here $\theta$ and $t$ are the dependent and independent variable since Eq.\myeqref{eq:simplependulum1} and \myeqref{eq:simplependulum2} have only one independent variable.
 
 Values of $A$ and $B$ will depend on initial condition.
 
@@ -207,7 +207,7 @@ Since ODE is second order, 2 initial condition are needed at initial time, say $
 	\right\} \quad \quad & \label{eq:att=0}
 \end{align}
 
-Eq.\eqref{eq:simplependulum2} and initial conditions Eq.\eqref{eq:att=0} are together called \textbf{Mathematical IVP}. For any physical system the following two requirements are needed:
+Eq.\myeqref{eq:simplependulum2} and initial conditions Eq.\myeqref{eq:att=0} are together called \textbf{Mathematical IVP}. For any physical system the following two requirements are needed:
 \begin{enumerate}[noitemsep]
 	\item The equation (ODE or PDE) that governs the evolution of the above system.
 	\item The initial state of the system.
@@ -232,10 +232,10 @@ Surface area of Earth = $4\pi R^2$ = $4\pi (6.37 \times 10^{12})$ $\approx 5.1 \
 Euler discription of fluid motion is more convinent becasue of dependance on time and above 7 equations.
 
 Total advective and convective time of lagrangian is given by:
-\begin{align*}
+\begin{align}
 	\underbrace{\frac{DT}{Dt}}_\text{Lagrangian Derivative} & = \underbrace{\underbrace{\frac{\partial T}{\partial t}}_\text{Local derivative} + \underbrace{\vec{V}\cdot \nabla T}_\text{Advective Term}}_\text{Euler Derivative} \\
-	\frac{DT}{Dt}                                           & = \frac{\partial T}{\partial t} + u\frac{\partial T}{\partial x} + v\frac{\partial T}{\partial y} + w\frac{\partial T}{\partial z} \tag{5} \label{eq:lageuleq}
-\end{align*}
+	\frac{DT}{Dt}                                           & = \frac{\partial T}{\partial t} + u\frac{\partial T}{\partial x} + v\frac{\partial T}{\partial y} + w\frac{\partial T}{\partial z} \label{eq:lageuleq}
+\end{align}
 
 Using first law of Thermodynamics, Rate of heat is given by:
 \begin{align*}
@@ -246,16 +246,16 @@ Using first law of Thermodynamics, Rate of heat is given by:
 
 where $\frac{Dq}{Dt}$ is rate at which heating of air parcel due to non-adiabatic process, this change can happen via radiation, convection, conduction, latent heat while phase change.
 
-\begin{align*}
-	\frac{DU}{Dt} & = \vec{F}_\text{net} + \vec{F}_\text{coriolis} \tag{6} \label{eq:convective_derivative}
-\end{align*}
+\begin{align}
+	\frac{DU}{Dt} & = \vec{F}_\text{net} + \vec{F}_\text{coriolis} \label{eq:convective_derivative}
+\end{align}
 
-This above Eq.\eqref{eq:convective_derivative} is convective derivative equation involving non-linear terms (i.e. $u\frac{\partial T}{\partial x}$, $v\frac{\partial T}{\partial y}$, $w\frac{\partial T}{\partial z}$).
+This above Eq.\myeqref{eq:convective_derivative} is convective derivative equation involving non-linear terms (i.e. $u\frac{\partial T}{\partial x}$, $v\frac{\partial T}{\partial y}$, $w\frac{\partial T}{\partial z}$).
 
 Continuity equation:
-\begin{align*}
-	\frac{1}{\rho} \frac{D\rho}{Dt} + \nabla\cdot\vec{V} = 0  \tag{7} \label{eq:continuity_eq}
-\end{align*}
+\begin{align}
+	\frac{1}{\rho} \frac{D\rho}{Dt} + \nabla\cdot\vec{V} = 0 \label{eq:continuity_eq}
+\end{align}
 
 Consider grid on globe as shown in figure(\ref{fig:grid}).
 
@@ -454,25 +454,30 @@ These are even larger than entire country, which means that we can't above to fi
 \clearpage
 %-------------------------------------------------------------------------------------
 \section{Lecture 3 08/01/2025}
-\begin{align*}
-	u & = \bar{u} + u' \tag{8} \label{eq:u}
-\end{align*}
+\begin{align}
+	u & = \bar{u} + u' \label{eq:u}
+\end{align}
 
 Here, $u$ is the velocity field, which is decomposed into a mean component $\bar{u}$ and a fluctuating component $u'$.
 
 Navier-Stokes Equation
 The general Navier-Stokes equation is given by:
-\begin{align*}
-	\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} & + w \frac{\partial u}{\partial z} - f v = \frac{1}{\rho} \frac{\partial \bar{P}}{\partial x} \\ & + \gamma \left(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}+ \frac{\partial^2 u}{\partial z^2}\right) \tag{9} \label{eq:Navier-stokes}
-\end{align*}
+\begin{equation}
+	\begin{aligned}
+		\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} & + w \frac{\partial u}{\partial z} - f v = \frac{1}{\rho} \frac{\partial \bar{P}}{\partial x} \\ & + \gamma \left(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}+ \frac{\partial^2 u}{\partial z^2}\right)\label{eq:Navier-stokes}
+	\end{aligned}
+\end{equation}
 
 Reynolds-Averaged Navier-Stokes (RANS) Equation
 Applying Reynolds decomposition ($u = \bar{u} + u'$) and averaging leads to the RANS equation:
-\begin{align*}
-	\frac{\partial \bar{u}}{\partial t} & + \bar{u} \frac{\partial \bar{u}}{\partial x} + \bar{v} \frac{\partial \bar{u}}{\partial y} + \bar{w} \frac{\partial \bar{u}}{\partial z} - f\bar{v} = \frac{1}{\rho} \frac{\partial \bar{P}}{\partial x}                                                                                               \\
-	                                    & + \gamma \left(\frac{\partial^2 \bar{u}}{\partial x^2}+ \frac{\partial^2 \bar{u}}{\partial y^2}+ \frac{\partial^2 \bar{u}}{\partial z^2}\right)                                                                                                                                                         \\
-	                                    & + \underbrace{\frac{1}{\rho} \left(\frac{\partial \left(-\rho \overline{u'u'} \right)}{\partial x} + \frac{\partial \left(-\rho \overline{u'v'} \right)}{\partial y} + \frac{\partial \left(-\rho \overline{u'w'} \right)}{\partial z}\right)}_{\text{Reynolds stress tensor}} \tag{10} \label{eq:rans}
-\end{align*}
+\begin{equation}
+	\begin{aligned}
+		\frac{\partial \bar{u}}{\partial t} & + \bar{u} \frac{\partial \bar{u}}{\partial x} + \bar{v} \frac{\partial \bar{u}}{\partial y} + \bar{w} \frac{\partial \bar{u}}{\partial z} - f\bar{v} = \frac{1}{\rho} \frac{\partial \bar{P}}{\partial x}                                                                      \\
+		                                    & + \gamma \left(\frac{\partial^2 \bar{u}}{\partial x^2}+ \frac{\partial^2 \bar{u}}{\partial y^2}+ \frac{\partial^2 \bar{u}}{\partial z^2}\right)                                                                                                                                \\
+		                                    & + \underbrace{\frac{1}{\rho} \left(\frac{\partial \left(-\rho \overline{u'u'} \right)}{\partial x} + \frac{\partial \left(-\rho \overline{u'v'} \right)}{\partial y} + \frac{\partial \left(-\rho \overline{u'w'} \right)}{\partial z}\right)}_{\text{Reynolds stress tensor}}
+	\end{aligned}
+	\label{eq:rans}
+\end{equation}
 
 The Reynolds stress tensor represents the transport of momentum due to turbulent fluctuations.
 
@@ -493,10 +498,10 @@ Appliing Reynolds averaging rules:
 Thus, the fluctuating component $u'$ averages out to zero over time, leaving only the mean component $\bar{u}$ in the averaged equations.
 
 We have,
-\begin{align*}
-	\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} & =0 \tag{11} \label{eq:velocity}
-\end{align*}
-Substituting $u$, $v$ and $w$ in above Eq.\eqref{eq:velocity}, we get:
+\begin{align}
+	\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} & =0 \label{eq:velocity}
+\end{align}
+Substituting $u$, $v$ and $w$ in above Eq.\myeqref{eq:velocity}, we get:
 
 \begin{align*}
 	\overline{\frac{\partial (\bar{u}+u')}{\partial x} + \frac{\partial (\bar{v}+v')}{\partial y} + \frac{\partial (\bar{w}+w')}{\partial z}} & =0 \\
@@ -549,24 +554,6 @@ Types of Closure Models
 \end{enumerate}
 
 \clearpage
-\section{Lecture 4 13/01/2025}
-Solar raditation heats up ground/ocean surface, which in turn heats the surface atmosphere which generates unstable convective cells in the atmosphere. where the above air is cold and below layer (near ground) is warmer.
-
-Limits of deterministic predictability of atmoshpere is \textbf{approximately 2 weeks}. This is because of the fact that atmoshpere is chatic system, i.e., error in initial condition grows progressively with time.
-
-\begin{itemize}[noitemsep]
-	\item Over a season (2-3 months) forcast is called long range.
-	\item 10 $\sim$ 15 days is called medium range.
-	\item 3 $\sim$ 5 days is called short range.
-\end{itemize}
-
-Charva and Shukla (1979) stated about the predictibility of atmosphere in their paper the following:
-\begin{enumerate}[noitemsep]
-	\item Wherever boundary conditions vary slowly and that atmosphere is influenced by slowly varying boundary is more longer predictable ($>$ 2 weeks).
-	\item They found that since most of ocean are in topical region, therefore atmoshpere over tropics is more predictable but in real-world-scenerio it is less predictable.
-\end{enumerate}
-
-\clearpage
 \section{Lecture 5 15/01/2025}
 \begin{align}
 	\frac{d^2 \theta}{dt^2} + \omega^2\theta = 0
@@ -583,7 +570,7 @@ Let $\frac{\theta}{dt}=p$, then
 	\frac{dp}{dt} + \omega^2\theta & = 0 \tag{i}  \label{eq:ic1} \\
 	\frac{d\theta}{dt}             & = p \tag{ii} \label{eq:ic2}
 \end{align}
-Initial conditions becomes:
+Initial conditions become:
 \begin{align*}
 	\theta(t=t_0) & =\theta_0 \\
 	p(t=t_0)      & =\omega_0
@@ -591,35 +578,35 @@ Initial conditions becomes:
 
 \subsection{Forward difference}
 Invoking Taylor series expansion for $f(t+t_0)$:
-\begin{align*}
+\begin{align}
 	f(t+t_0)      & = f(t_0) + (t+t_0)\frac{\partial f}{\partial t}\Big{|}_{t=t_0}                             \\
 	              & \qquad + \frac{(t+t_0)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0}	+ \cdots     \\
 	f(t+\Delta t) & = f(t_0) + \Delta t \frac{\partial f}{\partial t}\Big{|}_{t=t_0}                           \\
 	              & \qquad + \frac{(\Delta t)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots
-\end{align*}
+\end{align}
 we will get;
-\begin{align*}
-	p(t+t_0)                                     & \approx p(t_0) + \Delta t \frac{\partial p}{\partial t}\Big{|}_{t=t_0}                                  \\
-	p(t+t_0)                                     & \approx p(t_0) + (t-t_0) \frac{\partial p}{\partial t}\Big{|}_{t=t_0}                                   \\
-	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t+t_0) - p(t_0)}{(t-t_0)}                              \tag{6} \label{eq:forwarddiff_p} \\
+\begin{align}
+	p(t+t_0)                                     & \approx p(t_0) + \Delta t \frac{\partial p}{\partial t}\Big{|}_{t=t_0}                          \\
+	p(t+t_0)                                     & \approx p(t_0) + (t-t_0) \frac{\partial p}{\partial t}\Big{|}_{t=t_0}                           \\
+	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t+t_0) - p(t_0)}{(t-t_0)}                              \label{eq:forwarddiff_p} \\
 	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t_1) - p(t_0)}{\Delta t}
-\end{align*}
+\end{align}
 
 Eq.\myeqref{eq:forwarddiff_p} is called \textbf{Forward difference}.
 
 Order of Forward difference is $O(\Delta t)$.
 
-Similiarly Forward difference for $\theta$,
-\begin{align*}
-	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} \tag{7} \label{eq:forwarddiff_theta} \\
+Similarly Forward difference for $\theta$,
+\begin{align}
+	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} \label{eq:forwarddiff_theta} \\
 	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t_1) - \theta(t_0)}{\Delta t}
-\end{align*}
+\end{align}
 
 From Eq.\myeqref{eq:ic1} and Eq.\myeqref{eq:forwarddiff_p}:
 \begin{align*}
-	\frac{p(t+t_0) - p(t_0)}{(t-t_0)} + \omega^2 \theta(t_0) & = 0                                     \\
-	p(t+t_0)                                                 & = p(t_0) - (t-t_0)\omega^2 \theta(t_0)  \\
-	p(t_1)                                                   & = p(t_0) - \Delta t\omega^2 \theta(t_0)
+	\frac{p(t+t_0) - p(t_0)}{(t-t_0)} & + \omega^2 \theta(t_0)  = 0             \\
+	p(t+t_0)                          & = p(t_0) - (t-t_0)\omega^2 \theta(t_0)  \\
+	p(t_1)                            & = p(t_0) - \Delta t\omega^2 \theta(t_0)
 \end{align*}
 
 From Eq.\myeqref{eq:ic2} and Eq.\myeqref{eq:forwarddiff_theta}:
@@ -638,59 +625,57 @@ Invoking Taylor series expansion for $f(t-t_0)$:
 	              & \qquad + \frac{(\Delta t)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots
 \end{align*}
 we will get;
-\begin{align*}
-	p(t-t_0)                                     & \approx p(t_0) - \Delta t \frac{\partial p}{\partial t}\Big{|}_{t=t_0}                                   \\
-	p(t-t_0)                                     & \approx p(t_0) - (t-t_0) \frac{\partial p}{\partial t}\Big{|}_{t=t_0}                                    \\
-	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t_0) - p(t-t_0)}{(t-t_0)}                              \tag{8} \label{eq:backwarddiff_p} \\
+\begin{align}
+	p(t-t_0)                                     & \approx p(t_0) - \Delta t \frac{\partial p}{\partial t}\Big{|}_{t=t_0}                           \\
+	p(t-t_0)                                     & \approx p(t_0) - (t-t_0) \frac{\partial p}{\partial t}\Big{|}_{t=t_0}                            \\
+	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t_0) - p(t-t_0)}{(t-t_0)}                              \label{eq:backwarddiff_p} \\
 	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t_0) - p(t_{-1})}{\Delta t}
-\end{align*}
+\end{align}
 
 Eq.\myeqref{eq:backwarddiff_p} is called \textbf{Backward difference}.
 
 Order of Backward difference is $O(\Delta t)$.
 
-Similiarly Backward difference for $\theta$,
+Similarly Backward difference for $\theta$,
 \begin{align*}
-	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t_0) - \theta(t-t_0)}{(t-t_0)}                                         \\
-	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t_0) - \theta(t_{-1})}{\Delta t} \tag{9} \label{eq:backwarddiff_theta}
+	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t_0) - \theta(t-t_0)}{(t-t_0)}                                 \\
+	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t_0) - \theta(t_{-1})}{\Delta t} \label{eq:backwarddiff_theta}
 \end{align*}
 
 From Eq.\myeqref{eq:ic1} and Eq.\myeqref{eq:backwarddiff_p}:
-\yellownote{incomplete}
-% \begin{align*}
-% 	\frac{p(t+t_0) - p(t_0)}{(t-t_0)} + \omega^2 \theta(t_0) & = 0                                     \\
-% 	p(t+t_0)                                                 & = p(t_0) - (t-t_0)\omega^2 \theta(t_0)  \\
-% 	p(t_1)                                                   & = p(t_0) - \Delta t\omega^2 \theta(t_0)
-% \end{align*}
+\begin{align}
+	\frac{p(t+t_0) - p(t_0)}{(t-t_0)} & + \omega^2 \theta(t_0)  = 0             \\
+	p(t+t_0)                          & = p(t_0) - (t-t_0)\omega^2 \theta(t_0)  \\
+	p(t_1)                            & = p(t_0) - \Delta t\omega^2 \theta(t_0)
+\end{align}
 
 From Eq.\myeqref{eq:ic2} and Eq.\myeqref{eq:backwarddiff_theta}:
-\yellownote{incomplete}
-% \begin{align*}
-% 	\frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} & = p(t_0)                        \\
-% 	\theta(t+t_0)                               & = \theta(t_0) - (t-t_0) p(t_0)  \\
-% 	\theta(t_1)                                 & = \theta(t_0) - \Delta t p(t_0)
-% \end{align*}
+\begin{align*}
+	\frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} & = p(t_0)                        \\
+	\theta(t+t_0)                               & = \theta(t_0) - (t-t_0) p(t_0)  \\
+	\theta(t_1)                                 & = \theta(t_0) - \Delta t p(t_0)
+\end{align*}
 
 \subsection{Current difference}
-Using forward difference,
-\begin{align*}
-	\frac{d\theta}{dt}\Big{|}_{t=t_0} = p(t_0) =\text{known} = p(t_0) - \Delta t \omega^2 \theta(t_0) \tag{10} \label{eq:fd}
-\end{align*}
+The current difference method is a combination of the forward and backward difference methods, where we approximate the values at the current time using both the forward and backward information.
 
-Using backward difference,
-\begin{align*}
-	\frac{d\theta}{dt}\Big{|}_{t=t_0} = \frac{\theta(t_1) - \theta(t-\Delta t)}{\Delta t}  \tag{11} \label{eq:bd}
-\end{align*}
+Using forward difference:
+\begin{align}
+\frac{d\theta}{dt}\Big{|}_{t=t_0} = p(t_0) = \text{known} = p(t_0) - \Delta t \omega^2 \theta(t_0) \label{eq:fd}
+\end{align*
 
-Form Eq.\myeqref{eq:fd} and Eq.\myeqref{eq:bd}
-\begin{align*}
-	\frac{\theta(t_1) - \theta(t-\Delta t)}{\Delta t}                      & = p(t_0) - \Delta t \omega^2 \theta(t_0)                                         \\
-	\theta(t_1)                                       = \theta(t-\Delta t) & + \Delta t [p(t_0) - \Delta t \omega^2 \theta(t_0)] \tag{12} \label{eq:knownrhs}
-\end{align*}
-In Eq.\myeqref{eq:knownrhs} all the terms on RHS are known. Hence we can find values for $\theta$ at time $(t_1)$
+Using backward difference:
+\begin{align}
+	\frac{d\theta}{dt}\Big{|}_{t=t_0} = \frac{\theta(t_1) - \theta(t-\Delta t)}{\Delta t}  \label{eq:bd}
+\end{align}
 
+From Eq.\myeqref{eq:fd} and Eq.\myeqref{eq:bd}, we can combine both the equations to get:
+\begin{align}
+	\frac{\theta(t_1) - \theta(t-\Delta t)}{\Delta t}                      & = p(t_0) - \Delta t \omega^2 \theta(t_0)                                \\
+	\theta(t_1)                                       = \theta(t-\Delta t) & + \Delta t [p(t_0) - \Delta t \omega^2 \theta(t_0)] \label{eq:knownrhs}
+\end{align}
+In Eq.\myeqref{eq:knownrhs} all the terms on the RHS are known, allowing us to compute the value of $\theta$ at time $(t_1)$.
 
+Thus, we obtain a method to compute the new value of $\theta$ based on the current and past time steps.
 
-\yellownote{incomplete \\
-	fix equation no.s}
 \end{document}
