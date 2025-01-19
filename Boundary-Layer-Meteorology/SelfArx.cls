@@ -275,6 +275,14 @@
 }%
 \vskip25pt%
 }]%
+
+% Add PDF metadata
+\hypersetup{
+	pdftitle={\@PaperTitle},
+	pdfauthor={\@Authors},
+	pdfsubject={\@Abstract},
+	pdfkeywords={\@Keywords}
+}
 }
 
 %----------------------------------------------------------------------------------------
