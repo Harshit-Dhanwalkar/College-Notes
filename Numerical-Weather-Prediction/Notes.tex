@@ -18,6 +18,8 @@
 \usepackage{amsmath}
 \usepackage{array} % for tables
 
+\usepackage{mathtools}
+
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \tdplotsetmaincoords{60}{115}
@@ -554,7 +556,7 @@ Types of Closure Models
 \end{enumerate}
 
 \clearpage
-\section{Lecture 5 15/01/2025}
+\section{Lecture 4 15/01/2025}
 \begin{align}
 	\frac{d^2 \theta}{dt^2} + \omega^2\theta = 0
 \end{align}
@@ -680,14 +682,19 @@ Thus, we obtain a method to compute the new value of $\theta$ based on the curre
 
 \clearpage
 
-\section{Lecture 6 20/01/2025}
+\section{Lecture 5 20/01/2025}
+
 \begin{align*}
-	f(x + \Delta x) & = f(x) + \Delta x\frac{\partial f}{\partial x}\Big{|}_{x=x_0}
-	+ \frac{(\Delta x)^2}{2!} \frac{\partial^2 f}{\partial x^2}\Big{|}_{t=x_0}                                                                     \\
-	                & + \frac{(\Delta x)^3}{3!} \frac{\partial^3 f}{\partial x^3}\Big{|}_{t=x_0} + \qquad \cdots \tag{1} \label{eq:forwarddiff_x}  \\
-	f(x - \Delta x) & = f(x) - \Delta x\frac{\partial f}{\partial x}\Big{|}_{x=x_0}
-	+ \frac{(\Delta x)^2}{2!} \frac{\partial^2 f}{\partial x^2}\Big{|}_{t=x_0}                                                                     \\
-	                & - \frac{(\Delta x)^3}{3!} \frac{\partial^3 f}{\partial x^3}\Big{|}_{t=x_0} + \qquad \cdots \tag{2} \label{eq:backwarddiff_x}
+	\begin{rcases}
+		f(x+\Delta x) & = f(x) + \Delta x\frac{\partial f}{\partial x}\Big{|}_{x=x_0}                             \\
+		              & + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f}{\partial x^2}\Big{|}_{t=x_0}                \\
+		              & + \frac{(\Delta x)^3}{3!} \frac{\partial^3 f}{\partial x^3}\Big{|}_{t=x_0} + \quad \cdots
+	\end{rcases}   & \tag{1} \label{eq:forwarddiff_x}   \\
+	\begin{rcases}
+		f(x - \Delta x) & = f(x) - \Delta x\frac{\partial f}{\partial x}\Big{|}_{x=x_0}                             \\
+		                & + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f}{\partial x^2}\Big{|}_{t=x_0}                \\
+		                & - \frac{(\Delta x)^3}{3!} \frac{\partial^3 f}{\partial x^3}\Big{|}_{t=x_0} + \quad \cdots
+	\end{rcases} & \tag{2} \label{eq:backwarddiff_x}
 \end{align*}
 
 Using Eq\myeqref{eq:forwarddiff_x},
@@ -707,7 +714,65 @@ Subtracting Eq\myeqref{eq:backwarddiff_x} from \myeqref{eq:forwarddiff_x}, we ge
 
 Adding Eq\myeqref{eq:forwarddiff_x} and Eq\myeqref{eq:backwarddiff_x}, we get,
 \begin{align*}
-	\frac{df}{dx} & \simeq \Big[\frac{f(x + \Delta x) - 2f(x)+ f(x - \Delta x)}{(\Delta x)^2}\Big] + O(\Delta x^2) \tag{6} \label{eq:dfdx1+2}
+	\frac{d^2f}{dx^2} & \simeq \Big[\frac{f(x + \Delta x) - 2f(x)+ f(x - \Delta x)}{(\Delta x)^2}\Big] + O(\Delta x^2) \tag{6} \label{eq:dfdx1+2}
 \end{align*}
 
+% \begin{align*}
+% 	\tag{7} \label{eq:forwarddiff_xt}
+% 	\begin{split}
+% 		f(x + \Delta x,t) & = f(x,t) + \Delta x\frac{\partial f(x,t)}{\partial x}\Big{|}_{x=x_0}                                                        \\
+% 		& + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f(x,t)}{\partial x^2}\Big{|}_{t=x_0}                                             \\
+% 		& + \frac{(\Delta x)^3}{3!} \frac{\partial^3 f(x,t)}{\partial x^3}\Big{|}_{t=x_0} + \cdots
+% 	\end{split} \\
+% 	\tag{8} \label{eq:backwarddiff_xt}
+% 	\begin{split}
+% 		f(x - \Delta x,t) & = f(x,t) - \Delta x\frac{\partial f(x,t)}{\partial x}\Big{|}_{x=x_0}                                                        \\
+% 		& + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f(x,t)}{\partial x^2}\Big{|}_{t=x_0}                                             \\
+% 		& - \frac{(\Delta x)^3}{3!} \frac{\partial^3 f(x,t)}{\partial x^3}\Big{|}_{t=x_0} + \cdots
+% 	\end{split}
+% \end{align*}
+
+\begin{align*}
+	\begin{rcases}
+		f(x + \Delta x,t) & = f(x,t) + \Delta x\frac{\partial f(x,t)}{\partial x}\Big{|}_{x=x_0}                     \\
+		                  & + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f(x,t)}{\partial x^2}\Big{|}_{t=x_0}          \\
+		                  & + \frac{(\Delta x)^3}{3!} \frac{\partial^3 f(x,t)}{\partial x^3}\Big{|}_{t=x_0} + \cdots
+	\end{rcases} & \tag{7} \label{eq:forwarddiff_xt} \\
+	\begin{rcases}
+		f(x - \Delta x,t) & = f(x,t) - \Delta x\frac{\partial f(x,t)}{\partial x}\Big{|}_{x=x_0}                     \\
+		                  & + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f(x,t)}{\partial x^2}\Big{|}_{t=x_0}          \\
+		                  & - \frac{(\Delta x)^3}{3!} \frac{\partial^3 f(x,t)}{\partial x^3}\Big{|}_{t=x_0} + \cdots
+	\end{rcases} & \tag{8} \label{eq:backwarddiff_xt}
+\end{align*}
+
+\subsection{Space difference}
+From Eq.\myeqref{eq:forwarddiff_xt} and Eq.\myeqref{eq:backwarddiff_xt} respectively by difference equation w.r.t 1-direction, say x, we obtain \textbf{Space difference}:
+\begin{align*}
+	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x + \Delta x,t) - f(x,t)}{\Delta x}\Big] + O(\Delta x) \tag{9} \label{eq:9}   \\
+	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x + \Delta x,t) - f(x,t)}{\Delta x}\Big] + O(\Delta x) \tag{10} \label{eq:10}
+\end{align*}
+
+Subtracting Eq\myeqref{eq:backwarddiff_xt} from \myeqref{eq:forwarddiff_xt}, we get,
+\begin{align*}
+	\frac{df}{dx} & \simeq \Big[\frac{f(x + \Delta x, t) + f(x - \Delta x, t)}{2\Delta x}\Big] + O(\Delta x^2) \tag{11} \label{eq:dfdx1-2-sd-wrt-x}
+\end{align*}
+
+Adding Eq\myeqref{eq:forwarddiff_xt} and Eq\myeqref{eq:backwarddiff_xt}, we get,
+\begin{align*}
+	\frac{d^2f}{dx^2} & \simeq \Big[\frac{f(x + \Delta x, t) - 2f(x,t)+ f(x - \Delta x, t)}{(\Delta x)^2}\Big] + O(\Delta x^2) \tag{12} \label{eq:dfdx1+2-sd-wrt-x}
+\end{align*}
+
+\subsection{Time difference}
+Similiarly, From Eq.\myeqref{eq:forwarddiff_xt} and Eq.\myeqref{eq:backwarddiff_xt} respectively, difference equation w.r.t time (t), we obtain \textbf{Time difference}:
+\begin{align*}
+	\frac{df}{dt}\Big{|}_{t=t_0} & \simeq \Big[\frac{f(x, t + \Delta t) - f(x,t)}{\Delta t}\Big] + O(\Delta t) \tag{13} \label{eq:13}                                          \\
+	\frac{df}{dt}\Big{|}_{t=t_0} & \simeq \Big[\frac{f(x, t + \Delta t) - f(x,t)}{\Delta t}\Big] + O(\Delta t) \tag{14} \label{eq:14}                                          \\
+	\frac{df}{dt}                & \simeq \Big[\frac{f(x, t + \Delta t) + f(x, t - \Delta t)}{2\Delta t}\Big] + O(\Delta t^2) \tag{15} \label{eq:dfdx1-2-sd-wrt-t}             \\
+	\frac{d^2f}{dt^2}            & \simeq \Big[\frac{f(x, t + \Delta t) - 2f(x,t)+ f(x, t - \Delta t)}{(\Delta t)^2}\Big] + O(\Delta t^2) \tag{16} \label{eq:dfdx1+2-sd-wrt-t}
+\end{align*}
+
+\subsection{Explicit form of $2^{nd}$ order PDE}
+\begin{align*}
+	A \frac{\partial^2 f}{\partial x^2} + B \frac{\partial^2 f}{\partial x \partial y} + C \frac{\partial^2 f}{\partial y^2} + D \frac{\partial f}{\partial x} + E \frac{\partial f}{\partial x} + Ff = G \tag{17} \label{eq:explicit2ndorderpde}
+\end{align*}
 \end{document}

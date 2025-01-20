@@ -3,9 +3,12 @@
 \contentsline {subsection}{\numberline {1.1}Introduction to Numerical Weather Prediction}{3}{subsection.1.1}%
 \contentsline {section}{\numberline {2}Lecture 2 07/01/2025}{4}{section.2}%
 \contentsline {section}{\numberline {3}Lecture 3 08/01/2025}{5}{section.3}%
-\contentsline {section}{\numberline {4}Lecture 5 15/01/2025}{6}{section.4}%
+\contentsline {section}{\numberline {4}Lecture 4 15/01/2025}{6}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Forward difference}{6}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Backward difference}{6}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Current difference}{7}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Lecture 6 20/01/2025}{8}{section.5}%
+\contentsline {section}{\numberline {5}Lecture 5 20/01/2025}{8}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Space difference}{8}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Time difference}{8}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Explicit form of $2^{nd}$ order PDE}{8}{subsection.5.3}%
 \contentsfinish 
