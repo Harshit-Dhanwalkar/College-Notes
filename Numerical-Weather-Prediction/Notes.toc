@@ -7,4 +7,5 @@
 \contentsline {subsection}{\numberline {4.1}Forward difference}{6}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Backward difference}{6}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Current difference}{7}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Lecture 6 20/01/2025}{8}{section.5}%
 \contentsfinish 

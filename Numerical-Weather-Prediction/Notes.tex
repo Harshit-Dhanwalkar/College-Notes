@@ -661,8 +661,8 @@ The current difference method is a combination of the forward and backward diffe
 
 Using forward difference:
 \begin{align}
-\frac{d\theta}{dt}\Big{|}_{t=t_0} = p(t_0) = \text{known} = p(t_0) - \Delta t \omega^2 \theta(t_0) \label{eq:fd}
-\end{align*
+	\frac{d\theta}{dt}\Big{|}_{t=t_0} = p(t_0) = \text{known} = p(t_0) - \Delta t \omega^2 \theta(t_0) \label{eq:fd}
+\end{align}
 
 Using backward difference:
 \begin{align}
@@ -677,5 +677,37 @@ From Eq.\myeqref{eq:fd} and Eq.\myeqref{eq:bd}, we can combine both the equation
 In Eq.\myeqref{eq:knownrhs} all the terms on the RHS are known, allowing us to compute the value of $\theta$ at time $(t_1)$.
 
 Thus, we obtain a method to compute the new value of $\theta$ based on the current and past time steps.
+
+\clearpage
+
+\section{Lecture 6 20/01/2025}
+\begin{align*}
+	f(x + \Delta x) & = f(x) + \Delta x\frac{\partial f}{\partial x}\Big{|}_{x=x_0}
+	+ \frac{(\Delta x)^2}{2!} \frac{\partial^2 f}{\partial x^2}\Big{|}_{t=x_0}                                                                     \\
+	                & + \frac{(\Delta x)^3}{3!} \frac{\partial^3 f}{\partial x^3}\Big{|}_{t=x_0} + \qquad \cdots \tag{1} \label{eq:forwarddiff_x}  \\
+	f(x - \Delta x) & = f(x) - \Delta x\frac{\partial f}{\partial x}\Big{|}_{x=x_0}
+	+ \frac{(\Delta x)^2}{2!} \frac{\partial^2 f}{\partial x^2}\Big{|}_{t=x_0}                                                                     \\
+	                & - \frac{(\Delta x)^3}{3!} \frac{\partial^3 f}{\partial x^3}\Big{|}_{t=x_0} + \qquad \cdots \tag{2} \label{eq:backwarddiff_x}
+\end{align*}
+
+Using Eq\myeqref{eq:forwarddiff_x},
+\begin{align*}
+	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x + \Delta x) - f(x)}{\Delta x}\Big] + O(\Delta x) \tag{3} \label{eq:dfdx_forward}
+\end{align*}
+
+Similiarly, using Eq\myeqref{eq:backwarddiff_x}, one obtain,
+\begin{align*}
+	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x) - f(x - \Delta x)}{\Delta x}\Big] + O(\Delta x) \tag{4} \label{eq:dfdx_backward}
+\end{align*}
+
+Subtracting Eq\myeqref{eq:backwarddiff_x} from \myeqref{eq:forwarddiff_x}, we get,
+\begin{align*}
+	\frac{df}{dx} & \simeq \Big[\frac{f(x + \Delta x) + f(x - \Delta x)}{2\Delta x}\Big] + O(\Delta x^2) \tag{5} \label{eq:dfdx1-2}
+\end{align*}
+
+Adding Eq\myeqref{eq:forwarddiff_x} and Eq\myeqref{eq:backwarddiff_x}, we get,
+\begin{align*}
+	\frac{df}{dx} & \simeq \Big[\frac{f(x + \Delta x) - 2f(x)+ f(x - \Delta x)}{(\Delta x)^2}\Big] + O(\Delta x^2) \tag{6} \label{eq:dfdx1+2}
+\end{align*}
 
 \end{document}
