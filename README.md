@@ -1,6 +1,5 @@
-<img src="https://raw.githubusercontent.com/trinib/trinib/82213791fa9ff58d3ca768ddd6de2489ec23ffca/images/footer.svg" width="100%">
-
-# 🌟 My College Notes 🌟
+![License](https://img.shields.io/badge/License-MIT-blue) ![Maintenance](https://img.shields.io/badge/Maintained-Yes-brightgreen) [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/Jack-bo1220/Awesome-Remote-Sensing-Foundation-Models)
+# <p align=center>🌟 `My College Notes` 🌟 </p>
 
 ### 📚 **Engineering Physics Branch**  
 #### 🌍 **Earth Science and System (ESS)**  
