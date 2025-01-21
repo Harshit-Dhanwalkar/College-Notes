@@ -45,7 +45,7 @@
 %-------------------------------------------------------------------------------------
 %                                     EQUATIONLINKS                                  %
 %-------------------------------------------------------------------------------------
-\newcommand{\myeqref}[1]{\textcolor{blue}{\textup{(\getrefnumber{#1})}}}
+\newcommand{\myeqref}[1]{Eq.\textcolor{blue}{\textup{(\getrefnumber{#1})}}}
 
 %-------------------------------------------------------------------------------------
 %                                       HYPERLINKS                                   %
@@ -195,7 +195,7 @@ Initial value Problem (IVP) $\rightarrow$ simple pendulum.
 	\theta(t)                                & = A \cos(\omega t) + B \sin(\omega t) \label{eq:simplependulumsolution}
 \end{align}
 
-Eq.\myeqref{eq:simplependulum1} and \myeqref{eq:simplependulum2} are second order linear ordinary differential equation, whose solution Eq.\myeqref{eq:simplependulumsolution} has 2 constants of integration $A$ and $B$. Here $\theta$ and $t$ are the dependent and independent variable since Eq.\myeqref{eq:simplependulum1} and \myeqref{eq:simplependulum2} have only one independent variable.
+\myeqref{eq:simplependulum1} and \myeqref{eq:simplependulum2} are second order linear ordinary differential equation, whose solution .\myeqref{eq:simplependulumsolution} has 2 constants of integration $A$ and $B$. Here $\theta$ and $t$ are the dependent and independent variable since \myeqref{eq:simplependulum1} and \myeqref{eq:simplependulum2} have only one independent variable.
 
 Values of $A$ and $B$ will depend on initial condition.
 
@@ -209,7 +209,7 @@ Since ODE is second order, 2 initial condition are needed at initial time, say $
 	\right\} \quad \quad & \label{eq:att=0}
 \end{align}
 
-Eq.\myeqref{eq:simplependulum2} and initial conditions Eq.\myeqref{eq:att=0} are together called \textbf{Mathematical IVP}. For any physical system the following two requirements are needed:
+\myeqref{eq:simplependulum2} and initial conditions \myeqref{eq:att=0} are together called \textbf{Mathematical IVP}. For any physical system the following two requirements are needed:
 \begin{enumerate}[noitemsep]
 	\item The equation (ODE or PDE) that governs the evolution of the above system.
 	\item The initial state of the system.
@@ -252,7 +252,7 @@ where $\frac{Dq}{Dt}$ is rate at which heating of air parcel due to non-adiabati
 	\frac{DU}{Dt} & = \vec{F}_\text{net} + \vec{F}_\text{coriolis} \label{eq:convective_derivative}
 \end{align}
 
-This above Eq.\myeqref{eq:convective_derivative} is convective derivative equation involving non-linear terms (i.e. $u\frac{\partial T}{\partial x}$, $v\frac{\partial T}{\partial y}$, $w\frac{\partial T}{\partial z}$).
+This above \myeqref{eq:convective_derivative} is convective derivative equation involving non-linear terms (i.e. $u\frac{\partial T}{\partial x}$, $v\frac{\partial T}{\partial y}$, $w\frac{\partial T}{\partial z}$).
 
 Continuity equation:
 \begin{align}
@@ -503,7 +503,7 @@ We have,
 \begin{align}
 	\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} & =0 \label{eq:velocity}
 \end{align}
-Substituting $u$, $v$ and $w$ in above Eq.\myeqref{eq:velocity}, we get:
+Substituting $u$, $v$ and $w$ in above \myeqref{eq:velocity}, we get:
 
 \begin{align*}
 	\overline{\frac{\partial (\bar{u}+u')}{\partial x} + \frac{\partial (\bar{v}+v')}{\partial y} + \frac{\partial (\bar{w}+w')}{\partial z}} & =0 \\
@@ -594,7 +594,7 @@ we will get;
 	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t_1) - p(t_0)}{\Delta t}
 \end{align}
 
-Eq.\myeqref{eq:forwarddiff_p} is called \textbf{Forward difference}.
+\myeqref{eq:forwarddiff_p} is called \textbf{Forward difference}.
 
 Order of Forward difference is $O(\Delta t)$.
 
@@ -604,14 +604,14 @@ Similarly Forward difference for $\theta$,
 	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t_1) - \theta(t_0)}{\Delta t}
 \end{align}
 
-From Eq.\myeqref{eq:ic1} and Eq.\myeqref{eq:forwarddiff_p}:
+From \myeqref{eq:ic1} and \myeqref{eq:forwarddiff_p}:
 \begin{align*}
 	\frac{p(t+t_0) - p(t_0)}{(t-t_0)} & + \omega^2 \theta(t_0)  = 0             \\
 	p(t+t_0)                          & = p(t_0) - (t-t_0)\omega^2 \theta(t_0)  \\
 	p(t_1)                            & = p(t_0) - \Delta t\omega^2 \theta(t_0)
 \end{align*}
 
-From Eq.\myeqref{eq:ic2} and Eq.\myeqref{eq:forwarddiff_theta}:
+From \myeqref{eq:ic2} and \myeqref{eq:forwarddiff_theta}:
 \begin{align*}
 	\frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} & = p(t_0)                        \\
 	\theta(t+t_0)                               & = \theta(t_0) - (t-t_0) p(t_0)  \\
@@ -634,7 +634,7 @@ we will get;
 	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t_0) - p(t_{-1})}{\Delta t}
 \end{align}
 
-Eq.\myeqref{eq:backwarddiff_p} is called \textbf{Backward difference}.
+\myeqref{eq:backwarddiff_p} is called \textbf{Backward difference}.
 
 Order of Backward difference is $O(\Delta t)$.
 
@@ -644,14 +644,14 @@ Similarly Backward difference for $\theta$,
 	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t_0) - \theta(t_{-1})}{\Delta t} \label{eq:backwarddiff_theta}
 \end{align*}
 
-From Eq.\myeqref{eq:ic1} and Eq.\myeqref{eq:backwarddiff_p}:
+From \myeqref{eq:ic1} and \myeqref{eq:backwarddiff_p}:
 \begin{align}
 	\frac{p(t+t_0) - p(t_0)}{(t-t_0)} & + \omega^2 \theta(t_0)  = 0             \\
 	p(t+t_0)                          & = p(t_0) - (t-t_0)\omega^2 \theta(t_0)  \\
 	p(t_1)                            & = p(t_0) - \Delta t\omega^2 \theta(t_0)
 \end{align}
 
-From Eq.\myeqref{eq:ic2} and Eq.\myeqref{eq:backwarddiff_theta}:
+From \myeqref{eq:ic2} and \myeqref{eq:backwarddiff_theta}:
 \begin{align*}
 	\frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} & = p(t_0)                        \\
 	\theta(t+t_0)                               & = \theta(t_0) - (t-t_0) p(t_0)  \\
@@ -671,12 +671,12 @@ Using backward difference:
 	\frac{d\theta}{dt}\Big{|}_{t=t_0} = \frac{\theta(t_1) - \theta(t-\Delta t)}{\Delta t}  \label{eq:bd}
 \end{align}
 
-From Eq.\myeqref{eq:fd} and Eq.\myeqref{eq:bd}, we can combine both the equations to get:
+From \myeqref{eq:fd} and \myeqref{eq:bd}, we can combine both the equations to get:
 \begin{align}
 	\frac{\theta(t_1) - \theta(t-\Delta t)}{\Delta t}                      & = p(t_0) - \Delta t \omega^2 \theta(t_0)                                \\
 	\theta(t_1)                                       = \theta(t-\Delta t) & + \Delta t [p(t_0) - \Delta t \omega^2 \theta(t_0)] \label{eq:knownrhs}
 \end{align}
-In Eq.\myeqref{eq:knownrhs} all the terms on the RHS are known, allowing us to compute the value of $\theta$ at time $(t_1)$.
+In \myeqref{eq:knownrhs} all the terms on the RHS are known, allowing us to compute the value of $\theta$ at time $(t_1)$.
 
 Thus, we obtain a method to compute the new value of $\theta$ based on the current and past time steps.
 
@@ -697,22 +697,22 @@ Thus, we obtain a method to compute the new value of $\theta$ based on the curre
 	\end{rcases} & \tag{2} \label{eq:backwarddiff_x}
 \end{align*}
 
-Using Eq\myeqref{eq:forwarddiff_x},
+Using \myeqref{eq:forwarddiff_x},
 \begin{align*}
 	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x + \Delta x) - f(x)}{\Delta x}\Big] + O(\Delta x) \tag{3} \label{eq:dfdx_forward}
 \end{align*}
 
-Similiarly, using Eq\myeqref{eq:backwarddiff_x}, one obtain,
+Similiarly, using \myeqref{eq:backwarddiff_x}, one obtain,
 \begin{align*}
 	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x) - f(x - \Delta x)}{\Delta x}\Big] + O(\Delta x) \tag{4} \label{eq:dfdx_backward}
 \end{align*}
 
-Subtracting Eq\myeqref{eq:backwarddiff_x} from \myeqref{eq:forwarddiff_x}, we get,
+Subtracting \myeqref{eq:backwarddiff_x} from \myeqref{eq:forwarddiff_x}, we get,
 \begin{align*}
 	\frac{df}{dx} & \simeq \Big[\frac{f(x + \Delta x) + f(x - \Delta x)}{2\Delta x}\Big] + O(\Delta x^2) \tag{5} \label{eq:dfdx1-2}
 \end{align*}
 
-Adding Eq\myeqref{eq:forwarddiff_x} and Eq\myeqref{eq:backwarddiff_x}, we get,
+Adding \myeqref{eq:forwarddiff_x} and \myeqref{eq:backwarddiff_x}, we get,
 \begin{align*}
 	\frac{d^2f}{dx^2} & \simeq \Big[\frac{f(x + \Delta x) - 2f(x)+ f(x - \Delta x)}{(\Delta x)^2}\Big] + O(\Delta x^2) \tag{6} \label{eq:dfdx1+2}
 \end{align*}
@@ -746,24 +746,24 @@ Adding Eq\myeqref{eq:forwarddiff_x} and Eq\myeqref{eq:backwarddiff_x}, we get,
 \end{align*}
 
 \subsection{Space difference}
-From Eq.\myeqref{eq:forwarddiff_xt} and Eq.\myeqref{eq:backwarddiff_xt} respectively by difference equation w.r.t 1-direction, say x, we obtain \textbf{Space difference}:
+From \myeqref{eq:forwarddiff_xt} and \myeqref{eq:backwarddiff_xt} respectively by difference equation w.r.t 1-direction, say x, we obtain \textbf{Space difference}:
 \begin{align*}
 	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x + \Delta x,t) - f(x,t)}{\Delta x}\Big] + O(\Delta x) \tag{9} \label{eq:9}   \\
 	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x + \Delta x,t) - f(x,t)}{\Delta x}\Big] + O(\Delta x) \tag{10} \label{eq:10}
 \end{align*}
 
-Subtracting Eq\myeqref{eq:backwarddiff_xt} from \myeqref{eq:forwarddiff_xt}, we get,
+Subtracting \myeqref{eq:backwarddiff_xt} from \myeqref{eq:forwarddiff_xt}, we get,
 \begin{align*}
 	\frac{df}{dx} & \simeq \Big[\frac{f(x + \Delta x, t) + f(x - \Delta x, t)}{2\Delta x}\Big] + O(\Delta x^2) \tag{11} \label{eq:dfdx1-2-sd-wrt-x}
 \end{align*}
 
-Adding Eq\myeqref{eq:forwarddiff_xt} and Eq\myeqref{eq:backwarddiff_xt}, we get,
+Adding \myeqref{eq:forwarddiff_xt} and \myeqref{eq:backwarddiff_xt}, we get,
 \begin{align*}
 	\frac{d^2f}{dx^2} & \simeq \Big[\frac{f(x + \Delta x, t) - 2f(x,t)+ f(x - \Delta x, t)}{(\Delta x)^2}\Big] + O(\Delta x^2) \tag{12} \label{eq:dfdx1+2-sd-wrt-x}
 \end{align*}
 
 \subsection{Time difference}
-Similiarly, From Eq.\myeqref{eq:forwarddiff_xt} and Eq.\myeqref{eq:backwarddiff_xt} respectively, difference equation w.r.t time (t), we obtain \textbf{Time difference}:
+Similiarly, From \myeqref{eq:forwarddiff_xt} and \myeqref{eq:backwarddiff_xt} respectively, difference equation w.r.t time (t), we obtain \textbf{Time difference}:
 \begin{align*}
 	\frac{df}{dt}\Big{|}_{t=t_0} & \simeq \Big[\frac{f(x, t + \Delta t) - f(x,t)}{\Delta t}\Big] + O(\Delta t) \tag{13} \label{eq:13}                                          \\
 	\frac{df}{dt}\Big{|}_{t=t_0} & \simeq \Big[\frac{f(x, t + \Delta t) - f(x,t)}{\Delta t}\Big] + O(\Delta t) \tag{14} \label{eq:14}                                          \\
@@ -799,23 +799,46 @@ where
 	\frac{dx}{dt} &= u = \text{constant} \tag{6.2} \label{eq:dxdt-constant}
 \end{align*}
 
-Integrating Eq.\myeqref{eq:dxdt-constant} w.r.t time, we get:
+Integrating \myeqref{eq:dxdt-constant} w.r.t time, we get:
 \begin{align*}
 	x &= x_0 + \int^{t}_{t_0} udt \tag{6.3} \label{eq:pathline}  
 \end{align*}
 
-Eq.\myeqref{eq:pathline} is called equation of pathline.
+\myeqref{eq:pathline} is called equation of pathline.
 
-Substituting, $u=\frac{dx}{dt}$ in Eq.\myeqref{eq:advectioneq}, we obtain:
+Substituting, $u=\frac{dx}{dt}$ in \myeqref{eq:advectioneq}, we obtain:
 \begin{align*}
 	\frac{\partial f}{\partial t} + \frac{dx}{dt} \frac{\partial f}{\partial t} &= 0  \tag{6.4} \label{eq:advectiveeq1} \\
 	\frac{Df}{Dt} &= 0 \tag{6.4} \label{eq:advectiveeq-total-deri}
 \end{align*}
 
-Eq.\myeqref{eq:advectiveeq-total-deri} implies the property f is conserved following the motion of fluid element.
+\myeqref{eq:advectiveeq-total-deri} implies the property f is conserved following the motion of fluid element.
 
 \subsection{Triangular Property}
+\yellownote{
+	Figure
+}
+\begin{enumerate}[noitemsep]
+	\item \textbf{Hyperbolic:} 1$^{st}$ order partial equation $\rightarrow$ 1 family of characteristic equations.in real domain.
+	\item \textbf{Hyperbolic:} 2$^{nd}$ order partial equation $\rightarrow$ 2 distinct and real set of characteristic equations.
+	\item \textbf{Parabolic:} 2$^{nd}$ order partial equation $\rightarrow$ 2 equal and real set of characteristic equations.
+	\item \textbf{Elliptical:} 2$^{nd}$ order partial equation $\rightarrow$ 2 distinct and complex set of characteristic equations.
+\end{enumerate}
 
+\begin{align*}
+    \frac{\partial f}{\partial t} + u \frac{\partial f}{\partial x} = 0 \;
+    &\begin{cases}
+        u = \text{constant} &\Rightarrow \text{PDE is linear}, \\
+        u = u(x,t) &\Rightarrow \text{PDE is linear}, \\
+        u = u(x,t,f) &\Rightarrow \text{PDE is quasi-linear} 
+    \end{cases}
+\end{align*}
+
+\begin{align*}
+	a(x,t,f)\frac{\partial f}{\partial t} + b(x,t,f)\frac{\partial f}{\partial x} = 0 \tag{6.5} \label{eq:quasi-linear-ab}
+\end{align*}
+
+Above \myeqref{eq:quasi-linear-ab} is quasi-linear PDE, having characteristic equation in real domain $\Rightarrow \frac{dx}{dt} = \frac{b}{a}$
 
 \yellownote{
 	Incomplete \\
