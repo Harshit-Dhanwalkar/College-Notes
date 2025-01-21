@@ -775,4 +775,49 @@ Similiarly, From Eq.\myeqref{eq:forwarddiff_xt} and Eq.\myeqref{eq:backwarddiff_
 \begin{align*}
 	A \frac{\partial^2 f}{\partial x^2} + B \frac{\partial^2 f}{\partial x \partial y} + C \frac{\partial^2 f}{\partial y^2} + D \frac{\partial f}{\partial x} + E \frac{\partial f}{\partial x} + Ff = G \tag{17} \label{eq:explicit2ndorderpde}
 \end{align*}
+
+\yellownote{
+	Incomplete \\ 
+	Equation no.s
+}
+
+\clearpage 
+
+\section{Lecture 6 21/01/2025}
+\subsection{1-D Linear Advection equation}
+\begin{align*}
+	\frac{\partial f}{\partial t} + u \frac{\partial f}{\partial t} &= 0 \tag{6.1} \label{eq:advectioneq}
+\end{align*}
+
+where
+\begin{align*}
+	f & \text{ is fluid property} \\
+	u & \text{ is x-component of fluid velocity}
+\end{align*}
+
+\begin{align*}
+	\frac{dx}{dt} &= u = \text{constant} \tag{6.2} \label{eq:dxdt-constant}
+\end{align*}
+
+Integrating Eq.\myeqref{eq:dxdt-constant} w.r.t time, we get:
+\begin{align*}
+	x &= x_0 + \int^{t}_{t_0} udt \tag{6.3} \label{eq:pathline}  
+\end{align*}
+
+Eq.\myeqref{eq:pathline} is called equation of pathline.
+
+Substituting, $u=\frac{dx}{dt}$ in Eq.\myeqref{eq:advectioneq}, we obtain:
+\begin{align*}
+	\frac{\partial f}{\partial t} + \frac{dx}{dt} \frac{\partial f}{\partial t} &= 0  \tag{6.4} \label{eq:advectiveeq1} \\
+	\frac{Df}{Dt} &= 0 \tag{6.4} \label{eq:advectiveeq-total-deri}
+\end{align*}
+
+Eq.\myeqref{eq:advectiveeq-total-deri} implies the property f is conserved following the motion of fluid element.
+
+\subsection{Triangular Property}
+
+
+\yellownote{
+	Incomplete \\
+}
 \end{document}

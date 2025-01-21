@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  20 JAN 2025 23:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  21 JAN 2025 11:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1015,27 +1015,35 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 774.
 
+[8
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 822--822
+
+ []
+
 
 AED: lastpage setting LastPage
-[8
+[9
+
 
 ] (./Notes.aux)
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: 3AF4E179C7F63560F88BCF9327B8BC4D;1989.
+(rerunfilecheck)             Checksum: D508C3C448CCB6282407D0CB9881323A;2507.
  ) 
 Here is how much of TeX's memory you used:
- 43678 strings out of 480171
- 1003074 string characters out of 5894490
- 1464378 words of memory out of 5000000
- 60581 multiletter control sequences out of 15000+600000
- 539330 words of font info for 294 fonts, out of 8000000 for 9000
+ 43740 strings out of 480171
+ 1004186 string characters out of 5894490
+ 1465378 words of memory out of 5000000
+ 60621 multiletter control sequences out of 15000+600000
+ 541929 words of font info for 303 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  98i,23n,94p,1002b,838s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Notes.pdf (8 pages, 156208 bytes).
+Output written on Notes.pdf (9 pages, 159961 bytes).
 PDF statistics:
- 273 PDF objects out of 1000 (max. 8388607)
- 221 compressed objects within 3 object streams
- 85 named destinations out of 1000 (max. 500000)
- 100467 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 301 PDF objects out of 1000 (max. 8388607)
+ 245 compressed objects within 3 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 106635 words of extra memory for PDF output out of 106986 (max. 10000000)
 
