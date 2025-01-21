@@ -173,8 +173,8 @@
 %----------------------------------------------------------------------------------------
 
 \newlength{\tocsep}
-\setlength\tocsep{1.5pc} % Sets the indentation of the sections in the table of contents
-\setcounter{tocdepth}{3} % Three levels in the table of contents section: sections, subsections and subsubsections
+\setlength\tocsep{1.75pc} % Sets the indentation of the sections in the table of contents
+\setcounter{tocdepth}{2} % Three levels in the table of contents section: sections, subsections and subsubsections
 
 \usepackage{titletoc}
 \contentsmargin{0cm}
@@ -199,6 +199,19 @@
 {}
 {}
 [\ \textbullet\ ]
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF FIGURES SETUP
+%----------------------------------------------------------------------------------------
+
+\titlecontents{figure}[\tocsep]
+{\addvspace{4pt}\small\sffamily} % Formatting for the entries
+{\contentslabel[\thecontentslabel]{\tocsep}} % Label (e.g., "Figure 1")
+{}
+{\hfill\thecontentspage} % Dots and page number alignment
+[]
+
+% Optionally, you can style other levels like `subfigure`, etc.
 
 %----------------------------------------------------------------------------------------
 %	MULTIPLE AUTHOR SET

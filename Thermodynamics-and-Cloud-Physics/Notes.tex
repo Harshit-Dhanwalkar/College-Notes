@@ -18,6 +18,10 @@
 \tikzstyle{vertex}=[draw,fill=black!15,circle,minimum size=20pt,inner sep=0pt]
 \tikzstyle{selected edge} = [draw,line width=5pt,-,red!50]
 
+\tikzset{
+    midar/.style={->, thick} % Define 'midar' as a thick arrow style
+}
+
 \usepackage{amsmath}
 \usepackage{array} % for tables
 
@@ -54,7 +58,7 @@
 %                                       HYPERLINKS                                   %
 %-------------------------------------------------------------------------------------
 \usepackage{xcolor}
-% \usepackage{hyperref} already called above
+\usepackage{hyperref}
 \usepackage{footnote}
 
 %\newcommand{\myhref}[2]{\href{#1}{\textcolor{blue}{#2}}}
@@ -148,17 +152,17 @@
 %-------------------------------------------------------------------------------------
 %                                       ARTICLE INFORMATION                          %
 %-------------------------------------------------------------------------------------
-\JournalInfo{Dual Degree Engineering Physics, 7$^{th}$ Semester, 2024} % Journal information
+\JournalInfo{Dual Degree Engineering Physics, 7$^{th}$ Semester, 2024}
 \Archive{Mtech, Earth System Sciences (ESS), 1$^{st}$ year} % Additional notes (e.g. copyright, DOI, review/research article)
 
-\PaperTitle{Lecture Notes on Atmospheric Thermodynamics and Cloud Physics} % Article title
+\PaperTitle{Lecture Notes on Atmospheric Thermodynamics and Cloud Physics}
 
 \Authors{Harshit Prashant Dhanwalkar (SC21B164)\textsuperscript{1}*} % Authors
 \affiliation{\textsuperscript{1}\textit{MTech, Earth System Sciences (ESS), 1$^{st}$ year, Department of Physics, Indian Institute Of Spacescience and Technology (IIST)}} % Author affiliation
-\affiliation{*\textbf{email}: harshitpd1729@gamil.com} % Corresponding author
+\affiliation{*\textbf{email}: harshitpd1729@gamil.com}
 
-\Keywords{} % Keywords - if you don't want any simply remove all the text between the curly brackets
 \newcommand{\keywordname}{Keywords} % Defines the keywords heading name
+\Keywords{}
 
 %-------------------------------------------------------------------------------------
 %                                           ABSTRACT                                 %
@@ -169,13 +173,29 @@
 %                                            DOCUMENT                                %
 %-------------------------------------------------------------------------------------
 \begin{document}
+
+% \maketitle % Output the title and abstract box
+% \clearpage
+% \tableofcontents % Output the contents section
+% \clearpage
+% \thispagestyle{empty} % Removes page numbering from the first page
+% \clearpage
+
 \maketitle % Output the title and abstract box
-\clearpage
-\tableofcontents % Output the contents section
-\clearpage
 \thispagestyle{empty} % Removes page numbering from the first page
 \clearpage
 
+\begingroup
+\thispagestyle{empty} % No page number
+\tableofcontents
+\endgroup
+\newpage
+
+\begingroup
+\thispagestyle{empty} % No page number
+\listoffigures
+\endgroup
+\newpage
 %-------------------------------------------------------------------------------------
 %                                       DOCUMENT CONTENTS                           %
 %-------------------------------------------------------------------------------------
@@ -419,60 +439,60 @@ Conditions:
 \subsubsection*{Derivation of av. K.E.}
 Particles travels distance equal to lenght of box ($L$) with velocity $V_x, V_y \text{ and } V_z$.
 
-\begin{tikzpicture}
-    [tdplot_main_coords,
-    grid/.style={very thin,gray},
-    axis/.style={->,blue,thick},
-    cube/.style={opacity=.5,very thick}, scale=1]
-
-    % Draw the bottom of the cube first
-    \draw[cube,fill=gray!80] (0,0,0) -- (0,2,0) -- (2,2,0) -- (2,0,0) -- cycle;
-
-    % Draw the grid on the bottom (in front of the cube bottom face)
-    \foreach \x in {-0.5,0,...,2.5} {
-        \draw[grid] (-0.5, -\y, \x) -- (2.5, -\y, \x);
-    }
-    \foreach \y in {-0.5,0,...,2.5} {
-        \draw[grid] (\y, -\x, -0.5) -- (\y, -\x, 2.5);
-    }
-
-    % Draw the back-right of the cube
-    \draw[cube,fill=gray!80] (0,0,0) -- (0,2,0) -- (0,2,2) -- (0,0,2) -- cycle;
-
-    % Draw the back-left of the cube
-    \draw[cube,fill=gray!80] (0,0,0) -- (2,0,0) -- (2,0,2) -- (0,0,2) -- cycle;
-
-    % Draw the front-right of the cube
-    \draw[cube] (2,0,0) -- (2,2,0) -- (2,2,2) -- (2,0,2) -- cycle;
-
-    % Draw the front-left of the cube
-    \draw[cube] (0,2,0) -- (2,2,0) -- (2,2,2) -- (0,2,2) -- cycle;
-
-    % Draw the top of the cube
-    \draw[cube] (0,0,2) -- (0,2,2) -- (2,2,2) -- (2,0,2) -- cycle;
-
-    % Draw particle
-    \filldraw[red] (0,1,1) circle (2.3pt) node[anchor=east] {Particle};
-    \filldraw[red] (2,1,1) node[anchor=west] {elastic collision};
-
-    % Draw motion arrows
-    \draw[->, thick, blue] (0.1,1,1.05) -- (2,1,1.05);
-    \draw[->, thick, blue] (2,1,0.85) -- (0.1,1,0.85);
-
-    %velocity arrows
-    \draw[->, thick, black] (0.6,0.6,0.5) -- (1.2,0.6,0.5);
-    \draw[->, thick, black] (1.2,1,0.5) -- (0.6,1,0.5);
-
-    % Axis labels
-    \draw[thick,->] (-0.5,0,0) -- (2.5,0,0) node[right] {$x$};
-    \draw[thick,->] (0,-0.5,0) -- (0,2.5,0) node[above] {$z$};
-    \draw[thick,->] (0,0,-0.5) -- (0,0,2.5) node[below left] {$y$};
-
-    % Cube length label
-    \node at (1, -0.5, 1.4) {L};
-    \node at (1, 0.4, 0.5) {$v_x$};
-    \node at (1, 1.2, 0.5) {$-v_x$};
-\end{tikzpicture}
+% \begin{tikzpicture}
+%     [tdplot_main_coords,
+%     grid/.style={very thin,gray},
+%     axis/.style={->,blue,thick},
+%     cube/.style={opacity=.5,very thick}, scale=1]
+%
+%     % Draw the bottom of the cube first
+%     \draw[cube,fill=gray!80] (0,0,0) -- (0,2,0) -- (2,2,0) -- (2,0,0) -- cycle;
+%
+%     % Draw the grid on the bottom (in front of the cube bottom face)
+%     \foreach \x in {-0.5,0,...,2.5} {
+%         \draw[grid] (-0.5, -\y, \x) -- (2.5, -\y, \x);
+%     }
+%     \foreach \y in {-0.5,0,...,2.5} {
+%         \draw[grid] (\y, -\x, -0.5) -- (\y, -\x, 2.5);
+%     }
+%
+%     % Draw the back-right of the cube
+%     \draw[cube,fill=gray!80] (0,0,0) -- (0,2,0) -- (0,2,2) -- (0,0,2) -- cycle;
+%
+%     % Draw the back-left of the cube
+%     \draw[cube,fill=gray!80] (0,0,0) -- (2,0,0) -- (2,0,2) -- (0,0,2) -- cycle;
+%
+%     % Draw the front-right of the cube
+%     \draw[cube] (2,0,0) -- (2,2,0) -- (2,2,2) -- (2,0,2) -- cycle;
+%
+%     % Draw the front-left of the cube
+%     \draw[cube] (0,2,0) -- (2,2,0) -- (2,2,2) -- (0,2,2) -- cycle;
+%
+%     % Draw the top of the cube
+%     \draw[cube] (0,0,2) -- (0,2,2) -- (2,2,2) -- (2,0,2) -- cycle;
+%
+%     % Draw particle
+%     \filldraw[red] (0,1,1) circle (2.3pt) node[anchor=east] {Particle};
+%     \filldraw[red] (2,1,1) node[anchor=west] {elastic collision};
+%
+%     % Draw motion arrows
+%     \draw[->, thick, blue] (0.1,1,1.05) -- (2,1,1.05);
+%     \draw[->, thick, blue] (2,1,0.85) -- (0.1,1,0.85);
+%
+%     %velocity arrows
+%     \draw[->, thick, black] (0.6,0.6,0.5) -- (1.2,0.6,0.5);
+%     \draw[->, thick, black] (1.2,1,0.5) -- (0.6,1,0.5);
+%
+%     % Axis labels
+%     \draw[thick,->] (-0.5,0,0) -- (2.5,0,0) node[right] {$x$};
+%     \draw[thick,->] (0,-0.5,0) -- (0,2.5,0) node[above] {$z$};
+%     \draw[thick,->] (0,0,-0.5) -- (0,0,2.5) node[below left] {$y$};
+%
+%     % Cube length label
+%     \node at (1, -0.5, 1.4) {L};
+%     \node at (1, 0.4, 0.5) {$v_x$};
+%     \node at (1, 1.2, 0.5) {$-v_x$};
+% \end{tikzpicture}
 
 Force excerted by the molecules  on the face:
 \begin{equation}
@@ -538,13 +558,13 @@ Using Ideal gas equation : $PV=Nk_BT$,\\ where $k_B$ is boltzman constant
 \subsection{Ideal gas}
 \begin{enumerate}[noitemsep]
     \item Molcules are in random motion. 
-    \item During the motion of \textbf{molecules do not exert force, except when they collide with each other or the walls of container}. This can also be stated as there is \textbf{no force of attraction between mocecules}.
+    \item During the motion of \textbf{molecules do not exert force, except when they collide with each other} \textbf{or the walls of container}. This can also be stated as there is \textbf{no force of attraction between mocecules}.
     \item The collisions between molecules are \textbf{elastic}.
     \item \textbf{Sum of the volume of molecules is negligible} comapered to volume of container.
 \end{enumerate}
 
 \subsection{Early experiments and laws}
-\subsubsection*{$1^{st}$ Law of Gay-Lussac}
+\subsubsection*{First Law of Gay-Lussac}
 Increase of volume of an ideal gas at \textbf{constant pressure} is proportional to incrase in temperature and also to the volume occupied by the gas at $0^o$C
 
 \begin{align}
@@ -899,7 +919,7 @@ $\Rightarrow$ $\rho_E$ = $1.23$ $kgm^{-3}$ and $\rho_V$ = $65.97$ $kgm^{-3}$
 \subsection{Pressure}
 \subsubsection*{Units of Pressure}
 
-Pressure are usually expressed in thefollwing units: \\
+Pressure are usually expressed in thefollwing units:
 
 1 bar = 1.013 $\times$ 10$^5$ Pa 
 
@@ -964,8 +984,7 @@ At any point in the atmosphere, atmosphere above will exert a downward force due
 \clearpage
 
 \section{Lecture 5 21/08/2024}
-In previous lecture, We got equation for Ideal gas Eq.\myeqref{IdealGasequation}, which only deals 
-with dry air.
+In previous lecture, We got equation for Ideal gas Eq.\myeqref{IdealGasequation}, which only deals with dry air.
 
 We didn't incooperated moisture!
 
@@ -1155,7 +1174,7 @@ Dividing equation with $M$ on both side,
 \begin{align}
     \frac{F_B}{M} &= \frac{(\rho' - \rho) Vg}{M} \\
     f_B              &= \frac{(\rho' - \rho) Vg}{\rho V} \\
-                     &= \Big(\frac{\rho'}{\rho}-1\Big)g  \label{eq:acceration_due_to_buoyancy}
+                     &= \Big(\frac{\rho'}{\rho}-1\Big)g  \label{eq:acceration-due-to-buoyancy}
 \end{align}
 
 If Buoyant force per unit mass ($f_B$),
@@ -1170,11 +1189,11 @@ Assume pressure inside air parcel and surrounding equal and process to be revers
 
 Using Ideal gas equation,
 \begin{align}
-    P &= \rho R_d T_v \label{eq:Pressure_of_mass}\\
-    P &= \rho' R_d T_v' \label{eq:Pressure_of_fluid}
+    P &= \rho R_d T_v \label{eq:Pressure-of-mass}\\
+    P &= \rho' R_d T_v' \label{eq:Pressure-of-fluid}
 \end{align}
 
-Substituting equation Eq.\myeqref{eq:Pressure_of_mass} \& \myeqref{eq:Pressure_of_fluid} in Eq.\myeqref{eq:acceration_due_to_buoyancy}, we get:
+Substituting equation Eq.\myeqref{eq:Pressure-of-mass} \& \myeqref{eq:Pressure-of-fluid} in Eq.\myeqref{eq:acceration-due-to-buoyancy}, we get:
 \begin{align}
     f_B &= \frac{\big(\frac{P}{R_d T_v'} - \frac{P}{R_d T_v}\big)}{\frac{P}{R_d T_v'}}g \\
     \Rightarrow f_B &= \frac{(T_v - T_v')}{T_v'}g
@@ -1209,10 +1228,8 @@ where $T_v$ and $T_v'$ are virtual temperture of of parcel and fluid respectivel
                 &= 0.0806 m/s^2
         \end{align*}
     \text{$\therefore$ Vertical accerleration due to buoyant force is} \\ \text{$0.0806 m/s^2$.} \\
-
     $\Rightarrow$ b. Given Height $h=10m$, \\
                            Vertical accerlation $a=f_B=0.0806 m/s^2$ \\
-
         Using equation of motion:
         \begin{align*}
             s &= \frac{1}{2} at^2 \\
@@ -1273,10 +1290,10 @@ where $T_v$ and $T_v'$ are virtual temperture of of parcel and fluid respectivel
         F_{down} = Ap(z+dz)
         \end{equation}
 \end{enumerate}
-$\therefore$ Net upward fore will be given by Eq.\myeqref{eq:Net_upward_force}
+$\therefore$ Net upward fore will be given by Eq.\myeqref{eq:Net-upward-force}
 \begin{align}
     F &= F_{up} - F_{down} - F_g \\
-     &= Ap(z) - Ap(z+dz) - \rho(A\delta z)g \label{eq:Net_upward_force}
+     &= Ap(z) - Ap(z+dz) - \rho(A\delta z)g \label{eq:Net-upward-force}
 \end{align}
 
 Hence, Upward acccleration will be:
@@ -1284,14 +1301,14 @@ Hence, Upward acccleration will be:
     a &= \frac{F}{\rho A \delta z} \\
       &= \frac{Ap(z) - Ap(z+ \delta z) - (A\delta z)\rho g}{\rho A \delta z} \\
       &= -\frac{1}{\rho} \Big[\frac{p(z+ \delta z) - p(z)}{\delta z} \Big] - g
-    \label{eq:upward_acc}
+    \label{eq:upward-acc}
 \end{align}
 Taking $\lim_{\delta z \to 0}$
 \begin{align}
     \Rightarrow a+g = -\frac{1}{\rho} \frac{dp}{dz}
-    \label{eq:hydrostatic_eq}
+    \label{eq:hydrostatic-eq}
 \end{align}
-Eq.\myeqref{eq:hydrostatic_eq} is called Hydrostatic equation.
+Eq.\myeqref{eq:hydrostatic-eq} is called Hydrostatic equation.
 
 \begin{question}[label=q:6.2]{Velocity of hyricene is $10m/s$ and time taken $10 min$ find acceleration.}
  $\Rightarrow$ Acceleration $a= \frac{v}{t} = \frac{10}{10\times 60} = \frac{10}{600} \approx 0.0167$
@@ -1299,10 +1316,10 @@ Eq.\myeqref{eq:hydrostatic_eq} is called Hydrostatic equation.
 
 From the above example question \ref{q:6.2} we can infer that $a + g \approx g$, 
 
-$\therefore$ we can rewrite Hydrostatic equation as following Eq.\myeqref{eq:hydrostatical_approximation}: 
+$\therefore$ we can rewrite Hydrostatic equation as following Eq.\myeqref{eq:hydrostatical-approximation}: 
 \begin{equation}
     \Rightarrow g = -\frac{1}{\rho} \frac{dP}{dz}
-    \label{eq:hydrostatical_approximation}
+    \label{eq:hydrostatical-approximation}
 \end{equation}
 This is called \textbf{Hydrostatication approximation}.
 
@@ -1317,12 +1334,12 @@ From Ideal gas equation:
     P &= \rho R_d T_v \\
     \rho &= \frac{P}{R_d T_v} 
 \end{align}
-Substitute $\rho$ in hydrostactic Eq.\myeqref{eq:hydrostatical_approximation}, we get:
+Substitute $\rho$ in hydrostactic Eq.\myeqref{eq:hydrostatical-approximation}, we get:
 \begin{align}
     g &= - \frac{R_dT_v}{P}\frac{\partial P}{\partial z}\\
     \frac{\partial P}{\partial z} &= -\frac{P}{R_d T_v}g \\
     \frac{1}{P} \frac{\partial P}{\partial z} &= -\frac{g}{R_d T_v} \\
-    \frac{\partial \ln P}{\partial z} &= -\frac{g}{R_d T_v}    
+    \frac{\partial \ln P}{\partial z} &= -\frac{g}{R_d T_v}
 \end{align}
 The rate of change of logarithm of pressure is Inversely proportional to temperature and does not depend on pressure.
 
@@ -1335,7 +1352,7 @@ Represnted by Eq.\myeqref{eq:geopotential} and has unit $Jkg^{-1}$
     \label{eq:geopotential}
 \end{equation}
 
-From hydrostatic equation Eq.\myeqref{eq:hydrostatic_eq},
+From hydrostatic equation Eq.\myeqref{eq:hydrostatic-eq},
 \begin{align}
      dp &= -\rho g dz \\
      gdz &= -\frac{1}{\rho} dp \\
@@ -1352,9 +1369,9 @@ Intergrating Eq.\myeqref{eq:geopotential}, we get:
 Let $g_0$ be accerleration due to gravity averaged over the surface.
 \begin{align}
     \frac{\phi(z)}{g_0} &= \int^{z}_{0} \frac{g}{g_0}dz \\
-    \Rightarrow Z &= \frac{\phi(z)}{g_0} \label{eq:geopotential_height}
+    \Rightarrow Z &= \frac{\phi(z)}{g_0} \label{eq:geopotential-height}
 \end{align}
-The \textbf{$Z$ in Eq.\myeqref{eq:geopotential_height} is called Geopotential height}.
+The \textbf{$Z$ in Eq.\myeqref{eq:geopotential-height} is called Geopotential height}.
 
 \begin{table}[ht]
 \centering
@@ -1393,18 +1410,18 @@ By assuming isothermal atmosphere
 \begin{align}
     (Z_2-Z_1) &= -\frac{R_d}{g_0}\int^{P_2}_{P_1}\bar{T}_v\frac{dp}{p} \\
     (Z_2-Z_1) &= -\frac{R_d}{g_0}\bar{T}_v\ln\Big(\frac{dp}{p}\Big) \\
-    \Rightarrow (Z_2-Z_1) &= -H\ln\Big(\frac{dp}{p}\Big) \label{eq:hypsometric_eq}
+    \Rightarrow (Z_2-Z_1) &= -H\ln\Big(\frac{dp}{p}\Big) \label{eq:hypsometric-eq}
 \end{align}
-Where $\bar{T}_v$ is average temperature of atmosphere taken over geopotnetial ($\phi_1 \& \phi_2$) and $H$ is scale height giev by Eq.\myeqref{eq:scale_height}:
+Where $\bar{T}_v$ is average temperature of atmosphere taken over geopotnetial ($\phi_1 \& \phi_2$) and $H$ is scale height giev by Eq.\myeqref{eq:scale-height}:
 \begin{equation}
     H = \frac{R_d T_v}{g_0}
-    \label{eq:scale_height}
+    \label{eq:scale-height}
 \end{equation}
 
 \textbf{Scale height $H$} is defined as height at which the pressure reduces to $1/e$ times the surface pressure. It is around $7.8km$ for Earth's atmosphere.
 
-Eq.\myeqref{eq:hypsometric_eq} is called Hypsometric equation. \\
-Simplifing Eq.\myeqref{eq:hypsometric_eq}, we get:
+Eq.\myeqref{eq:hypsometric-eq} is called Hypsometric equation. \\
+Simplifing Eq.\myeqref{eq:hypsometric-eq}, we get:
 \begin{align}
     P_2 &= P_1 e^{-\frac{(Z_2-Z_1)}{H}} \\
     \Rightarrow P &= P_0 e^{-\frac{(Z_2-Z_1)}{H}}
@@ -1534,12 +1551,12 @@ Assume atmosphere is at hydrostatic balance and Temperature $T$ to be constant.
 \clearpage
 
 \section{Lecture 9 04/09/2024}
-\subsection{1$^{st}$ law of thermodynamics and it's application}
+\subsection{First Law of Thermodynamics and Application}
 \subsubsection*{Pressure-volume work}
 Work done $\delta w$ by any force $F$ to displace object with diplacement $ds$ is equal to:
 \begin{equation}
     \delta w = F \cdot ds
-    \label{eq:work_done}
+    \label{eq:work-done}
 \end{equation}
 
 Incremental Work done by Force $F$ to increase the volume will be given as follows:
@@ -1547,7 +1564,7 @@ Incremental Work done by Force $F$ to increase the volume will be given as follo
     \delta w &= F \cdot ds \\
     &= PA\cdot ds \\
     &= PdV
-    \label{eq:Pressure_volume_work}
+    \label{eq:Pressure-volume-work}
 \end{align}
 Assuming Pressure $P$ constant at each step, and process is slow, incremental, i.e, reversible.
 
@@ -1618,7 +1635,7 @@ Assuming Pressure $P$ constant at each step, and process is slow, incremental, i
 \clearpage
 
 \section{Lecture 10 05/09/2024}
-\subsection{. 1$^{st}$ law of thermodynamics and it's application}
+\subsection{First Law of Thermodynamics and Application}
 
 \begin{equation}
     \Delta U = Q-W
@@ -1683,7 +1700,7 @@ Assuming Pressure $P$ constant at each step, and process is slow, incremental, i
     \Rightarrow \frac{\delta w}{dt} &= \frac{d}{dt} (K.E.)
 \end{align}
 
-\subsubsection*{Formulation of $1^{st}$ law of thermodynamics}
+\subsubsection*{Formulation of First Law of thermodynamics}
 
 \textbf{\textit{Case 1:}} Heating
         $$\Delta U = Q$$
@@ -1729,7 +1746,7 @@ In terms of Intensive parameters
     \item Pressuer-volume wok done on a system = increase in internal energy + heat transfered to the environment.
 \end{enumerate}
 
-\subsection{. Heat capacity}
+\subsection{Heat capacity}
 \begin{equation}
     \displaystyle\frac{\delta q}{dT} =C
     \label{eq:heat_capacity}
@@ -1746,7 +1763,7 @@ $$P \alpha = R_d T$$
 \textbf{\textit{Case 3:}} Combination of above the both cases. (i.e. increase in both pressure and volume)
 
 \subsection{. Heat capacity at constant volume}
-From Eq.\myeqref{eq:reduced_1st_law_of_thermo}
+From Eq.\myeqref{eq:reduced-1st-law-of-thermo}
 \begin{align}
     \delta q &= du + p d\alpha \\
     \delta q &= du \\
@@ -1875,11 +1892,11 @@ $\therefore$ $dP = 0$
 
 From Ideal gas eqaution
 \begin{align}
-    P\alpga &= R_d T \\ 
+    P\alpha &= R_d T \\ 
     dP \alpha &= Pd\alpha + \alpha dP \\ 
     Pd\alpha + \alpha dP &= d(R_d T) \\
     Pd\alpha + \alpha dP &= R_d dT \\
-    Pd\alpha  &= R_d dT - \alpha dP \label{eq:p_d_alpha}
+    Pd\alpha  &= R_d dT - \alpha dP \label{eq:pd-alpha}
 \end{align}
 \begin{align}
     \delta q &= du + p d\alpha \\
@@ -1890,7 +1907,7 @@ From Ideal gas eqaution
     du &= C_vdt
 \end{align}
 
-From Eq.\myeqref{eq:1st_law_with_const_volume} and Eq.\myeqref{eq:p_d_alpha} 
+From Eq.\myeqref{eq:1st-law-with-const-volume} and Eq.\myeqref{eq:pd-alpha} 
 \begin{align}
     \delta q &= C_vdT + R_ddT-\alpha dP \\ 
     \delta q &= (C_v + R_d)dT-\alpha dP \\ 
@@ -1904,7 +1921,7 @@ C_p =
     \end{cases}
 \end{align*}
 
-\subsection{. Special forms of 1$^{st}$ law of thermodynamics}
+\subsection{Special Forms of First Law of Thermodynamics}
 \subsubsection*{I. Isobaric process}
 \begin{align}
     \delta q &= C_p dT \\
@@ -2039,7 +2056,7 @@ where $k$ is $R_d/C_p=0.286$. \\
 Taking logarithm on both sides
 \begin{align}
     d(\ln \theta) &= d(\ln A) + d(\ln T) - kd(\ln P) \\
-    d(\ln \theta) &= d(\ln T) - \frac{R_d}{C_p}d(\ln P) \label{eq:potential_temperature_1}
+    d(\ln \theta) &= d(\ln T) - \frac{R_d}{C_p}d(\ln P) \label{eq:potential-temperature-1}
 \end{align}
 where $A = (P_0)^k = (1000)^{0.286}$ \\
 
@@ -2049,10 +2066,10 @@ Consider $1^{st}$ law of thermodynamics
     \frac{\delta q}{T} &= C_p\frac{dT}{T} - \alpha\frac{dP}{T} \\
     \frac{\delta q}{C_p T} &= \frac{dT}{T} - \frac{R_d T dP}{C_p PT} \\
     \frac{\delta q}{C_p T} &= \frac{dT}{T} - \frac{R_d dP}{C_p P} \\
-    \frac{\delta q}{C_p T} &= d(\ln T) - \frac{R_d}{C_p} d(\ln P) \label{eq:potential_temperature_2}
+    \frac{\delta q}{C_p T} &= d(\ln T) - \frac{R_d}{C_p} d(\ln P) \label{eq:potential-temperature-2}
 \end{align}
 
-from Eq.\myeqref{eq:potential_temperature_1} and Eq.\myeqref{eq:potential_temperature_2}
+from Eq.\myeqref{eq:potential-temperature-1} and Eq.\myeqref{eq:potential-temperature-2}
 \begin{align}
     d(\ln \theta) = \frac{\delta q}{C_p T}
 \end{align}
@@ -2071,7 +2088,7 @@ $\theta$ is constant, conserved for adiabatic process.
 }
 $\Rightarrow$ Solution:
 
-a. Potential temperature of air 
+a. Potential temperature of air
 \begin{align*}
     \theta &= T \Big(\frac{1000}{P}\Big)^k \\ 
            &= 218 \Big(\frac{1000}{200}\Big)^{0.286}\\ 
@@ -2138,7 +2155,6 @@ b. Potential temperature of air
     }
     child { node {Moist Adiabatic LR} };
 \end{tikzpicture}
-\end{center}
 
 \textbf{Note:} Moisture is present in dry air parcel but it is assumed that it does not show any phase chage.
 
@@ -2151,7 +2167,7 @@ Using the $1^{st}$ law of thermodynamics
 Adiabatic process:
 \begin{align}
     \delta q &= 0 \\
-    C_p dT &= \alpha dP \label{eq:C_pdT=adp}
+    C_p dT &= \alpha dP \label{eq:CpdT=adp}
 \end{align}
 
 Lapse rate:
@@ -2159,7 +2175,7 @@ Lapse rate:
     \frac{dT}{dz} &= \frac{dT}{dP}\cdot\frac{dP}{dz} \label{eq:dTdz=dtdpdpdz}
 \end{align}
 
-From Eq.\myeqref{eq:C_pdT=adp} and \myeqref{eq:dTdz=dtdpdpdz}
+From Eq.\myeqref{eq:CpdT=adp} and \myeqref{eq:dTdz=dtdpdpdz}
 \begin{align}
     \frac{dT}{dz} &= \frac{R_d T}{C_p P}\cdot\frac{dP}{dz} \label{eq:dTdz}
 \end{align}
@@ -2172,14 +2188,14 @@ Appling hydrostatic approximaion, the pressure of unconfined air pacel is same a
 \end{align}
 where $P'$ and $T'$ are ambient pressure and temperature.
 
-From Eq.\myeqref{eq:C_pdT=adp}, Eq.\myeqref{eq:dTdz=dtdpdpdz} and Eq.\myeqref{eq:dPdz}
+From Eq.\myeqref{eq:CpdT=adp}, Eq.\myeqref{eq:dTdz=dtdpdpdz} and Eq.\myeqref{eq:dPdz}
 \begin{align}
     \frac{dT}{dz} &= \frac{R_dT}{C_pP}\cdot\Big(- \frac{P'g}{R_dT'} \Big) \\
     \frac{dT}{dz} &= \frac{g}{C_p}\cdot\Big(- \frac{TP'}{T'P} \Big)\\
     \frac{dT}{dz} &= -\frac{g}{C_p}\Big(\frac{T}{T'} \Big) \\
     \Gamma_d = -\frac{dT}{dz} &= \frac{g}{C_p}\Big(\frac{T}{T'} \Big) \\
     \Gamma_d = -\frac{dT}{dz} &\approx \frac{g}{C_p}\\
-    \Gamma_d = -\frac{dT}{dz} &\approx 9.8\times 10^{-3}^{\circ}C/m \\
+    \Gamma_d = -\frac{dT}{dz} &\approx 9.8\times 10^{-3}{ }^{\circ}C/m \\
     \Rightarrow \Gamma_d = -\frac{dT}{dz} &\approx 9.8^{\circ}C/km
 \end{align}
 where $\Gamma_d$ is \textbf{Dry Adiabatic Lapse Rate (DALR)} which is aproximately equal to $9.8^{\circ}C/km$, also $T$ and $T'$ are comparably equal.
@@ -2324,7 +2340,7 @@ From these two equations, we can equate the temperature ratios:
 
 \begin{align}
     \left(\frac{\alpha_3}{\alpha_2}\right)^{\gamma - 1} &= \left(\frac{\alpha_4}{\alpha_1}\right)^{\gamma - 1} \\
-    \frac{\alpha_3}{\alpha_4} &= \frac{\alpha_2}{\alpha_1} \label{eq:volume_ratio}
+    \frac{\alpha_3}{\alpha_4} &= \frac{\alpha_2}{\alpha_1} \label{eq:volume-ratio}
 \end{align} \\
 \textbf{Total Work:}
 
@@ -2335,29 +2351,30 @@ From Eq.\myeqref{eq:w12}, \myeqref{eq:w23}, \myeqref{eq:w34}, and \myeqref{eq:w4
                      & \quad  R_d T_2 \ln \frac{\alpha_4}{\alpha_3} + C_v(T_2 - T_1) \\
                      &=  R_d T_1 \ln \frac{\alpha_2}{\alpha_1} + R_d T_2 \ln \frac{\alpha_4}{\alpha_3} \\
                      &= R_d \Big[T_1 \ln \frac{\alpha_2}{\alpha_1} + T_2 \ln \frac{\alpha_4}{\alpha_3} \Big] \\
-                     &= R_d(T_1 - T_2) \ln\Big(\frac{\alpha_2}{\alpha_1}\Big) \quad \text{From Eq.\myeqref{eq:volume_ratio}} \label{eq:TotalWorkDone}
+                     &= R_d(T_1 - T_2) \ln\Big(\frac{\alpha_2}{\alpha_1}\Big) \quad \text{From Eq.\myeqref{eq:volume-ratio}} \label{eq:totalworkdone}
 \end{align}
 
-Finding the effeincy of carnot cycle using Eq.\myeqref{eq:effiency} and Eq.\myeqref{eq:TotalWorkDone}
+Finding the effeincy of carnot cycle using Eq.\myeqref{eq:effiency} and Eq.\myeqref{eq:totalworkdone}
 \begin{align}
     \eta & = \frac{Q_1 + Q_2}{Q_1} \\
         &= 1 + \frac{Q_2}{Q_1} \\
         &= 1 + \frac{R_d T_2 \ln\frac{\alpha_3}{\alpha_4}}{R_d T_1 \ln\frac{\alpha_2}{\alpha_1}} \\
         &= 1 - \frac{T_2 \ln\frac{\alpha_2}{\alpha_1}}{T_1 \ln\frac{\alpha_2}{\alpha_1}} \\
-     \Rightarrow \eta &= 1 - \frac{T_2}{T_1} \label{eq:eff_carnot}
+     \Rightarrow \eta &= 1 - \frac{T_2}{T_1} \label{eq:eff-carnot}
 \end{align}
 
 The temperature at which carnot engine becomes $100\%$ efficient (i.e.$\eta=1$) is called \textbf{Absolute temeperature ($0K$)} 
 
 In real world scenarios $0K$ is not acheivable and there is no process which is ideally reversible.
 
-\begin{question}[\label=14.1]{For a potential temperature of $290K$ compute the corresponding temperature at $700hPa$ and $500hPa$. Sketch the corresponding adiabat in skew-T diagram.}
-    \Rightarrow 
-        \theta &= T\Big(\frac{1000}{P_0}\Big)^k  \quad ,\text{where } k=\frac{R_d}{C_p}=\frac{287}{1004}=0.286 \\
-        T     &= \theta \Big(\frac{P_0}{1000}\Big)^k \\
-        T_1   &= \theta \Big(\frac{700}{1000}\Big)^{0.286} = 261.87K \approx -11.2^\circ C \\
-        T_2   &= \theta \Big(\frac{500}{1000}\Big)^{0.286} = 237.88K \approx -35.15^\circ C
-\end{question}
+% FIX:
+% \begin{question}[\label=14.1]{For a potential temperature of $290K$ compute the corresponding temperature at $700hPa$ and $500hPa$. Sketch the corresponding adiabat in skew-T diagram.}
+%     \Rightarrow 
+%         $\theta$ &= T\Big(\frac{1000}{P_0}\Big)^k  \quad ,\text{where } k=\frac{R_d}{C_p}=\frac{287}{1004}=0.286 \\
+%         $T$     &= \theta \Big(\frac{P_0}{1000}\Big)^k \\
+%         $T_1$   &= \theta \Big(\frac{700}{1000}\Big)^{0.286} = 261.87K \approx -11.2^\circ C \\
+%         $T_2$   &= \theta \Big(\frac{500}{1000}\Big)^{0.286} = 237.88K \approx -35.15^\circ C
+% \end{question}
 
 \subsection{. Skew T - log P diagram}
 \myhref{https://www.noaa.gov/jetstream/upperair/skew-t-log-p-diagrams}{Skew-T plot} shows combined and also seperate plots for Full Skew-T, Isothermal lines, Isobars, Dry Adiabats, Moist Adiabats, Mixing Ratio and Wind Staff.
@@ -2446,17 +2463,18 @@ In real world scenarios $0K$ is not acheivable and there is no process which is 
     \begin{center}
         \includegraphics[width=0.48\textwidth]{Figures/hurricane_structure.jpg}
     \end{center}
-    \caption{Internal Structure of cyclone}\label{fig:cyclone_structure}
+    \caption{Internal Structure of cyclone}\label{fig:cyclone-structure}
 \end{figure}
-Image source: \myhref{https://web.mit.edu/~twcronin/Public/Lupit_Cross_Sections.html}{Internal Structure of cyclone}
+% FIX:
+% Image source: \href{https://web.mit.edu/~twcronin/Public/Lupit_Cross_Sections.html}{Internal Structure of cyclone}
 
 \begin{figure}[ht]
     \begin{center}
         \includegraphics[width=0.48\textwidth]{Figures/cyclone_air_circulation.png}
     \end{center}
-    \caption{ Air circulation in cyclone}\label{fig:cyclone_air_circulation}
+    \caption{ Air circulation in cyclone}\label{fig:cyclone-air-circulation}
 \end{figure}
-Image source: \myhref{https://www.britannica.com/science/tropical-cyclone}{ Air circulation in cyclone}
+Image source: \myhref{https://www.britannica.com/science/tropical-cyclone}{Air circulation in cyclone}
 
 \subsection{. Specific enthaphy}
 Enthaphy is heat content of state.
@@ -2475,11 +2493,11 @@ At constant pressure
     dh       & = du + d(PV) \\
     dh       & = du + P d\alpha + \alpha dP \\
     dh       & = \delta q + \alpha dP \\
-    \delta q &= dh - \alpha dP  \label{eq:enthalphy_heat}
+    \delta q &= dh - \alpha dP  \label{eq:enthalphy-heat}
     \text{ also,} \\
-    \delta q &= C_p dT - \alpha dP  \label{eq:enthalphy_heat_1}
+    \delta q &= C_p dT - \alpha dP  \label{eq:enthalphy-heat-1}
 \end{align}
-From Eq.\myeqref{eq:enthalphy_heat} and Eq.\myeqref{eq:enthalphy_heat_1}
+From Eq.\myeqref{eq:enthalphy-heat} and Eq.\myeqref{eq:enthalphy-heat-1}
 \begin{align}
     dh - \alpha dP &= C_p -\alpha dP
 \end{align}
@@ -2494,7 +2512,7 @@ For a hydrostatic atmosphere:
 \begin{align}
     \frac{dp}{dz} = \rho g \Rightarrow dp = -\rho gdz \label{eq:hydrostaticeq}
 \end{align}
-Substitute Eq.\myeqref{eq:enthalphy_heat_1} in Eq.\myeqref{eq:hydrostaticeq}
+Substitute Eq.\myeqref{eq:enthalphy-heat-1} in Eq.\myeqref{eq:hydrostaticeq}
 \begin{align}
     \delta q &= C_p dT - \cancel{\alpha} \cancel{\rho} gdz \\
     \delta q &= C_p dT + gdz \\
@@ -2503,9 +2521,9 @@ Substitute Eq.\myeqref{eq:enthalphy_heat_1} in Eq.\myeqref{eq:hydrostaticeq}
 \end{align}
 If process is adiabatic $\delta q=0$
 \begin{align}
-    h + \phi = \text{const} \label{eq:dry_static_equation}
+    h + \phi = \text{const} \label{eq:dry-static-equation}
 \end{align}
-Eq.\myeqref{eq:dry_static_equation} called dry static equation.
+Eq.\myeqref{eq:dry-static-equation} called dry static equation.
 
 This implies that when air parcel goes up (in geopotential) by the expense of heat content (enthalphy), i.e. [$h \uparrow \phi \downarrow$]. \\
 
@@ -2583,19 +2601,20 @@ This implies that when air parcel goes up (in geopotential) by the expense of he
 \section{Lecture 16 07/10/2024}
 
 \subsection{. Lesson learnt from carnot cycle}
-\begin{enumerate}[I]
-    \item Thermodynamic effeciency of cyclone depends on sources, given by Eq.\myeqref{eq:eff_carnot}
-
-    When $T_1 =T_2$, carnot cycle does not exist called \textbf{Kelvin's Postulate}.
-
-    Carnot engine is most effiecent at winter because of difference in termperature, casues diverse climate change.
-
-    \item Transformation of heat is not possible from cold body to hot body called \textbf{Clausius postulate}.
-
-    \item Carnot cycle could give us definition for absolute zero temperature.
-
-    \item All process are irreversible, however, slow process can be considered to be reversible.
-\end{enumerate}
+% FIX:
+% \begin{enumerate}[\Roman*]
+%     \item Thermodynamic effeciency of cyclone depends on sources, given by Eq.\myeqref{eq:eff-carnot}
+%
+%     When $T_1 =T_2$, carnot cycle does not exist called \textbf{Kelvin's Postulate}.
+%
+%     Carnot engine is most effiecent at winter because of difference in termperature, casues diverse climate change.
+%
+%     \item Transformation of heat is not possible from cold body to hot body called \textbf{Clausius postulate}.
+%
+%     \item Carnot cycle could give us definition for absolute zero temperature.
+%
+%     \item All process are irreversible, however, slow process can be considered to be reversible.
+% \end{enumerate}
 
 \subsection{. Entropy}
 Let's recall that, 
@@ -2616,7 +2635,7 @@ Efficency of heat engine:
 \begin{align}
     \eta_{\text{rev}} = 1- \frac{T_2}{T_1} \\
     \eta_{\text{rev}} = \frac{T_1 - T_2}{T_1} \\
-    T_1\cdot\eta_{\text{rev}} = T_1 - T_2 \label{eq:eff_of_heat_engine}
+    T_1\cdot\eta_{\text{rev}} = T_1 - T_2 \label{eq:eff-of-heat-engine}
 \end{align}
 
 Multiply and divide Eq.\myeqref{eq:q1t1+q2t2} by $\eta_{\text{rev}}$ 
@@ -2624,7 +2643,7 @@ Multiply and divide Eq.\myeqref{eq:q1t1+q2t2} by $\eta_{\text{rev}}$
     \frac{q_1}{T_1}\cdot\frac{\eta_\text{rev}}{\eta_\text{rev}} + \frac{q_2}{T_2}=0
 \end{align}
 
-From Eq.\myeqref{eq:eff_of_heat_engine},
+From Eq.\myeqref{eq:eff-of-heat-engine},
 \begin{align}
     q_1\cdot\frac{\eta_\text{rev}}{(T_1-T_2)} + \frac{q_2}{T_2}=0
 \end{align}
@@ -2662,18 +2681,13 @@ Number of states in which the system can have large disorder hence higher entrop
 
 (No. of molecule $\uparrow$) (No. of possible system states $\uparrow$) $\rightarrow$ (Entropy$\uparrow$)
 
-\begin{question}[\label=16.1]{Show that entropy of ideal gas depends on intial and final state of temperature and volume.}
+\begin{question}[16.1]{Show that entropy of ideal gas depends on intial and final state of temperature and volume.}
     \Rightarrow 
     ds = \oint \frac{dq}{T} = C_v \oint d(\ln T) + R \oint d(\ln \alpha) \\
-
     \Delta S = \int^f_i ds = S_f - S_i = C_v \ln \Big(\frac{T_f}{T_i}\Big) + R\ln\Big(\frac{\alpha_f}{\alpha_i}\Big) \\
-
     S_f = S_i + C_v \ln \Big(\frac{T_f}{T_i}\Big) + R\ln\Big(\frac{\alpha_f}{\alpha_i}\Big) \\
-
     S_f = S_i + C_v \ln \Big(\frac{T_f}{T_i}\Big) + C_v (\frac{R}{C_v})\ln\Big(\frac{\alpha_f}{\alpha_i}\Big) \\
-
     S_f = S_i + C_v \Big[ \ln\Big(\frac{T_f}{T_i}\Big) \times \Big(\frac{\alpha_f}{\alpha_i}\Big)^{\big(\frac{C_p-C_v}{C_v}\big)}\Big] \\
-
     S_f = S_i + C_v \Big[ \ln\Big(\frac{T_f}{T_i}\Big) \times \Big(\frac{\alpha_f}{\alpha_i}\Big)^{(\gamma - 1)}\Big] \text{where $\gamma= C_p/C_v$} 
 \end{question}
 
@@ -2739,7 +2753,7 @@ For an isolated system,
 
 For a spontaneous irreversible transformation, occuring in an isolated system, the final entropy is greater then initial entropy. 
 
-\subsection{. 2$^{nd}$ law of themodynamics}
+\subsection{Second Law of Themodynamics}
 2$^{nd}$ law of themodynamics can be stated as:
 \begin{enumerate}
     \item For reversible transformation, there is no change in entropy of universe.
@@ -2753,39 +2767,39 @@ For a spontaneous irreversible transformation, occuring in an isolated system, t
 \end{align*}
 
 % FIX: solve the question
-\begin{question}[\label=17.1]{Calculate the change in air pressure if the specific entropy decrease by $0.05 Jg^{-1}K^{-1}$ and the air temperature decreases by $5\%$.}
-\Rightarrow  \text{To calculate the change in air pressure given the}
-
-\text{specific entropy decrease and temperature change}
-
-    \textbf{Given:}
-    \begin{itemize}[noitemsep]
-        \item Change in specific entropy: \( ds = -0.05 \, \mathrm{Jg^{-1}K^{-1}} \)
-        \item Temperature decrease: \( dT = -0.05T \) (a decrease of \( 5\% \))
-    \end{itemize}
-\text{Assuming the process to be reversible} \\
-    \textbf{Using the equation:}
-    \begin{align*}
-        ds &= C_p \, d\ln(T) - R \, d\ln(P)
-    \end{align*}
-
-    \textbf{Substituting values:}
-    \begin{align*}
-        dT &= -0.05T \Rightarrow d\ln(T) = \frac{dT}{T} = -0.05 \\
-        ds &= C_p \, (-0.05) - R \, d\ln(P) \\
-        -0.05 &= 1005 \, (-0.05) - 287 \, d\ln(P) \\
-        -0.05 &= -50.25 - 287 \, d\ln(P) \\
-        287 \, d\ln(P) &= -50.25 + 0.05 \\
-        287 \, d\ln(P) &= -50.20 \\
-        d\ln(P) &= \frac{-50.20}{287} \approx -0.174
-    \end{align*}
-
-    \textbf{Integrating:}
-    \[
-    P_f = P_i e^{-0.174}
-    \]
-    where \( P_f \) is the final pressure and \( P_i \) is the initial pressure.   ds &= C_p d\ln(T) - R d\ln(P)
-\end{question}
+% \begin{question}[\label=17.1]{Calculate the change in air pressure if the specific entropy decrease by $0.05 Jg^{-1}K^{-1}$ and the air temperature decreases by $5\%$.}
+% \Rightarrow  \text{To calculate the change in air pressure given the}
+%
+% \text{specific entropy decrease and temperature change}
+%
+%     \textbf{Given:}
+%     \begin{itemize}[noitemsep]
+%         \item Change in specific entropy: \( ds = -0.05 \, \mathrm{Jg^{-1}K^{-1}} \)
+%         \item Temperature decrease: \( dT = -0.05T \) (a decrease of \( 5\% \))
+%     \end{itemize}
+% \text{Assuming the process to be reversible} \\
+%     \textbf{Using the equation:}
+%     \begin{align*}
+%         ds &= C_p \, d\ln(T) - R \, d\ln(P)
+%     \end{align*}
+%
+%     \textbf{Substituting values:}
+%     \begin{align*}
+%         dT &= -0.05T \Rightarrow d\ln(T) = \frac{dT}{T} = -0.05 \\
+%         ds &= C_p \, (-0.05) - R \, d\ln(P) \\
+%         -0.05 &= 1005 \, (-0.05) - 287 \, d\ln(P) \\
+%         -0.05 &= -50.25 - 287 \, d\ln(P) \\
+%         287 \, d\ln(P) &= -50.25 + 0.05 \\
+%         287 \, d\ln(P) &= -50.20 \\
+%         d\ln(P) &= \frac{-50.20}{287} \approx -0.174
+%     \end{align*}
+%
+%     \textbf{Integrating:}
+%     \[
+%     P_f = P_i e^{-0.174}
+%     \]
+%     where \( P_f \) is the final pressure and \( P_i \) is the initial pressure.   ds &= C_p d\ln(T) - R d\ln(P)
+% \end{question}
 
 Recall that,
 \begin{align}
@@ -2816,44 +2830,45 @@ All isentropic process are adiabatic but all adiabatic process are not isentropi
 
 \newpage
 
-\begin{question}[\label=17.1]{During a process a parcel of dry air decent from $900hPa$ to $950hPa$ and if specific entropy decreases by $30Jkg^{-1}K^{-1}$. If it's initial temperature is $273K$; What is it's final temperature and potential temperature?}
-\Rightarrow \text{The relationship between specific entropy S,} \\ \text{temperature T, and pressure P for an ideal gas assuming} \\ \text{the process to be reversible can be expressed as:}
-
-    \begin{align*}
-        ds &= C_p \, d\ln(T) - R \, d\ln(P)
-    \end{align*}
-
-    \textbf{Given:}
-    \begin{align*}
-        P_i&=900hPa, \\
-        P_f&=950hPa, \\
-        T_i&=273K,
-    \end{align*}
-    \textbf{Substituting values:}
-    \begin{align*}
-        -30&=1005 \ln\Big(\frac{T_f}{273}\Big) - 287 \ln\Big(\frac{950}{900}\Big) \\
-        -14.4827&=1005 \ln\Big(\frac{T_f}{273}\Big) \\
-        T_f&=273 \times e^{-0.0144} \\
-        T_f&=269.094K
-    \end{align*}
-    \textbf{Potential Temperature:}
-    \begin{align*}
-        \theta &= T_f \left(\frac{P_0}{P_f}\right)^{R/C_p}
-    \end{align*}
-    \text{Substituting the values:}
-    \begin{align*}
-        \theta = 269.7 \times \Big(\frac{950}{900}\Big)^{0.2855} \approx 273.6K
-    \end{align*}
-
-\therefore \text{The final temperature is 269$K$ and potential}\\ \text{temperature is 273.6$K$}
-\end{question}
+% FIX: ERROR: `Notes.tex|2823 error| Argument of \XC@definec@lor has an extra }.`
+% \begin{question}[\label=17.1]{During a process a parcel of dry air decent from $900hPa$ to $950hPa$ and if specific entropy decreases by $30Jkg^{-1}K^{-1}$. If it's initial temperature is $273K$; What is it's final temperature and potential temperature?}
+% \Rightarrow \text{The relationship between specific entropy S,} \\ \text{temperature T, and pressure P for an ideal gas assuming} \\ \text{the process to be reversible can be expressed as:}
+%
+%     \begin{align*}
+%         ds &= C_p \, d\ln(T) - R \, d\ln(P)
+%     \end{align*}
+%
+%     \textbf{Given:}
+%     \begin{align*}
+%         P_i&=900hPa, \\
+%         P_f&=950hPa, \\
+%         T_i&=273K,
+%     \end{align*}
+%     \textbf{Substituting values:}
+%     \begin{align*}
+%         -30&=1005 \ln\Big(\frac{T_f}{273}\Big) - 287 \ln\Big(\frac{950}{900}\Big) \\
+%         -14.4827&=1005 \ln\Big(\frac{T_f}{273}\Big) \\
+%         T_f&=273 \times e^{-0.0144} \\
+%         T_f&=269.094K
+%     \end{align*}
+%     \textbf{Potential Temperature:}
+%     \begin{align*}
+%         \theta &= T_f \left(\frac{P_0}{P_f}\right)^{R/C_p}
+%     \end{align*}
+%     \text{Substituting the values:}
+%     \begin{align*}
+%         \theta = 269.7 \times \Big(\frac{950}{900}\Big)^{0.2855} \approx 273.6K
+%     \end{align*}
+%
+% \therefore \text{The final temperature is 269$K$ and potential}\\ \text{temperature is 273.6$K$}
+% \end{question}
 
 % NOTE: COMPLETE L-17
 % --------------------------------------------------------------------------------------
 \clearpage
 
 \section{Lecture 18 10/10/2024}
-\subsection{. Special Forms of 2$^{rd}$ law of Thermodynamics}
+\subsection{Special Forms of Second Law of Thermodynamics}
 
 \begin{enumerate}
     \item For finite isothermal transformation
@@ -3029,43 +3044,44 @@ Latent heat of fusion of water at STP $=3.3 \times 10^6 J/Kg$
 Latent heat of sublimation of water at STP $=2.83 \times 10^6 J/Kg$
 
 \newpage
-\begin{question}[\lable=18.1]{On a winter day the ouside air have temperature of -15$^\circ$C and relative humidity of $70\%$.\newline
-    a. If the outside air is brought inside and heated to room temperature of 20$^\circ$C without adding moisture. What is new relative humidity?\newline
-    b. If the room volume is 60m$^3$ then what mass of water must be added to the air by the humidifier to raise the relative humidity to 40\%?\newline
-    c. How heating is needed to accomplish a. and b.?
-    }
-    \Rightarrow
-        \Rightarrow a. \text{The saturation vapor pressure at -15$^\circ$C can be} \\ \text{found using} \text{lookup tables.}\\ \text{For $T=$ −15$^\circ$C, the saturation vapor pressure,}
 
-            $$e_s(-15^\circ C) \approx 1.93 hPa$$
-        \text{Given the relative humidity is 70\%, the actual vapor} \\ \text{pressure at −15$^\circ$C is:}
+% FIX:
+% \begin{question}[\lable=18.1]{On a winter day the ouside air have temperature of -15$^\circ$C and relative humidity of $70\%$.\newline
+%     a. If the outside air is brought inside and heated to room temperature of 20$^\circ$C without adding moisture. What is new relative humidity?\newline
+%     b. If the room volume is 60m$^3$ then what mass of water must be added to the air by the humidifier to raise the relative humidity to 40\%?\newline
+%     c. How heating is needed to accomplish a. and b.?
+%     }
+%     \Rightarrow
+%         \Rightarrow a. \text{The saturation vapor pressure at -15$^\circ$C can be} \\ \text{found using} \text{lookup tables.}\\ \text{For $T=$ −15$^\circ$C, the saturation vapor pressure,}
+%
+%             $$e_s(-15^\circ C) \approx 1.93 hPa$$
+%         \text{Given the relative humidity is 70\%, the actual vapor} \\ \text{pressure at −15$^\circ$C is:}
+%
+%             $$e =\frac{70}{100}\times 1.93 hPa \approx 1.35hPa$$
+%         \text{For $T=$ 20$^\circ$C, the saturation vapor pressure,}
+%             $$e_s(20^\circ C) \approx 23.37 hPa$$
+%         \text{Using the actual vapor pressure calculated earlier} \\ \text{$e=1.35$hPa and the new saturation vapor pressure} \\ \text{$e_s(20^\circ C)$}:
+%         $$RH at 20^\circ C = \frac{e}{e_s} \times 100\% = \Big(\frac{1.35 hPa}{23.37hPa}\Big) \times 100\% \approx 5.8\%$$
+%
+%         \Rightarrow b. \text{To find mass of water needed to raise RH to 40\%}
+%
+%         $$e= \frac{40}{100} \times 23.37hPa = 9.35hPa$$
+%         \text{The amount of water vapor needed to raise the humidity} \\ \text{is proportional to the difference in vapor pressure:}
+%             $$\Delta e=9.35hPa - 1.35hPa = 8.00hPa$$
+%         \text{The mass of water vapor can be calculated using the}\\ \text{ideal gas law:}
+%             $$m= \frac{\Delta eV}{R_v T}$$
+%             $$m= \frac{800Pa \times 60 m^3}{461.5Jkg^{-1} K^{-1} \times 293K} \approx 0.35kg$$
+%
+%     \Rightarrow c. \text{Heating Needed to Accomplish (a) and (b)}
+%
+%     \begin{align*}
+%         m_{\text{air}} &= \frac{95000 \, \mathrm{Pa} \times 60 \, \mathrm{m^3}}{287 \, \mathrm{Jkg^{-1}K^{-1}} \times 258 \, \mathrm{K}} \approx 77.7 \, \mathrm{kg} \\
+%         Q_{\text{air}} &= 77.7 \times 1005 \times 35 \approx 2.73 \times 10^6 J \\
+%         Q_{\text{water}} &= 0.35 \times 2.5 \times 10^6 = 0.875 \times 10^6 J\\
+%         Q_{\text{total}} &= 2.73 \times 10^6 + 0.875 \times 10^6 \approx 3.61 \times 10^6 J
+%     \end{align*}
+% \end{question}
 
-            $$e =\frac{70}{100}\times 1.93 hPa \approx 1.35hPa$$
-        \text{For $T=$ 20$^\circ$C, the saturation vapor pressure,}
-            $$e_s(20^\circ C) \approx 23.37 hPa$$
-        \text{Using the actual vapor pressure calculated earlier} \\ \text{$e=1.35$hPa and the new saturation vapor pressure} \\ \text{$e_s(20^\circ C)$}:
-        $$RH at 20^\circ C = \frac{e}{e_s} \times 100\% = \Big(\frac{1.35 hPa}{23.37hPa}\Big) \times 100\% \approx 5.8\%$$
-
-        \Rightarrow b. \text{To find mass of water needed to raise RH to 40\%}
-
-        $$e= \frac{40}{100} \times 23.37hPa = 9.35hPa$$
-        \text{The amount of water vapor needed to raise the humidity} \\ \text{is proportional to the difference in vapor pressure:}
-            $$\Delta e=9.35hPa - 1.35hPa = 8.00hPa$$
-        \text{The mass of water vapor can be calculated using the}\\ \text{ideal gas law:}
-            $$m= \frac{\Delta eV}{R_v T}$$
-            $$m= \frac{800Pa \times 60 m^3}{461.5Jkg^{-1} K^{-1} \times 293K} \approx 0.35kg$$
-
-    \Rightarrow c. \text{Heating Needed to Accomplish (a) and (b)}
-
-    \begin{align*}
-        m_{\text{air}} &= \frac{95000 \, \mathrm{Pa} \times 60 \, \mathrm{m^3}}{287 \, \mathrm{Jkg^{-1}K^{-1}} \times 258 \, \mathrm{K}} \approx 77.7 \, \mathrm{kg} \\
-        Q_{\text{air}} &= 77.7 \times 1005 \times 35 \approx 2.73 \times 10^6 J \\
-        Q_{\text{water}} &= 0.35 \times 2.5 \times 10^6 = 0.875 \times 10^6 J\\
-        Q_{\text{total}} &= 2.73 \times 10^6 + 0.875 \times 10^6 \approx 3.61 \times 10^6 J
-    \end{align*}
-\end{question}
-
-% WARN: INCOMPLETE L-18 que.
 % NOTE: COMPLETE L-18
 % --------------------------------------------------------------------------------------
 \clearpage
@@ -3076,7 +3092,7 @@ Let $L$ is latent heat associated with phase change of a liquid($i$) to vapor($f
 \begin{align}
     L &= \int dq \\
     L &= \int^f_i du + \int^f_i Pd\alpha \\
-    L &= u_f - u_i + e_s(\alpha_f - \alpha_i) \label{eq:latent_heat_1}
+    L &= u_f - u_i + e_s(\alpha_f - \alpha_i) \label{eq:latent-heat-1}
 \end{align}
 where $e_s \rightarrow$ saturation vapor pressure
 
@@ -3084,10 +3100,10 @@ When phase cahnge happen, temperature remains constant, therefore
 \begin{align} 
     L &= T\int \frac{\delta q}{T} \\
     L &= T \int^f_i ds \\
-    L &= T (S_f -S_i) \label{eq:latent_heat_2}
+    L &= T (S_f -S_i) \label{eq:latent-heat-2}
 \end{align}
 
-From Eq.\myeqref{eq:latent_heat_1} and Eq.\myeqref{eq:latent_heat_2}
+From Eq.\myeqref{eq:latent-heat-1} and Eq.\myeqref{eq:latent-heat-2}
 \begin{align}
     T(S_f-S_i) &= U_f-U_i + e_s(\alpha_f - \alpha_i) \\
     TS_f - U_f - e_s\alpha_f &= TS_i - U_i - e_s\alpha_i \\
@@ -3121,7 +3137,7 @@ For atmosphere $\alpha_v \ll \alpha_l$. therefore,
 \end{align}
 Using ideal gas equation $e_s\alpha_v = R_vT$,
 \begin{align}
-    \frac{de_s}{dT} &= \frac{Le_s}{R_vT^2} \label{eq:clasuius-clapeyron_0}
+    \frac{de_s}{dT} &= \frac{Le_s}{R_vT^2} \label{eq:clasuius-clapeyron-0}
 \end{align}
 
 Integrate form of Clausius-Clapeyron equation:
@@ -3149,15 +3165,16 @@ For Ice,
 \end{align}
 where $T_c$ is temperature in celcius scale and $L_s$ is latent heat of sublimation.
 
-$e_s(T)\approx A_ie^{-B_i/T}$, where $A=3.41\times10^{12}$Pa, $B=6130$K. \\
+$e_s(T)\approx A_ie^{-B_i/T}$, where $A=3.41\times10^{12}$Pa, $B=6130$K.
 
-\begin{question}[\labe:19.1]{For T of $265$K; find the value of $e_i$ and $e_s$.}
-    \Rightarrow e_i(T) &= 611.2 \times 10^{12} \times e^{-\frac{6130}{265}} \\
-                       &= 3060.65 Pa \\
-
-    \Rightarrow e_s(T) &= 2.53 \times 10^{11} \times e^{-\frac{5420}{265}} \\
-                       &= 331.56 Pa
-\end{question}
+% FIX:
+% \begin{question}[\labe:19.1]{For T of $265$K; find the value of $e_i$ and $e_s$.}
+%     \Rightarrow e_i(T) &= 611.2 \times 10^{12} \times e^{-\frac{6130}{265}} \\
+%                        &= 3060.65 Pa \\
+%
+%     \Rightarrow e_s(T) &= 2.53 \times 10^{11} \times e^{-\frac{5420}{265}} \\
+%                        &= 331.56 Pa
+% \end{question}
 
 $e_i < e_s \rightarrow$ at subfreezing temperatures, the environment that is saturated w.r.t liquid water is supersaturated w.r.t ice.
 
@@ -3187,9 +3204,11 @@ where $e=\frac{R_d}{R_v}=$ 0.622 \\
     \omega_s(T,P=622\text{hPa}) &\approx e_s(T) \; \text{g/kg} 
 \end{align}
 
-\begin{question}[\label:20.1]{Using skew-T diagram determine the saturation vapor pressure at -10$^\circ$C.}
-    \Rightarrow $e_s=$2.75hPa
-\end{question}
+% FIX:
+% \begin{question}[\label:20.1]{Using skew-T diagram determine the saturation vapor pressure at -10$^\circ$C.}
+%     \Rightarrow $e_s=$2.75hPa
+% \end{question}
+
 \begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
@@ -3216,15 +3235,16 @@ where $e=\frac{R_d}{R_v}=$ 0.622 \\
     \end{tikzpicture}
 \end{figure}
 
-\begin{question}[\label:20.2]{Using Skew-T diagram determine the relative humidity of air parcel having temperature 20$^\circ$C and dew point  Temperature of 10$^\circ$C at presssure 850hPa}
-    \Rightarrow \omega_s(20$^\circ$C,850\;hPa) = 18\;hPa \\
-    \omega_s= \frac{\epsilon e_s(T)}{P} \\
-    \frac{\omega}{\omega_s} \approx \frac{e}{e_s(T)}\\ \\
-    RH = \frac{e}{e_s(T)}\times 100 \% \\
-    RH = \frac{\omega}{\omega_s}\times 100 \% \\
-    RH = \frac{9}{18}\times 100 \% \\
-    RH = 50\%
-\end{question}
+% FIX:
+% \begin{question}[\label:20.2]{Using Skew-T diagram determine the relative humidity of air parcel having temperature 20$^\circ$C and dew point  Temperature of 10$^\circ$C at presssure 850hPa}
+%     \Rightarrow \omega_s(20$^\circ$C,850\;hPa) = 18\;hPa \\
+%     \omega_s= \frac{\epsilon e_s(T)}{P} \\
+%     \frac{\omega}{\omega_s} \approx \frac{e}{e_s(T)}\\ \\
+%     RH = \frac{e}{e_s(T)}\times 100 \% \\
+%     RH = \frac{\omega}{\omega_s}\times 100 \% \\
+%     RH = \frac{9}{18}\times 100 \% \\
+%     RH = 50\%
+% \end{question}
 
 % NOTE: COMPLETE L-20
 % --------------------------------------------------------------------------------------
@@ -3246,7 +3266,7 @@ $\frac{d\omega_s}{dp}$ decides how saturation vapor pressure depends on pressure
                          &= \frac{\epsilon e_s}{P}\Big[\frac{1}{e_s}\frac{de_s(T)}{dP}-\frac{1}{P}\Big] \\
                          &= \frac{\epsilon e_s}{P}\Big[\frac{1}{e_s}\frac{de_s(T)}{dT}\frac{dT}{dP}-\frac{1}{P}\Big]
 \end{align}
-Using Clausius-Clapeyron equation Eq.\myeqref{eq:clasuius-clapeyron_0}
+Using Clausius-Clapeyron equation Eq.\myeqref{eq:clasuius-clapeyron-0}
 \begin{align}
     \frac{d\omega_s}{dP} &= \frac{\epsilon e_s}{P}\Big[\frac{1}{\cancel{e_s}}\frac{L\cancel{e_s}}{R_vT^2}\frac{dT}{dP}-\frac{1}{P}\Big] \\
     \frac{d\omega_s}{dP} &= \frac{\epsilon e_s}{P}\Big[\frac{L}{R_vT^2}\frac{dT}{dP}-\frac{1}{P}\Big] \label{eq:dwdp}
@@ -3290,13 +3310,15 @@ Lifting Conduction Level is a level at which cloud start forming. It could be ei
     \node[above] at (-2,2.3) {Clouds};
 \end{tikzpicture}
 
-\begin{question}[\label=21.1]{Find out LCL for an air parcel which has a temperature of 30$^\circ$C and dew point temperature of 0$^\circ$C at 1000hPa.}
-    \Rightarrow 650hPa
-\end{question}
+% FIX:
+% \begin{question}[\label=21.1]{Find out LCL for an air parcel which has a temperature of 30$^\circ$C and dew point temperature of 0$^\circ$C at 1000hPa.}
+%     \Rightarrow 650hPa
+% \end{question}
 
-\begin{question}[\label=21.2]{Find out LCL for an air parcel which has a temperature of 25$^\circ$C and dew point temperature of 18$^\circ$C at 900hPa.}
-    \Rightarrow 920hPa
-\end{question}
+% FIX:
+% \begin{question}[\label=21.2]{Find out LCL for an air parcel which has a temperature of 25$^\circ$C and dew point temperature of 18$^\circ$C at 900hPa.}
+%     \Rightarrow 920hPa
+% \end{question}
 
 \begin{align}
     \text{LCL(Km)} &\approx \frac{T-T_0}{8} \\
@@ -3306,7 +3328,7 @@ where $\Delta T_d$ is dew point depression which is eequal to $(T-T_d)$.
 
 Just above LCL $\rightarrow$ phase change happen $\rightarrow$ release of latent heat which provides extra amount of energy, therefore, parcel will no longer follow dry adibat , but \textbf{moist adiabatic lapse rate}. It depends upon moisture content present in air.
 
-This process is called \textbf{pseudo-adiabatic process} because mass get lost in precipitation. \newline
+This process is called \textbf{pseudo-adiabatic process} because mass get lost in precipitation.
 
 Dry adiabat lapse rate (DALR):
 \begin{align*}
@@ -3339,7 +3361,7 @@ Therefore,
 
 The term $\omega_s$ changes w.r.t pressure and temperature,
 \begin{align}
-    d\omega_s = \frac{\patial \omega_s}{\partial P} dP +  \frac{\patial \omega_s}{\partial T} dT
+    d\omega_s = \frac{\partial \omega_s}{\partial P} dP +  \frac{\partial \omega_s}{\partial T} dT
 \end{align}
 
 Using the expression $\omega_s \approx \frac{\epsilon e_s}{P}$
@@ -3359,24 +3381,29 @@ Invoking hydrostatic approximation
     \frac{c_pdT}{gdz} - \frac{\alpha dP}{-\alpha dP} &= \frac{L\omega_s \frac{dP}{P}}{-\alpha dP} - \frac{\frac{L^2\omega_s}{R_vT^2}dT}{gdz} \\
     \frac{c_pdT}{gdz} - \frac{\cancel{\alpha dP}}{-\cancel{\alpha dP}} &= \frac{L\omega_s \frac{\cancel{dP}}{P}}{-\alpha \cancel{dP}} - \frac{\frac{L^2\omega_s}{R_vT^2}dT}{gdz} \\
     \frac{c_pdT}{gdz} + 1 &= \frac{L\omega_s}{-\alpha P} - \frac{L^2\omega_sdT}{R_v T^2 gdz}\\
-    \Big(\frac{L^2\omega_s}{R_v g T^2} + \frac{c_p}{g}\Big)\frac{dT}{dz} &= \frac{L\omega_s}{\alpha P} +1 \label{eq:lapse_rate}
+    \Big(\frac{L^2\omega_s}{R_v g T^2} + \frac{c_p}{g}\Big)\frac{dT}{dz} &= \frac{L\omega_s}{\alpha P} +1 \label{eq:lapse-rate}
 \end{align}
 
 Recall $\Gamma_d=\frac{g}{c_p}\frac{T'}{T} \approx \frac{g}{c_p}$
 
 where $T'$ is temperature of parcel and $T$ is temperature of atmosphere.
 
-Multipling $\frac{g}{c_p}$ to Eq.\myeqref{eq:lapse_rate}
-\begin{align}
-    \Big(\frac{L^2\omega_s}{R_v g T^2}\frac{g}{c_p} + \frac{c_p}{g}\frac{g}{c_p} \Big)\frac{dT}{dz} &= \frac{L\omega_s}{\alpha P}\frac{g}{c_p} + \frac{g}{c_p}
-\end{align}
-Using ideal gas eq, $P\alpha = R_dT$
-\begin{align}
-    \Big(\frac{L^2\omega_s}{R_v c_p T^2} + 1\Big)\frac{dT}{dz} &= \frac{L\omega_s}{R_d T}\Gamma_d + \Gamma_d \\
-   \Gamma_s = \frac{dT}{dz} &= \frac{\Gamma_d \Big(\frac{L\omega_s}{R_d T} + 1\Big)}{\Big(\frac{L^2\omega_s}{R_v c_p T^2} + 1\Big)}
-\end{align}
+Multipling $\frac{g}{c_p}$ to Eq.\myeqref{eq:lapse-rate}
+%FIX:
+% \begin{align*}
+%     \Big(\frac{L^2 \omega_s}{R_v g T^2} \frac{g}{c_p} + \frac{c_p}{g} \frac{g}{c_p} \Big) \frac{dT}{dz} &= \frac{L \omega_s}{\alpha P} \frac{g}{c_p} + \frac{g}{c_p}
+% \end{align*}
+
+Using the ideal gas equation, \( P\alpha = R_d T \),
+
+%FIX:
+% \begin{align}
+%     \Big(\frac{L^2 \omega_s}{R_v c_p T^2} + 1\Big) \frac{dT}{dz} &= \frac{L \omega_s}{R_d T} \Gamma_d + \Gamma_d \\
+%     \Gamma_s = \frac{dT}{dz} &= \frac{\Gamma_d \Big(\frac{L \omega_s}{R_d T} + 1\Big)}{\Big(\frac{L^2 \omega_s}{R_v c_p T^2} + 1\Big)}
+% \end{align}
 
 If $\omega_s=0$, which mean air is not moist$\rightarrow$$\Gamma_s=\Gamma_d=9.8^\circ C/km$
+
 \begin{align}
     \Gamma_s = \frac{d\ln T}{d\ln P} \approx \frac{\Big(\frac{L\omega_s}{R_dT} + 1\Big)}{\Big(\frac{L^2\omega_s}{R_v c_p T^2} + 1\Big)}\frac{R_d}{c_p}
 \end{align}
@@ -3384,15 +3411,18 @@ $\Gamma_s \approx 6.5^\circ$C/km which can vary between 4 to 7 depending on amou
 
 \textbf{Note:} Potential temperature is no more conserved quantity above LCL. 
 
-\subsection{. Equivalent potential temperature ($\theta_e$)}
+
+\subsection{Equivalent Potential Temperature}
+% \subsection{Equivalent potential temperature ($\theta_e$)}
 $\theta_e$ is conserved during moist adiabatic process.
 \begin{align}
     \theta_e = \theta \exp\Big(\frac{L\omega}{c_p T_{\text{LCL}}}\Big)
 \end{align}
 
-\begin{question}[\label:22.1]{Using skew-T estimate $\theta_s$ of air parcel which has 30$^\circ$C temperature and 10$^\circ$C dew point temperature at 900hPa; which then raises adiabatically.}
-    \Rightarrow \text{770hPa and 650hPa}
-\end{question}
+% FIX:
+% \begin{question}[\label:22.1]{Using skew-T estimate $\theta_s$ of air parcel which has 30$^\circ$C temperature and 10$^\circ$C dew point temperature at 900hPa; which then raises adiabatically.}
+%     \Rightarrow \text{770hPa and 650hPa}
+% \end{question}
 % NOTE: COMPLETE L-22
 % --------------------------------------------------------------------------------------
 \clearpage
@@ -3646,14 +3676,15 @@ Assumpution considered are:
             \node[above] at (1.6,2.5) {B};
         \end{tikzpicture}
 \end{enumerate}
+
 % WARN: INCOMPLETE
-
-\begin{question}[\label:24.1]{Consider a situation in which moist air from Arabian sea is advented to western ghats undergoing irreversible pseudo-adiabatic process and the pressure level at which parcel asent is 850hPa and temperature of parcel is 20.6$^\circ$C; dew point temperature 15.7$^\circ$C. The minimum pressure at summit is 610hPa. \newline
-    a. Find out the initial mixing ratio and relative humidity (RH) od air parcel before the asent. \newline
-    b. Find out the final temperature and dew point temperature experienced by the parcel at the leeward side of the mountain at the same level.}
-\Rightarrow
-
-\end{question}
+% FIX:
+% \begin{question}[\label:24.1]{Consider a situation in which moist air from Arabian sea is advented to western ghats undergoing irreversible pseudo-adiabatic process and the pressure level at which parcel asent is 850hPa and temperature of parcel is 20.6$^\circ$C; dew point temperature 15.7$^\circ$C. The minimum pressure at summit is 610hPa. \newline
+%     a. Find out the initial mixing ratio and relative humidity (RH) od air parcel before the asent. \newline
+%     b. Find out the final temperature and dew point temperature experienced by the parcel at the leeward side of the mountain at the same level.}
+% \Rightarrow
+%
+% \end{question}
 
 \subsection{. Atmospheric stability}
 Hydrostatic inbalance in small-scale scenarios such as tornados.
@@ -3684,6 +3715,7 @@ Following assumptions are made in order to asscess the stability condition:
     \item The parcel does not mix with surrounding.
     \item The parcel movement does not distrub the surrounding.
     \item The process is adiabatic.
+ %FIX:
     \item At any given level, pressure inside the parcel equals to that of envirnment. \label{assumption5}
 \end{enumerate}
 
@@ -3794,18 +3826,21 @@ Following assumptions are made in order to asscess the stability condition:
 \end{figure}
 
 \subsection{. Equation of motion for the parcel}
-Because the environment is in hydrostatic equlibrium given by Eq.\myeqref{eq:hyfrostatic_eq}
+Because the environment is in hydrostatic equlibrium given by Eq.\myeqref{eq:hyfrostatic-eq}
  This does not hold wave equation for a parcel,  i.e.,
- \begin{align}
-     \rho' \frac{d^2z}{dt^2} &= -\frac{dp'}{dz} - \rho'g \\
-     \frac{d^2z}{dt^2} &= -\frac{1}{\rho'}\frac{dp'}{dz} - g \\
-     \frac{d^2z}{dt^2} &= -\alpha'\frac{dp'}{dz} - g
- \end{align}
+ %FIX:
+ % \begin{align}
+ %     \rho' \frac{d^2z}{dt^2} &= -\frac{dp'}{dz} - \rho'g \\
+ %     \frac{d^2z}{dt^2} &= -\frac{1}{\rho'}\frac{dp'}{dz} - g \\
+ %     \frac{d^2z}{dt^2} &= -\alpha'\frac{dp'}{dz} - g
+ % \end{align}
 
  Using the assumption (\ref{assumption5}):
-\begin{align}
-    \frac{dp'}{dz} &= \frac{dp}{dz}
-\end{align}
+ %FIX:
+% \begin{align}
+%     \frac{dp'}{dz} &= \frac{dp}{dz}
+% \end{align}
+
 \begin{align}
     \frac{d^2z}{dt^2} &= -\alpha'\Big(\frac{-g}{\alpha}\Big) - g \\
     \frac{d^2z}{dt^2} &= \Big(\frac{\alpha}{\alpha}\Big)g - g \\
@@ -4061,7 +4096,7 @@ where,\vspace{-0.2cm}
             ytick = \empty,
             xtick=-7.5, % Tick positions for T_A and T_B
             xticklabels={}, % Labels for the ticks
-            ytick=5
+            ytick=5,
             yticklabels={}, % Labels for the ticks
             ymajorgrids=true,
             xmajorgrids=true,
@@ -4230,7 +4265,7 @@ Integrating above equation to get total work done by the parcel and using Eq.\my
     W &= \int^f_i mg \Big(\frac{T_v'-T_v}{T_v}\Big)dz \\
     w &= \int^f_i g \Big(\frac{T_v'-T_v}{T_v}\Big)dz
 \end{align}
-Using hydrosattic equation/approximation Eq.\myeqref{eq:hydrostatic_eq};
+Using hydrostatic equation/approximation Eq.\myeqref{eq:hydrostatic-eq};
 \begin{align}
     w &= \int^f_i \frac{-1}{\rho} \Big(\frac{T_v'-T_v}{T_v}\Big)dp
 \end{align}
@@ -4261,8 +4296,9 @@ Therefore,
 \end{itemize}
 
 \newpage
-\begin{question}[\label{27.1}]{Given an air parcel at $850$hPa with temperature T is $13^\circ \text{C}$ and dew point temperature T_d is $8^\circ$C}
-\end{question}
+%FIX:
+% \begin{question}[\label{27.1}]{Given an air parcel at $850$hPa with temperature T is $13^\circ \text{C}$ and dew point temperature T_d is $8^\circ$C}
+% \end{question}
 
 \begin{table}[h!]
 \centering
@@ -4440,7 +4476,7 @@ Nulceation are of 2 types:
 Small thermal purturbation/attenuation can disintegrate i-mer.
 Embreyo $\rightarrow$ collection of water molecule.
 
-Germ $\rightarrow$ activated embreyo (Started to show water droplet properties). \\
+Germ $\rightarrow$ activated embreyo (Started to show water droplet properties).
 
 \begin{tikzpicture}
     % Cloud shape
@@ -4508,7 +4544,6 @@ Where, $R^*$ is critical radius.
 
 \begin{enumerate}[noitemsep]
     \item Under subsaturated condition ($e<e_s$) $\rightarrow$ $\Delta E > 0$ (Droplets will never form)
-
         \begin{tikzpicture}
             \begin{axis}[
                 xlabel={$R$ (Radius)},
@@ -4548,7 +4583,6 @@ Where, $R^*$ is critical radius.
             \end{axis}
         \end{tikzpicture}
     \item Under supersaturated condition ($e>e_s$) $\rightarrow$ $\Delta E > 0$ uptill $R^*$ then $\Delta E < 0$
-
         \begin{tikzpicture}
             \begin{axis}[
                 xlabel={$R$ (Radius)},
@@ -4591,9 +4625,9 @@ To find critical radius of embreyo ($R^*$):
 \begin{align}
     \frac{d(\Delta E)}{dR} &= \frac{d\Big[(4\pi R^2)\sigma - \frac{4}{3}\pi R^3nKT \ln{\Big(\frac{e}{e_s}\Big)\Big]}}{dt} = 0\\
     \frac{d(\Delta E)}{dR} &= 8\pi R \sigma - 4 \pi R^2 nKT\ln \big(\frac{e}{e_s}\Big) =0 \\
-    R^* &= \frac{2\sigma}{nKT\ln\big(\frac{e}{e_s}\big)} \label{eq:kelvins_eq}
+    R^* &= \frac{2\sigma}{nKT\ln\big(\frac{e}{e_s}\big)} \label{eq:kelvins-eq}
 \end{align}
-Eq.\myeqref{eq:kelvins_eq} is called \textbf{Kelvin's equation}
+Eq.\myeqref{eq:kelvins-eq} is called \textbf{Kelvin's equation}
 
 \begin{tikzpicture}
     \begin{axis}[
@@ -4602,7 +4636,8 @@ Eq.\myeqref{eq:kelvins_eq} is called \textbf{Kelvin's equation}
         domain=0:1,
         samples=100,
         legend pos=north east,
-        axis lines=bottom,
+        % axis lines=bottom,
+        axis lines=box,
         enlargelimits=true,
         thick,
         grid=both,
@@ -4631,24 +4666,25 @@ Eq.\myeqref{eq:kelvins_eq} is called \textbf{Kelvin's equation}
     \end{axis}
 \end{tikzpicture}
 
-\begin{question}[\label:29.1]{Show that height of critical barrior ($\Delta E^*$) is given by $\frac{16\pi\sigma^3}{3\Big(nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
-    \Rightarrow \text{ At } R=R^* \\
-    \Delta E = 4\pi (R^*)^2 \sigma - \frac{4}{3} \pi (R^*)^3 nKT\ln{\big(\frac{e}{e_s}\big)} \\
-    \Delta E = 4\pi\big(\frac{2\sigma}{nKT\ln{\frac{e}{e_s}}}\big)^2 \sigma - \frac{4}{3}\pi\big(\frac{2\sigma}{nKT\ln{\frac{e}{e_s}}}\big)^3 nKT\ln{\big(\frac{e}{e_s}\big)} \\
-    \Delta E = 4\pi\frac{4\sigma^3}{\big(nKT\ln{\frac{e}{e_s}}\big)^2} - \frac{4}{3}\pi\frac{8\sigma^3}{\big(nKT\ln{\frac{e}{e_s}}\big)^2} \\
-    \Delta E = 4\pi\frac{12\sigma^3}{3\big(nKT\ln{\frac{e}{e_s}}\big)^2} - 4\pi\frac{8\sigma^3}{3\big(nKT\ln{\frac{e}{e_s}}\big)^2} \\
-    \Delta E = 4\pi\frac{4\sigma^3}{3\big(nKT\ln{\frac{e}{e_s}}\big)^2} \\
-    \Delta E = \frac{16\pi\sigma^3}{3\big(nKT\ln{\frac{e}{e_s}}\big)^2} \\
-\end{question}
-
-\begin{question}[\label:29.2]{Determine the fractional changes in ($\Delta E^*$) and ($R^*$) if surface tension ($\sigma$) is reduced by $10\%$ by adding soap in pure water.}
-    \Rightarrow \sigma \text{ decreases by } 10\% \text{ by adding soap to pure water} \\
-    \frac{d(\Delta E^*)}{d\sigma} = \frac{16\pi \sigma^2}{nKT\ln{\big(\frac{e}{e_s}\big)}} = 3 \times 0.1 = 30\% \\
-    \frac{d(\Delta E^*)}{\Delta E^*} = \frac{3 d\sigma}{\sigma} \\ \newline
-    \frac{d(\Delta R^*)}{d\sigma} = \frac{2}{nKT\ln{\big(\frac{e}{e_s}\big)}} \\
-    \frac{d(\Delta R^*)}{R^*} = \frac{d\sigma}{\sigma} = 1 \times 0.1 = 10\% \\
-    \text{Fractional change in $\Delta E^*$ is 30\% and for $R^*$ is 10\%}
-\end{question}
+% FIX:
+% \begin{question}[\label:29.1]{Show that height of critical barrior ($\Delta E^*$) is given by $\frac{16\pi\sigma^3}{3\Big(nKT\ln\big(\frac{e}{e_s}\big)\Big)^2}$.}
+%     \Rightarrow \text{ At } R=R^* \\
+%     \Delta E = 4\pi (R^*)^2 \sigma - \frac{4}{3} \pi (R^*)^3 nKT\ln{\big(\frac{e}{e_s}\big)} \\
+%     \Delta E = 4\pi\big(\frac{2\sigma}{nKT\ln{\frac{e}{e_s}}}\big)^2 \sigma - \frac{4}{3}\pi\big(\frac{2\sigma}{nKT\ln{\frac{e}{e_s}}}\big)^3 nKT\ln{\big(\frac{e}{e_s}\big)} \\
+%     \Delta E = 4\pi\frac{4\sigma^3}{\big(nKT\ln{\frac{e}{e_s}}\big)^2} - \frac{4}{3}\pi\frac{8\sigma^3}{\big(nKT\ln{\frac{e}{e_s}}\big)^2} \\
+%     \Delta E = 4\pi\frac{12\sigma^3}{3\big(nKT\ln{\frac{e}{e_s}}\big)^2} - 4\pi\frac{8\sigma^3}{3\big(nKT\ln{\frac{e}{e_s}}\big)^2} \\
+%     \Delta E = 4\pi\frac{4\sigma^3}{3\big(nKT\ln{\frac{e}{e_s}}\big)^2} \\
+%     \Delta E = \frac{16\pi\sigma^3}{3\big(nKT\ln{\frac{e}{e_s}}\big)^2} \\
+% \end{question}
+%
+% \begin{question}[\label:29.2]{Determine the fractional changes in ($\Delta E^*$) and ($R^*$) if surface tension ($\sigma$) is reduced by $10\%$ by adding soap in pure water.}
+%     \Rightarrow \sigma \text{ decreases by } 10\% \text{ by adding soap to pure water} \\
+%     \frac{d(\Delta E^*)}{d\sigma} = \frac{16\pi \sigma^2}{nKT\ln{\big(\frac{e}{e_s}\big)}} = 3 \times 0.1 = 30\% \\
+%     \frac{d(\Delta E^*)}{\Delta E^*} = \frac{3 d\sigma}{\sigma} \\ \newline
+%     \frac{d(\Delta R^*)}{d\sigma} = \frac{2}{nKT\ln{\big(\frac{e}{e_s}\big)}} \\
+%     \frac{d(\Delta R^*)}{R^*} = \frac{d\sigma}{\sigma} = 1 \times 0.1 = 10\% \\
+%     \text{Fractional change in $\Delta E^*$ is 30\% and for $R^*$ is 10\%}
+% \end{question}
 % NOTE:COMPLETE L-29
 % --------------------------------------------------------------------------------------
 \clearpage
@@ -4711,7 +4747,7 @@ Fractional reduction in the vapor pressure is equivalent to mole fraction.
 
 \textbf{Mole fraction} of a pure water droplet is defined as number of moles of pure water in the solution by the total number of moles of the solution.
 \begin{align}
-    \mathcal{F} &= \frac{n_{PW}}{n_{PW}+n_S} \label{eq:mole_fraction}
+    \mathcal{F} &= \frac{n_{PW}}{n_{PW}+n_S} \label{eq:mole-fraction}
 \end{align}
 Consider a solution of droplet of radius $r$ that contains a mass $m$ (in kg) dissolved in material of molecular mass $M_S$.
 For example, take solution of common salt in water:
@@ -4722,15 +4758,15 @@ Each molecule of the material dissolves in $i$ ions in water.
 
 $\therefore$ Effective number of moles will be:
 \begin{align}
-    n_{\text{eff}} = n_{S} = i\frac{m}{M_S} \label{eq:n_S}
+    n_{\text{eff}} = n_{S} = i\frac{m}{M_S} \label{eq:n-S}
 \end{align}
 
 If we assume $\rho'$ is the density of solution, number of moles of pure water in the droplet is:
 \begin{align*}
-    n_{\text{PW}} = \frac{\big(\frac{4}{3}\pi r^3 \rho' -M\big)}{M_w} \label{eq:n_PW}
+    n_{\text{PW}} = \frac{\big(\frac{4}{3}\pi r^3 \rho' -M\big)}{M_w} \label{eq:n-PW}
 \end{align*}
 
-Mole fraction ($\mathcal{F}$) of water droplet, substitute Eq.\myeqref{eq:n_S} and Eq.\myeqref{eq:n_PW} in Eq.\myeqref{eq:mole_fraction}:
+Mole fraction ($\mathcal{F}$) of water droplet, substitute Eq.\myeqref{eq:n-S} and Eq.\myeqref{eq:n-PW} in Eq.\myeqref{eq:mole-fraction}:
 \begin{align}
     \mathcal{F} &= \frac{\big(\frac{4}{3}\pi r^3 \rho' - M\big)/M_w}{\big(\frac{4}{3}\pi r^3 \rho' - M\big)/M_w + im/M_S} \\
     \mathcal{F} &= \Big[1 + \frac{imM_w}{M_S\big(\frac{4}{3}\pi r^3 \rho' - M\big)}\Big]^{-1}

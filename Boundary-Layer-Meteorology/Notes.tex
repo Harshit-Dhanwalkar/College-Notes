@@ -44,7 +44,7 @@
 %-------------------------------------------------------------------------------------
 %                                     EQUATIONLINKS                                  %
 %-------------------------------------------------------------------------------------
-\newcommand{\myeqref}[1]{\textcolor{blue}{\textup{(\getrefnumber{#1})}}}
+\newcommand{\myeqref}[1]{Eq.\textcolor{blue}{\textup{(\getrefnumber{#1})}}}
 
 %-------------------------------------------------------------------------------------
 %                                        COLORS                                      %
@@ -179,12 +179,20 @@
 %-------------------------------------------------------------------------------------
 \begin{document}
 \maketitle % Output the title and abstract box
-\clearpage
-\tableofcontents % Output the contents section
-\clearpage
 \thispagestyle{empty} % Removes page numbering from the first page
 \clearpage
 
+\begingroup
+\thispagestyle{empty} % No page number
+\tableofcontents
+\endgroup
+\newpage
+
+\begingroup
+\thispagestyle{empty} % No page number
+\listoffigures
+\endgroup
+\newpage
 %-------------------------------------------------------------------------------------
 %                                       DOCUMENT CONTENTS                           %
 %-------------------------------------------------------------------------------------
@@ -228,6 +236,7 @@ The Boundary Layer can be defined as part of  the troposphere that is directly i
 			\node[anchor=east, rotate=90] at (-0.8,2.5) {\(\theta \approx 1 \, \mathrm{km}\)};
 		\end{tikzpicture}
 	}
+	\renewcommand{\thefigure}{1.1}
 	\caption{Atmosphere can be divided into 2 parts: boundary layer near surface and free atmosphere above it.}
 \end{figure}
 
@@ -292,6 +301,7 @@ Air flow or wind can be decomposed into following 3 types:
 			node[anchor=west] {Turbulence};
 		\end{tikzpicture}
 	}
+	\renewcommand{\thefigure}{1.2}
 	\caption{Plot showing profiles of Mean, Wave and Turbulent winds}
 \end{figure}
 
@@ -337,6 +347,7 @@ Small eddies might last for seconds to minutes, while larger oceanic eddies can 
 			\node at (5.5,1.4) {Turbulent eddies};
 		\end{tikzpicture}
 	}
+	\renewcommand{\thefigure}{1.3}
 	\caption{Eddy formation due to Turbulence caused by an obstacle}
 \end{figure}
 
@@ -367,6 +378,7 @@ Large eddies will break into smaller eddies after which small eddies dissipates 
 			\node[below, rotate=-30] at (5.5,-1.4) {Small eddies $\sim$1 mm};
 		\end{tikzpicture}
 	}
+	\renewcommand{\thefigure}{1.4}
 	\caption{Variation of Turbulent Kinetic energy with change in Size of eddies}
 \end{figure}
 
@@ -416,6 +428,7 @@ Large eddies will break into smaller eddies after which small eddies dissipates 
 			\draw[thick] (-0.25, 2) -- (0.10, 3);
 		\end{tikzpicture}
 	}
+	\renewcommand{\thefigure}{2.1}
 	\caption{Eddy propagation}
 \end{figure}
 
@@ -467,66 +480,70 @@ Large eddies will break into smaller eddies after which small eddies dissipates 
 			\draw[thick] (-0.45, 3) -- (-0.08, 2);
 		\end{tikzpicture}
 	}
+	\renewcommand{\thefigure}{2.2}
 	\caption{Eddy passing by the sensor mounted on tower}
 \end{figure}
 
 \begin{align*}
 	\frac{\partial T}{\partial x} = 0.05 \text{K/m,} \quad \frac{\partial T}{\partial t} = -0.5 \text{K/s} \\
-	\underbrace{\cancel{\frac{D T}{D t}}}_{\substack{\text{Total derivative = 0}                           \\ \text{ (Taylor's hypothesis)}}} =\underbrace{\frac{\partial T}{\partial t}}_{\text{Local derivative}} + \underbrace{u\frac{\partial T}{\partial x}}_{\text{Advective term}}
+	\underbrace{\cancel{\frac{D T}{D t}}}_{\substack{\text{Total derivative = 0}                           \\ \text{ (Taylor's hypothesis)}}} =\underbrace{\frac{\partial T}{\partial t}}_{\text{Local derivative}} + \underbrace{u\frac{\partial T}{\partial x}}_{\text{Advective term}} \tag{2.1} \label{eq:totoalderivative}
 \end{align*}
 
 \subsection{Virtual Potential Temperature}
 Virtual potential temperature:
-\begin{equation}
-	\theta_v = \theta(1+0.61r)
-	\label{eq:virtualpotentialtemp}
-\end{equation}
+\begin{align*}
+	\theta_v = \theta(1+0.61r) \tag{2.2} \label{eq:virtualpotentialtemp}
+\end{align*}
 Virtual temperature:
-\begin{equation}
-	T_v = T(1+0.61r)
-	\label{eq:virtualtemp}
-\end{equation}
+\begin{align*}
+	T_v = T(1+0.61r) \tag{2.3} \label{eq:virtualtemp}
+\end{align*}
 
-\begin{tikzpicture}
-	\begin{axis}[
-			%axis lines=middle,
-			xlabel={\hspace{-1cm} ($g/kg$) \hspace{0.3cm}$\textbf{+}$ \hspace{1cm} Temperature (K)},
-			ylabel={Pressure (kPa)},
-			legend style={at={(0.5,-0.25)}, anchor=north},
-			width=0.45\textwidth, height=7cm,
-			xtick=      {0.2, 1, 1.5, 2,    2.5, 3,   3.5,  4,   4.7,   5.3},
-			xticklabels={0,   5, 250, 260,  270, 280, 290,  300, 310, 320},
-			ytick=      {0,   1,  2,  3,  4,  5,  6},
-			yticklabels={100, 90, 85, 80, 75, 70, 65},
-			xticklabel style={rotate=70},
-			% yticklabel style={rotate=0}
-		]
-		\addplot[mark=o, blue, thick] coordinates {
-				(1,0) (1.1,0.5) (1.1,3) (0.5,3) (0.3,4.2) (0.47,4.9) (0.25,6)
-			};
-		\addlegendentry{Mixing Ratio ($\bar{r}$)}
+\begin{figure}[ht!]
+	\begin{tikzpicture}
+		\centering
+		\begin{axis}[
+				%axis lines=middle,
+				xlabel={\hspace{-1cm} ($g/kg$) \hspace{0.3cm}$\textbf{+}$ \hspace{1cm} Temperature (K)},
+				ylabel={Pressure (kPa)},
+				legend style={at={(0.5,-0.25)}, anchor=north},
+				width=0.45\textwidth, height=7cm,
+				xtick=      {0.2, 1, 1.5, 2,    2.5, 3,   3.5,  4,   4.7,   5.3},
+				xticklabels={0,   5, 250, 260,  270, 280, 290,  300, 310, 320},
+				ytick=      {0,   1,  2,  3,  4,  5,  6},
+				yticklabels={100, 90, 85, 80, 75, 70, 65},
+				xticklabel style={rotate=70},
+				% yticklabel style={rotate=0}
+			]
+			\addplot[mark=o, blue, thick] coordinates {
+					(1,0) (1.1,0.5) (1.1,3) (0.5,3) (0.3,4.2) (0.47,4.9) (0.25,6)
+				};
+			\addlegendentry{Mixing Ratio ($\bar{r}$)}
 
-		\addplot[mark=square*, red, thick] coordinates {
-				(2.85,0) (2.75,1.3) (2.7,3)  (1.8,3) (1.4,5) (1.7,5.6) (1.5,6)
-			};
-		\addlegendentry{Dew point Temp. (${\bar{T_d}}$)}
+			\addplot[mark=square*, red, thick] coordinates {
+					(2.85,0) (2.75,1.3) (2.7,3)  (1.8,3) (1.4,5) (1.7,5.6) (1.5,6)
+				};
+			\addlegendentry{Dew point Temp. (${\bar{T_d}}$)}
 
-		\addplot[mark=triangle*, green, thick] coordinates {
-				(3.7,0) (3.2,1.7) (3,2.5) (2.95,3) (3.4,3) (3.2,4.9) (3.15,5.5) (3.0,5.9)
-			};
-		\addlegendentry{Absolute Temp. (${\bar{T}}$)}
+			\addplot[mark=triangle*, green, thick] coordinates {
+					(3.7,0) (3.2,1.7) (3,2.5) (2.95,3) (3.4,3) (3.2,4.9) (3.15,5.5) (3.0,5.9)
+				};
+			\addlegendentry{Absolute Temp. (${\bar{T}}$)}
 
-		\addplot[mark=diamond*, purple, thick] coordinates {
-				(4.3,0) (4.3,1.3) (4.3,3) (4.71,3) (5.05,3.5) (5.25,4.3) (5.3,5.5) (5.35,6)
-			};
-		\addlegendentry{Mean Potential Temp. (${\bar{\theta}}$)}
+			\addplot[mark=diamond*, purple, thick] coordinates {
+					(4.3,0) (4.3,1.3) (4.3,3) (4.71,3) (5.05,3.5) (5.25,4.3) (5.3,5.5) (5.35,6)
+				};
+			\addlegendentry{Mean Potential Temp. (${\bar{\theta}}$)}
 
-		\addplot[mark=diamond*, purple, dashed] coordinates {
-				(4.1,0) (4.1,1.3) (4.1,3) (4.7,3) (5,3.5) (5.2,4.3) (5.25,5.5) (5.3,6)
-			};
-		\addlegendentry{Mean Virtual Potential Temp. (${\bar{\theta_v}}$)}
-	\end{axis}
-\end{tikzpicture}
+			\addplot[mark=diamond*, purple, dashed] coordinates {
+					(4.1,0) (4.1,1.3) (4.1,3) (4.7,3) (5,3.5) (5.2,4.3) (5.25,5.5) (5.3,6)
+				};
+			\addlegendentry{Mean Virtual Potential Temp. (${\bar{\theta_v}}$)}
+		\end{axis}
+	\end{tikzpicture}
+	\renewcommand{\thefigure}{2.3}
+	\caption{Pressure v/s Termperature}
+\end{figure}
 
 \begin{question}{}
 	Given 25$^\circ$C termperature, mixing ratio $\bar{r}$ is 20$g/kg$, measured Pressurere at 900$hPa$, find virtual potential temperature.
@@ -552,63 +569,66 @@ Virtual temperature:
 	\item Nauturnal Boundary layer
 \end{itemize}
 
-\begin{figure*}
+\begin{figure*}[t!]
 	\centering
-	\begin{tikzpicture}
-		% Axes
-		\draw[thick,-] (-0.04,0) -- (12,0) node[below right] {Local Time (hours)};
-		\draw[thick,->] (-0.04,0) -- (-0.05,7) node[above left] {Height (km)};
-		% Time ticks
-		% \foreach \x in {0,1,...,12} {
-		% 		\draw[thick] (\x,0) -- (\x,-0.2) node[below] {\x};
-		% 	}
-		% Height ticks
-		\foreach \y/\label in {0/0, 2.7/1000, 5.7/2000} {
-				\draw[thick] (0,\y) -- (-0.2,\y) node[left] {\label};
-			}
-		% Free Atmosphere
-		\fill[gray!10] (0,3) -- (12,3) -- (12,6.5) -- (0,6.5) -- cycle;
-		\node[gray!90!black] at (6,5) {Free Atmosphere};
-		% Capping Inversion
-		\filldraw[blue!20] (0,3) -- (0,3.5) -- (1,3.8) -- (2,3.9) -- (4,4.1) -- (5.6,4.2) -- (6,4.25) -- (9,4.44) -- (12,4.6) -- (12, 3);
-		\node[blue!90, above] at (6,3.7) {Capping Inversion};
-		% % Entrainment Zone
-		% \fill[cyan!30, opacity=0.5] (3,3) -- (6,3.5) -- (9,3.3) -- (12,3.1) -- (12,2.8) -- (9,2.8) -- (6,3) -- (3,3) -- cycle;
-		% \node[cyan!70!black] at (6,3.3) {Entrainment Zone};
-		% Residual Layer
-		\filldraw[orange!20] (3.9,0.02) -- (3.9,3.5) -- (6, 3.7) -- (9,3.86) -- (10,4) -- (9.8, 3.7) -- (9.5, 2.8) -- (9,0.2);
-		\node[orange!70!black] at (7,2.5) {Residual Layer};
-		% Convective Mixed Layer
-		\fill[red!20] (0,0.02) -- (0,3) -- (1,3.2) -- (2,3.3) -- (4,3.5) -- (5.6,3.7) -- (4.5, 3.3) -- (4.1,3) -- (3.9,2.7) -- (3.9,0.02) -- cycle;
-		\node[red!70!black] at (2,2) {Convective Mixed Layer};
-		% Stable Boundary Layer (Nocturnal)
-		\fill[blue!75!black!75] (3.4,0) -- (4,0.8) -- (5,1.1) -- (8,1.4) -- (12,1.6) -- (12,0) -- cycle;
-		\node[blue!30] at (6.2,0.6) {Stable (Nocturnal) Boundary Layer};
-		% Entrainment Zone
-		\fill[blue!25] (8.5,0.02) -- (8.7, 0.3) -- (9.3,3) -- (9.6,3.9) -- (9.8,4.3) -- (10, 4.4) -- (10.9,4.95) -- (12, 5.2) -- (12, 0.02) -- cycle;
-		\node[blue!90] at (10,5) {Entrainment zone};
-		\node[blue!90] at (2.5,3.7) {Entrainment zone};
-		% Mixed Layer
-		\fill[red!20] (10,3.9) -- (9.8,3.7) -- (9.5,2.8) -- (9,0.02) -- (12, 0.02) -- (12, 5) -- (10.9,4.75) -- (10, 4.1) -- (9.8,3.7) -- cycle;
-		\node[red!70!black] at (10.7,2) {Mixed Layer};
-		% Surface Layer
-		\draw[green!70!black] (0,0.4) -- (3,0.55) -- (3.9,0.6);
-		\draw[green!70!black] (3.7,0.3) -- (9,0.35) -- (12,0.4);
-		\node[green!50!black] at (2,0.2) {Surface Layer};
-		\node[green!80] at (6,0.2) {Surface Layer};
-		\node[green!50!black] at (10.5,0.2) {Surface Layer};
-		% Sunrise and Sunset lines
-		\draw[dotted, thick] (4,0) -- (4,6.5);
-		\draw[dotted, thick] (8,0) -- (8,6.5);
-		% Day/Night Labels
-		\node[below] at (0,-0.3) {Noon};
-		\node[below] at (4,-0.3) {Sunset};
-		\node[below] at (6,-0.3) {Mignight};
-		\node[below] at (8,-0.3) {Sunrise};
-		\node[below] at (12,-0.3) {Noon};
-	\end{tikzpicture}
-	\caption{Height vs Local Time Diagram of Atmospheric Boundary Layers.}
+	\resizebox{0.9\textwidth}{!}{
+		\begin{tikzpicture}
+			% Axes
+			\draw[thick,-] (-0.04,0) -- (12,0) node[below right] {Local Time (hours)};
+			\draw[thick,->] (-0.04,0) -- (-0.05,7) node[above left] {Height (km)};
+			% Time ticks
+			% \foreach \x in {0,1,...,12} {
+			% 		\draw[thick] (\x,0) -- (\x,-0.2) node[below] {\x};
+			% 	}
+			% Height ticks
+			\foreach \y/\label in {0/0, 2.7/1000, 5.7/2000} {
+					\draw[thick] (0,\y) -- (-0.2,\y) node[left] {\label};
+				}
+			% Free Atmosphere
+			\fill[gray!10] (0,3) -- (12,3) -- (12,6.5) -- (0,6.5) -- cycle;
+			\node[gray!90!black] at (6,5) {Free Atmosphere};
+			% Capping Inversion
+			\filldraw[blue!20] (0,3) -- (0,3.5) -- (1,3.8) -- (2,3.9) -- (4,4.1) -- (5.6,4.2) -- (6,4.25) -- (9,4.44) -- (12,4.6) -- (12, 3);
+			\node[blue!90, above] at (6,3.7) {Capping Inversion};
+			% % Entrainment Zone
+			% \fill[cyan!30, opacity=0.5] (3,3) -- (6,3.5) -- (9,3.3) -- (12,3.1) -- (12,2.8) -- (9,2.8) -- (6,3) -- (3,3) -- cycle;
+			% \node[cyan!70!black] at (6,3.3) {Entrainment Zone};
+			% Residual Layer
+			\filldraw[orange!20] (3.9,0.02) -- (3.9,3.5) -- (6, 3.7) -- (9,3.86) -- (10,4) -- (9.8, 3.7) -- (9.5, 2.8) -- (9,0.2);
+			\node[orange!70!black] at (7,2.5) {Residual Layer};
+			% Convective Mixed Layer
+			\fill[red!20] (0,0.02) -- (0,3) -- (1,3.2) -- (2,3.3) -- (4,3.5) -- (5.6,3.7) -- (4.5, 3.3) -- (4.1,3) -- (3.9,2.7) -- (3.9,0.02) -- cycle;
+			\node[red!70!black] at (2,2) {Convective Mixed Layer};
+			% Stable Boundary Layer (Nocturnal)
+			\fill[blue!75!black!75] (3.4,0) -- (4,0.8) -- (5,1.1) -- (8,1.4) -- (12,1.6) -- (12,0) -- cycle;
+			\node[blue!30] at (6.2,0.6) {Stable (Nocturnal) Boundary Layer};
+			% Entrainment Zone
+			\fill[blue!25] (8.5,0.02) -- (8.7, 0.3) -- (9.3,3) -- (9.6,3.9) -- (9.8,4.3) -- (10, 4.4) -- (10.9,4.95) -- (12, 5.2) -- (12, 0.02) -- cycle;
+			\node[blue!90] at (10,5) {Entrainment zone};
+			\node[blue!90] at (2.5,3.7) {Entrainment zone};
+			% Mixed Layer
+			\fill[red!20] (10,3.9) -- (9.8,3.7) -- (9.5,2.8) -- (9,0.02) -- (12, 0.02) -- (12, 5) -- (10.9,4.75) -- (10, 4.1) -- (9.8,3.7) -- cycle;
+			\node[red!70!black] at (10.7,2) {Mixed Layer};
+			% Surface Layer
+			\draw[green!70!black] (0,0.4) -- (3,0.55) -- (3.9,0.6);
+			\draw[green!70!black] (3.7,0.3) -- (9,0.35) -- (12,0.4);
+			\node[green!50!black] at (2,0.2) {Surface Layer};
+			\node[green!80] at (6,0.2) {Surface Layer};
+			\node[green!50!black] at (10.5,0.2) {Surface Layer};
+			% Sunrise and Sunset lines
+			\draw[dotted, thick] (4,0) -- (4,6.5);
+			\draw[dotted, thick] (8,0) -- (8,6.5);
+			% Day/Night Labels
+			\node[below] at (0,-0.3) {Noon};
+			\node[below] at (4,-0.3) {Sunset};
+			\node[below] at (6,-0.3) {Mignight};
+			\node[below] at (8,-0.3) {Sunrise};
+			\node[below] at (12,-0.3) {Noon};
+		\end{tikzpicture}
+	}
 	\label{fig:boundary_layer}
+	\renewcommand{\thefigure}{2.4}
+	\caption{Height vs Local Time Diagram of Atmospheric Boundary Layers.}
 \end{figure*}
 
 \clearpage
@@ -618,7 +638,7 @@ Virtual temperature:
 
 \textbf{Land:} Day-to-day and diurnal variations are prominent, with distinct boundary layer structures:
 
-\vspace{-2.5cm}
+\vspace{-0.25cm}
 \begin{enumerate}[noitemsep]
 	\item \textbf{Convective Mixed Layer:} Thermodynamically unstable with intense vertical mixing.
 	\item \textbf{Residual Layer:} Neutral stratification with turbulence of equal intensity in all directions.
@@ -631,7 +651,6 @@ Virtual temperature:
 	\item \textbf{Entrainment Zone:} Transition region from stable to unstable conditions, facilitating energy and mass exchange.
 \end{enumerate}
 
-\vspace{-5.5cm}
 \subsection{Stability and Plume Behaviour}
 \begin{enumerate}[noitemsep]
 	\item \textbf{Looping plumes:} Occur in highly unstable conditions, usually during the day, when strong surface heating causes warm air to rise and interact turbulently with cooler air. This leads to an oscillatory motion that disperses pollutants in multiple directions, often seen in arid regions.
@@ -641,7 +660,7 @@ Virtual temperature:
 	\item \textbf{Fumigation plumes:} Happen when pollutants are trapped in a stable layer and then forced downward due to rising turbulence. This leads to high concentrations at the surface, posing risks to air quality, especially in industrial areas.
 \end{enumerate}
 
-\freeyellownote{0}{-350}{FIGURE for each to be added later.}
+\freeyellownote{0}{-400}{FIGURE for each to be added later.}
 
 \subsection{Importance of Boundary Layer}
 The boundary layer plays a critical role in regulating interactions between the Earth's surface and the atmosphere. Its study is important in various fields, including:

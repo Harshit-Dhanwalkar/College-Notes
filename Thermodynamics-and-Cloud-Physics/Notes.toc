@@ -37,16 +37,16 @@
 \contentsline {subsection}{\numberline {8.2}Constant temperature atmosphere}{19}{subsection.8.2}%
 \contentsline {subsection}{\numberline {8.3}Constant lapse rate atmosphere}{19}{subsection.8.3}%
 \contentsline {section}{\numberline {9}Lecture 9 04/09/2024}{20}{section.9}%
-\contentsline {subsection}{\numberline {9.1}1$^{st}$ law of thermodynamics and it's application}{20}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.1}First Law of Thermodynamics and Application}{20}{subsection.9.1}%
 \contentsline {section}{\numberline {10}Lecture 10 05/09/2024}{21}{section.10}%
-\contentsline {subsection}{\numberline {10.1}. 1$^{st}$ law of thermodynamics and it's application}{21}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}. Heat capacity}{21}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.1}First Law of Thermodynamics and Application}{21}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Heat capacity}{21}{subsection.10.2}%
 \contentsline {subsection}{\numberline {10.3}. Heat capacity at constant volume}{22}{subsection.10.3}%
 \contentsline {section}{\numberline {11}Lecture 11 06/09/2024}{23}{section.11}%
 \contentsline {subsection}{\numberline {11.1}. Specific heat capacity}{23}{subsection.11.1}%
 \contentsline {subsection}{\numberline {11.2}. Specific heat at constant volume}{23}{subsection.11.2}%
 \contentsline {subsection}{\numberline {11.3}. Specific heat at constant pressure}{23}{subsection.11.3}%
-\contentsline {subsection}{\numberline {11.4}. Special forms of 1$^{st}$ law of thermodynamics}{23}{subsection.11.4}%
+\contentsline {subsection}{\numberline {11.4}Special Forms of First Law of Thermodynamics}{23}{subsection.11.4}%
 \contentsline {section}{\numberline {12}Lecture 12 11/09/2024}{25}{section.12}%
 \contentsline {subsection}{\numberline {12.1}. Poisson's equation for adiabatic transformation}{25}{subsection.12.1}%
 \contentsline {section}{\numberline {13}Lecture 13 12/09/2024}{27}{section.13}%
@@ -67,49 +67,49 @@
 \contentsline {subsection}{\numberline {16.2}. Entropy}{36}{subsection.16.2}%
 \contentsline {section}{\numberline {17}Lecture 17 10/10/2024}{37}{section.17}%
 \contentsline {subsection}{\numberline {17.1}. Entropy}{37}{subsection.17.1}%
-\contentsline {subsection}{\numberline {17.2}. 2$^{nd}$ law of themodynamics}{37}{subsection.17.2}%
-\contentsline {section}{\numberline {18}Lecture 18 10/10/2024}{39}{section.18}%
-\contentsline {subsection}{\numberline {18.1}. Special Forms of 2$^{rd}$ law of Thermodynamics}{39}{subsection.18.1}%
-\contentsline {subsection}{\numberline {18.2}. Moist Processes}{39}{subsection.18.2}%
-\contentsline {subsection}{\numberline {18.3}. Relative humidity}{39}{subsection.18.3}%
-\contentsline {subsection}{\numberline {18.4}. Dew point temperature}{40}{subsection.18.4}%
-\contentsline {subsection}{\numberline {18.5}. Latent heat}{40}{subsection.18.5}%
-\contentsline {section}{\numberline {19}Lecture 19 21/10/2024}{41}{section.19}%
-\contentsline {subsection}{\numberline {19.1}. The Clausius-Clapeyron equation}{41}{subsection.19.1}%
-\contentsline {section}{\numberline {20}Lecture 20 23/10/2024}{42}{section.20}%
-\contentsline {subsection}{\numberline {20.1}. Saturation mixing ratio}{42}{subsection.20.1}%
-\contentsline {section}{\numberline {21}Lecture 21 24/10/2024}{43}{section.21}%
-\contentsline {subsection}{\numberline {21.1}. Lifting Conduction Level (LCL)}{43}{subsection.21.1}%
-\contentsline {section}{\numberline {22}Lecture 22 25/10/2024}{44}{section.22}%
-\contentsline {subsection}{\numberline {22.1}. Saturation Adiabatic Lapse Rate }{44}{subsection.22.1}%
-\contentsline {subsection}{\numberline {22.2}. Equivalent potential temperature ($\theta _e$)}{44}{subsection.22.2}%
-\contentsline {section}{\numberline {23}Lecture 23 30/10/2024}{45}{section.23}%
-\contentsline {subsection}{\numberline {23.1}. Psychrometer}{45}{subsection.23.1}%
-\contentsline {subsection}{\numberline {23.2}. Normand's rule}{45}{subsection.23.2}%
-\contentsline {section}{\numberline {24}Lecture 24 04/11/2024}{46}{section.24}%
-\contentsline {subsection}{\numberline {24.1}. Adiabatic cloud water content}{46}{subsection.24.1}%
-\contentsline {subsubsection}{Liquid water content (LWC)}{46}{figure.caption.20}%
-\contentsline {subsection}{\numberline {24.2}. Flow over terrain}{46}{subsection.24.2}%
-\contentsline {subsection}{\numberline {24.3}. Atmospheric stability}{46}{subsection.24.3}%
-\contentsline {section}{\numberline {25}Lecture 25 06/11/2024}{47}{section.25}%
-\contentsline {subsection}{\numberline {25.1}. Atmospheric stability}{47}{subsection.25.1}%
-\contentsline {subsubsection}{Convection/small scale process}{47}{equation.25.471}%
-\contentsline {subsubsection}{Three conditions}{47}{Item.50}%
-\contentsline {subsection}{\numberline {25.2}. Equation of motion for the parcel}{47}{subsection.25.2}%
-\contentsline {section}{\numberline {26}Lecture 26 07/11/2024}{49}{section.26}%
-\contentsline {subsection}{\numberline {26.1}. Stabitity analysis}{49}{subsection.26.1}%
-\contentsline {subsection}{\numberline {26.2}. Convective instability or Potential instability}{50}{subsection.26.2}%
-\contentsline {section}{\numberline {27}Lecture 27 08/11/2024}{51}{section.27}%
-\contentsline {subsection}{\numberline {27.1}. Convective Available Potential Energy (CAPE) and Convective Inhibition (CIN)}{51}{subsection.27.1}%
-\contentsline {subsubsection}{Theritical maximum velocity}{51}{equation.27.522}%
-\contentsline {section}{\numberline {28}Lecture 28 11/11/2024}{52}{section.28}%
-\contentsline {subsection}{\numberline {28.1}. Clasisus-Clapeyron Equation}{52}{subsection.28.1}%
-\contentsline {subsection}{\numberline {28.2}. Weigner-Bergeron-Findeisn Therory}{52}{subsection.28.2}%
-\contentsline {section}{\numberline {29}Lecture 29 13/11/2024}{53}{section.29}%
-\contentsline {subsection}{\numberline {29.1}. Classifiaction of cloulds}{53}{subsection.29.1}%
-\contentsline {subsection}{\numberline {29.2}. Types of particles within the clouds}{53}{subsection.29.2}%
-\contentsline {subsection}{\numberline {29.3}. Nucleation}{53}{subsection.29.3}%
-\contentsline {section}{\numberline {30}Lecture 30 14/11/2024}{55}{section.30}%
-\contentsline {subsection}{\numberline {30.1}. Supersaturation with respect to plane surface of pure water}{55}{subsection.30.1}%
-\contentsline {subsection}{\numberline {30.2}. K\"{o}hler Equation}{55}{subsection.30.2}%
+\contentsline {subsection}{\numberline {17.2}Second Law of Themodynamics}{37}{subsection.17.2}%
+\contentsline {section}{\numberline {18}Lecture 18 10/10/2024}{38}{section.18}%
+\contentsline {subsection}{\numberline {18.1}Special Forms of Second Law of Thermodynamics}{38}{subsection.18.1}%
+\contentsline {subsection}{\numberline {18.2}. Moist Processes}{38}{subsection.18.2}%
+\contentsline {subsection}{\numberline {18.3}. Relative humidity}{38}{subsection.18.3}%
+\contentsline {subsection}{\numberline {18.4}. Dew point temperature}{39}{subsection.18.4}%
+\contentsline {subsection}{\numberline {18.5}. Latent heat}{39}{subsection.18.5}%
+\contentsline {section}{\numberline {19}Lecture 19 21/10/2024}{40}{section.19}%
+\contentsline {subsection}{\numberline {19.1}. The Clausius-Clapeyron equation}{40}{subsection.19.1}%
+\contentsline {section}{\numberline {20}Lecture 20 23/10/2024}{41}{section.20}%
+\contentsline {subsection}{\numberline {20.1}. Saturation mixing ratio}{41}{subsection.20.1}%
+\contentsline {section}{\numberline {21}Lecture 21 24/10/2024}{42}{section.21}%
+\contentsline {subsection}{\numberline {21.1}. Lifting Conduction Level (LCL)}{42}{subsection.21.1}%
+\contentsline {section}{\numberline {22}Lecture 22 25/10/2024}{43}{section.22}%
+\contentsline {subsection}{\numberline {22.1}. Saturation Adiabatic Lapse Rate }{43}{subsection.22.1}%
+\contentsline {subsection}{\numberline {22.2}Equivalent Potential Temperature}{43}{subsection.22.2}%
+\contentsline {section}{\numberline {23}Lecture 23 30/10/2024}{44}{section.23}%
+\contentsline {subsection}{\numberline {23.1}. Psychrometer}{44}{subsection.23.1}%
+\contentsline {subsection}{\numberline {23.2}. Normand's rule}{44}{subsection.23.2}%
+\contentsline {section}{\numberline {24}Lecture 24 04/11/2024}{45}{section.24}%
+\contentsline {subsection}{\numberline {24.1}. Adiabatic cloud water content}{45}{subsection.24.1}%
+\contentsline {subsubsection}{Liquid water content (LWC)}{45}{figure.caption.20}%
+\contentsline {subsection}{\numberline {24.2}. Flow over terrain}{45}{subsection.24.2}%
+\contentsline {subsection}{\numberline {24.3}. Atmospheric stability}{45}{subsection.24.3}%
+\contentsline {section}{\numberline {25}Lecture 25 06/11/2024}{46}{section.25}%
+\contentsline {subsection}{\numberline {25.1}. Atmospheric stability}{46}{subsection.25.1}%
+\contentsline {subsubsection}{Convection/small scale process}{46}{equation.25.468}%
+\contentsline {subsubsection}{Three conditions}{46}{Item.46}%
+\contentsline {subsection}{\numberline {25.2}. Equation of motion for the parcel}{46}{subsection.25.2}%
+\contentsline {section}{\numberline {26}Lecture 26 07/11/2024}{47}{section.26}%
+\contentsline {subsection}{\numberline {26.1}. Stabitity analysis}{47}{subsection.26.1}%
+\contentsline {subsection}{\numberline {26.2}. Convective instability or Potential instability}{48}{subsection.26.2}%
+\contentsline {section}{\numberline {27}Lecture 27 08/11/2024}{49}{section.27}%
+\contentsline {subsection}{\numberline {27.1}. Convective Available Potential Energy (CAPE) and Convective Inhibition (CIN)}{49}{subsection.27.1}%
+\contentsline {subsubsection}{Theritical maximum velocity}{49}{equation.27.515}%
+\contentsline {section}{\numberline {28}Lecture 28 11/11/2024}{50}{section.28}%
+\contentsline {subsection}{\numberline {28.1}. Clasisus-Clapeyron Equation}{50}{subsection.28.1}%
+\contentsline {subsection}{\numberline {28.2}. Weigner-Bergeron-Findeisn Therory}{50}{subsection.28.2}%
+\contentsline {section}{\numberline {29}Lecture 29 13/11/2024}{51}{section.29}%
+\contentsline {subsection}{\numberline {29.1}. Classifiaction of cloulds}{51}{subsection.29.1}%
+\contentsline {subsection}{\numberline {29.2}. Types of particles within the clouds}{51}{subsection.29.2}%
+\contentsline {subsection}{\numberline {29.3}. Nucleation}{51}{subsection.29.3}%
+\contentsline {section}{\numberline {30}Lecture 30 14/11/2024}{53}{section.30}%
+\contentsline {subsection}{\numberline {30.1}. Supersaturation with respect to plane surface of pure water}{53}{subsection.30.1}%
+\contentsline {subsection}{\numberline {30.2}. K\"{o}hler Equation}{53}{subsection.30.2}%
 \contentsfinish 

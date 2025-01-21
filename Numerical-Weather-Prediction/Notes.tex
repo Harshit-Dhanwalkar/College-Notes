@@ -158,10 +158,10 @@
 
 \Authors{Harshit Prashant Dhanwalkar (SC21B164)\textsuperscript{1}*} % Authors
 \affiliation{\textsuperscript{1}\textit{MTech, Earth System Sciences (ESS), 1$^{st}$ year, Department of Physics, Indian Institute Of Spacescience and Technology (IIST)}} % Author affiliation
-\affiliation{*\textbf{email}: harshitpd1729@gamil.com} % Corresponding author
+\affiliation{*\textbf{email}: harshitpd1729@gamil.com}
 
-\Keywords{} % Keywords - if you don't want any simply remove all the text between the curly brackets
 \newcommand{\keywordname}{Keywords} % Defines the keywords heading name
+\Keywords{}
 
 %-------------------------------------------------------------------------------------
 %                                           ABSTRACT                                 %
@@ -173,11 +173,20 @@
 %-------------------------------------------------------------------------------------
 \begin{document}
 \maketitle % Output the title and abstract box
-\clearpage
-\tableofcontents % Output the contents section
-\clearpage
 \thispagestyle{empty} % Removes page numbering from the first page
 \clearpage
+
+\begingroup
+\thispagestyle{empty} % No page number
+\tableofcontents
+\endgroup
+\newpage
+
+\begingroup
+\thispagestyle{empty} % No page number
+\listoffigures
+\endgroup
+\newpage
 
 %-------------------------------------------------------------------------------------
 %                                       DOCUMENT CONTENTS                           %
