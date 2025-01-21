@@ -189,25 +189,23 @@
 Numerical Weathering Problem (NWP) was first proposed by Bjerkives around 1900. It is mathematical initial value problem (IVP).
 
 Initial value Problem (IVP) $\rightarrow$ simple pendulum.
-\begin{align}
-	\ddot{\theta} + \omega^2 \theta          & = 0 \label{eq:simplependulum1}                                          \\
-	\frac{d^2\theta}{dt^2} + \omega^2 \theta & = 0 \label{eq:simplependulum2}                                          \\
-	\theta(t)                                & = A \cos(\omega t) + B \sin(\omega t) \label{eq:simplependulumsolution}
-\end{align}
+\begin{align*}
+	\ddot{\theta} + \omega^2 \theta          & = 0 \tag{1.1} \label{eq:simplependulum1}                                          \\
+	\frac{d^2\theta}{dt^2} + \omega^2 \theta & = 0 \tag{1.2} \label{eq:simplependulum2}                                          \\
+	\theta(t)                                & = A \cos(\omega t) + B \sin(\omega t) \tag{1.3} \label{eq:simplependulumsolution}
+\end{align*}
 
 \myeqref{eq:simplependulum1} and \myeqref{eq:simplependulum2} are second order linear ordinary differential equation, whose solution .\myeqref{eq:simplependulumsolution} has 2 constants of integration $A$ and $B$. Here $\theta$ and $t$ are the dependent and independent variable since \myeqref{eq:simplependulum1} and \myeqref{eq:simplependulum2} have only one independent variable.
 
 Values of $A$ and $B$ will depend on initial condition.
 
 Since ODE is second order, 2 initial condition are needed at initial time, say $t=0$. Which are:
-\begin{align}
-	\left.
-	\begin{aligned}
+\begin{align*}
+	\begin{rcases}
 		\theta(t=0) = 1 \\
 		\frac{\theta(t=0)}{dt} = 0
-	\end{aligned}
-	\right\} \quad \quad & \label{eq:att=0}
-\end{align}
+	\end{rcases} & \tag{1.4} \label{eq:att=0}
+\end{align*}
 
 \myeqref{eq:simplependulum2} and initial conditions \myeqref{eq:att=0} are together called \textbf{Mathematical IVP}. For any physical system the following two requirements are needed:
 \begin{enumerate}[noitemsep]
@@ -234,10 +232,10 @@ Surface area of Earth = $4\pi R^2$ = $4\pi (6.37 \times 10^{12})$ $\approx 5.1 \
 Euler discription of fluid motion is more convinent becasue of dependance on time and above 7 equations.
 
 Total advective and convective time of lagrangian is given by:
-\begin{align}
-	\underbrace{\frac{DT}{Dt}}_\text{Lagrangian Derivative} & = \underbrace{\underbrace{\frac{\partial T}{\partial t}}_\text{Local derivative} + \underbrace{\vec{V}\cdot \nabla T}_\text{Advective Term}}_\text{Euler Derivative} \\
-	\frac{DT}{Dt}                                           & = \frac{\partial T}{\partial t} + u\frac{\partial T}{\partial x} + v\frac{\partial T}{\partial y} + w\frac{\partial T}{\partial z} \label{eq:lageuleq}
-\end{align}
+\begin{align*}
+	\underbrace{\frac{DT}{Dt}}_\text{Lagrangian Derivative} & = \underbrace{\underbrace{\frac{\partial T}{\partial t}}_\text{Local derivative} + \underbrace{\vec{V}\cdot \nabla T}_\text{Advective Term}}_\text{Euler Derivative} \tag{2.1} \\
+	\frac{DT}{Dt}                                           & = \frac{\partial T}{\partial t} + u\frac{\partial T}{\partial x} + v\frac{\partial T}{\partial y} + w\frac{\partial T}{\partial z} \tag{2.2}\label{eq:lageuleq}
+\end{align*}
 
 Using first law of Thermodynamics, Rate of heat is given by:
 \begin{align*}
@@ -248,16 +246,16 @@ Using first law of Thermodynamics, Rate of heat is given by:
 
 where $\frac{Dq}{Dt}$ is rate at which heating of air parcel due to non-adiabatic process, this change can happen via radiation, convection, conduction, latent heat while phase change.
 
-\begin{align}
-	\frac{DU}{Dt} & = \vec{F}_\text{net} + \vec{F}_\text{coriolis} \label{eq:convective_derivative}
-\end{align}
+\begin{align*}
+	\frac{DU}{Dt} & = \vec{F}_\text{net} + \vec{F}_\text{coriolis} \tag{2.3} \label{eq:convective_derivative}
+\end{align*}
 
 This above \myeqref{eq:convective_derivative} is convective derivative equation involving non-linear terms (i.e. $u\frac{\partial T}{\partial x}$, $v\frac{\partial T}{\partial y}$, $w\frac{\partial T}{\partial z}$).
 
 Continuity equation:
-\begin{align}
-	\frac{1}{\rho} \frac{D\rho}{Dt} + \nabla\cdot\vec{V} = 0 \label{eq:continuity_eq}
-\end{align}
+\begin{align*}
+	\frac{1}{\rho} \frac{D\rho}{Dt} + \nabla\cdot\vec{V} = 0 \tag{2.4}\label{eq:continuity_eq}
+\end{align*}
 
 Consider grid on globe as shown in figure(\ref{fig:grid}).
 
@@ -456,9 +454,9 @@ These are even larger than entire country, which means that we can't above to fi
 \clearpage
 %-------------------------------------------------------------------------------------
 \section{Lecture 3 08/01/2025}
-\begin{align}
-	u & = \bar{u} + u' \label{eq:u}
-\end{align}
+\begin{align*}
+	u & = \bar{u} + u' \tag{3.1} \label{eq:u}
+\end{align*}
 
 Here, $u$ is the velocity field, which is decomposed into a mean component $\bar{u}$ and a fluctuating component $u'$.
 
@@ -466,19 +464,18 @@ Navier-Stokes Equation
 The general Navier-Stokes equation is given by:
 \begin{equation}
 	\begin{aligned}
-		\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} & + w \frac{\partial u}{\partial z} - f v = \frac{1}{\rho} \frac{\partial \bar{P}}{\partial x} \\ & + \gamma \left(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}+ \frac{\partial^2 u}{\partial z^2}\right)\label{eq:Navier-stokes}
+		\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} & + w \frac{\partial u}{\partial z} - f v = \frac{1}{\rho} \frac{\partial \bar{P}}{\partial x} \\  & + \gamma \left(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}+ \frac{\partial^2 u}{\partial z^2}\right)
 	\end{aligned}
+	\tag{3.2} \label{eq:Navier-stokes}
 \end{equation}
 
 Reynolds-Averaged Navier-Stokes (RANS) Equation
 Applying Reynolds decomposition ($u = \bar{u} + u'$) and averaging leads to the RANS equation:
 \begin{equation}
 	\begin{aligned}
-		\frac{\partial \bar{u}}{\partial t} & + \bar{u} \frac{\partial \bar{u}}{\partial x} + \bar{v} \frac{\partial \bar{u}}{\partial y} + \bar{w} \frac{\partial \bar{u}}{\partial z} - f\bar{v} = \frac{1}{\rho} \frac{\partial \bar{P}}{\partial x}                                                                      \\
-		                                    & + \gamma \left(\frac{\partial^2 \bar{u}}{\partial x^2}+ \frac{\partial^2 \bar{u}}{\partial y^2}+ \frac{\partial^2 \bar{u}}{\partial z^2}\right)                                                                                                                                \\
-		                                    & + \underbrace{\frac{1}{\rho} \left(\frac{\partial \left(-\rho \overline{u'u'} \right)}{\partial x} + \frac{\partial \left(-\rho \overline{u'v'} \right)}{\partial y} + \frac{\partial \left(-\rho \overline{u'w'} \right)}{\partial z}\right)}_{\text{Reynolds stress tensor}}
+		\underbrace{\frac{\partial \bar{u}}{\partial t}}_{\substack{\text{Local} \\ \text{acceleration}}} &+ \underbrace{\bar{u} \frac{\partial \bar{u}}{\partial x} + \bar{v} \frac{\partial \bar{u}}{\partial y} + \bar{w} \frac{\partial \bar{u}}{\partial z}}_{\substack{\text{Advection}}} - \underbrace{f \bar{v}}_{\substack{\text{Coriolis} \\ \text{force}}} = \underbrace{\frac{1}{\rho} \frac{\partial \bar{P}}{\partial x}}_{\substack{\text{Pressure} \\ \text{gradient} \\ \text{force}}} \\  & + \underbrace{\gamma \left(\frac{\partial^2 \bar{u}}{\partial x^2} + \frac{\partial^2 \bar{u}}{\partial y^2} + \frac{\partial^2 \bar{u}}{\partial z^2}\right)}_{\text{Viscous dissipation}} \\ & + \underbrace{\frac{1}{\rho} \left(\frac{\partial \left(-\rho \overline{u'u'} \right)}{\partial x} + \frac{\partial \left(-\rho \overline{u'v'} \right)}{\partial y} + \frac{\partial \left(-\rho \overline{u'w'} \right)}{\partial z}\right)}_{\text{Reynolds stress tensor}}
 	\end{aligned}
-	\label{eq:rans}
+	\tag{3.3} \label{eq:rans}
 \end{equation}
 
 The Reynolds stress tensor represents the transport of momentum due to turbulent fluctuations.
@@ -501,13 +498,13 @@ Thus, the fluctuating component $u'$ averages out to zero over time, leaving onl
 
 We have,
 \begin{align}
-	\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} & =0 \label{eq:velocity}
+	\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} & =0 \tag{3.4} \label{eq:velocity}
 \end{align}
 Substituting $u$, $v$ and $w$ in above \myeqref{eq:velocity}, we get:
 
 \begin{align*}
-	\overline{\frac{\partial (\bar{u}+u')}{\partial x} + \frac{\partial (\bar{v}+v')}{\partial y} + \frac{\partial (\bar{w}+w')}{\partial z}} & =0 \\
-	\frac{\partial \bar{u}}{\partial x} + \frac{\partial \bar{v}}{\partial y} + \frac{\partial \bar{w}}{\partial z}                           & =0
+	\overline{\frac{\partial (\bar{u}+u')}{\partial x} + \frac{\partial (\bar{v}+v')}{\partial y} + \frac{\partial (\bar{w}+w')}{\partial z}} & =0                                     \\
+	\frac{\partial \bar{u}}{\partial x} + \frac{\partial \bar{v}}{\partial y} + \frac{\partial \bar{w}}{\partial z}                           & =0 \tag{3.5} \label{eq:velocity_putub}
 \end{align*}
 
 The term $\frac{\partial(\overline{u'u'})}{\partial t}$ represents the rate of change of kinetic energy per unit mass due to turbulent fluctuations. It can be expressed as:
@@ -557,9 +554,9 @@ Types of Closure Models
 
 \clearpage
 \section{Lecture 4 15/01/2025}
-\begin{align}
-	\frac{d^2 \theta}{dt^2} + \omega^2\theta = 0
-\end{align}
+\begin{align*}
+	\frac{d^2 \theta}{dt^2} + \omega^2\theta = 0 \tag{4.1} \label{simplependulum0}
+\end{align*}
 Initial conditions:
 \begin{align*}
 	\theta(t=t_0)       & =\theta_0 \\
@@ -580,59 +577,64 @@ Initial conditions become:
 
 \subsection{Forward difference}
 Invoking Taylor series expansion for $f(t+t_0)$:
-\begin{align}
-	f(t+t_0)      & = f(t_0) + (t+t_0)\frac{\partial f}{\partial t}\Big{|}_{t=t_0}                             \\
-	              & \qquad + \frac{(t+t_0)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0}	+ \cdots     \\
-	f(t+\Delta t) & = f(t_0) + \Delta t \frac{\partial f}{\partial t}\Big{|}_{t=t_0}                           \\
-	              & \qquad + \frac{(\Delta t)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots
-\end{align}
+\begin{align*}
+	\begin{rcases}
+		f(t+t_0)      & = f(t_0) + (t+t_0)\frac{\partial f}{\partial t}\Big{|}_{t=t_0}                             \\
+		              & \qquad + \frac{(t+t_0)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0}	+ \cdots     \\
+		f(t+\Delta t) & = f(t_0) + \Delta t \frac{\partial f}{\partial t}\Big{|}_{t=t_0}                           \\
+		              & \qquad + \frac{(\Delta t)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots
+	\end{rcases} & \tag{4.2} \label{eq:taylor-exp-1}
+\end{align*}
+
 we will get;
-\begin{align}
-	p(t+t_0)                                     & \approx p(t_0) + \Delta t \frac{\partial p}{\partial t}\Big{|}_{t=t_0}                          \\
-	p(t+t_0)                                     & \approx p(t_0) + (t-t_0) \frac{\partial p}{\partial t}\Big{|}_{t=t_0}                           \\
-	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t+t_0) - p(t_0)}{(t-t_0)}                              \label{eq:forwarddiff_p} \\
+\begin{align*}
+	p(t+t_0)                                     & \approx p(t_0) + \Delta t \frac{\partial p}{\partial t}\Big{|}_{t=t_0}       \\
+	p(t+t_0)                                     & \approx p(t_0) + (t-t_0) \frac{\partial p}{\partial t}\Big{|}_{t=t_0}        \\
+	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t+t_0) - p(t_0)}{(t-t_0)} \tag{4.3} \label{eq:forwarddiff_p} \\
 	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t_1) - p(t_0)}{\Delta t}
-\end{align}
+\end{align*}
 
 \myeqref{eq:forwarddiff_p} is called \textbf{Forward difference}.
 
 Order of Forward difference is $O(\Delta t)$.
 
 Similarly Forward difference for $\theta$,
-\begin{align}
-	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} \label{eq:forwarddiff_theta} \\
+\begin{align*}
+	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} \tag{4.4} \label{eq:forwarddiff_theta} \\
 	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t_1) - \theta(t_0)}{\Delta t}
-\end{align}
+\end{align*}
 
 From \myeqref{eq:ic1} and \myeqref{eq:forwarddiff_p}:
 \begin{align*}
-	\frac{p(t+t_0) - p(t_0)}{(t-t_0)} & + \omega^2 \theta(t_0)  = 0             \\
-	p(t+t_0)                          & = p(t_0) - (t-t_0)\omega^2 \theta(t_0)  \\
-	p(t_1)                            & = p(t_0) - \Delta t\omega^2 \theta(t_0)
+	\frac{p(t+t_0) - p(t_0)}{(t-t_0)} & + \omega^2 \theta(t_0)  = 0                                          \\
+	p(t+t_0)                          & = p(t_0) - (t-t_0)\omega^2 \theta(t_0)                               \\
+	p(t_1)                            & = p(t_0) - \Delta t\omega^2 \theta(t_0) \tag{4.5} \label{eq:p(t1-i)}
 \end{align*}
 
 From \myeqref{eq:ic2} and \myeqref{eq:forwarddiff_theta}:
 \begin{align*}
-	\frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} & = p(t_0)                        \\
-	\theta(t+t_0)                               & = \theta(t_0) - (t-t_0) p(t_0)  \\
-	\theta(t_1)                                 & = \theta(t_0) - \Delta t p(t_0)
+	\frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} & = p(t_0)                                                         \\
+	\theta(t+t_0)                               & = \theta(t_0) - (t-t_0) p(t_0)                                   \\
+	\theta(t_1)                                 & = \theta(t_0) - \Delta t p(t_0) \tag{4.6} \label{eq:theta(t1-i)}
 \end{align*}
 
 \subsection{Backward difference}
 Invoking Taylor series expansion for $f(t-t_0)$:
 \begin{align*}
-	f(t-t_0)      & = f(t_0) - (t-t_0)\frac{\partial f}{\partial t}\Big{|}_{t=t_0}                             \\
-	              & \qquad + \frac{(t-t_0)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots    \\
-	f(t-\Delta t) & = f(t_0) - \Delta t \frac{\partial f}{\partial t}\Big{|}_{t=t_0}                           \\
-	              & \qquad + \frac{(\Delta t)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots
+	\begin{rcases}
+		f(t-t_0)      & = f(t_0) - (t-t_0)\frac{\partial f}{\partial t}\Big{|}_{t=t_0}                             \\
+		              & \qquad + \frac{(t-t_0)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots    \\
+		f(t-\Delta t) & = f(t_0) - \Delta t \frac{\partial f}{\partial t}\Big{|}_{t=t_0}                           \\
+		              & \qquad + \frac{(\Delta t)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots
+	\end{rcases} & \tag{4.7} \label{eq:taylor-exp-2}
 \end{align*}
 we will get;
-\begin{align}
-	p(t-t_0)                                     & \approx p(t_0) - \Delta t \frac{\partial p}{\partial t}\Big{|}_{t=t_0}                           \\
-	p(t-t_0)                                     & \approx p(t_0) - (t-t_0) \frac{\partial p}{\partial t}\Big{|}_{t=t_0}                            \\
-	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t_0) - p(t-t_0)}{(t-t_0)}                              \label{eq:backwarddiff_p} \\
+\begin{align*}
+	p(t-t_0)                                     & \approx p(t_0) - \Delta t \frac{\partial p}{\partial t}\Big{|}_{t=t_0}        \\
+	p(t-t_0)                                     & \approx p(t_0) - (t-t_0) \frac{\partial p}{\partial t}\Big{|}_{t=t_0}         \\
+	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t_0) - p(t-t_0)}{(t-t_0)} \tag{4.8} \label{eq:backwarddiff_p} \\
 	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t_0) - p(t_{-1})}{\Delta t}
-\end{align}
+\end{align*}
 
 \myeqref{eq:backwarddiff_p} is called \textbf{Backward difference}.
 
@@ -640,42 +642,43 @@ Order of Backward difference is $O(\Delta t)$.
 
 Similarly Backward difference for $\theta$,
 \begin{align*}
-	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t_0) - \theta(t-t_0)}{(t-t_0)}                                 \\
-	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t_0) - \theta(t_{-1})}{\Delta t} \label{eq:backwarddiff_theta}
+	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t_0) - \theta(t-t_0)}{(t-t_0)}                                           \\
+	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t_0) - \theta(t_{-1})}{\Delta t} \tag{4.9} \label{eq:backwarddiff_theta}
 \end{align*}
 
 From \myeqref{eq:ic1} and \myeqref{eq:backwarddiff_p}:
-\begin{align}
-	\frac{p(t+t_0) - p(t_0)}{(t-t_0)} & + \omega^2 \theta(t_0)  = 0             \\
-	p(t+t_0)                          & = p(t_0) - (t-t_0)\omega^2 \theta(t_0)  \\
-	p(t_1)                            & = p(t_0) - \Delta t\omega^2 \theta(t_0)
-\end{align}
+\begin{align*}
+	\frac{p(t+t_0) - p(t_0)}{(t-t_0)} & + \omega^2 \theta(t_0)  = 0                                            \\
+	p(t+t_0)                          & = p(t_0) - (t-t_0)\omega^2 \theta(t_0)                                 \\
+	p(t_1)                            & = p(t_0) - \Delta t\omega^2 \theta(t_0) \tag{4.10} \label{eq:p(t1-ii)}
+\end{align*}
 
 From \myeqref{eq:ic2} and \myeqref{eq:backwarddiff_theta}:
 \begin{align*}
-	\frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} & = p(t_0)                        \\
-	\theta(t+t_0)                               & = \theta(t_0) - (t-t_0) p(t_0)  \\
-	\theta(t_1)                                 & = \theta(t_0) - \Delta t p(t_0)
+	\frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} & = p(t_0)                                                           \\
+	\theta(t+t_0)                               & = \theta(t_0) - (t-t_0) p(t_0)                                     \\
+	\theta(t_1)                                 & = \theta(t_0) - \Delta t p(t_0) \tag{4.11} \label{eq:theta(t1-ii)}
 \end{align*}
 
 \subsection{Current difference}
 The current difference method is a combination of the forward and backward difference methods, where we approximate the values at the current time using both the forward and backward information.
 
 Using forward difference:
-\begin{align}
-	\frac{d\theta}{dt}\Big{|}_{t=t_0} = p(t_0) = \text{known} = p(t_0) - \Delta t \omega^2 \theta(t_0) \label{eq:fd}
-\end{align}
+\begin{align*}
+	\frac{d\theta}{dt}\Big{|}_{t=t_0} = p(t_0) = \text{known} = p(t_0) - \Delta t \omega^2 \theta(t_0) \tag{4.12} \label{eq:fd}
+\end{align*}
 
 Using backward difference:
-\begin{align}
-	\frac{d\theta}{dt}\Big{|}_{t=t_0} = \frac{\theta(t_1) - \theta(t-\Delta t)}{\Delta t}  \label{eq:bd}
-\end{align}
+\begin{align*}
+	\frac{d\theta}{dt}\Big{|}_{t=t_0} = \frac{\theta(t_1) - \theta(t-\Delta t)}{\Delta t} \tag{4.13} \label{eq:bd}
+\end{align*}
 
 From \myeqref{eq:fd} and \myeqref{eq:bd}, we can combine both the equations to get:
-\begin{align}
-	\frac{\theta(t_1) - \theta(t-\Delta t)}{\Delta t}                      & = p(t_0) - \Delta t \omega^2 \theta(t_0)                                \\
-	\theta(t_1)                                       = \theta(t-\Delta t) & + \Delta t [p(t_0) - \Delta t \omega^2 \theta(t_0)] \label{eq:knownrhs}
-\end{align}
+\begin{align*}
+	\frac{\theta(t_1) - \theta(t-\Delta t)}{\Delta t}                      & = p(t_0) - \Delta t \omega^2 \theta(t_0)                                           \\
+	\theta(t_1)                                       = \theta(t-\Delta t) & + \Delta t [p(t_0) - \Delta t \omega^2 \theta(t_0)] \tag{4.14} \label{eq:knownrhs}
+\end{align*}
+
 In \myeqref{eq:knownrhs} all the terms on the RHS are known, allowing us to compute the value of $\theta$ at time $(t_1)$.
 
 Thus, we obtain a method to compute the new value of $\theta$ based on the current and past time steps.
@@ -689,32 +692,32 @@ Thus, we obtain a method to compute the new value of $\theta$ based on the curre
 		f(x+\Delta x) & = f(x) + \Delta x\frac{\partial f}{\partial x}\Big{|}_{x=x_0}                             \\
 		              & + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f}{\partial x^2}\Big{|}_{t=x_0}                \\
 		              & + \frac{(\Delta x)^3}{3!} \frac{\partial^3 f}{\partial x^3}\Big{|}_{t=x_0} + \quad \cdots
-	\end{rcases}   & \tag{1} \label{eq:forwarddiff_x}   \\
+	\end{rcases}   & \tag{5.1} \label{eq:forwarddiff_x}   \\
 	\begin{rcases}
 		f(x - \Delta x) & = f(x) - \Delta x\frac{\partial f}{\partial x}\Big{|}_{x=x_0}                             \\
 		                & + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f}{\partial x^2}\Big{|}_{t=x_0}                \\
 		                & - \frac{(\Delta x)^3}{3!} \frac{\partial^3 f}{\partial x^3}\Big{|}_{t=x_0} + \quad \cdots
-	\end{rcases} & \tag{2} \label{eq:backwarddiff_x}
+	\end{rcases} & \tag{5.2} \label{eq:backwarddiff_x}
 \end{align*}
 
 Using \myeqref{eq:forwarddiff_x},
 \begin{align*}
-	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x + \Delta x) - f(x)}{\Delta x}\Big] + O(\Delta x) \tag{3} \label{eq:dfdx_forward}
+	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x + \Delta x) - f(x)}{\Delta x}\Big] + O(\Delta x) \tag{5.3} \label{eq:dfdx_forward}
 \end{align*}
 
 Similiarly, using \myeqref{eq:backwarddiff_x}, one obtain,
 \begin{align*}
-	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x) - f(x - \Delta x)}{\Delta x}\Big] + O(\Delta x) \tag{4} \label{eq:dfdx_backward}
+	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x) - f(x - \Delta x)}{\Delta x}\Big] + O(\Delta x) \tag{5.4} \label{eq:dfdx_backward}
 \end{align*}
 
 Subtracting \myeqref{eq:backwarddiff_x} from \myeqref{eq:forwarddiff_x}, we get,
 \begin{align*}
-	\frac{df}{dx} & \simeq \Big[\frac{f(x + \Delta x) + f(x - \Delta x)}{2\Delta x}\Big] + O(\Delta x^2) \tag{5} \label{eq:dfdx1-2}
+	\frac{df}{dx} & \simeq \Big[\frac{f(x + \Delta x) + f(x - \Delta x)}{2\Delta x}\Big] + O(\Delta x^2) \tag{5.5} \label{eq:dfdx1-2}
 \end{align*}
 
 Adding \myeqref{eq:forwarddiff_x} and \myeqref{eq:backwarddiff_x}, we get,
 \begin{align*}
-	\frac{d^2f}{dx^2} & \simeq \Big[\frac{f(x + \Delta x) - 2f(x)+ f(x - \Delta x)}{(\Delta x)^2}\Big] + O(\Delta x^2) \tag{6} \label{eq:dfdx1+2}
+	\frac{d^2f}{dx^2} & \simeq \Big[\frac{f(x + \Delta x) - 2f(x)+ f(x - \Delta x)}{(\Delta x)^2}\Big] + O(\Delta x^2) \tag{5.6} \label{eq:dfdx1+2}
 \end{align*}
 
 % \begin{align*}
@@ -737,79 +740,79 @@ Adding \myeqref{eq:forwarddiff_x} and \myeqref{eq:backwarddiff_x}, we get,
 		f(x + \Delta x,t) & = f(x,t) + \Delta x\frac{\partial f(x,t)}{\partial x}\Big{|}_{x=x_0}                     \\
 		                  & + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f(x,t)}{\partial x^2}\Big{|}_{t=x_0}          \\
 		                  & + \frac{(\Delta x)^3}{3!} \frac{\partial^3 f(x,t)}{\partial x^3}\Big{|}_{t=x_0} + \cdots
-	\end{rcases} & \tag{7} \label{eq:forwarddiff_xt} \\
+	\end{rcases} & \tag{5.7} \label{eq:forwarddiff_xt} \\
 	\begin{rcases}
 		f(x - \Delta x,t) & = f(x,t) - \Delta x\frac{\partial f(x,t)}{\partial x}\Big{|}_{x=x_0}                     \\
 		                  & + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f(x,t)}{\partial x^2}\Big{|}_{t=x_0}          \\
 		                  & - \frac{(\Delta x)^3}{3!} \frac{\partial^3 f(x,t)}{\partial x^3}\Big{|}_{t=x_0} + \cdots
-	\end{rcases} & \tag{8} \label{eq:backwarddiff_xt}
+	\end{rcases} & \tag{5.8} \label{eq:backwarddiff_xt}
 \end{align*}
 
 \subsection{Space difference}
 From \myeqref{eq:forwarddiff_xt} and \myeqref{eq:backwarddiff_xt} respectively by difference equation w.r.t 1-direction, say x, we obtain \textbf{Space difference}:
 \begin{align*}
-	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x + \Delta x,t) - f(x,t)}{\Delta x}\Big] + O(\Delta x) \tag{9} \label{eq:9}   \\
-	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x + \Delta x,t) - f(x,t)}{\Delta x}\Big] + O(\Delta x) \tag{10} \label{eq:10}
+	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x + \Delta x,t) - f(x,t)}{\Delta x}\Big] + O(\Delta x) \tag{5.9} \label{eq:9}   \\
+	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x + \Delta x,t) - f(x,t)}{\Delta x}\Big] + O(\Delta x) \tag{5.10} \label{eq:10}
 \end{align*}
 
 Subtracting \myeqref{eq:backwarddiff_xt} from \myeqref{eq:forwarddiff_xt}, we get,
 \begin{align*}
-	\frac{df}{dx} & \simeq \Big[\frac{f(x + \Delta x, t) + f(x - \Delta x, t)}{2\Delta x}\Big] + O(\Delta x^2) \tag{11} \label{eq:dfdx1-2-sd-wrt-x}
+	\frac{df}{dx} & \simeq \Big[\frac{f(x + \Delta x, t) + f(x - \Delta x, t)}{2\Delta x}\Big] + O(\Delta x^2) \tag{5.11} \label{eq:dfdx1-2-sd-wrt-x}
 \end{align*}
 
 Adding \myeqref{eq:forwarddiff_xt} and \myeqref{eq:backwarddiff_xt}, we get,
 \begin{align*}
-	\frac{d^2f}{dx^2} & \simeq \Big[\frac{f(x + \Delta x, t) - 2f(x,t)+ f(x - \Delta x, t)}{(\Delta x)^2}\Big] + O(\Delta x^2) \tag{12} \label{eq:dfdx1+2-sd-wrt-x}
+	\frac{d^2f}{dx^2} & \simeq \Big[\frac{f(x + \Delta x, t) - 2f(x,t)+ f(x - \Delta x, t)}{(\Delta x)^2}\Big] + O(\Delta x^2) \tag{5.12} \label{eq:dfdx1+2-sd-wrt-x}
 \end{align*}
 
 \subsection{Time difference}
 Similiarly, From \myeqref{eq:forwarddiff_xt} and \myeqref{eq:backwarddiff_xt} respectively, difference equation w.r.t time (t), we obtain \textbf{Time difference}:
 \begin{align*}
-	\frac{df}{dt}\Big{|}_{t=t_0} & \simeq \Big[\frac{f(x, t + \Delta t) - f(x,t)}{\Delta t}\Big] + O(\Delta t) \tag{13} \label{eq:13}                                          \\
-	\frac{df}{dt}\Big{|}_{t=t_0} & \simeq \Big[\frac{f(x, t + \Delta t) - f(x,t)}{\Delta t}\Big] + O(\Delta t) \tag{14} \label{eq:14}                                          \\
-	\frac{df}{dt}                & \simeq \Big[\frac{f(x, t + \Delta t) + f(x, t - \Delta t)}{2\Delta t}\Big] + O(\Delta t^2) \tag{15} \label{eq:dfdx1-2-sd-wrt-t}             \\
-	\frac{d^2f}{dt^2}            & \simeq \Big[\frac{f(x, t + \Delta t) - 2f(x,t)+ f(x, t - \Delta t)}{(\Delta t)^2}\Big] + O(\Delta t^2) \tag{16} \label{eq:dfdx1+2-sd-wrt-t}
+	\frac{df}{dt}\Big{|}_{t=t_0} & \simeq \Big[\frac{f(x, t + \Delta t) - f(x,t)}{\Delta t}\Big] + O(\Delta t) \tag{5.13} \label{eq:13}                                          \\
+	\frac{df}{dt}\Big{|}_{t=t_0} & \simeq \Big[\frac{f(x, t + \Delta t) - f(x,t)}{\Delta t}\Big] + O(\Delta t) \tag{5.14} \label{eq:14}                                          \\
+	\frac{df}{dt}                & \simeq \Big[\frac{f(x, t + \Delta t) + f(x, t - \Delta t)}{2\Delta t}\Big] + O(\Delta t^2) \tag{15} \label{eq:dfdx1-2-sd-wrt-t}               \\
+	\frac{d^2f}{dt^2}            & \simeq \Big[\frac{f(x, t + \Delta t) - 2f(x,t)+ f(x, t - \Delta t)}{(\Delta t)^2}\Big] + O(\Delta t^2) \tag{5.16} \label{eq:dfdx1+2-sd-wrt-t}
 \end{align*}
 
 \subsection{Explicit form of $2^{nd}$ order PDE}
 \begin{align*}
-	A \frac{\partial^2 f}{\partial x^2} + B \frac{\partial^2 f}{\partial x \partial y} + C \frac{\partial^2 f}{\partial y^2} + D \frac{\partial f}{\partial x} + E \frac{\partial f}{\partial x} + Ff = G \tag{17} \label{eq:explicit2ndorderpde}
+	A \frac{\partial^2 f}{\partial x^2} + B \frac{\partial^2 f}{\partial x \partial y} + C \frac{\partial^2 f}{\partial y^2} + D \frac{\partial f}{\partial x} + E \frac{\partial f}{\partial x} + Ff = G \tag{5.17} \label{eq:explicit2ndorderpde}
 \end{align*}
 
 \yellownote{
-	Incomplete \\ 
+	Incomplete \\
 	Equation no.s
 }
 
-\clearpage 
+\clearpage
 
 \section{Lecture 6 21/01/2025}
 \subsection{1-D Linear Advection equation}
 \begin{align*}
-	\frac{\partial f}{\partial t} + u \frac{\partial f}{\partial t} &= 0 \tag{6.1} \label{eq:advectioneq}
+	\frac{\partial f}{\partial t} + u \frac{\partial f}{\partial t} & = 0 \tag{6.1} \label{eq:advectioneq}
 \end{align*}
 
 where
 \begin{align*}
-	f & \text{ is fluid property} \\
+	f & \text{ is fluid property}                \\
 	u & \text{ is x-component of fluid velocity}
 \end{align*}
 
 \begin{align*}
-	\frac{dx}{dt} &= u = \text{constant} \tag{6.2} \label{eq:dxdt-constant}
+	\frac{dx}{dt} & = u = \text{constant} \tag{6.2} \label{eq:dxdt-constant}
 \end{align*}
 
 Integrating \myeqref{eq:dxdt-constant} w.r.t time, we get:
 \begin{align*}
-	x &= x_0 + \int^{t}_{t_0} udt \tag{6.3} \label{eq:pathline}  
+	x & = x_0 + \int^{t}_{t_0} udt \tag{6.3} \label{eq:pathline}
 \end{align*}
 
 \myeqref{eq:pathline} is called equation of pathline.
 
 Substituting, $u=\frac{dx}{dt}$ in \myeqref{eq:advectioneq}, we obtain:
 \begin{align*}
-	\frac{\partial f}{\partial t} + \frac{dx}{dt} \frac{\partial f}{\partial t} &= 0  \tag{6.4} \label{eq:advectiveeq1} \\
-	\frac{Df}{Dt} &= 0 \tag{6.4} \label{eq:advectiveeq-total-deri}
+	\frac{\partial f}{\partial t} + \frac{dx}{dt} \frac{\partial f}{\partial t} & = 0  \tag{6.4} \label{eq:advectiveeq1}          \\
+	\frac{Df}{Dt}                                                               & = 0 \tag{6.4} \label{eq:advectiveeq-total-deri}
 \end{align*}
 
 \myeqref{eq:advectiveeq-total-deri} implies the property f is conserved following the motion of fluid element.
@@ -826,12 +829,12 @@ Substituting, $u=\frac{dx}{dt}$ in \myeqref{eq:advectioneq}, we obtain:
 \end{enumerate}
 
 \begin{align*}
-    \frac{\partial f}{\partial t} + u \frac{\partial f}{\partial x} = 0 \;
-    &\begin{cases}
-        u = \text{constant} &\Rightarrow \text{PDE is linear}, \\
-        u = u(x,t) &\Rightarrow \text{PDE is linear}, \\
-        u = u(x,t,f) &\Rightarrow \text{PDE is quasi-linear} 
-    \end{cases}
+	\frac{\partial f}{\partial t} + u \frac{\partial f}{\partial x} = 0 \;
+	 & \begin{cases}
+		   u = \text{constant} & \Rightarrow \text{PDE is linear},      \\
+		   u = u(x,t)          & \Rightarrow \text{PDE is linear},      \\
+		   u = u(x,t,f)        & \Rightarrow \text{PDE is quasi-linear}
+	   \end{cases}
 \end{align*}
 
 \begin{align*}
