@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  21 JAN 2025 21:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  22 JAN 2025 09:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1023,12 +1023,31 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [8
 
 ]
-Overfull \hbox (8.54366pt too wide) detected at line 847
+./Notes.tex:811: Undefined control sequence.
+l.811 	\centring
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Notes.tex:863: Undefined control sequence.
+l.863 	\centring
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (8.54366pt too wide) detected at line 905
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 857--857
+Underfull \hbox (badness 10000) in paragraph at lines 915--915
 
  []
 
@@ -1041,18 +1060,18 @@ Package rerunfilecheck Info: File `Notes.out' has not changed.
 (rerunfilecheck)             Checksum: D508C3C448CCB6282407D0CB9881323A;2507.
  ) 
 Here is how much of TeX's memory you used:
- 43763 strings out of 480171
- 1004375 string characters out of 5894490
- 1466420 words of memory out of 5000000
- 60645 multiletter control sequences out of 15000+600000
+ 44139 strings out of 480171
+ 1015463 string characters out of 5894490
+ 1481065 words of memory out of 5000000
+ 61019 multiletter control sequences out of 15000+600000
  541810 words of font info for 301 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 98i,23n,94p,1002b,838s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,23n,94p,1002b,2130s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Notes.pdf (9 pages, 163236 bytes).
+Output written on Notes.pdf (9 pages, 166511 bytes).
 PDF statistics:
- 302 PDF objects out of 1000 (max. 8388607)
- 245 compressed objects within 3 object streams
- 93 named destinations out of 1000 (max. 500000)
+ 309 PDF objects out of 1000 (max. 8388607)
+ 250 compressed objects within 3 object streams
+ 95 named destinations out of 1000 (max. 500000)
  106635 words of extra memory for PDF output out of 106986 (max. 10000000)
 

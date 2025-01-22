@@ -807,16 +807,48 @@ where
 	u & \text{ is x-component of fluid velocity}
 \end{align*}
 
+\begin{figure}[ht!]
+	\centring
+	\begin{tikzpicture}
+	    \begin{axis}[
+		% xlabel={$x$},
+		% ylabel={$f(x)$},
+		axis lines=middle,
+		grid=both,
+		xmax=8,
+		xmin=-1,
+		ymax=5,
+		ymin=-1,
+		domain=2:8,
+		samples=100,
+		xtick={2,4,6,8},
+		ytick={2,4},
+		xticklabel=\empty,
+		yticklabel=\empty,
+	    ]
+		\addplot[blue] {-2 + 1*x};
+		\node at (axis cs:2,-0.5) {$x_0$};
+		\node at (axis cs:4,-0.75) {$x \rightarrow$};
+		\node at (axis cs:-0.75,3) [rotate=90] {$f \rightarrow$};
+		\node at (axis cs:4,3) [rotate=45] {$\frac{dt}{dx}=-\frac{1}{u}$};
+	    \end{axis}
+	\end{tikzpicture}
+	\caption{Path line or trajectory of fluid element}
+	\label{fig:pathline}
+\end{figure}
+
 \begin{align*}
 	\frac{dx}{dt} & = u = \text{constant} \tag{6.2} \label{eq:dxdt-constant}
 \end{align*}
+
+\myeqref{eq:dxdt-constant} is called \textbf{characteristic equation}.
 
 Integrating \myeqref{eq:dxdt-constant} w.r.t time, we get:
 \begin{align*}
 	x & = x_0 + \int^{t}_{t_0} udt \tag{6.3} \label{eq:pathline}
 \end{align*}
 
-\myeqref{eq:pathline} is called equation of pathline.
+\myeqref{eq:pathline} is called equation of pathline as shown in Fig\ref{fig:pathline}.
 
 Substituting, $u=\frac{dx}{dt}$ in \myeqref{eq:advectioneq}, we obtain:
 \begin{align*}
@@ -827,9 +859,35 @@ Substituting, $u=\frac{dx}{dt}$ in \myeqref{eq:advectioneq}, we obtain:
 \myeqref{eq:advectiveeq-total-deri} implies the property f is conserved following the motion of fluid element.
 
 \subsection{Triangular Property}
-\yellownote{
-	Figure
-}
+\begin{figure}[ht!]
+	\centring
+	\begin{tikzpicture}
+	    \begin{axis}[
+		% xlabel={$x$},
+		% ylabel={$f(x)$},
+		axis lines=middle,
+		grid=both,
+		xmax=10,
+		xmin=-1,
+		ymax=4.5,
+		ymin=-1,
+		domain=2:10,
+		samples=100,
+		xtick={0.5,2.5,4.5, 5.5, 7.5, 9.5},
+		ytick={1, 2.5, 4},
+		xticklabel=\empty,
+		yticklabel=\empty,
+	    ]
+		\node at (axis cs:5,-0.75) {$x \rightarrow$};
+		\node at (axis cs:-0.75,2.5) [rotate=90] {$f \rightarrow$};
+		\draw[thick, blue] (0.5,0) -- (2.5,2.5) -- (4.5,0);
+		\draw[thick, blue] (5.5,0) -- (7.5,2.5) -- (9.5,0);
+	    \end{axis}
+	\end{tikzpicture}
+	\caption{Triangular property}
+	\label{fig:triangularprop}
+\end{figure}
+
 \begin{enumerate}[noitemsep]
 	\item \textbf{Hyperbolic:} 1$^{st}$ order partial equation $\rightarrow$ 1 family of characteristic equations.in real domain.
 	\item \textbf{Hyperbolic:} 2$^{nd}$ order partial equation $\rightarrow$ 2 distinct and real set of characteristic equations.
