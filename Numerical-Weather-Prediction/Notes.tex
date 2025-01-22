@@ -815,7 +815,7 @@ where
 		% ylabel={$f(x)$},
 		axis lines=middle,
 		grid=both,
-		xmax=8,
+		xmax=7.5,
 		xmin=-1,
 		ymax=5,
 		ymin=-1,
@@ -841,7 +841,7 @@ where
 	\frac{dx}{dt} & = u = \text{constant} \tag{6.2} \label{eq:dxdt-constant}
 \end{align*}
 
-\myeqref{eq:dxdt-constant} is called \textbf{characteristic equation}.
+\myeqref{eq:dxdt-constant} is called \textbf{Characteristic equation}.
 
 Integrating \myeqref{eq:dxdt-constant} w.r.t time, we get:
 \begin{align*}
@@ -882,14 +882,16 @@ Substituting, $u=\frac{dx}{dt}$ in \myeqref{eq:advectioneq}, we obtain:
 		\node at (axis cs:-0.75,2.5) [rotate=90] {$f \rightarrow$};
 		\draw[thick, blue] (0.5,0) -- (2.5,2.5) -- (4.5,0);
 		\draw[thick, blue] (5.5,0) -- (7.5,2.5) -- (9.5,0);
+		\node at (axis cs:2.5,-0.5) {$x_0$};
+		\node at (axis cs:7.5,-0.5) {$x_0 + \int^{t_1}_{t_0}udt$};
 	    \end{axis}
 	\end{tikzpicture}
-	\caption{Triangular property}
+	\caption{Triangular property distribution}
 	\label{fig:triangularprop}
 \end{figure}
 
 \begin{enumerate}[noitemsep]
-	\item \textbf{Hyperbolic:} 1$^{st}$ order partial equation $\rightarrow$ 1 family of characteristic equations.in real domain.
+	\item \textbf{Hyperbolic:} 1$^{st}$ order partial equation $\rightarrow$ 1 family of characteristic equation in real domain.
 	\item \textbf{Hyperbolic:} 2$^{nd}$ order partial equation $\rightarrow$ 2 distinct and real set of characteristic equations.
 	\item \textbf{Parabolic:} 2$^{nd}$ order partial equation $\rightarrow$ 2 equal and real set of characteristic equations.
 	\item \textbf{Elliptical:} 2$^{nd}$ order partial equation $\rightarrow$ 2 distinct and complex set of characteristic equations.
@@ -910,9 +912,11 @@ Substituting, $u=\frac{dx}{dt}$ in \myeqref{eq:advectioneq}, we obtain:
 
 Above \myeqref{eq:quasi-linear-ab} is quasi-linear PDE, having characteristic equation in real domain $\Rightarrow \frac{dx}{dt} = \frac{b}{a}$
 
-\yellownote{
-	Incomplete \\
-}
+\begin{align*}
+	a(x,t,f)\frac{\partial f}{\partial t} + b(x,t,f)\frac{\partial f}{\partial x} = c(x,t,f) \tag{6.6} \label{eq:semi-linear-abc}
+\end{align*}
+
+Above \myeqref{eq:semi-linear-abc} is semi-linear PDE, having characteristic equation in real domain.
 
 \clearpage
 
@@ -1005,14 +1009,19 @@ Solution of above \myeqref{eq:matrix-form-pde} are 2 characteristic equations:
 \end{align*}
 
 \begin{align*}
-	\text{if} B^2-4AC > 0 \Rightarrow & \text{2 distinct Real roots} \\
+	\text{if } B^2-4AC > 0 \Rightarrow & \text{2 distinct Real roots} \\
 					  & \text{Family of char. curve}\in \mathbb{R} \\
 					  & \text{Hyperbolic PDE} \\
-	\text{if} B^2-4AC = 0 \Rightarrow & \text{Real and equal roots} \\
+	\text{if } B^2-4AC = 0 \Rightarrow & \text{Real and equal roots} \\
 					  & \text{1 Family of char. curve}\in \mathbb{R} \\
 					  & \text{Parabolic PDE} \\
-	\text{if} B^2-4AC < 0 \Rightarrow & \text{Imaginary roots} \\
+	\text{if } B^2-4AC < 0 \Rightarrow & \text{Imaginary roots} \\
 					  & \text{Family of char. curves}\in \mathbb{C} \\
 					  & \text{Elliptic PDE}
 \end{align*}
+
+Examples:
+\yellownote{
+	Incomplete \\
+}
 \end{document}
