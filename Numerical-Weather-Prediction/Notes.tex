@@ -783,7 +783,7 @@ Similiarly, From \myeqref{eq:forwarddiff_xt} and \myeqref{eq:backwarddiff_xt} re
 	\frac{d^2f}{dt^2}            & \simeq \Big[\frac{f(x, t + \Delta t) - 2f(x,t)+ f(x, t - \Delta t)}{(\Delta t)^2}\Big] + O(\Delta t^2) \tag{5.16} \label{eq:dfdx1+2-sd-wrt-t}
 \end{align*}
 
-\subsection{Explicit form of $2^{nd}$ order PDE}
+\subsection{Explicit form of second order PDE}
 \begin{align*}
 	A \frac{\partial^2 f}{\partial x^2} + B \frac{\partial^2 f}{\partial x \partial y} + C \frac{\partial^2 f}{\partial y^2} + D \frac{\partial f}{\partial x} + E \frac{\partial f}{\partial x} + Ff = G \tag{5.17} \label{eq:explicit2ndorderpde}
 \end{align*}
@@ -808,7 +808,7 @@ where
 \end{align*}
 
 \begin{figure}[ht!]
-	\centring
+	\centering
 	\begin{tikzpicture}
 	    \begin{axis}[
 		% xlabel={$x$},
@@ -860,7 +860,7 @@ Substituting, $u=\frac{dx}{dt}$ in \myeqref{eq:advectioneq}, we obtain:
 
 \subsection{Triangular Property}
 \begin{figure}[ht!]
-	\centring
+	\centering
 	\begin{tikzpicture}
 	    \begin{axis}[
 		% xlabel={$x$},
@@ -898,9 +898,9 @@ Substituting, $u=\frac{dx}{dt}$ in \myeqref{eq:advectioneq}, we obtain:
 \begin{align*}
 	\frac{\partial f}{\partial t} + u \frac{\partial f}{\partial x} = 0 \;
 	 & \begin{cases}
-		   u = \text{constant} & \Rightarrow \text{PDE is linear},      \\
-		   u = u(x,t)          & \Rightarrow \text{PDE is linear},      \\
-		   u = u(x,t,f)        & \Rightarrow \text{PDE is quasi-linear}
+		   u = \text{constant} & \Rightarrow \text{linear PDE },      \\
+		   u = u(x,t)          & \Rightarrow \text{linear PDE },      \\
+		   u = u(x,t,f)        & \Rightarrow \text{quasi-linear PDE}
 	   \end{cases}
 \end{align*}
 
@@ -913,4 +913,106 @@ Above \myeqref{eq:quasi-linear-ab} is quasi-linear PDE, having characteristic eq
 \yellownote{
 	Incomplete \\
 }
+
+\clearpage
+
+\section{Lecture 7 22/01/2025}
+General quasi-linear 2$^{nd}$ order PDE:
+\begin{align*}
+	A\frac{\partial^2 f}{\partial x^2} + B\frac{\partial^2 f}{\partial x \partial y} + C\frac{\partial^2 f}{\partial y^2} + D\frac{\partial f}{\partial x} + E\frac{\partial f}{\partial y} + Ff = G \tag{7.1} \label{eq:genral-quasi-linear-pde} 
+\end{align*}
+
+i.e. $A,B,C$ can be function of $x,y,f,\frac{\partial f}{\partial x}$ and $\frac{\partial f}{\partial y}$.
+
+To find sign of dicriminant $B^2 - 4AC$ tells the classification of equation:
+\begin{align*}
+	B^2 - 4AC
+	\begin{cases}
+		> 0, &\text{ Hyperbolic PDE}\\
+		= 0, &\text{ Parabolic PDE}\\
+		< 0, &\text{ Elliptical PDE}
+	\end{cases}
+\end{align*}
+ 
+This is analogus to general equation of conic-section curves. Which is general by \myeqref{eq:genral-conic-section}
+\begin{align*}
+	Ay^2 + Bxy + Cx^2 + Dx + Ey + F = 0 \tag{7.2} \label{eq:genral-conic-section} 
+\end{align*}
+\begin{align*}
+	B^2 - 4AC
+	\begin{cases}
+		> 0, &\text{ Hyperbola}\\
+		= 0, &\text{ Parabola}\\
+		< 0, &\text{ Ellipse}
+	\end{cases}
+\end{align*}
+
+\begin{align*}
+	df &= \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy \tag{7.3} \label{eq:df} \\
+	d\Big(\frac{\partial f}{\partial x}\Big) &= \frac{\partial^2 f}{\partial x^2}dx + \frac{\partial^2 f}{\partial x \partial y}dy \tag{7.4} \label{eq:dpfpx} \\
+	d\Big(\frac{\partial f}{\partial y}\Big) &= \frac{\partial^2 f}{\partial x \partial y}dx + \frac{\partial^2 f}{\partial y^2}dy \tag{7.5} \label{eq:dpfpy}
+\end{align*}
+
+Unknown in \myeqref{eq:df}, \myeqref{eq:dpfpx} and \myeqref{eq:dpfpy} are 2$^{nd}$ order derivatives.
+
+From \myeqref{eq:genral-quasi-linear-pde},
+\begin{align*}
+	A\frac{\partial^2 f}{\partial x^2} + B\frac{\partial^2 f}{\partial x \partial y} + C\frac{\partial^2 f}{\partial y^2} &= - D\frac{\partial f}{\partial x} - E\frac{\partial f}{\partial y} - Ff + G \tag{7.6} \label{eq:genral-quasi-linear-pde-reodered} 
+\end{align*}
+
+From \myeqref{eq:dpfpx},
+\begin{align*}
+	  \frac{\partial^2 f}{\partial x^2}dx + \frac{\partial^2 f}{\partial x \partial y}dy &= d\Big(\frac{\partial f}{\partial x}\Big) \tag{7.7} \label{eq:dpfpx-reodered}
+\end{align*}
+
+From \myeqref{eq:dpfpy},
+\begin{align*}
+	 \frac{\partial^2 f}{\partial x \partial y}dx + \frac{\partial^2 f}{\partial y^2}dy &= d\Big(\frac{\partial f}{\partial y}\Big) \tag{7.8} \label{eq:dpfpy-reordered}
+\end{align*}
+
+Matrix representation of \myeqref{eq:genral-quasi-linear-pde-reodered}, \myeqref{eq:dpfpx-reodered} and \myeqref{eq:dpfpy-reordered}:
+\begin{align*}
+    \underbrace{
+        \begin{bmatrix}
+            A & B & C \\
+            dx & dy & 0 \\
+            0 & dx & dy
+        \end{bmatrix}
+    }_{\text{det(\textbf{A}) = 0}}
+    \begin{bmatrix}
+        \frac{\partial^2 f}{\partial x^2} \\
+        \frac{\partial^2 f}{\partial x \partial y} \\
+        \frac{\partial^2 f}{\partial y^2}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        -D\frac{\partial f}{\partial x} - E\frac{\partial f}{\partial y} - Ff + G \\
+        d\Big(\frac{\partial f}{\partial x}\Big) \\
+        d\Big(\frac{\partial f}{\partial y}\Big)
+    \end{bmatrix}.
+\end{align*}
+
+Determintant of $(\textbf{A})$ should be equal to zero, i.e.,
+\begin{align*}
+	\text{det}(\textbf{A}) &= 0 \\
+	A(dy)^2 - B(dxdy) + C(dx)^2&= 0 \\
+	A\Big(\frac{dy}{dx}\Big)^2 - B\Big(\frac{dy}{dx}\Big) + C &= 0 \tag{7.9} \label{eq:matrix-form-pde}
+\end{align*}
+
+Solution of above \myeqref{eq:matrix-form-pde} are 2 characteristic equations:
+\begin{align*}
+	\frac{dy}{dx} &= \frac{B \pm \sqrt{B^2 - 4AC}}{2A}
+\end{align*}
+
+\begin{align*}
+	\text{if} B^2-4AC > 0 \Rightarrow & \text{2 distinct Real roots} \\
+					  & \text{Family of char. curve}\in \mathbb{R} \\
+					  & \text{Hyperbolic PDE} \\
+	\text{if} B^2-4AC = 0 \Rightarrow & \text{Real and equal roots} \\
+					  & \text{1 Family of char. curve}\in \mathbb{R} \\
+					  & \text{Parabolic PDE} \\
+	\text{if} B^2-4AC < 0 \Rightarrow & \text{Imaginary roots} \\
+					  & \text{Family of char. curves}\in \mathbb{C} \\
+					  & \text{Elliptic PDE}
+\end{align*}
 \end{document}

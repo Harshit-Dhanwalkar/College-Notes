@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1737519565 "Notes.tex" "Notes.pdf" "Notes" 1737519565
+["pdflatex"] 1737549174 "Notes.tex" "Notes.pdf" "Notes" 1737549176
   "/etc/texmf/web2c/texmf.cnf" 1728313746 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -34,6 +34,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb" 1136849748 35941 f27169cc74234d5bd5e4cca5abafaabb ""
   "/usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb" 1136849748 44648 23115b2a545ebfe2c526c3ca99db8b95 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb" 1136849748 48169 b4fd9d908b9ee8c65d4305ad39071c5e ""
@@ -275,11 +276,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1734418184 4073795 a82a847ac97773bf4a607ab050efa3a1 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736325085 1435836 f91fb7a9941a454f193d6a5e108415c1 ""
-  "Notes.aux" 1737519384 11233 1cf76253f8ca947d92754bf818a3fc1c "pdflatex"
-  "Notes.lof" 1737519384 388 0d66efa7ae26c1cb5d1dfc3a3435a445 "pdflatex"
-  "Notes.out" 1737519384 2507 d508c3c448ccb6282407d0cb9881323a "pdflatex"
-  "Notes.tex" 1737519564 43661 a55ca6819de90d07dcaddf98b81c4aa0 ""
-  "Notes.toc" 1737519384 1310 cada78f8eaffe6acdc2d569e971d5bbd "pdflatex"
+  "Notes.aux" 1737549176 12757 d46d9e129fee4a33afdf59796b485968 "pdflatex"
+  "Notes.lof" 1737549176 388 0d66efa7ae26c1cb5d1dfc3a3435a445 "pdflatex"
+  "Notes.out" 1737549176 2672 0a3546794af5038eab6c252d08ebe140 "pdflatex"
+  "Notes.tex" 1737549172 47698 ad8680e226d9ed2503d18401bd2c1e41 ""
+  "Notes.toc" 1737549176 1385 e1fa63b2d58524c4685177947e95555b "pdflatex"
   "SelfArx.cls" 1737474764 9451 f9c701791ca77aa22cf3019abb51ad64 ""
   (generated)
   "Notes.aux"
