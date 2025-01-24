@@ -762,12 +762,12 @@ Turbulent Kinetic Energy (TKE) = $\frac{1}{2}(\overline{u'}^2 + \overline{v'}^2 
 \end{question}
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{|c|cccccccccc|}
-		\toprule
-		$u$ (m/s) & 5 & 6  & 5 & 4 & 7  & 5 & 3 & 5  & 4 & 6  \\
-		\midrule
-		$w$ (m/s) & 0 & -1 & 1 & 0 & -2 & 1 & 2 & -1 & 1 & -1 \\
-		\bottomrule
+	\begin{tabular}[c]{|>{\columncolor{black!30}}l|l|l|l|l|l|l|l|l|l|l|}
+		\hline
+		\textbf{u (m/s)} & 5 & 6  & 5 & 4 & 7  & 5 & 3 & 5  & 4 & 6  \\
+		\hline
+		\textbf{w (m/s)} & 0 & -1 & 1 & 0 & -2 & 1 & 2 & -1 & 1 & -1 \\
+		\hline
 	\end{tabular}
 	\caption{Wind observations for \(u\) and \(w\) components.}
 	\label{tab:wind-observations}
@@ -780,6 +780,52 @@ Turbulent Kinetic Energy (TKE) = $\frac{1}{2}(\overline{u'}^2 + \overline{v'}^2 
 		\sigma_{U,W} = \overline{u'w'} & = -1.1, \quad \gamma_{U,W} =
 	\end{align*}
 \end{answer}
+
+\clearpage
+
+\section{Lecture 5 24/01/2025}
+\subsection{Fluxes}
+Mass, Heat, Moisture, Momentum, Pollutent, etc.
+
+\begin{table}[h!]
+	\begin{center}
+		\begin{tabular}[c]{|l|l|}
+			\hline
+			\multicolumn{1}{|>{\columncolor{blue!20}}c|}{\textbf{Quantity}} &
+			\multicolumn{1}{>{\columncolor{blue!20}}c|}{\textbf{Unit}}                                     \\
+			\hline
+			Mass                                                            & $kg_{\text{air}}/m^2s$       \\
+			Heat                                                            & $J/m^2s$                     \\
+			Moisture                                                        & $kg_{\text{wv}}/m^2s$        \\
+			Momentum                                                        & $kgms^{-1}/m^2s$             \\
+			Pollutant                                                       & $kg_{\text{pollutant}}/m^2s$ \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection{Kinematic Flux}
+\textbf{Note:} We asssume atmoshpere to be of constant density ($\rho_{\text{air}}$).
+
+\begin{table}[h!]
+	\begin{center}
+		\begin{tabular}[c]{|l|l|l|}
+			\hline
+			\multicolumn{1}{|>{\columncolor{blue!20}}c|}{\textbf{Flux Quantity}} &
+			\multicolumn{1}{>{\columncolor{blue!20}}c|}{\textbf{Formula}} &
+			\multicolumn{1}{>{\columncolor{blue!20}}c|}{\textbf{Unit}}                                     \\
+			\hline
+			Mass flux      & $\frac{\text{mass}}{\rho_{\text{air}}}$ & $kg_{\text{air}}/m^2s$       \\
+			Heat flux      & $\frac{\text{heat}}{\rho C_p}$          & $J/m^2s$                     \\
+			Moisture flux  &           -                             & $kg_{\text{wv}}/m^2s$        \\
+			Momentum flux  &           -                             & $kgms^{-1}/m^2s$             \\
+			Pollutant flux &           -                             & $kg_{\text{pollutant}}/m^2s$ \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\yellownote{Incomplete}
 
 \clearpage
 \bibliographystyle{plain}
