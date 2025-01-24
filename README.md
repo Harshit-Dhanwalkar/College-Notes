@@ -14,7 +14,7 @@ Welcome to the repository for my lecture notes! Here, you'll find organized and 
 |---------------------------------|-----------------------|-----------------------|--------------------------------------------------------------------------------------------------------|
 | **Thermodynamics and Cloud Physics** | ✅ Completed          | 30                    | [📄 View Notes](https://github.com/Harshit-Dhanwalkar/College-Notes/tree/main/Thermodynamics-and-Cloud-Physics/Notes.pdf) |
 | **Numerical Weather Prediction**     | 🔄 Ongoing            | 7*                    | [📄 View Notes](https://github.com/Harshit-Dhanwalkar/College-Notes/tree/main/Numerical-Weather-Prediction/Notes.pdf)     |
-| **Boundary Layer Meteorology**       | 🔄 Ongoing            | 3*                    | [📄 View Notes](https://github.com/Harshit-Dhanwalkar/College-Notes/tree/main/Boundary-Layer-Meteorology/Notes.pdf)       |
+| **Boundary Layer Meteorology**       | 🔄 Ongoing            | 4*                    | [📄 View Notes](https://github.com/Harshit-Dhanwalkar/College-Notes/tree/main/Boundary-Layer-Meteorology/Notes.pdf)       |
 
 > **Note:** Some notes may require multiple compilations to produce a PDF output.  
 
