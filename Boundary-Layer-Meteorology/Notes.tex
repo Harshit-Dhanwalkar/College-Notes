@@ -698,6 +698,90 @@ The boundary layer plays a critical role in regulating interactions between the 
 \end{table}
 
 \clearpage
+
+\section{Lecture 4 23/01/2025}
+\subsection{Statistical tools required for Turbulence}
+
+Turbulence is characteristiced by randomness.
+\begin{align*}
+	U & = \overline{u} + u' \\
+	V & = \overline{v} + v' \\
+	W & = \overline{w} + w' \\
+	C & = \overline{c} + c'
+\end{align*}
+
+\subsubsection{Mean}
+\begin{align*}
+	\overline{A} & = \frac{1}{N}\sum^N_{i=1}A(i,s)   \\
+	\overline{A} & = \frac{1}{T}\int^T_{t=0}A(t,s)dt
+\end{align*}
+
+\subsubsection{Rules for averaging}
+If $A$ and $B$ are variables dependent on time, then:
+\begin{align*}
+	\overline{A + B}                & = \overline{A} + \overline{B}, \\
+	\overline{\overline{A}}         & = A,                           \\
+	\overline{\overline{A} \cdot B} & = \overline{A \cdot B},        \\
+	\overline{\frac{dA}{dt}}        & = \frac{d\overline{A}}{dt}.
+\end{align*}
+
+\textbf{Reynold's averaging rule}
+\begin{align*}
+	\overline{\overline{A}}         & = \overline{\overline{A}+a'} = \overline{A}, \text{since } \overline{a'}=0                      \\
+	\overline{\overline{A \cdot B}} & = \overline{(\overline{A}+a')(\overline{B}+b')} = \overline{A}\overline{B} + \overline{(a'b')}, \\
+	\overline{(a'b')}               & \neq  \overline{a'}\overline{b'}                                                                \\
+	\overline{a'^2}                 & \neq 0                                                                                          \\
+	\overline{b'^2}                 & \neq 0
+\end{align*}
+
+\subsubsection{Variance}
+\begin{align*}
+	\sigma_A^2 & = \frac{1}{N} \sum^N_{i=1}(A_i-\overline{A})^2 = \overline{a'^2}
+\end{align*}
+
+\subsubsection{Standard deviation}
+\begin{align*}
+	\sigma_A & = \sqrt{\frac{1}{N} \sum^N_{i=1}(A_i-\overline{A})^2} = \Big(\overline{a'^2}\Big)^2
+\end{align*}
+
+\subsubsection{Covariance}
+\begin{align*}
+	\sigma_{A,B} & = \frac{1}{N} \sum_{i=1}^N (A_i - \overline{A})(B_i - \overline{B}) = \overline{a'b'}.
+\end{align*}
+
+\subsubsection{Correlation}
+\begin{align*}
+	\gamma_{A,B} & = \frac{\overline{a'b'}}{\sigma_A\sigma_B}
+\end{align*}
+
+Mean Kinetic Energy (MKE) = $\frac{1}{2}(\overline{u}^2 + \overline{v}^2 +\overline{w}^2)$ \\
+Turbulent Kinetic Energy (TKE) = $\frac{1}{2}(\overline{u'}^2 + \overline{v'}^2 +\overline{w'}^2)$
+
+\begin{question}{}
+	Suppose we erect instruments with an anemometer to measure \(u\) and \(w\) components, recording wind speeds every 6 seconds for a minute, resulting in the following 10 points of wind observations shown in Table~\ref{tab:wind-observations}. Calculate the mean, variance, and standard deviation for each component. Also, find the covariance and correlation between them.
+\end{question}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|cccccccccc|}
+		\toprule
+		$u$ (m/s) & 5 & 6  & 5 & 4 & 7  & 5 & 3 & 5  & 4 & 6  \\
+		\midrule
+		$w$ (m/s) & 0 & -1 & 1 & 0 & -2 & 1 & 2 & -1 & 1 & -1 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Wind observations for \(u\) and \(w\) components.}
+	\label{tab:wind-observations}
+\end{table}
+\begin{answer}{}
+	Solution:\begin{align*}
+		\overline{u}                   & = 5, \qquad \overline{v} = 0              \\
+		\sigma^2_U                     & = 1.2, \qquad \sigma^2_W = 1.1            \\
+		\sigma_U                       & = \sqrt{1.2}, \quad \sigma_W = \sqrt{1.1} \\
+		\sigma_{U,W} = \overline{u'w'} & = -1.1, \quad \gamma_{U,W} =
+	\end{align*}
+\end{answer}
+
+\clearpage
 \bibliographystyle{plain}
 \bibliography{Reference}
 \end{document}
