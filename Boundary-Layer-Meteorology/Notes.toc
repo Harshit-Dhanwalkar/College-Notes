@@ -23,5 +23,8 @@
 \contentsline {section}{\numberline {5}Lecture 5 24/01/2025}{10}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Fluxes}{10}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Kinematic Flux}{10}{subsection.5.2}%
-\contentsline {section}{References}{11}{table.caption.18}%
+\contentsline {subsection}{\numberline {5.3}Eddy Flux}{10}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Stress}{10}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Reynold's stress}{10}{subsubsection.5.4.1}%
+\contentsline {section}{References}{11}{subsubsection.5.4.1}%
 \contentsfinish 
