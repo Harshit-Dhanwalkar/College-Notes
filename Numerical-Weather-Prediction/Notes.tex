@@ -1050,4 +1050,72 @@ Examples:
 \yellownote{
 	Incomplete \\
 }
+
+\clearpage
+
+\section{Lecture 08/01/2025}
+
+\subsection{1.}
+\begin{align*}
+	k\frac{\partial^2 T}{\partial x^2} - \frac{\partial T}{\partial t} = 0 \tag{8.1} \label{eq:2ndorderquasilinearpde}
+\end{align*}
+
+\myeqref{eq:2ndorderquasilinearpde} can be decomposed into pair of PDEs:
+\begin{align*}
+	\frac{\partial^2 T}{\partial x \partial t} - \frac{\partial^2 T}{\partial t^2} = d\Big(\frac{\partial T}{\partial t}\Big) \tag{8.2} \label{eq:8.2} \\
+	\frac{\partial^2 T}{\partial x^2} - \frac{\partial^2 T}{\partial x \partial t} = d\Big(\frac{\partial T}{\partial x}\Big) \tag{8.3} \label{eq:8.3}
+\end{align*}
+
+Rewriting \myeqref{eq:2ndorderquasilinearpde}, \myeqref{eq:8.2} and \myeqref{eq:8.3} into matrix form:
+\begin{align*}
+	\underbrace{
+		\begin{bmatrix}
+			k  & 0  & 0  \\
+			0  & dx & dt \\
+			dx & dt & 0
+		\end{bmatrix}}_{\text{A}}
+	\begin{bmatrix}
+		\frac{\partial^2 T}{\partial x^2}          \\
+		\frac{\partial^2 T}{\partial x \partial t} \\
+		\frac{\partial^2 T}{\partial t^2}
+	\end{bmatrix}
+	= \begin{bmatrix}
+		  \frac{\partial T}{\partial t}            \\
+		  d\Big(\frac{\partial T}{\partial t}\Big) \\
+		  d\Big(\frac{\partial T}{\partial x}\Big)
+	  \end{bmatrix}
+\end{align*}
+
+\begin{align*}
+	\text{det (A)}                        & = 0 \\
+	k(0-(dt)^2) - 0(0-dxdt) + 0(0-(dx)^2) & = 0 \\
+	-k(dt)^2                              & = 0
+\end{align*}
+
+\begin{align*}
+	\therefore dt & = 0             \\
+	t             & = \text{const.}
+\end{align*}
+
+There fore the equation represents Parabolic PDE (2$^{\text{n}}$ order quasi-linear PDE).
+
+\subsection{2.}
+
+1-D wave equation:
+\begin{align*}
+	\frac{\partial^2 f}{\partial t^2}                                                                                                                     & = c^2\frac{\partial^2 f}{\partial x^2} \tag{8.4} \label{eq:1dwaveequation} \\
+	\underbrace{\Big(\frac{\partial^2}{\partial t^2} - c^2\frac{\partial^2}{\partial x^2}\Big)}_{\text{Operator acting on f}}f                            & = 0                                                                        \\
+	\Big[\Big(\frac{\partial}{\partial t} - c\frac{\partial}{\partial x}\Big) \Big(\frac{\partial}{\partial t} + c\frac{\partial}{\partial x}\Big)\Big] f & = 0
+\end{align*}
+
+Discrimant of \myeqref{eq:1dwaveequation}, for A = 1, B=0, C=-1:
+\begin{align*}
+	B^2 - 4AC      &    \\
+	0^2 - 4c^2(-1) &    \\
+	4c^2           & >0
+\end{align*}
+$\therefore$ The \myeqref{eq:1dwaveequation} represents Hyperbolic PDE.
+
+\yellownote{Incomplete}
+\clearpage
 \end{document}

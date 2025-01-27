@@ -16,4 +16,7 @@
 \contentsline {subsection}{\numberline {6.1}1-D Linear Advection equation}{10}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Triangular Property}{10}{subsection.6.2}%
 \contentsline {section}{\numberline {7}Lecture 7 22/01/2025}{11}{section.7}%
+\contentsline {section}{\numberline {8}Lecture 08/01/2025}{12}{section.8}%
+\contentsline {subsection}{\numberline {8.1}1.}{12}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}2.}{12}{subsection.8.2}%
 \contentsfinish 
