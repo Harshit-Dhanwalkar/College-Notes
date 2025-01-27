@@ -19,4 +19,5 @@
 \contentsline {section}{\numberline {8}Lecture 08/01/2025}{12}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Heat Equation}{12}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}1-D Wave Equation}{12}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Laplace Equation}{13}{subsection.8.3}%
 \contentsfinish 

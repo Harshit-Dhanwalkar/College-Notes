@@ -1063,8 +1063,8 @@ Examples:
 
 \myeqref{eq:2ndorderquasilinearpde} can be decomposed into pair of PDEs:
 \begin{align*}
-	\frac{\partial^2 T}{\partial x \partial t}dx + \frac{\partial^2 T}{\partial t^2}dt = d\Big(\frac{\partial T}{\partial t}\Big) \tag{8.2} \label{eq:8.2} \\
-	\frac{\partial^2 T}{\partial x^2}dx + \frac{\partial^2 T}{\partial x \partial t}dt = d\Big(\frac{\partial T}{\partial x}\Big) \tag{8.3} \label{eq:8.3}
+	\frac{\partial^2 T}{\partial x \partial t}dx + \frac{\partial^2 T}{\partial t^2}dt &= d\Big(\frac{\partial T}{\partial t}\Big) \tag{8.2} \label{eq:8.2} \\
+	\frac{\partial^2 T}{\partial x^2}dx + \frac{\partial^2 T}{\partial x \partial t}dt &= d\Big(\frac{\partial T}{\partial x}\Big) \tag{8.3} \label{eq:8.3}
 \end{align*}
 
 Rewriting \myeqref{eq:2ndorderquasilinearpde}, \myeqref{eq:8.2} and \myeqref{eq:8.3} into matrix form:
@@ -1102,7 +1102,6 @@ Therefore the equation represents Parabolic PDE (2$^{\text{n}}$ order quasi-line
 
 \subsection{1-D Wave Equation}
 
-1-D wave equation:
 \begin{align*}
 	\frac{\partial^2 f}{\partial t^2}                                                                                                                     & = c^2\frac{\partial^2 f}{\partial x^2} \tag{8.4} \label{eq:1dwaveequation} \\
 	\underbrace{\Big(\frac{\partial^2}{\partial t^2} - c^2\frac{\partial^2}{\partial x^2}\Big)}_{\text{Operator acting on f}}f                            & = 0                                                                        \\
@@ -1188,9 +1187,9 @@ Rewriting \myeqref{eq:1dwaveequation}, \myeqref{eq:8.5} and \myeqref{eq:8.6} int
 \begin{align*}
 	\underbrace{
 		\begin{bmatrix}
-			c^2  & 0  & -1  \\
-			0  & dx & dt \\
-			dx & dt & 0
+			c^2 & 0  & -1 \\
+			0   & dx & dt \\
+			dx  & dt & 0
 		\end{bmatrix}}_{\text{A}}
 	\begin{bmatrix}
 		\frac{\partial^2 f}{\partial x^2}          \\
@@ -1205,19 +1204,67 @@ Rewriting \myeqref{eq:1dwaveequation}, \myeqref{eq:8.5} and \myeqref{eq:8.6} int
 \end{align*}
 
 \begin{align*}
-	\text{det (A)}                        & = 0 \\
+	\text{det (A)}                             & = 0 \\
 	c^2(0-(dt)^2) - 0(0-dxdt) + (-1)(0-(dx)^2) & = 0 \\
 	-c^2(dt)^2 + (dx)^2                        & = 0 \\
-	-c^2\Big(\frac{dt}{dx}\Big)^2 + 1                  & = 0 \\
-	c^2\Big(\frac{dt}{dx}\Big)^2 - 1                  & = 0
+	-c^2\Big(\frac{dt}{dx}\Big)^2 + 1          & = 0 \\
+	c^2\Big(\frac{dt}{dx}\Big)^2 - 1           & = 0
 \end{align*}
 
 Slope $\frac{dt}{dx}$ is equal to:
 \begin{align*}
-	\frac{dt}{dx} &= \frac{-0 \pm \sqrt{0^2 -4 \cdot c^2\cdot (-1)}}{2\cdot c^2} \\
-	\frac{dt}{dx} &= \pm \frac{1}{2c}
+	\frac{dt}{dx} & = \frac{-0 \pm \sqrt{0^2 -4 \cdot c^2\cdot (-1)}}{2\cdot c^2} \\
+	\frac{dt}{dx} & = \pm \frac{1}{2c}
 \end{align*}
 
-\yellownote{Incomplete}
+\subsection{Laplace Equation}
+
+\begin{align*}
+	\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2}           &= 0 \tag{8.7} \label{eq:8.7}
+\end{align*}
+
+
+\begin{align*}
+	\frac{\partial^2 f}{\partial x \partial y}dx + \frac{\partial^2 f}{\partial y^2}dy &= d\Big(\frac{\partial f}{\partial y}\Big) \tag{8.8} \label{eq:8.8} \\
+	\frac{\partial^2 f}{\partial x^2}dx + \frac{\partial^2 f}{\partial x \partial y}dy &= d\Big(\frac{\partial f}{\partial x}\Big) \tag{8.9} \label{eq:8.0}
+\end{align*}
+
+Discrimant of \myeqref{eq:8.7}, for A = 1, B=0, C=1:
+\begin{align*}
+	B^2 - 4AC     &    \\
+	0^2 - 4(1)(1) &    \\
+	-4            & <0
+\end{align*}
+
+Therefore \myeqref{eq:8.7} represents Elliptical PDE.
+
+Rewriting \myeqref{eq:8.7}, \myeqref{eq:8.8} and \myeqref{eq:8.9} into matrix form:
+\begin{align*}
+	\underbrace{
+		\begin{bmatrix}
+			1 & 0  & 1 \\
+			0   & dx & dy \\
+			dx  & dy & 0
+		\end{bmatrix}}_{\text{A}}
+	\begin{bmatrix}
+		\frac{\partial^2 f}{\partial x^2}          \\
+		\frac{\partial^2 f}{\partial x \partial y} \\
+		\frac{\partial^2 f}{\partial y^2}
+	\end{bmatrix}
+	= \begin{bmatrix}
+		  0                                        \\
+		  d\Big(\frac{\partial f}{\partial y}\Big) \\
+		  d\Big(\frac{\partial f}{\partial x}\Big)
+	  \end{bmatrix}
+\end{align*}
+
+\begin{align*}
+	\text{det (A)}                        & = 0 \\
+	1(0-(dy)^2) - 0(0-dxdy) + 1(0-(dx)^2) & = 0 \\
+	-(dy)^2 - (dx)^2                      & = 0 \\
+	\Big(\frac{dy}{dx}\Big)^2 + 1         & = 0 \\
+	\frac{dy}{dx}                         & = \pm \iota
+\end{align*}
+
 \clearpage
 \end{document}
