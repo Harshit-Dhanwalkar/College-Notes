@@ -571,6 +571,7 @@ Initial conditions:
 	\theta(t=t_0)       & =\theta_0 \\
 	\dot{\theta(t=t_0)} & =\omega_0
 \end{align*}
+
 We can rewrite this equation into two 1$^{st}$-order ODEs,
 
 Let $\frac{\theta}{dt}=p$, then
@@ -584,7 +585,7 @@ Initial conditions become:
 	p(t=t_0)      & =\omega_0
 \end{align*}
 
-\subsection{Forward difference}
+\subsection{Forward Difference}
 Invoking Taylor series expansion for $f(t+t_0)$:
 \begin{align*}
 	\begin{rcases}
@@ -627,7 +628,7 @@ From \myeqref{eq:ic2} and \myeqref{eq:forwarddiff_theta}:
 	\theta(t_1)                                 & = \theta(t_0) - \Delta t p(t_0) \tag{4.6} \label{eq:theta(t1-i)}
 \end{align*}
 
-\subsection{Backward difference}
+\subsection{Backward Difference}
 Invoking Taylor series expansion for $f(t-t_0)$:
 \begin{align*}
 	\begin{rcases}
@@ -669,7 +670,7 @@ From \myeqref{eq:ic2} and \myeqref{eq:backwarddiff_theta}:
 	\theta(t_1)                                 & = \theta(t_0) - \Delta t p(t_0) \tag{4.11} \label{eq:theta(t1-ii)}
 \end{align*}
 
-\subsection{Current difference}
+\subsection{Current Difference}
 The current difference method is a combination of the forward and backward difference methods, where we approximate the values at the current time using both the forward and backward information.
 
 Using forward difference:
@@ -757,7 +758,7 @@ Adding \myeqref{eq:forwarddiff_x} and \myeqref{eq:backwarddiff_x}, we get,
 	\end{rcases} & \tag{5.8} \label{eq:backwarddiff_xt}
 \end{align*}
 
-\subsection{Space difference}
+\subsection{Space Difference}
 From \myeqref{eq:forwarddiff_xt} and \myeqref{eq:backwarddiff_xt} respectively by difference equation w.r.t 1-direction, say x, we obtain \textbf{Space difference}:
 \begin{align*}
 	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x + \Delta x,t) - f(x,t)}{\Delta x}\Big] + O(\Delta x) \tag{5.9} \label{eq:9}   \\
@@ -774,7 +775,7 @@ Adding \myeqref{eq:forwarddiff_xt} and \myeqref{eq:backwarddiff_xt}, we get,
 	\frac{d^2f}{dx^2} & \simeq \Big[\frac{f(x + \Delta x, t) - 2f(x,t)+ f(x - \Delta x, t)}{(\Delta x)^2}\Big] + O(\Delta x^2) \tag{5.12} \label{eq:dfdx1+2-sd-wrt-x}
 \end{align*}
 
-\subsection{Time difference}
+\subsection{Time Difference}
 Similiarly, From \myeqref{eq:forwarddiff_xt} and \myeqref{eq:backwarddiff_xt} respectively, difference equation w.r.t time (t), we obtain \textbf{Time difference}:
 \begin{align*}
 	\frac{df}{dt}\Big{|}_{t=t_0} & \simeq \Big[\frac{f(x, t + \Delta t) - f(x,t)}{\Delta t}\Big] + O(\Delta t) \tag{5.13} \label{eq:13}                                          \\
@@ -783,7 +784,7 @@ Similiarly, From \myeqref{eq:forwarddiff_xt} and \myeqref{eq:backwarddiff_xt} re
 	\frac{d^2f}{dt^2}            & \simeq \Big[\frac{f(x, t + \Delta t) - 2f(x,t)+ f(x, t - \Delta t)}{(\Delta t)^2}\Big] + O(\Delta t^2) \tag{5.16} \label{eq:dfdx1+2-sd-wrt-t}
 \end{align*}
 
-\subsection{Explicit form of second order PDE}
+\subsection{Explicit Form Of Second Order PDE}
 \begin{align*}
 	A \frac{\partial^2 f}{\partial x^2} + B \frac{\partial^2 f}{\partial x \partial y} + C \frac{\partial^2 f}{\partial y^2} + D \frac{\partial f}{\partial x} + E \frac{\partial f}{\partial x} + Ff = G \tag{5.17} \label{eq:explicit2ndorderpde}
 \end{align*}
@@ -800,7 +801,7 @@ Example: Momentum equation, which is,
 	\frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} + w\frac{\partial u}{\partial z} - fv & = -\frac{1}{\rho}\frac{\partial P}{\partial x}
 \end{align*} is a quasi-linear PDE.
 
-\subsection{Implicit form of second order PDE}
+\subsection{Implicit Form Of Second Order PDE}
 \begin{align*}
 	G\Big(f,\frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial^2 f}{\partial x^2},,\frac{\partial^2 f}{\partial y^2},\frac{\partial^2 f}{\partial x \partial y}\Big) = 0 \tag{5.18} \label{eq:implicit2ndorderpde}
 \end{align*}
@@ -822,7 +823,7 @@ Example: Continuity equation in 1-D, which is,
 \clearpage
 
 \section{Lecture 6 21/01/2025}
-\subsection{1-D Linear Advection equation}
+\subsection{1-D Linear Advection Equation}
 \begin{align*}
 	\frac{\partial f}{\partial t} + u \frac{\partial f}{\partial t} & = 0 \tag{6.1} \label{eq:advectioneq}
 \end{align*}
@@ -1055,15 +1056,15 @@ Examples:
 
 \section{Lecture 08/01/2025}
 
-\subsection{1.}
+\subsection{Heat Equation}
 \begin{align*}
 	k\frac{\partial^2 T}{\partial x^2} - \frac{\partial T}{\partial t} = 0 \tag{8.1} \label{eq:2ndorderquasilinearpde}
 \end{align*}
 
 \myeqref{eq:2ndorderquasilinearpde} can be decomposed into pair of PDEs:
 \begin{align*}
-	\frac{\partial^2 T}{\partial x \partial t} - \frac{\partial^2 T}{\partial t^2} = d\Big(\frac{\partial T}{\partial t}\Big) \tag{8.2} \label{eq:8.2} \\
-	\frac{\partial^2 T}{\partial x^2} - \frac{\partial^2 T}{\partial x \partial t} = d\Big(\frac{\partial T}{\partial x}\Big) \tag{8.3} \label{eq:8.3}
+	\frac{\partial^2 T}{\partial x \partial t}dx + \frac{\partial^2 T}{\partial t^2}dt = d\Big(\frac{\partial T}{\partial t}\Big) \tag{8.2} \label{eq:8.2} \\
+	\frac{\partial^2 T}{\partial x^2}dx + \frac{\partial^2 T}{\partial x \partial t}dt = d\Big(\frac{\partial T}{\partial x}\Big) \tag{8.3} \label{eq:8.3}
 \end{align*}
 
 Rewriting \myeqref{eq:2ndorderquasilinearpde}, \myeqref{eq:8.2} and \myeqref{eq:8.3} into matrix form:
@@ -1097,16 +1098,18 @@ Rewriting \myeqref{eq:2ndorderquasilinearpde}, \myeqref{eq:8.2} and \myeqref{eq:
 	t             & = \text{const.}
 \end{align*}
 
-There fore the equation represents Parabolic PDE (2$^{\text{n}}$ order quasi-linear PDE).
+Therefore the equation represents Parabolic PDE (2$^{\text{n}}$ order quasi-linear PDE).
 
-\subsection{2.}
+\subsection{1-D Wave Equation}
 
 1-D wave equation:
 \begin{align*}
 	\frac{\partial^2 f}{\partial t^2}                                                                                                                     & = c^2\frac{\partial^2 f}{\partial x^2} \tag{8.4} \label{eq:1dwaveequation} \\
 	\underbrace{\Big(\frac{\partial^2}{\partial t^2} - c^2\frac{\partial^2}{\partial x^2}\Big)}_{\text{Operator acting on f}}f                            & = 0                                                                        \\
-	\Big[\Big(\frac{\partial}{\partial t} - c\frac{\partial}{\partial x}\Big) \Big(\frac{\partial}{\partial t} + c\frac{\partial}{\partial x}\Big)\Big] f & = 0
+	\Big[\Big(\frac{\partial}{\partial t} - c\frac{\partial}{\partial x}\Big) \Big(\frac{\partial}{\partial t} + c\frac{\partial}{\partial x}\Big)\Big] f & = 0 \tag{8.5} \label{eq:char-eq}
 \end{align*}
+
+Above \myeqref{eq:char-eq} is pair two 1-D advection equations with constant speed \textit{c} in \textbf{negative} x-direction and \textbf{positive} x-direction respectively.
 
 Discrimant of \myeqref{eq:1dwaveequation}, for A = 1, B=0, C=-1:
 \begin{align*}
@@ -1114,7 +1117,106 @@ Discrimant of \myeqref{eq:1dwaveequation}, for A = 1, B=0, C=-1:
 	0^2 - 4c^2(-1) &    \\
 	4c^2           & >0
 \end{align*}
-$\therefore$ The \myeqref{eq:1dwaveequation} represents Hyperbolic PDE.
+
+Therefore \myeqref{eq:1dwaveequation} represents Hyperbolic PDE.
+
+\begin{figure}[ht!]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				% xlabel={$x$},
+				% ylabel={$f(x)$},
+				axis lines=middle,
+				grid=both,
+				xmax=7.5,
+				xmin=-1,
+				ymax=5,
+				ymin=-1,
+				domain=2:8,
+				samples=100,
+				xtick={2,4,6,8},
+				ytick={2,4},
+				xticklabel=\empty,
+				yticklabel=\empty,
+			]
+			\addplot[blue] {-2 + 1*x};
+			\node at (axis cs:2,-0.5) {$x_0$};
+			\node at (axis cs:4,-0.75) {$x \rightarrow$};
+			\node at (axis cs:-0.75,3) [rotate=90] {$f \rightarrow$};
+			\node at (axis cs:4,3) [rotate=50] {$\frac{dt}{dx}=-\frac{1}{c}$, $c>0$};
+		\end{axis}
+	\end{tikzpicture}
+	% \label{fig:pathline}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				% xlabel={$x$},
+				% ylabel={$f(x)$},
+				axis lines=middle,
+				grid=both,
+				xmax=7.5,
+				xmin=-1,
+				ymax=5,
+				ymin=-1,
+				domain=2:6,
+				samples=100,
+				xtick={2,4,6},
+				ytick={2,4},
+				xticklabel=\empty,
+				yticklabel=\empty,
+			]
+			\addplot[blue] {6 - 1*x};
+			\node at (axis cs:6,-0.5) {$x_0$};
+			\node at (axis cs:4,-0.75) {$x \rightarrow$};
+			\node at (axis cs:-0.75,3) [rotate=90] {$f \rightarrow$};
+			\node at (axis cs:4,3) [rotate=-50] {$\frac{dt}{dx}=-\frac{1}{c}$, $c<0$};
+		\end{axis}
+	\end{tikzpicture}
+	% \label{fig:pathline}
+\end{figure}
+
+
+\begin{align*}
+	\frac{\partial^2 f}{\partial x \partial t}dx + \frac{\partial^2 f}{\partial t^2}dt = d\Big(\frac{\partial f}{\partial t}\Big) \tag{8.5} \label{eq:8.5} \\
+	\frac{\partial^2 f}{\partial x^2}dx + \frac{\partial^2 f}{\partial x \partial t}dt = d\Big(\frac{\partial f}{\partial x}\Big) \tag{8.6} \label{eq:8.6}
+\end{align*}
+
+Rewriting \myeqref{eq:1dwaveequation}, \myeqref{eq:8.5} and \myeqref{eq:8.6} into matrix form:
+\begin{align*}
+	\underbrace{
+		\begin{bmatrix}
+			c^2  & 0  & -1  \\
+			0  & dx & dt \\
+			dx & dt & 0
+		\end{bmatrix}}_{\text{A}}
+	\begin{bmatrix}
+		\frac{\partial^2 f}{\partial x^2}          \\
+		\frac{\partial^2 f}{\partial x \partial t} \\
+		\frac{\partial^2 f}{\partial t^2}
+	\end{bmatrix}
+	= \begin{bmatrix}
+		  \frac{\partial f}{\partial t}            \\
+		  d\Big(\frac{\partial f}{\partial t}\Big) \\
+		  d\Big(\frac{\partial f}{\partial x}\Big)
+	  \end{bmatrix}
+\end{align*}
+
+\begin{align*}
+	\text{det (A)}                        & = 0 \\
+	c^2(0-(dt)^2) - 0(0-dxdt) + (-1)(0-(dx)^2) & = 0 \\
+	-c^2(dt)^2 + (dx)^2                        & = 0 \\
+	-c^2\Big(\frac{dt}{dx}\Big)^2 + 1                  & = 0 \\
+	c^2\Big(\frac{dt}{dx}\Big)^2 - 1                  & = 0
+\end{align*}
+
+Slope $\frac{dt}{dx}$ is equal to:
+\begin{align*}
+	\frac{dt}{dx} &= \frac{-0 \pm \sqrt{0^2 -4 \cdot c^2\cdot (-1)}}{2\cdot c^2} \\
+	\frac{dt}{dx} &= \pm \frac{1}{2c}
+\end{align*}
 
 \yellownote{Incomplete}
 \clearpage

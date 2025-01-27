@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  27 JAN 2025 10:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  27 JAN 2025 17:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -999,12 +999,12 @@ l.564 \clearpage
 ] [7
 
 ]
-Overfull \hbox (8.3644pt too wide) detected at line 775
+Overfull \hbox (8.3644pt too wide) detected at line 776
 []
  []
 
 
-Overfull \hbox (17.71141pt too wide) detected at line 784
+Overfull \hbox (17.71141pt too wide) detected at line 785
 []
  []
 
@@ -1015,39 +1015,43 @@ Overfull \hbox (17.71141pt too wide) detected at line 784
 ] [10
 
 ]
-Overfull \hbox (3.65077pt too wide) detected at line 1023
+Overfull \hbox (3.65077pt too wide) detected at line 1024
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1052--1052
+Underfull \hbox (badness 10000) in paragraph at lines 1053--1053
 
  []
 
 [11
 
-] [12
+]
+Underfull \vbox (badness 1320) has occurred while \output is active []
 
+ [12
+
+] [13
 
 ] 
 AED: lastpage setting LastPage
 (./Notes.aux)
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: 9F763E7AFDC2B2F0A5E7BF36DAC1C7AB;3183.
+(rerunfilecheck)             Checksum: C7A0C38217042134B1A0C2C3DAF11832;3322.
  ) 
 Here is how much of TeX's memory you used:
- 44210 strings out of 480171
- 1016494 string characters out of 5894490
- 1488043 words of memory out of 5000000
- 61056 multiletter control sequences out of 15000+600000
- 543162 words of font info for 306 fonts, out of 8000000 for 9000
+ 44245 strings out of 480171
+ 1016951 string characters out of 5894490
+ 1494463 words of memory out of 5000000
+ 61075 multiletter control sequences out of 15000+600000
+ 543711 words of font info for 312 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  98i,23n,94p,1002b,2138s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Notes.pdf (12 pages, 182580 bytes).
+Output written on Notes.pdf (13 pages, 188602 bytes).
 PDF statistics:
- 381 PDF objects out of 1000 (max. 8388607)
- 311 compressed objects within 4 object streams
- 121 named destinations out of 1000 (max. 500000)
- 108723 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 392 PDF objects out of 1000 (max. 8388607)
+ 321 compressed objects within 4 object streams
+ 127 named destinations out of 1000 (max. 500000)
+ 110771 words of extra memory for PDF output out of 128383 (max. 10000000)
 
