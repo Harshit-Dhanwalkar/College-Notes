@@ -238,7 +238,7 @@ Surface area of Earth = $4\pi R^2$ = $4\pi (6.37 \times 10^{12})$ $\approx 5.1 \
 	\item Equation of state (Ideal gas equation).
 \end{enumerate}
 
-Euler discription of fluid motion is more convinent becasue of dependance on time and above 7 equations.
+Euler discription of fluid motion is more convinent becasue of dependence on time and above 7 equations.
 
 Total advective and convective time of lagrangian is given by:
 \begin{align*}
@@ -1267,4 +1267,87 @@ Rewriting \myeqref{eq:8.7}, \myeqref{eq:8.8} and \myeqref{eq:8.9} into matrix fo
 \end{align*}
 
 \clearpage
+
+\section{Lecture 9 28/01/2025}
+\begin{itemize}
+	\item Domain of dependence at a given point in the solution domain would corresponding to the region where solution will impact solution will be impacted by the solution at the above given point.
+	\item Range of independence at a given point in the solution domain would corresponding to the region where solution will impact solution will be impacted by the solution at the above given point.
+\end{itemize}
+
+\subsection{Wave Equation}
+Hyperbolic PDE:
+\begin{align*}
+	\frac{\partial^2 f}{\partial t^2} &= c^2\frac{\partial^2 f}{\partial x^2} \tag{9.1} \label{eq:9.1}
+\end{align*}
+
+Parabolic PDE:
+\begin{align*}
+	\frac{\partial T}{\partial t} &= c^2\frac{\partial T}{\partial x} \tag{9.2} \label{eq:9.2}
+\end{align*}
+
+Ellipse PDE:
+\begin{align*}
+	\frac{\partial^2 f}{\partial t^2} + \frac{\partial^2 f}{\partial x^2} &= 0 \tag{9.3} \label{eq:9.3}
+\end{align*}
+
+\yellownote{Add figs}
+
+\begin{align*}
+	a\frac{\partial f}{\partial x} + b\frac{\partial f}{\partial x} + c\frac{\partial g}{\partial t} + d\frac{\partial g}{\partial x} &= e \tag{9.4} \label{eq:9.4}\\
+	A\frac{\partial f}{\partial x} + B\frac{\partial f}{\partial x} + C\frac{\partial g}{\partial t} + D\frac{\partial g}{\partial x} &= E \tag{9.5} \label{eq:9.5}
+\end{align*}
+
+Using chain rule;
+\begin{align*}
+	\frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial x}dx &= df \tag{9.6} \label{eq:9.6}\\
+	\frac{\partial g}{\partial t}dt + \frac{\partial g}{\partial x}dx &= dg \tag{9.7} \label{eq:9.7}
+\end{align*}
+
+Rewriting \myeqref{eq:9.4}, \myeqref{eq:9.5}, \myeqref{eq:9.6} and \myeqref{eq:9.7} into matrix form:
+\begin{align*}
+	\underbrace{
+		\begin{bmatrix}
+			a  & b & c & d \\
+			A  & B & C & D \\
+			dt & dx & 0 & 0\\
+			0  & 0 & dt & dy
+		\end{bmatrix}}_{\text{A}}
+	\begin{bmatrix}
+		\frac{\partial f}{\partial t} \\
+		\frac{\partial f}{\partial x} \\
+		\frac{\partial g}{\partial t} \\
+		\frac{\partial g}{\partial x}
+	\end{bmatrix}
+	= \begin{bmatrix}
+		e \\
+		E \\
+		df \\
+		dg
+	  \end{bmatrix}
+\end{align*}
+
+\begin{align*}
+	\text{det (A)}                        & = 0 \\
+	(dx)^2\underbrace{(aC-Ac)}_{\overline{A}} - (dx)(dt)\underbrace{(aD-Ad+bC-Bc)}_{\overline{B}} & \\ + (dt)^2\underbrace{(bD-Bd)}_{\overline{C}} & = 0
+\end{align*}
+
+Discrimant of \myeqref{eq:8.7}, for $\overline{A}=(aC-Ac)$, $\overline{B}=(aD-Ad+bC-Bc)$, $\overline{C}=(bD-Bd)$:
+\begin{align*}
+	\overline{B}^2 - 4\overline{A}\overline{C} &  \\
+	(aD-Ad+bC-Bc)^2 - 4(aC-Ac)(bD-Bd)
+\end{align*}
+
+\begin{align*}
+	\frac{dx}{dt} = \frac{\overline{B} \pm \sqrt{\overline{B}^2 - 4\overline{A}\overline{C}}}{2\overline{A}} \tag{9.8} \label{eq:9.8}
+\end{align*}
+
+Depending upon sign of $\overline{B}^2 - 4\overline{A}\overline{C}$ the follwing classification can be made:
+\begin{itemize}[noitemsep]
+	\item Negative $\rightarrow$ Elliptic
+	\item Zero $\rightarrow$ Parabolic
+	\item positive $\rightarrow$ Hyperbolic
+\end{itemize}
+
+\yellownote{Incomplete}
+
 \end{document}
