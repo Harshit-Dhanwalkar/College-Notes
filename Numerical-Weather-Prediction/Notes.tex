@@ -1225,8 +1225,8 @@ Slope $\frac{dt}{dx}$ is equal to:
 
 
 \begin{align*}
-	\frac{\partial^2 f}{\partial x \partial y}dx + \frac{\partial^2 f}{\partial y^2}dy &= d\Big(\frac{\partial f}{\partial y}\Big) \tag{8.8} \label{eq:8.8} \\
-	\frac{\partial^2 f}{\partial x^2}dx + \frac{\partial^2 f}{\partial x \partial y}dy &= d\Big(\frac{\partial f}{\partial x}\Big) \tag{8.9} \label{eq:8.0}
+	\frac{\partial^2 f}{\partial x \partial y}dx + \frac{\partial^2 f}{\partial y^2}dy &= d\left(\frac{\partial f}{\partial y}\right) \tag{8.8} \label{eq:8.8} \\
+	\frac{\partial^2 f}{\partial x^2}dx + \frac{\partial^2 f}{\partial x \partial y}dy &= d\left(\frac{\partial f}{\partial x}\right) \tag{8.9} \label{eq:8.0}
 \end{align*}
 
 Discrimant of \myeqref{eq:8.7}, for A = 1, B=0, C=1:
@@ -1253,8 +1253,8 @@ Rewriting \myeqref{eq:8.7}, \myeqref{eq:8.8} and \myeqref{eq:8.9} into matrix fo
 	\end{bmatrix}
 	= \begin{bmatrix}
 		  0                                        \\
-		  d\Big(\frac{\partial f}{\partial y}\Big) \\
-		  d\Big(\frac{\partial f}{\partial x}\Big)
+		  d\left(\frac{\partial f}{\partial y}\right) \\
+		  d\left(\frac{\partial f}{\partial x}\right)
 	  \end{bmatrix}
 \end{align*}
 
@@ -1262,7 +1262,7 @@ Rewriting \myeqref{eq:8.7}, \myeqref{eq:8.8} and \myeqref{eq:8.9} into matrix fo
 	\text{det (A)}                        & = 0 \\
 	1(0-(dy)^2) - 0(0-dxdy) + 1(0-(dx)^2) & = 0 \\
 	-(dy)^2 - (dx)^2                      & = 0 \\
-	\Big(\frac{dy}{dx}\Big)^2 + 1         & = 0 \\
+	\left(\frac{dy}{dx}\right)^2 + 1         & = 0 \\
 	\frac{dy}{dx}                         & = \pm \iota
 \end{align*}
 
@@ -1299,8 +1299,8 @@ Ellipse PDE:
 
 Using chain rule;
 \begin{align*}
-	\frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial x}dx &= df \tag{9.6} \label{eq:9.6}\\
-	\frac{\partial g}{\partial t}dt + \frac{\partial g}{\partial x}dx &= dg \tag{9.7} \label{eq:9.7}
+        \frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial x}dx &= df \tag{9.6} \label{eq:9.6}\\
+        \frac{\partial g}{\partial t}dt + \frac{\partial g}{\partial x}dx  &= dg \tag{9.7} \label{eq:9.7}
 \end{align*}
 
 Rewriting \myeqref{eq:9.4}, \myeqref{eq:9.5}, \myeqref{eq:9.6} and \myeqref{eq:9.7} into matrix form:
@@ -1348,6 +1348,37 @@ Depending upon sign of $\overline{B}^2 - 4\overline{A}\overline{C}$ the follwing
 	\item positive $\rightarrow$ Hyperbolic
 \end{itemize}
 
-\yellownote{Incomplete}
+\subsection{Heat Transfer Equation}
+\begin{align*}
+	\frac{\partial T}{\partial t} &= k \frac{\partial^2 T}{\partial x^2} \tag{9.9} \label{eq:9.9}
+\end{align*}
+where, $k$ is coeffeicent of thermal expansion.
+
+\yellownote{Figure}
+
+Applying FTCS (Forward Time and Central in Space) scheme,
+\begin{align*}
+	t_n &= n\Delta t &, n&=0,1,2,\dots \\
+	x_m &= x_0 + m\Delta x &, m&=0,1,2,\dots, N
+\end{align*}
+
+Backward difference:
+\begin{align*}
+	\left(\frac{\partial T}{\partial t}\right)_{x,t} &= \frac{T_{m,n+1} - T_{m,n}}{\Delta t}  \tag{9.10} \label{eq:9.10}
+\end{align*}
+
+Central difference:
+\begin{align*}
+	\left(\frac{\partial^2 T}{\partial t^2}\right)_{x,t} &= \frac{T_{m+1,n} - 2\cdot T_{m,n} + T_{m-1,n}}{\Delta t} \tag{9.11} \label{eq:9.11}
+\end{align*}
+
+Substituting \myeqref{eq:9.10} and \myeqref{eq:9.11} into \myeqref{eq:9.9}, we obtain,
+\begin{align*}
+	\left(\frac{T_{m,n+1} - T_{m,n}}{\Delta t}\right) &= k\left(\frac{T_{m+1,n} - 2\cdot T_{m,n} + T_{m-1,n}}{\Delta t}\right) \\
+	T_{m,n+1} = T_{m,n} &+ \underbrace{\frac{k\Delta t}{(\Delta x)^2}}_{\lambda}\left(T_{m+1,n} - 2T_{m,n} + T_{m-1,n}\right) \\
+	T_{m,n+1} = &(1-2\lambda)T_{m,n} + \lambda T_{m-1,n} + \lambda T_{m+1,n}
+\end{align*}
+
+\yellownote{Incomplete, \\ Fix brakets}
 
 \end{document}

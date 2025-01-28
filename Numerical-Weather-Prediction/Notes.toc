@@ -22,4 +22,5 @@
 \contentsline {subsection}{\numberline {8.3}Laplace Equation}{13}{subsection.8.3}%
 \contentsline {section}{\numberline {9}Lecture 9 28/01/2025}{14}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Wave Equation}{14}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Heat Transfer Equation}{14}{subsection.9.2}%
 \contentsfinish 
