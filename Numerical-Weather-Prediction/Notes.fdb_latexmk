@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1738062409 "Notes.tex" "Notes.pdf" "Notes" 1738062411
+["pdflatex"] 1738159965 "Notes.tex" "Notes.pdf" "Notes" 1738159967
   "/etc/texmf/web2c/texmf.cnf" 1728313746 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -277,11 +277,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1734418184 4073795 a82a847ac97773bf4a607ab050efa3a1 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736325085 1435836 f91fb7a9941a454f193d6a5e108415c1 ""
-  "Notes.aux" 1738062411 16914 13f70cc91ac2041e14b0d4de2f49ac92 "pdflatex"
-  "Notes.lof" 1738062411 403 01230897a5f82c634ee08b61ce79e913 "pdflatex"
-  "Notes.out" 1738062411 3913 79ebb97b236d61608851249450ab8d0d "pdflatex"
-  "Notes.tex" 1738062407 61185 c218af154b856f9561e1fc77ccb5bd68 ""
-  "Notes.toc" 1738062411 2055 be24752dcb0359c36a4b6b47936778c0 "pdflatex"
+  "Notes.aux" 1738159966 17417 6c8e8f50f7dce05d94e0fa9b48645613 "pdflatex"
+  "Notes.lof" 1738159966 403 01230897a5f82c634ee08b61ce79e913 "pdflatex"
+  "Notes.out" 1738159966 4305 163db2a29eb31b25ca626eb84159a516 "pdflatex"
+  "Notes.tex" 1738159964 65307 5aa6fba93eae2e82dc181a940d0f4e3d ""
+  "Notes.toc" 1738159966 2295 fd33963fbacf62ba9a23b415d5f82c7c "pdflatex"
   "SelfArx.cls" 1737474764 9451 f9c701791ca77aa22cf3019abb51ad64 ""
   (generated)
   "Notes.aux"

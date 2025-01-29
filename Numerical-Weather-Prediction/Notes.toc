@@ -23,4 +23,7 @@
 \contentsline {section}{\numberline {9}Lecture 9 28/01/2025}{14}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Wave Equation}{14}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Heat Transfer Equation}{14}{subsection.9.2}%
+\contentsline {section}{\numberline {10}Lecture 10 29/01/2025}{16}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Lax Theorem}{16}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Van Neumann}{16}{subsection.10.2}%
 \contentsfinish 

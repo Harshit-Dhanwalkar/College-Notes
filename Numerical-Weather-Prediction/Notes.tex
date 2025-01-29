@@ -1055,7 +1055,6 @@ Examples:
 \clearpage
 
 \section{Lecture 08/01/2025}
-
 \subsection{Heat Equation}
 \begin{align*}
 	k\frac{\partial^2 T}{\partial x^2} - \frac{\partial T}{\partial t} = 0 \tag{8.1} \label{eq:2ndorderquasilinearpde}
@@ -1218,7 +1217,6 @@ Slope $\frac{dt}{dx}$ is equal to:
 \end{align*}
 
 \subsection{Laplace Equation}
-
 \begin{align*}
 	\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2}           &= 0 \tag{8.7} \label{eq:8.7}
 \end{align*}
@@ -1380,5 +1378,73 @@ Substituting \myeqref{eq:9.10} and \myeqref{eq:9.11} into \myeqref{eq:9.9}, we o
 \end{align*}
 
 \yellownote{Incomplete, \\ Fix brakets}
+
+\clearpage
+
+\section{Lecture 10 29/01/2025}
+\subsection{Lax Theorem}
+The \textbf{Lax Equivalence Theorem} is a fundamental result in numerical analysis that provides a necessary and sufficient condition for the convergence of finite difference schemes used to approximate solutions of partial differential equations (PDEs).
+
+For a well-posed initial value problem, a consistent finite difference scheme is convergent if and only if it is stable.
+
+Key Concepts: \begin{itemize}[noitemsep]
+    \item \textbf{Consistency:} A finite difference scheme is said to be \textit{consistent} if the truncation error tends to zero as the grid spacing (\(\Delta x, \Delta t\)) approaches zero.
+    \item \textbf{Stability:} A scheme is \textit{stable} if numerical errors do not grow uncontrollably as time progresses.
+    \item \textbf{Convergence:} A numerical scheme is \textit{convergent} if the solution obtained from the scheme approaches the exact solution as the grid is refined.
+\end{itemize}
+
+Let \( u(x,t) \) be the exact solution of a PDE, and let \( u^n_j \) be the numerical solution at time level \( n \) and spatial index \( j \). The numerical scheme can be written as:
+\begin{align*}
+    u^{n+1}_j = F(u^n_{j-1}, u^n_j, u^n_{j+1}, \dots),
+\end{align*}
+where \( F \) is the finite difference operator.
+
+For the scheme to be \textbf{consistent}, the local truncation error must satisfy:
+\begin{align*}
+    \lim_{\Delta x, \Delta t \to 0} \text{(Truncation Error)} = 0.
+\end{align*}
+
+\textbf{By Lax's theorem}, if the scheme is consistent and stable, it is guaranteed to be convergent:
+\begin{align*}
+    \lim_{\Delta x, \Delta t \to 0} || u^n_j - u(x_j, t_n) || = 0.
+\end{align*}
+
+Significance of Lax’s theorem is that it provides a crucial guideline for designing numerical methods:
+\begin{itemize}[noitemsep]
+    \item Ensuring \textbf{consistency} is relatively straightforward by comparing the difference scheme with the PDE.
+    \item \textbf{Stability} is often more challenging and requires analysis techniques like Von Neumann stability analysis.
+    \item If a scheme is both \textbf{consistent and stable}, it is guaranteed to be \textbf{convergent}, meaning it will correctly approximate the true solution.
+\end{itemize}
+
+\subsection{Van Neumann}
+Van Neumann stability analysis is a mathematical technique used to assess the stability of finite difference schemes for solving partial differential equations (PDEs). It is particularly useful in analyzing the behavior of numerical solutions over time.
+
+Key Idea: The method is based on applying a Fourier mode decomposition to the numerical scheme. The numerical solution is expressed as a sum of Fourier modes, and the growth factor 
+
+Stability Criterion: A finite difference scheme is \textbf{stable} if and only if the magnitude of the amplification factor satisfies \myeqref{eq:vanneumann}:
+\begin{align*}
+	|G(k)| \leq 1, \quad \forall k. \tag{10.1} \label{eq:vanneumann}
+\end{align*}
+This ensures that numerical errors do not grow uncontrollably as time progresses.
+
+\begin{enumerate}[noitemsep]
+    \item \textbf{Express the numerical scheme} as a recurrence relation.
+    \item \textbf{Substitute a Fourier mode} of the form:
+    \begin{align*}
+        u^n_j = \hat{u}^n e^{i k j \Delta x},
+    \end{align*}
+    where \( i \) is the imaginary unit, \( k \) is the wave number, and \( \Delta x \) is the spatial step size.
+    \item \textbf{Determine the amplification factor} \( G(k) \) by solving for:
+    \begin{align*}
+        G(k) = \frac{\hat{u}^{n+1}}{\hat{u}^n}.
+    \end{align*}
+    \item \textbf{Check the stability condition} \( |G(k)| \leq 1 \).
+\end{enumerate}
+
+Application : Van Neumann analysis is commonly used for schemes solving hyperbolic PDEs, such as the \textbf{heat equation}, \textbf{wave equation}, and \textbf{advection equation}. It helps determine whether a numerical method will produce bounded solutions over time.
+
+For \textbf{stability}, we often use techniques like the \textbf{Von Neumann stability analysis} to check that perturbations do not grow indefinitely using \myeqref{eq:vanneumann}.
+
+\yellownote{Incomplete}
 
 \end{document}
