@@ -970,6 +970,87 @@ Force tending to produce deformation in a body is called \textbf{Stress}.
 \end{center}
 
 \clearpage
+
+\section{Lecture 6 29/01/2025}
+\subsection{Summation Notation}
+\textbf{Definition:} Integer variables \( m, n, \) and \( q \) can take values \( 1,2,3 \). Then:
+\vspace{-5pt}
+\begin{itemize}[noitemsep]
+    \item \( A_m \) is a velocity vector.
+    \item \( X_m \) represents distance.
+\end{itemize}
+
+where, \vspace{-10pt}
+\begin{align*}
+    m &= 1,2,3, \\
+    n &= 1,2,3, \\
+    q &= 1,2,3.
+\end{align*}
+
+Hence, \vspace{-10pt}
+\begin{align*}
+    A_1 &= u, & A_2 &= v, & A_3 &= w, \\
+    X_1 &= x, & X_2 &= y, & X_3 &= z.
+\end{align*}
+
+\subsection{Unit vector}
+Unit vector is represented by $\delta_m$,
+
+where, \vspace{-5pt}
+\begin{align*}
+	\delta_1 &= \hat{i}, \\
+	\delta_2 &= \hat{j}, \\
+	\delta_3 &= \hat{k}
+\end{align*}
+
+\subsection{Kronecker Delta}
+Kronecker Delta is represented by $\delta_{mn}$, such that,
+
+\begin{align*}
+    \delta_{mn} =
+    \begin{cases}
+        1, & \text{for } m = n, \\
+        0, & \text{for } m \neq n
+    \end{cases}
+\end{align*}
+
+\subsection{Alternating Unit Tensor}
+Alternating Unit Tensor is represented by $\epsilon_{mn}$, such that,
+
+\begin{align*}
+    \delta_{mn} =
+    \begin{cases}
+        +1, & \text{for } mnq = 123,231,312 \\
+        -1, & \text{for } mnq = 321,132,213 \\
+	0, & \text{for any 2 or more indices alike}
+    \end{cases}
+\end{align*}
+
+\subsection{Rules For Summation Notation}
+\subsubsection*{Rule I:}
+Wherever two identical appear same in one term, it is implied that there is a sum of that term over each value of repreated index.
+
+For example:
+
+1. \vspace{-15pt} 
+\begin{align*}
+	A_n\frac{\partial B_m}{\partial X_n} &= A_1\frac{\partial B_m}{\partial X_1} + A_2\frac{\partial B_m}{\partial X_2} + A_3\frac{\partial B_m}{\partial X_3} \\
+					     &= u\frac{\partial B_m}{\partial x} + v\frac{\partial B_m}{\partial y} + w\frac{\partial B_m}{\partial z}
+\end{align*}
+
+2. \vspace{-20pt} 
+\begin{align*}
+	\delta_{2n}A_n &= \delta_{21}A_1 + \delta_{22}A_3 + \delta_{23}A_3 \\
+		       &= A_2 \\
+		       &= v
+\end{align*}
+
+\subsubsection*{Rule II:}
+Wherever one index appear unsummed in one term, then the same index appear unsummed in all 3 terms in that equation. Hence that equation effectively represents 3 equations for each value of unsummed index.
+
+\yellownote{Incomplete}
+
+\clearpage
 \bibliographystyle{plain}
 \bibliography{Reference}
 \end{document}
