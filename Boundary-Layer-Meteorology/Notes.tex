@@ -976,21 +976,21 @@ Force tending to produce deformation in a body is called \textbf{Stress}.
 \textbf{Definition:} Integer variables \( m, n, \) and \( q \) can take values \( 1,2,3 \). Then:
 \vspace{-5pt}
 \begin{itemize}[noitemsep]
-    \item \( A_m \) is a velocity vector.
-    \item \( X_m \) represents distance.
+	\item \( A_m \) is a velocity vector.
+	\item \( X_m \) represents distance.
 \end{itemize}
 
 where, \vspace{-10pt}
 \begin{align*}
-    m &= 1,2,3, \\
-    n &= 1,2,3, \\
-    q &= 1,2,3.
+	m & = 1,2,3, \\
+	n & = 1,2,3, \\
+	q & = 1,2,3.
 \end{align*}
 
 Hence, \vspace{-10pt}
 \begin{align*}
-    A_1 &= u, & A_2 &= v, & A_3 &= w, \\
-    X_1 &= x, & X_2 &= y, & X_3 &= z.
+	A_1 & = u, & A_2 & = v, & A_3 & = w, \\
+	X_1 & = x, & X_2 & = y, & X_3 & = z.
 \end{align*}
 
 \subsection{Unit vector}
@@ -998,32 +998,32 @@ Unit vector is represented by $\delta_m$,
 
 where, \vspace{-5pt}
 \begin{align*}
-	\delta_1 &= \hat{i}, \\
-	\delta_2 &= \hat{j}, \\
-	\delta_3 &= \hat{k}
+	\delta_1 & = \hat{i}, \\
+	\delta_2 & = \hat{j}, \\
+	\delta_3 & = \hat{k}
 \end{align*}
 
 \subsection{Kronecker Delta}
 Kronecker Delta is represented by $\delta_{mn}$, such that,
 
 \begin{align*}
-    \delta_{mn} =
-    \begin{cases}
-        1, & \text{for } m = n, \\
-        0, & \text{for } m \neq n
-    \end{cases}
+	\delta_{mn} =
+	\begin{cases}
+		1, & \text{for } m = n,   \\
+		0, & \text{for } m \neq n
+	\end{cases}
 \end{align*}
 
 \subsection{Alternating Unit Tensor}
 Alternating Unit Tensor is represented by $\epsilon_{mn}$, such that,
 
 \begin{align*}
-    \delta_{mn} =
-    \begin{cases}
-        +1, & \text{for } mnq = 123,231,312 \\
-        -1, & \text{for } mnq = 321,132,213 \\
-	0, & \text{for any 2 or more indices alike}
-    \end{cases}
+	\delta_{mn} =
+	\begin{cases}
+		+1, & \text{for } mnq = 123,231,312          \\
+		-1, & \text{for } mnq = 321,132,213          \\
+		0,  & \text{for any 2 or more indices alike}
+	\end{cases}
 \end{align*}
 
 \subsection{Rules For Summation Notation}
@@ -1032,23 +1032,48 @@ Wherever two identical appear same in one term, it is implied that there is a su
 
 For example:
 
-1. \vspace{-15pt} 
+1. \vspace{-15pt}
 \begin{align*}
-	A_n\frac{\partial B_m}{\partial X_n} &= A_1\frac{\partial B_m}{\partial X_1} + A_2\frac{\partial B_m}{\partial X_2} + A_3\frac{\partial B_m}{\partial X_3} \\
-					     &= u\frac{\partial B_m}{\partial x} + v\frac{\partial B_m}{\partial y} + w\frac{\partial B_m}{\partial z}
+	A_n\frac{\partial B_m}{\partial X_n} & = A_1\frac{\partial B_m}{\partial X_1} + A_2\frac{\partial B_m}{\partial X_2} + A_3\frac{\partial B_m}{\partial X_3} \\
+	                                     & = u\frac{\partial B_m}{\partial x} + v\frac{\partial B_m}{\partial y} + w\frac{\partial B_m}{\partial z}
 \end{align*}
 
-2. \vspace{-20pt} 
+2. \vspace{-20pt}
 \begin{align*}
-	\delta_{2n}A_n &= \delta_{21}A_1 + \delta_{22}A_3 + \delta_{23}A_3 \\
-		       &= A_2 \\
-		       &= v
+	\delta_{2n}A_n & = \delta_{21}A_1 + \delta_{22}A_3 + \delta_{23}A_3 \\
+	               & = A_2                                              \\
+	               & = v
 \end{align*}
 
 \subsubsection*{Rule II:}
 Wherever one index appear unsummed in one term, then the same index appear unsummed in all 3 terms in that equation. Hence that equation effectively represents 3 equations for each value of unsummed index.
 
-\yellownote{Incomplete}
+\vspace{-10pt}
+\begin{align*}
+	A_m & = B_m + \delta_{mn}C_n             \\
+	A_1 & = B_1 + \delta_{1n}C_n = B_1 + C_1 \\
+	A_2 & = B_2 + \delta_{2n}C_n = B_2 + C_2 \\
+	A_2 & = B_3 + \delta_{3n}C_n = B_3 + C_3
+\end{align*}
+
+For example:
+
+1. \vspace{-17pt}
+\begin{align*}
+	\frac{\partial A_m}{\partial t} + B_n\frac{\partial A_m}{\partial X_n} = & -\delta_{m3}g - f\epsilon_{mn3}B_n \\ & -\frac{1}{\rho}\frac{\partial P}{\partial X_m} + \frac{1}{\rho}\Big[\frac{\tau_{mn}}{\partial X_n}\Big]
+\end{align*}
+
+Expanding with $n=1,2$ and $3$, we get:
+\begin{align*}
+	\frac{\partial A_m}{\partial t} & + B_1\frac{\partial A_m}{\partial x} + B_2\frac{\partial A_m}{\partial y} + B_3\frac{\partial A_m}{\partial z} = \\  & -\delta_{m3}g - f[\epsilon_{m13}B_n + \epsilon_{m23}B_n + \cancel{\epsilon_{m33}B_n}] \\ & -\frac{1}{\rho}\Big[\frac{\partial P}{\partial x} + \frac{\partial P}{\partial y} + \frac{\partial P}{\partial z}\Big] \\ & + \frac{1}{\rho}\Big[\frac{\tau_{m1}}{\partial x} + \frac{\tau_{m2}}{\partial y} + \frac{\tau_{m3}}{\partial z}\Big]
+\end{align*}
+
+Now expanding with $m=1,2$ and $3$, we get following 3 equations:
+\begin{align*}
+	\frac{\partial A_1}{\partial t} & + B_1\frac{\partial A_1}{\partial x} + B_2\frac{\partial A_1}{\partial y} + B_3\frac{\partial A_1}{\partial z} = \\  & -\delta_{13}g - f[\cancel{\epsilon_{113}B_n} + \epsilon_{123}B_n + \cancel{\epsilon_{133}B_n}] \\ & -\frac{1}{\rho}\Big[\frac{\partial P}{\partial x} + \frac{\partial P}{\partial y} + \frac{\partial P}{\partial z}\Big] \\ & + \frac{1}{\rho}\Big[\frac{\tau_{11}}{\partial x} + \frac{\tau_{12}}{\partial y} + \frac{\tau_{13}}{\partial z}\Big] \\
+	\frac{\partial A_2}{\partial t} & + B_1\frac{\partial A_2}{\partial x} + B_2\frac{\partial A_2}{\partial y} + B_3\frac{\partial A_2}{\partial z} = \\  & -\delta_{23}g - f[\epsilon_{213}B_n + \cancel{\epsilon_{223}B_n} + \cancel{\epsilon_{233}B_n}] \\ & -\frac{1}{\rho}\Big[\frac{\partial P}{\partial x} + \frac{\partial P}{\partial y} + \frac{\partial P}{\partial z}\Big] \\ & + \frac{1}{\rho}\Big[\frac{\tau_{21}}{\partial x} + \frac{\tau_{22}}{\partial y} + \frac{\tau_{23}}{\partial z}\Big] \\
+	\frac{\partial A_3}{\partial t} & + B_1\frac{\partial A_3}{\partial x} + B_2\frac{\partial A_3}{\partial y} + B_3\frac{\partial A_3}{\partial z} = \\  & -\delta_{33}g - f[\cancel{\epsilon_{323}B_n} + \cancel{\epsilon_{323}B_n} + \cancel{\epsilon_{333}B_n}] \\ & -\frac{1}{\rho}\Big[\frac{\partial P}{\partial x} + \frac{\partial P}{\partial y} + \frac{\partial P}{\partial z}\Big] \\ & + \frac{1}{\rho}\Big[\frac{\tau_{31}}{\partial x} + \frac{\tau_{32}}{\partial y} + \frac{\tau_{33}}{\partial z}\Big]
+\end{align*}
 
 \clearpage
 \bibliographystyle{plain}
