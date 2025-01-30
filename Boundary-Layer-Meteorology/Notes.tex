@@ -199,7 +199,7 @@
 %\addcontentsline{toc}{section}{Introduction} % Adds this section to the table of contents
 %-------------------------------------------------------------------------------------
 \section{Lecture 1 09/01/2025}
-\subsection{Introduction to Boundary Layer}
+\subsection{Introduction To Boundary Layer}
 The Boundary Layer can be defined as part of  the troposphere that is directly influenced by the presence of the Earth's surface and responds to surface forcings with a time scale of about an hour or less.
 
 \begin{figure}[ht!]
@@ -240,7 +240,7 @@ The Boundary Layer can be defined as part of  the troposphere that is directly i
 	\caption{Atmosphere can be divided into 2 parts: boundary layer near surface and free atmosphere above it.}
 \end{figure}
 
-\subsection{Boundary layer forcing mecchanism}
+\subsection{Boundary Layer Forcing Mechanism}
 What physical process modify boundary layer air parcel?
 \begin{enumerate}[noitemsep]
 	\item Heat transfer to.from the ground.
@@ -250,7 +250,7 @@ What physical process modify boundary layer air parcel?
 	\item Pollution emission.
 \end{enumerate}
 
-\subsection{Types of air flow or wind}
+\subsection{Types Of Air Flow Or Wind}
 Air flow or wind can be decomposed into following 3 types:
 \begin{enumerate}[noitemsep]
 	\item \textbf{Mean Wind} $(\bar{u}, \bar{v}, \bar{w})$: Represents the average wind components in the horizontal ($\bar{u}, \bar{v}$) and vertical ($\bar{w}$) directions. It is important for the horizontal transport of quantities such as moisture, heat, momentum, and pollutants, a process known as advection.
@@ -700,7 +700,7 @@ The boundary layer plays a critical role in regulating interactions between the 
 \clearpage
 
 \section{Lecture 4 23/01/2025}
-\subsection{Statistical tools required for Turbulence}
+\subsection{Statistical Tools Required For Turbulence}
 
 Turbulence is characteristiced by randomness.
 \begin{align*}
@@ -1085,6 +1085,25 @@ Now expanding with $m=3$, we get following equation:
 	\frac{\partial A_3}{\partial t} & + B_1\frac{\partial A_3}{\partial X_1} + B_2\frac{\partial A_3}{\partial X_2} + B_3\frac{\partial A_3}{\partial X_3} =                                             \\  & -\delta_{33}g + f[\cancel{\epsilon_{313}}B_1 + \cancel{\epsilon_{323}B_2} + \cancel{\epsilon_{333}B_3}] \\ & -\frac{1}{\rho}\left[\frac{\partial P}{\partial X_3}\right] + \frac{1}{\rho}\left[\frac{\tau_{31}}{\partial X_1} + \frac{\tau_{32}}{\partial X_2} + \frac{\tau_{33}}{\partial X_3}\right] \\
 	\frac{\partial w}{\partial t}   & + u\frac{\partial w}{\partial x} + v\frac{\partial w}{\partial y} + w\frac{\partial w}{\partial z} = -g - \frac{1}{\rho}\left[\frac{\partial P}{\partial z}\right] \\ & + \frac{1}{\rho}\left[\frac{\tau_{zx}}{\partial x} + \frac{\tau_{zy}}{\partial y} + \frac{\tau_{zz}}{\partial z}\right]
 \end{align*}
+
+\clearpage
+
+\section{Lecture 7 30/01/2025}
+\subsection{Governing Equation For Turbulent Flow}
+\begin{enumerate}[noitemsep]
+	\item Mean variable ($\overline{u}, \overline{v},\overline{w}$).
+	\item Flux variable ($\overline{u'w'}, \overline{w'\theta'}$).
+	\item Total Kinetic Energy ($\overline{u'^2}, \overline{v'^2},\overline{w'^2}$).
+\end{enumerate}
+
+\subsubsection*{Steps:}
+\begin{enumerate}[noitemsep]
+	\item Identify the basic equations.
+	\item Expand the total derivative into local and advective term.
+	\item Expand dependent variables into mean and turbulent parts.
+	\item Apply Reynold's averaging.
+	\item Add continuity equation to put the result in flux part.
+\end{enumerate}
 
 \clearpage
 \bibliographystyle{plain}
