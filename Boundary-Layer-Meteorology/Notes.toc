@@ -33,6 +33,7 @@
 \contentsline {subsection}{\numberline {6.4}Alternating Unit Tensor}{11}{subsection.6.4}%
 \contentsline {subsection}{\numberline {6.5}Rules For Summation Notation}{11}{subsection.6.5}%
 \contentsline {section}{\numberline {7}Lecture 7 30/01/2025}{13}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Governing Equation For Turbulent Flow}{13}{subsection.7.1}%
-\contentsline {section}{References}{14}{Item.32}%
+\contentsline {subsection}{\numberline {7.1}Governing Equations For Turbulent Flow}{13}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Governing Equations}{13}{subsection.7.2}%
+\contentsline {section}{References}{14}{AMS.32}%
 \contentsfinish 

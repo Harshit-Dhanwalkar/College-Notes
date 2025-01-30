@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex Notes"] 1738235526 "Notes.aux" "Notes.bbl" "Notes" 1738235545
+["bibtex Notes"] 1738240262 "Notes.aux" "Notes.bbl" "Notes" 1738240286
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "Notes.aux" 1738235544 8554 9cf2a338989da55f1cd4d396ead972a4 "pdflatex"
+  "Notes.aux" 1738240285 9698 b7e106a9f7da366ec57eb3f294e94dce "pdflatex"
   "Reference.bib" 1736974722 221 2eafe7cc02a25cf3cfa8b0c06835cc3a ""
   (generated)
   "Notes.bbl"
   "Notes.blg"
-["pdflatex"] 1738235543 "Notes.tex" "Notes.pdf" "Notes" 1738235545
+["pdflatex"] 1738240283 "Notes.tex" "Notes.pdf" "Notes" 1738240286
   "/etc/texmf/web2c/texmf.cnf" 1728313746 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -293,12 +293,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1734418184 4073795 a82a847ac97773bf4a607ab050efa3a1 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736325085 1435836 f91fb7a9941a454f193d6a5e108415c1 ""
-  "Notes.aux" 1738235544 8554 9cf2a338989da55f1cd4d396ead972a4 "pdflatex"
-  "Notes.bbl" 1738235526 233 742256c998508b995e3c4b9f571c4a7a "bibtex Notes"
-  "Notes.lof" 1738235544 1162 abd71bdf4146953d8dba4f3a79bf9b52 "pdflatex"
-  "Notes.out" 1738235544 4838 70852fededc9f368b458159460a4374b "pdflatex"
-  "Notes.tex" 1738235543 50812 16d479b53155edb42232c44eb5a18d1c ""
-  "Notes.toc" 1738235544 3118 6aece6d748049cf5703cdba083d84fcd "pdflatex"
+  "Notes.aux" 1738240285 9698 b7e106a9f7da366ec57eb3f294e94dce "pdflatex"
+  "Notes.bbl" 1738240262 233 742256c998508b995e3c4b9f571c4a7a "bibtex Notes"
+  "Notes.lof" 1738240285 1162 abd71bdf4146953d8dba4f3a79bf9b52 "pdflatex"
+  "Notes.out" 1738240285 4998 031835109a854044c7e30de0d44691e0 "pdflatex"
+  "Notes.tex" 1738240281 53696 8ef99ab3dcc216e9412013cd2d333425 ""
+  "Notes.toc" 1738240285 3204 4fd02bef84bde0dc6cfdf4e833ae4353 "pdflatex"
   "SelfArx.cls" 1738208112 9820 a5c628ddb663d0951a4927fb6aa4d39a ""
   (generated)
   "Notes.aux"
