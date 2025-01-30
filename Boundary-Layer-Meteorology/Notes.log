@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  29 JAN 2025 19:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  30 JAN 2025 09:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -448,7 +448,9 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@inbox=\box68
 \enit@count@id=\count303
 \enitdp@description=\count304
-)) (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+)
+\conditionwd=\skip69
+) (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2021/12/10 v3.0b Micro-typographical refinements (RS)
 \MT@toks=\toks39
 \MT@count=\count305
@@ -463,7 +465,7 @@ LaTeX Info: Redefining \textmicrotypecontext on input line 1759.
 File: microtype-pdftex.def 2021/12/10 v3.0b Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 897.
 LaTeX Info: Redefining \lslig on input line 897.
-\MT@outer@space=\skip69
+\MT@outer@space=\skip70
 )
 Package microtype Info: Loading configuration file microtype.cfg.
  (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
@@ -602,8 +604,8 @@ Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 \ar@mcellbox=\box94
 \extrarowheight=\dimen297
 \NC@list=\toks42
-\extratabsurround=\skip70
-\backup@length=\skip71
+\extratabsurround=\skip71
+\backup@length=\skip72
 \ar@cellbox=\box95
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
@@ -648,18 +650,18 @@ File: pgflibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ))) (/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 \c@KVtest=\count326
-\sf@farskip=\skip72
+\sf@farskip=\skip73
 \sf@captopadj=\dimen312
-\sf@capskip=\skip73
-\sf@nearskip=\skip74
+\sf@capskip=\skip74
+\sf@nearskip=\skip75
 \c@subfigure=\count327
 \c@subfigure@save=\count328
 \c@lofdepth=\count329
 \c@subtable=\count330
 \c@subtable@save=\count331
 \c@lotdepth=\count332
-\sf@top=\skip75
-\sf@bottom=\skip76
+\sf@top=\skip76
+\sf@bottom=\skip77
 ) (/usr/share/texlive/texmf-dist/tex/latex/cancel/cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
 ) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -765,7 +767,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 )
-\Hy@SectionHShift=\skip77
+\Hy@SectionHShift=\skip78
 ) (/usr/share/texlive/texmf-dist/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 \fn@notes=\box97
@@ -791,10 +793,10 @@ Package hyperref Info: Option `bookmarksopen' set `false' on input line 83.
  (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 \everycr=\toks47
-\minrowclearance=\skip78
+\minrowclearance=\skip79
 )
-\yellownotewidth=\skip79
-\yellownoteheight=\skip80
+\yellownotewidth=\skip80
+\yellownoteheight=\skip81
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 180.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -1070,9 +1072,161 @@ l.775 \begin{answer}{}
 
 ] [11
 
+]
+./Notes.tex:1081: Undefined control sequence.
+\\conditions [#1]->#1\tabularx 
+                               {\textwidth -\widthof {#1}}[t]{ >{$}r<{$} @{$...
+l.1081 	a
+          &  $R^2 T_c^529P_c$ \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Notes.tex:1081: Missing number, treated as zero.
+<to be read again> 
+                   \widthof 
+l.1081 	a
+          &  $R^2 T_c^529P_c$ \\
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Notes.tex:1081: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \widthof 
+l.1081 	a
+          &  $R^2 T_c^529P_c$ \\
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./Notes.tex:1081: Extra }, or forgotten $.
+<recently read> }
+                 
+l.1081 	a
+          &  $R^2 T_c^529P_c$ \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./Notes.tex:1081: Missing } inserted.
+<inserted text> 
+                }
+l.1081 	a
+          &  $R^2 T_c^529P_c$ \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Notes.tex:1081: Misplaced alignment tab character &.
+l.1081 	a &
+             $R^2 T_c^529P_c$ \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./Notes.tex:1082: Misplaced alignment tab character &.
+l.1082 	T &
+            temperature\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./Notes.tex:1083: Misplaced alignment tab character &.
+l.1083 	P &
+            pressure\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./Notes.tex:1084: Misplaced alignment tab character &.
+l.1084 	v &
+            molar volume \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./Notes.tex:1085: Missing $ inserted.
+<inserted text> 
+                $
+l.1085 	T_
+          c & temperature at the critical point \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Notes.tex:1085: Misplaced alignment tab character &.
+l.1085 	T_c &
+              temperature at the critical point \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./Notes.tex:1086: Misplaced alignment tab character &.
+l.1086 	P_c &
+              pressure at the critical point
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./Notes.tex:1087: Undefined control sequence.
+\endconditions ->\endtabularx 
+                              \\[\belowdisplayskip ]
+l.1087 \end{conditions}
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Notes.tex:1087: Missing $ inserted.
+<inserted text> 
+                $
+l.1087 \end{conditions}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1081--1088
+
+ []
+
+[12
+
 ] (./Notes.bbl) 
 AED: lastpage setting LastPage
-[12
+[13
 
 
 ] (./Notes.aux)
@@ -1080,18 +1234,18 @@ Package rerunfilecheck Info: File `Notes.out' has not changed.
 (rerunfilecheck)             Checksum: C5938ADB5DA46B377B1C42F9D4322867;4445.
  ) 
 Here is how much of TeX's memory you used:
- 44272 strings out of 480171
- 1020559 string characters out of 5894490
- 1483927 words of memory out of 5000000
- 61054 multiletter control sequences out of 15000+600000
+ 44277 strings out of 480171
+ 1020611 string characters out of 5894490
+ 1484994 words of memory out of 5000000
+ 61058 multiletter control sequences out of 15000+600000
  549617 words of font info for 354 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  98i,25n,94p,1002b,2307s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Notes.pdf (12 pages, 197528 bytes).
+Output written on Notes.pdf (13 pages, 199582 bytes).
 PDF statistics:
- 422 PDF objects out of 1000 (max. 8388607)
- 324 compressed objects within 4 object streams
- 88 named destinations out of 1000 (max. 500000)
+ 428 PDF objects out of 1000 (max. 8388607)
+ 329 compressed objects within 4 object streams
+ 89 named destinations out of 1000 (max. 500000)
  121163 words of extra memory for PDF output out of 128383 (max. 10000000)
 

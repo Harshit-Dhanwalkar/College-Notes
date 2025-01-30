@@ -32,5 +32,5 @@
 \contentsline {subsection}{\numberline {6.3}Kronecker Delta}{11}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}Alternating Unit Tensor}{11}{subsection.6.4}%
 \contentsline {subsection}{\numberline {6.5}Rules For Summation Notation}{11}{subsection.6.5}%
-\contentsline {section}{References}{12}{subsection.6.5}%
+\contentsline {section}{References}{13}{subsection.6.5}%
 \contentsfinish 

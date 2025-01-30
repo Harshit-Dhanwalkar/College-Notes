@@ -40,9 +40,9 @@
 \RequirePackage{xcolor}
 \RequirePackage{booktabs}
 \RequirePackage{lastpage} % Number of pages in the document
+\usepackage{array,tabularx,calc}
 
 \AtEndOfClass{\RequirePackage{microtype}}
-
 \flushbottom % Makes all text pages the same height
 
 %----------------------------------------------------------------------------------------
@@ -245,6 +245,18 @@
 %\setlist{nolistsep} % Uncomment to remove spacing before lists (enumerate, itemize)
 
 %----------------------------------------------------------------------------------------
+%	CONDITIONS
+%----------------------------------------------------------------------------------------
+\newlength{\conditionwd}
+\newenvironment{conditions}[1][where:]
+{%
+#1\tabularx{\textwidth-\widthof{#1}}[t]{
+>{$}r<{$} @{${}={}$} X@{}
+}%
+}
+{\endtabularx\\[\belowdisplayskip]}
+
+%----------------------------------------------------------------------------------------
 %	ABSTRACT AND AUTHOR FRAME
 %----------------------------------------------------------------------------------------
 
@@ -277,17 +289,17 @@
 					\sffamily\textbf{\abstractname}\\\@Abstract\\[4pt]%
 					\textbf{\keywordname}\\\@Keywords%
 				\fi%
-			}%
-		}%
-		\vskip4pt%
-		\begingroup%
-		\raggedright\sffamily\small%
-		\footnotesize\@affiliation\par%
-		\endgroup%%
-	}%
-}%
-\vskip25pt%
-}]%
+			}
+		}
+		\vskip4pt
+		\begingroup
+		\raggedright\sffamily\small
+		\footnotesize\@affiliation\par
+		\endgroup
+	}
+}
+\vskip25pt
+}]
 
 % Add PDF metadata
 \hypersetup{

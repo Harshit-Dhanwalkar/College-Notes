@@ -245,6 +245,18 @@
 %\setlist{nolistsep} % Uncomment to remove spacing before lists (enumerate, itemize)
 
 %----------------------------------------------------------------------------------------
+%	CONDITIONS
+%----------------------------------------------------------------------------------------
+\newlength{\conditionwd}
+\newenvironment{conditions}[1][where:]
+{%
+#1\tabularx{\textwidth-\widthof{#1}}[t]{
+>{$}r<{$} @{${}={}$} X@{}
+}%
+}
+{\endtabularx\\[\belowdisplayskip]}
+
+%----------------------------------------------------------------------------------------
 %	ABSTRACT AND AUTHOR FRAME
 %----------------------------------------------------------------------------------------
 

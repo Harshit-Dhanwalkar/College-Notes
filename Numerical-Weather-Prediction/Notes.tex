@@ -1081,8 +1081,8 @@ Rewriting \myeqref{eq:2ndorderquasilinearpde}, \myeqref{eq:8.2} and \myeqref{eq:
 	\end{bmatrix}
 	= \begin{bmatrix}
 		  \frac{\partial T}{\partial t}            \\
-		  d\Big(\frac{\partial T}{\partial t}\Big) \\
-		  d\Big(\frac{\partial T}{\partial x}\Big)
+		  d\left(\frac{\partial T}{\partial t}\right) \\
+		  d\left(\frac{\partial T}{\partial x}\right)
 	  \end{bmatrix}
 \end{align*}
 
@@ -1446,5 +1446,13 @@ Application : Van Neumann analysis is commonly used for schemes solving hyperbol
 For \textbf{stability}, we often use techniques like the \textbf{Von Neumann stability analysis} to check that perturbations do not grow indefinitely using \myeqref{eq:vanneumann}.
 
 \yellownote{Incomplete}
+\yellownote{Try}
 
+\begin{conditions}
+	T & temperature\\
+	P & pressure\\
+	v & molar volume \\
+	T_c & temperature at the critical point \\
+	P_c & pressure at the critical point
+\end{conditions}
 \end{document}
