@@ -1060,31 +1060,31 @@ For example:
 
 1. \vspace{-17pt}
 \begin{align*}
-	\frac{\partial A_m}{\partial t} + B_n\frac{\partial A_m}{\partial X_n} = & -\delta_{m3}g - f\epsilon_{mn3}B_n \\ & -\frac{1}{\rho}\frac{\partial P}{\partial X_m} + \frac{1}{\rho}\Big[\frac{\tau_{mn}}{\partial X_n}\Big]
+	\frac{\partial A_m}{\partial t} + B_n\frac{\partial A_m}{\partial X_n} = & -\delta_{m3}g + f\epsilon_{mn3}B_n \\ & -\frac{1}{\rho}\frac{\partial P}{\partial X_m} + \frac{1}{\rho}\left[\frac{\tau_{mn}}{\partial X_n}\right]
 \end{align*}
 
 Expanding with $n=1,2$ and $3$, we get:
 \begin{align*}
-	\frac{\partial A_m}{\partial t} & + B_1\frac{\partial A_m}{\partial x} + B_2\frac{\partial A_m}{\partial y} + B_3\frac{\partial A_m}{\partial z} = \\  & -\delta_{m3}g - f[\epsilon_{m13}B_n + \epsilon_{m23}B_n + \cancel{\epsilon_{m33}B_n}] \\ & -\frac{1}{\rho}\Big[\frac{\partial P}{\partial x} + \frac{\partial P}{\partial y} + \frac{\partial P}{\partial z}\Big] \\ & + \frac{1}{\rho}\Big[\frac{\tau_{m1}}{\partial x} + \frac{\tau_{m2}}{\partial y} + \frac{\tau_{m3}}{\partial z}\Big]
+	\frac{\partial A_m}{\partial t} & + B_1\frac{\partial A_m}{\partial X_1} + B_2\frac{\partial A_m}{\partial X_2} + B_3\frac{\partial A_m}{\partial X_3} = \\  & -\delta_{m3}g - f[\epsilon_{m13}B_1 + \epsilon_{m23}B_2 + \cancel{\epsilon_{m33}B_3}] \\ & -\frac{1}{\rho}\left[\frac{\partial P}{\partial X_m}\right] + \frac{1}{\rho}\left[\frac{\tau_{m1}}{\partial X_1} + \frac{\tau_{m2}}{\partial X_2} + \frac{\tau_{m3}}{\partial X_3}\right]
 \end{align*}
 
-Now expanding with $m=1,2$ and $3$, we get following 3 equations:
+Now expanding with $m=1$, we get following equation:
 \begin{align*}
-	\frac{\partial A_1}{\partial t} & + B_1\frac{\partial A_1}{\partial x} + B_2\frac{\partial A_1}{\partial y} + B_3\frac{\partial A_1}{\partial z} = \\  & -\delta_{13}g - f[\cancel{\epsilon_{113}B_n} + \epsilon_{123}B_n + \cancel{\epsilon_{133}B_n}] \\ & -\frac{1}{\rho}\Big[\frac{\partial P}{\partial x} + \frac{\partial P}{\partial y} + \frac{\partial P}{\partial z}\Big] \\ & + \frac{1}{\rho}\Big[\frac{\tau_{11}}{\partial x} + \frac{\tau_{12}}{\partial y} + \frac{\tau_{13}}{\partial z}\Big] \\
-	\frac{\partial A_2}{\partial t} & + B_1\frac{\partial A_2}{\partial x} + B_2\frac{\partial A_2}{\partial y} + B_3\frac{\partial A_2}{\partial z} = \\  & -\delta_{23}g - f[\epsilon_{213}B_n + \cancel{\epsilon_{223}B_n} + \cancel{\epsilon_{233}B_n}] \\ & -\frac{1}{\rho}\Big[\frac{\partial P}{\partial x} + \frac{\partial P}{\partial y} + \frac{\partial P}{\partial z}\Big] \\ & + \frac{1}{\rho}\Big[\frac{\tau_{21}}{\partial x} + \frac{\tau_{22}}{\partial y} + \frac{\tau_{23}}{\partial z}\Big] \\
-	\frac{\partial A_3}{\partial t} & + B_1\frac{\partial A_3}{\partial x} + B_2\frac{\partial A_3}{\partial y} + B_3\frac{\partial A_3}{\partial z} = \\  & -\delta_{33}g - f[\cancel{\epsilon_{323}B_n} + \cancel{\epsilon_{323}B_n} + \cancel{\epsilon_{333}B_n}] \\ & -\frac{1}{\rho}\Big[\frac{\partial P}{\partial x} + \frac{\partial P}{\partial y} + \frac{\partial P}{\partial z}\Big] \\ & + \frac{1}{\rho}\Big[\frac{\tau_{31}}{\partial x} + \frac{\tau_{32}}{\partial y} + \frac{\tau_{33}}{\partial z}\Big]
+	\frac{\partial A_1}{\partial t} & + B_1\frac{\partial A_1}{\partial X_1} + B_2\frac{\partial A_1}{\partial X_2} + B_3\frac{\partial A_1}{\partial X_3} =                                              \\  & -\cancel{\delta_{13}g} + f[\cancel{\epsilon_{113}B_1} + \epsilon_{123}B_2 + \cancel{\epsilon_{133}B_3}] \\ & -\frac{1}{\rho}\left[\frac{\partial P}{\partial X_1}\right] + \frac{1}{\rho}\left[\frac{\tau_{11}}{\partial X_1} + \frac{\tau_{12}}{\partial X_2} + \frac{\tau_{13}}{\partial X_3}\right] \\
+	\frac{\partial u}{\partial t}   & + u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} + w\frac{\partial u}{\partial z} = +fv - \frac{1}{\rho}\left[\frac{\partial P}{\partial x}\right] \\ & + \frac{1}{\rho}\left[\frac{\tau_{xx}}{\partial x} + \frac{\tau_{xy}}{\partial y} + \frac{\tau_{xz}}{\partial z}\right]
 \end{align*}
 
-\yellownote{try}
+Now expanding with $m=2$, we get following equation:
+\begin{align*}
+	\frac{\partial A_2}{\partial t} & + B_1\frac{\partial A_2}{\partial X_1} + B_2\frac{\partial A_2}{\partial X_2} + B_3\frac{\partial A_2}{\partial X_3} =                                              \\  & -\cancel{\delta_{23}g} + f[\epsilon_{213}B_1 + \cancel{\epsilon_{223}B_2} + \cancel{\epsilon_{233}B_3}] \\ & -\frac{1}{\rho}\left[\frac{\partial P}{\partial X_2}\right] + \frac{1}{\rho}\left[\frac{\tau_{21}}{\partial X_1} + \frac{\tau_{22}}{\partial X_2} + \frac{\tau_{23}}{\partial X_3}\right] \\
+	\frac{\partial v}{\partial t}   & + u\frac{\partial v}{\partial x} + v\frac{\partial v}{\partial y} + w\frac{\partial v}{\partial z} = -fu - \frac{1}{\rho}\left[\frac{\partial P}{\partial y}\right] \\ & + \frac{1}{\rho}\left[\frac{\tau_{yx}}{\partial x} + \frac{\tau_{yy}}{\partial y} + \frac{\tau_{yz}}{\partial z}\right]
+\end{align*}
 
-\begin{conditions}
-	a &  $R^2 T_c^529P_c$ \\
-	T & temperature\\
-	P & pressure\\
-	v & molar volume \\
-	T_c & temperature at the critical point \\
-	P_c & pressure at the critical point
-\end{conditions}
+Now expanding with $m=3$, we get following equation:
+\begin{align*}
+	\frac{\partial A_3}{\partial t} & + B_1\frac{\partial A_3}{\partial X_1} + B_2\frac{\partial A_3}{\partial X_2} + B_3\frac{\partial A_3}{\partial X_3} =                                             \\  & -\delta_{33}g + f[\cancel{\epsilon_{313}}B_1 + \cancel{\epsilon_{323}B_2} + \cancel{\epsilon_{333}B_3}] \\ & -\frac{1}{\rho}\left[\frac{\partial P}{\partial X_3}\right] + \frac{1}{\rho}\left[\frac{\tau_{31}}{\partial X_1} + \frac{\tau_{32}}{\partial X_2} + \frac{\tau_{33}}{\partial X_3}\right] \\
+	\frac{\partial w}{\partial t}   & + u\frac{\partial w}{\partial x} + v\frac{\partial w}{\partial y} + w\frac{\partial w}{\partial z} = -g - \frac{1}{\rho}\left[\frac{\partial P}{\partial z}\right] \\ & + \frac{1}{\rho}\left[\frac{\tau_{zx}}{\partial x} + \frac{\tau_{zy}}{\partial y} + \frac{\tau_{zz}}{\partial z}\right]
+\end{align*}
 
 \clearpage
 \bibliographystyle{plain}
