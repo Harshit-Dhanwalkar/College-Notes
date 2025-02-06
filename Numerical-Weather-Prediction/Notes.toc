@@ -26,4 +26,6 @@
 \contentsline {section}{\numberline {10}Lecture 10 29/01/2025}{16}{section.10}%
 \contentsline {subsection}{\numberline {10.1}Lax Theorem}{16}{subsection.10.1}%
 \contentsline {subsection}{\numberline {10.2}Van Neumann}{16}{subsection.10.2}%
+\contentsline {section}{\numberline {11}Lecture 11 03/02/2025}{17}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Van Neumann Stability Analysis For 1-D Heat Conducting Equation For FTCS Scheme}{17}{subsection.11.1}%
 \contentsfinish 

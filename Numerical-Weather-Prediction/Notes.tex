@@ -1446,13 +1446,46 @@ Application : Van Neumann analysis is commonly used for schemes solving hyperbol
 For \textbf{stability}, we often use techniques like the \textbf{Von Neumann stability analysis} to check that perturbations do not grow indefinitely using \myeqref{eq:vanneumann}.
 
 \yellownote{Incomplete}
-\yellownote{Try}
 
-\begin{conditions}
-	T & temperature\\
-	P & pressure\\
-	v & molar volume \\
-	T_c & temperature at the critical point \\
-	P_c & pressure at the critical point
-\end{conditions}
+\clearpage
+\section{Lecture 11 03/02/2025}
+\subsection{Van Neumann Stability Analysis For 1-D Heat Conducting Equation For FTCS Scheme}
+\begin{align*}
+	\frac{\partial T}{\partial t} &= k\frac{\partial^2 T}{\partial x^2} \tag{11.1} \label{eq:1dheateq}
+\end{align*}
+
+Appling FTCS scheme:
+\begin{align*}
+	\frac{T_{m,n+1} - T_{m,n}}{\Delta t} &= k\left[\frac{T_{m+1,n}-2T_{m,n}+T_{m-1,n}}{(\Delta x)^2}\right] \tag{11.2} \label{eq:1dheatftcseq}
+\end{align*}
+
+Let $\lambda = k \Delta t / (\Delta x)^2$
+
+Since error $\epsilon_{m,n}$ identically satisfies difference equations, we can write;
+\begin{align*}
+	\epsilon{m,n+1} &= \epsilon_{m,n} + \lambda \left(\epsilon_{m+1,n} + \epsilon_{m-1,n} -2 \epsilon_{m,n}\right) \\
+	\epsilon{m,n+1} &= \left(1-2\lambda \right)\epsilon_{m,n} + \lambda \left(\epsilon_{m+1,n} + \epsilon_{m-1,n} \right) \tag{11.3} \label{eq:11.3}
+\end{align*}
+
+Let $\epsilon_{m,n} = \exp(at) \cdot \exp(ikx)$
+
+Since, $t = n \Delta t$ and $x = m \Delta x$; 
+\begin{align*}
+	\epsilon_{m,n} &= \exp(an \Delta t) \cdot \exp(ik m \Delta x) \tag{11.4} \label{eq:11.4}
+\end{align*}
+
+Substituting \myeqref{eq:11.4} in \myeqref{eq:11.3}, we obtain;
+\begin{align*}
+	 & e^{(a(n+1)\Delta t)} \cdot e^{(ik m \Delta x)} = (1-2\lambda)e^{(an\Delta t)}e^{(ik m \Delta x)}  \\ &+ \lambda\left[e^{(ik (m+1) \Delta x)} + e^{(ik (m-1) \Delta x)} \right]e^{(an\Delta t)} \tag{11.5} \label{eq:11.5}
+\end{align*}
+
+Divide both sides of \myeqref{eq:11.5} by $e^{(ik m \Delta x)}$
+\begin{align*}
+	e^{(a\Delta t)} = (1-2\lambda) + \lambda \underbrace{\left[e^{(ik \Delta x)} + e^{-(ik \Delta x)} \right]}_{2\cos(k\Delta x)} e^{(an\Delta t)} \\
+	e^{(a\Delta t)} = (1-2\lambda) + 2\lambda \cos(k\Delta x)e^{(an\Delta t)} \tag{11.6} \label{eq:11.6}
+\end{align*}
+
+\yellownote{Incomplete}
+
+\clearpage
 \end{document}
