@@ -1604,6 +1604,33 @@ Divide throughout by $B^{\mu(n-1)\Delta t} e^{ikm\Delta x}$
 \myeqref{eq:12.14} shows that CTCS scheme is stable.
 \freeyellownote{500}{-320}{To be checked}
 
+\clearpage
+
+\section{Lecture 13 06/02/2025}
+\subsection{Crank Nicholson Scheme}
+\begin{align*}
+	\left(\frac{\partial T}{\partial t}\right)_{m,n+1/2} &= k\left(\frac{\partial^2 T}{\partial x^2}\right)_{m,n+1/2} \tag{12.16} \label{eq:12.16} \\
+	\frac{T_{m,n} - T_{m,n-1}}{\Delta t} &= k\left[\frac{T_{m+1,n+1/2} - 2T_{m,n+1/2} + T_{m-1,n+1/2}}{(\Delta x)^2}\right]
+\end{align*}
+
+Let $\lambda = k\Delta t/2(\Delta x)^2$
+
+\begin{align*}
+	T_{m,n} - T_{m,n-1} &= \lambda\left[T_{m+1,n+1/2} - 2T_{m,n+1/2} + T_{m-1,n+1/2}\right] \\
+	T_{m,n} - T_{m,n-1} &= \lambda\Big[\frac{\left(T_{m+1,n+1} + T_{m+1,n}\right)}{2} \\ &- 2\frac{\left(T_{m,n+1}-T_{m,n}\right)}{2} \\ &+ \frac{\left(T_{m-1,n+1} + T_{m-1,n}\right)}{2} \Big]
+\end{align*}
+
+\yellownote{Incomplete}
+
+\subsection{Dufart Frankel Scheme}
+\begin{align*}
+	\left(\frac{\partial T}{\partial t}\right)_{m,n} &= k\left(\frac{\partial^2 T}{\partial x^2}\right)_{m,n} \tag{13.1} \label{eq:13.1} \\
+	\frac{T_{m,n} - T_{m,n-1}}{\Delta t} &= k\left[\frac{T_{m+1,n} - 2 \cdot T_{m,n} + T_{m-1,n}}{(\Delta x)^2}\right]
+\end{align*}
+
+Let $\lambda = k\Delta t/2(\Delta x)^2$
+
+Taking average $T_{m,n} = \frac{T_{m,n+1} + T_{m,n-1}}{2}$
 
 \yellownote{Incomplete}
 
