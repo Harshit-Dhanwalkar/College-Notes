@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  6 FEB 2025 18:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  6 FEB 2025 23:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1063,28 +1063,27 @@ Underfull \vbox (badness 1320) has occurred while \output is active []
 
 ] [18
 
-
 ]
 No file Notes.bbl.
 
 AED: lastpage setting LastPage
 (./Notes.aux)
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: 181A124267FDE949A6205011038FDEBE;5223.
+(rerunfilecheck)             Checksum: A8E1E7DA28CF1A680081593164E0AF3A;5450.
  ) 
 Here is how much of TeX's memory you used:
- 44484 strings out of 480171
- 1019801 string characters out of 5894490
- 1499235 words of memory out of 5000000
- 61212 multiletter control sequences out of 15000+600000
+ 44523 strings out of 480171
+ 1020513 string characters out of 5894490
+ 1500080 words of memory out of 5000000
+ 61243 multiletter control sequences out of 15000+600000
  545699 words of font info for 344 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  98i,23n,94p,1002b,2130s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Notes.pdf (18 pages, 214627 bytes).
+Output written on Notes.pdf (18 pages, 216852 bytes).
 PDF statistics:
- 525 PDF objects out of 1000 (max. 8388607)
- 437 compressed objects within 5 object streams
- 179 named destinations out of 1000 (max. 500000)
- 110859 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 541 PDF objects out of 1000 (max. 8388607)
+ 452 compressed objects within 5 object streams
+ 187 named destinations out of 1000 (max. 500000)
+ 110867 words of extra memory for PDF output out of 128383 (max. 10000000)
 

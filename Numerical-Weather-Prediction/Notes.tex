@@ -1567,6 +1567,44 @@ Divide \myeqref{eq:12.6} throughout by $B^{\mu (n-1) \Delta t}\cdot e^{(ikm\Delt
 
 \myeqref{eq:12.8} shows that BTCS scheme is unconditionally stable.
 
+\subsection{CTCS Scheme / Richardson Scheme}
+\begin{align*}
+	\frac{T_{m,n+1} - T_{m,n-1}}{2\cdot\Delta t} &= k\left[\frac{T_{m+1,n} - 2\cdot T_{m,n} + T_{m-1,n}}{(\Delta x)^2}\right] \tag{12.9} \label{eq:ctcs}
+\end{align*}
+
+Let $\lambda = 2\cdot k\Delta t/(\Delta x)^2$
+\begin{align*}
+	T_{m,n+1} &= T_{m,n-1} + \lambda(T_{m+1,n} - 2\cdot T_{m,n} + T_{m-1,n}) \tag{12.10} \label{12.10}
+\end{align*}
+
+For stability;
+\begin{align*}
+	\epsilon_{m,n+1} &= \epsilon_{m,n-1} + \lambda(\epsilon_{m+1,n}-2\cdot\epsilon_{m,n} + \epsilon_{m-1,n}) \tag{12.11} \label{eq:12.11} \\
+	\epsilon_{m,n} &= B^{\mu n\Delta t}\exp(ikm\Delta x) \tag{12.12} \label{eq:12.12}
+\end{align*}
+
+\begin{align*}
+	\epsilon_{m,n} &= B^{\mu n\Delta t}\exp(ikm\Delta x) \\
+		&= B^{\mu (n-1)\Delta t}\exp(ikm\Delta x) \\ &+ \lambda B^{\mu n \Delta t}\left[e^{ik\Delta x}-2te^{-ik\Delta x}\right]e^{ikm\Delta x}
+\end{align*}
+
+Divide throughout by $B^{\mu(n-1)\Delta t} e^{ikm\Delta x}$
+\begin{align*}
+	B^{2\cdot\mu(n-1)\Delta t} = 1 -2\lambda \cdot B^{\mu \Delta t}\left(1-\cos(k\Delta x)\right) \\
+	B^{2\cdot\mu(n-1)\Delta t} = 1 -2\lambda \cdot B^{\mu \Delta t}\left(2\cdot\sin^2(k\Delta x)\right) \\
+	\left(B^{2\cdot\mu(n-1)\Delta t}\right)^2 -4\lambda \cdot \sin^2(k\Delta x)B^{\mu \Delta t} - 1 = 0 \\
+	G^2 + \beta G -1 = 0 \tag{12.13} \label{eq:12.13}
+\end{align*}
+
+\begin{align*}
+	G &= \left|\frac{\epsilon_{m,n+1}}{\epsilon_{m,n}}\right| = \left|B^{\mu \Delta t}\right| \leq 1 \tag{12.14} \label{eq:12.14} \\
+	G_{1,2} &= \frac{-\beta \pm \sqrt{\beta^2 + 4}}{2} \tag{12.15} \label{eq:12.15}
+\end{align*}
+
+\myeqref{eq:12.14} shows that CTCS scheme is stable.
+\freeyellownote{500}{-320}{To be checked}
+
+
 \yellownote{Incomplete}
 
 \clearpage

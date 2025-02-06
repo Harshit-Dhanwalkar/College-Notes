@@ -30,4 +30,5 @@
 \contentsline {subsection}{\numberline {11.1}Van Neumann Stability Analysis For 1-D Heat Conducting Equation For FTCS Scheme}{17}{subsection.11.1}%
 \contentsline {section}{\numberline {12}Lecture 12 04/02/2025}{18}{section.12}%
 \contentsline {subsection}{\numberline {12.1}BTCS Scheme}{18}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}CTCS Scheme / Richardson Scheme}{18}{subsection.12.2}%
 \contentsfinish 
