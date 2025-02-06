@@ -1117,26 +1117,26 @@ Now expanding with $m=3$, we get following equation:
 	      \end{align*}
 	      If \textbf{incompressible}, $\frac{\partial \rho}{\partial t} = 0 \Rightarrow \rho = \text{constant}$
 	      \begin{align*}
-		      \frac{\partial \left(\rho U_i\right)}{\partial x_i} & = 0 \\
-		      \rho\left[\frac{\partial U_1}{\partial X_1} + \frac{\partial U_2}{\partial X_2} + \frac{\partial U_3}{\partial X_3}\right] & = 0 \\
-		      \left[\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z}\right] & = 0 \\
-		      \nabla \cdot u &= 0 \tag{7.3} \label{eq:idealgaeq1}
+		      \frac{\partial \left(\rho U_i\right)}{\partial x_i}                                                                        & = 0                                 \\
+		      \rho\left[\frac{\partial U_1}{\partial X_1} + \frac{\partial U_2}{\partial X_2} + \frac{\partial U_3}{\partial X_3}\right] & = 0                                 \\
+		      \left[\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z}\right]                 & = 0                                 \\
+		      \nabla \cdot u                                                                                                             & = 0 \tag{7.3} \label{eq:idealgaeq1}
 	      \end{align*}
 	\item Concservation of Momentum or Momentum equation
 	      \begin{align*}
-		      \frac{\partial U_i}{\partial t} + U_i\frac{\partial U_i}{\partial x_i} = &-\delta_{i3}g + f\epsilon_{ij3}U_j \\ &- \frac{1}{\rho}\frac{\partial P}{\partial x_i} \\ &+ \underbrace{\gamma}_{\substack{\text{Kinetic} \\ \text{viscousity} \\ \text{coeff.}}}\underbrace{\frac{\partial^2 U_i}{\partial x_i^2}}_{\text{viscousity}} \tag{7.4} \label{eq:momentumeq}
+		      \frac{\partial U_i}{\partial t} + U_i\frac{\partial U_i}{\partial x_i} = & -\delta_{i3}g + f\epsilon_{ij3}U_j \\ &- \frac{1}{\rho}\frac{\partial P}{\partial x_i} \\ &+ \underbrace{\gamma}_{\substack{\text{Kinetic} \\ \text{viscousity} \\ \text{coeff.}}}\underbrace{\frac{\partial^2 U_i}{\partial x_i^2}}_{\text{viscousity}} \tag{7.4} \label{eq:momentumeq}
 	      \end{align*}
 	\item Conservartion of Moisture
 	      \begin{align*}
-		      \frac{\partial q}{\partial t} + U_i\frac{\partial q}{\partial x_i} = &\overbrace{\underbrace{\nu_q}_{\substack{\text{molecular} \\ \text{diffusivity} \\ \text{coeff.}}} \cdot \frac{\partial^2 q}{\partial x_i^2}}^{\text{Diffusion term}} \\ &+ \underbrace{\frac{S}{\rho_{\text{air}}}}_{\text{Residue term}} + \underbrace{\frac{E}{\rho_{\text{air}}}}_{\text{Phase change}} \tag{7.5} \label{eq:moistureeq}
+		      \frac{\partial q}{\partial t} + U_i\frac{\partial q}{\partial x_i} = & \overbrace{\underbrace{\nu_q}_{\substack{\text{molecular} \\ \text{diffusivity} \\ \text{coeff.}}} \cdot \frac{\partial^2 q}{\partial x_i^2}}^{\text{Diffusion term}} \\ &+ \underbrace{\frac{S}{\rho_{\text{air}}}}_{\text{Residue term}} + \underbrace{\frac{E}{\rho_{\text{air}}}}_{\text{Phase change}} \tag{7.5} \label{eq:moistureeq}
 	      \end{align*}
 	\item Conservartion of Heat or Thermodynamic equation
 	      \begin{align*}
-		      \frac{\partial \theta}{\partial t} + U_i\frac{\partial \theta}{\partial x_i} = &\underbrace{\overbrace{\nu_\theta}^{\substack{\text{molecular} \\ \text{diffusivity} \\ \text{heat coeff.}}} \cdot \frac{\partial^2 \theta}{\partial x_i^2}}_{\text{Diffusive heat}} - \underbrace{\frac{\partial Q_i^2}{\partial x_i}}_{\substack{\text{Radiative} \\ \text{divergence}}} \\ &- \underbrace{\frac{L_pE}{\rho_{\text{air}}C_p}}_{\text{Phase change}} \tag{7.6} \label{eq:heateq}
+		      \frac{\partial \theta}{\partial t} + U_i\frac{\partial \theta}{\partial x_i} = & \underbrace{\overbrace{\nu_\theta}^{\substack{\text{molecular} \\ \text{diffusivity} \\ \text{heat coeff.}}} \cdot \frac{\partial^2 \theta}{\partial x_i^2}}_{\text{Diffusive heat}} - \underbrace{\frac{\partial Q_i^2}{\partial x_i}}_{\substack{\text{Radiative} \\ \text{divergence}}} \\ &- \underbrace{\frac{L_pE}{\rho_{\text{air}}C_p}}_{\text{Phase change}} \tag{7.6} \label{eq:heateq}
 	      \end{align*}
 	\item Conservartion of Scalar quantity
 	      \begin{align*}
-		      \frac{\partial C}{\partial t} + U_i\frac{\partial C}{\partial x_i} = &\underbrace{\overbrace{\nu_c}^{\substack{\text{molecular} \\ \text{diffusivity} \\ \text{coeff.}}} \frac{\partial^2 C}{\partial x_i^2}}_{\text{Diffusion term}} + \underbrace{S_c}_{\text{Phase change}} \tag{7.7} \label{eq:scalarquantity}
+		      \frac{\partial C}{\partial t} + U_i\frac{\partial C}{\partial x_i} = & \underbrace{\overbrace{\nu_c}^{\substack{\text{molecular} \\ \text{diffusivity} \\ \text{coeff.}}} \frac{\partial^2 C}{\partial x_i^2}}_{\text{Diffusion term}} + \underbrace{S_c}_{\text{Phase change}} \tag{7.7} \label{eq:scalarquantity}
 	      \end{align*}
 \end{enumerate}
 

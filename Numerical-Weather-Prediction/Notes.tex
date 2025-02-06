@@ -1445,8 +1445,6 @@ Application : Van Neumann analysis is commonly used for schemes solving hyperbol
 
 For \textbf{stability}, we often use techniques like the \textbf{Von Neumann stability analysis} to check that perturbations do not grow indefinitely using \myeqref{eq:vanneumann}.
 
-\yellownote{Incomplete}
-
 \clearpage
 \section{Lecture 11 03/02/2025}
 \subsection{Van Neumann Stability Analysis For 1-D Heat Conducting Equation For FTCS Scheme}
@@ -1476,16 +1474,57 @@ Since, $t = n \Delta t$ and $x = m \Delta x$;
 
 Substituting \myeqref{eq:11.4} in \myeqref{eq:11.3}, we obtain;
 \begin{align*}
-	 & e^{(a(n+1)\Delta t)} \cdot e^{(ik m \Delta x)} = (1-2\lambda)e^{(an\Delta t)}e^{(ik m \Delta x)}  \\ &+ \lambda\left[e^{(ik (m+1) \Delta x)} + e^{(ik (m-1) \Delta x)} \right]e^{(an\Delta t)} \tag{11.5} \label{eq:11.5}
+	 & e^{(a(n+1)\Delta t)} \cdot e^{(ik m \Delta x)} = (1-2\lambda)e^{(an\Delta t)}e^{(ik m \Delta x)} \\ &+ \lambda\left[e^{(ik (m+1) \Delta x)} + e^{(ik (m-1) \Delta x)} \right]e^{(an\Delta t)} \\
+	 & e^{(an\Delta t)} \cdot e^{(ik m \Delta x)} = (1-2\lambda)e^{(an\Delta t)}e^{(ik m \Delta x)} \\ &+ \lambda\left[e^{(ik (m+1) \Delta x)} + e^{(ik (m-1) \Delta x)} \right] \tag{11.5} \label{eq:11.5}
 \end{align*}
 
 Divide both sides of \myeqref{eq:11.5} by $e^{(ik m \Delta x)}$
 \begin{align*}
-	e^{(a\Delta t)} = (1-2\lambda) + \lambda \underbrace{\left[e^{(ik \Delta x)} + e^{-(ik \Delta x)} \right]}_{2\cos(k\Delta x)} e^{(an\Delta t)} \\
-	e^{(a\Delta t)} = (1-2\lambda) + 2\lambda \cos(k\Delta x)e^{(an\Delta t)} \tag{11.6} \label{eq:11.6}
+	e^{(a\Delta t)} &= (1-2\lambda) + \lambda \underbrace{\left[e^{(ik \Delta x)} + e^{-(ik \Delta x)} \right]}_{2\cos(k\Delta x)} \\
+	e^{(a\Delta t)} &= (1-2\lambda) + 2\lambda \cos(k\Delta x) \\
+	e^{(a\Delta t)} &= 1- 2\lambda\left[1- \cos(k\Delta x)\right] \\
+	e^{(a\Delta t)} &= 1- 4\lambda\left[\sin^2\left(\frac{k\Delta x}{2}\right)\right] \tag{11.6} \label{eq:11.6}
 \end{align*}
 
-\yellownote{Incomplete}
+Amplification factor
+\begin{align*}
+	a &= \left|\frac{\epsilon_{m,n+1}}{\epsilon_{m,n}}\right| \\
+	  &= \left|\frac{e^{a(n+1)\Delta x} \cdot e^{ikm\Delta x}}{e^{an\Delta x} \cdot e^{ikm\Delta x}}\right| \\
+	  &= \left|e^{a\Delta x}\right| \tag{11.7} \label{eq:11.7}
+\end{align*}
+
+FTCS scheme will be stable if
+\begin{align*}
+	\left|e^{a\Delta t}\right| \leq 1 \Rightarrow \left|1 - 4\lambda\left[\sin^2\left(\frac{k\Delta x}{2}\right)\right] \right| \leq 1
+\end{align*}
+
+The following 2 conditions has to be identically satisfied
+\begin{align*}
+	1 - 4\lambda\left[\sin^2\left(\frac{k\Delta x}{2}\right)\right] &\leq 1 \tag{11.8.i} \label{eq:11.8.i} \\
+	1 - 4\lambda\left[\sin^2\left(\frac{k\Delta x}{2}\right)\right] &\geq -1 \tag{11.8.ii} \label{eq:11.8.ii}
+\end{align*}
+
+For \myeqref{eq:11.8.i};
+\begin{align*}
+	1 - 4\lambda\left[\sin^2\left(\frac{k\Delta x}{2}\right)\right] &\leq 1 \\
+	- 4\lambda\left[\sin^2\left(\frac{k\Delta x}{2}\right)\right] &\leq 0
+\end{align*}
+Therefore, it is always true.
+
+For \myeqref{eq:11.8.ii};
+\begin{align*}
+	1 - 4\lambda\left[\sin^2\left(\frac{k\Delta x}{2}\right)\right] &\geq 1 \\
+	4\lambda\left[\sin^2\left(\frac{k\Delta x}{2}\right)\right] &\leq 2
+\end{align*}
+Maximum magnitude of $\sin^2\left(k\Delta x/2\right)=1$
+\begin{align*}
+	4\lambda \cdot 1 &\leq 2 \\
+	\lambda &\leq \frac{1}{2} \\
+	\frac{k\Delta t}{(\Delta x)} &\leq \frac{1}{2} \\
+	\Delta t &\leq \frac{(\Delta x)^2}{2k}
+\end{align*}
 
 \clearpage
+\bibliographystyle{plain}
+\bibliography{Reference}
 \end{document}
