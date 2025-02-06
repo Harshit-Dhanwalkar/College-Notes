@@ -1525,6 +1525,51 @@ Maximum magnitude of $\sin^2\left(k\Delta x/2\right)=1$
 \end{align*}
 
 \clearpage
+
+\section{Lecture 12 04/02/2025}
+\subsection{BTCS Scheme}
+\begin{align*}
+	\frac{\partial T}{\partial t} &= k\frac{\partial^2 T}{\partial x^2} \tag{12.1} \label{eq:1dheateq1} \\
+	\frac{T_{m,n} - T_{m,n-1}}{\Delta t} &= k\left[\frac{T_{m+1,n} - 2\cdot T_{m,n} + T_{m-1,n}}{(\Delta x)^2}\right] \tag{12.2} \label{eq:btcs}
+\end{align*}
+
+Let $\lambda = k\Delta t/(\Delta x)^2$
+\begin{align*}
+	(1+2\lambda)T_{m,n} - \lambda(T_{m+1,n} + T_{m-1,n}) &= T_{m,n-1} \tag{12.3} \label{12.3}
+\end{align*}
+
+For stability;
+\begin{align*}
+	(1+2\lambda)\epsilon_{m,n} &- \lambda(\epsilon_{m+1,n} + \epsilon_{m-1,n}) = \epsilon_{m,n-1} \tag{12.4} \label{eq:12.4}\\
+	\epsilon_{m,n} &= B^{\mu n\Delta t}\exp(ikm\Delta x) \tag{12.5} \label{eq:12.5}
+\end{align*}
+
+Substitute \myeqref{eq:12.5} in \myeqref{eq:12.4}, we obtain;
+\begin{align*}
+	\begin{rcases}
+		&(1 + 2\lambda)B^{\mu n \Delta t} e^{(ikm\Delta x)} \\ &-\lambda B^{\mu n \Delta t} \left(e^{(ik(m+1)\Delta x)} + e^{(ik(m-1)\Delta x)}\right) \\ &= B^{\mu (n-1)\Delta t}e^{ikm\Delta x}
+	\end{rcases} & \tag{12.6} \label{eq:12.6}
+\end{align*}
+
+Divide \myeqref{eq:12.6} throughout by $B^{\mu (n-1) \Delta t}\cdot e^{(ikm\Delta x)}$
+\begin{align*}
+	(1 + 2\lambda)B^{\mu \Delta t} - \lambda B^{\mu \Delta t} \left(e^{(ik\Delta x)} + e^{-(ik\Delta x)}\right) &=1 \\
+	(1 + 2\lambda)B^{\mu \Delta t} - 2\lambda B^{\mu \Delta t} \cos(k\Delta x)&=1 \\
+	B^{\mu \Delta t} \left(1 + 2\lambda - 2\lambda\cos(k\Delta x)\right) &=1 \\
+	B^{\mu \Delta t} \left(1 + 2\lambda[1 - \cos(k\Delta x)]\right) &=1 \\
+	B^{\mu \Delta t} \left(1 + 4\lambda\sin^2\left(\frac{k\Delta x}{2}\right)\right)&=1 \\
+	B^{\mu \Delta t} = \frac{1}{\left(1 + 4\lambda\sin^2\left(\frac{k\Delta x}{2}\right)\right)} \tag{12.7} \label{eq:12.7}
+\end{align*}
+
+\begin{align*}
+	G = \left|\frac{\epsilon_{m,n+1}}{\epsilon_{m,n}}\right| = \left|B^{\mu \Delta t}\right| \leq 1 \tag{12.8} \label{eq:12.8}
+\end{align*}
+
+\myeqref{eq:12.8} shows that BTCS scheme is unconditionally stable.
+
+\yellownote{Incomplete}
+
+\clearpage
 \bibliographystyle{plain}
 \bibliography{Reference}
 \end{document}
