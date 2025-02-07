@@ -1633,7 +1633,7 @@ Substituting \myeqref{eq:13.4} in \myeqref{eq:13.3}, we obtain;
 \begin{align*}
 	\begin{rcases}
 	&(1 + 2\lambda)B^{\mu (n+1)\Delta t}e^{(ikm\Delta x)} \\ &- \lambda B^{\mu (n+1) \Delta t}\left[e^{ik (m+1) \Delta x} + e^{-ik (m-1) \Delta x}\right] \\ &= (1 - 2\lambda)B^{\mu n\Delta t}e^{ikm\Delta x} \\ &+ \lambda B^{\mu n\Delta t}\left[e^{ik (m+1) \Delta x} + e^{ik (m-1) \Delta x}\right]
-	\end{rcases} & \tag{13.6} \label{eq:13.16}
+	\end{rcases} & \tag{13.6} \label{eq:13.6}
 \end{align*}
 
 Divide throughout by $B^{\mu n \Delta t} e^{ikm\Delta x}$
@@ -1680,8 +1680,43 @@ Substituting \myeqref{eq:13.12} in \myeqref{eq:13.11}, we obtain;
 \end{align*}
 
 Divide throughout by $B^{\mu n \Delta t} e^{ikm\Delta x}$
+\begin{align*}
+	(1 +\lambda)\left(B^{\mu \Delta t}\right)^2  &= \lambda B^{\mu \Delta t} \left(2\cos(k\Delta t)\right) + (1-\lambda) \\
+	(1 +\lambda)G^2  &= \lambda \left(2\cos(k\Delta t)\right)G + (1 - \lambda) \\
+	(1 +\lambda)G^2  &- \lambda \left(2\cos(k\Delta t)\right)G - (1 - \lambda) = 0 \tag{13.15} \label{eq:13.15}
+\end{align*}
+\begin{align*}
+	G_{1,2} &= \frac{2\lambda \cos(k\Delta x) \pm \sqrt{4\lambda^2\cos^2(k\Delta x)+4(1-\lambda^2)}}{2(1+\lambda)} \\
+	G_{1,2} &= \frac{\cancel{2}\lambda \cos(k\Delta x) \pm \cancel{2}\sqrt{\lambda^2(\cos^2(k\Delta x) - 1) + 1}}{\cancel{2}(1+\lambda)} \\
+	G_{1,2} &= \frac{\lambda \cos(k\Delta x) \pm \sqrt{1 - \lambda^2\sin^2(k\Delta x)}}{(1+\lambda)} \tag{13.16} \label{eq:13.16}
+\end{align*}
 
-\yellownote{Incomplete}
+For Dufart Frankel Scheme to be stable $G_1 \& G_2$ in \myeqref{eq:13.16} should both simultaneously less than 1.
+
+\textbf{Case i}: Quantity under square root is real.
+
+i.e., $1-\lambda^2\sin^2(k\Delta x) \geqslant 0$
+\begin{align*}
+	G &=  \frac{\lambda \cos(k\Delta x) \pm \sqrt{1 - \lambda^2\sin^2(k\Delta x)}}{(1+\lambda)} \\
+	 &\leqslant \frac{\lambda \cos(k\Delta x)+1}{(1+\lambda)} \\
+	 &\leqslant \frac{\lambda +1}{(1+\lambda)} \\
+	 &\leqslant 1
+\end{align*}
+
+\textbf{Case ii}: Quantity under square root is imaginary.
+
+i.e., $1-\lambda^2\sin^2(k\Delta x) \leqslant 0$
+\begin{align*}
+	G_{1,2} &= \frac{\lambda \cos(k\Delta x) \pm \sqrt{1 - \lambda^2\sin^2(k\Delta x)}}{(1+\lambda)} \\ 
+	  &= \frac{\lambda \cos(k\Delta x) \pm \iota \sqrt{\lambda^2\sin^2(k\Delta x) - 1}}{(1+\lambda)} \\
+	|G_{1,2}^2| &= \frac{\lambda^2 \cos^2(k\Delta x) + \lambda^2\sin^2(k\Delta x) - 1}{(1+\lambda)^2} \\ 
+		    &= \frac{(\lambda^2 - 1)}{(1+\lambda)^2} \\
+		    &= \frac{\cancel{(\lambda + 1)}(\lambda - 1)}{(1+\lambda)^{\cancel{2}}} \\
+		    &= \frac{(\lambda - 1)}{(1+\lambda)} \\
+		    &\leqslant 1
+\end{align*}
+
+Therefore Dufart Frankel Scheme is unconditionally stable.
 
 \clearpage
 \bibliographystyle{plain}
