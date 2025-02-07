@@ -1584,15 +1584,15 @@ For stability;
 \end{align*}
 
 \begin{align*}
-	\epsilon_{m,n} &= B^{\mu n\Delta t}\exp(ikm\Delta x) \\
-		&= B^{\mu (n-1)\Delta t}\exp(ikm\Delta x) \\ &+ \lambda B^{\mu n \Delta t}\left[e^{ik\Delta x}-2te^{-ik\Delta x}\right]e^{ikm\Delta x}
+	\epsilon_{m,n} &= B^{\mu n\Delta t}e^{(ikm\Delta x)} \\
+		       &= B^{\mu (n-1)\Delta t}e^{(ikm\Delta x)} \\ &+ \lambda B^{\mu n \Delta t}\left[e^{ik\Delta x} - e^{-ik\Delta x}\right]e^{ikm\Delta x}
 \end{align*}
 
 Divide throughout by $B^{\mu(n-1)\Delta t} e^{ikm\Delta x}$
 \begin{align*}
 	B^{2\cdot\mu(n-1)\Delta t} = 1 -2\lambda \cdot B^{\mu \Delta t}\left(1-\cos(k\Delta x)\right) \\
 	B^{2\cdot\mu(n-1)\Delta t} = 1 -2\lambda \cdot B^{\mu \Delta t}\left(2\cdot\sin^2(k\Delta x)\right) \\
-	\left(B^{2\cdot\mu(n-1)\Delta t}\right)^2 -4\lambda \cdot \sin^2(k\Delta x)B^{\mu \Delta t} - 1 = 0 \\
+	\left(B^{\mu(n-1)\Delta t}\right)^2 + 4\lambda \cdot \sin^2(k\Delta x)B^{\mu \Delta t} - 1 = 0 \\
 	G^2 + \beta G -1 = 0 \tag{12.13} \label{eq:12.13}
 \end{align*}
 
@@ -1609,22 +1609,43 @@ Divide throughout by $B^{\mu(n-1)\Delta t} e^{ikm\Delta x}$
 \section{Lecture 13 06/02/2025}
 \subsection{Crank Nicholson Scheme}
 \begin{align*}
-	\left(\frac{\partial T}{\partial t}\right)_{m,n+1/2} &= k\left(\frac{\partial^2 T}{\partial x^2}\right)_{m,n+1/2} \tag{12.16} \label{eq:12.16} \\
+	\left(\frac{\partial T}{\partial t}\right)_{m,n+1/2} &= k\left(\frac{\partial^2 T}{\partial x^2}\right)_{m,n+1/2} \tag{13.1} \label{eq:13.1} \\
 	\frac{T_{m,n} - T_{m,n-1}}{\Delta t} &= k\left[\frac{T_{m+1,n+1/2} - 2T_{m,n+1/2} + T_{m-1,n+1/2}}{(\Delta x)^2}\right]
 \end{align*}
 
 Let $\lambda = k\Delta t/2(\Delta x)^2$
-
 \begin{align*}
-	T_{m,n} - T_{m,n-1} &= \lambda\left[T_{m+1,n+1/2} - 2T_{m,n+1/2} + T_{m-1,n+1/2}\right] \\
-	T_{m,n} - T_{m,n-1} &= \lambda\Big[\frac{\left(T_{m+1,n+1} + T_{m+1,n}\right)}{2} \\ &- 2\frac{\left(T_{m,n+1}-T_{m,n}\right)}{2} \\ &+ \frac{\left(T_{m-1,n+1} + T_{m-1,n}\right)}{2} \Big]
+	(1 + &2\lambda)T_{m,n+1} - \lambda T_{m,n-1} - \lambda T_{m+1,n+1} = \\ &(1 - 2\lambda)T_{m,n} - \lambda T_{m,n}  \tag{13.2} \label{eq:13.2}
 \end{align*}
 
-\yellownote{Incomplete}
+For stability;
+\begin{align*}
+	(1 + &2\lambda)\epsilon_{m,n+1} - \lambda \epsilon_{m+1,n+1} - \lambda \epsilon_{m-1,n+1} = \\ &(1 - 2\lambda)\epsilon_{m,n} - \lambda \epsilon_{m+1,n} + \lambda \epsilon_{m-1,n} \tag{13.3} \label{eq:13.3} \\
+	\epsilon_{m,n} &= B^{\mu n\Delta t}\exp(ikm\Delta x) \tag{13.4} \label{eq:13.4}
+\end{align*}
+
+\begin{align*}
+	(1 + &2\lambda)B^{\mu (n+1)\Delta t}e^{(ikm\Delta x)} \\ &- \lambda B^{\mu (n+1) \Delta t}\left[e^{ik (m+1) \Delta x} + e^{-ik (m-1) \Delta x}\right] \\ &= (1 - 2\lambda)B^{\mu n\Delta t}e^{ikm\Delta x} \\ &+ \lambda B^{\mu n\Delta t}\left[e^{ik (m+1) \Delta x} + e^{ik (m-1) \Delta x}\right]
+\end{align*}
+
+Divide throughout by $B^{\mu n \Delta t} e^{ikm\Delta x}$
+\begin{align*}
+	(1 &+ 2\lambda)B^{\mu n\Delta t} - 2\lambda B^{\mu n \Delta t}\left[\cos(k \Delta x)\right] \\ &= (1 - 2\lambda) + 2\lambda \left[\cos(k \Delta x)\right] \\
+	(1 &+ 2\lambda - 2\lambda \cos(ik \Delta x))B^{\mu n\Delta t} \\ &= (1 - 2\lambda) + 2\lambda \left[\cos(k \Delta x)\right] \\
+	(1 &+ 2\lambda(1 - \cos(k \Delta x)))B^{\mu n\Delta t} \\ &= 1 - 2\lambda(1 - \cos(k \Delta x)) \\
+	B^{\mu n\Delta t} &= \frac{1 - 2\lambda(1 - \cos(k \Delta x))}{1 + 2\lambda(1 - \cos(k \Delta x))} \\
+	B^{\mu n\Delta t} &= \frac{1 - 4\lambda(\sin^2(k \Delta x/2))}{1 + 4\lambda(\sin^2(k \Delta x/2))} \\
+\end{align*}
+
+Let $4\lambda(\sin^2(k \Delta x/2)) = \beta$
+
+\begin{align*}
+	G = \left|\frac{\epsilon_{m,n+1}}{\epsilon_{m,n}}\right| = \frac{1-\beta}{1+ \beta} = \left|B^{\mu \Delta t}\right| \leq 1 \tag{13.8} \label{eq:13.8}
+\end{align*}
 
 \subsection{Dufart Frankel Scheme}
 \begin{align*}
-	\left(\frac{\partial T}{\partial t}\right)_{m,n} &= k\left(\frac{\partial^2 T}{\partial x^2}\right)_{m,n} \tag{13.1} \label{eq:13.1} \\
+	\left(\frac{\partial T}{\partial t}\right)_{m,n} &= k\left(\frac{\partial^2 T}{\partial x^2}\right)_{m,n} \tag{13.5} \label{eq:13.5} \\
 	\frac{T_{m,n} - T_{m,n-1}}{\Delta t} &= k\left[\frac{T_{m+1,n} - 2 \cdot T_{m,n} + T_{m-1,n}}{(\Delta x)^2}\right]
 \end{align*}
 
