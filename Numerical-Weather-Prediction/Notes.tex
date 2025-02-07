@@ -1488,7 +1488,7 @@ Divide both sides of \myeqref{eq:11.5} by $e^{(ik m \Delta x)}$
 
 Amplification factor
 \begin{align*}
-	a &= \left|\frac{\epsilon_{m,n+1}}{\epsilon_{m,n}}\right| \\
+	G &= \left|\frac{\epsilon_{m,n+1}}{\epsilon_{m,n}}\right| \\
 	  &= \left|\frac{e^{a(n+1)\Delta x} \cdot e^{ikm\Delta x}}{e^{an\Delta x} \cdot e^{ikm\Delta x}}\right| \\
 	  &= \left|e^{a\Delta x}\right| \tag{11.7} \label{eq:11.7}
 \end{align*}
@@ -1544,7 +1544,7 @@ For stability;
 	\epsilon_{m,n} &= B^{\mu n\Delta t}\exp(ikm\Delta x) \tag{12.5} \label{eq:12.5}
 \end{align*}
 
-Substitute \myeqref{eq:12.5} in \myeqref{eq:12.4}, we obtain;
+Substituting \myeqref{eq:12.5} in \myeqref{eq:12.4}, we obtain;
 \begin{align*}
 	\begin{rcases}
 		&(1 + 2\lambda)B^{\mu n \Delta t} e^{(ikm\Delta x)} \\ &-\lambda B^{\mu n \Delta t} \left(e^{(ik(m+1)\Delta x)} + e^{(ik(m-1)\Delta x)}\right) \\ &= B^{\mu (n-1)\Delta t}e^{ikm\Delta x}
@@ -1561,6 +1561,7 @@ Divide \myeqref{eq:12.6} throughout by $B^{\mu (n-1) \Delta t}\cdot e^{(ikm\Delt
 	B^{\mu \Delta t} = \frac{1}{\left(1 + 4\lambda\sin^2\left(\frac{k\Delta x}{2}\right)\right)} \tag{12.7} \label{eq:12.7}
 \end{align*}
 
+Amplification factor
 \begin{align*}
 	G = \left|\frac{\epsilon_{m,n+1}}{\epsilon_{m,n}}\right| = \left|B^{\mu \Delta t}\right| \leq 1 \tag{12.8} \label{eq:12.8}
 \end{align*}
@@ -1596,6 +1597,7 @@ Divide throughout by $B^{\mu(n-1)\Delta t} e^{ikm\Delta x}$
 	G^2 + \beta G -1 = 0 \tag{12.13} \label{eq:12.13}
 \end{align*}
 
+Amplification factor
 \begin{align*}
 	G &= \left|\frac{\epsilon_{m,n+1}}{\epsilon_{m,n}}\right| = \left|B^{\mu \Delta t}\right| \leq 1 \tag{12.14} \label{eq:12.14} \\
 	G_{1,2} &= \frac{-\beta \pm \sqrt{\beta^2 + 4}}{2} \tag{12.15} \label{eq:12.15}
@@ -1609,49 +1611,75 @@ Divide throughout by $B^{\mu(n-1)\Delta t} e^{ikm\Delta x}$
 \section{Lecture 13 06/02/2025}
 \subsection{Crank Nicholson Scheme}
 \begin{align*}
-	\left(\frac{\partial T}{\partial t}\right)_{m,n+1/2} &= k\left(\frac{\partial^2 T}{\partial x^2}\right)_{m,n+1/2} \tag{13.1} \label{eq:13.1} \\
-	\frac{T_{m,n} - T_{m,n-1}}{\Delta t} &= k\left[\frac{T_{m+1,n+1/2} - 2T_{m,n+1/2} + T_{m-1,n+1/2}}{(\Delta x)^2}\right]
+	\left(\frac{\partial T}{\partial t}\right)_{m,n+1/2} &= k\left(\frac{\partial^2 T}{\partial x^2}\right)_{m,n+1/2} \tag{13.1} \label{eq:13.1}
+\end{align*}
+\begin{align*}
+	&\frac{T_{m,n} - T_{m,n-1}}{\Delta t} \\ &\quad  \; = k\left[\frac{T_{m+1,n+1/2} - 2T_{m,n+1/2} + T_{m-1,n+1/2}}{(\Delta x)^2}\right] \tag{13.2} \label{eq:13.2}
 \end{align*}
 
 Let $\lambda = k\Delta t/2(\Delta x)^2$
 \begin{align*}
-	(1 + &2\lambda)T_{m,n+1} - \lambda T_{m,n-1} - \lambda T_{m+1,n+1} = \\ &(1 - 2\lambda)T_{m,n} - \lambda T_{m,n}  \tag{13.2} \label{eq:13.2}
+	(1 + &2\lambda)T_{m,n+1} - \lambda T_{m,n-1} - \lambda T_{m+1,n+1} = \\ &(1 - 2\lambda)T_{m,n} - \lambda T_{m,n} \tag{13.3} \label{eq:13.3}
 \end{align*}
 
 For stability;
 \begin{align*}
-	(1 + &2\lambda)\epsilon_{m,n+1} - \lambda \epsilon_{m+1,n+1} - \lambda \epsilon_{m-1,n+1} = \\ &(1 - 2\lambda)\epsilon_{m,n} - \lambda \epsilon_{m+1,n} + \lambda \epsilon_{m-1,n} \tag{13.3} \label{eq:13.3} \\
-	\epsilon_{m,n} &= B^{\mu n\Delta t}\exp(ikm\Delta x) \tag{13.4} \label{eq:13.4}
+	(1 + &2\lambda)\epsilon_{m,n+1} - \lambda \epsilon_{m+1,n+1} - \lambda \epsilon_{m-1,n+1} = \\ &(1 - 2\lambda)\epsilon_{m,n} - \lambda \epsilon_{m+1,n} + \lambda \epsilon_{m-1,n} \tag{13.4} \label{eq:13.4} \\
+	\epsilon_{m,n} &= B^{\mu n\Delta t}\exp(ikm\Delta x) \tag{13.5} \label{eq:13.5}
 \end{align*}
 
+Substituting \myeqref{eq:13.4} in \myeqref{eq:13.3}, we obtain;
+
 \begin{align*}
-	(1 + &2\lambda)B^{\mu (n+1)\Delta t}e^{(ikm\Delta x)} \\ &- \lambda B^{\mu (n+1) \Delta t}\left[e^{ik (m+1) \Delta x} + e^{-ik (m-1) \Delta x}\right] \\ &= (1 - 2\lambda)B^{\mu n\Delta t}e^{ikm\Delta x} \\ &+ \lambda B^{\mu n\Delta t}\left[e^{ik (m+1) \Delta x} + e^{ik (m-1) \Delta x}\right]
+	\begin{rcases}
+	&(1 + 2\lambda)B^{\mu (n+1)\Delta t}e^{(ikm\Delta x)} \\ &- \lambda B^{\mu (n+1) \Delta t}\left[e^{ik (m+1) \Delta x} + e^{-ik (m-1) \Delta x}\right] \\ &= (1 - 2\lambda)B^{\mu n\Delta t}e^{ikm\Delta x} \\ &+ \lambda B^{\mu n\Delta t}\left[e^{ik (m+1) \Delta x} + e^{ik (m-1) \Delta x}\right]
+	\end{rcases} & \tag{13.6} \label{eq:13.16}
 \end{align*}
 
 Divide throughout by $B^{\mu n \Delta t} e^{ikm\Delta x}$
 \begin{align*}
 	(1 &+ 2\lambda)B^{\mu n\Delta t} - 2\lambda B^{\mu n \Delta t}\left[\cos(k \Delta x)\right] \\ &= (1 - 2\lambda) + 2\lambda \left[\cos(k \Delta x)\right] \\
-	(1 &+ 2\lambda - 2\lambda \cos(ik \Delta x))B^{\mu n\Delta t} \\ &= (1 - 2\lambda) + 2\lambda \left[\cos(k \Delta x)\right] \\
+	(1 &+ 2\lambda - 2\lambda \cos(k \Delta x))B^{\mu n\Delta t} \\ &= (1 - 2\lambda) + 2\lambda \left[\cos(k \Delta x)\right] \\
 	(1 &+ 2\lambda(1 - \cos(k \Delta x)))B^{\mu n\Delta t} \\ &= 1 - 2\lambda(1 - \cos(k \Delta x)) \\
 	B^{\mu n\Delta t} &= \frac{1 - 2\lambda(1 - \cos(k \Delta x))}{1 + 2\lambda(1 - \cos(k \Delta x))} \\
-	B^{\mu n\Delta t} &= \frac{1 - 4\lambda(\sin^2(k \Delta x/2))}{1 + 4\lambda(\sin^2(k \Delta x/2))} \\
+	B^{\mu n\Delta t} &= \frac{1 - 4\lambda(\sin^2(k \Delta x/2))}{1 + 4\lambda(\sin^2(k \Delta x/2))} \tag{13.7} \label{eq:13.7}
 \end{align*}
 
 Let $4\lambda(\sin^2(k \Delta x/2)) = \beta$
 
+Amplification factor
 \begin{align*}
 	G = \left|\frac{\epsilon_{m,n+1}}{\epsilon_{m,n}}\right| = \frac{1-\beta}{1+ \beta} = \left|B^{\mu \Delta t}\right| \leq 1 \tag{13.8} \label{eq:13.8}
 \end{align*}
 
 \subsection{Dufart Frankel Scheme}
 \begin{align*}
-	\left(\frac{\partial T}{\partial t}\right)_{m,n} &= k\left(\frac{\partial^2 T}{\partial x^2}\right)_{m,n} \tag{13.5} \label{eq:13.5} \\
-	\frac{T_{m,n} - T_{m,n-1}}{\Delta t} &= k\left[\frac{T_{m+1,n} - 2 \cdot T_{m,n} + T_{m-1,n}}{(\Delta x)^2}\right]
+	\left(\frac{\partial T}{\partial t}\right)_{m,n} &= k\left(\frac{\partial^2 T}{\partial x^2}\right)_{m,n} \tag{13.9} \label{eq:13.9} \\
+	\frac{T_{m,n+1} - T_{m,n}}{2\Delta t} &= k\left[\frac{T_{m+1,n} - 2T_{m,n} + T_{m-1,n}}{(\Delta x)^2}\right] \tag{13.10} \label{eq:13.10}
 \end{align*}
 
-Let $\lambda = k\Delta t/2(\Delta x)^2$
+Let $\lambda = 2 \cdot k\Delta t/(\Delta x)^2$
 
 Taking average $T_{m,n} = \frac{T_{m,n+1} + T_{m,n-1}}{2}$
+\begin{align*}
+	T_{m,n+1} - T_{m,n} &= \lambda\left[\frac{T_{m+1,n} - 2\left(\frac{T_{m,n+1} + T_{m,n-1}}{2}\right) + T_{m-1,n}}{(\Delta x)^2}\right] \\
+	(1+\lambda)T_{m,n+1} &= \lambda T_{m+1,n} + (1 - \lambda)T_{m,n-1} + \lambda T_{m-1,n} \tag{13.11} \label{eq:13.11}
+\end{align*}
+
+Errors should satisfy the same difference equation identically;
+\begin{align*}
+	(1+\lambda)\epsilon_{m,n+1} &= \lambda \epsilon_{m+1,n} + (1 - \lambda)\epsilon_{m,n-1} + \lambda \epsilon_{m-1,n} \tag{13.12} \label{eq:13.12} \\
+	\epsilon_{m,n} &= B^{\mu n\Delta t}\exp(ikm\Delta x) \tag{13.13} \label{eq:13.13}
+\end{align*}
+
+Substituting \myeqref{eq:13.12} in \myeqref{eq:13.11}, we obtain;
+\begin{align*}
+	\begin{rcases}
+		&(1 +\lambda)B^{\mu (n+1) \Delta t}\exp(ikm\Delta x) \\ &= \lambda B^{\mu n\Delta t}\exp(ik (m+1) \Delta x) \\ &+ (1 - \lambda)B^{\mu (n-1) \Delta t}\exp(ikm \Delta x) \\ &+ \lambda B^{\mu n \Delta t}\exp(ik (m-1) \Delta x)
+	\end{rcases} & \tag{13.14} \label{eq:13.14}
+\end{align*}
+
+Divide throughout by $B^{\mu n \Delta t} e^{ikm\Delta x}$
 
 \yellownote{Incomplete}
 
