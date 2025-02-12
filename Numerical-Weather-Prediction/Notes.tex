@@ -10,20 +10,28 @@
 \usepackage{enumitem}
 
 \usepackage{tikz}
-\usetikzlibrary{trees, positioning, shapes}
+\usetikzlibrary{trees, positioning}
+\usetikzlibrary{shapes, shadings}
 \usepackage{tikz-3dplot}
+\usetikzlibrary{3d,shapes.geometric,shadows.blur}
 \tikzstyle{vertex}=[draw,fill=black!15,circle,minimum size=20pt,inner sep=0pt]
 \tikzstyle{selected edge} = [draw,line width=5pt,-,red!50]
 
 \usepackage{amsmath}
 \usepackage{array} % for tables
 
+
 \usepackage{mathtools}
+
+% \usepackage[table,xcdraw]{xcolor}
+% \usepackage[table, dvipsnames]{xcolor}
 
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \tdplotsetmaincoords{60}{115}
 \pgfplotsset{compat=newest}
+
+\usepackage{subfig}
 
 %-------------------------------------------------------------------------------------
 %                                       COLUMNS                                      %
@@ -85,7 +93,7 @@
 % ------------------------------------------------------------------------------------
 %                                       CUSTOM  YELLOW STICKY NOTES		     %
 %-------------------------------------------------------------------------------------
-\usepackage{color}
+\usepackage{color, colortbl}
 \usepackage{calc}
 
 \setlength{\parskip}{0ex}
@@ -148,6 +156,7 @@
     \end{tikzpicture}
 }
 
+\definecolor{LightCyan}{rgb}{0.88,1,1}
 %-------------------------------------------------------------------------------------
 %                                       ARTICLE INFORMATION                          %
 %-------------------------------------------------------------------------------------

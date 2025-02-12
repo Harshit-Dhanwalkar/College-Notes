@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex Notes"] 1739383760 "Notes.aux" "Notes.bbl" "Notes" 1739383763
+["bibtex Notes"] 1739391807 "Notes.aux" "Notes.bbl" "Notes" 1739392035
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "Notes.aux" 1739383763 11908 595d7b303cf239d004f0fc1753b2d94a "pdflatex"
+  "Notes.aux" 1739392035 13103 b8a380ab76e5886008619538b90574f4 "pdflatex"
   "Reference.bib" 1736974722 221 2eafe7cc02a25cf3cfa8b0c06835cc3a ""
   (generated)
   "Notes.bbl"
   "Notes.blg"
-["pdflatex"] 1739383760 "Notes.tex" "Notes.pdf" "Notes" 1739383763
+["pdflatex"] 1739392033 "Notes.tex" "Notes.pdf" "Notes" 1739392035
   "/etc/texmf/web2c/texmf.cnf" 1728313746 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -248,6 +248,8 @@
   "/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty" 1630706891 10253 d1fb80bca50ae6aa432ccf86e6663bd0 ""
   "/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg" 1279039959 678 4792914a8f45be57bb98413425e4c7af ""
   "/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty" 1575499565 5766 13a9e8766c47f30327caf893ece86ac8 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty" 1643838029 59397 1bfeb7c4239ba9206737fca9cf861c65 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty" 1616101747 5582 a43dedf8e5ec418356f1e9dfe5d29fc3 ""
   "/usr/share/texlive/texmf-dist/tex/latex/mdwtools/footnote.sty" 1137110333 6005 dcbae7bf04efc282d256f60986bb2c15 ""
   "/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def" 1639175081 48111 8787e991b62f522e20e25cfcf22da5e1 ""
   "/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg" 1639175081 26645 99abe152cb45cee54a727fdf4ef65681 ""
@@ -293,12 +295,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1734418184 4073795 a82a847ac97773bf4a607ab050efa3a1 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736325085 1435836 f91fb7a9941a454f193d6a5e108415c1 ""
-  "Notes.aux" 1739383763 11908 595d7b303cf239d004f0fc1753b2d94a "pdflatex"
-  "Notes.bbl" 1739383760 233 742256c998508b995e3c4b9f571c4a7a "bibtex Notes"
-  "Notes.lof" 1739383763 1162 abd71bdf4146953d8dba4f3a79bf9b52 "pdflatex"
-  "Notes.out" 1739383763 5373 97d2fc54a10c7dc46bc5ffd632cbebbe "pdflatex"
-  "Notes.tex" 1739383757 56984 7c2b0aeb179a01adda651d8852432cd8 ""
-  "Notes.toc" 1739383763 3789 a8bcfc85ae96cebf113d35548b2dcd29 "pdflatex"
+  "Notes.aux" 1739392035 13103 b8a380ab76e5886008619538b90574f4 "pdflatex"
+  "Notes.bbl" 1739391807 233 742256c998508b995e3c4b9f571c4a7a "bibtex Notes"
+  "Notes.lof" 1739392035 1162 abd71bdf4146953d8dba4f3a79bf9b52 "pdflatex"
+  "Notes.out" 1739392035 5360 2477e34dc0b75a83f60496fc44e1cf8a "pdflatex"
+  "Notes.tex" 1739392032 61691 018fe6ff8ecaf6aa3e79df66574a4f27 ""
+  "Notes.toc" 1739392035 3776 daca7dd6949622d8000fdf8be175b67b "pdflatex"
   "SelfArx.cls" 1738208112 9820 a5c628ddb663d0951a4927fb6aa4d39a ""
   (generated)
   "Notes.aux"

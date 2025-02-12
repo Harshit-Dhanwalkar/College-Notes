@@ -20,6 +20,9 @@
 \usepackage{amsmath}
 \usepackage{array} % for tables
 
+
+\usepackage{mathtools}
+
 % \usepackage[table,xcdraw]{xcolor}
 % \usepackage[table, dvipsnames]{xcolor}
 
@@ -37,6 +40,12 @@
 \setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
 
 %-------------------------------------------------------------------------------------
+%                                        COLORS                                      %
+%-------------------------------------------------------------------------------------
+\definecolor{color1}{RGB}{0,0,90} % Color of the article title and sections
+\definecolor{color2}{RGB}{0,20,20} % Color of the boxes behind the abstract and headings
+
+%-------------------------------------------------------------------------------------
 %                                       EQUATIONS                                    %
 %-------------------------------------------------------------------------------------
 \usepackage{cancel} % for crossing the word showing it is cancelled or is zero
@@ -45,12 +54,6 @@
 %                                     EQUATIONLINKS                                  %
 %-------------------------------------------------------------------------------------
 \newcommand{\myeqref}[1]{Eq.\textcolor{blue}{\textup{(\getrefnumber{#1})}}}
-
-%-------------------------------------------------------------------------------------
-%                                        COLORS                                      %
-%-------------------------------------------------------------------------------------
-\definecolor{color1}{RGB}{0,0,90} % Color of the article title and sections
-\definecolor{color2}{RGB}{0,20,20} % Color of the boxes behind the abstract and headings
 
 %-------------------------------------------------------------------------------------
 %                                       HYPERLINKS                                   %
@@ -136,18 +139,18 @@
             % Yellow note background
 	    \draw[fill=yellow!35]
 		    (0,0) -- (0, \yellownoteheight) -- (\yellownotewidth, \yellownoteheight) -- (2.5, 0.4) -- (2.1,0.2) -- (1.7, 0) -- cycle;
-                % Folded corner
-                \draw[opacity=0.45,fill=gray!50] 
-                    (0.7\yellownotewidth,0) -- 
-                    (0.9\yellownotewidth,0.45) -- 
-                    (\yellownotewidth,0.4) -- 
-                    cycle;
-                % Note content
-                \node[blue,below] at (0.5\yellownotewidth,\yellownoteheight) {
-                    \begin{minipage}{\yellownotewidth-1em}
-                        \scriptsize\sf#3
-                    \end{minipage}
-                };
+	    % Folded corner
+	    \draw[opacity=0.45,fill=gray!50]
+	            (0.7\yellownotewidth,0) --
+	            (0.9\yellownotewidth,0.45) --
+		    (\yellownotewidth,0.4) --
+		    cycle;
+	    % Note content
+	    \node[blue,below] at (0.5\yellownotewidth,\yellownoteheight) {
+		    \begin{minipage}{\yellownotewidth-1em}
+			\scriptsize\sf#3
+		    \end{minipage}
+	    };
             \end{tikzpicture}
         };
     \end{tikzpicture}
@@ -1150,39 +1153,39 @@ Now we need to account for turbulence, which can be heat flux, momentum flux, et
 \subsection{Equations For Turbuelent Flow}
 \subsubsection{Equation of state}
 \begin{align*}
-	P &= \rho R_d T_v \tag{8.1} \label{eq:equationofstate}
+	P & = \rho R_d T_v \tag{8.1} \label{eq:equationofstate}
 \end{align*}
 
 To account for turbulence we will split equation in mean and turbulence (purturbation) parts, that is,
 \begin{align*}
-	P &= \overline{P} + P' \tag{8.2.i} \label{eq:pressure-mean-turbulence} \\
-	\rho &= \overline{\rho} + \rho' \tag{8.2.ii} \label{eq:density-mean-turbulence} \\
-	T_v &= \overline{T_v} + T_v' \tag{8.2.iii} \label{eq:temperature-mean-turbulence}
+	P    & = \overline{P} + P' \tag{8.2.i} \label{eq:pressure-mean-turbulence}          \\
+	\rho & = \overline{\rho} + \rho' \tag{8.2.ii} \label{eq:density-mean-turbulence}    \\
+	T_v  & = \overline{T_v} + T_v' \tag{8.2.iii} \label{eq:temperature-mean-turbulence}
 \end{align*}
 
 Substituting \myeqref{eq:pressure-mean-turbulence}, \myeqref{eq:density-mean-turbulence} and \myeqref{eq:temperature-mean-turbulence} in \myeqref{eq:equationofstate}, we obtain:
 \begin{align*}
-	(\overline{P} + P') &= \left(\overline{\rho} + \rho' \right) R_d \left(\overline{T_v} + T_v'\right) \\
-	\frac{(\overline{P} + P')}{R_d} &= \overline{\rho}\overline{T_v} + \overline{\rho}T_v' + \rho'\overline{T_v} + \rho'T_v' \tag{8.3} \label{eq:8.3}
+	(\overline{P} + P')             & = \left(\overline{\rho} + \rho' \right) R_d \left(\overline{T_v} + T_v'\right)                                   \\
+	\frac{(\overline{P} + P')}{R_d} & = \overline{\rho}\overline{T_v} + \overline{\rho}T_v' + \rho'\overline{T_v} + \rho'T_v' \tag{8.3} \label{eq:8.3}
 \end{align*}
 
 Taking Reynold's average,
 \begin{align*}
-	\frac{\overline{\overline{P}} + \overline{P'}}{R_d} &= \overline{\overline{\rho}\overline{T_v}} + \overline{\overline{\rho}T_v'} + \overline{\rho'\overline{T_v}} + \overline{\rho'T_v'} \\
-	\frac{\overline{P}}{R_d} &= \overline{\rho}\overline{T_v} + \overline{\rho'T_v'} \\
-	\frac{\overline{P}}{R_d} &\approx \overline{\rho}\overline{T_v} \tag{8.4} \label{eq:equationofstate-turbulence}
+	\frac{\overline{\overline{P}} + \overline{P'}}{R_d} & = \overline{\overline{\rho}\overline{T_v}} + \overline{\overline{\rho}T_v'} + \overline{\rho'\overline{T_v}} + \overline{\rho'T_v'} \\
+	\frac{\overline{P}}{R_d}                            & = \overline{\rho}\overline{T_v} + \overline{\rho'T_v'}                                                                              \\
+	\frac{\overline{P}}{R_d}                            & \approx \overline{\rho}\overline{T_v} \tag{8.4} \label{eq:equationofstate-turbulence}
 \end{align*}
 Equation of state remain equation of stae in turbulent flow (no addition of termulent term).
 
 Subtract \myeqref{eq:equationofstate-turbulence} from \myeqref{eq:8.3}, we get turbulent form:
 \begin{align*}
-	\frac{P'}{R_d} &= \overline{\rho}T_v' + \rho'\overline{T_v} + \rho'T_v' \tag{8.5} \label{eq:8.5}
+	\frac{P'}{R_d} & = \overline{\rho}T_v' + \rho'\overline{T_v} + \rho'T_v' \tag{8.5} \label{eq:8.5}
 \end{align*}
 
 Dividing \myeqref{eq:8.5} by \myeqref{eq:equationofstate-turbulence}
 \begin{align*}
-	\frac{P'}{\overline{P}} &= \frac{T_v'}{\overline{T_v}} + \frac{\rho'}{\overline{\rho}} + \underbrace{\frac{\rho'T'}{\overline{\rho} \overline{T_v}}}_{\approx 0} \\
-	\frac{P'}{\overline{P}} &= \frac{T_v'}{\overline{T_v}} + \frac{\rho'}{\overline{\rho}} \tag{8.6} \label{eq:8.6}
+	\frac{P'}{\overline{P}} & = \frac{T_v'}{\overline{T_v}} + \frac{\rho'}{\overline{\rho}} + \underbrace{\frac{\rho'T'}{\overline{\rho} \overline{T_v}}}_{\approx 0} \\
+	\frac{P'}{\overline{P}} & = \frac{T_v'}{\overline{T_v}} + \frac{\rho'}{\overline{\rho}} \tag{8.6} \label{eq:8.6}
 \end{align*}
 
 For practical purposes term $(P'/\overline{P})$ is negligible as compared to density and temperature terms. Therefore,
@@ -1192,12 +1195,74 @@ For practical purposes term $(P'/\overline{P})$ is negligible as compared to den
 where $\theta$ is potential termperature.
 
 \subsubsection{Flux Form of Adection Equation}
-\yellownote{Incomplete}
+\begin{align*}
+	u_j\frac{\partial \theta}{\partial x_j} \rightarrow \text{Advection equation for tremperature}
+\end{align*}
+
+\begin{align*}
+	\frac{\partial u_j}{\partial x_j} & = 0
+\end{align*}
+Multiply above equation by temperature ($\theta$) and add in the previous equation, we  obtain;
+\begin{align*}
+	u_j\frac{\partial \theta}{\partial x_j} + \theta\frac{\partial u_j}{\partial x_j} & = 0                                            \\
+	\frac{\partial(u_j \theta)}{\partial x_j}                                         & = 0 \tag{8.8} \label{eq:fluxformofadvectioneq}
+\end{align*}
+
+\textbf{Note:} When $\theta$ replaced with $u_j$, the above \myeqref{eq:fluxformofadvectioneq} will become flux form of momentum equation.
 
 \subsubsection{Conservation of Mass}
-\yellownote{Incomplete}
+\begin{align*}
+	\frac{\partial u_j}{\partial x_j} & = 0
+\end{align*}
+
+Spliting equation in mean and turbulence (purturbation) parts, that is,
+\begin{align*}
+	\frac{\partial\left(\overline{u_j} + u_j'\right)}{\partial x_j}                   & = 0                                         \\
+	\frac{\partial\left(\overline{u_j} + u_j'\right)}{\partial x_j}                   & = 0                                         \\
+	\frac{\partial \overline{u_j}}{\partial x_j} + \frac{\partial u_j'}{\partial x_j} & = 0 \tag{8.9} \label{eq:conservationofmass}
+\end{align*}
+
+Applying Reynold's averaging,
+\begin{align*}
+	\overline{\frac{\partial \overline{u_j}}{\partial x_j}} + \cancel{\overline{\frac{\partial u_j'}{\partial x_j}}} & = 0                            \\
+	\frac{\partial \overline{u_j}}{\partial x_j}                                                                     & = 0 \tag{8.10} \label{eq:8.10}
+\end{align*}
+Subtracting \myeqref{eq:8.10} from \myeqref{eq:conservationofmass}, we get:
+\begin{align*}
+	\frac{\partial u_j'}{\partial x_j} & = 0 \rightarrow \text{Turbulent variable} \tag{8.11} \label{eq:8.11}
+\end{align*}
 
 \subsubsection{Conservation of Momentum}
+\begin{align*}
+	\begin{rcases}
+		\frac{\partial u_i}{\partial t} + u_j\frac{\partial u_i}{\partial x_j} & = -\delta_{i3}\left[g - \left(\frac{\theta_v'}{\theta_v}\right)\right] + f \epsilon_{ij3}u_j \\ & \quad - \frac{1}{\rho}\frac{\partial P}{\partial x_j} + \gamma\frac{\partial^2 u_i}{\partial x_i^2}
+	\end{rcases} & \tag{8.12} \label{eq:conservationofmomentum}
+\end{align*}
+
+Spliting equation in mean and turbulence (purturbation) parts, that is,
+\begin{align*}
+	\begin{rcases}
+		 & \frac{\partial\left(\overline{u_i} + u_i'\right)}{\partial t} + \left(\overline{u_j} + u_j' \right)\frac{\partial \left(\overline{u_i} + u_i'\right)}{\partial x_j} \\ &\quad\quad = -\delta_{i3}\left[g - \left(\frac{\theta_v'}{\theta_v}\right)\right] + f \epsilon_{ij3}\left(\overline{u_j} + u_j'\right) \\ &\quad\quad - \frac{1}{\left(\overline{\rho} + \rho'\right)}\frac{\partial \left(\overline{P} + P'\right)}{\partial x_j} + \gamma\frac{\partial^2 \left(\overline{u_i} + u_i'\right)}{\partial x_j^2}
+	\end{rcases} & \tag{8.13} \label{eq:8.13}
+\end{align*}
+
+Assuming density of boundary layer does not change, i.e., $\rho' = 0$
+\begin{align*}
+	\begin{rcases}
+		 & \frac{\partial \overline{u_i}}{\partial t} + \frac{\partial u_i'}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} +\overline{u_j}\frac{\partial u_i'}{\partial x_j} + u_j'\frac{\partial \overline{u_i}}{\partial x_j} + u_j'\frac{\partial u_i'}{\partial x_j} \\ &\quad\quad = -\delta_{i3}g - \delta_{i3}\left(\frac{\theta_v'}{\theta_v}\right) + f \epsilon_{ij3}\overline{u_j} + f \epsilon_{ij3} u_j' \\ &\quad\quad - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} - \frac{1}{\overline{\rho}}\frac{\partial P'}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j} + \gamma\frac{\partial^2 u_i'}{\partial x_j^2}
+	\end{rcases} & \tag{8.14} \label{eq:8.14}
+\end{align*}
+
+Applying Reynold's averaging,
+\begin{align*}
+	& \overline{\frac{\partial \overline{u_i}}{\partial t}} + 0 + \overline{\overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j}} + 0 + 0 + \overline{u_j'\frac{\partial u_i'}{\partial x_j}} \\ &\quad\quad = -\delta_{i3}g - 0 + f \epsilon_{ij3}\overline{\overline{u_j}} + 0 \\ &\quad\quad - \frac{1}{\overline{\rho}}\overline{\frac{\partial\overline{P}}{\partial x_j}} - 0 + \gamma\overline{\frac{\partial^2 \overline{u_i}}{\partial x_j}} + 0
+\end{align*}
+
+\begin{align*}
+	\begin{rcases}
+	& \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j}+ \overline{u_j'\frac{\partial u_i'}{\partial x_j}} = -\delta_{i3}g + f \epsilon_{ij3}\overline{u_j} \\ &\hspace{3.1cm} - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j}
+	\end{rcases} & \tag{8.15} \label{eq:8.15}
+\end{align*}
 \yellownote{Incomplete}
 
 \clearpage
