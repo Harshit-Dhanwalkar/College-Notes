@@ -387,7 +387,7 @@ Large eddies will break into smaller eddies after which small eddies dissipates 
 \section{Leture 2 15/01/2025}
 \subsection{Taylor's Hypothesis}
 \begin{itemize}[noitemsep]
-	\item When studying atmospheric boundary layer (ABL), It is not easy to create a snapshot of turbulance in the Atmosphere.
+	\item When studying atmospheric boundary layer (ABL), It is not easy to create a snapshot of turbulence in the Atmosphere.
 	\item Hence it is easier and cheaper to make measurements of point in the atmoshpere for a longer time, then an instantaneous snapshot.
 	\item So we just consider the atmoshpere is frozen.
 	\item \textbf{\textit{Taylor suggested that turbulence can be considered frozen as it advects past sensor.}}
@@ -1139,6 +1139,66 @@ Now expanding with $m=3$, we get following equation:
 		      \frac{\partial C}{\partial t} + U_i\frac{\partial C}{\partial x_i} = & \underbrace{\overbrace{\nu_c}^{\substack{\text{molecular} \\ \text{diffusivity} \\ \text{coeff.}}} \frac{\partial^2 C}{\partial x_i^2}}_{\text{Diffusion term}} + \underbrace{S_c}_{\text{Phase change}} \tag{7.7} \label{eq:scalarquantity}
 	      \end{align*}
 \end{enumerate}
+
+\clearpage
+
+\section{Lecture 8 12/02/2025}
+The governing equations in preivous lecture can not be used for practical applications, since in boundary layer we deal with turbulence which are not included in any of these equations.
+
+Now we need to account for turbulence, which can be heat flux, momentum flux, etc., which will added in the governing equations respectively.
+
+\subsection{Equations For Turbuelent Flow}
+\subsubsection{Equation of state}
+\begin{align*}
+	P &= \rho R_d T_v \tag{8.1} \label{eq:equationofstate}
+\end{align*}
+
+To account for turbulence we will split equation in mean and turbulence (purturbation) parts, that is,
+\begin{align*}
+	P &= \overline{P} + P' \tag{8.2.i} \label{eq:pressure-mean-turbulence} \\
+	\rho &= \overline{\rho} + \rho' \tag{8.2.ii} \label{eq:density-mean-turbulence} \\
+	T_v &= \overline{T_v} + T_v' \tag{8.2.iii} \label{eq:temperature-mean-turbulence}
+\end{align*}
+
+Substituting \myeqref{eq:pressure-mean-turbulence}, \myeqref{eq:density-mean-turbulence} and \myeqref{eq:temperature-mean-turbulence} in \myeqref{eq:equationofstate}, we obtain:
+\begin{align*}
+	(\overline{P} + P') &= \left(\overline{\rho} + \rho' \right) R_d \left(\overline{T_v} + T_v'\right) \\
+	\frac{(\overline{P} + P')}{R_d} &= \overline{\rho}\overline{T_v} + \overline{\rho}T_v' + \rho'\overline{T_v} + \rho'T_v' \tag{8.3} \label{eq:8.3}
+\end{align*}
+
+Taking Reynold's average,
+\begin{align*}
+	\frac{\overline{\overline{P}} + \overline{P'}}{R_d} &= \overline{\overline{\rho}\overline{T_v}} + \overline{\overline{\rho}T_v'} + \overline{\rho'\overline{T_v}} + \overline{\rho'T_v'} \\
+	\frac{\overline{P}}{R_d} &= \overline{\rho}\overline{T_v} + \overline{\rho'T_v'} \\
+	\frac{\overline{P}}{R_d} &\approx \overline{\rho}\overline{T_v} \tag{8.4} \label{eq:equationofstate-turbulence}
+\end{align*}
+Equation of state remain equation of stae in turbulent flow (no addition of termulent term).
+
+Subtract \myeqref{eq:equationofstate-turbulence} from \myeqref{eq:8.3}, we get turbulent form:
+\begin{align*}
+	\frac{P'}{R_d} &= \overline{\rho}T_v' + \rho'\overline{T_v} + \rho'T_v' \tag{8.5} \label{eq:8.5}
+\end{align*}
+
+Dividing \myeqref{eq:8.5} by \myeqref{eq:equationofstate-turbulence}
+\begin{align*}
+	\frac{P'}{\overline{P}} &= \frac{T_v'}{\overline{T_v}} + \frac{\rho'}{\overline{\rho}} + \underbrace{\frac{\rho'T'}{\overline{\rho} \overline{T_v}}}_{\approx 0} \\
+	\frac{P'}{\overline{P}} &= \frac{T_v'}{\overline{T_v}} + \frac{\rho'}{\overline{\rho}} \tag{8.6} \label{eq:8.6}
+\end{align*}
+
+For practical purposes term $(P'/\overline{P})$ is negligible as compared to density and temperature terms. Therefore,
+\begin{align*}
+	\frac{\rho'}{\overline{\rho}} \approx \frac{\theta_v'}{\overline{\theta_v}} \tag{8.7} \label{eq:8.7}
+\end{align*}
+where $\theta$ is potential termperature.
+
+\subsubsection{Flux Form of Adection Equation}
+\yellownote{Incomplete}
+
+\subsubsection{Conservation of Mass}
+\yellownote{Incomplete}
+
+\subsubsection{Conservation of Momentum}
+\yellownote{Incomplete}
 
 \clearpage
 \bibliographystyle{plain}
