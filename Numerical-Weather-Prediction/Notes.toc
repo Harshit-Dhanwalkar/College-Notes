@@ -34,4 +34,6 @@
 \contentsline {section}{\numberline {13}Lecture 13 06/02/2025}{19}{section.13}%
 \contentsline {subsection}{\numberline {13.1}Crank Nicholson Scheme}{19}{subsection.13.1}%
 \contentsline {subsection}{\numberline {13.2}Dufart Frankel Scheme}{19}{subsection.13.2}%
+\contentsline {section}{\numberline {14}Lecture 14 10/02/2025}{21}{section.14}%
+\contentsline {subsection}{\numberline {14.1}2-D Heat Conduction Equation}{21}{subsection.14.1}%
 \contentsfinish 
