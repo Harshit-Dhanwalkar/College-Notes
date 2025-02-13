@@ -1150,7 +1150,7 @@ The governing equations in preivous lecture can not be used for practical applic
 
 Now we need to account for turbulence, which can be heat flux, momentum flux, etc., which will added in the governing equations respectively.
 
-\subsection{Equations For Turbuelent Flow}
+\subsection{Governing Equations For Turbuelent Flow}
 \subsubsection{Equation of state}
 \begin{align*}
 	P & = \rho R_d T_v \tag{8.1} \label{eq:equationofstate}
@@ -1278,11 +1278,64 @@ Add above equation in the \myeqref{eq:8.15}, we  obtain;
 \end{align*}
 \begin{align*}
 	\begin{rcases}
-	& \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \underbrace{\overline{\frac{\partial \left( u_i' u_j' \right)}{\partial x_j}}}_{\text{III}} = -\delta_{i3}g \\ &\hspace{2.1cm} + f \epsilon_{ij3}\overline{u_j} - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j} 
+	& \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \underbrace{\overline{\frac{\partial \left( u_i' u_j' \right)}{\partial x_j}}}_{\text{III}} = -\delta_{i3}g \\ &\hspace{2.1cm} + f \epsilon_{ij3}\overline{u_j} - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j}
 	\end{rcases} & \tag{8.16} \label{eq:momentumfluxeqiation-turbulence}
 \end{align*}
 
 3$^{rd}$ term marked in \myeqref{eq:momentumfluxeqiation-turbulence} is momentum flux (turbulence) which represents eddies.
+
+\clearpage
+
+\section{Lecture 9 13/02/2025}
+\subsection{Governing Equations For Turbuelent Flow}
+\subsubsection{Turbulent Momentum Flux Equation}
+General momentum equation:
+\begin{align*}
+	\frac{\partial u_i}{\partial t} + u_j\frac{\partial u_i}{\partial x_j} &= -\delta_{i3}g + f\epsilon_{i33}u_j - \frac{1}{\rho}\frac{\partial p}{\partial x_i} \\ &\quad + \nu\frac{\partial^2 u}{\partial x_i^2}
+\end{align*}
+
+Turbulent form of momentum equation:
+\begin{align*}
+	\frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} &= -\delta_{i3}g + f\epsilon_{i33}\overline{u_j} - \frac{1}{\rho}\frac{\partial \overline{p}}{\partial x_i} \\ &\quad + \nu\frac{\partial^2\overline{u}}{\partial x_i^2} + \frac{\overline{u_i'u_j}}{\partial x_j} \\
+	\frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} &= -\delta_{i3}g + f\epsilon_{i33}\overline{u_j} - \frac{1}{\rho}\frac{\partial \overline{p}}{\partial x_i} \\ &\quad + \nu\frac{\partial^2\overline{u}}{\partial x_i^2} + \underbrace{\frac{1}{\overline{\rho}}\frac{\overline{\rho u_i'u_j}}{\partial x_j}}_{\text{Reynold's shress}}
+\end{align*}
+
+\subsubsection{Turbulent Heat Flux Equation}
+General Heat equation:
+\begin{align*}
+	\frac{\partial \theta}{\partial t} + u_j\frac{\partial \theta}{\partial x_j} &= \nu_{\theta}\frac{\partial^2 \theta}{\partial x^2_j} - \frac{1}{\rho C_p}\frac{\partial Q_j^*}{\partial x_j} \\ &\quad - \underbrace{\frac{L_p E}{\rho C_p}}_{\text{Phase change}}
+\end{align*}
+
+\begin{align*}
+	\frac{\partial \left(\overline{\theta}+\theta'\right)}{\partial t} &+ \left(\overline{u_j} + u_j'\right)\frac{\partial \left(\overline{\theta} + \theta'\right)}{\partial x_j} = \nu_{\theta}\frac{\partial^2 \theta}{\partial x^2_j} \\ &\quad - \frac{1}{\left(\overline{\rho} + \rho'\right) C_p}\frac{\partial Q_j^*}{\partial x_j} - \frac{L_p E}{\left(\overline{\rho} + \rho'\right) C_p}
+\end{align*}
+
+Assuming density of boundary layer does not change, i.e., $\rho' = 0$
+
+\begin{align*}
+	\begin{rcases}
+		\frac{\partial \left(\overline{\theta}+\theta'\right)}{\partial t} & \!\!\!\!\!\! + \left(\overline{u_j} + u_j'\right)\frac{\partial \left(\overline{\theta} + \theta'\right)}{\partial x_j} = \nu_{\theta}\frac{\partial^2 \theta}{\partial x^2_j} \\ &\quad - \frac{1}{\overline{\rho} C_p}\frac{\partial \left(\overline{Q_j^*} + Q_j^{*'}\right)}{\partial x_j} - \frac{L_p E}{\overline{\rho} C_p}
+	\end{rcases} & \tag{9.3} \label{eq:9.3} \\
+	\begin{rcases}
+		\frac{\partial \overline{\theta}}{\partial t} + \frac{\partial \theta'}{\partial t} & \!\!\!\!\!\! + \overline{u_j} \frac{\partial \overline{\theta}}{\partial x_j} + \overline{u_j} \frac{\partial \theta'}{\partial x_j} + u_j' \frac{\partial \overline{\theta}}{\partial x_j} + u_j' \frac{\partial \theta'}{\partial x_j} \\ &\quad  = \nu_{\theta} \frac{\partial^2 \theta}{\partial x_j^2} - \frac{1}{\overline{\rho} C_p} \frac{\partial \overline{Q_j^*}}{\partial x_j} + \frac{1}{\overline{\rho} C_p} \frac{\partial Q_j^{*'}}{\partial x_j}  \\ &\quad - \frac{L_p E}{\overline{\rho} C_p}
+	\end{rcases} & \tag{9.4} \label{eq:9.4}
+\end{align*}
+
+Apply Reynold's averaging;
+\begin{align*}
+	\begin{rcases}
+		\frac{\partial \overline{\theta}}{\partial t} + \overline{u_j} \frac{\partial \overline{\theta}}{\partial x_j} + \overline{u_j' \frac{\partial \theta'}{\partial x_j}} & \!\!\! = \nu_{\theta} \frac{\partial^2 \overline{\theta}}{\partial x_j^2} - \frac{1}{\overline{\rho} C_p} \frac{\partial \overline{Q_j^*}}{\partial x_j} \\ &\quad - \frac{L_p E}{\overline{\rho} C_p}
+	\end{rcases} & \tag{9.5} \label{eq:9.5}
+\end{align*}
+
+Add $\overline{\theta'\frac{\partial u'_j}{\partial x_j}}=0$ in above \myeqref{eq:9.5}
+\begin{align*}
+	\begin{rcases}
+		\frac{\partial \overline{\theta}}{\partial t} + \overline{u_j} \frac{\partial \overline{\theta}}{\partial x_j} + \frac{\partial \overline{\left(u_j' \theta'\right)}}{\partial x_j} & \!\!\!\!\!\! = \nu_{\theta} \frac{\partial^2 \overline{\theta}}{\partial x_j^2} - \frac{1}{\overline{\rho} C_p} \frac{\partial \overline{Q_j^*}}{\partial x_j} \\ &\quad - \frac{L_p E}{\overline{\rho} C_p}
+	\end{rcases} & \tag{9.6} \label{eq:9.6}
+\end{align*}
+
+\yellownote{INCOMPLETE}
 
 \clearpage
 \bibliographystyle{plain}
