@@ -1260,10 +1260,29 @@ Applying Reynold's averaging,
 
 \begin{align*}
 	\begin{rcases}
-	& \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j}+ \overline{u_j'\frac{\partial u_i'}{\partial x_j}} = -\delta_{i3}g + f \epsilon_{ij3}\overline{u_j} \\ &\hspace{3.1cm} - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j}
+	& \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \overline{u_j'\frac{\partial u_i'}{\partial x_j}} = -\delta_{i3}g + f \epsilon_{ij3}\overline{u_j} \\ &\hspace{3.1cm} - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j}
 	\end{rcases} & \tag{8.15} \label{eq:8.15}
 \end{align*}
-\yellownote{Incomplete}
+
+\begin{align*}
+	\frac{\partial u_j'}{\partial x_j} & = 0
+\end{align*}
+Multiply above equation by velocity ($u_i'$) and take Reynold's average
+\begin{align*}
+	\overline{u_i'\frac{\partial u_j'}{\partial x_j}} & = 0
+\end{align*}
+
+Add above equation in the \myeqref{eq:8.15}, we  obtain;
+\begin{align*}
+	& \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \overline{u_j'\frac{\partial u_i'}{\partial x_j}} + \overline{u_i'\frac{\partial u_j'}{\partial x_j}} = -\delta_{i3}g \\ &\hspace{2.1cm} + f \epsilon_{ij3}\overline{u_j} - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j}
+\end{align*}
+\begin{align*}
+	\begin{rcases}
+	& \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \underbrace{\overline{\frac{\partial \left( u_i' u_j' \right)}{\partial x_j}}}_{\text{III}} = -\delta_{i3}g \\ &\hspace{2.1cm} + f \epsilon_{ij3}\overline{u_j} - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j} 
+	\end{rcases} & \tag{8.16} \label{eq:momentumfluxeqiation-turbulence}
+\end{align*}
+
+3$^{rd}$ term marked in \myeqref{eq:momentumfluxeqiation-turbulence} is momentum flux (turbulence) which represents eddies.
 
 \clearpage
 \bibliographystyle{plain}
