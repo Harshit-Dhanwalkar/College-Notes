@@ -22,6 +22,7 @@
 
 
 \usepackage{mathtools}
+\usepackage{upgreek}
 
 % \usepackage[table,xcdraw]{xcolor}
 % \usepackage[table, dvipsnames]{xcolor}
@@ -1335,7 +1336,32 @@ Add $\overline{\theta'\frac{\partial u'_j}{\partial x_j}}=0$ in above \myeqref{e
 	\end{rcases} & \tag{9.6} \label{eq:9.6}
 \end{align*}
 
-\yellownote{INCOMPLETE}
+\textbf{Reynold's number :}
+\begin{align*}
+	R_d &= \frac{\text{intertial force}}{\text{viscous force}} \\
+	    &= \frac{\rho \text{vL}}{\upmu} \\
+	    &= \frac{\text{vL}}{\upnu}
+\end{align*} 
+
+Taking a real-world scenario of a boundary layer, where \( v = 5 \) m/s, \( L = 100 \) m, and \( \nu = 1.5 \times 10^{-5} \) m\textsuperscript{2}/s 
+
+\(\therefore R_d = \frac{5 \times 100}{1.5 \times 10^{-5}} \approx 3.3 \times 10^7\).
+
+\begin{align*}
+	\upnu &= \frac{\text{vL}}{R_d} \\
+	\upnu\frac{\partial^2 \overline{u_i}}{\partial x_j^2} &= \frac{1}{\underbrace{R_d}_{\text{very large}}}\left[\text{vL}\frac{\partial^2 \overline{u_i}}{\partial x_j^2}\right] \approx 0
+\end{align*}
+
+Therefore viscous term can be neglected for boundary layer in most of the cases.
+
+Hence modified turbulent momentum and heat flux equations can be written respectively as following:
+\begin{align*}
+	\frac{\partial \overline{u_i}}{\partial t} + \!\! \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} \!\! &= \!\! -\delta_{i3}g \!\! + f\epsilon_{i33}\overline{u_j} \!\! - \frac{1}{\rho}\frac{\partial \overline{p}}{\partial x_i} \!\! + \frac{1}{\overline{\rho}}\frac{\overline{\rho u_i'u_j}}{\partial x_j} \tag{9.7} \label{eq:9.7}
+\end{align*}
+
+\begin{align*}
+	\frac{\partial \overline{\theta}}{\partial t} + \overline{u_j} \frac{\partial \overline{\theta}}{\partial x_j} + \frac{\partial \overline{\left(u_j' \theta'\right)}}{\partial x_j} &= - \frac{1}{\overline{\rho} C_p} \frac{\partial \overline{Q_j^*}}{\partial x_j} - \frac{L_p E}{\overline{\rho} C_p} \tag{9.8} \label{eq:9.8}
+\end{align*}
 
 \clearpage
 \bibliographystyle{plain}
