@@ -1620,13 +1620,13 @@ Amplification factor
 \section{Lecture 13 06/02/2025}
 \subsection{Crank Nicholson Scheme}
 \begin{align*}
-	\left(\frac{\partial T}{\partial t}\right)_{m,n+1/2} &= k\left(\frac{\partial^2 T}{\partial x^2}\right)_{m,n+1/2} \tag{13.1} \label{eq:13.1}
+	\left(\frac{\partial T}{\partial t}\right)_{m,n+1/2} &= \tilde{k}\left(\frac{\partial^2 T}{\partial x^2}\right)_{m,n+1/2} \tag{13.1} \label{eq:13.1}
 \end{align*}
 \begin{align*}
-	&\frac{T_{m,n} - T_{m,n-1}}{\Delta t} \\ &\quad  \; = k\left[\frac{T_{m+1,n+1/2} - 2T_{m,n+1/2} + T_{m-1,n+1/2}}{(\Delta x)^2}\right] \tag{13.2} \label{eq:13.2}
+	&\frac{T_{m,n} - T_{m,n-1}}{\Delta t} \\ &\quad  \; = \tilde{k}\left[\frac{T_{m+1,n+1/2} - 2T_{m,n+1/2} + T_{m-1,n+1/2}}{(\Delta x)^2}\right] \tag{13.2} \label{eq:13.2}
 \end{align*}
 
-Let $\lambda = k\Delta t/2(\Delta x)^2$
+Let $\lambda = \tilde{k}\Delta t/2(\Delta x)^2$
 \begin{align*}
 	(1 + &2\lambda)T_{m,n+1} - \lambda T_{m,n-1} - \lambda T_{m+1,n+1} = \\ &(1 - 2\lambda)T_{m,n} - \lambda T_{m,n} \tag{13.3} \label{eq:13.3}
 \end{align*}
@@ -1738,6 +1738,90 @@ Therefore Dufart Frankel Scheme is unconditionally stable.
 Initial conditions: $T(x,y,t=0)$
 
 Boundary conditions: temperatures on 4 sides
+
+\(m \rightarrow l\), \(n \rightarrow y\) and \(p \rightarrow t\)
+
+Applying FTCS:
+\begin{align*}
+	\begin{rcases}
+		\frac{T_{m,n,p+1} - T_{m,n,p}}{\Delta t} \mspace{-15mu} &= \tilde{k}\left[\frac{T_{m+1,n,p} - 2T_{m,n,p} + T_{m-1,n,p}}{(\Delta x)^2}\right] \\ &+ \tilde{k}\left[\frac{T_{m,n+1,p} - 2T_{m,n,p} + T_{m,n-1,p}}{(\Delta y)^2}\right]
+	\end{rcases} & \tag{14.2} \label{eq:14.2}
+\end{align*}
+
+For stability;
+\begin{align*}
+	\epsilon_{m,n,p} &= B^{\mu p\Delta t}\exp(ikm\Delta x)\exp(ikn\Delta y) \tag{14.3} \label{eq:14.3} 
+\end{align*}
+
+Amplification factor:
+\begin{align*}
+	G = \left|\frac{\epsilon_{m,n,p+1}}{\epsilon_{m,n,p}}\right| = \left|B^{\mu \Delta t}\right| \leq 1 \tag{14.4} \label{eq:14.4}
+\end{align*}
+
+\begin{align*}
+	\frac{2k\Delta t}{\left(\Delta x\right)^2} + \frac{2l\Delta t}{\left(\Delta y\right)^2} \leq 1
+\end{align*}
+
+if \(\Delta x = \Delta y = d \), \( k = l \)
+\begin{align*}
+	\frac{4k\Delta t}{\left(\Delta d\right)^2} &\leq 1 \\
+	\lambda = \frac{k\Delta t}{\left(\Delta d\right)^2} &\leq \frac{1}{4} \tag{14.5} \label{eq:stabilityconditionfor2dheateq}
+\end{align*}
+
+\myeqref{eq:stabilityconditionfor2dheateq} is stability condition for 2-D heat conduction equation.
+
+Apply Crank Nicholson Scheme on 2-D heat conduction equation:
+\begin{align*}
+	\mspace{-47mu}\left(\frac{\partial T}{\partial t}\right)_{\smash{m,n,p+1/2}} \mspace{-25mu} &= \tilde{k} \left[ \left(\frac{\partial^2 T}{\partial x^2}\right)_{\smash{m,n,p+1/2}} \mspace{-24mu} + \left(\frac{\partial^2 T}{\partial y^2}\right)_{\smash{m,n,p+1/2}} \right] \tag{14.6} \label{eq:14.6}
+\end{align*}
+
+\begin{align*}
+\mspace{-49mu}
+	\begin{rcases}
+		\frac{T_{m,n,p+1} - T_{m,n,p}}{\Delta t/2} \mspace{-17mu} &= \tilde{k}\left[\frac{T_{m+1,n,p+1/2} - 2T_{m,n,p+1/2} + T_{m-1,n,p+1/2}}{(\Delta x)^2}\right] \\ & + \tilde{k}\left[\frac{T_{m,n+1,p+1/2} - 2T_{m,n,p+1/2} + T_{m,n-1,p+1/2}}{(\Delta y)^2}\right]
+	\end{rcases} & \tag{14.7} \label{eq:14.7}
+\end{align*}
+
+Assuming average:
+\begin{align*}
+	T_{\smash{m,n,p+1/2}} = \left[\frac{T_{\smash{m,n+1,p+1}} + T_{\smash{m+1,n,p-1}}}{2}\right] \tag{14.8} \label{eq:14.8}
+\end{align*}
+
+Substituting \myeqref{eq:14.8} in \myeqref{eq:14.6}
+
+ADI method $\rightarrow$ Alternate Directional Implicit method
+
+% \begin{align*}
+% \mspace{-49mu}
+% 	\begin{rcases}
+% 		\frac{T_{m,n,p+1} - T_{m,n,p}}{\Delta t/2} \mspace{-17mu} &= \tilde{k}\left[\frac{T_{m+1,n,p+1/2} - 2T_{m,n,p+1/2} + T_{m-1,n,p+1/2}}{(\Delta x)^2}\right] \\ & + \tilde{k}\left[\frac{T_{m,n+1,p+1/2} - 2T_{m,n,p+1/2} + T_{m,n-1,p+1/2}}{(\Delta y)^2}\right]
+% 	\end{rcases} & \tag{14.9} \label{eq:14.9}
+% \end{align*}
+\yellownote{To completed later}
+
+\clearpage
+
+\section{Lecture 15 11/02/2025}
+\subsection{1-D Advection Equation}
+\begin{align*}
+	\frac{\partial f}{\partial t} + c\frac{\partial f}{\partial x} = 0 \tag{15.1} \label{eq:1dadvectioneq}
+\end{align*}
+Solution of \myeqref{eq:1dadvectioneq} is wave equation, for \( c>0 \) wave propagate in positive x-direction with speed \( c \).
+
+\begin{align*}
+	f(x - c\Delta t, t) &= f(x, t + \Delta t) \\
+	\cancel{f(x,t)} + \Delta t\frac{\partial f}{\partial t}\Big|_{x} + \cdots &= \cancel{f(x,t)} - c\Delta t\frac{\partial f}{\partial x}\Big|_{t} + \cdots \\
+	\cancel{\Delta t}\frac{\partial f}{\partial t}\Big|_{x}  &= - c\cancel{\Delta t}\frac{\partial f}{\partial x}\Big|_{t} + \cdots \\
+	\frac{\partial f}{\partial t}\Big|_{x} + c\frac{\partial f}{\partial x}\Big|_{t} &= 0
+\end{align*}
+
+Speed of propagation depends on wavelength of wave which means each wave in wave packet will vary with time called \textbf{dispersive wave} and which doesn't change with time is called \textbf{non-dispersive wave}
+
+\yellownote{Add figure}
+
+Swallow water equation (assuming no coriolis force, i.e., without rotation) the gravitational wave equation (\(c=\sqrt{gH}\)) after applying finite wave approximation make wave dispersive. \\
+
+Finite layer method always introduce dispersion while computating, all we can do is to think of scheme which will minimise this introduced dispersion.
 
 \yellownote{Incomplete}
 
