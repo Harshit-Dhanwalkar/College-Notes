@@ -36,14 +36,18 @@
 \contentsline {subsection}{\numberline {7.1}Governing Equations For Turbulent Flow}{13}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Governing Equations}{13}{subsection.7.2}%
 \contentsline {section}{\numberline {8}Lecture 8 12/02/2025}{14}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Governing Equations For Turbuelent Flow}{14}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.1}Governing Equations For Turbulent Flow}{14}{subsection.8.1}%
 \contentsline {subsubsection}{\numberline {8.1.1}Equation of state}{14}{subsubsection.8.1.1}%
 \contentsline {subsubsection}{\numberline {8.1.2}Flux Form of Adection Equation}{14}{subsubsection.8.1.2}%
 \contentsline {subsubsection}{\numberline {8.1.3}Conservation of Mass}{14}{subsubsection.8.1.3}%
 \contentsline {subsubsection}{\numberline {8.1.4}Conservation of Momentum}{14}{subsubsection.8.1.4}%
 \contentsline {section}{\numberline {9}Lecture 9 13/02/2025}{16}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Governing Equations For Turbuelent Flow}{16}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.1}Governing Equations For Turbulent Flow}{16}{subsection.9.1}%
 \contentsline {subsubsection}{\numberline {9.1.1}Turbulent Momentum Flux Equation}{16}{subsubsection.9.1.1}%
 \contentsline {subsubsection}{\numberline {9.1.2}Turbulent Heat Flux Equation}{16}{subsubsection.9.1.2}%
-\contentsline {section}{References}{17}{AMS.80}%
+\contentsline {section}{\numberline {10}Lecture 10 14/02/2025}{17}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Governing Equations For Turbulent Flow}{17}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Physical Significance Of Turbulent Terms}{17}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Scaling Variable}{17}{subsection.10.3}%
+\contentsline {section}{References}{18}{subsection.10.3}%
 \contentsfinish 

@@ -158,6 +158,13 @@
 }
 
 \definecolor{LightCyan}{rgb}{0.88,1,1}
+
+%-------------------------------------------------------------------------------------
+%                                       FRACTION WITHOUT FRACTION BAR                %
+%-------------------------------------------------------------------------------------
+\newcommand*{\bfrac}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+%-------------------------------------------------------------------------------------
+
 %-------------------------------------------------------------------------------------
 %                                       ARTICLE INFORMATION                          %
 %-------------------------------------------------------------------------------------
@@ -1151,7 +1158,7 @@ The governing equations in preivous lecture can not be used for practical applic
 
 Now we need to account for turbulence, which can be heat flux, momentum flux, etc., which will added in the governing equations respectively.
 
-\subsection{Governing Equations For Turbuelent Flow}
+\subsection{Governing Equations For Turbulent Flow}
 \subsubsection{Equation of state}
 \begin{align*}
 	P & = \rho R_d T_v \tag{8.1} \label{eq:equationofstate}
@@ -1288,7 +1295,7 @@ Add above equation in the \myeqref{eq:8.15}, we  obtain;
 \clearpage
 
 \section{Lecture 9 13/02/2025}
-\subsection{Governing Equations For Turbuelent Flow}
+\subsection{Governing Equations For Turbulent Flow}
 \subsubsection{Turbulent Momentum Flux Equation}
 General momentum equation:
 \begin{align*}
@@ -1354,16 +1361,73 @@ Taking a real-world scenario of a boundary layer, where \( v = 5 \) m/s, \( L = 
 
 Therefore viscous term can be neglected for boundary layer in most of the cases.
 
-Hence modified turbulent momentum and heat flux equations can be written respectively as following:
+Hence modified turbulent momentum, heat flux, moisture and pollutant equations can be written respectively as following:
 \begin{align*}
 	\frac{\partial \overline{u_i}}{\partial t} + \!\! \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} \!\! &= \!\! -\delta_{i3}g \!\! + f\epsilon_{i33}\overline{u_j} \!\! - \frac{1}{\rho}\frac{\partial \overline{p}}{\partial x_i} \!\! + \frac{1}{\overline{\rho}}\frac{\overline{\rho u_i'u_j}}{\partial x_j} \tag{9.7} \label{eq:9.7}
 \end{align*}
 
-\begin{align*}
-	\frac{\partial \overline{\theta}}{\partial t} + \overline{u_j} \frac{\partial \overline{\theta}}{\partial x_j} + \frac{\partial \overline{\left(u_j' \theta'\right)}}{\partial x_j} &= - \frac{1}{\overline{\rho} C_p} \frac{\partial \overline{Q_j^*}}{\partial x_j} - \frac{L_p E}{\overline{\rho} C_p} \tag{9.8} \label{eq:9.8}
-\end{align*}
+% \begin{align*}
+% 	\frac{\partial \overline{\theta}}{\partial t} + \overline{u_j} \frac{\partial \overline{\theta}}{\partial x_j} &= - \frac{1}{\overline{\rho} C_p} \frac{\partial \overline{Q_j^*}}{\partial x_j} - \frac{L_p E}{\overline{\rho} C_p}  \tag{9.8} \label{eq:9.8}
+% \end{align*}
+
+\yellownote{TODO: To write turbulent heat, moisture, pollutant equations}
+% \begin{align*}
+% 	\frac{\partial \overline{\theta}}{\partial t} + \overline{u_j} \frac{\partial \overline{\theta}}{\partial x_j} + \frac{\partial \overline{\left(u_j' \theta'\right)}}{\partial x_j} &= - \frac{1}{\overline{\rho} C_p} \frac{\partial \overline{Q_j^*}}{\partial x_j} - \frac{L_p E}{\overline{\rho} C_p} \tag{9.8} \label{eq:9.8}
+% \end{align*}
+%
+% \begin{align*}
+% 	\frac{\partial \overline{q}}{\partial t} + \!\! \overline{u_j}\frac{\partial \overline{q}}{\partial x_j} + \frac{\partial \overline{\left(u_j' q'\right)}}{\partial x_j} \!\! &= \!\! \frac{1}{\overline{\rho}}\frac{\overline{\rho u_i'q'}}{\partial x_j} \tag{9.9} \label{eq:9.9}
+% \end{align*}
+%
+% \begin{align*}
+% 	\frac{\partial \overline{C_i}}{\partial t} + \!\! \overline{u_j}\frac{\partial \overline{C_i}}{\partial x_j} \!\! &= \!\! -\delta_{i3}g \!\! + f\epsilon_{i33}\overline{u_j} \!\! - \frac{1}{\rho}\frac{\partial \overline{p}}{\partial x_i} \!\! + \frac{1}{\overline{\rho}}\frac{\overline{\rho u_i'q_j}}{\partial x_j} \tag{9.10} \label{eq:9.10}
+% \end{align*}
 
 \clearpage
+
+\section{Lecture 10 14/02/2025}
+\subsection{Governing Equations For Turbulent Flow}
+In the previous lecture, we introduced the turbulent flux terms \(\left( \text{i.e.}, \frac{\partial \overline{u_i' \beta'}}{\partial x_j},\text{ where } \beta \text{ can be } u_j', \theta', C' \text{ or } Q' \right)\) in the governing equations. \\
+
+These terms can be expanded using index '\( j \)' of velocity \( u \) and cancel out horizontal flucuation because in general, assuming, only vertical transport take place due to turbulence in following way:
+\begin{align*}
+	\text{Heat flux} &\Rightarrow \overline{u_j'\theta'} \rightarrow \cancel{\overline{u'\theta'}}, \cancel{\overline{v'\theta'}}, \overline{w'\theta'} \\
+	\text{Kinematic moisture flux} &\Rightarrow \overline{u_j'q'} \rightarrow \cancel{\overline{u'q'}}, \cancel{\overline{v'q'}}, \overline{w'q'} \\
+	\text{Pollutent flux} &\Rightarrow \overline{u_j'C'} \rightarrow \cancel{\overline{u'C'}}, \cancel{\overline{v'C'}}, \overline{w'C'}
+\end{align*}
+
+\textbf{\textit{Note}:} Sonic anemometer is used to measure \(w' \left(=w-\overline{w}\right) \)
+
+\subsection{Physical Significance Of Turbulent Terms}
+\begin{align*}
+	\overline{w'\theta'} &=
+	\begin{cases}
+		>0 & \parbox[t]{5cm}{Heat transport in upward direction} \\
+		<0 & \parbox[t]{5cm}{Heat transport in downward direction (through inversion layer)}
+	\end{cases} \\
+	\overline{w'q'} &=
+	\begin{cases}
+		>0 & \parbox[t]{5cm}{Moisture transport in upward direction (supply of moisture from surface)} \\
+		<0 & \parbox[t]{5cm}{Moisture transport in downward direction (supply of moisture from TOA)}
+	\end{cases}
+\end{align*}
+
+\subsection{Scaling Variable}
+To account for time deplay in measurements and make data invariant of time.
+
+\( z_i \) is depth of mixed layer, then,
+\begin{align*}
+	\frac{z}{z_i} \bfrac{}{\rightarrow \text{scaling variable}}
+\end{align*}
+
+\begin{align*}
+	\frac{\left(w'\theta'\right)}{\left(\overline{w'q'}\right)} \bfrac{}{\rightarrow \text{scaling variable}}
+\end{align*}
+
+\yellownote{Incomplete}
+
+\clearpage
+
 \bibliographystyle{plain}
 \bibliography{Reference}
 \end{document}
