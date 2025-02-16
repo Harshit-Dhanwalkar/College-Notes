@@ -1818,7 +1818,7 @@ Solution of \myeqref{eq:1dadvectioneq} is wave equation, for \( c>0 \) wave prop
 \begin{align*}
 	f(x - c\Delta t, t) &= f(x, t + \Delta t) \\
 	\cancel{f(x,t)} + \Delta t\frac{\partial f}{\partial t}\Big|_{x} + \cdots &= \cancel{f(x,t)} - c\Delta t\frac{\partial f}{\partial x}\Big|_{t} + \cdots \\
-	\cancel{\Delta t}\frac{\partial f}{\partial t}\Big|_{x}  &= - c\cancel{\Delta t}\frac{\partial f}{\partial x}\Big|_{t} + \cdots \\
+	\cancel{\Delta t}\frac{\partial f}{\partial t}\Big|_{x}  &= - c\cancel{\Delta t}\frac{\partial f}{\partial x}\Big|_{t} \\
 	\frac{\partial f}{\partial t}\Big|_{x} + c\frac{\partial f}{\partial x}\Big|_{t} &= 0
 \end{align*}
 
@@ -1862,8 +1862,12 @@ For applying CTCS scheme,
 Solve \myeqref{eq:1dadvectioneq} using CTSC scheme;
 
 \begin{align*}
-	\frac{f_{m,n+1} - f_{m,n-1}}{2 \cdot \Delta t} &= -c\left[\frac{f_{m+1,n} - f_{m-1,n}}{2 \cdot \Delta x}\right] \tag{15.3} \label{eq:eq:15.3} \\
+	\frac{f_{m,n+1} - f_{m,n-1}}{2 \cdot \Delta t} &= -c\left[\frac{f_{m+1,n} - f_{m-1,n}}{2 \cdot \Delta x}\right] \tag{15.3} \label{eq:15.3} \\
 	f_{m,n+1} &= f_{m,n-1} - \lambda \left[f_{m+1,n} \! - f_{m-1,n}\right] \tag{15.4} \label{eq:eq:15.4}
+\end{align*}
+\begin{align*}
+	f_{m,n} &= A e^{ik(x-\Delta t)}\tag{15.4.i} \label{eq:15.4.i} \\
+	f_{m,0} &= A e^{ikx}\tag{15.4.ii} \label{eq:15.4.ii}
 \end{align*}
 
 For stability;
@@ -1893,10 +1897,62 @@ Amplification factor:
 Substituting \myeqref{eq:15.7} in \myeqref{eq:15.6}, we get,
 \begin{align*}
 	G^2 &+ 2i\lambda \sin(k\Delta x)G -1 = 0 \\
-	G & = \frac{-2i\lambda \sin(k\Delta x) \pm \sqrt{-4\lambda^2 \sin^2(k\Delta x) + 4}}{2} &= 0 \\
-	G & = -i\lambda \sin(k\Delta x) \pm \sqrt{1 - i\lambda^2 \sin^2(k\Delta x)} &= 0 \\
-	G & = \lambda e^{\pm ik\Delta x} = 0
+	G_{1,2} & = \frac{-2i\lambda \sin(k\Delta x) \pm \sqrt{-4\lambda^2 \sin^2(k\Delta x) + 4}}{2} \\
+	G_{1,2} & = -i\lambda \sin(k\Delta x) \pm \sqrt{1 - \lambda^2 \sin^2(k\Delta x)} \tag{15.8} \label{eq:15.8}
 \end{align*}
+
+Continued in next lecture...
+
+\clearpage
+
+\section{Lecture 16 12/02/2025}
+\subsection{1-D Advection Equation}
+
+Continuing from last lecture.
+
+We need to ensure \( \left| G_{1,2} \right| = \left|B^{p\Delta t}_{1,2}\right| \leq 1 \) for scheme to be stable.
+
+\textbf{Case 1:} Quantity under the square root, i.e., \(\left(1 - \lambda^2 \sin^2(k\Delta x)\right) \) is positive.
+\begin{align*}
+	1 - \lambda^2 \sin^2(k\Delta x) < 1
+\end{align*}
+
+Let $\alpha = \sin^{-1}\left(\lambda \sin(k\Delta x)\right)$ and substituting in \myeqref{eq:15.8}
+\begin{align*}
+	G_{1,2} & = -i\sin(\alpha) \pm \sqrt{1 - \sin^2(\alpha)} \\
+	G_{1,2} & = \pm \cos(\alpha)- i\sin(\alpha) \tag{16.1} \label{eq:16.1}
+\end{align*}
+
+\begin{align*}
+	G_1 &= \cos(\alpha)- i\sin(\alpha) = e^{i\alpha} \tag{16.2} \label{eq:16.2} \\
+	G_2 &= -\cos(\alpha)- i\sin(\alpha) = -e^{i\alpha} = e^{i(\pi + \alpha)} \tag{16.3} \label{eq:16.3}
+\end{align*}
+
+Therefore the solution of the \myeqref{eq:1dadvectioneq} is 
+\begin{align*}
+	f_{m,n} = \left[M e^{-in\alpha} + E e^{i(\pi + \alpha)n} \right] \cdot e^{ikm\Delta x} \tag{16.4} \label{eq:solutionof2dadvectionheateq}
+\end{align*}
+
+where \( M \) and \( E \) are arbitary constants. 
+
+At intial time \( (n=0) \):
+\begin{align*}
+	f_{m,0} = \left[M + E\right] \cdot e^{ikm\Delta x} \tag{16.5} \label{eq:16.5}
+\end{align*}
+
+Comparing \myeqref{eq:15.4.ii} and \myeqref{eq:16.5}, 
+\begin{align*}
+	A &= M + E \Rightarrow M = A - E
+\end{align*}
+
+Substituting \( M \) in \myeqref{eq:solutionof2dadvectionheateq}
+\begin{align*}
+	\mspace{-24mu} f_{m,n} = &\underbrace{(A-E) e^{-i\alpha n} e^{ikm\Delta x}}_{\text{Physical Mode}} + \underbrace{(-1)^n E e^{i(\pi + \alpha)n} e^{ikm\Delta x}}_{\text{Computational Mode}} \tag{16.6} \label{eq:16.6} \\
+	\mspace{-24mu} f_{m,n} = &(A-E) e^{-i\alpha n + ikm\Delta x} + (-1)^n E e^{i\alpha n + ikm\Delta x} \\
+	\mspace{-24mu} f_{m,n} = &(A-E) e^{ik(-\frac{\alpha n}{k} + m\Delta x)} + (-1)^n E e^{ik(\frac{\alpha n}{k} + m\Delta x)} \tag{16.7} \label{eq:16.7}
+\end{align*}
+
+\(c = \alpha/(k\Delta t)\) is speed of a numerical wave.
 
 \clearpage
 \bibliographystyle{plain}
