@@ -1830,7 +1830,73 @@ Swallow water equation (assuming no coriolis force, i.e., without rotation) the 
 
 Finite layer method always introduce dispersion while computating, all we can do is to think of scheme which will minimise this introduced dispersion.
 
-\yellownote{Incomplete}
+\subsection{Method of speration of variables}
+\begin{align*}
+	f(x,t) &= A \exp\left(i\mu(x-ct)\right) \tag{15.2} \label{eq:15.2}\\
+	f(x,t=0) &= A \exp\left(i\mu x\right) \quad \text{I.C.}
+\end{align*}
+
+Using method of speration of variables
+\begin{align*}
+	F(x,t) &= a(x)H(t)
+\end{align*}
+
+\begin{align*}
+	G\frac{dH}{dt} + cH\frac{dG}{dx} &= 0 \\
+	\Rightarrow \frac{1}{H}\frac{dH}{dt} = -\frac{c}{G}\frac{dG}{dx} &= -k \text{ (constant)} \\
+	\frac{1}{H}\frac{dH}{dt} = -k, &\quad -\frac{c}{G}\frac{dG}{dx} = -k \\
+	d(\ln H) = -k dt, &\quad d(\ln G) = \frac{k}{c} dx \\
+	H = A_1 \exp(-kt), &\quad G = A_2 \exp \left(\frac{k}{c} dx\right)
+\end{align*}
+
+Since \( F = GH \)
+\begin{align*}
+	f(x,t) &= A_1A_2 e^{-kt}e^{\frac{k}{c}x} \\
+	f(x,t) &= A e^{\frac{k}{c}(x-ct)}
+\end{align*}
+
+For applying CTCS scheme,
+
+\(x \rightarrow m, \; t \rightarrow n , \quad \) Let \( \lambda = c \frac{\Delta t}{\Delta x} \) \\
+
+Solve \myeqref{eq:1dadvectioneq} using CTSC scheme;
+
+\begin{align*}
+	\frac{f_{m,n+1} - f_{m,n-1}}{2 \cdot \Delta t} &= -c\left[\frac{f_{m+1,n} - f_{m-1,n}}{2 \cdot \Delta x}\right] \tag{15.3} \label{eq:eq:15.3} \\
+	f_{m,n+1} &= f_{m,n-1} - \lambda \left[f_{m+1,n} \! - f_{m-1,n}\right] \tag{15.4} \label{eq:eq:15.4}
+\end{align*}
+
+For stability;
+\begin{align*}
+	\epsilon_{m,n+1} &= \epsilon_{m,n-1} - \lambda\left(\epsilon_{m+1,n} - \epsilon_{m-1,n}\right) \tag{14.3} \label{eq:15.4} 
+\end{align*}
+
+Let \( \epsilon_{m,n} = B^{pn\Delta t} \exp\left[ikm\Delta x\right] \) and Substitute in \myeqref{eq:15.4}
+\begin{align*}
+	\begin{rcases}
+		B^{p(n+1)\Delta t} e^{ikm\Delta x} &= B^{p(n-1)\Delta t} e^{ikm\Delta x} \\ &\quad - \lambda \Big[B^{p(n+1)\Delta t} e^{ik(m+1)\Delta x} \\ &\quad - B^{p(n+1)\Delta t} e^{ik(m-1)\Delta x}\Big]
+	\end{rcases} & \tag{15.5} \label{eq:15.5}
+\end{align*}
+
+Dividing \myeqref{eq:15.5} with \( B^{p(n-1)\Delta t} e^{ikm\Delta x} \), we obtian,
+\begin{align*}
+	\left(B^{pn\Delta t}\right)^2 &= 1 - \lambda B^{p\Delta t}\left[e^{ik\Delta x} - e^{-ikm\Delta x}\right] \\
+	\left(B^{pn\Delta t}\right)^2 &= 1 - \lambda B^{p\Delta t}\left(2i\sin(k\Delta x)\right) \\
+	\left(B^{pn\Delta t}\right)^2 &+ \lambda B^{p\Delta t}\left(2i\sin(k\Delta x)\right) -1 = 0 \tag{15.6} \label{eq:15.6} 
+\end{align*}
+
+Amplification factor:
+\begin{align*}
+	G = \left|\frac{\epsilon_{m,n+1}}{\epsilon_{m,n}}\right| = \left|B^{p\Delta t}\right| \leq 1 \tag{15.7} \label{eq:15.7}
+\end{align*}
+
+Substituting \myeqref{eq:15.7} in \myeqref{eq:15.6}, we get,
+\begin{align*}
+	G^2 &+ 2i\lambda \sin(k\Delta x)G -1 = 0 \\
+	G & = \frac{-2i\lambda \sin(k\Delta x) \pm \sqrt{-4\lambda^2 \sin^2(k\Delta x) + 4}}{2} &= 0 \\
+	G & = -i\lambda \sin(k\Delta x) \pm \sqrt{1 - i\lambda^2 \sin^2(k\Delta x)} &= 0 \\
+	G & = \lambda e^{\pm ik\Delta x} = 0
+\end{align*}
 
 \clearpage
 \bibliographystyle{plain}
