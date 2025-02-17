@@ -1864,7 +1864,7 @@ Solve \myeqref{eq:1dadvectioneq} using CTSC scheme;
 
 \begin{align*}
 	\frac{f_{m,n+1} - f_{m,n-1}}{2 \cdot \Delta t} &= -c\left[\frac{f_{m+1,n} - f_{m-1,n}}{2 \cdot \Delta x}\right] \tag{15.3} \label{eq:15.3} \\
-	f_{m,n+1} &= f_{m,n-1} - \lambda \left[f_{m+1,n} \! - f_{m-1,n}\right] \tag{15.4} \label{eq:eq:15.4}
+	f_{m,n+1} &= f_{m,n-1} - \lambda \left[f_{m+1,n} \! - f_{m-1,n}\right] \tag{15.4} \label{eq:15.4}
 \end{align*}
 \begin{align*}
 	f_{m,n} &= A e^{ik(x-\Delta t)}\tag{15.4.i} \label{eq:15.4.i} \\
@@ -1873,33 +1873,33 @@ Solve \myeqref{eq:1dadvectioneq} using CTSC scheme;
 
 For stability;
 \begin{align*}
-	\epsilon_{m,n+1} &= \epsilon_{m,n-1} - \lambda\left(\epsilon_{m+1,n} - \epsilon_{m-1,n}\right) \tag{14.3} \label{eq:15.4} 
+	\epsilon_{m,n+1} &= \epsilon_{m,n-1} - \lambda\left(\epsilon_{m+1,n} - \epsilon_{m-1,n}\right) \tag{15.5} \label{eq:15.5} 
 \end{align*}
 
 Let \( \epsilon_{m,n} = B^{pn\Delta t} \exp\left[ikm\Delta x\right] \) and Substitute in \myeqref{eq:15.4}
 \begin{align*}
 	\begin{rcases}
 		B^{p(n+1)\Delta t} e^{ikm\Delta x} &= B^{p(n-1)\Delta t} e^{ikm\Delta x} \\ &\quad - \lambda \Big[B^{p(n+1)\Delta t} e^{ik(m+1)\Delta x} \\ &\quad - B^{p(n+1)\Delta t} e^{ik(m-1)\Delta x}\Big]
-	\end{rcases} & \tag{15.5} \label{eq:15.5}
+	\end{rcases} & \tag{15.6} \label{eq:15.6}
 \end{align*}
 
 Dividing \myeqref{eq:15.5} with \( B^{p(n-1)\Delta t} e^{ikm\Delta x} \), we obtian,
 \begin{align*}
 	\left(B^{pn\Delta t}\right)^2 &= 1 - \lambda B^{p\Delta t}\left[e^{ik\Delta x} - e^{-ikm\Delta x}\right] \\
 	\left(B^{pn\Delta t}\right)^2 &= 1 - \lambda B^{p\Delta t}\left(2i\sin(k\Delta x)\right) \\
-	\left(B^{pn\Delta t}\right)^2 &+ \lambda B^{p\Delta t}\left(2i\sin(k\Delta x)\right) -1 = 0 \tag{15.6} \label{eq:15.6} 
+	\left(B^{pn\Delta t}\right)^2 &+ \lambda B^{p\Delta t}\left(2i\sin(k\Delta x)\right) -1 = 0 \tag{15.7} \label{eq:15.7} 
 \end{align*}
 
 Amplification factor:
 \begin{align*}
-	G = \left|\frac{\epsilon_{m,n+1}}{\epsilon_{m,n}}\right| = \left|B^{p\Delta t}\right| \leq 1 \tag{15.7} \label{eq:15.7}
+	G = \left|\frac{\epsilon_{m,n+1}}{\epsilon_{m,n}}\right| = \left|B^{p\Delta t}\right| \leq 1 \tag{15.8} \label{eq:15.8}
 \end{align*}
 
 Substituting \myeqref{eq:15.7} in \myeqref{eq:15.6}, we get,
 \begin{align*}
 	G^2 &+ 2i\lambda \sin(k\Delta x)G -1 = 0 \\
 	G_{1,2} & = \frac{-2i\lambda \sin(k\Delta x) \pm \sqrt{-4\lambda^2 \sin^2(k\Delta x) + 4}}{2} \\
-	G_{1,2} & = -i\lambda \sin(k\Delta x) \pm \sqrt{1 - \lambda^2 \sin^2(k\Delta x)} \tag{15.8} \label{eq:15.8}
+	G_{1,2} & = -i\lambda \sin(k\Delta x) \pm \sqrt{1 - \lambda^2 \sin^2(k\Delta x)} \tag{15.9} \label{eq:15.9}
 \end{align*}
 
 Continued in next lecture...
@@ -2018,9 +2018,61 @@ Therefore the value under square root in \myeqref{eq:15.8} is greater than 0, he
 
 The quantity under square root in \myeqref{eq:15.8} becomes negative, i.e., \( 1- \lambda^2 \sin^2(k\Delta x) < 0 \), hence Scheme is \textbf{\textit{unstable}}.
 
-This scheme was proposed by 3 mathematicians, namely, Courant, Fridriks annd Lenry in 1940. This scheme for \(\lambda \leq 1\) is also called \textbf{\textit{CFL condition}}.
+This scheme was proposed by 3 mathematicians, namely, Courant, Fridriks annd Lenry in 1940. This scheme for \(\lambda \leq 1\) is also called \textbf{\textit{CFL condition}}. \\
 
-\yellownote{Incomplete}
+\begin{align*}
+	\frac{f_{m,1} - f_{m,0}}{\Delta t} &= -c\left[\frac{f_{m+1,0} - f_{m-1,0}}{2 \cdot \Delta x}\right] \tag{17.1} \label{eq:17.1} \\
+	f_{m,1} &= f_{m,0} - \lambda \left[f_{m+1,0} - f_{m-1,0}\right] \tag{17.2} \label{eq:17.2}
+\end{align*}
+
+Substitute $f_{m,0} = A e^{ikm \Delta x}$
+\begin{align*}
+	f_{m,1} &= Ae^{ikm\Delta x} - \frac{\lambda A}{2}\left[e^{ik(m+1)\Delta x} - e^{ik(m-1)\Delta x}\right] \\
+	f_{m,1} &= Ae^{ikm\Delta x}\left\{1 - \frac{\lambda}{2}\left[e^{ik(m+1)\Delta x} - e^{ik(m-1)\Delta x}\right]\right\} \\
+	f_{m,1} &= Ae^{ikm\Delta x}\left\{1 - i\lambda\sin(k\Delta x)\right\} \tag{17.3} \label{eq:17.3}
+\end{align*}
+
+Let \( \alpha = \sin^{-1}(\lambda \sin(k\Delta x)) \) and substitute in \myeqref{eq:17.3}
+\begin{align*}
+	f_{m,1} &= Ae^{ikm\Delta x}\left(1- i\sin(\alpha)\right) \tag{17.5} \label{eq:17.5}
+\end{align*}
+
+Also, we know that from \myeqref{eq:16.7}
+\begin{align*}
+	\mspace{-25mu} f_{m,n} = &(A-E) e^{ik(-\frac{\alpha n}{k} + m\Delta x)} + (-1)^n E e^{ik(\frac{\alpha n}{k} + m\Delta x)} \tag{17.6} \label{eq:17.6}
+\end{align*}
+
+Equating RHS of \myeqref{eq:17.5} and \myeqref{eq:17.6};
+\begin{align*}
+	\begin{rcases}
+		\mspace{-20mu} Ae^{ikm\Delta x}\left(1- i\sin(\alpha)\right) &= (A-E) e^{ik(-\frac{\alpha n}{k} + m\Delta x)} \\ &\quad + (-1)^n E e^{ik(\frac{\alpha n}{k} + m\Delta x)} \tag{17.7} \label{eq:17.7}
+	\end{rcases}
+\end{align*}
+
+Divide \myeqref{eq:17.7} by \( Ae^{ikm\Delta x} \) on both sides;
+\begin{align*}
+	1- i\sin(\alpha) &= \left(1-\frac{E}{A}\right) e^{-i\alpha} + (-1)^n \left(\frac{E}{A}\right) e^{i\alpha} \\
+	1- i\sin(\alpha) &= -\left(\frac{E}{A}\right)\left(e^{i\alpha} + e^{-i\alpha}\right) + e^{-i\alpha} \\
+	1- \cancel{i\sin(\alpha)} &= -\left(\frac{E}{A}\right)\left(2\cos(\alpha)\right) + \cos(\alpha) - \cancel{i\sin(\alpha)} \\
+	1 &= -\left(\frac{E}{A}\right)\left(2\cos(\alpha)\right) + \cos(\alpha) \\
+	-\left(\frac{E}{A}\right) &= \left(\frac{1 - \cos(\alpha)}{2\cos(\alpha)}\right) \tag{17.8} \label{eq:17.8}
+\end{align*}
+
+Substituting \myeqref{eq:17.8} in \myeqref{eq:17.6}
+\begin{align*}
+	&\begin{rcases}
+		f_{m,n} &= A\left(1-\left(\frac{E}{A}\right)\right) e^{ik\left(-\frac{\alpha n}{k} + m\Delta x\right)} \\ 
+		        &\quad + (-1)^n A\left(\frac{E}{A}\right) e^{ik\left(\frac{\alpha n}{k} + m\Delta x\right)}
+	\end{rcases} \tag{17.9} \label{eq:17.9} \\[1em]
+	&\begin{rcases}
+		f_{m,n} &= A\left(1+\left(\frac{1 - \cos(\alpha)}{2\cos(\alpha)}\right)\right) e^{ik\left(-\frac{\alpha n}{k} + m\Delta x\right)} \\ 
+		        &\quad - (-1)^n A\left(\frac{1 - \cos(\alpha)}{2\cos(\alpha)}\right) e^{ik\left(\frac{\alpha n}{k} + m\Delta x\right)}
+	\end{rcases} \tag{17.10} \label{eq:17.10} \\[1em]
+	&\begin{rcases}
+		f_{m,n} &= A \Big[\underbrace{\left(\frac{1 + \cos(\alpha)}{2\cos(\alpha)}\right) e^{ik\left(-\frac{\alpha n}{k} + m\Delta x\right)}}_{\text{Physical Mode}} \\ 
+			& \! \! \!- \underbrace{(-1)^n \left(\frac{1 - \cos(\alpha)}{2\cos(\alpha)}\right) e^{ik\left(\frac{\alpha n}{k} + m\Delta x\right)}}_{\text{Computational Mode}} \Big]
+	\end{rcases} \tag{17.11} \label{eq:17.11}
+\end{align*}
 
 \clearpage
 \bibliographystyle{plain}
