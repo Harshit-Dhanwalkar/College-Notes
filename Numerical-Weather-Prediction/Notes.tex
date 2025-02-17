@@ -189,7 +189,7 @@
 %-------------------------------------------------------------------------------------
 \begin{document}
 \maketitle % Output the title and abstract box
-\thispagestyle{empty} % Removes page numbering from the first page
+\thispagestyle{empty} % Removes page number
 \clearpage
 
 \begingroup
@@ -201,6 +201,7 @@
 \begingroup
 \thispagestyle{empty} % No page number
 \listoffigures
+\clearpage
 \endgroup
 \newpage
 
@@ -447,7 +448,7 @@ These are even larger than entire country, which means that we can't above to fi
 		%defining points outsided the area bounded by the sphere
 		\path[pzplane] (\R,0) coordinate (PE);
 		\path[qzplane] (\angBeta:\R) coordinate (Q);
-		\path[qzplane] (\angBeta:\R) coordinate (Qd);%sfora di una quantità pari a 10 dopo la sfera
+		\path[qzplane] (\angBeta:\R) coordinate (Qd);
 		\path[qzplane] (\R,0) coordinate (QE);
 
 		\DrawLongitudeCircle[\R]{\angPhiOne} % pzplane
@@ -1393,7 +1394,7 @@ Substituting \myeqref{eq:9.10} and \myeqref{eq:9.11} into \myeqref{eq:9.9}, we o
 	T_{m,n+1} = &(1-2\lambda)T_{m,n} + \lambda T_{m-1,n} + \lambda T_{m+1,n}
 \end{align*}
 
-\yellownote{Incomplete, \\ Fix brakets}
+\yellownote{Incomplete}
 
 \clearpage
 
@@ -1953,6 +1954,73 @@ Substituting \( M \) in \myeqref{eq:solutionof2dadvectionheateq}
 \end{align*}
 
 \(c = \alpha/(k\Delta t)\) is speed of a numerical wave.
+
+Next lecture we will put cases over \( \lambda < 1, =1 \) and \( >1 \).
+
+\clearpage
+
+\section{Lecture 17 17/02/2025}
+\subsection{1-D Advection Equation}
+Continuing from last lecture.
+
+\textbf{Case 1:} For \( \lambda < 1 \)
+
+For \( \lambda^2 \sin^2(k\Delta x) < 1 \), \( \lambda \) should be \( < 1 \)
+
+Therefore the value under square root in \myeqref{eq:15.8} is greater than 0, hence Scheme is \textbf{\textit{stable}}.
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \resizebox{0.45\textwidth}{!}{
+    \begin{tabular}{|p{2cm}|p{1.5cm}|p{2.2cm}|p{1.5cm}|}
+        \hline
+        \textbf{Characteristic} & \textbf{Physical Mode} & \textbf{Computational Mode} & \textbf{Analytical Solution} \\
+        \hline
+        Amplitude & A - E & E & A \\
+        \hline
+        Phase speed & $\alpha / (k\Delta t)$ & $-\alpha / (k\Delta t)$ & c \\
+        \hline
+        Phase change & No change & $180^\circ$ every time step $(-1)^n$ & No change \\
+        \hline
+    \end{tabular}
+    }
+    \caption{Comparison of different modes and solutions for \( \lambda < 1 \)}
+    \label{tab:modesforlamdalessthan1}
+\end{table}
+
+
+\textbf{Case 2:} For \( \lambda = 1 \)
+
+For \( \lambda^2 \sin^2(k\Delta x) < 1\), \( \lambda = 1 \) $\Rightarrow$ \( \sin^2(k\Delta x) < 1 \)
+
+Therefore the value under square root in \myeqref{eq:15.8} is greater than 0, hence Scheme is \textbf{\textit{stable}}.
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \resizebox{0.45\textwidth}{!}{
+    \begin{tabular}{|p{2cm}|p{1.5cm}|p{2.2cm}|p{1.5cm}|}
+        \hline
+        \textbf{Characteristic} & \textbf{Physical Mode} & \textbf{Computational Mode} & \textbf{Analytical Solution} \\
+        \hline
+        Amplitude & A - E & E & A \\
+        \hline
+        Phase speed & c & $-$c & c \\
+        \hline
+        Phase change & No change & $180^\circ$ every time step $(-1)^n$ & No change \\
+        \hline
+    \end{tabular}
+    }
+    \caption{Comparison of different modes and solutions for \( \lambda = 1 \)}
+    \label{tab:modesforlamdaequalto1}
+\end{table}
+
+\textbf{Case 3:} For \( \lambda > 1 \)
+
+The quantity under square root in \myeqref{eq:15.8} becomes negative, i.e., \( 1- \lambda^2 \sin^2(k\Delta x) < 0 \), hence Scheme is \textbf{\textit{unstable}}.
+
+This scheme was proposed by 3 mathematicians, namely, Courant, Fridriks annd Lenry in 1940. This scheme for \(\lambda \leq 1\) is also called \textbf{\textit{CFL condition}}.
+
+\yellownote{Incomplete}
 
 \clearpage
 \bibliographystyle{plain}
