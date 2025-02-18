@@ -2086,7 +2086,6 @@ For applying BTCS scheme,
 
 \(x \rightarrow m, \; t \rightarrow n , \quad \) \\
 Solve \myeqref{eq:1dadvectioneq-1} using BTCS scheme;
-
 \begin{align*}
 	\frac{f_{m,n} - f_{m,n-1}}{\Delta t} &= -c\left[\frac{f_{m+1,n} - f_{m-1,n}}{2 \cdot \Delta x}\right] \tag{18.1} \label{eq:18.1}
 \end{align*}
@@ -2106,6 +2105,82 @@ Amplification factor:
 \begin{align*}
 	G = \left|\frac{\epsilon_{m,n}}{\epsilon_{m,n-1}}\right| = \left|B^{\mu\Delta t}\right| \leq 1 \tag{18.3} \label{eq:18.3}
 \end{align*}
+
+Let \( \epsilon_{m,n} = B^{\mu \Delta t} \exp(ikm\Delta t) \)  
+\begin{align*}
+	\begin{rcases}
+		&\mspace{-25mu} B^{\mu n \Delta t} \left[-\frac{\lambda}{2}e^{ik(m-1)\Delta x} + e^{ikm\Delta x} + \frac{\lambda}{2}e^{ik(m+1)\Delta x}\right] \\ &\quad \quad= B^{\mu n \Delta t} e^{ikm\Delta x}
+	\end{rcases} \tag{18.4} \label{eq:18.4}
+\end{align*}
+
+Dividing throughout \myeqref{eq:18.4} with \( B^{\mu (n-1) \Delta t} e^{ikm\Delta x} \)
+\begin{align*}
+	B^{\mu \Delta t} \left[1 + \frac{\lambda}{2}\left\{e^{ik\Delta x} - e^{-ik\Delta x}\right\} \right] &= 1 \\
+	B^{\mu \Delta t} \left[1 + i\lambda \sin(k\Delta x) \right] &= 1
+\end{align*}
+\begin{align*}
+	B^{\mu \Delta t} &= \frac{1}{\left[1 + i\lambda \sin(k\Delta x) \right]} \\
+	\left|B^{\mu \Delta t}\right| &= \frac{\left[1 - i\lambda \sin(k\Delta x) \right]}{\left[1 + \lambda^2 \sin^2(k\Delta x) \right]} \\
+	\left|B^{\mu \Delta t}\right|^2 &= \frac{\left[1 + \lambda^2 \sin^2(k\Delta x) \right]}{\left[1 + \lambda^2 \sin^2(k\Delta x) \right]^2} \\
+	\left|B^{\mu \Delta t}\right|^2 &= \frac{1}{\left[1 + \lambda^2 \sin^2(k\Delta x) \right]} < 1
+\end{align*}
+
+Therefore this scheme is \textbf{Stable}.
+
+\subsection{Upwind/Upstream Scheme}
+\begin{align*}
+	\frac{\partial f}{\partial t} + c\frac{\partial f}{\partial x} = 0 \tag{18.5} \label{eq:1dadvectioneq-2}
+\end{align*}
+
+Let \( c > 0 \), \(x \rightarrow m, \; t \rightarrow n , \quad \) \\
+Solve \myeqref{eq:1dadvectioneq-2} using FTBS(Forward in Time, Backward in Space) scheme;
+\begin{align*}
+	\frac{f_{m,n+1} - f_{m,n}}{\Delta t} &= -c\left[\frac{f_{m,n} - f_{m-1,n}}{\Delta x}\right] \tag{18.6} \label{eq:18.6}
+\end{align*}
+
+Let \( \lambda = c \frac{\Delta t}{\Delta x} \) \\
+Explicit finite difference scheme
+\begin{align*}
+	f_{m,n+1} &= (1-\lambda)f_{m,n} + \lambda f_{m-1,n} \tag{18.7} \label{eq:18.7}
+\end{align*}
+
+For stability analysis;
+\begin{align*}
+	\epsilon_{m,n+1} &= (1-\lambda)\epsilon_{m,n} + \lambda \epsilon_{m-1,n} \tag{18.8} \label{eq:18.8}
+\end{align*}
+\begin{align*}
+	\begin{rcases}
+		B^{\mu(n+1)\Delta t} e^{ikm\Delta x} \!\!\!\! &= (1-\lambda) B^{\mu n\Delta t} e^{ikm\Delta x} \\ &\quad + \lambda B^{\mu(n+1)\Delta t} e^{ik(m-1)\Delta x}
+	\end{rcases} \tag{18.9} \label{eq:18.9}
+\end{align*}
+
+Dividing throughout \myeqref{eq:18.9} with \( B^{\mu n\Delta t} e^{ikm\Delta x} \)
+\begin{align*}
+	B^{\mu\Delta t} &= (1-\lambda) + \lambda e^{-ik\Delta x} \\
+	B^{\mu\Delta t} &= (1-\lambda) + \lambda \left(\cos(k\Delta x) - i\sin(k\Delta x)\right) \\
+	B^{\mu\Delta t} &= \left[1- \lambda (1 - \cos(k\Delta x))\right]- i\lambda \sin(k\Delta x) \\
+	\left|B^{\mu\Delta t}\right|^2 &= \left[1- \lambda (1 - \cos(k\Delta x))\right]^2 + \left[\lambda \sin(k\Delta x)\right]^2 \\
+	\left|B^{\mu\Delta t}\right|^2 &= 1 + 2\lambda(\lambda - 1)(1 - \cos(k\Delta x)) \tag{18.10} \label{eq:18.10}
+\end{align*}
+
+Since, \(-1 \leq \cos(k\Delta x) \leq 1\)
+
+For \( \cos(k\Delta x) = 1 \)
+\begin{align*}
+	\left|B^{\mu\Delta t}\right|^2 &= 1 + 2\lambda(\lambda - 1)(1 - 1) = 1
+\end{align*}
+
+For \( \cos(k\Delta x) = -1 \)
+\begin{align*}
+	\left|B^{\mu\Delta t}\right|^2 &= 1 + 2\lambda(\lambda - 1)(1 + 1) \\
+	\left|B^{\mu\Delta t}\right|^2 &= 1 + 4\lambda(\lambda - 1),
+	\begin{cases}
+		=1, & \text{if } \lambda = 1, \\ 
+		> 1, & \text{if } \lambda > 1, \\ 
+		\in (0,1), & \text{if } \lambda \in (0,1)
+	\end{cases}
+\end{align*}
+
 \clearpage
 \bibliographystyle{plain}
 \bibliography{Reference}
