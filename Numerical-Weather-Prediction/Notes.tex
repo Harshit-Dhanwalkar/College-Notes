@@ -1860,7 +1860,7 @@ For applying CTCS scheme,
 
 \(x \rightarrow m, \; t \rightarrow n , \quad \) Let \( \lambda = c \frac{\Delta t}{\Delta x} \) \\
 
-Solve \myeqref{eq:1dadvectioneq} using CTSC scheme;
+Solve \myeqref{eq:1dadvectioneq} using CTCS scheme;
 
 \begin{align*}
 	\frac{f_{m,n+1} - f_{m,n-1}}{2 \cdot \Delta t} &= -c\left[\frac{f_{m+1,n} - f_{m-1,n}}{2 \cdot \Delta x}\right] \tag{15.3} \label{eq:15.3} \\
@@ -1871,7 +1871,7 @@ Solve \myeqref{eq:1dadvectioneq} using CTSC scheme;
 	f_{m,0} &= A e^{ikx}\tag{15.4.ii} \label{eq:15.4.ii}
 \end{align*}
 
-For stability;
+For stability analysis;
 \begin{align*}
 	\epsilon_{m,n+1} &= \epsilon_{m,n-1} - \lambda\left(\epsilon_{m+1,n} - \epsilon_{m-1,n}\right) \tag{15.5} \label{eq:15.5} 
 \end{align*}
@@ -2074,6 +2074,38 @@ Substituting \myeqref{eq:17.8} in \myeqref{eq:17.6}
 	\end{rcases} \tag{17.11} \label{eq:17.11}
 \end{align*}
 
+\clearpage
+
+\section{Lecture 17 17/02/2025}
+\subsection{1-D Advection Equation}
+\begin{align*}
+	\frac{\partial f}{\partial t} + c\frac{\partial f}{\partial x} = 0 \tag{15.1} \label{eq:1dadvectioneq-1}
+\end{align*}
+
+For applying BTCS scheme,
+
+\(x \rightarrow m, \; t \rightarrow n , \quad \) \\
+Solve \myeqref{eq:1dadvectioneq-1} using BTCS scheme;
+
+\begin{align*}
+	\frac{f_{m,n} - f_{m,n-1}}{\Delta t} &= -c\left[\frac{f_{m+1,n} - f_{m-1,n}}{2 \cdot \Delta x}\right] \tag{18.1} \label{eq:18.1}
+\end{align*}
+
+Let \( \lambda = c \frac{\Delta t}{\Delta x} \) \\
+Implicit finite difference scheme
+\begin{align*}
+	-\frac{\lambda}{2}f_{m-1,n} + f_{m,n} + \frac{\lambda}{2} f_{m+1,n} &= f_{m,n-1}
+\end{align*}
+
+For stability analysis;
+\begin{align*}
+	-\frac{\lambda}{2}\epsilon_{m-1,n} + \epsilon_{m,n} + \frac{\lambda}{2} \epsilon_{m+1,n} &= \epsilon_{m,n-1} \tag{18.2} \label{eq:18.2}
+\end{align*}
+
+Amplification factor:
+\begin{align*}
+	G = \left|\frac{\epsilon_{m,n}}{\epsilon_{m,n-1}}\right| = \left|B^{\mu\Delta t}\right| \leq 1 \tag{18.3} \label{eq:18.3}
+\end{align*}
 \clearpage
 \bibliographystyle{plain}
 \bibliography{Reference}

@@ -43,4 +43,6 @@
 \contentsline {subsection}{\numberline {16.1}1-D Advection Equation}{24}{subsection.16.1}%
 \contentsline {section}{\numberline {17}Lecture 17 17/02/2025}{25}{section.17}%
 \contentsline {subsection}{\numberline {17.1}1-D Advection Equation}{25}{subsection.17.1}%
+\contentsline {section}{\numberline {18}Lecture 17 17/02/2025}{26}{section.18}%
+\contentsline {subsection}{\numberline {18.1}1-D Advection Equation}{26}{subsection.18.1}%
 \contentsfinish 
