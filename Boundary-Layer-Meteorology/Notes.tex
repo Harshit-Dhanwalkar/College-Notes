@@ -1428,26 +1428,69 @@ To account for time deplay in measurements and make data invariant of time.
 
 We can intepret term \( ( \partial u' / \partial t )\) as prediction of every single eddy in atmosphere, but we don't use it becasue ot is not required and very computationally expensive.
 
-Then we can write simplified equation as following:
+\subsection{Prognostic Equations For Turbulent Flow}
 \begin{align*}
 	\begin{rcases}
-		&\mspace{-20mu} \frac{\partial \overline{u_i}}{\partial t} + \frac{\partial u_i'}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \overline{u_i}\frac{\partial u_i'}{\partial t} + u_j'\frac{\partial \overline{u_i'}}{\partial t} + u_j'\frac{\partial u_j'}{\partial t} \\ &\mspace{-20mu} \quad = -\delta_{i3}g + \delta_{i3}\left(\frac{\theta_v'}{\overline{\theta_v}}\right)g + f\epsilon_{i33}\overline{u_j} + f\epsilon_{i33}u_j' \\ &\mspace{-20mu} \quad \quad - \frac{1}{\rho}\frac{\partial \overline{p}}{\partial x_i} - \frac{1}{\rho}\frac{\partial p'}{\partial x_i} + \upnu\frac{\partial^2 \overline{u_i}}{\partial x_j^2} + \upnu\frac{\partial^2 u_i'}{\partial x_j^2} \tag{10.1} \label{eq:10.1}
+		&\mspace{-20mu} \frac{\partial \overline{u_i}}{\partial t} + \frac{\partial u_i'}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \overline{u_i}\frac{\partial u_i'}{\partial x_j} + u_j'\frac{\partial \overline{u_i'}}{\partial x_j} + u_j'\frac{\partial u_i'}{\partial x_j} \\ &\mspace{-20mu} \quad = -\delta_{i3}g + \delta_{i3}\left(\frac{\theta_v'}{\overline{\theta_v}}\right)g + f\epsilon_{i33}\overline{u_j} + f\epsilon_{i33}u_j' \\ &\mspace{-20mu} \quad \quad - \frac{1}{\overline{\rho}}\frac{\partial \overline{p}}{\partial x_i} - \frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_i} + \upnu\frac{\partial^2 \overline{u_i}}{\partial x_j^2} + \upnu\frac{\partial^2 u_i'}{\partial x_j^2} \tag{10.1} \label{eq:10.1}
 	\end{rcases}
 \end{align*}
 
 Apply Reynold's averaging;
 \begin{align*}
 	\begin{rcases}
-		\frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} &= -\delta_{i3}g + f\epsilon_{i33}\overline{u_j} - \frac{1}{\rho}\frac{\partial \overline{p}}{\partial x_i} \\ &\quad + \upnu\frac{\partial^2 \overline{u_i}}{\partial x_j^2} + \upnu\frac{\partial^2 u_i'}{\partial x_j^2} - \frac{\partial \overline{(u_i'u_j')}}{\partial x_i} \tag{10.2} \label{eq:10.2}
+		\frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} &= -\delta_{i3}g + f\epsilon_{i33}\overline{u_j} - \frac{1}{\overline{\rho}}\frac{\partial \overline{p}}{\partial x_i} \\ &\quad + \upnu\frac{\partial^2 \overline{u_i}}{\partial x_j^2} + \upnu\frac{\partial^2 u_i'}{\partial x_j^2} - \frac{\partial \overline{(u_i'u_j')}}{\partial x_i} \tag{10.2} \label{eq:10.2}
 	\end{rcases}
 \end{align*}
 
 Subtracting \myeqref{eq:10.2} from \myeqref{eq:10.1} 
 \begin{align*}
 	\begin{rcases}
-		\frac{\partial \overline{u_i}}{\partial t} & \!\!\!\!\!\!\!\! + \overline{u_i}\frac{\partial u_i'}{\partial t} + u_j'\frac{\partial \overline{u_i'}}{\partial t} + u_j'\frac{\partial u_j'}{\partial t} = \delta_{i3}\left(\frac{\theta_v'}{\overline{\theta_v}}\right)g  \\ &+ f\epsilon_{i33}u_j' - \frac{1}{\rho}\frac{\partial p'}{\partial x_i} + \upnu\frac{\partial^2 u_i'}{\partial x_j^2} + \frac{\partial \overline{(u_i'u_j')}}{\partial x_i} \tag{10.3} \label{eq:10.3}
+		\frac{\partial u_i'}{\partial t} & \!\!\!\!\!\!\!\! + \overline{u_i}\frac{\partial u_i'}{\partial x_j} + u_j'\frac{\partial \overline{u_i'}}{\partial x_j} + u_j'\frac{\partial u_i'}{\partial x_j} = \delta_{i3}\left(\frac{\theta_v'}{\overline{\theta_v}}\right)g  \\ &+ f\epsilon_{i33}u_j' - \frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_i} + \upnu\frac{\partial^2 u_i'}{\partial x_j^2} + \frac{\partial \overline{(u_i'u_j')}}{\partial x_i} \tag{10.3} \label{eq:10.3}
 	\end{rcases}
 \end{align*}
+
+\clearpage
+
+\section{Lecture 11 19/02/2025}
+\subsection{Prognostic Equations For Turbulent Flow}
+Continuing from previous lecture.
+
+Multiply \myeqref{eq:10.3} with \( (2u_i') \)
+\begin{align*}
+	\begin{rcases}
+		2u_i'\frac{\partial u_i'}{\partial t} & \!\!\!\!\!\!\!\! + 2u_i'\overline{u_i}\frac{\partial u_i'}{\partial x_j} + 2u_i'u_j'\frac{\partial \overline{u_i'}}{\partial x_j} + 2u_i'u_j'\frac{\partial u_i'}{\partial x_j} \\ &= 2\delta_{i3}u_i'\left(\frac{\theta_v'}{\overline{\theta_v}}\right)g + 2f\epsilon_{i33}u_i'u_j' \\ &- \frac{2u_i'}{\overline{\rho}}\frac{\partial p'}{\partial x_i} + 2u_i'\upnu\frac{\partial^2 u_i'}{\partial x_j^2} + 2u_i'\frac{\partial \overline{(u_i'u_j')}}{\partial x_i} \tag{11.1} \label{eq:11.1}
+	\end{rcases}
+\end{align*}
+
+Apply product rule,
+\begin{align*}
+	\begin{rcases}
+		\frac{\partial u_i'^2}{\partial t} & \!\!\!\!\!\!\!\! + \overline{u_i}\frac{\partial u_i'^2}{\partial x_j} + 2u_i'u_j'\frac{\partial \overline{u_i'}}{\partial x_j} + u_j'\frac{\partial u_i'^2}{\partial x_j} \\ &= 2\delta_{i3}u_i'\left(\frac{\theta_v'}{\overline{\theta_v}}\right)g + 2f\epsilon_{i33}u_i'u_j' \\ &- \frac{2u_i'}{\overline{\rho}}\frac{\partial p'}{\partial x_i} + 2\upnu u_i'\frac{\partial^2 u_i'}{\partial x_j^2} + 2u_i'\frac{\partial \overline{(u_i'u_j')}}{\partial x_i} \tag{11.2} \label{eq:11.2}
+	\end{rcases}
+\end{align*}
+
+Applying Reynold's averaging;
+\begin{align*}
+	\begin{rcases}
+		\frac{\partial \overline{u_i'^2}}{\partial t} & \!\!\!\!\!\!\!\! + \overline{u_i}\frac{\partial \overline{u_i'^2}}{\partial x_j} + 2\overline{u_i'u_j'\frac{\partial \overline{u_i'}}{\partial x_j}} + \overline{u_j'\frac{\partial u_i'^2}{\partial x_j}} \\ &= 2\delta_{i3}\overline{u_i'\left(\frac{\theta_v'}{\overline{\theta_v}}\right)}g + 2f\epsilon_{i33}\overline{u_i'u_j'} \\ &- \overline{\frac{2u_i'}{\overline{\rho}}\frac{\partial p'}{\partial x_i}} + 2\upnu \overline{u_i'\frac{\partial^2 u_i'}{\partial x_j^2}} + \cancel{2\overline{u_i'\frac{\partial \overline{(u_i'u_j')}}{\partial x_i}}} \tag{11.3} \label{eq:11.3}
+	\end{rcases}
+\end{align*}
+
+Adding Turbulent continuity equation to \myeqref{eq:11.3}
+\begin{align*}
+	\overline{\partial u_i'^2}\frac{u_j'}{\partial x_j} = 0
+\end{align*}
+
+\begin{align*}
+	\begin{rcases}
+		\frac{\partial \overline{u_i'^2}}{\partial t} & \!\!\!\!\!\!\!\! + \overline{u_i}\frac{\partial \overline{u_i'^2}}{\partial x_j} + 2\overline{u_i'u_j'\frac{\partial \overline{u_i'}}{\partial x_j}} + \overline{u_j'\frac{\partial u_i'^2}{\partial x_j}} + \overline{u_i'^2\frac{\partial u_j'}{\partial x_j}} \\ &= 2\delta_{i3}\overline{u_i'\left(\frac{\theta_v'}{\overline{\theta_v}}\right)}g + 2f\epsilon_{i33}\overline{u_i'u_j'} \\ &- \overline{\frac{2u_i'}{\overline{\rho}}\frac{\partial p'}{\partial x_i}} + 2\upnu \overline{u_i'\frac{\partial^2 u_i'}{\partial x_j^2}} \tag{11.4} \label{eq:11.4}
+	\end{rcases} \\
+	\begin{rcases}
+		\frac{\partial \overline{u_i'^2}}{\partial t} & \!\!\!\!\!\!\!\! + \overline{u_i}\frac{\partial \overline{u_i'^2}}{\partial x_j} + 2\overline{u_i'u_j'\frac{\partial \overline{u_i'}}{\partial x_j}} + \overline{u_j'\frac{\partial \left(u_i'^2 u_j'\right)}{\partial x_j}} \\ &= 2\delta_{i3}\overline{u_i'\left(\frac{\theta_v'}{\overline{\theta_v}}\right)}g + 2f\epsilon_{i33}\overline{u_i'u_j'} \\ &- \overline{\frac{2u_i'}{\overline{\rho}}\frac{\partial p'}{\partial x_i}} + \underbrace{2\upnu \overline{u_i'\frac{\partial^2 u_i'}{\partial x_j^2}}}_{\text{Viscous disipation}} \tag{11.5} \label{eq:11.5}
+	\end{rcases}
+\end{align*}
+
+\yellownote{INCOMPLETE}
 
 \clearpage
 
