@@ -197,13 +197,15 @@
 \thispagestyle{empty} % No page number
 \tableofcontents
 \endgroup
-\newpage
+
+\clearpage
 
 \begingroup
 \thispagestyle{empty} % No page number
 \listoffigures
 \endgroup
-\newpage
+
+\clearpage
 %-------------------------------------------------------------------------------------
 %                                       DOCUMENT CONTENTS                           %
 %-------------------------------------------------------------------------------------
@@ -1424,7 +1426,28 @@ To account for time deplay in measurements and make data invariant of time.
 	\frac{\left(w'\theta'\right)}{\left(\overline{w'q'}\right)} \bfrac{}{\rightarrow \text{scaling variable}}
 \end{align*}
 
-\yellownote{Incomplete}
+We can intepret term \( ( \partial u' / \partial t )\) as prediction of every single eddy in atmosphere, but we don't use it becasue ot is not required and very computationally expensive.
+
+Then we can write simplified equation as following:
+\begin{align*}
+	\begin{rcases}
+		&\mspace{-20mu} \frac{\partial \overline{u_i}}{\partial t} + \frac{\partial u_i'}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \overline{u_i}\frac{\partial u_i'}{\partial t} + u_j'\frac{\partial \overline{u_i'}}{\partial t} + u_j'\frac{\partial u_j'}{\partial t} \\ &\mspace{-20mu} \quad = -\delta_{i3}g + \delta_{i3}\left(\frac{\theta_v'}{\overline{\theta_v}}\right)g + f\epsilon_{i33}\overline{u_j} + f\epsilon_{i33}u_j' \\ &\mspace{-20mu} \quad \quad - \frac{1}{\rho}\frac{\partial \overline{p}}{\partial x_i} - \frac{1}{\rho}\frac{\partial p'}{\partial x_i} + \upnu\frac{\partial^2 \overline{u_i}}{\partial x_j^2} + \upnu\frac{\partial^2 u_i'}{\partial x_j^2} \tag{10.1} \label{eq:10.1}
+	\end{rcases}
+\end{align*}
+
+Apply Reynold's averaging;
+\begin{align*}
+	\begin{rcases}
+		\frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} &= -\delta_{i3}g + f\epsilon_{i33}\overline{u_j} - \frac{1}{\rho}\frac{\partial \overline{p}}{\partial x_i} \\ &\quad + \upnu\frac{\partial^2 \overline{u_i}}{\partial x_j^2} + \upnu\frac{\partial^2 u_i'}{\partial x_j^2} - \frac{\partial \overline{(u_i'u_j')}}{\partial x_i} \tag{10.2} \label{eq:10.2}
+	\end{rcases}
+\end{align*}
+
+Subtracting \myeqref{eq:10.2} from \myeqref{eq:10.1} 
+\begin{align*}
+	\begin{rcases}
+		\frac{\partial \overline{u_i}}{\partial t} & \!\!\!\!\!\!\!\! + \overline{u_i}\frac{\partial u_i'}{\partial t} + u_j'\frac{\partial \overline{u_i'}}{\partial t} + u_j'\frac{\partial u_j'}{\partial t} = \delta_{i3}\left(\frac{\theta_v'}{\overline{\theta_v}}\right)g  \\ &+ f\epsilon_{i33}u_j' - \frac{1}{\rho}\frac{\partial p'}{\partial x_i} + \upnu\frac{\partial^2 u_i'}{\partial x_j^2} + \frac{\partial \overline{(u_i'u_j')}}{\partial x_i} \tag{10.3} \label{eq:10.3}
+	\end{rcases}
+\end{align*}
 
 \clearpage
 

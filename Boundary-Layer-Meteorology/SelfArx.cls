@@ -107,8 +107,8 @@
 %	PAGE HEADER
 %----------------------------------------------------------------------------------------
 
-\RequirePackage{fancyhdr} % Needed to define custom headers/footers
-\pagestyle{fancy} % Enables the custom headers/footers
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
 
 \renewcommand{\headrulewidth}{0pt} % No header rule
 \renewcommand{\footrulewidth}{0pt} % No footer rule
@@ -173,8 +173,8 @@
 %----------------------------------------------------------------------------------------
 
 \newlength{\tocsep}
-\setlength\tocsep{1.75pc} % Sets the indentation of the sections in the table of contents
-\setcounter{tocdepth}{2} % Three levels in the table of contents section: sections, subsections and subsubsections
+\setlength\tocsep{1.9pc} % Sets the indentation of the sections in the table of contents
+\setcounter{tocdepth}{2} % Two levels in the table of contents section: sections, subsections and subsubsections
 
 \usepackage{titletoc}
 \contentsmargin{0cm}
@@ -187,7 +187,7 @@
 []
 
 \titlecontents{subsection}[\tocsep]
-{\addvspace{2pt}\sffamily}
+{\addvspace{1.5pt}\sffamily}
 {\contentslabel[\thecontentslabel]{\tocsep}}
 {}
 {\ \titlerule*[.5pc]{.}\ \thecontentspage}
@@ -205,13 +205,11 @@
 %----------------------------------------------------------------------------------------
 
 \titlecontents{figure}[\tocsep]
-{\addvspace{4pt}\small\sffamily} % Formatting for the entries
-{\contentslabel[\thecontentslabel]{\tocsep}} % Label (e.g., "Figure 1")
+{\addvspace{3pt}\small\sffamily} % Formatting for the entries
+{\contentslabel[\thecontentslabel]{\tocsep}}
 {}
-{\hfill\thecontentspage} % Dots and page number alignment
+{\hfill\thecontentspage}
 []
-
-% Optionally, you can style other levels like `subfigure`, etc.
 
 %----------------------------------------------------------------------------------------
 %	MULTIPLE AUTHOR SET
