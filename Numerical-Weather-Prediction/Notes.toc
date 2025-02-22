@@ -48,4 +48,5 @@
 \contentsline {subsection}{\numberline {18.2}Upwind/Upstream Scheme}{26}{subsection.18.2}%
 \contentsline {section}{\numberline {19}Lecture 19 17/02/2025}{27}{section.19}%
 \contentsline {subsection}{\numberline {19.1}1-D Advection Equation}{27}{subsection.19.1}%
+\contentsline {subsection}{\numberline {19.2}Transportative Properties}{27}{subsection.19.2}%
 \contentsfinish 

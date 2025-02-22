@@ -2197,7 +2197,8 @@ Finite difference method for the first derivation using central differencing sch
 	\frac{df}{dx} &=\frac{A}{\cancel{2}\Delta x}\left[\cancel{2}\cos\left(\frac{2\pi(x)}{L}\right)\sin\left(\frac{2\pi(x - \Delta x)}{L}\right)\right] \\
 	\frac{df}{dx} &=\frac{A}{\Delta x}\cos\left(\frac{2\pi x}{L}\right)\sin\left(\frac{2\pi \Delta x}{L}\right) \\
 	\frac{df}{dx} &=A\cos\left(\frac{2\pi x}{L}\right)\frac{\sin\left(\frac{2\pi\Delta x}{L}\right)}{\Delta x} \\
-	\frac{df}{dx} &=\underbrace{A\cos\left(\frac{2\pi x}{L}\right)}_{\text{constant}} \frac{\sin\left(\frac{2\pi\Delta x}{L}\right)}{\left(\frac{2\pi\Delta x}{L}\right)}
+	\frac{df}{dx} &=\underbrace{A\cos\left(\frac{2\pi x}{L}\right)}_{\text{constant}} \frac{\sin\left(\frac{2\pi\Delta x}{L}\right)}{\left(\frac{2\pi\Delta x}{L}\right)} \\
+	\frac{df}{dx} &=A'\frac{\sin\left(\frac{2\pi\Delta x}{L}\right)}{\left(\frac{2\pi\Delta x}{L}\right)}
 \end{align*}
 
 \begin{align*}
@@ -2207,6 +2208,91 @@ Finite difference method for the first derivation using central differencing sch
 		0 \times \left(\frac{2\pi}{L}A\cos\left(\frac{2\pi x}{L}\right)\right) \quad \text{, when } \Delta x =1/2
 	\end{cases}
 \end{align*}
+
+If \( c < 0 \) space difference is forward.
+
+\begin{align*}
+	c\left(\frac{\Delta t}{\Delta x}\right) \rightarrow \text{Courant No.}
+\end{align*}
+
+When analytical solution coincide with numerical solution.
+\begin{align*}
+	c\left(\frac{\Delta t}{\Delta x}\right) = 1
+\end{align*}
+
+When numerical domain of dependence contains all analytical domain of dependence. \textbf{(Stable)}
+\begin{align*}
+	c\left(\frac{\Delta t}{\Delta x}\right) < 1
+\end{align*}
+
+When analytical domain of dependence contains all numerical domain of dependence. \textbf{(Unstable)}
+\begin{align*}
+	c\left(\frac{\Delta t}{\Delta x}\right) > 1
+\end{align*}
+
+\yellownote{Figures for these conditions}
+
+For stable solution
+\begin{align*}
+	\text{Time step} \leftarrow \Delta t < \frac{\Delta x}{c} \bfrac{\longrightarrow \text{Grid size \hfill}}{\hfill\rightarrow \text{Speed of analytical wave\hfill}}
+\end{align*}
+
+\( \Delta t \) choosen must be less than \( \Delta x /c \) which is the time taken for wave to travel distance \( \Delta x\).
+
+\subsection{Transportative Properties}
+Consider Advection equation:
+\begin{align*}
+	\frac{\partial f}{\partial t} + c\frac{\partial f}{\partial x} = 0 \tag{19.3} \label{eq:1dadvectioneq-5}
+\end{align*}
+
+\begin{enumerate}
+	\item FTCS scheme, for \( c > 0 \)
+		\begin{align*}
+			\frac{f_{m,n+1} - f_{m,n}}{\Delta t} &= -c\left[\frac{f_{m+1,n} - f_{m-1,n}}{2\Delta x}\right]
+		\end{align*}
+		Let us distrubance (\( \delta \)) at x point corresponding to \( m \) index at time index \( n \). \\
+		\begin{itemize}
+			\item changing \( m \rightarrow m+1 \)
+			\begin{align*}
+				\frac{f_{m+1,n+1} - f_{m+1,n}}{\Delta t} &= -c\left[\frac{f_{m+2,n} - f_{m-1,n}}{2\Delta x}\right] \\
+				\frac{f_{m+1,n+1} - f_{m+1,n}}{\Delta t} &= -\frac{c}{2\Delta x}\left[0-\delta\right] \\
+				\frac{f_{m+1,n+1}}{\Delta t} &= \frac{c\Delta t}{2\Delta x}\delta \\
+				\frac{f_{m+1,n+1}}{\Delta t} &= \lambda\delta \tag{19.4} \label{eq:19.4}
+			\end{align*}
+			Distrubance propagated from \( m \) to \( m+1 \) with time from \( n \) to \( n +1 \).
+			\item changing \( m \rightarrow m-1 \)
+			\begin{align*}
+				\frac{f_{m-1,n+1} - f_{m-1,n}}{\Delta t} &= -c\left[\frac{f_{m,n} - f_{m-1,n}}{2\Delta x}\right] \\
+				\frac{f_{m-1,n+1}}{\Delta t} &= -\frac{c\Delta t}{2\Delta x}[\delta - 0 ] \\
+				\frac{f_{m-1,n+1}}{\Delta t} &= -\lambda\delta \tag{19.5} \label{eq:19.5}
+			\end{align*}
+			Distrubance propagated from \( m \) to \( m-1 \) with time from \( n \) to \( n +1 \). \\
+			Which is wrong. Therefore Scheme is \textbf{Unstable}.
+		\end{itemize}
+	\item Upwind scheme/ Upstream scheme, for \( c > 0 \)
+		\begin{align*}
+			\frac{f_{m,n+1} - f_{m,n}}{\Delta t} &= -c\left[\frac{f_{m,n} - f_{m-1,n}}{2\Delta x}\right]
+		\end{align*}
+		Let us distrubance (\( \delta \)) at x point corresponding to \( m \) index at time index \( n \). \\
+		\begin{itemize}
+			\item changing \( m \rightarrow m+1 \)
+			\begin{align*}
+				\frac{f_{m+1,n+1} - f_{m+1,n}}{\Delta t} &= -c\left[\frac{f_{m+1,n} - f_{m,n}}{\Delta x}\right] \\
+				\frac{f_{m+1,n+1}}{\Delta t} &= -\frac{c}{\Delta x}\left[0-\delta\right] \\
+				f_{m+1,n+1} &= \frac{c\Delta t}{\Delta x}\delta \\
+				f_{m+1,n+1} &= \lambda\delta \tag{19.6} \label{eq:19.6}
+			\end{align*}
+			Distrubance propagated from \( m \) to \( m+1 \) with time from \( n \) to \( n +1 \).
+			\item changing \( m \rightarrow m-1 \)
+			\begin{align*}
+				\frac{f_{m-1,n+1} - f_{m-1,n}}{\Delta t} &= -c\left[\frac{f_{m-1,n} - f_{m-2,n}}{2\Delta x}\right] \\
+				f_{m-1,n+1} &= -\frac{c\Delta t}{2\Delta x}[0 - 0 ] \\
+				f_{m-1,n+1} &= 0 \tag{19.7} \label{eq:19.7}
+			\end{align*}
+			No distrubance propagated from \( m \) to \( m-1 \) with time from \( n \) to \( n +1 \). \\
+			Which is as expected. Therefore Scheme is \textbf{Stable}.
+		\end{itemize}
+\end{enumerate}
 
 \clearpage
 
