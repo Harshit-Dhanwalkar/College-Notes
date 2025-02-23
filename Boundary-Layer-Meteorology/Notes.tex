@@ -1449,6 +1449,8 @@ Subtracting \myeqref{eq:10.2} from \myeqref{eq:10.1}
 	\end{rcases}
 \end{align*}
 
+To be continued in next lecture...
+
 \clearpage
 
 \section{Lecture 11 19/02/2025}
@@ -1480,7 +1482,6 @@ Adding Turbulent continuity equation to \myeqref{eq:11.3}
 \begin{align*}
 	\overline{\partial u_i'^2}\frac{u_j'}{\partial x_j} = 0
 \end{align*}
-
 \begin{align*}
 	\begin{rcases}
 		\frac{\partial \overline{u_i'^2}}{\partial t} & \!\!\!\!\!\!\!\! + \overline{u_i}\frac{\partial \overline{u_i'^2}}{\partial x_j} + 2\overline{u_i'u_j'\frac{\partial \overline{u_i'}}{\partial x_j}} + \overline{u_j'\frac{\partial u_i'^2}{\partial x_j}} + \overline{u_i'^2\frac{\partial u_j'}{\partial x_j}} \\ &= 2\delta_{i3}\overline{u_i'\left(\frac{\theta_v'}{\overline{\theta_v}}\right)}g + 2f\epsilon_{i33}\overline{u_i'u_j'} \\ &- \overline{\frac{2u_i'}{\overline{\rho}}\frac{\partial p'}{\partial x_i}} + 2\upnu \overline{u_i'\frac{\partial^2 u_i'}{\partial x_j^2}} \tag{11.4} \label{eq:11.4}
@@ -1489,6 +1490,38 @@ Adding Turbulent continuity equation to \myeqref{eq:11.3}
 		\frac{\partial \overline{u_i'^2}}{\partial t} & \!\!\!\!\!\!\!\! + \overline{u_i}\frac{\partial \overline{u_i'^2}}{\partial x_j} + 2\overline{u_i'u_j'\frac{\partial \overline{u_i'}}{\partial x_j}} + \overline{u_j'\frac{\partial \left(u_i'^2 u_j'\right)}{\partial x_j}} \\ &= 2\delta_{i3}\overline{u_i'\left(\frac{\theta_v'}{\overline{\theta_v}}\right)}g + 2f\epsilon_{i33}\overline{u_i'u_j'} \\ &- \overline{\frac{2u_i'}{\overline{\rho}}\frac{\partial p'}{\partial x_i}} + \underbrace{2\upnu \overline{u_i'\frac{\partial^2 u_i'}{\partial x_j^2}}}_{\text{Viscous disipation}} \tag{11.5} \label{eq:11.5}
 	\end{rcases}
 \end{align*}
+
+\textbf{Viscous desipation term:}
+\begin{align*}
+	\upnu\frac{\partial \overline{u_i'^2}}{\partial x_j^2} &= \upnu \frac{\partial }{\partial x_j}\left[\overline{\frac{\partial u_i'^2}{\partial x_j}}\right] \\
+	\upnu\frac{\partial \overline{u_i'^2}}{\partial x_j^2} &= \upnu \frac{\partial }{\partial x_j}\left[2\overline{u_i'\frac{\partial u_i'}{\partial x_j}}\right] \\
+	\upnu\frac{\partial \overline{u_i'^2}}{\partial x_j^2} &= 2\upnu \overline{\frac{\partial u_i' }{\partial x_j}\frac{\partial u_i' }{\partial x_j}} + 2\upnu \overline{u_i'\frac{\partial^2 u_i'}{\partial x_j^2}} \\
+	\upnu\frac{\partial \overline{u_i'^2}}{\partial x_j^2} &= 2\upnu \underbrace{\overline{\left(\frac{\partial u_i' }{\partial x_j}\right)^2}}_{\substack{\text{Shear} \\ \text{term}}} + 2\upnu \underbrace{\overline{\left(\frac{\partial^2 u_i'^2}{\partial x_j^2}\right)}}_{\substack{\text{Diffusion of} \\ \text{velocity} (\approx 0)}} \tag{11.6} \label{eq:viscousapprox}
+\end{align*}
+
+Substitute approximate viscous term \myeqref{eq:viscousapprox} in \myeqref{eq:11.5}
+\begin{align*}
+	\begin{rcases}
+		\frac{\partial \overline{u_i'^2}}{\partial t} & \!\!\!\!\!\!\!\! + \overline{u_i}\frac{\partial \overline{u_i'^2}}{\partial x_j} + 2\overline{u_i'u_j'\frac{\partial \overline{u_i'}}{\partial x_j}} + \overline{u_j'\frac{\partial \left(u_i'^2 u_j'\right)}{\partial x_j}} \\ &= 2\delta_{i3}\overline{u_i'\left(\frac{\theta_v'}{\overline{\theta_v}}\right)}g + 2f\epsilon_{i33}\overline{u_i'u_j'} \\ &- \underbrace{\overline{\frac{2u_i'}{\overline{\rho}}\frac{\partial p'}{\partial x_i}}}_{\substack{\text{Pressure} \\ \text{Perturbation} \\ \text{term}}} + 2\upnu \underbrace{\overline{\left(\frac{\partial u_i' }{\partial x_j}\right)^2}}_{\substack{\text{Viscous} \\ \text{disipation} \\ \text{term}}} \tag{11.7} \label{eq:11.7}
+	\end{rcases}
+\end{align*}
+
+\textbf{Pressure perturbation term:}
+\begin{align*}
+	\mspace{-10mu}-\overline{\frac{2u_i'}{\overline{\rho}}\frac{\partial p'}{\partial x_i}} &= -\frac{2}{\overline{\rho}}\overline{\left(\frac{\partial (p'u_i')}{\partial x_i}\right)} + \overline{\frac{2p'}{\overline{\rho}}\cdot\underbrace{\left(\frac{\partial u_i'}{\partial x_i}\right)}_{\substack{\nabla u_i' = 0 \\ \text{Continuity eq.}}}} \tag{11.8} \label{eq:11.8}
+\end{align*}
+
+The last term in \myeqref{eq:11.8} is called \bold{return-to-isotropy}.
+
+Therefore \myeqref{eq:11.7} can be modified to:
+\begin{align*}
+	\begin{rcases}
+		\frac{\partial \overline{u_i'^2}}{\partial t} & \!\!\!\!\!\!\!\! + \overline{u_i}\frac{\partial \overline{u_i'^2}}{\partial x_j} + 2\overline{u_i'u_j'\frac{\partial \overline{u_i'}}{\partial x_j}} + \overline{u_j'\frac{\partial \left(u_i'^2 u_j'\right)}{\partial x_j}} \\ &= 2\delta_{i3}\overline{u_i'\left(\frac{\theta_v'}{\overline{\theta_v}}\right)}g + \underbrace{2f\epsilon_{i33}\overline{u_i'u_j'}}_{\substack{\text{Coriolis} \\ \text{term}}} \\ &- \underbrace{\overline{\frac{2}{\overline{\rho}}\frac{\partial (p'u_i')}{\partial x_i}}}_{\substack{\text{Pressure} \\ \text{Perturbation} \\ \text{term}}} + 2\upnu \underbrace{\overline{\left(\frac{\partial u_i'}{\partial x_j}\right)^2}}_{\substack{\text{Viscous} \\ \text{disipation} \\ \text{term}}} \tag{11.9} \label{eq:11.9}
+	\end{rcases}
+\end{align*}
+
+\textbf{Coriolis term:}
+
 
 \yellownote{INCOMPLETE}
 
