@@ -2319,9 +2319,25 @@ Let \( \lambda = c\Delta t/\Delta x \)
 
 Let \( \epsilon_{m,n} = B^{\mu \Delta t} e^{ikm\Delta x}\)
 \begin{align*}
-	B^{\mu (n+1) \Delta t} e^{ikm\Delta x} &= B^{\mu (n+1) \Delta t} e^{ikm\Delta x} \\ &\quad -\frac{\lambda}{2} B^{\mu (n+1) \Delta t}\big[e^{ik(m+1)\Delta x} \\ &\quad -e^{ik(m-1)\Delta x} \big]
+	B^{\mu (n+1) \Delta t} e^{ikm\Delta x} &= B^{\mu n \Delta t} e^{ikm\Delta x} \\ &\quad -\frac{\lambda}{2} B^{\mu (n+1) \Delta t}\big[e^{ik(m+1)\Delta x} \\ &\quad -e^{ik(m-1)\Delta x} \big]
 \end{align*}
 
+Divide throughout by \( B^{\mu n \Delta t} e^{ikm\Delta x} \) 
+\begin{align*}
+	B^{\mu \Delta t} &= 1 -\frac{\lambda}{2} \big[e^{ik\Delta x} - e^{-ik\Delta x} \big] \\
+	B^{\mu \Delta t} &= 1 -\lambda \cdot [i\sin(k\Delta x)] \\
+	B^{\mu \Delta t} &= 1 -i\lambda \sin(k\Delta x)
+\end{align*}
+
+\begin{align*}
+	G = \left| \frac{\epsilon_{m+1,n}}{\epsilon_{m,n}} \right| &= \left| B^{\mu \Delta t} \right| = \left[1 - i\lambda \sin(k\Delta x) \right] \\
+								   | G |^2 &= 1 + \lambda^2 \sin^2(k\Delta x)> 1
+\end{align*}
+
+Therefore, this scheme is \textbf{Unstable}.
+
+\yellownote{Add equation no.s}
+\yellownote{Incomplete}
 
 
 \clearpage
