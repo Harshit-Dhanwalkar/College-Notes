@@ -2296,6 +2296,36 @@ Consider Advection equation:
 
 \clearpage
 
+\section{Lecture 20 24/02/2025}
+\subsection{1-D Advection Equation}
+\begin{align*}
+	\frac{\partial f}{\partial t} + c\frac{\partial f}{\partial x} = 0 \tag{20.1} \label{eq:1dadvectioneq-6}
+\end{align*}
+
+\begin{align*}
+	\frac{f_{m,n+1} - f_{m,n}}{\Delta t} &= -c\left[\frac{f_{m+1,n} - f_{m-1,n}}{2\Delta x}\right] \tag{20.2} \label{eq:20.2}
+\end{align*}
+
+Let \( \lambda = c\Delta t/\Delta x \)
+
+\begin{align*}
+    G &= \left| \frac{\epsilon_{m+1,n}}{\epsilon_{m,n}} \right| \leq 1
+\end{align*}
+
+\begin{align*}
+	f_{m,n+1} = f_{m,n} -\frac{\lambda}{2}\left(f_{m+1,n} - f_{m-1,n}\right) \\
+	\epsilon_{m,n+1} = \epsilon_{m,n} -\frac{\lambda}{2}\left(\epsilon_{m+1,n} - \epsilon_{m-1,n}\right)
+\end{align*}
+
+Let \( \epsilon_{m,n} = B^{\mu \Delta t} e^{ikm\Delta x}\)
+\begin{align*}
+	B^{\mu (n+1) \Delta t} e^{ikm\Delta x} &= B^{\mu (n+1) \Delta t} e^{ikm\Delta x} \\ &\quad -\frac{\lambda}{2} B^{\mu (n+1) \Delta t}\big[e^{ik(m+1)\Delta x} \\ &\quad -e^{ik(m-1)\Delta x} \big]
+\end{align*}
+
+
+
+\clearpage
+
 \bibliographystyle{plain}
 \bibliography{Reference}
 \end{document}
