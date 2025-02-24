@@ -719,32 +719,32 @@ Thus, we obtain a method to compute the new value of $\theta$ based on the curre
 		f(x+\Delta x) & = f(x) + \Delta x\frac{\partial f}{\partial x}\Big{|}_{x=x_0}                             \\
 		              & + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f}{\partial x^2}\Big{|}_{t=x_0}                \\
 		              & + \frac{(\Delta x)^3}{3!} \frac{\partial^3 f}{\partial x^3}\Big{|}_{t=x_0} + \quad \cdots
-	\end{rcases}   & \tag{5.1} \label{eq:forwarddiff_x}   \\
+	\end{rcases}   & \tag{5.1} \label{eq:forwarddiff-x}   \\
 	\begin{rcases}
 		f(x - \Delta x) & = f(x) - \Delta x\frac{\partial f}{\partial x}\Big{|}_{x=x_0}                             \\
 		                & + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f}{\partial x^2}\Big{|}_{t=x_0}                \\
 		                & - \frac{(\Delta x)^3}{3!} \frac{\partial^3 f}{\partial x^3}\Big{|}_{t=x_0} + \quad \cdots
-	\end{rcases} & \tag{5.2} \label{eq:backwarddiff_x}
+	\end{rcases} & \tag{5.2} \label{eq:backwarddiff-x}
 \end{align*}
 
-Using \myeqref{eq:forwarddiff_x},
+Using \myeqref{eq:forwarddiff-x},
 \begin{align*}
-	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x + \Delta x) - f(x)}{\Delta x}\Big] + O(\Delta x) \tag{5.3} \label{eq:dfdx_forward}
+	\mspace{-25mu} \frac{df}{dx}\Big{|}_{x=x_0} & \simeq \left[\frac{f(x + \Delta x) - f(x)}{\Delta x}\right] + O(\Delta x) \tag{5.3} \label{eq:dfdx-forward}
 \end{align*}
 
-Similiarly, using \myeqref{eq:backwarddiff_x}, one obtain,
+Similiarly, using \myeqref{eq:backwarddiff-x}, one obtain,
 \begin{align*}
-	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x) - f(x - \Delta x)}{\Delta x}\Big] + O(\Delta x) \tag{5.4} \label{eq:dfdx_backward}
+	\mspace{-25mu} \frac{df}{dx}\Big{|}_{x=x_0} & \simeq \left[\frac{f(x) - f(x - \Delta x)}{\Delta x}\right] + O(\Delta x) \tag{5.4} \label{eq:dfdx-backward}
 \end{align*}
 
-Subtracting \myeqref{eq:backwarddiff_x} from \myeqref{eq:forwarddiff_x}, we get,
+Subtracting \myeqref{eq:backwarddiff-x} from \myeqref{eq:forwarddiff-x}, we get,
 \begin{align*}
-	\frac{df}{dx} & \simeq \Big[\frac{f(x + \Delta x) + f(x - \Delta x)}{2\Delta x}\Big] + O(\Delta x^2) \tag{5.5} \label{eq:dfdx1-2}
+	\mspace{-25mu} \frac{df}{dx} & \simeq \left[\frac{f(x + \Delta x) - f(x - \Delta x)}{2\Delta x}\right] + O(\Delta x^2) \tag{5.5} \label{eq:dfdx1-2}
 \end{align*}
 
-Adding \myeqref{eq:forwarddiff_x} and \myeqref{eq:backwarddiff_x}, we get,
+Adding \myeqref{eq:forwarddiff-x} and \myeqref{eq:backwarddiff-x}, we get,
 \begin{align*}
-	\frac{d^2f}{dx^2} & \simeq \Big[\frac{f(x + \Delta x) - 2f(x)+ f(x - \Delta x)}{(\Delta x)^2}\Big] + O(\Delta x^2) \tag{5.6} \label{eq:dfdx1+2}
+	\mspace{-25mu} \frac{d^2f}{dx^2} & \simeq \left[\frac{f(x + \Delta x) - 2f(x)+ f(x - \Delta x)}{(\Delta x)^2} \right] + O(\Delta x^2) \tag{5.6} \label{eq:dfdx1+2}
 \end{align*}
 
 % \begin{align*}
@@ -767,38 +767,37 @@ Adding \myeqref{eq:forwarddiff_x} and \myeqref{eq:backwarddiff_x}, we get,
 		f(x + \Delta x,t) & = f(x,t) + \Delta x\frac{\partial f(x,t)}{\partial x}\Big{|}_{x=x_0}                     \\
 		                  & + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f(x,t)}{\partial x^2}\Big{|}_{t=x_0}          \\
 		                  & + \frac{(\Delta x)^3}{3!} \frac{\partial^3 f(x,t)}{\partial x^3}\Big{|}_{t=x_0} + \cdots
-	\end{rcases} & \tag{5.7} \label{eq:forwarddiff_xt} \\
+	\end{rcases} & \tag{5.7} \label{eq:forwarddiff-xt} \\
 	\begin{rcases}
 		f(x - \Delta x,t) & = f(x,t) - \Delta x\frac{\partial f(x,t)}{\partial x}\Big{|}_{x=x_0}                     \\
 		                  & + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f(x,t)}{\partial x^2}\Big{|}_{t=x_0}          \\
 		                  & - \frac{(\Delta x)^3}{3!} \frac{\partial^3 f(x,t)}{\partial x^3}\Big{|}_{t=x_0} + \cdots
-	\end{rcases} & \tag{5.8} \label{eq:backwarddiff_xt}
+	\end{rcases} & \tag{5.8} \label{eq:backwarddiff-xt}
 \end{align*}
 
 \subsection{Space Difference}
-From \myeqref{eq:forwarddiff_xt} and \myeqref{eq:backwarddiff_xt} respectively by difference equation w.r.t 1-direction, say x, we obtain \textbf{Space difference}:
+From \myeqref{eq:forwarddiff-xt} and \myeqref{eq:backwarddiff-xt} respectively by difference equation w.r.t 1-direction, say x, we obtain \textbf{Space difference}:
 \begin{align*}
-	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x + \Delta x,t) - f(x,t)}{\Delta x}\Big] + O(\Delta x) \tag{5.9} \label{eq:9}   \\
-	\frac{df}{dx}\Big{|}_{x=x_0} & \simeq \Big[\frac{f(x + \Delta x,t) - f(x,t)}{\Delta x}\Big] + O(\Delta x) \tag{5.10} \label{eq:10}
+	\mspace{-25mu} \frac{df}{dx}\Big{|}_{x=x_0} & \simeq \left[\frac{f(x + \Delta x,t) - f(x,t)}{\Delta x}\right] + O(\Delta x) \tag{5.9} \label{eq:9}   \\
+	% \frac{df}{dx}\Big{|}_{x=x_0} & \simeq \left[\frac{f(x + \Delta x,t) - f(x,t)}{\Delta x}\right] + O(\Delta x) \tag{5.10} \label{eq:10}
 \end{align*}
 
-Subtracting \myeqref{eq:backwarddiff_xt} from \myeqref{eq:forwarddiff_xt}, we get,
+Subtracting \myeqref{eq:backwarddiff-xt} from \myeqref{eq:forwarddiff-xt}, we get,
 \begin{align*}
-	\frac{df}{dx} & \simeq \Big[\frac{f(x + \Delta x, t) + f(x - \Delta x, t)}{2\Delta x}\Big] + O(\Delta x^2) \tag{5.11} \label{eq:dfdx1-2-sd-wrt-x}
+	\mspace{-25mu} \frac{df}{dx} & \simeq \left[\frac{f(x + \Delta x, t) + f(x - \Delta x, t)}{2\Delta x}\right] + O(\Delta x^2) \tag{5.12} \label{eq:dfdx1-2-sd-wrt-x}
 \end{align*}
 
-Adding \myeqref{eq:forwarddiff_xt} and \myeqref{eq:backwarddiff_xt}, we get,
+Adding \myeqref{eq:forwarddiff-xt} and \myeqref{eq:backwarddiff-xt}, we get,
 \begin{align*}
-	\frac{d^2f}{dx^2} & \simeq \Big[\frac{f(x + \Delta x, t) - 2f(x,t)+ f(x - \Delta x, t)}{(\Delta x)^2}\Big] + O(\Delta x^2) \tag{5.12} \label{eq:dfdx1+2-sd-wrt-x}
+	\mspace{-25mu} \frac{d^2f}{dx^2} & \simeq \Big[\frac{f(x + \Delta x, t) - 2f(x,t)+ f(x - \Delta x, t)}{(\Delta x)^2}\Big] + O(\Delta x^2) \tag{5.13} \label{eq:dfdx1+2-sd-wrt-x}
 \end{align*}
 
 \subsection{Time Difference}
-Similiarly, From \myeqref{eq:forwarddiff_xt} and \myeqref{eq:backwarddiff_xt} respectively, difference equation w.r.t time (t), we obtain \textbf{Time difference}:
+Similiarly, From \myeqref{eq:forwarddiff-xt} and \myeqref{eq:backwarddiff-xt} respectively, difference equation w.r.t time (t), we obtain \textbf{Time difference}:
 \begin{align*}
-	\frac{df}{dt}\Big{|}_{t=t_0} & \simeq \Big[\frac{f(x, t + \Delta t) - f(x,t)}{\Delta t}\Big] + O(\Delta t) \tag{5.13} \label{eq:13}                                          \\
-	\frac{df}{dt}\Big{|}_{t=t_0} & \simeq \Big[\frac{f(x, t + \Delta t) - f(x,t)}{\Delta t}\Big] + O(\Delta t) \tag{5.14} \label{eq:14}                                          \\
-	\frac{df}{dt}                & \simeq \Big[\frac{f(x, t + \Delta t) + f(x, t - \Delta t)}{2\Delta t}\Big] + O(\Delta t^2) \tag{15} \label{eq:dfdx1-2-sd-wrt-t}               \\
-	\frac{d^2f}{dt^2}            & \simeq \Big[\frac{f(x, t + \Delta t) - 2f(x,t)+ f(x, t - \Delta t)}{(\Delta t)^2}\Big] + O(\Delta t^2) \tag{5.16} \label{eq:dfdx1+2-sd-wrt-t}
+	\mspace{-25mu} \frac{df}{dt}\Big{|}_{t=t_0} & \simeq \Big[\frac{f(x, t + \Delta t) - f(x,t)}{\Delta t}\Big] + O(\Delta t) \tag{5.14} \label{eq:13}                                          \\
+	\mspace{-25mu} \frac{df}{dt}           & \simeq \Big[\frac{f(x, t + \Delta t) + f(x, t - \Delta t)}{2\Delta t}\Big] + O(\Delta t^2) \tag{15.15} \label{eq:dfdx1-2-sd-wrt-t}               \\
+	\mspace{-25mu} \frac{d^2f}{dt^2}       & \simeq \Big[\frac{f(x, t + \Delta t) - 2f(x,t)+ f(x, t - \Delta t)}{(\Delta t)^2}\Big] + O(\Delta t^2) \tag{5.16} \label{eq:dfdx1+2-sd-wrt-t}
 \end{align*}
 
 \subsection{Explicit Form Of Second Order PDE}
@@ -815,7 +814,7 @@ Cases:
 
 Example: Momentum equation, which is,
 \begin{align*}
-	\frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} + w\frac{\partial u}{\partial z} - fv & = -\frac{1}{\rho}\frac{\partial P}{\partial x}
+	\mspace{-25mu} \frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} + w\frac{\partial u}{\partial z} - fv & = -\frac{1}{\rho}\frac{\partial P}{\partial x}
 \end{align*} is a quasi-linear PDE.
 
 \subsection{Implicit Form Of Second Order PDE}
@@ -896,8 +895,8 @@ Integrating \myeqref{eq:dxdt-constant} w.r.t time, we get:
 
 Substituting, $u=\frac{dx}{dt}$ in \myeqref{eq:advectioneq}, we obtain:
 \begin{align*}
-	\frac{\partial f}{\partial t} + \frac{dx}{dt} \frac{\partial f}{\partial t} & = 0  \tag{6.4} \label{eq:advectiveeq1}          \\
-	\frac{Df}{Dt}                                                               & = 0 \tag{6.4} \label{eq:advectiveeq-total-deri}
+	\frac{\partial f}{\partial t} + \frac{dx}{dt} \frac{\partial f}{\partial x} & = 0  \tag{6.4} \label{eq:advectiveeq1}          \\
+	\frac{Df}{Dt}                                                               & = 0 \tag{6.5} \label{eq:advectiveeq-total-deri}
 \end{align*}
 
 \myeqref{eq:advectiveeq-total-deri} implies the property f is conserved following the motion of fluid element.
@@ -945,19 +944,19 @@ Substituting, $u=\frac{dx}{dt}$ in \myeqref{eq:advectioneq}, we obtain:
 	\frac{\partial f}{\partial t} + u \frac{\partial f}{\partial x} = 0 \;
 	 & \begin{cases}
 		   u = \text{constant} & \Rightarrow \text{linear PDE },     \\
-		   u = u(x,t)          & \Rightarrow \text{linear PDE },     \\
+		   u = u(x,t)          & \Rightarrow \text{semi-linear PDE },     \\
 		   u = u(x,t,f)        & \Rightarrow \text{quasi-linear PDE}
 	   \end{cases}
 \end{align*}
 
 \begin{align*}
-	a(x,t,f)\frac{\partial f}{\partial t} + b(x,t,f)\frac{\partial f}{\partial x} = 0 \tag{6.5} \label{eq:quasi-linear-ab}
+	a(x,t,f)\frac{\partial f}{\partial t} + b(x,t,f)\frac{\partial f}{\partial x} = 0 \tag{6.6} \label{eq:quasi-linear-ab}
 \end{align*}
 
 Above \myeqref{eq:quasi-linear-ab} is quasi-linear PDE, having characteristic equation in real domain $\Rightarrow \frac{dx}{dt} = \frac{b}{a}$
 
 \begin{align*}
-	a(x,t,f)\frac{\partial f}{\partial t} + b(x,t,f)\frac{\partial f}{\partial x} = c(x,t,f) \tag{6.6} \label{eq:semi-linear-abc}
+	a(x,t,f)\frac{\partial f}{\partial t} + b(x,t,f)\frac{\partial f}{\partial x} = c(x,t,f) \tag{6.7} \label{eq:semi-linear-abc}
 \end{align*}
 
 Above \myeqref{eq:semi-linear-abc} is semi-linear PDE, having characteristic equation in real domain.
@@ -967,7 +966,7 @@ Above \myeqref{eq:semi-linear-abc} is semi-linear PDE, having characteristic equ
 \section{Lecture 7 22/01/2025}
 General quasi-linear 2$^{nd}$ order PDE:
 \begin{align*}
-	A\frac{\partial^2 f}{\partial x^2} + B\frac{\partial^2 f}{\partial x \partial y} + C\frac{\partial^2 f}{\partial y^2} + D\frac{\partial f}{\partial x} + E\frac{\partial f}{\partial y} + Ff = G \tag{7.1} \label{eq:genral-quasi-linear-pde}
+	\mspace{-25mu} \frac{\partial^2 f}{\partial x^2} + B\frac{\partial^2 f}{\partial x \partial y} + C\frac{\partial^2 f}{\partial y^2} + D\frac{\partial f}{\partial x} + E\frac{\partial f}{\partial y} + Ff = G \tag{7.1} \label{eq:genral-quasi-linear-pde}
 \end{align*}
 
 i.e. $A,B,C$ can be function of $x,y,f,\frac{\partial f}{\partial x}$ and $\frac{\partial f}{\partial y}$.
@@ -982,9 +981,9 @@ To find sign of dicriminant $B^2 - 4AC$ tells the classification of equation:
 	\end{cases}
 \end{align*}
 
-This is analogus to general equation of conic-section curves. Which is general by \myeqref{eq:genral-conic-section}
+This is analogus to general equation of conic-section curves. Which is represented by \myeqref{eq:genral-conic-section}
 \begin{align*}
-	Ay^2 + Bxy + Cx^2 + Dx + Ey + F = 0 \tag{7.2} \label{eq:genral-conic-section}
+	\mspace{-20mu} Ay^2 + Bxy + Cx^2 + Dx + Ey + F = 0 \tag{7.2} \label{eq:genral-conic-section}
 \end{align*}
 \begin{align*}
 	B^2 - 4AC
@@ -1005,7 +1004,7 @@ Unknown in \myeqref{eq:df}, \myeqref{eq:dpfpx} and \myeqref{eq:dpfpy} are 2$^{nd
 
 From \myeqref{eq:genral-quasi-linear-pde},
 \begin{align*}
-	A\frac{\partial^2 f}{\partial x^2} + B\frac{\partial^2 f}{\partial x \partial y} + C\frac{\partial^2 f}{\partial y^2} & = - D\frac{\partial f}{\partial x} - E\frac{\partial f}{\partial y} - Ff + G \tag{7.6} \label{eq:genral-quasi-linear-pde-reodered}
+	\mspace{-25mu} A\frac{\partial^2 f}{\partial x^2} + B\frac{\partial^2 f}{\partial x \partial y} + C\frac{\partial^2 f}{\partial y^2} & = - D\frac{\partial f}{\partial x} - E\frac{\partial f}{\partial y} - Ff + G \tag{7.6} \label{eq:genral-quasi-linear-pde-reodered}
 \end{align*}
 
 From \myeqref{eq:dpfpx},
@@ -1108,19 +1107,17 @@ Rewriting \myeqref{eq:2ndorderquasilinearpde}, \myeqref{eq:8.2} and \myeqref{eq:
 	k(0-(dt)^2) - 0(0-dxdt) + 0(0-(dx)^2) & = 0 \\
 	-k(dt)^2                              & = 0
 \end{align*}
-
 \begin{align*}
 	\therefore dt & = 0             \\
 	t             & = \text{const.}
 \end{align*}
-
 Therefore the equation represents Parabolic PDE (2$^{\text{n}}$ order quasi-linear PDE).
 
 \subsection{1-D Wave Equation}
 
 \begin{align*}
-	\frac{\partial^2 f}{\partial t^2}                                                                                                                     & = c^2\frac{\partial^2 f}{\partial x^2} \tag{8.4} \label{eq:1dwaveequation} \\
-	\underbrace{\Big(\frac{\partial^2}{\partial t^2} - c^2\frac{\partial^2}{\partial x^2}\Big)}_{\text{Operator acting on f}}f                            & = 0                                                                        \\
+	\frac{\partial^2 f}{\partial t^2}                                                                   & = c^2\frac{\partial^2 f}{\partial x^2} \tag{8.4} \label{eq:1dwaveequation} \\
+	\underbrace{\Big(\frac{\partial^2}{\partial t^2} - c^2\frac{\partial^2}{\partial x^2}\Big)}_{\text{Operator acting on f}}f                          & = 0                                                                        \\
 	\Big[\Big(\frac{\partial}{\partial t} - c\frac{\partial}{\partial x}\Big) \Big(\frac{\partial}{\partial t} + c\frac{\partial}{\partial x}\Big)\Big] f & = 0 \tag{8.5} \label{eq:char-eq}
 \end{align*}
 
@@ -1195,11 +1192,11 @@ Therefore \myeqref{eq:1dwaveequation} represents Hyperbolic PDE.
 
 
 \begin{align*}
-	\frac{\partial^2 f}{\partial x \partial t}dx + \frac{\partial^2 f}{\partial t^2}dt = d\Big(\frac{\partial f}{\partial t}\Big) \tag{8.5} \label{eq:8.5} \\
-	\frac{\partial^2 f}{\partial x^2}dx + \frac{\partial^2 f}{\partial x \partial t}dt = d\Big(\frac{\partial f}{\partial x}\Big) \tag{8.6} \label{eq:8.6}
+	\frac{\partial^2 f}{\partial x \partial t}dx + \frac{\partial^2 f}{\partial t^2}dt = d\Big(\frac{\partial f}{\partial t}\Big) \tag{8.6} \label{eq:8.6} \\
+	\frac{\partial^2 f}{\partial x^2}dx + \frac{\partial^2 f}{\partial x \partial t}dt = d\Big(\frac{\partial f}{\partial x}\Big) \tag{8.7} \label{eq:8.7}
 \end{align*}
 
-Rewriting \myeqref{eq:1dwaveequation}, \myeqref{eq:8.5} and \myeqref{eq:8.6} into matrix form:
+Rewriting \myeqref{eq:1dwaveequation}, \myeqref{eq:8.6} and \myeqref{eq:8.7} into matrix form:
 \begin{align*}
 	\underbrace{
 		\begin{bmatrix}
@@ -1220,28 +1217,28 @@ Rewriting \myeqref{eq:1dwaveequation}, \myeqref{eq:8.5} and \myeqref{eq:8.6} int
 \end{align*}
 
 \begin{align*}
-	\text{det (A)}                             & = 0 \\
-	c^2(0-(dt)^2) - 0(0-dxdt) + (-1)(0-(dx)^2) & = 0 \\
-	-c^2(dt)^2 + (dx)^2                        & = 0 \\
-	-c^2\Big(\frac{dt}{dx}\Big)^2 + 1          & = 0 \\
-	c^2\Big(\frac{dt}{dx}\Big)^2 - 1           & = 0
+	& \text{det (A)}                       & = 0 \\
+	& c^2(0-(dt)^2) - 0(0-dxdt) + (-1)(0-(dx)^2) & = 0 \\
+	& -c^2(dt)^2 + (dx)^2                        & = 0 \\
+	& -c^2\Big(\frac{dt}{dx}\Big)^2 + 1          & = 0 \\
+	& c^2\Big(\frac{dt}{dx}\Big)^2 - 1           & = 0
 \end{align*}
 
 Slope $\frac{dt}{dx}$ is equal to:
 \begin{align*}
 	\frac{dt}{dx} & = \frac{-0 \pm \sqrt{0^2 -4 \cdot c^2\cdot (-1)}}{2\cdot c^2} \\
-	\frac{dt}{dx} & = \pm \frac{1}{2c}
+	\frac{dt}{dx} & = \pm \frac{1}{c}
 \end{align*}
 
 \subsection{Laplace Equation}
 \begin{align*}
-	\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2}           &= 0 \tag{8.7} \label{eq:8.7}
+	\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2}           &= 0 \tag{8.8} \label{eq:8.8}
 \end{align*}
 
 
 \begin{align*}
-	\frac{\partial^2 f}{\partial x \partial y}dx + \frac{\partial^2 f}{\partial y^2}dy &= d\left(\frac{\partial f}{\partial y}\right) \tag{8.8} \label{eq:8.8} \\
-	\frac{\partial^2 f}{\partial x^2}dx + \frac{\partial^2 f}{\partial x \partial y}dy &= d\left(\frac{\partial f}{\partial x}\right) \tag{8.9} \label{eq:8.0}
+	\frac{\partial^2 f}{\partial x \partial y}dx + \frac{\partial^2 f}{\partial y^2}dy &= d\left(\frac{\partial f}{\partial y}\right) \tag{8.9} \label{eq:8.9} \\
+	\frac{\partial^2 f}{\partial x^2}dx + \frac{\partial^2 f}{\partial x \partial y}dy &= d\left(\frac{\partial f}{\partial x}\right) \tag{8.10} \label{eq:8.10}
 \end{align*}
 
 Discrimant of \myeqref{eq:8.7}, for A = 1, B=0, C=1:
@@ -1251,9 +1248,9 @@ Discrimant of \myeqref{eq:8.7}, for A = 1, B=0, C=1:
 	-4            & <0
 \end{align*}
 
-Therefore \myeqref{eq:8.7} represents Elliptical PDE.
+Therefore \myeqref{eq:8.8} represents Elliptical PDE.
 
-Rewriting \myeqref{eq:8.7}, \myeqref{eq:8.8} and \myeqref{eq:8.9} into matrix form:
+Rewriting \myeqref{eq:8.8}, \myeqref{eq:8.9} and \myeqref{eq:8.10} into matrix form:
 \begin{align*}
 	\underbrace{
 		\begin{bmatrix}
@@ -1272,13 +1269,12 @@ Rewriting \myeqref{eq:8.7}, \myeqref{eq:8.8} and \myeqref{eq:8.9} into matrix fo
 		  d\left(\frac{\partial f}{\partial x}\right)
 	  \end{bmatrix}
 \end{align*}
-
 \begin{align*}
-	\text{det (A)}                        & = 0 \\
-	1(0-(dy)^2) - 0(0-dxdy) + 1(0-(dx)^2) & = 0 \\
-	-(dy)^2 - (dx)^2                      & = 0 \\
-	\left(\frac{dy}{dx}\right)^2 + 1         & = 0 \\
-	\frac{dy}{dx}                         & = \pm \iota
+	& \text{det (A)} &=  0 \\
+	& 1(0-(dy)^2) - 0(0-dxdy) + 1(0-(dx)^2) &= 0 \\
+	& -(dy)^2 - (dx)^2 &= 0 \\
+	& \left(\frac{dy}{dx}\right)^2 + 1 &= 0 \\
+	& \frac{dy}{dx} & = \pm \iota
 \end{align*}
 
 \clearpage
@@ -1297,7 +1293,7 @@ Hyperbolic PDE:
 
 Parabolic PDE:
 \begin{align*}
-	\frac{\partial T}{\partial t} &= c^2\frac{\partial T}{\partial x} \tag{9.2} \label{eq:9.2}
+	\frac{\partial f}{\partial t} &= c^2\frac{\partial f}{\partial x} \tag{9.2} \label{eq:9.2}
 \end{align*}
 
 Ellipse PDE:
@@ -1343,29 +1339,29 @@ Rewriting \myeqref{eq:9.4}, \myeqref{eq:9.5}, \myeqref{eq:9.6} and \myeqref{eq:9
 
 \begin{align*}
 	\text{det (A)}                        & = 0 \\
-	(dx)^2\underbrace{(aC-Ac)}_{\overline{A}} - (dx)(dt)\underbrace{(aD-Ad+bC-Bc)}_{\overline{B}} & \\ + (dt)^2\underbrace{(bD-Bd)}_{\overline{C}} & = 0
+	(dx)^2\underbrace{(aC-Ac)}_{\overline{A}} - (dx)(dt)\underbrace{(aD-Ad+bC-Bc)}_{\overline{B}} & \\ + (dt)^2\underbrace{(bD-Bd)}_{\overline{C}} & = 0 \tag{9.8} \label{eq:9.8}
 \end{align*}
 
-Discrimant of \myeqref{eq:8.7}, for $\overline{A}=(aC-Ac)$, $\overline{B}=(aD-Ad+bC-Bc)$, $\overline{C}=(bD-Bd)$:
+Discrimant of \myeqref{eq:9.8}, for $\overline{A}=(aC-Ac)$, $\overline{B}=(aD-Ad+bC-Bc)$, $\overline{C}=(bD-Bd)$:
 \begin{align*}
 	\overline{B}^2 - 4\overline{A}\overline{C} &  \\
 	(aD-Ad+bC-Bc)^2 - 4(aC-Ac)(bD-Bd)
 \end{align*}
 
 \begin{align*}
-	\frac{dx}{dt} = \frac{\overline{B} \pm \sqrt{\overline{B}^2 - 4\overline{A}\overline{C}}}{2\overline{A}} \tag{9.8} \label{eq:9.8}
+	\frac{dx}{dt} = \frac{\overline{B} \pm \sqrt{\overline{B}^2 - 4\overline{A}\overline{C}}}{2\overline{A}} \tag{9.9} \label{eq:9.9}
 \end{align*}
 
 Depending upon sign of $\overline{B}^2 - 4\overline{A}\overline{C}$ the follwing classification can be made:
 \begin{itemize}[noitemsep]
-	\item Negative $\rightarrow$ Elliptic
+	\item Positive $\rightarrow$ Hyperbolic
 	\item Zero $\rightarrow$ Parabolic
-	\item positive $\rightarrow$ Hyperbolic
+	\item Negative $\rightarrow$ Elliptic
 \end{itemize}
 
 \subsection{Heat Transfer Equation}
 \begin{align*}
-	\frac{\partial T}{\partial t} &= k \frac{\partial^2 T}{\partial x^2} \tag{9.9} \label{eq:9.9}
+	\frac{\partial T}{\partial t} &= k \frac{\partial^2 T}{\partial x^2} \tag{9.10} \label{eq:9.10}
 \end{align*}
 where, $k$ is coeffeicent of thermal expansion.
 
@@ -1379,15 +1375,15 @@ Applying FTCS (Forward Time and Central in Space) scheme,
 
 Backward difference:
 \begin{align*}
-	\left(\frac{\partial T}{\partial t}\right)_{x,t} &= \frac{T_{m,n+1} - T_{m,n}}{\Delta t}  \tag{9.10} \label{eq:9.10}
+	\left(\frac{\partial T}{\partial t}\right)_{x,t} &= \frac{T_{m,n+1} - T_{m,n}}{\Delta t}  \tag{9.11} \label{eq:9.11}
 \end{align*}
 
 Central difference:
 \begin{align*}
-	\left(\frac{\partial^2 T}{\partial t^2}\right)_{x,t} &= \frac{T_{m+1,n} - 2\cdot T_{m,n} + T_{m-1,n}}{\Delta t} \tag{9.11} \label{eq:9.11}
+	\left(\frac{\partial^2 T}{\partial t^2}\right)_{x,t} &= \frac{T_{m+1,n} - 2\cdot T_{m,n} + T_{m-1,n}}{\Delta t} \tag{9.12} \label{eq:9.12}
 \end{align*}
 
-Substituting \myeqref{eq:9.10} and \myeqref{eq:9.11} into \myeqref{eq:9.9}, we obtain,
+Substituting \myeqref{eq:9.11} and \myeqref{eq:9.12} into \myeqref{eq:9.10}, we obtain,
 \begin{align*}
 	\left(\frac{T_{m,n+1} - T_{m,n}}{\Delta t}\right) &= k\left(\frac{T_{m+1,n} - 2\cdot T_{m,n} + T_{m-1,n}}{\Delta t}\right) \\
 	T_{m,n+1} = T_{m,n} &+ \underbrace{\frac{k\Delta t}{(\Delta x)^2}}_{\lambda}\left(T_{m+1,n} - 2T_{m,n} + T_{m-1,n}\right) \\
@@ -1426,17 +1422,10 @@ For the scheme to be \textbf{consistent}, the local truncation error must satisf
     \lim_{\Delta x, \Delta t \to 0} || u^n_j - u(x_j, t_n) || = 0.
 \end{align*}
 
-Significance of Lax’s theorem is that it provides a crucial guideline for designing numerical methods:
-\begin{itemize}[noitemsep]
-    \item Ensuring \textbf{consistency} is relatively straightforward by comparing the difference scheme with the PDE.
-    \item \textbf{Stability} is often more challenging and requires analysis techniques like Von Neumann stability analysis.
-    \item If a scheme is both \textbf{consistent and stable}, it is guaranteed to be \textbf{convergent}, meaning it will correctly approximate the true solution.
-\end{itemize}
-
 \subsection{Van Neumann}
 Van Neumann stability analysis is a mathematical technique used to assess the stability of finite difference schemes for solving partial differential equations (PDEs). It is particularly useful in analyzing the behavior of numerical solutions over time.
 
-Key Idea: The method is based on applying a Fourier mode decomposition to the numerical scheme. The numerical solution is expressed as a sum of Fourier modes, and the growth factor 
+Key Idea: The method is based on applying a Fourier mode decomposition to the numerical scheme. The numerical solution is expressed as a sum of Fourier modes, and the growth factor.
 
 Stability Criterion: A finite difference scheme is \textbf{stable} if and only if the magnitude of the amplification factor satisfies \myeqref{eq:vanneumann}:
 \begin{align*}
@@ -1478,15 +1467,15 @@ Let $\lambda = k \Delta t / (\Delta x)^2$
 
 Since error $\epsilon_{m,n}$ identically satisfies difference equations, we can write;
 \begin{align*}
-	\epsilon{m,n+1} &= \epsilon_{m,n} + \lambda \left(\epsilon_{m+1,n} + \epsilon_{m-1,n} -2 \epsilon_{m,n}\right) \\
-	\epsilon{m,n+1} &= \left(1-2\lambda \right)\epsilon_{m,n} + \lambda \left(\epsilon_{m+1,n} + \epsilon_{m-1,n} \right) \tag{11.3} \label{eq:11.3}
+	\epsilon_{m,n+1} &= \epsilon_{m,n} + \lambda \left(\epsilon_{m+1,n} + \epsilon_{m-1,n} -2 \epsilon_{m,n}\right) \\
+	\epsilon_{m,n+1} &= \left(1-2\lambda \right)\epsilon_{m,n} + \lambda \left(\epsilon_{m+1,n} + \epsilon_{m-1,n} \right) \tag{11.3} \label{eq:11.3}
 \end{align*}
 
-Let $\epsilon_{m,n} = \exp(at) \cdot \exp(ikx)$
+Let \( \epsilon_{m,n} = e^{(an \Delta t)} \cdot e^{(ik m \Delta x)} \)
 
-Since, $t = n \Delta t$ and $x = m \Delta x$; 
+Since, \( t = n \Delta t \) and \( x = m \Delta x \);
 \begin{align*}
-	\epsilon_{m,n} &= \exp(an \Delta t) \cdot \exp(ik m \Delta x) \tag{11.4} \label{eq:11.4}
+	\epsilon_{m,n} &= e^{(an \Delta t)} \cdot e^{(ik m \Delta x)} \tag{11.4} \label{eq:11.4}
 \end{align*}
 
 Substituting \myeqref{eq:11.4} in \myeqref{eq:11.3}, we obtain;
