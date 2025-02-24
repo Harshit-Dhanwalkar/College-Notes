@@ -36,6 +36,7 @@
 \contentsline {subsection}{\numberline {13.2}Dufart Frankel Scheme}{20}{subsection.13.2}%
 \contentsline {section}{\numberline {14}Lecture 14 10/02/2025}{22}{section.14}%
 \contentsline {subsection}{\numberline {14.1}2-D Heat Conduction Equation}{22}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}ADI Method}{22}{subsection.14.2}%
 \contentsline {section}{\numberline {15}Lecture 15 11/02/2025}{23}{section.15}%
 \contentsline {subsection}{\numberline {15.1}1-D Advection Equation}{23}{subsection.15.1}%
 \contentsline {subsection}{\numberline {15.2}Method of speration of variables}{23}{subsection.15.2}%

@@ -1480,8 +1480,8 @@ Since, \( t = n \Delta t \) and \( x = m \Delta x \);
 
 Substituting \myeqref{eq:11.4} in \myeqref{eq:11.3}, we obtain;
 \begin{align*}
-	 & e^{(a(n+1)\Delta t)} \cdot e^{(ik m \Delta x)} = (1-2\lambda)e^{(an\Delta t)}e^{(ik m \Delta x)} \\ &+ \lambda\left[e^{(ik (m+1) \Delta x)} + e^{(ik (m-1) \Delta x)} \right]e^{(an\Delta t)} \\
-	 & e^{(an\Delta t)} \cdot e^{(ik m \Delta x)} = (1-2\lambda)e^{(an\Delta t)}e^{(ik m \Delta x)} \\ &+ \lambda\left[e^{(ik (m+1) \Delta x)} + e^{(ik (m-1) \Delta x)} \right] \tag{11.5} \label{eq:11.5}
+	\mspace{-20mu} e^{(a(n+1)\Delta t)} &\cdot e^{(ik m \Delta x)} = (1-2\lambda)e^{(an\Delta t)}e^{(ik m \Delta x)} \\ &+ \lambda\left[e^{(ik (m+1) \Delta x)} + e^{(ik (m-1) \Delta x)} \right]e^{(an\Delta t)} \\
+	 \mspace{-20mu} e^{(a\Delta t)} &\cdot e^{(ik m \Delta x)} = (1-2\lambda)e^{(ik m \Delta x)} \\ &+ \lambda\left[e^{(ik (m+1) \Delta x)} + e^{(ik (m-1) \Delta x)} \right] \tag{11.5} \label{eq:11.5}
 \end{align*}
 
 Divide both sides of \myeqref{eq:11.5} by $e^{(ik m \Delta x)}$
@@ -1541,30 +1541,30 @@ Maximum magnitude of $\sin^2\left(k\Delta x/2\right)=1$
 
 Let $\lambda = k\Delta t/(\Delta x)^2$
 \begin{align*}
-	(1+2\lambda)T_{m,n} - \lambda(T_{m+1,n} + T_{m-1,n}) &= T_{m,n-1} \tag{12.3} \label{12.3}
+	\mspace{-25mu} (1+2\lambda)T_{m,n} - \lambda(T_{m+1,n} + T_{m-1,n}) &= T_{m,n-1} \tag{12.3} \label{12.3}
 \end{align*}
 
 For stability;
 \begin{align*}
-	(1+2\lambda)\epsilon_{m,n} &- \lambda(\epsilon_{m+1,n} + \epsilon_{m-1,n}) = \epsilon_{m,n-1} \tag{12.4} \label{eq:12.4}\\
-	\epsilon_{m,n} &= B^{\mu n\Delta t}\exp(ikm\Delta x) \tag{12.5} \label{eq:12.5}
+	\mspace{-25mu} (1+2\lambda)\epsilon_{m,n} &- \lambda(\epsilon_{m+1,n} + \epsilon_{m-1,n}) = \epsilon_{m,n-1} \tag{12.4} \label{eq:12.4}\\
+	\mspace{-25mu}\epsilon_{m,n} &= B^{\mu n\Delta t} \cdot e^{ikm\Delta x} \tag{12.5} \label{eq:12.5}
 \end{align*}
 
 Substituting \myeqref{eq:12.5} in \myeqref{eq:12.4}, we obtain;
 \begin{align*}
 	\begin{rcases}
-		&(1 + 2\lambda)B^{\mu n \Delta t} e^{(ikm\Delta x)} \\ &-\lambda B^{\mu n \Delta t} \left(e^{(ik(m+1)\Delta x)} + e^{(ik(m-1)\Delta x)}\right) \\ &= B^{\mu (n-1)\Delta t}e^{ikm\Delta x}
+		& \mspace{-35mu} (1 + 2\lambda)B^{\mu n \Delta t} e^{ikm\Delta x} \\ &-\lambda B^{\mu n \Delta t} \left(e^{ik(m+1)\Delta x} + e^{ik(m-1)\Delta x}\right) \\ &= B^{\mu (n-1)\Delta t}e^{ikm\Delta x}
 	\end{rcases} & \tag{12.6} \label{eq:12.6}
 \end{align*}
 
 Divide \myeqref{eq:12.6} throughout by $B^{\mu (n-1) \Delta t}\cdot e^{(ikm\Delta x)}$
 \begin{align*}
-	(1 + 2\lambda)B^{\mu \Delta t} - \lambda B^{\mu \Delta t} \left(e^{(ik\Delta x)} + e^{-(ik\Delta x)}\right) &=1 \\
-	(1 + 2\lambda)B^{\mu \Delta t} - 2\lambda B^{\mu \Delta t} \cos(k\Delta x)&=1 \\
-	B^{\mu \Delta t} \left(1 + 2\lambda - 2\lambda\cos(k\Delta x)\right) &=1 \\
-	B^{\mu \Delta t} \left(1 + 2\lambda[1 - \cos(k\Delta x)]\right) &=1 \\
-	B^{\mu \Delta t} \left(1 + 4\lambda\sin^2\left(\frac{k\Delta x}{2}\right)\right)&=1 \\
-	B^{\mu \Delta t} = \frac{1}{\left(1 + 4\lambda\sin^2\left(\frac{k\Delta x}{2}\right)\right)} \tag{12.7} \label{eq:12.7}
+	\mspace{-25mu} (1 + 2\lambda)B^{\mu \Delta t} - \lambda B^{\mu \Delta t} \left(e^{ik\Delta x} + e^{-ik\Delta x}\right) &=1 \\
+	\mspace{-25mu} (1 + 2\lambda)B^{\mu \Delta t} - 2\lambda B^{\mu \Delta t} \cos(k\Delta x)&=1 \\
+	\mspace{-25mu} B^{\mu \Delta t} \left(1 + 2\lambda - 2\lambda\cos(k\Delta x)\right) &=1 \\
+	\mspace{-25mu} B^{\mu \Delta t} \left(1 + 2\lambda[1 - \cos(k\Delta x)]\right) &=1 \\
+	\mspace{-25mu} B^{\mu \Delta t} \left(1 + 4\lambda\sin^2\left(\frac{k\Delta x}{2}\right)\right)&=1 \\
+	\mspace{-25mu} B^{\mu \Delta t} = \frac{1}{\left(1 + 4\lambda\sin^2\left(\frac{k\Delta x}{2}\right)\right)} \tag{12.7} \label{eq:12.7}
 \end{align*}
 
 Amplification factor
@@ -1576,23 +1576,23 @@ Amplification factor
 
 \subsection{CTCS Scheme / Richardson Scheme}
 \begin{align*}
-	\frac{T_{m,n+1} - T_{m,n-1}}{2\cdot\Delta t} &= k\left[\frac{T_{m+1,n} - 2\cdot T_{m,n} + T_{m-1,n}}{(\Delta x)^2}\right] \tag{12.9} \label{eq:ctcs}
+	\mspace{-25mu} \frac{T_{m,n+1} - T_{m,n-1}}{2\cdot\Delta t} &= k\left[\frac{T_{m+1,n} - 2\cdot T_{m,n} + T_{m-1,n}}{(\Delta x)^2}\right] \tag{12.9} \label{eq:ctcs}
 \end{align*}
 
 Let $\lambda = 2\cdot k\Delta t/(\Delta x)^2$
 \begin{align*}
-	T_{m,n+1} &= T_{m,n-1} + \lambda(T_{m+1,n} - 2\cdot T_{m,n} + T_{m-1,n}) \tag{12.10} \label{12.10}
+	\mspace{-25mu} T_{m,n+1} &= T_{m,n-1} + \lambda(T_{m+1,n} - 2\cdot T_{m,n} + T_{m-1,n}) \tag{12.10} \label{12.10}
 \end{align*}
 
 For stability;
 \begin{align*}
-	\epsilon_{m,n+1} &= \epsilon_{m,n-1} + \lambda(\epsilon_{m+1,n}-2\cdot\epsilon_{m,n} + \epsilon_{m-1,n}) \tag{12.11} \label{eq:12.11} \\
-	\epsilon_{m,n} &= B^{\mu n\Delta t}\exp(ikm\Delta x) \tag{12.12} \label{eq:12.12}
+	\mspace{-25mu} \epsilon_{m,n+1} &= \epsilon_{m,n-1} + \lambda(\epsilon_{m+1,n}-2\cdot\epsilon_{m,n} + \epsilon_{m-1,n}) \tag{12.11} \label{eq:12.11} \\
+	\mspace{-25mu} \epsilon_{m,n} &= B^{\mu n\Delta t}\exp(ikm\Delta x) \tag{12.12} \label{eq:12.12}
 \end{align*}
 
 \begin{align*}
-	\epsilon_{m,n} &= B^{\mu n\Delta t}e^{(ikm\Delta x)} \\
-		       &= B^{\mu (n-1)\Delta t}e^{(ikm\Delta x)} \\ &+ \lambda B^{\mu n \Delta t}\left[e^{ik\Delta x} - e^{-ik\Delta x}\right]e^{ikm\Delta x}
+	\mspace{-25mu} \epsilon_{m,n} &= B^{\mu n\Delta t}e^{(ikm\Delta x)} \\
+	\mspace{-25mu} 	       &= B^{\mu (n-1)\Delta t}e^{(ikm\Delta x)} & \\ &\quad + \lambda B^{\mu n \Delta t}\left[e^{ik\Delta x} - e^{-ik\Delta x}\right]e^{ikm\Delta x}
 \end{align*}
 
 Divide throughout by $B^{\mu(n-1)\Delta t} e^{ikm\Delta x}$
@@ -1624,21 +1624,29 @@ Amplification factor
 \end{align*}
 
 Let $\lambda = \tilde{k}\Delta t/2(\Delta x)^2$
+
+Averaging between time \( n \) and \( n + 1 \) and substituting in \myeqref{eq:13.2}
 \begin{align*}
 	(1 + &2\lambda)T_{m,n+1} - \lambda T_{m,n-1} - \lambda T_{m+1,n+1} = \\ &(1 - 2\lambda)T_{m,n} - \lambda T_{m,n} \tag{13.3} \label{eq:13.3}
 \end{align*}
 
+\yellownote{Fix this later}
+
 For stability;
 \begin{align*}
-	(1 + &2\lambda)\epsilon_{m,n+1} - \lambda \epsilon_{m+1,n+1} - \lambda \epsilon_{m-1,n+1} = \\ &(1 - 2\lambda)\epsilon_{m,n} - \lambda \epsilon_{m+1,n} + \lambda \epsilon_{m-1,n} \tag{13.4} \label{eq:13.4} \\
-	\epsilon_{m,n} &= B^{\mu n\Delta t}\exp(ikm\Delta x) \tag{13.5} \label{eq:13.5}
+	\begin{rcases}
+		\mspace{-25mu} (1 + &2\lambda)\epsilon_{m,n+1} - \lambda \epsilon_{m+1,n+1} - \lambda \epsilon_{m-1,n+1} = \\ &(1 - 2\lambda)\epsilon_{m,n} - \lambda \epsilon_{m+1,n} + \lambda \epsilon_{m-1,n} \tag{13.4} \label{eq:13.4}
+	\end{rcases}
+\end{align*}
+\begin{align*}
+	\mspace{-25mu} \epsilon_{m,n} &= B^{\mu n\Delta t}e^{ikm\Delta x} \tag{13.5} \label{eq:13.5}
 \end{align*}
 
-Substituting \myeqref{eq:13.4} in \myeqref{eq:13.3}, we obtain;
+Substituting \myeqref{eq:13.5} in \myeqref{eq:13.4}, we obtain;
 
 \begin{align*}
 	\begin{rcases}
-	&(1 + 2\lambda)B^{\mu (n+1)\Delta t}e^{(ikm\Delta x)} \\ &- \lambda B^{\mu (n+1) \Delta t}\left[e^{ik (m+1) \Delta x} + e^{-ik (m-1) \Delta x}\right] \\ &= (1 - 2\lambda)B^{\mu n\Delta t}e^{ikm\Delta x} \\ &+ \lambda B^{\mu n\Delta t}\left[e^{ik (m+1) \Delta x} + e^{ik (m-1) \Delta x}\right]
+	&\mspace{-25mu} (1 + 2\lambda)B^{\mu (n+1)\Delta t}e^{(ikm\Delta x)} \\ & \quad - \lambda B^{\mu (n+1) \Delta t}\left[e^{ik (m+1) \Delta x} + e^{-ik (m-1) \Delta x}\right] \\ &= (1 - 2\lambda)B^{\mu n\Delta t}e^{ikm\Delta x} \\ & \quad + \lambda B^{\mu n\Delta t}\left[e^{ik (m+1) \Delta x} + e^{ik (m-1) \Delta x}\right]
 	\end{rcases} & \tag{13.6} \label{eq:13.6}
 \end{align*}
 
@@ -1747,7 +1755,7 @@ Applying FTCS:
 
 For stability;
 \begin{align*}
-	\epsilon_{m,n,p} &= B^{\mu p\Delta t}\exp(ikm\Delta x)\exp(ikn\Delta y) \tag{14.3} \label{eq:14.3} 
+	\epsilon_{m,n,p} &= B^{\mu p\Delta t}e^{ikm\Delta x}e^{ikn\Delta y} \tag{14.3} \label{eq:14.3} 
 \end{align*}
 
 Amplification factor:
@@ -1786,15 +1794,17 @@ Assuming average:
 
 Substituting \myeqref{eq:14.8} in \myeqref{eq:14.6}
 
-ADI method $\rightarrow$ Alternate Directional Implicit method
+\subsection{ADI Method}
+Alternate Directional Implicit method (ADE) take one direction as implicit (Unknown time) and another explicit (Known time)
 
-% \begin{align*}
-% \mspace{-49mu}
-% 	\begin{rcases}
-% 		\frac{T_{m,n,p+1} - T_{m,n,p}}{\Delta t/2} \mspace{-17mu} &= \tilde{k}\left[\frac{T_{m+1,n,p+1/2} - 2T_{m,n,p+1/2} + T_{m-1,n,p+1/2}}{(\Delta x)^2}\right] \\ & + \tilde{k}\left[\frac{T_{m,n+1,p+1/2} - 2T_{m,n,p+1/2} + T_{m,n-1,p+1/2}}{(\Delta y)^2}\right]
-% 	\end{rcases} & \tag{14.9} \label{eq:14.9}
-% \end{align*}
-\yellownote{To completed later}
+\begin{align*}
+	\begin{rcases}
+		\mspace{-45mu} \frac{T_{\smash{m,n,p+1/2}} - T_{m,n,p}}{\Delta t/2} \mspace{-16mu} &= \!\! \tilde{k}\left[\frac{T_{m+1,n,p+1/2} - 2T_{m,n,p+1/2} + T_{m-1,n,p+1/2}}{(\Delta x)^2}\right] \\ &\quad + \tilde{k}\left[\frac{T_{m,n+1,p} - 2T_{m,n,p} + T_{m,n-1,p}}{(\Delta y)^2}\right]
+	\end{rcases} & \tag{14.9} \label{eq:14.9} \\
+	\begin{rcases}
+		\mspace{-45mu} \frac{T_{\smash{m,n,p+1}} - T_{m,n,p+1/2}}{\Delta t/2} \mspace{-16mu} &= \!\! \tilde{k}\left[\frac{T_{m+1,n,p+1/2} - 2T_{m,n,p+1/2} + T_{m-1,n,p+1/2}}{(\Delta x)^2}\right] \\ &\quad + \tilde{k}\left[\frac{T_{m,n+1,p+1} - 2T_{m,n,p+1} + T_{m,n-1,p+1}}{(\Delta y)^2}\right]
+	\end{rcases} & \tag{14.10} \label{eq:14.10}
+\end{align*}
 
 \clearpage
 
@@ -1812,7 +1822,7 @@ Solution of \myeqref{eq:1dadvectioneq} is wave equation, for \( c>0 \) wave prop
 	\frac{\partial f}{\partial t}\Big|_{x} + c\frac{\partial f}{\partial x}\Big|_{t} &= 0
 \end{align*}
 
-Speed of propagation depends on wavelength of wave which means each wave in wave packet will vary with time called \textbf{dispersive wave} and which doesn't change with time is called \textbf{non-dispersive wave}
+Speed of propagation depends on wavelength of wave which means each wave in wave packet will vary with time called \textbf{dispersive wave} and which doesn't change with time is called \textbf{non-dispersive wave}.
 
 \yellownote{Add figure}
 
@@ -1865,7 +1875,7 @@ For stability analysis;
 	\epsilon_{m,n+1} &= \epsilon_{m,n-1} - \lambda\left(\epsilon_{m+1,n} - \epsilon_{m-1,n}\right) \tag{15.5} \label{eq:15.5} 
 \end{align*}
 
-Let \( \epsilon_{m,n} = B^{pn\Delta t} \exp\left[ikm\Delta x\right] \) and Substitute in \myeqref{eq:15.4}
+Let \( \epsilon_{m,n} = B^{pn\Delta t} e^{ikm\Delta x} \) and Substitute in \myeqref{eq:15.4}
 \begin{align*}
 	\begin{rcases}
 		B^{p(n+1)\Delta t} e^{ikm\Delta x} &= B^{p(n-1)\Delta t} e^{ikm\Delta x} \\ &\quad - \lambda \Big[B^{p(n+1)\Delta t} e^{ik(m+1)\Delta x} \\ &\quad - B^{p(n+1)\Delta t} e^{ik(m-1)\Delta x}\Big]
@@ -1884,7 +1894,7 @@ Amplification factor:
 	G = \left|\frac{\epsilon_{m,n+1}}{\epsilon_{m,n}}\right| = \left|B^{p\Delta t}\right| \leq 1 \tag{15.8} \label{eq:15.8}
 \end{align*}
 
-Substituting \myeqref{eq:15.7} in \myeqref{eq:15.6}, we get,
+Substituting \myeqref{eq:15.8} in \myeqref{eq:15.7}, we get,
 \begin{align*}
 	G^2 &+ 2i\lambda \sin(k\Delta x)G -1 = 0 \\
 	G_{1,2} & = \frac{-2i\lambda \sin(k\Delta x) \pm \sqrt{-4\lambda^2 \sin^2(k\Delta x) + 4}}{2} \\
@@ -1912,7 +1922,6 @@ Let $\alpha = \sin^{-1}\left(\lambda \sin(k\Delta x)\right)$ and substituting in
 	G_{1,2} & = -i\sin(\alpha) \pm \sqrt{1 - \sin^2(\alpha)} \\
 	G_{1,2} & = \pm \cos(\alpha)- i\sin(\alpha) \tag{16.1} \label{eq:16.1}
 \end{align*}
-
 \begin{align*}
 	G_1 &= \cos(\alpha)- i\sin(\alpha) = e^{i\alpha} \tag{16.2} \label{eq:16.2} \\
 	G_2 &= -\cos(\alpha)- i\sin(\alpha) = -e^{i\alpha} = e^{i(\pi + \alpha)} \tag{16.3} \label{eq:16.3}
@@ -1939,7 +1948,7 @@ Substituting \( M \) in \myeqref{eq:solutionof2dadvectionheateq}
 \begin{align*}
 	\mspace{-24mu} f_{m,n} = &\underbrace{(A-E) e^{-i\alpha n} e^{ikm\Delta x}}_{\text{Physical Mode}} + \underbrace{(-1)^n E e^{i(\pi + \alpha)n} e^{ikm\Delta x}}_{\text{Computational Mode}} \tag{16.6} \label{eq:16.6} \\
 	\mspace{-24mu} f_{m,n} = &(A-E) e^{-i\alpha n + ikm\Delta x} + (-1)^n E e^{i\alpha n + ikm\Delta x} \\
-	\mspace{-24mu} f_{m,n} = &(A-E) e^{ik(-\frac{\alpha n}{k} + m\Delta x)} + (-1)^n E e^{ik(\frac{\alpha n}{k} + m\Delta x)} \tag{16.7} \label{eq:16.7}
+	\mspace{-24mu} f_{m,n} = &(A-E) e^{ik\left(-\frac{\alpha n}{k} + m\Delta x\right)} + (-1)^n E e^{ik\left(\frac{\alpha n}{k} + m\Delta x\right)} \tag{16.7} \label{eq:16.7}
 \end{align*}
 
 \(c = \alpha/(k\Delta t)\) is speed of a numerical wave.
@@ -2005,9 +2014,9 @@ Therefore the value under square root in \myeqref{eq:15.8} is greater than 0, he
 
 \textbf{Case 3:} For \( \lambda > 1 \)
 
-The quantity under square root in \myeqref{eq:15.8} becomes negative, i.e., \( 1- \lambda^2 \sin^2(k\Delta x) < 0 \), hence Scheme is \textbf{\textit{unstable}}.
+The quantity under square root in \myeqref{eq:15.8} becomes negative, i.e., \( 1- \lambda^2 \sin^2(k\Delta x) < 0 \), hence Scheme is \textbf{\textit{unstable}}. \\
 
-This scheme was proposed by 3 mathematicians, namely, Courant, Fridriks annd Lenry in 1940. This scheme for \(\lambda \leq 1\) is also called \textbf{\textit{CFL condition}}. \\
+This scheme was proposed by 3 mathematicians, namely, Courant, Fridriks annd Lenry in 1940. This scheme for \(\lambda \leq 1\) is also called \textbf{\textit{CFL condition}}.
 
 \begin{align*}
 	\frac{f_{m,1} - f_{m,0}}{\Delta t} &= -c\left[\frac{f_{m+1,0} - f_{m-1,0}}{2 \cdot \Delta x}\right] \tag{17.1} \label{eq:17.1} \\
@@ -2028,13 +2037,13 @@ Let \( \alpha = \sin^{-1}(\lambda \sin(k\Delta x)) \) and substitute in \myeqref
 
 Also, we know that from \myeqref{eq:16.7}
 \begin{align*}
-	\mspace{-25mu} f_{m,n} = &(A-E) e^{ik(-\frac{\alpha n}{k} + m\Delta x)} + (-1)^n E e^{ik(\frac{\alpha n}{k} + m\Delta x)} \tag{17.6} \label{eq:17.6}
+	\mspace{-25mu} f_{m,n} = &(A-E) e^{ik\left(-\frac{\alpha n}{k} + m\Delta x\right)} + (-1)^n E e^{ik\left(\frac{\alpha n}{k} + m\Delta x\right)} \tag{17.6} \label{eq:17.6}
 \end{align*}
 
 Equating RHS of \myeqref{eq:17.5} and \myeqref{eq:17.6};
 \begin{align*}
 	\begin{rcases}
-		\mspace{-20mu} Ae^{ikm\Delta x}\left(1- i\sin(\alpha)\right) &= (A-E) e^{ik(-\frac{\alpha n}{k} + m\Delta x)} \\ &\quad + (-1)^n E e^{ik(\frac{\alpha n}{k} + m\Delta x)} \tag{17.7} \label{eq:17.7}
+		\mspace{-25mu} Ae^{ikm\Delta x}\left(1- i\sin(\alpha)\right) \!\!\!\!\! &= (A-E) e^{ik\left(-\frac{\alpha n}{k} + m\Delta x\right)} \\ &\quad + (-1)^n E e^{ik\left(\frac{\alpha n}{k} + m\Delta x\right)} \tag{17.7} \label{eq:17.7}
 	\end{rcases}
 \end{align*}
 
@@ -2303,6 +2312,10 @@ Let \( \lambda = c\Delta t/\Delta x \)
 
 \begin{align*}
 	f_{m,n+1} = f_{m,n} -\frac{\lambda}{2}\left(f_{m+1,n} - f_{m-1,n}\right) \\
+\end{align*}
+
+For stability;
+\begin{align*}
 	\epsilon_{m,n+1} = \epsilon_{m,n} -\frac{\lambda}{2}\left(\epsilon_{m+1,n} - \epsilon_{m-1,n}\right)
 \end{align*}
 
