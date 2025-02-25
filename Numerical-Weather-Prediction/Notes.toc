@@ -44,12 +44,12 @@
 \contentsline {subsection}{\numberline {16.1}1-D Advection Equation}{24}{subsection.16.1}%
 \contentsline {section}{\numberline {17}Lecture 17 17/02/2025}{25}{section.17}%
 \contentsline {subsection}{\numberline {17.1}1-D Advection Equation}{25}{subsection.17.1}%
-\contentsline {section}{\numberline {18}Lecture 17 17/02/2025}{26}{section.18}%
+\contentsline {section}{\numberline {18}Lecture 18 17/02/2025}{26}{section.18}%
 \contentsline {subsection}{\numberline {18.1}1-D Advection Equation}{26}{subsection.18.1}%
 \contentsline {subsection}{\numberline {18.2}Upwind/Upstream Scheme}{26}{subsection.18.2}%
 \contentsline {section}{\numberline {19}Lecture 19 17/02/2025}{27}{section.19}%
 \contentsline {subsection}{\numberline {19.1}1-D Advection Equation}{27}{subsection.19.1}%
 \contentsline {subsection}{\numberline {19.2}Transportative Properties}{27}{subsection.19.2}%
 \contentsline {section}{\numberline {20}Lecture 20 24/02/2025}{29}{section.20}%
-\contentsline {subsection}{\numberline {20.1}1-D Advection Equation}{29}{subsection.20.1}%
+\contentsline {subsection}{\numberline {20.1}Lax Wandroff Scheme}{29}{subsection.20.1}%
 \contentsfinish 

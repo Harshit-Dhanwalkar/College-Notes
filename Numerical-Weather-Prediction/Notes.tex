@@ -2074,7 +2074,7 @@ Substituting \myeqref{eq:17.8} in \myeqref{eq:17.6}
 
 \clearpage
 
-\section{Lecture 17 17/02/2025}
+\section{Lecture 18 17/02/2025}
 \subsection{1-D Advection Equation}
 \begin{align*}
 	\frac{\partial f}{\partial t} + c\frac{\partial f}{\partial x} = 0 \tag{18.1} \label{eq:1dadvectioneq-3}
@@ -2083,7 +2083,7 @@ Substituting \myeqref{eq:17.8} in \myeqref{eq:17.6}
 For applying BTCS scheme,
 
 \(x \rightarrow m, \; t \rightarrow n , \quad \) \\
-Solve \myeqref{eq:1dadvectioneq-1} using BTCS scheme;
+Solve \myeqref{eq:1dadvectioneq-3} using BTCS scheme;
 \begin{align*}
 	\frac{f_{m,n} - f_{m,n-1}}{\Delta t} &= -c\left[\frac{f_{m+1,n} - f_{m-1,n}}{2 \cdot \Delta x}\right] \tag{18.2} \label{eq:18.2}
 \end{align*}
@@ -2104,7 +2104,7 @@ Amplification factor:
 	G = \left|\frac{\epsilon_{m,n}}{\epsilon_{m,n-1}}\right| = \left|B^{\mu\Delta t}\right| \leq 1 \tag{18.4} \label{eq:18.4}
 \end{align*}
 
-Let \( \epsilon_{m,n} = B^{\mu \Delta t} \exp(ikm\Delta t) \)  
+Let \( \epsilon_{m,n} = B^{\mu \Delta t} e^{ikm\Delta x} \)  
 \begin{align*}
 	\begin{rcases}
 		&\mspace{-25mu} B^{\mu n \Delta t} \left[-\frac{\lambda}{2}e^{ik(m-1)\Delta x} + e^{ikm\Delta x} + \frac{\lambda}{2}e^{ik(m+1)\Delta x}\right] \\ &\quad \quad= B^{\mu n \Delta t} e^{ikm\Delta x}
@@ -2131,7 +2131,7 @@ Therefore this scheme is \textbf{Stable}.
 \end{align*}
 
 Let \( c > 0 \), \(x \rightarrow m, \; t \rightarrow n , \quad \) \\
-Solve \myeqref{eq:1dadvectioneq-2} using FTBS(Forward in Time, Backward in Space) scheme;
+Solve \myeqref{eq:1dadvectioneq-4} using FTBS (Forward in Time, Backward in Space) scheme;
 \begin{align*}
 	\frac{f_{m,n+1} - f_{m,n}}{\Delta t} &= -c\left[\frac{f_{m,n} - f_{m-1,n}}{\Delta x}\right] \tag{18.7} \label{eq:18.7}
 \end{align*}
@@ -2146,9 +2146,11 @@ For stability analysis;
 \begin{align*}
 	\epsilon_{m,n+1} &= (1-\lambda)\epsilon_{m,n} + \lambda \epsilon_{m-1,n} \tag{18.9} \label{eq:18.9}
 \end{align*}
+
+Let \( \epsilon_{m,n} = B^{\mu \Delta t} e^{ikm\Delta x} \)  
 \begin{align*}
 	\begin{rcases}
-		B^{\mu(n+1)\Delta t} e^{ikm\Delta x} \!\!\!\! &= (1-\lambda) B^{\mu n\Delta t} e^{ikm\Delta x} \\ &\quad + \lambda B^{\mu(n+1)\Delta t} e^{ik(m-1)\Delta x}
+		B^{\mu(n+1)\Delta t} e^{ikm\Delta x} \!\!\!\!\!\! &= (1-\lambda) B^{\mu n\Delta t} e^{ikm\Delta x} \\ &\quad + \lambda B^{\mu(n+1)\Delta t} e^{ik(m-1)\Delta x}
 	\end{rcases} \tag{18.10} \label{eq:18.10}
 \end{align*}
 
@@ -2179,6 +2181,8 @@ For \( \cos(k\Delta x) = -1 \)
 	\end{cases}
 \end{align*}
 
+Therefore this scheme is \textbf{Stable} only for \( \lambda \) from 0 to 1.
+
 \clearpage
 
 \section{Lecture 19 17/02/2025}
@@ -2192,10 +2196,10 @@ Finite difference method for the first derivation using central differencing sch
 \begin{align*}
 	\frac{df}{dx} &=\frac{f(x + \Delta x) - f(x - \Delta x)}{2\Delta x} \\
 	\frac{df}{dx} &=\frac{A}{2\Delta x}\left[\sin\left(\frac{2\pi(x + \Delta x)}{L}\right) - \sin\left(\frac{2\pi(x - \Delta x)}{L}\right)\right] \\
-	\frac{df}{dx} &=\frac{A}{\cancel{2}\Delta x}\left[\cancel{2}\cos\left(\frac{2\pi(x)}{L}\right)\sin\left(\frac{2\pi(x - \Delta x)}{L}\right)\right] \\
+	\frac{df}{dx} &=\frac{A}{\cancel{2}\Delta x}\left[\cancel{2}\cos\left(\frac{2\pi x}{L}\right)\sin\left(\frac{2\pi\Delta x}{L}\right)\right] \\
 	\frac{df}{dx} &=\frac{A}{\Delta x}\cos\left(\frac{2\pi x}{L}\right)\sin\left(\frac{2\pi \Delta x}{L}\right) \\
 	\frac{df}{dx} &=A\cos\left(\frac{2\pi x}{L}\right)\frac{\sin\left(\frac{2\pi\Delta x}{L}\right)}{\Delta x} \\
-	\frac{df}{dx} &=\underbrace{A\cos\left(\frac{2\pi x}{L}\right)}_{\text{constant}} \frac{\sin\left(\frac{2\pi\Delta x}{L}\right)}{\left(\frac{2\pi\Delta x}{L}\right)} \\
+	\frac{df}{dx} &=\underbrace{\frac{2\pi A}{L}\cos\left(\frac{2\pi x}{L}\right)}_{\text{constant (say A')}} \frac{\sin\left(\frac{2\pi\Delta x}{L}\right)}{\left(\frac{2\pi\Delta x}{L}\right)} \\
 	\frac{df}{dx} &=A'\frac{\sin\left(\frac{2\pi\Delta x}{L}\right)}{\left(\frac{2\pi\Delta x}{L}\right)}
 \end{align*}
 
@@ -2248,7 +2252,7 @@ Consider Advection equation:
 		\begin{align*}
 			\frac{f_{m,n+1} - f_{m,n}}{\Delta t} &= -c\left[\frac{f_{m+1,n} - f_{m-1,n}}{2\Delta x}\right]
 		\end{align*}
-		Let us distrubance (\( \delta \)) at x point corresponding to \( m \) index at time index \( n \). \\
+		Let us introduce distrubance (\( \delta \)) at point x corresponding to index \( m \) at time index \( n \). \\
 		\begin{itemize}
 			\item changing \( m \rightarrow m+1 \)
 			\begin{align*}
@@ -2265,7 +2269,7 @@ Consider Advection equation:
 				\frac{f_{m-1,n+1}}{\Delta t} &= -\lambda\delta \tag{19.5} \label{eq:19.5}
 			\end{align*}
 			Distrubance propagated from \( m \) to \( m-1 \) with time from \( n \) to \( n +1 \). \\
-			Which is wrong. Therefore Scheme is \textbf{Unstable}.
+			Which is wrong. Since it is FTCS, disturbuance should propagate only in forward direction. Therefore Scheme is \textbf{Unstable}.
 		\end{itemize}
 	\item Upwind scheme/ Upstream scheme, for \( c > 0 \)
 		\begin{align*}
@@ -2295,50 +2299,62 @@ Consider Advection equation:
 \clearpage
 
 \section{Lecture 20 24/02/2025}
-\subsection{1-D Advection Equation}
+\subsection{Lax Wandroff Scheme}
+Consider 1-D Advection equation,
 \begin{align*}
 	\frac{\partial f}{\partial t} + c\frac{\partial f}{\partial x} = 0 \tag{20.1} \label{eq:1dadvectioneq-6}
 \end{align*}
 
+Differentiating \myeqref{eq:1dadvectioneq-6} w.r.t time t,
 \begin{align*}
-	\frac{f_{m,n+1} - f_{m,n}}{\Delta t} &= -c\left[\frac{f_{m+1,n} - f_{m-1,n}}{2\Delta x}\right] \tag{20.2} \label{eq:20.2}
+	\frac{\partial^2 f}{\partial t^2} + c\frac{\partial^2 f}{\partial x \partial t} = 0 \tag{20.2} \label{eq:20.2}
 \end{align*}
 
-Let \( \lambda = c\Delta t/\Delta x \)
-
+Substituting for \( \frac{\partial f}{\partial t} \) from \myeqref{eq:1dadvectioneq-6} in \myeqref{eq:20.2}, we obtain;
 \begin{align*}
-    G &= \left| \frac{\epsilon_{m+1,n}}{\epsilon_{m,n}} \right| \leq 1
+	\frac{\partial^2 f}{\partial t^2} - c^2\frac{\partial^2 f}{\partial x^2} = 0 \tag{20.3} \label{eq:20.3}
 \end{align*}
 
-\begin{align*}
-	f_{m,n+1} = f_{m,n} -\frac{\lambda}{2}\left(f_{m+1,n} - f_{m-1,n}\right) \\
-\end{align*}
+On RHS replace time derivative with space derivative and apply CTCS scheme;
 
-For stability;
-\begin{align*}
-	\epsilon_{m,n+1} = \epsilon_{m,n} -\frac{\lambda}{2}\left(\epsilon_{m+1,n} - \epsilon_{m-1,n}\right)
-\end{align*}
+% \begin{align*}
+% 	\frac{f_{m,n+1} - f_{m,n}}{\Delta t} &= -c\left[\frac{f_{m+1,n} - f_{m-1,n}}{2\Delta x}\right] \tag{20.2} \label{eq:20.2}
+% \end{align*}
+%
+% Let \( \lambda = c\Delta t/\Delta x \)
+%
+% \begin{align*}
+%     G &= \left| \frac{\epsilon_{m+1,n}}{\epsilon_{m,n}} \right| \leq 1
+% \end{align*}
+%
+% \begin{align*}
+% 	f_{m,n+1} = f_{m,n} -\frac{\lambda}{2}\left(f_{m+1,n} - f_{m-1,n}\right) \\
+% \end{align*}
+%
+% For stability;
+% \begin{align*}
+% 	\epsilon_{m,n+1} = \epsilon_{m,n} -\frac{\lambda}{2}\left(\epsilon_{m+1,n} - \epsilon_{m-1,n}\right)
+% \end{align*}
+%
+% Let \( \epsilon_{m,n} = B^{\mu \Delta t} e^{ikm\Delta x}\)
+% \begin{align*}
+% 	B^{\mu (n+1) \Delta t} e^{ikm\Delta x} &= B^{\mu n \Delta t} e^{ikm\Delta x} \\ &\quad -\frac{\lambda}{2} B^{\mu (n+1) \Delta t}\big[e^{ik(m+1)\Delta x} \\ &\quad -e^{ik(m-1)\Delta x} \big]
+% \end{align*}
+%
+% Divide throughout by \( B^{\mu n \Delta t} e^{ikm\Delta x} \) 
+% \begin{align*}
+% 	B^{\mu \Delta t} &= 1 -\frac{\lambda}{2} \big[e^{ik\Delta x} - e^{-ik\Delta x} \big] \\
+% 	B^{\mu \Delta t} &= 1 -\lambda \cdot [i\sin(k\Delta x)] \\
+% 	B^{\mu \Delta t} &= 1 -i\lambda \sin(k\Delta x)
+% \end{align*}
+%
+% \begin{align*}
+% 	G = \left| \frac{\epsilon_{m+1,n}}{\epsilon_{m,n}} \right| &= \left| B^{\mu \Delta t} \right| = \left[1 - i\lambda \sin(k\Delta x) \right] \\
+% 								   | G |^2 &= 1 + \lambda^2 \sin^2(k\Delta x)> 1
+% \end{align*}
+%
+% Therefore, this scheme is \textbf{Unstable}.
 
-Let \( \epsilon_{m,n} = B^{\mu \Delta t} e^{ikm\Delta x}\)
-\begin{align*}
-	B^{\mu (n+1) \Delta t} e^{ikm\Delta x} &= B^{\mu n \Delta t} e^{ikm\Delta x} \\ &\quad -\frac{\lambda}{2} B^{\mu (n+1) \Delta t}\big[e^{ik(m+1)\Delta x} \\ &\quad -e^{ik(m-1)\Delta x} \big]
-\end{align*}
-
-Divide throughout by \( B^{\mu n \Delta t} e^{ikm\Delta x} \) 
-\begin{align*}
-	B^{\mu \Delta t} &= 1 -\frac{\lambda}{2} \big[e^{ik\Delta x} - e^{-ik\Delta x} \big] \\
-	B^{\mu \Delta t} &= 1 -\lambda \cdot [i\sin(k\Delta x)] \\
-	B^{\mu \Delta t} &= 1 -i\lambda \sin(k\Delta x)
-\end{align*}
-
-\begin{align*}
-	G = \left| \frac{\epsilon_{m+1,n}}{\epsilon_{m,n}} \right| &= \left| B^{\mu \Delta t} \right| = \left[1 - i\lambda \sin(k\Delta x) \right] \\
-								   | G |^2 &= 1 + \lambda^2 \sin^2(k\Delta x)> 1
-\end{align*}
-
-Therefore, this scheme is \textbf{Unstable}.
-
-\yellownote{Add equation no.s}
 \yellownote{Incomplete}
 
 
