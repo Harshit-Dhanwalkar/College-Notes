@@ -2104,7 +2104,7 @@ Amplification factor:
 	G = \left|\frac{\epsilon_{m,n}}{\epsilon_{m,n-1}}\right| = \left|B^{\mu\Delta t}\right| \leq 1 \tag{18.4} \label{eq:18.4}
 \end{align*}
 
-Let \( \epsilon_{m,n} = B^{\mu \Delta t} e^{ikm\Delta x} \)  
+Let \( \epsilon_{m,n} = B^{\mu n \Delta t} e^{ikm\Delta x} \)  
 \begin{align*}
 	\begin{rcases}
 		&\mspace{-25mu} B^{\mu n \Delta t} \left[-\frac{\lambda}{2}e^{ik(m-1)\Delta x} + e^{ikm\Delta x} + \frac{\lambda}{2}e^{ik(m+1)\Delta x}\right] \\ &\quad \quad= B^{\mu n \Delta t} e^{ikm\Delta x}
@@ -2136,7 +2136,7 @@ Solve \myeqref{eq:1dadvectioneq-4} using FTBS (Forward in Time, Backward in Spac
 	\frac{f_{m,n+1} - f_{m,n}}{\Delta t} &= -c\left[\frac{f_{m,n} - f_{m-1,n}}{\Delta x}\right] \tag{18.7} \label{eq:18.7}
 \end{align*}
 
-Let \( \lambda = c \frac{\Delta t}{\Delta x} \) \\
+Let \( \lambda = c \frac{\Delta t}{\Delta x} \); \\
 Explicit finite difference scheme
 \begin{align*}
 	f_{m,n+1} &= (1-\lambda)f_{m,n} + \lambda f_{m-1,n} \tag{18.8} \label{eq:18.8}
@@ -2147,7 +2147,7 @@ For stability analysis;
 	\epsilon_{m,n+1} &= (1-\lambda)\epsilon_{m,n} + \lambda \epsilon_{m-1,n} \tag{18.9} \label{eq:18.9}
 \end{align*}
 
-Let \( \epsilon_{m,n} = B^{\mu \Delta t} e^{ikm\Delta x} \)  
+Let \( \epsilon_{m,n} = B^{\mu n \Delta t} e^{ikm\Delta x} \)  
 \begin{align*}
 	\begin{rcases}
 		B^{\mu(n+1)\Delta t} e^{ikm\Delta x} \!\!\!\!\!\! &= (1-\lambda) B^{\mu n\Delta t} e^{ikm\Delta x} \\ &\quad + \lambda B^{\mu(n+1)\Delta t} e^{ik(m-1)\Delta x}
@@ -2310,53 +2310,61 @@ Differentiating \myeqref{eq:1dadvectioneq-6} w.r.t time t,
 	\frac{\partial^2 f}{\partial t^2} + c\frac{\partial^2 f}{\partial x \partial t} = 0 \tag{20.2} \label{eq:20.2}
 \end{align*}
 
-Substituting for \( \frac{\partial f}{\partial t} \) from \myeqref{eq:1dadvectioneq-6} in \myeqref{eq:20.2}, we obtain;
+Substituting for \(\frac{\partial f}{\partial t} \) from \myeqref{eq:1dadvectioneq-6} in \myeqref{eq:20.2}, we obtain;
 \begin{align*}
 	\frac{\partial^2 f}{\partial t^2} - c^2\frac{\partial^2 f}{\partial x^2} = 0 \tag{20.3} \label{eq:20.3}
 \end{align*}
 
 On RHS replace time derivative with space derivative and apply CTCS scheme;
+\begin{align*}
+	\mspace{-25mu} f(x, t + \Delta t) &= f(x,t) + \Delta t \left(-c\frac{\partial f}{\partial x}\right) \\ & \quad + \frac{(\Delta t)^2}{2!}\left(c^2 \frac{\partial^2 f}{\partial x^2}\right) + \cdots \\
+	\mspace{-25mu} f(x, t + \Delta t)_{m,n} &= f(x,t)_{m,n} - c\Delta t \left(\frac{\partial f}{\partial x}\right)_{m,n} \\ &\quad + \frac{c^2 (\Delta t)^2}{2!}\left(\frac{\partial^2 f}{\partial x^2}\right)_{m,n} + \cdots \\
+	\mspace{-25mu} f_{m,n+1} &= f_{m,n} - c\Delta t\left[\frac{f_{m+1,n} - f_{m-1,n}}{2\Delta x}\right] \\ &\quad + \frac{c^2(\Delta t)^2}{2!}\left[\frac{f_{m+1,n} -2 f_{m,n} - f_{m-1,n}}{(\Delta x)^2}\right] \\
+	\mspace{-25mu} f_{m,n+1} &= \left[1 - \frac{c^2(\Delta t)^2}{(\Delta x)^2}\right]f_{m,n} \\ &\quad - \frac{c(\Delta t)^2}{2\Delta x}\left[-1 + \frac{c\Delta t}{\Delta x}\right]f_{m+1,n} \\ &\quad + \frac{c(\Delta t)}{2\Delta x}\left[\frac{c\Delta t}{\Delta x} + 1\right]f_{m-1,n}
+\end{align*}
 
-% \begin{align*}
-% 	\frac{f_{m,n+1} - f_{m,n}}{\Delta t} &= -c\left[\frac{f_{m+1,n} - f_{m-1,n}}{2\Delta x}\right] \tag{20.2} \label{eq:20.2}
-% \end{align*}
-%
-% Let \( \lambda = c\Delta t/\Delta x \)
-%
-% \begin{align*}
-%     G &= \left| \frac{\epsilon_{m+1,n}}{\epsilon_{m,n}} \right| \leq 1
-% \end{align*}
-%
-% \begin{align*}
-% 	f_{m,n+1} = f_{m,n} -\frac{\lambda}{2}\left(f_{m+1,n} - f_{m-1,n}\right) \\
-% \end{align*}
-%
-% For stability;
-% \begin{align*}
-% 	\epsilon_{m,n+1} = \epsilon_{m,n} -\frac{\lambda}{2}\left(\epsilon_{m+1,n} - \epsilon_{m-1,n}\right)
-% \end{align*}
-%
-% Let \( \epsilon_{m,n} = B^{\mu \Delta t} e^{ikm\Delta x}\)
-% \begin{align*}
-% 	B^{\mu (n+1) \Delta t} e^{ikm\Delta x} &= B^{\mu n \Delta t} e^{ikm\Delta x} \\ &\quad -\frac{\lambda}{2} B^{\mu (n+1) \Delta t}\big[e^{ik(m+1)\Delta x} \\ &\quad -e^{ik(m-1)\Delta x} \big]
-% \end{align*}
-%
-% Divide throughout by \( B^{\mu n \Delta t} e^{ikm\Delta x} \) 
-% \begin{align*}
-% 	B^{\mu \Delta t} &= 1 -\frac{\lambda}{2} \big[e^{ik\Delta x} - e^{-ik\Delta x} \big] \\
-% 	B^{\mu \Delta t} &= 1 -\lambda \cdot [i\sin(k\Delta x)] \\
-% 	B^{\mu \Delta t} &= 1 -i\lambda \sin(k\Delta x)
-% \end{align*}
-%
-% \begin{align*}
-% 	G = \left| \frac{\epsilon_{m+1,n}}{\epsilon_{m,n}} \right| &= \left| B^{\mu \Delta t} \right| = \left[1 - i\lambda \sin(k\Delta x) \right] \\
-% 								   | G |^2 &= 1 + \lambda^2 \sin^2(k\Delta x)> 1
-% \end{align*}
-%
-% Therefore, this scheme is \textbf{Unstable}.
+Let \( \lambda = c \frac{\Delta t}{\Delta x} \);
+\begin{align*}
+	\mspace{-25mu} f_{m,n+1} &= \left[1 - \lambda^2\right]f_{m,n} - \frac{\lambda}{2}\left[-1 + \lambda\right]f_{m+1,n} \\ &\quad + \frac{\lambda}{2}\left[\lambda + 1\right]f_{m-1,n} \\
+	\mspace{-25mu} f_{m,n+1} &= (1 - \lambda^2)f_{m,n} - \frac{(\lambda^2- \lambda)}{2}f_{m+1,n} \\ &\quad + \frac{(\lambda^2 + \lambda)}{2}f_{m-1,n}
+\end{align*}
 
-\yellownote{Incomplete}
+For stability analysis;
+\begin{align*}
+	\mspace{-25mu} \epsilon_{m,n+1} &= (1 - \lambda^2)\epsilon_{m,n} - \frac{(\lambda^2- \lambda)}{2}\epsilon_{m+1,n} \\ &\quad + \frac{(\lambda^2 + \lambda)}{2}\epsilon_{m-1,n}
+\end{align*}
 
+Let \( \epsilon_{m,n} = B^{\mu n \Delta t} e^{ikm\Delta x} \)
+\begin{align*}
+	\mspace{-25mu} B^{\mu (n+1) \Delta t} e^{ikm\Delta x} &= (1 - \lambda^2)B^{\mu n \Delta t} e^{ikm\Delta x} \\ &\quad - \frac{(\lambda^2- \lambda)}{2}B^{\mu n \Delta t} e^{ik (m+1) \Delta x} \\ &\quad + \frac{(\lambda^2 + \lambda)}{2}B^{\mu n \Delta t} e^{ik (m-1) \Delta x}
+\end{align*}
+
+Dividing throughout \myeqref{eq:20.5} with \( B^{\mu n \Delta t} e^{ikm\Delta x} \)
+\begin{align*}
+	\mspace{-25mu} B^{\mu \Delta t} &= (1 - \lambda^2) - \frac{(\lambda^2- \lambda)}{2} e^{ik \Delta x} \\ &\quad + \frac{(\lambda^2 + \lambda)}{2}e^{-ik \Delta x} \\
+	\mspace{-25mu} B^{\mu \Delta t} &= (1 - \lambda^2) - \frac{\lambda^2}{2} (2\cos(k\Delta x)) \\ &\quad + \frac{\lambda}{2} (2i\sin(k\Delta x)) \\
+	\mspace{-25mu} B^{\mu \Delta t} &= (1 - \lambda^2) - \lambda^2\cos(k\Delta x) + i\lambda\sin(k\Delta x) \\
+	\mspace{-25mu} |B^{\mu \Delta t}|^2 &= \left((1 - \lambda^2) - \lambda^2\cos(k\Delta x)\right)^2 + \left(\lambda\sin(k\Delta x)\right)^2 \\
+	\mspace{-25mu} |B^{\mu \Delta t}|^2 &= (1 - \lambda^2)^2 - \lambda^4\cos^2(k\Delta x) + \lambda^2\sin^2(k\Delta x) \\ &\quad + 2\lambda^2(1 - \lambda^2)\cos(k\Delta x) \\
+\end{align*}
+
+Amplification factor:
+\begin{align*}
+	G = \left|\frac{\epsilon_{m,n}}{\epsilon_{m,n-1}}\right| = \left|B^{\mu\Delta t}\right|
+	\begin{cases}
+		>1 \quad \text{for } \lambda > 0 \\
+		=1 \quad \text{for } \lambda = 0 \\
+		<1 \quad \text{for } \lambda < 0
+	\end{cases}
+\end{align*}
+
+This scheme provide 2$^{nd}$ order accuracy in time and as well as in space, i.e. from \( \frac{\partial^2 f}{\partial x^2} \) term. \\
+
+Limitations of Lax Wandroff scheme:
+\begin{itemize}[noitemsep]
+	\item This scheme is applicable only to \textbf{Linear PDE}.
+	\item This scheme didn't account for \textbf{Boundary condiations}.
+\end{itemize}
 
 \clearpage
 
