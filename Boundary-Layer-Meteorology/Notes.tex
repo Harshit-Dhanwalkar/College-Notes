@@ -1566,11 +1566,28 @@ Total Kinetic Energy = \( \frac{1}{2}\left(\overline{u'^2} + \overline{v'^2} + \
 \end{align*}
 
 In general, turbulent act only in vertical direction, i.e. \[u_j = w, \quad x_j = z \]
-\begin{align*}
-	\mspace{-35mu} \overline{\frac{\partial e}{\partial t}} \! + \overline{u_i'w'}\frac{\partial \overline{u_i}}{\partial z} \! + \overline{\frac{\partial \left(w' e \right)}{\partial z}} \! = \delta_{i3}g \overline{\frac{(u_i' \theta_v')}{\partial \overline{\theta_v}}} \! - \frac{1}{\overline{\rho}}\frac{\partial w' p'}{\partial z} \! - \epsilon \tag{12.8} \label{eq:12.8}
-\end{align*}
+\begin{align}
+	\begin{rcases}
+		\mspace{-21mu} \overline{\frac{\partial e}{\partial t}} 
+		+ \underbrace{\overline{u_i' w'}\frac{\partial \overline{u_i}}{\partial z}}_{\substack{\text{Mechanical} \\ \text{Shear} \\ \text{Term}}}
+		+ \underbrace{\frac{\partial \overline{(u_i' e')}}{\partial z}}_{\substack{\text{Turbulent} \\ \text{Advection} \\ \text{Term}}} \!\!\!\!\!\! &= \underbrace{g \overline{\frac{u_i' \theta_v'}{\partial \overline{\theta_v}}}}_{\substack{\text{Bouancy} \\ \text{Term}}}
+		- \underbrace{\frac{1}{\overline{\rho}}\frac{\partial \overline{w' p'}}{\partial z}}_{\substack{\text{Pressure} \\ \text{Correlation} \\ \text{Term}}} \quad\\
+		&- \underbrace{\epsilon}_{\substack{\text{Viscous} \\ \text{Dissipation} \\ \text{Term}}}
+	\end{rcases}
+	\tag{12.8} \label{eq:12.8}
+\end{align}
 
-\yellownote{Incomplete}
+Turbulent advection term is neglected because generally mean wind can't carry turbulence to longer distance and get's decipacted.
+
+\begin{itemize}[noitemsep]
+	\item Bouancy term : Generation of turbulence due to heat flux. Which can be produce turbulence during unstable conditions (day time), can decipate turbulence during stable conditions (night time).
+	\item Mechanical Shear term : Generation of turbulence due to shear in atmoshpere. Negative sign represents turbulence will generate downward if mean windspeed is high upward, and vice versa. Mechanical Shear is only generation term, i.e., it can only generate turbulence and not decipacte.
+	\item Turbulent advection (transport) term : Niether generates nor decipates turbulence but transport thermal energy. When integrate over entire BL, it goes to zero, but when local BL is considered atmoshpere bring turbulent energy from outside local BL or take away turbulent energy from local BL to outside.
+	\item Pressure correlation term : Represents pressure flucuation, very small term (\( \approx 0.01 hPa \)). At stable BL (night time) it generates internal gravity waves to transport turbulence but in general it is a residual term.
+	\item Viscous decipative term : Only decipates turbulence.
+\end{itemize}
+
+\yellownote{question and answers}
 
 \clearpage
 \bibliographystyle{plain}
