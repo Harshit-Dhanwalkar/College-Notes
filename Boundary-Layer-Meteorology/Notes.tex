@@ -168,7 +168,7 @@
 %-------------------------------------------------------------------------------------
 %                                       ARTICLE INFORMATION                          %
 %-------------------------------------------------------------------------------------
-\JournalInfo{Dual Degree Engineering Physics, 8$^{th}$ Semester, 2024} % Journal information
+\JournalInfo{Dual Degree Engineering Physics, 8$^{th}$ Semester, 2025} % Journal information
 \Archive{Mtech, Earth System Sciences (ESS), 1$^{st}$ year} % Additional notes (e.g. copyright, DOI, review/research article)
 
 \PaperTitle{Lecture Notes on Boundary Layer Meteorology} % Article title
@@ -1511,7 +1511,7 @@ Substitute approximate viscous term \myeqref{eq:viscousapprox} in \myeqref{eq:11
 	\mspace{-10mu}-\overline{\frac{2u_i'}{\overline{\rho}}\frac{\partial p'}{\partial x_i}} &= -\frac{2}{\overline{\rho}}\overline{\left(\frac{\partial (p'u_i')}{\partial x_i}\right)} + \overline{\frac{2p'}{\overline{\rho}}\cdot\underbrace{\left(\frac{\partial u_i'}{\partial x_i}\right)}_{\substack{\nabla u_i' = 0 \\ \text{Continuity eq.}}}} \tag{11.8} \label{eq:11.8}
 \end{align*}
 
-The last term in \myeqref{eq:11.8} is called \bold{return-to-isotropy}.
+The last term in \myeqref{eq:11.8} is called \textbf{return-to-isotropy}.
 
 Therefore \myeqref{eq:11.7} can be modified to:
 \begin{align*}
@@ -1527,6 +1527,52 @@ Therefore \myeqref{eq:11.7} can be modified to:
 
 \clearpage
 
+\section{Lecture 12 20/02/2025}
+\subsection{Governing Equation For Turbulent Flow}
+\begin{align*}
+	\mspace{-30mu} \frac{\partial q'}{\partial t} \! + \overline{u_j}\frac{\partial \overline{q}}{\partial x_j} \! + u_j'\frac{\partial \overline{q}}{\partial x_j} \! + u_j'\frac{\partial q'}{\partial x_j} \! = \upnu\frac{\partial^2 q'}{\partial x_j^2} \! + \frac{\partial \overline{(u_i'q')}}{\partial x_i} \tag{12.1} \label{eq:12.1}
+\end{align*}
+
+Multiply above \myeqref{eq:12.1} with \( 2q' \)
+\begin{align*}
+	\begin{rcases}
+		\mspace{-20mu} 2q'\frac{\partial q'}{\partial t} + 2q'\overline{u_j}\frac{\partial \overline{q}}{\partial x_j} & \!\!\!\!\!\!\!\!+ 2q'u_j'\frac{\partial \overline{q}}{\partial x_j} + 2q'u_j'\frac{\partial q'}{\partial x_j} \\ &= 2q'\upnu\frac{\partial^2 q'}{\partial x_j^2} \! + 2q'\frac{\partial \overline{(u_i'q')}}{\partial x_i} \tag{12.2} \label{eq:12.2}
+	\end{rcases} \\
+	\begin{rcases}
+		\mspace{-20mu} \frac{\partial (q')^2}{\partial t} + 2q'\overline{u_j}\frac{\partial \overline{q}}{\partial x_j} & \!\!\!\!\!\!\!\!+ 2q'u_j'\frac{\partial \overline{q}}{\partial x_j} + u_j'\frac{\partial (q')^2}{\partial x_j} \\ &= 2q'\upnu\frac{\partial^2 q'}{\partial x_j^2} \! + 2q'\frac{\partial \overline{(u_i'q')}}{\partial x_i} \tag{12.3} \label{eq:12.3}
+	\end{rcases}
+\end{align*}
+
+Applying Reynold's averaging,
+\begin{align*}
+	\mspace{-15mu} \overline{\frac{\partial (q')^2}{\partial t}} + 2\overline{q'u_j'}\frac{\partial \overline{q}}{\partial x_j} + \overline{u_j'\frac{\partial (q')^2}{\partial x_j}} = 2\upnu \overline{q'\frac{\partial^2 q'}{\partial x_j^2}} \tag{12.4} \label{eq:12.4}
+\end{align*}
+
+Adding flux term \( \overline{(q')^2 \frac{\partial u_j'}{\partial x_j}} = 0 \)
+\begin{align*}
+	\mspace{-15mu} \overline{\frac{\partial (q')^2}{\partial t}} + 2\overline{q'u_j'}\frac{\partial \overline{q}}{\partial x_j} + \overline{\frac{\partial \left(u_j(q')^2 \right)}{\partial x_j}} = 2\upnu \overline{q'\frac{\partial^2 q'}{\partial x_j^2}} \tag{12.5} \label{eq:12.5}
+\end{align*}
+
+Similiarly,
+\begin{align*}
+	\begin{rcases}
+		\mspace{-15mu} \overline{\frac{\partial (u_i')^2}{\partial t}} + 2\overline{u_i'u_j'}\frac{\partial \overline{u_i}}{\partial x_j} + \overline{\frac{\partial \left(u_j(u_i')^2 \right)}{\partial x_j}} & \!\!\!\!\!\! = 2\delta_{i3}g \overline{\frac{(u_i' \theta_v')}{\partial \overline{\theta_v}}} \\ &- \frac{2}{\overline{\rho}}\frac{\partial u_j' p'}{\partial x_j} - 2\epsilon \tag{12.6} \label{eq:12.6}
+	\end{rcases}
+\end{align*}
+
+Total Kinetic Energy = \( \frac{1}{2}\left(\overline{u'^2} + \overline{v'^2} + \overline{w'^2}\right) \Rightarrow \overline{e} = \frac{1}{2}\overline{u_i'^2} \)
+\begin{align*}
+	\mspace{-35mu} \overline{\frac{\partial e}{\partial t}} \! + \overline{u_i'u_j'}\frac{\partial \overline{u_i}}{\partial x_j} \! + \overline{\frac{\partial \left(u_j e \right)}{\partial x_j}} \! = \delta_{i3}g \overline{\frac{(u_i' \theta_v')}{\partial \overline{\theta_v}}} \! - \frac{1}{\overline{\rho}}\frac{\partial u_j' p'}{\partial x_j} \! - \epsilon \tag{12.7} \label{eq:12.7}
+\end{align*}
+
+In general, turbulent act only in vertical direction, i.e. \[u_j = w, \quad x_j = z \]
+\begin{align*}
+	\mspace{-35mu} \overline{\frac{\partial e}{\partial t}} \! + \overline{u_i'w'}\frac{\partial \overline{u_i}}{\partial z} \! + \overline{\frac{\partial \left(w' e \right)}{\partial z}} \! = \delta_{i3}g \overline{\frac{(u_i' \theta_v')}{\partial \overline{\theta_v}}} \! - \frac{1}{\overline{\rho}}\frac{\partial w' p'}{\partial z} \! - \epsilon \tag{12.8} \label{eq:12.8}
+\end{align*}
+
+\yellownote{Incomplete}
+
+\clearpage
 \bibliographystyle{plain}
 \bibliography{Reference}
 \end{document}

@@ -52,5 +52,7 @@
 \contentsline {subsection}{\numberline {10.4}Prognostic Equations For Turbulent Flow}{18}{subsection.10.4}%
 \contentsline {section}{\numberline {11}Lecture 11 19/02/2025}{19}{section.11}%
 \contentsline {subsection}{\numberline {11.1}Prognostic Equations For Turbulent Flow}{19}{subsection.11.1}%
-\contentsline {section}{References}{20}{AMS.102}%
+\contentsline {section}{\numberline {12}Lecture 12 20/02/2025}{20}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Governing Equation For Turbulent Flow}{20}{subsection.12.1}%
+\contentsline {section}{References}{21}{AMS.118}%
 \contentsfinish 
