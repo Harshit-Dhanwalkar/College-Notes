@@ -1593,12 +1593,12 @@ Turbulent advection term is neglected because generally mean wind can't carry tu
 \section{Lecture 13 27/02/2025}
 \subsection{Turbulent Kinetic Energy}
 \begin{align*}
-	\mspace{-25mu} \frac{\partial \overline{e}}{\partial t} \! + \overline{u_j}\frac{\partial \overline{e}}{\partial x_j} \! &= \! \delta_{i3}g \overline{\frac{(u_i' \theta_v')}{\partial \overline{\theta_v}}} \! - \overline{u'_i\theta_v'}\frac{\partial \overline{u_i}}{\partial x_j} \!- \frac{1}{\overline{\rho}}\frac{\partial u_j' p'}{\partial x_j} \! - \epsilon \tag{13.1} \label{eq:13.1}
+	\mspace{-25mu} \frac{\partial \overline{e}}{\partial t} \! + \overline{u_j}\frac{\partial \overline{e}}{\partial x_j} \! &= \! \delta_{i3}g \overline{\frac{(u_i' \theta_v')}{\overline{\theta_v}}} \! - \overline{u'_i\theta_v'}\frac{\partial \overline{u_i}}{\partial x_j} \!- \frac{1}{\overline{\rho}}\frac{\partial u_j' p'}{\partial x_j} \! - \epsilon \tag{13.1} \label{eq:13.1}
 \end{align*}
 
 Taking only vertical direction \(u_j = w, \, x_j = z \) and after neglecting turbulent advection term:
 \begin{align*}
-	\mspace{-10mu} \frac{\partial \overline{e}}{\partial t} \! &= g \overline{\frac{(w' \theta_v')}{\partial \overline{\theta_v}}} \! - \overline{w' \theta_v'}\frac{\partial \overline{w}}{\partial z} \!- \frac{1}{\overline{\rho}}\frac{\partial w' p'}{\partial z} \! - \epsilon \tag{13.2} \label{eq:13.2}
+	\mspace{-10mu} \frac{\partial \overline{e}}{\partial t} \! &= g \overline{\frac{(w' \theta_v')}{\overline{\theta_v}}} \! - \overline{w' \theta_v'}\frac{\partial \overline{w}}{\partial z} \!- \frac{1}{\overline{\rho}}\frac{\partial w' p'}{\partial z} \! - \epsilon \tag{13.2} \label{eq:13.2}
 \end{align*}
 
 \subsection{Types of convection}
@@ -1620,9 +1620,43 @@ Time scaling factor:
 Therefore modified \myeqref{eq:13.2} after scaling factor will be:
 \begin{align*}
 	\begin{rcases}
-	\mspace{-10mu} \frac{z_i}{w^3_*}\frac{\partial \overline{e}}{\partial t} \!\!\!\!\!\! &= \frac{z_i}{w^3_*} g \overline{\frac{(w' \theta_v')}{\partial \overline{\theta_v}}} - \frac{z_i}{w^3_*} \overline{w' \theta_v'}\frac{\partial \overline{w}}{\partial z} - \frac{z_i}{w^3_*} \frac{1}{\overline{\rho}}\frac{\partial w' p'}{\partial z} \\ &\quad - \frac{z_i}{w^3_*}\epsilon
+	\mspace{-10mu} \frac{z_i}{w^3_*}\frac{\partial \overline{e}}{\partial t} \!\!\!\!\!\! &= \frac{z_i}{w^3_*} g \overline{\frac{(w' \theta_v')}{\overline{\theta_v}}} - \frac{z_i}{w^3_*} \overline{w' \theta_v'}\frac{\partial \overline{w}}{\partial z} - \frac{z_i}{w^3_*} \frac{1}{\overline{\rho}}\frac{\partial w' p'}{\partial z} \\ &\quad - \frac{z_i}{w^3_*}\epsilon
 	\end{rcases} \tag{13.6} \label{eq:13.6}
 \end{align*}
+
+\clearpage
+
+\section{Lecture 14 28/02/2025}
+\subsection{Stability, KH-Waves And Richardson Number}
+There are 2 types of Stability:
+\begin{enumerate}[noitemsep]
+	\item Static Stability
+		\begin{itemize}
+			\item Determinted by \textbf{Bouancy}.
+		\end{itemize}
+	\item Dynamic Stability
+		\begin{itemize}[noitemsep]
+			\item Determinted by \textbf{Shear}.
+			\item Causes unstabilty and form \textbf{Helmon waves}.
+			\item Clouds formed due to these waves (instability) is called \textbf{Below clouds} or \textbf{KH clouds}.
+		\end{itemize}
+\end{enumerate}
+
+\yellownote{Add figure}
+
+\subsection{Dynamic Stability}
+\begin{align*}
+	\mspace{-20mu} \frac{\partial \overline{e}}{\partial t} \! &= g \overline{\frac{(w' \theta_v')}{\overline{\theta_v}}} \! - \overline{u'w'}\frac{\partial \overline{u}}{\partial z} \! - \overline{w' \theta_v'}\frac{\partial \overline{w}}{\partial z} \!- \frac{1}{\overline{\rho}}\frac{\partial w' p'}{\partial z} \! - \epsilon \tag{14.1} \label{eq:14.1}
+\end{align*}
+
+\subsubsection{Richardson Number \( (R_f) \)}
+\begin{align*}
+	R_f = \frac{g\frac{\overline{w'\theta_v'}}{\overline{\theta_v}}}{\overline{u'w'}\frac{\partial \overline{u}}{\partial z}} \quad \bfrac{\rightarrow \text{Bouancy term}}{\rightarrow \text{Mechanical Flux Term}}
+\end{align*}
+
+\yellownote{Rf conditons and cases}
+
+\textbf{Limitaton of Richardson number : } It assumes the flow to be turbulent (\( w'\theta_v' \) and \( u'w' \), so it can't be applid to laminar flow.
 
 \clearpage
 \bibliographystyle{plain}

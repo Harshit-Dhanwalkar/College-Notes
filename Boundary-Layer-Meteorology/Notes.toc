@@ -57,5 +57,9 @@
 \contentsline {section}{\numberline {13}Lecture 13 27/02/2025}{21}{section.13}%
 \contentsline {subsection}{\numberline {13.1}Turbulent Kinetic Energy}{21}{subsection.13.1}%
 \contentsline {subsection}{\numberline {13.2}Types of convection}{21}{subsection.13.2}%
-\contentsline {section}{References}{22}{AMS.128}%
+\contentsline {section}{\numberline {14}Lecture 14 28/02/2025}{22}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Stability, KH-Waves And Richardson Number}{22}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}Dynamic Stability}{22}{subsection.14.2}%
+\contentsline {subsubsection}{\numberline {14.2.1}Richardson Number \( (R_f) \)}{22}{subsubsection.14.2.1}%
+\contentsline {section}{References}{23}{subsubsection.14.2.1}%
 \contentsfinish 
