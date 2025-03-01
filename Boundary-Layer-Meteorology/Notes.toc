@@ -54,5 +54,8 @@
 \contentsline {subsection}{\numberline {11.1}Prognostic Equations For Turbulent Flow}{19}{subsection.11.1}%
 \contentsline {section}{\numberline {12}Lecture 12 20/02/2025}{20}{section.12}%
 \contentsline {subsection}{\numberline {12.1}Governing Equation For Turbulent Flow}{20}{subsection.12.1}%
-\contentsline {section}{References}{21}{AMS.118}%
+\contentsline {section}{\numberline {13}Lecture 13 27/02/2025}{21}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Turbulent Kinetic Energy}{21}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Types of convection}{21}{subsection.13.2}%
+\contentsline {section}{References}{22}{AMS.128}%
 \contentsfinish 

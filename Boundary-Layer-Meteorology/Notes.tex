@@ -1522,7 +1522,6 @@ Therefore \myeqref{eq:11.7} can be modified to:
 
 \textbf{Coriolis term:}
 
-
 \yellownote{INCOMPLETE}
 
 \clearpage
@@ -1588,6 +1587,42 @@ Turbulent advection term is neglected because generally mean wind can't carry tu
 \end{itemize}
 
 \yellownote{question and answers}
+
+\clearpage
+
+\section{Lecture 13 27/02/2025}
+\subsection{Turbulent Kinetic Energy}
+\begin{align*}
+	\mspace{-25mu} \frac{\partial \overline{e}}{\partial t} \! + \overline{u_j}\frac{\partial \overline{e}}{\partial x_j} \! &= \! \delta_{i3}g \overline{\frac{(u_i' \theta_v')}{\partial \overline{\theta_v}}} \! - \overline{u'_i\theta_v'}\frac{\partial \overline{u_i}}{\partial x_j} \!- \frac{1}{\overline{\rho}}\frac{\partial u_j' p'}{\partial x_j} \! - \epsilon \tag{13.1} \label{eq:13.1}
+\end{align*}
+
+Taking only vertical direction \(u_j = w, \, x_j = z \) and after neglecting turbulent advection term:
+\begin{align*}
+	\mspace{-10mu} \frac{\partial \overline{e}}{\partial t} \! &= g \overline{\frac{(w' \theta_v')}{\partial \overline{\theta_v}}} \! - \overline{w' \theta_v'}\frac{\partial \overline{w}}{\partial z} \!- \frac{1}{\overline{\rho}}\frac{\partial w' p'}{\partial z} \! - \epsilon \tag{13.2} \label{eq:13.2}
+\end{align*}
+
+\subsection{Types of convection}
+\begin{enumerate}[noitemsep]
+	\item Free convection \( \rightarrow g\frac{\overline{(w'\theta_v')}}{\overline{\theta_v}} \) is dominant.
+	\item Forced convection \(\rightarrow \overline{u'w'} \frac{\partial \overline{u}}{\partial z} \) is dominant.
+\end{enumerate}
+
+Vertical scaling factor known as \textbf{Deodroff velocity scale}:
+\begin{align*}
+	w_* &= \left[ g_z \frac{\overline{(w'\theta_v')}}{\overline{\theta_v}} \right]^{1/3} \tag{13.4} \label{eq:13.4}
+\end{align*}
+
+Time scaling factor:
+\begin{align*}
+	t_* &= \left[ \frac{z_i}{w^3_*} \right] = \frac{z_i}{\left[g_z \frac{\overline{(w'\theta_v')}}{\overline{\theta_v}}\right]} = \frac{z_i \overline{\theta_v}}{\left[g_z \overline{(w'\theta_v')}\right]} \tag{13.5} \label{eq:13.5}
+\end{align*}
+
+Therefore modified \myeqref{eq:13.2} after scaling factor will be:
+\begin{align*}
+	\begin{rcases}
+	\mspace{-10mu} \frac{z_i}{w^3_*}\frac{\partial \overline{e}}{\partial t} \!\!\!\!\!\! &= \frac{z_i}{w^3_*} g \overline{\frac{(w' \theta_v')}{\partial \overline{\theta_v}}} - \frac{z_i}{w^3_*} \overline{w' \theta_v'}\frac{\partial \overline{w}}{\partial z} - \frac{z_i}{w^3_*} \frac{1}{\overline{\rho}}\frac{\partial w' p'}{\partial z} \\ &\quad - \frac{z_i}{w^3_*}\epsilon
+	\end{rcases} \tag{13.6} \label{eq:13.6}
+\end{align*}
 
 \clearpage
 \bibliographystyle{plain}
