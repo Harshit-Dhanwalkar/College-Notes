@@ -256,7 +256,7 @@ The Boundary Layer can be defined as part of  the troposphere that is directly i
 \subsection{Boundary Layer Forcing Mechanism}
 What physical process modify boundary layer air parcel?
 \begin{enumerate}[noitemsep]
-	\item Heat transfer to.from the ground.
+	\item Heat transfer to/from the ground.
 	\item Frictional drag.
 	\item Evaporation/transpiration.
 	\item Terrain-induced flow modification.
@@ -516,41 +516,41 @@ Virtual temperature:
 	\begin{tikzpicture}
 		\centering
 		\begin{axis}[
-				%axis lines=middle,
-				xlabel={\hspace{-1cm} ($g/kg$) \hspace{0.3cm}$\textbf{+}$ \hspace{1cm} Temperature (K)},
-				ylabel={Pressure (kPa)},
-				legend style={at={(0.5,-0.25)}, anchor=north},
-				width=0.45\textwidth, height=7cm,
-				xtick=      {0.2, 1, 1.5, 2,    2.5, 3,   3.5,  4,   4.7,   5.3},
-				xticklabels={0,   5, 250, 260,  270, 280, 290,  300, 310, 320},
-				ytick=      {0,   1,  2,  3,  4,  5,  6},
-				yticklabels={100, 90, 85, 80, 75, 70, 65},
-				xticklabel style={rotate=70},
-				% yticklabel style={rotate=0}
+			%axis lines=middle,
+			xlabel={\hspace{-1cm} ($g/kg$) \hspace{0.3cm}$\textbf{+}$ \hspace{1cm} Temperature (K)},
+			ylabel={Pressure (kPa)},
+			legend style={at={(0.5,-0.35)}, anchor=north},
+			width=0.45\textwidth, height=7cm,
+			xtick=      {0.2, 1, 1.5, 2,    2.5, 3,   3.5,  4,   4.7,   5.3},
+			xticklabels={0,   5, 250, 260,  270, 280, 290,  300, 310, 320},
+			ytick=      {0,   1,  2,  3,  4,  5,  6},
+			yticklabels={100, 90, 85, 80, 75, 70, 65},
+			xticklabel style={rotate=70},
+			% yticklabel style={rotate=0}
 			]
 			\addplot[mark=o, blue, thick] coordinates {
-					(1,0) (1.1,0.5) (1.1,3) (0.5,3) (0.3,4.2) (0.47,4.9) (0.25,6)
-				};
+				(1,0) (1.1,0.5) (1.1,3) (0.5,3) (0.3,4.2) (0.47,4.9) (0.25,6)
+			};
 			\addlegendentry{Mixing Ratio ($\bar{r}$)}
 
 			\addplot[mark=square*, red, thick] coordinates {
-					(2.85,0) (2.75,1.3) (2.7,3)  (1.8,3) (1.4,5) (1.7,5.6) (1.5,6)
-				};
+				(2.85,0) (2.75,1.3) (2.7,3)  (1.8,3) (1.4,5) (1.7,5.6) (1.5,6)
+			};
 			\addlegendentry{Dew point Temp. (${\bar{T_d}}$)}
 
 			\addplot[mark=triangle*, green, thick] coordinates {
-					(3.7,0) (3.2,1.7) (3,2.5) (2.95,3) (3.4,3) (3.2,4.9) (3.15,5.5) (3.0,5.9)
-				};
+				(3.7,0) (3.2,1.7) (3,2.5) (2.95,3) (3.4,3) (3.2,4.9) (3.15,5.5) (3.0,5.9)
+			};
 			\addlegendentry{Absolute Temp. (${\bar{T}}$)}
 
 			\addplot[mark=diamond*, purple, thick] coordinates {
-					(4.3,0) (4.3,1.3) (4.3,3) (4.71,3) (5.05,3.5) (5.25,4.3) (5.3,5.5) (5.35,6)
-				};
+				(4.3,0) (4.3,1.3) (4.3,3) (4.71,3) (5.05,3.5) (5.25,4.3) (5.3,5.5) (5.35,6)
+			};
 			\addlegendentry{Mean Potential Temp. (${\bar{\theta}}$)}
 
 			\addplot[mark=diamond*, purple, dashed] coordinates {
-					(4.1,0) (4.1,1.3) (4.1,3) (4.7,3) (5,3.5) (5.2,4.3) (5.25,5.5) (5.3,6)
-				};
+				(4.1,0) (4.1,1.3) (4.1,3) (4.7,3) (5,3.5) (5.2,4.3) (5.25,5.5) (5.3,6)
+			};
 			\addlegendentry{Mean Virtual Potential Temp. (${\bar{\theta_v}}$)}
 		\end{axis}
 	\end{tikzpicture}
@@ -579,7 +579,7 @@ Virtual temperature:
 	\item Residual layer
 	\item Stable Boundary layer
 	\item Capping Inversion
-	\item Nauturnal Boundary layer
+	\item Nocturnal Boundary layer
 \end{itemize}
 
 \begin{figure*}[t!]
@@ -651,13 +651,12 @@ Virtual temperature:
 
 \textbf{Land:} Day-to-day and diurnal variations are prominent, with distinct boundary layer structures:
 
-\vspace{-0.25cm}
 \begin{enumerate}[noitemsep]
 	\item \textbf{Convective Mixed Layer:} Thermodynamically unstable with intense vertical mixing.
 	\item \textbf{Residual Layer:} Neutral stratification with turbulence of equal intensity in all directions.
 	\item \textbf{Stable Boundary Layer (Nocturnal B.L.):}
 	      \begin{itemize}[noitemsep, topsep=0pt, partopsep=0pt]
-		      \item Neutral stratification with nocturnal jets (~30 m/s, ~200 m width).
+		      \item Neutral stratification with nocturnal jets (\(\approx \)30 m/s, \( \approx \)200 m width).
 		      \item Sporadic turbulence and internal gravity waves transporting air parcels vertically.
 	      \end{itemize}
 	\item \textbf{Capping Inversion:} Found at altitudes between 1.5–3 km, acting as a barrier to upward mixing.
@@ -754,7 +753,7 @@ If $A$ and $B$ are variables dependent on time, then:
 
 \subsubsection{Standard deviation}
 \begin{align*}
-	\sigma_A & = \sqrt{\frac{1}{N} \sum^N_{i=1}(A_i-\overline{A})^2} = \Big(\overline{a'^2}\Big)^2
+	\sigma_A & = \sqrt{\frac{1}{N} \sum^N_{i=1}(A_i-\overline{A})^2} = \sqrt{\overline{a'^2}}
 \end{align*}
 
 \subsubsection{Covariance}
@@ -807,11 +806,11 @@ Mass, Heat, Moisture, Momentum, Pollutent, etc.
 			\multicolumn{1}{|>{\columncolor{blue!20}}c|}{\textbf{Quantity}} &
 			\multicolumn{1}{>{\columncolor{blue!20}}c|}{\textbf{Unit}}                                     \\
 			\hline
-			Mass                                                            & $kg_{\text{air}}/m^2s$       \\
-			Heat                                                            & $J/m^2s$                     \\
-			Moisture                                                        & $kg_{\text{wv}}/m^2s$        \\
-			Momentum                                                        & $kgms^{-1}/m^2s$             \\
-			Pollutant                                                       & $kg_{\text{pollutant}}/m^2s$ \\
+			Mass flux                                                           & $kg_{\text{air}}/m^2s$       \\
+			Heat flux                                                          & $J/m^2s$                     \\
+			Moisture flux                                                       & $kg_{\text{wv}}/m^2s$        \\
+			Momentum flux                                                       & $kgms^{-1}/m^2s$             \\
+			Pollutant flux                                                      & $kg_{\text{pollutant}}/m^2s$ \\
 			\hline
 		\end{tabular}
 	\end{center}
@@ -872,8 +871,8 @@ x-direction solar flux = $\Big(\frac{1/4S_0}{c_p\rho}\Big)$ = 0.2773 Km/s
 		\node at (2.6,1.1) {$w'>0$};
 		\node at (2.6,0.9) {$\theta'>0$};
 
-		\draw[black, dashed, thick] (0,1.5) -- (4.05,1.5);
-		\draw[black, dashed, thick] (0,0.5) -- (4.05,0.5);
+		\draw[black, dashed, thick] (0,1.5) -- (4.6,1.5);
+		\draw[black, dashed, thick] (0,0.5) -- (4.6,0.5);
 
 		\draw[->, blue, thick] (axis cs: 1.09, 1.5) -- ++(0, -1);
 		\draw[<-, blue, thick] (axis cs: 2.22, 1.5) -- ++(0, -1);
@@ -1135,17 +1134,23 @@ Now expanding with $m=3$, we get following equation:
 		      \left[\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z}\right]                 & = 0                                 \\
 		      \nabla \cdot u                                                                                                             & = 0 \tag{7.3} \label{eq:idealgaeq1}
 	      \end{align*}
-	\item Concservation of Momentum or Momentum equation
+	\item Conservation of Momentum or Momentum equation
 	      \begin{align*}
-		      \frac{\partial U_i}{\partial t} + U_i\frac{\partial U_i}{\partial x_i} = & -\delta_{i3}g + f\epsilon_{ij3}U_j \\ &- \frac{1}{\rho}\frac{\partial P}{\partial x_i} \\ &+ \underbrace{\gamma}_{\substack{\text{Kinetic} \\ \text{viscousity} \\ \text{coeff.}}}\underbrace{\frac{\partial^2 U_i}{\partial x_i^2}}_{\text{viscousity}} \tag{7.4} \label{eq:momentumeq}
+		      \begin{rcases}
+			    \mspace{-20mu} \frac{\partial U_i}{\partial t} + U_i\frac{\partial U_i}{\partial x_i} = & -\delta_{i3}g + f\epsilon_{ij3}U_j \\ &- \frac{1}{\rho}\frac{\partial P}{\partial x_i} + \underbrace{\gamma}_{\substack{\text{Kinetic} \\ \text{viscousity} \\ \text{coeff.}}}\underbrace{\frac{\partial^2 U_i}{\partial x_i^2}}_{\text{viscousity}}
+		      \end{rcases} \tag{7.4} \label{eq:momentumeq}
 	      \end{align*}
 	\item Conservartion of Moisture
 	      \begin{align*}
-		      \frac{\partial q}{\partial t} + U_i\frac{\partial q}{\partial x_i} = & \overbrace{\underbrace{\nu_q}_{\substack{\text{molecular} \\ \text{diffusivity} \\ \text{coeff.}}} \cdot \frac{\partial^2 q}{\partial x_i^2}}^{\text{Diffusion term}} \\ &+ \underbrace{\frac{S}{\rho_{\text{air}}}}_{\text{Residue term}} + \underbrace{\frac{E}{\rho_{\text{air}}}}_{\text{Phase change}} \tag{7.5} \label{eq:moistureeq}
+		      \begin{rcases}
+			    \mspace{-20mu} \frac{\partial q}{\partial t} + U_i\frac{\partial q}{\partial x_i} = \!\!\!\!\!\! \overbrace{\underbrace{\nu_q}_{\substack{\text{molecular} \\ \text{diffusivity} \\ \text{coeff.}}} \cdot \frac{\partial^2 q}{\partial x_i^2}}^{\text{Diffusion term}} &+ \underbrace{\frac{S}{\rho_{\text{air}}}}_{\text{Residue term}} \\ &+ \underbrace{\frac{E}{\rho_{\text{air}}}}_{\text{Phase change}}
+		      \end{rcases} \tag{7.5} \label{eq:moistureeq}
 	      \end{align*}
 	\item Conservartion of Heat or Thermodynamic equation
 	      \begin{align*}
-		      \frac{\partial \theta}{\partial t} + U_i\frac{\partial \theta}{\partial x_i} = & \underbrace{\overbrace{\nu_\theta}^{\substack{\text{molecular} \\ \text{diffusivity} \\ \text{heat coeff.}}} \cdot \frac{\partial^2 \theta}{\partial x_i^2}}_{\text{Diffusive heat}} - \underbrace{\frac{\partial Q_i^2}{\partial x_i}}_{\substack{\text{Radiative} \\ \text{divergence}}} \\ &- \underbrace{\frac{L_pE}{\rho_{\text{air}}C_p}}_{\text{Phase change}} \tag{7.6} \label{eq:heateq}
+		      \begin{rcases}
+			    \mspace{-20mu} \frac{\partial \theta}{\partial t} + U_i\frac{\partial \theta}{\partial x_i} = &  \!\!\!\!\!\!\underbrace{\overbrace{\nu_\theta}^{\substack{\text{molecular} \\ \text{diffusivity} \\ \text{heat coeff.}}} \cdot \frac{\partial^2 \theta}{\partial x_i^2}}_{\text{Diffusive heat}} - \underbrace{\frac{\partial Q_i^2}{\partial x_i}}_{\substack{\text{Radiative} \\ \text{divergence}}} \\ &- \underbrace{\frac{L_pE}{\rho_{\text{air}}C_p}}_{\text{Phase change}}
+		      \end{rcases} \tag{7.6} \label{eq:heateq}
 	      \end{align*}
 	\item Conservartion of Scalar quantity
 	      \begin{align*}
@@ -1185,9 +1190,9 @@ Taking Reynold's average,
 	\frac{\overline{P}}{R_d}                            & = \overline{\rho}\overline{T_v} + \overline{\rho'T_v'}                                                                              \\
 	\frac{\overline{P}}{R_d}                            & \approx \overline{\rho}\overline{T_v} \tag{8.4} \label{eq:equationofstate-turbulence}
 \end{align*}
-Equation of state remain equation of stae in turbulent flow (no addition of termulent term).
+Equation of state remain equation of state in turbulent flow (no addition of turbulent term).
 
-Subtract \myeqref{eq:equationofstate-turbulence} from \myeqref{eq:8.3}, we get turbulent form:
+Subtracting \myeqref{eq:equationofstate-turbulence} from \myeqref{eq:8.3}, we get turbulent form:
 \begin{align*}
 	\frac{P'}{R_d} & = \overline{\rho}T_v' + \rho'\overline{T_v} + \rho'T_v' \tag{8.5} \label{eq:8.5}
 \end{align*}
@@ -1204,9 +1209,9 @@ For practical purposes term $(P'/\overline{P})$ is negligible as compared to den
 \end{align*}
 where $\theta$ is potential termperature.
 
-\subsubsection{Flux Form of Adection Equation}
+\subsubsection{Flux Form of Advection Equation}
 \begin{align*}
-	u_j\frac{\partial \theta}{\partial x_j} \rightarrow \text{Advection equation for tremperature}
+	u_j\frac{\partial \theta}{\partial x_j} \rightarrow \text{Advection equation for temperature}
 \end{align*}
 
 \begin{align*}
@@ -1225,7 +1230,7 @@ Multiply above equation by temperature ($\theta$) and add in the previous equati
 	\frac{\partial u_j}{\partial x_j} & = 0
 \end{align*}
 
-Spliting equation in mean and turbulence (purturbation) parts, that is,
+Spliting equation in mean and turbulent (purturbation) parts, that is,
 \begin{align*}
 	\frac{\partial\left(\overline{u_j} + u_j'\right)}{\partial x_j}                   & = 0                                         \\
 	\frac{\partial\left(\overline{u_j} + u_j'\right)}{\partial x_j}                   & = 0                                         \\
@@ -1245,32 +1250,36 @@ Subtracting \myeqref{eq:8.10} from \myeqref{eq:conservationofmass}, we get:
 \subsubsection{Conservation of Momentum}
 \begin{align*}
 	\begin{rcases}
-		\frac{\partial u_i}{\partial t} + u_j\frac{\partial u_i}{\partial x_j} & = -\delta_{i3}\left[g - \left(\frac{\theta_v'}{\theta_v}\right)\right] + f \epsilon_{ij3}u_j \\ & \quad - \frac{1}{\rho}\frac{\partial P}{\partial x_j} + \gamma\frac{\partial^2 u_i}{\partial x_i^2}
+		\frac{\partial u_i}{\partial t} + u_j\frac{\partial u_i}{\partial x_j}  = &- \delta_{i3}\left[g - \left(\frac{\theta_v'}{\theta_v}\right)\right] + f \epsilon_{ij3}u_j \\ & \quad - \frac{1}{\rho}\frac{\partial P}{\partial x_j} + \gamma\frac{\partial^2 u_i}{\partial x_i^2}
 	\end{rcases} & \tag{8.12} \label{eq:conservationofmomentum}
 \end{align*}
 
-Spliting equation in mean and turbulence (purturbation) parts, that is,
+Spliting equation in mean and turbulent (purturbation) parts, that is,
 \begin{align*}
 	\begin{rcases}
-		 & \frac{\partial\left(\overline{u_i} + u_i'\right)}{\partial t} + \left(\overline{u_j} + u_j' \right)\frac{\partial \left(\overline{u_i} + u_i'\right)}{\partial x_j} \\ &\quad\quad = -\delta_{i3}\left[g - \left(\frac{\theta_v'}{\theta_v}\right)\right] + f \epsilon_{ij3}\left(\overline{u_j} + u_j'\right) \\ &\quad\quad - \frac{1}{\left(\overline{\rho} + \rho'\right)}\frac{\partial \left(\overline{P} + P'\right)}{\partial x_j} + \gamma\frac{\partial^2 \left(\overline{u_i} + u_i'\right)}{\partial x_j^2}
+		\mspace{-20mu} \frac{\partial\left(\overline{u_i} + u_i'\right)}{\partial t} & \!\!\!\!\!\!\! + \left(\overline{u_j} + u_j' \right)\frac{\partial \left(\overline{u_i} + u_i'\right)}{\partial x_j} \\ &= -\delta_{i3}\left[g - \left(\frac{\theta_v'}{\theta_v}\right)\right] + f \epsilon_{ij3}\left(\overline{u_j} + u_j'\right) \\ &\quad -\frac{1}{\left(\overline{\rho} + \rho'\right)}\frac{\partial \left(\overline{P} + P'\right)}{\partial x_j} + \gamma\frac{\partial^2 \left(\overline{u_i} + u_i'\right)}{\partial x_j^2}
 	\end{rcases} & \tag{8.13} \label{eq:8.13}
 \end{align*}
 
 Assuming density of boundary layer does not change, i.e., $\rho' = 0$
 \begin{align*}
 	\begin{rcases}
-		 & \frac{\partial \overline{u_i}}{\partial t} + \frac{\partial u_i'}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} +\overline{u_j}\frac{\partial u_i'}{\partial x_j} + u_j'\frac{\partial \overline{u_i}}{\partial x_j} + u_j'\frac{\partial u_i'}{\partial x_j} \\ &\quad\quad = -\delta_{i3}g - \delta_{i3}\left(\frac{\theta_v'}{\theta_v}\right) + f \epsilon_{ij3}\overline{u_j} + f \epsilon_{ij3} u_j' \\ &\quad\quad - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} - \frac{1}{\overline{\rho}}\frac{\partial P'}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j} + \gamma\frac{\partial^2 u_i'}{\partial x_j^2}
+		\mspace{-20mu} \frac{\partial \overline{u_i}}{\partial t} & \!\!\!\!\!\!\!\! + \frac{\partial u_i'}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} +\overline{u_j}\frac{\partial u_i'}{\partial x_j} + u_j'\frac{\partial \overline{u_i}}{\partial x_j} + u_j'\frac{\partial u_i'}{\partial x_j} \\
+		&= -\delta_{i3}g - \delta_{i3}\left(\frac{\theta_v'}{\theta_v}\right) + f \epsilon_{ij3}\overline{u_j} + f \epsilon_{ij3} u_j' \\ 
+		&\quad - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} - \frac{1}{\overline{\rho}}\frac{\partial P'}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j} + \gamma\frac{\partial^2 u_i'}{\partial x_j^2}
 	\end{rcases} & \tag{8.14} \label{eq:8.14}
 \end{align*}
 
 Applying Reynold's averaging,
 \begin{align*}
-	& \overline{\frac{\partial \overline{u_i}}{\partial t}} + 0 + \overline{\overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j}} + 0 + 0 + \overline{u_j'\frac{\partial u_i'}{\partial x_j}} \\ &\quad\quad = -\delta_{i3}g - 0 + f \epsilon_{ij3}\overline{\overline{u_j}} + 0 \\ &\quad\quad - \frac{1}{\overline{\rho}}\overline{\frac{\partial\overline{P}}{\partial x_j}} - 0 + \gamma\overline{\frac{\partial^2 \overline{u_i}}{\partial x_j}} + 0
+	\mspace{-20mu} \overline{\frac{\partial \overline{u_i}}{\partial t}} &+ 0 + \overline{\overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j}} + 0 + 0 + \overline{u_j'\frac{\partial u_i'}{\partial x_j}} \\ 
+	&= -\delta_{i3}g - 0 + f \epsilon_{ij3}\overline{\overline{u_j}} + 0 \\ 
+	&\quad - \frac{1}{\overline{\rho}}\overline{\frac{\partial\overline{P}}{\partial x_j}} - 0 + \gamma\overline{\frac{\partial^2 \overline{u_i}}{\partial x_j}} + 0
 \end{align*}
 
 \begin{align*}
 	\begin{rcases}
-	& \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \overline{u_j'\frac{\partial u_i'}{\partial x_j}} = -\delta_{i3}g + f \epsilon_{ij3}\overline{u_j} \\ &\hspace{3.1cm} - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j}
+		\mspace{-20mu} \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \overline{u_j'\frac{\partial u_i'}{\partial x_j}} = \!\!\!\!\!\!\! &- \delta_{i3}g + f \epsilon_{ij3}\overline{u_j}- \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} \\ & + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j}
 	\end{rcases} & \tag{8.15} \label{eq:8.15}
 \end{align*}
 
@@ -1288,7 +1297,8 @@ Add above equation in the \myeqref{eq:8.15}, we  obtain;
 \end{align*}
 \begin{align*}
 	\begin{rcases}
-	& \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \underbrace{\overline{\frac{\partial \left( u_i' u_j' \right)}{\partial x_j}}}_{\text{III}} = -\delta_{i3}g \\ &\hspace{2.1cm} + f \epsilon_{ij3}\overline{u_j} - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j}
+		\mspace{-20mu} \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \underbrace{\overline{\frac{\partial \left( u_i' u_j' \right)}{\partial x_j}}}_{\text{III}} = & \!\!\!\!\!\! - \delta_{i3}g + f \epsilon_{ij3}\overline{u_j} \\
+		&- \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j}
 	\end{rcases} & \tag{8.16} \label{eq:momentumfluxeqiation-turbulence}
 \end{align*}
 
@@ -1301,13 +1311,13 @@ Add above equation in the \myeqref{eq:8.15}, we  obtain;
 \subsubsection{Turbulent Momentum Flux Equation}
 General momentum equation:
 \begin{align*}
-	\frac{\partial u_i}{\partial t} + u_j\frac{\partial u_i}{\partial x_j} &= -\delta_{i3}g + f\epsilon_{i33}u_j - \frac{1}{\rho}\frac{\partial p}{\partial x_i} \\ &\quad + \nu\frac{\partial^2 u}{\partial x_i^2}
+	\mspace{-20mu}\frac{\partial u_i}{\partial t} \! + u_j\frac{\partial u_i}{\partial x_j} \! = -\delta_{i3}g + f\epsilon_{ij3}u_j \! - \frac{1}{\rho}\frac{\partial p}{\partial x_i} \! + \nu\frac{\partial^2 u}{\partial x_i^2} \tag{9.1} \label{eq:9.1}
 \end{align*}
 
 Turbulent form of momentum equation:
 \begin{align*}
-	\frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} &= -\delta_{i3}g + f\epsilon_{i33}\overline{u_j} - \frac{1}{\rho}\frac{\partial \overline{p}}{\partial x_i} \\ &\quad + \nu\frac{\partial^2\overline{u}}{\partial x_i^2} + \frac{\overline{u_i'u_j}}{\partial x_j} \\
-	\frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} &= -\delta_{i3}g + f\epsilon_{i33}\overline{u_j} - \frac{1}{\rho}\frac{\partial \overline{p}}{\partial x_i} \\ &\quad + \nu\frac{\partial^2\overline{u}}{\partial x_i^2} + \underbrace{\frac{1}{\overline{\rho}}\frac{\overline{\rho u_i'u_j}}{\partial x_j}}_{\text{Reynold's shress}}
+	\frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} &= -\delta_{i3}g + f\epsilon_{ij3}\overline{u_j} - \frac{1}{\rho}\frac{\partial \overline{p}}{\partial x_i} \\ &\quad + \nu\frac{\partial^2\overline{u}}{\partial x_i^2} + \frac{\overline{u_i'u_j}}{\partial x_j} \\
+	\frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} &= -\delta_{i3}g + f\epsilon_{ij3}\overline{u_j} - \frac{1}{\rho}\frac{\partial \overline{p}}{\partial x_i} \\ &\quad + \nu\frac{\partial^2\overline{u}}{\partial x_i^2} + \underbrace{\frac{1}{\overline{\rho}}\frac{\overline{\rho u_i'u_j}}{\partial x_j}}_{\text{Reynold's shress}}
 \end{align*}
 
 \subsubsection{Turbulent Heat Flux Equation}
@@ -1324,17 +1334,18 @@ Assuming density of boundary layer does not change, i.e., $\rho' = 0$
 
 \begin{align*}
 	\begin{rcases}
-		\frac{\partial \left(\overline{\theta}+\theta'\right)}{\partial t} & \!\!\!\!\!\! + \left(\overline{u_j} + u_j'\right)\frac{\partial \left(\overline{\theta} + \theta'\right)}{\partial x_j} = \nu_{\theta}\frac{\partial^2 \theta}{\partial x^2_j} \\ &\quad - \frac{1}{\overline{\rho} C_p}\frac{\partial \left(\overline{Q_j^*} + Q_j^{*'}\right)}{\partial x_j} - \frac{L_p E}{\overline{\rho} C_p}
+		\mspace{-20mu} \frac{\partial \left(\overline{\theta}+\theta'\right)}{\partial t} & \!\!\!\!\!\! + \left(\overline{u_j} + u_j'\right)\frac{\partial \left(\overline{\theta} + \theta'\right)}{\partial x_j} = \nu_{\theta}\frac{\partial^2 \theta}{\partial x^2_j} \\ &\quad - \frac{1}{\overline{\rho} C_p}\frac{\partial \left(\overline{Q_j^*} + Q_j^{*'}\right)}{\partial x_j} - \frac{L_p E}{\overline{\rho} C_p}
 	\end{rcases} & \tag{9.3} \label{eq:9.3} \\
 	\begin{rcases}
-		\frac{\partial \overline{\theta}}{\partial t} + \frac{\partial \theta'}{\partial t} & \!\!\!\!\!\! + \overline{u_j} \frac{\partial \overline{\theta}}{\partial x_j} + \overline{u_j} \frac{\partial \theta'}{\partial x_j} + u_j' \frac{\partial \overline{\theta}}{\partial x_j} + u_j' \frac{\partial \theta'}{\partial x_j} \\ &\quad  = \nu_{\theta} \frac{\partial^2 \theta}{\partial x_j^2} - \frac{1}{\overline{\rho} C_p} \frac{\partial \overline{Q_j^*}}{\partial x_j} + \frac{1}{\overline{\rho} C_p} \frac{\partial Q_j^{*'}}{\partial x_j}  \\ &\quad - \frac{L_p E}{\overline{\rho} C_p}
+		\mspace{-20mu} \frac{\partial \overline{\theta}}{\partial t} + \frac{\partial \theta'}{\partial t} & \!\!\!\!\!\! + \overline{u_j} \frac{\partial \overline{\theta}}{\partial x_j} + \overline{u_j} \frac{\partial \theta'}{\partial x_j} + u_j' \frac{\partial \overline{\theta}}{\partial x_j} + u_j' \frac{\partial \theta'}{\partial x_j} \\ & = \nu_{\theta} \frac{\partial^2 \theta}{\partial x_j^2} - \frac{1}{\overline{\rho} C_p} \frac{\partial \overline{Q_j^*}}{\partial x_j} + \frac{1}{\overline{\rho} C_p} \frac{\partial Q_j^{*'}}{\partial x_j} - \frac{L_p E}{\overline{\rho} C_p}
 	\end{rcases} & \tag{9.4} \label{eq:9.4}
 \end{align*}
 
 Apply Reynold's averaging;
 \begin{align*}
 	\begin{rcases}
-		\frac{\partial \overline{\theta}}{\partial t} + \overline{u_j} \frac{\partial \overline{\theta}}{\partial x_j} + \overline{u_j' \frac{\partial \theta'}{\partial x_j}} & \!\!\! = \nu_{\theta} \frac{\partial^2 \overline{\theta}}{\partial x_j^2} - \frac{1}{\overline{\rho} C_p} \frac{\partial \overline{Q_j^*}}{\partial x_j} \\ &\quad - \frac{L_p E}{\overline{\rho} C_p}
+		\mspace{-20mu} \frac{\partial \overline{\theta}}{\partial t} + \overline{u_j} \frac{\partial \overline{\theta}}{\partial x_j} + \overline{u_j' \frac{\partial \theta'}{\partial x_j}} & \!\!\!\!\!\! = \nu_{\theta} \frac{\partial^2 \overline{\theta}}{\partial x_j^2} - \frac{1}{\overline{\rho} C_p} \frac{\partial \overline{Q_j^*}}{\partial x_j} \quad \\
+		&\quad - \frac{L_p E}{\overline{\rho} C_p}
 	\end{rcases} & \tag{9.5} \label{eq:9.5}
 \end{align*}
 

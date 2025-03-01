@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  1 MAR 2025 10:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  1 MAR 2025 22:30
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1051,37 +1051,37 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ] [7
 
 ] [8]
-Overfull \hbox (8.2753pt too wide) in paragraph at lines 673--674
+Overfull \hbox (8.2753pt too wide) in paragraph at lines 672--673
 []\OT1/ptm/b/n/10 (-20) Fumigation plumes: \OT1/ptm/m/n/10 (-20) Hap-pen when pol-lu-tants are trapped
  []
 
 
-Overfull \hbox (1.81581pt too wide) in paragraph at lines 696--696
+Overfull \hbox (1.81581pt too wide) in paragraph at lines 695--695
 []|\OT1/ptm/b/n/10 (-20) Turbulence| 
  []
 
 
-Underfull \hbox (badness 1052) in paragraph at lines 698--698
+Underfull \hbox (badness 1052) in paragraph at lines 697--697
 []|\OT1/ptm/m/n/10 (+20) Strong drag due to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 704--704
+Underfull \hbox (badness 10000) in paragraph at lines 703--703
 []|\OT1/ptm/b/n/10 (+20) Vertical
  []
 
 
-Underfull \hbox (badness 2057) in paragraph at lines 706--706
+Underfull \hbox (badness 2057) in paragraph at lines 705--705
 []|\OT1/ptm/m/n/10 (+20) 100m - 3km (vari-
  []
 
 
-Underfull \hbox (badness 7362) in paragraph at lines 706--707
+Underfull \hbox (badness 7362) in paragraph at lines 705--706
 []|\OT1/ptm/m/n/10 (+20) 8-16km (less vari-
  []
 
 
-Overfull \hbox (11.42363pt too wide) in paragraph at lines 692--709
+Overfull \hbox (11.42363pt too wide) in paragraph at lines 691--708
  [][] 
  []
 
@@ -1091,11 +1091,11 @@ Overfull \hbox (11.42363pt too wide) in paragraph at lines 692--709
 ]pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@question.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.773 \begin{question}{}
+l.772 \begin{question}{}
                         pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@answer.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.788 \begin{answer}{}
+l.787 \begin{answer}{}
                        [10
 
 ] [11
@@ -1114,14 +1114,14 @@ Underfull \vbox (badness 3039) has occurred while \output is active []
 ] [16
 
 ]
-Underfull \hbox (badness 1067) in paragraph at lines 1375--1375
+Underfull \hbox (badness 1067) in paragraph at lines 1386--1386
 \OT1/phv/m/n/7 (+20) bu-lent heat, mois-
  []
 
 [17
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1392--1393
+Underfull \hbox (badness 10000) in paragraph at lines 1403--1404
 
  []
 
@@ -1133,7 +1133,7 @@ Underfull \vbox (badness 8132) has occurred while \output is active []
  [19
 
 ]
-Underfull \hbox (badness 6173) in paragraph at lines 1589--1589
+Underfull \hbox (badness 6173) in paragraph at lines 1600--1600
 []\OT1/phv/m/n/7 (+20) question and an-
  []
 
@@ -1143,7 +1143,7 @@ Underfull \hbox (badness 6173) in paragraph at lines 1589--1589
 
 
 ]
-Underfull \hbox (badness 3536) in paragraph at lines 1657--1657
+Underfull \hbox (badness 3536) in paragraph at lines 1668--1668
 []\OT1/phv/m/n/7 (+20) Rf con-di-tons and
  []
 
@@ -1160,18 +1160,18 @@ Package rerunfilecheck Info: File `Notes.out' has not changed.
 (rerunfilecheck)             Checksum: 52994F4ED05604EA4F1A9FAEA45D8367;8852.
  ) 
 Here is how much of TeX's memory you used:
- 45209 strings out of 480171
- 1035602 string characters out of 5894490
- 1517250 words of memory out of 5000000
- 61833 multiletter control sequences out of 15000+600000
+ 45212 strings out of 480171
+ 1035630 string characters out of 5894490
+ 1517375 words of memory out of 5000000
+ 61835 multiletter control sequences out of 15000+600000
  557314 words of font info for 384 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 98i,25n,94p,1002b,2307s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,29n,94p,1002b,2307s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Notes.pdf (23 pages, 266699 bytes).
+Output written on Notes.pdf (23 pages, 267141 bytes).
 PDF statistics:
- 725 PDF objects out of 1000 (max. 8388607)
- 588 compressed objects within 6 object streams
- 202 named destinations out of 1000 (max. 500000)
+ 726 PDF objects out of 1000 (max. 8388607)
+ 589 compressed objects within 6 object streams
+ 203 named destinations out of 1000 (max. 500000)
  121339 words of extra memory for PDF output out of 128383 (max. 10000000)
 
