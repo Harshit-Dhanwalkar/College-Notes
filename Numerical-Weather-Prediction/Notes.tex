@@ -221,7 +221,7 @@ Initial value Problem (IVP) $\rightarrow$ simple pendulum.
 	\theta(t)                                & = A \cos(\omega t) + B \sin(\omega t) \tag{1.3} \label{eq:simplependulumsolution}
 \end{align*}
 
-\myeqref{eq:simplependulum1} and \myeqref{eq:simplependulum2} are second order linear ordinary differential equation, whose solution .\myeqref{eq:simplependulumsolution} has 2 constants of integration $A$ and $B$. Here $\theta$ and $t$ are the dependent and independent variable since \myeqref{eq:simplependulum1} and \myeqref{eq:simplependulum2} have only one independent variable.
+\myeqref{eq:simplependulum1} and \myeqref{eq:simplependulum2} are second order linear ordinary differential equation, whose solution. \myeqref{eq:simplependulumsolution} has 2 constants of integration $A$ and $B$. Here $\theta$ and $t$ are the dependent and independent variable since \myeqref{eq:simplependulum1} and \myeqref{eq:simplependulum2} have only one independent variable.
 
 Values of $A$ and $B$ will depend on initial condition.
 
@@ -273,14 +273,14 @@ Using first law of Thermodynamics, Rate of heat is given by:
 where $\frac{Dq}{Dt}$ is rate at which heating of air parcel due to non-adiabatic process, this change can happen via radiation, convection, conduction, latent heat while phase change.
 
 \begin{align*}
-	\frac{DU}{Dt} & = \vec{F}_\text{net} + \vec{F}_\text{coriolis} \tag{2.3} \label{eq:convective_derivative}
+	\frac{DU}{Dt} & = \vec{F}_\text{net} + \vec{F}_\text{coriolis} \tag{2.3} \label{eq:convective-derivative}
 \end{align*}
 
-This above \myeqref{eq:convective_derivative} is convective derivative equation involving non-linear terms (i.e. $u\frac{\partial T}{\partial x}$, $v\frac{\partial T}{\partial y}$, $w\frac{\partial T}{\partial z}$).
+This above \myeqref{eq:convective-derivative} is convective derivative equation involving non-linear terms (i.e. $u\frac{\partial U}{\partial x}$, $v\frac{\partial U}{\partial y}$, $w\frac{\partial U}{\partial z}$).
 
 Continuity equation:
 \begin{align*}
-	\frac{1}{\rho} \frac{D\rho}{Dt} + \nabla\cdot\vec{V} = 0 \tag{2.4}\label{eq:continuity_eq}
+	\frac{1}{\rho} \frac{D\rho}{Dt} + \nabla\cdot\vec{V} = 0 \tag{2.4}\label{eq:continuity-eq}
 \end{align*}
 
 Consider grid on globe as shown in figure(\ref{fig:grid}).
@@ -486,16 +486,16 @@ These are even larger than entire country, which means that we can't above to fi
 
 Here, $u$ is the velocity field, which is decomposed into a mean component $\bar{u}$ and a fluctuating component $u'$.
 
-Navier-Stokes Equation
+\subsection{Navier-Stokes Equation}
 The general Navier-Stokes equation is given by:
-\begin{equation}
-	\begin{aligned}
-		\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} & + w \frac{\partial u}{\partial z} - f v = \frac{1}{\rho} \frac{\partial \bar{P}}{\partial x} \\  & + \gamma \left(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}+ \frac{\partial^2 u}{\partial z^2}\right)
-	\end{aligned}
-	\tag{3.2} \label{eq:Navier-stokes}
-\end{equation}
+\begin{align*}
+	\begin{rcases}
+		\mspace{-20mu} \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} + w \frac{\partial u}{\partial z} & \!\!\!\!\!\!\!- f v = \frac{1}{\rho} \frac{\partial \bar{P}}{\partial x} \\ & + \gamma \left(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}+ \frac{\partial^2 u}{\partial z^2}\right)
+	\end{rcases} & \tag{3.2} \label{eq:Navier-stokes}
+\end{align*}
 
-Reynolds-Averaged Navier-Stokes (RANS) Equation
+\textbf{Reynolds-Averaged Navier-Stokes (RANS) Equation}
+
 Applying Reynolds decomposition ($u = \bar{u} + u'$) and averaging leads to the RANS equation:
 \begin{equation}
 	\begin{aligned}
@@ -507,13 +507,14 @@ Applying Reynolds decomposition ($u = \bar{u} + u'$) and averaging leads to the 
 The Reynolds stress tensor represents the transport of momentum due to turbulent fluctuations.
 
 Nonlinear Term Expansion
+
 Expanding the nonlinear term $u \frac{\partial u}{\partial x}$ using Reynolds decomposition:
 \begin{align*}
 	u \frac{\partial u}{\partial x} & = (\bar{u}+u') \frac{\partial(\bar{u}+u')}{\partial x}                                                                                                              \\
 	                                & = \bar{u} \frac{\partial \bar{u}}{\partial x}+ u' \frac{\partial \bar{u}}{\partial x} + \bar{u} \frac{\partial u'}{\partial x} + u' \frac{\partial u'}{\partial x}.
 \end{align*}
 
-Appliing Reynolds averaging rules:
+Applying Reynolds averaging rules:
 \begin{align*}
 	\overline{u} & = \overline{\bar{u} + u'}                                            \\
 	\overline{u} & = \overline{\bar{u}} + \overline{u'}                                 \\
@@ -542,20 +543,22 @@ The term $\frac{\partial(\overline{u'u'})}{\partial t}$ represents the rate of c
 This term involves higher-order correlations between velocity fluctuations, which complicates the equation system.
 
 The closure problem arises in the Reynolds-Averaged Navier-Stokes (RANS) equations because the number of dependent variables (unknowns) exceeds the number of equations available. For instance:
-- $\overline{u}$ is an unknown.
-- $\overline{u'v'}$ (a Reynolds stress term) introduces additional unknowns.
+\begin{itemize}[noitemsep]
+	\item $\overline{u}$ is an unknown.
+	\item $\overline{u'v'}$ (a Reynolds stress term) introduces additional unknowns.
+\end{itemize}
 
-To resolve this, closure modelsare used, which provide approximations for higher-order terms based on known variables.
+To resolve this, closure models are used, which provide approximations for higher-order terms based on known variables.
 
 For example, consider the term $\overline{u'w'}$. Using a simple closure model:
 \begin{align*}
-	\overline{u'w'} & = -k \frac{\partial \bar{u}}{\partial x},
+	\overline{u'w'} & = -k \frac{\partial \bar{u}}{\partial x}
 \end{align*}
 where $k$ is a proportionality constant (often related to eddy viscosity). Here, $\overline{u}$ is already an unknown, so no additional variables are introduced, avoiding further complexity.
 
-This is an example of first-order closurewhere higher-order terms are approximated using first-order variables.
+This is an example of first-order closure where higher-order terms are approximated using first-order variables. \\
 
-Types of Closure Models
+\textbf{Types of Closure Models}
 \begin{enumerate}[noitemsep]
 	\item \textbf{First-Order Closure}:
 
@@ -586,15 +589,15 @@ Types of Closure Models
 Initial conditions:
 \begin{align*}
 	\theta(t=t_0)       & =\theta_0 \\
-	\dot{\theta(t=t_0)} & =\omega_0
+	\dot{\theta}(t=t_0) & =\omega_0
 \end{align*}
 
 We can rewrite this equation into two 1$^{st}$-order ODEs,
 
 Let $\frac{\theta}{dt}=p$, then
 \begin{align}
-	\frac{dp}{dt} + \omega^2\theta & = 0 \tag{i}  \label{eq:ic1} \\
-	\frac{d\theta}{dt}             & = p \tag{ii} \label{eq:ic2}
+	\frac{dp}{dt} + \omega^2\theta & = 0 \tag{4.i}  \label{eq:ic1} \\
+	\frac{d\theta}{dt}             & = p \tag{4.ii} \label{eq:ic2}
 \end{align}
 Initial conditions become:
 \begin{align*}
@@ -606,10 +609,10 @@ Initial conditions become:
 Invoking Taylor series expansion for $f(t+t_0)$:
 \begin{align*}
 	\begin{rcases}
-		f(t+t_0)      & = f(t_0) + (t+t_0)\frac{\partial f}{\partial t}\Big{|}_{t=t_0}                             \\
-		              & \qquad + \frac{(t+t_0)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0}	+ \cdots     \\
-		f(t+\Delta t) & = f(t_0) + \Delta t \frac{\partial f}{\partial t}\Big{|}_{t=t_0}                           \\
-		              & \qquad + \frac{(\Delta t)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots
+		f(t+t_0)      & \!\!\!\!\!\!\!\! = f(t_0) + (t+t_0)\frac{\partial f}{\partial t}\Big{|}_{t=t_0}                             \\
+		              &+ \frac{(t+t_0)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0}	+ \cdots     \\
+		f(t+\Delta t) & \!\!\!\!\!\!\!\! = f(t_0) + \Delta t \frac{\partial f}{\partial t}\Big{|}_{t=t_0}                           \\
+		              &+ \frac{(\Delta t)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots
 	\end{rcases} & \tag{4.2} \label{eq:taylor-exp-1}
 \end{align*}
 
@@ -617,28 +620,28 @@ we will get;
 \begin{align*}
 	p(t+t_0)                                     & \approx p(t_0) + \Delta t \frac{\partial p}{\partial t}\Big{|}_{t=t_0}       \\
 	p(t+t_0)                                     & \approx p(t_0) + (t-t_0) \frac{\partial p}{\partial t}\Big{|}_{t=t_0}        \\
-	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t+t_0) - p(t_0)}{(t-t_0)} \tag{4.3} \label{eq:forwarddiff_p} \\
+	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t+t_0) - p(t_0)}{(t-t_0)} \tag{4.3} \label{eq:forwarddiff-p} \\
 	\frac{\partial p}{\partial t}\Big{|}_{t=t_0} & \approx \frac{p(t_1) - p(t_0)}{\Delta t}
 \end{align*}
 
-\myeqref{eq:forwarddiff_p} is called \textbf{Forward difference}.
+\myeqref{eq:forwarddiff-p} is called \textbf{Forward difference}.
 
 Order of Forward difference is $O(\Delta t)$.
 
 Similarly Forward difference for $\theta$,
 \begin{align*}
-	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} \tag{4.4} \label{eq:forwarddiff_theta} \\
+	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} \tag{4.4} \label{eq:forwarddiff-theta} \\
 	\frac{\partial \theta}{\partial t}\Big{|}_{t=t_0} & \approx \frac{\theta(t_1) - \theta(t_0)}{\Delta t}
 \end{align*}
 
-From \myeqref{eq:ic1} and \myeqref{eq:forwarddiff_p}:
+From \myeqref{eq:ic1} and \myeqref{eq:forwarddiff-p}:
 \begin{align*}
 	\frac{p(t+t_0) - p(t_0)}{(t-t_0)} & + \omega^2 \theta(t_0)  = 0                                          \\
 	p(t+t_0)                          & = p(t_0) - (t-t_0)\omega^2 \theta(t_0)                               \\
 	p(t_1)                            & = p(t_0) - \Delta t\omega^2 \theta(t_0) \tag{4.5} \label{eq:p(t1-i)}
 \end{align*}
 
-From \myeqref{eq:ic2} and \myeqref{eq:forwarddiff_theta}:
+From \myeqref{eq:ic2} and \myeqref{eq:forwarddiff-theta}:
 \begin{align*}
 	\frac{\theta(t+t_0) - \theta(t_0)}{(t-t_0)} & = p(t_0)                                                         \\
 	\theta(t+t_0)                               & = \theta(t_0) - (t-t_0) p(t_0)                                   \\
@@ -649,10 +652,10 @@ From \myeqref{eq:ic2} and \myeqref{eq:forwarddiff_theta}:
 Invoking Taylor series expansion for $f(t-t_0)$:
 \begin{align*}
 	\begin{rcases}
-		f(t-t_0)      & = f(t_0) - (t-t_0)\frac{\partial f}{\partial t}\Big{|}_{t=t_0}                             \\
-		              & \qquad + \frac{(t-t_0)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots    \\
-		f(t-\Delta t) & = f(t_0) - \Delta t \frac{\partial f}{\partial t}\Big{|}_{t=t_0}                           \\
-		              & \qquad + \frac{(\Delta t)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots
+		f(t-t_0)      & \!\!\!\!\!\!\!\! = f(t_0) - (t-t_0)\frac{\partial f}{\partial t}\Big{|}_{t=t_0}                             \\
+		              & + \frac{(t-t_0)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots    \\
+		f(t-\Delta t) & \!\!\!\!\!\!\!\! = f(t_0) - \Delta t \frac{\partial f}{\partial t}\Big{|}_{t=t_0}                           \\
+		              & + \frac{(\Delta t)^2}{2!} \frac{\partial^2 f}{\partial t^2}\Big{|}_{t=t_0} + \cdots
 	\end{rcases} & \tag{4.7} \label{eq:taylor-exp-2}
 \end{align*}
 we will get;
@@ -716,12 +719,12 @@ Thus, we obtain a method to compute the new value of $\theta$ based on the curre
 
 \begin{align*}
 	\begin{rcases}
-		f(x+\Delta x) & = f(x) + \Delta x\frac{\partial f}{\partial x}\Big{|}_{x=x_0}                             \\
+		f(x+\Delta x) & \!\!\!\!\!\! = f(x) + \Delta x\frac{\partial f}{\partial x}\Big{|}_{x=x_0}                             \\
 		              & + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f}{\partial x^2}\Big{|}_{t=x_0}                \\
 		              & + \frac{(\Delta x)^3}{3!} \frac{\partial^3 f}{\partial x^3}\Big{|}_{t=x_0} + \quad \cdots
 	\end{rcases}   & \tag{5.1} \label{eq:forwarddiff-x}   \\
 	\begin{rcases}
-		f(x - \Delta x) & = f(x) - \Delta x\frac{\partial f}{\partial x}\Big{|}_{x=x_0}                             \\
+		f(x - \Delta x) & \!\!\!\!\!\!  = f(x) - \Delta x\frac{\partial f}{\partial x}\Big{|}_{x=x_0}                             \\
 		                & + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f}{\partial x^2}\Big{|}_{t=x_0}                \\
 		                & - \frac{(\Delta x)^3}{3!} \frac{\partial^3 f}{\partial x^3}\Big{|}_{t=x_0} + \quad \cdots
 	\end{rcases} & \tag{5.2} \label{eq:backwarddiff-x}
@@ -764,12 +767,12 @@ Adding \myeqref{eq:forwarddiff-x} and \myeqref{eq:backwarddiff-x}, we get,
 
 \begin{align*}
 	\begin{rcases}
-		f(x + \Delta x,t) & = f(x,t) + \Delta x\frac{\partial f(x,t)}{\partial x}\Big{|}_{x=x_0}                     \\
+		f(x + \Delta x,t) & \!\!\!\!\!\! = f(x,t) + \Delta x\frac{\partial f(x,t)}{\partial x}\Big{|}_{x=x_0}                     \\
 		                  & + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f(x,t)}{\partial x^2}\Big{|}_{t=x_0}          \\
 		                  & + \frac{(\Delta x)^3}{3!} \frac{\partial^3 f(x,t)}{\partial x^3}\Big{|}_{t=x_0} + \cdots
 	\end{rcases} & \tag{5.7} \label{eq:forwarddiff-xt} \\
 	\begin{rcases}
-		f(x - \Delta x,t) & = f(x,t) - \Delta x\frac{\partial f(x,t)}{\partial x}\Big{|}_{x=x_0}                     \\
+		f(x - \Delta x,t) & \!\!\!\!\!\! = f(x,t) - \Delta x\frac{\partial f(x,t)}{\partial x}\Big{|}_{x=x_0}                     \\
 		                  & + \frac{(\Delta x)^2}{2!} \frac{\partial^2 f(x,t)}{\partial x^2}\Big{|}_{t=x_0}          \\
 		                  & - \frac{(\Delta x)^3}{3!} \frac{\partial^3 f(x,t)}{\partial x^3}\Big{|}_{t=x_0} + \cdots
 	\end{rcases} & \tag{5.8} \label{eq:backwarddiff-xt}

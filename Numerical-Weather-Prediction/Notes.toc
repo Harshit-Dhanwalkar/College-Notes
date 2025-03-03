@@ -3,6 +3,7 @@
 \contentsline {subsection}{\numberline {1.1}Introduction to Numerical Weather Prediction}{4}{subsection.1.1}%
 \contentsline {section}{\numberline {2}Lecture 2 07/01/2025}{5}{section.2}%
 \contentsline {section}{\numberline {3}Lecture 3 08/01/2025}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Navier-Stokes Equation}{6}{subsection.3.1}%
 \contentsline {section}{\numberline {4}Lecture 4 15/01/2025}{7}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Forward Difference}{7}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Backward Difference}{7}{subsection.4.2}%
