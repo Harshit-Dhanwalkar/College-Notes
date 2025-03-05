@@ -787,20 +787,20 @@ From \myeqref{eq:forwarddiff-xt} and \myeqref{eq:backwarddiff-xt} respectively b
 
 Subtracting \myeqref{eq:backwarddiff-xt} from \myeqref{eq:forwarddiff-xt}, we get,
 \begin{align*}
-	\mspace{-25mu} \frac{df}{dx} & \simeq \left[\frac{f(x + \Delta x, t) + f(x - \Delta x, t)}{2\Delta x}\right] + O(\Delta x^2) \tag{5.12} \label{eq:dfdx1-2-sd-wrt-x}
+	\mspace{-30mu} \frac{df}{dx} & \simeq \left[\frac{f(x + \Delta x, t) + f(x - \Delta x, t)}{2\Delta x}\right] + O(\Delta x^2) \tag{5.12} \label{eq:dfdx1-2-sd-wrt-x}
 \end{align*}
 
 Adding \myeqref{eq:forwarddiff-xt} and \myeqref{eq:backwarddiff-xt}, we get,
 \begin{align*}
-	\mspace{-25mu} \frac{d^2f}{dx^2} & \simeq \Big[\frac{f(x + \Delta x, t) - 2f(x,t)+ f(x - \Delta x, t)}{(\Delta x)^2}\Big] + O(\Delta x^2) \tag{5.13} \label{eq:dfdx1+2-sd-wrt-x}
+	\mspace{-30mu} \frac{d^2f}{dx^2} & \simeq \left[\frac{f(x + \Delta x, t) - 2f(x,t)+ f(x - \Delta x, t)}{(\Delta x)^2}\right] + O(\Delta x^2) \tag{5.13} \label{eq:dfdx1+2-sd-wrt-x}
 \end{align*}
 
 \subsection{Time Difference}
 Similiarly, From \myeqref{eq:forwarddiff-xt} and \myeqref{eq:backwarddiff-xt} respectively, difference equation w.r.t time (t), we obtain \textbf{Time difference}:
 \begin{align*}
-	\mspace{-25mu} \frac{df}{dt}\Big{|}_{t=t_0} & \simeq \Big[\frac{f(x, t + \Delta t) - f(x,t)}{\Delta t}\Big] + O(\Delta t) \tag{5.14} \label{eq:13}                                          \\
-	\mspace{-25mu} \frac{df}{dt}           & \simeq \Big[\frac{f(x, t + \Delta t) + f(x, t - \Delta t)}{2\Delta t}\Big] + O(\Delta t^2) \tag{15.15} \label{eq:dfdx1-2-sd-wrt-t}               \\
-	\mspace{-25mu} \frac{d^2f}{dt^2}       & \simeq \Big[\frac{f(x, t + \Delta t) - 2f(x,t)+ f(x, t - \Delta t)}{(\Delta t)^2}\Big] + O(\Delta t^2) \tag{5.16} \label{eq:dfdx1+2-sd-wrt-t}
+	\mspace{-30mu} \frac{df}{dt}\Big{|}_{t=t_0} & \simeq \left[\frac{f(x, t + \Delta t) - f(x,t)}{\Delta t}\right] + O(\Delta t) \tag{5.14} \label{eq:13}                                          \\
+	\mspace{-30mu} \frac{df}{dt}           & \simeq \left[\frac{f(x, t + \Delta t) + f(x, t - \Delta t)}{2\Delta t}\right] + O(\Delta t^2) \tag{15.15} \label{eq:dfdx1-2-sd-wrt-t}               \\
+	\mspace{-30mu} \frac{d^2f}{dt^2}       & \simeq \left[\frac{f(x, t + \Delta t) - 2f(x,t)+ f(x, t - \Delta t)}{(\Delta t)^2}\right] + O(\Delta t^2) \tag{5.16} \label{eq:dfdx1+2-sd-wrt-t}
 \end{align*}
 
 \subsection{Explicit Form Of Second Order PDE}
@@ -1073,7 +1073,7 @@ Examples:
 
 \clearpage
 
-\section{Lecture 08/01/2025}
+\section{Lecture 8 08/01/2025}
 \subsection{Heat Equation}
 \begin{align*}
 	k\frac{\partial^2 T}{\partial x^2} - \frac{\partial T}{\partial t} = 0 \tag{8.1} \label{eq:2ndorderquasilinearpde}
@@ -1341,21 +1341,25 @@ Rewriting \myeqref{eq:9.4}, \myeqref{eq:9.5}, \myeqref{eq:9.6} and \myeqref{eq:9
 \end{align*}
 
 \begin{align*}
-	\text{det (A)}                        & = 0 \\
-	(dx)^2\underbrace{(aC-Ac)}_{\overline{A}} - (dx)(dt)\underbrace{(aD-Ad+bC-Bc)}_{\overline{B}} & \\ + (dt)^2\underbrace{(bD-Bd)}_{\overline{C}} & = 0 \tag{9.8} \label{eq:9.8}
+	\mspace{-25mu} \text{det (A)}  = 0
+\end{align*}
+\vspace{-0.7cm}
+\begin{align*}
+	\begin{rcases}
+		\mspace{-25mu} (dx)^2\underbrace{(aC-Ac)}_{\overline{A}} & \!\!\!\!\!\!\! - (dx)(dt)\underbrace{(aD-Ad+bC-Bc)}_{\overline{B}} \\ &+ (dt)^2\underbrace{(bD-Bd)}_{\overline{C}} = 0 
+	\end{rcases} & \tag{9.8} \label{eq:9.8}
 \end{align*}
 
 Discrimant of \myeqref{eq:9.8}, for $\overline{A}=(aC-Ac)$, $\overline{B}=(aD-Ad+bC-Bc)$, $\overline{C}=(bD-Bd)$:
 \begin{align*}
-	\overline{B}^2 - 4\overline{A}\overline{C} &  \\
-	(aD-Ad+bC-Bc)^2 - 4(aC-Ac)(bD-Bd)
+	\mspace{-25mu} \overline{B}^2 - 4\overline{A}\overline{C} &  \\
+	\mspace{-25mu} (aD-Ad+bC-Bc)^2 - 4(aC-Ac)(bD-Bd)
 \end{align*}
-
 \begin{align*}
-	\frac{dx}{dt} = \frac{\overline{B} \pm \sqrt{\overline{B}^2 - 4\overline{A}\overline{C}}}{2\overline{A}} \tag{9.9} \label{eq:9.9}
+	\mspace{-20mu} \frac{dx}{dt} &= \frac{\overline{B} \pm \sqrt{\overline{B}^2 - 4\overline{A}\overline{C}}}{2\overline{A}} \tag{9.9} \label{eq:9.9}
 \end{align*}
 
-Depending upon sign of $\overline{B}^2 - 4\overline{A}\overline{C}$ the follwing classification can be made:
+Depending upon sign of $\overline{B}^2 - 4\overline{A}\overline{C}$ the following classification can be made:
 \begin{itemize}[noitemsep]
 	\item Positive $\rightarrow$ Hyperbolic
 	\item Zero $\rightarrow$ Parabolic
@@ -1455,6 +1459,7 @@ Application : Van Neumann analysis is commonly used for schemes solving hyperbol
 For \textbf{stability}, we often use techniques like the \textbf{Von Neumann stability analysis} to check that perturbations do not grow indefinitely using \myeqref{eq:vanneumann}.
 
 \clearpage
+
 \section{Lecture 11 03/02/2025}
 \subsection{Van Neumann Stability Analysis For 1-D Heat Conducting Equation For FTCS Scheme}
 \begin{align*}
@@ -1463,7 +1468,7 @@ For \textbf{stability}, we often use techniques like the \textbf{Von Neumann sta
 
 Appling FTCS scheme:
 \begin{align*}
-	\frac{T_{m,n+1} - T_{m,n}}{\Delta t} &= k\left[\frac{T_{m+1,n}-2T_{m,n}+T_{m-1,n}}{(\Delta x)^2}\right] \tag{11.2} \label{eq:1dheatftcseq}
+	\frac{T_{m,n+1} - T_{m,n}}{\Delta t} &= k\left[\frac{T_{m+1,n} - 2T_{m,n} + T_{m-1,n}}{(\Delta x)^2}\right] \tag{11.2} \label{eq:1dheatftcseq}
 \end{align*}
 
 Let $\lambda = k \Delta t / (\Delta x)^2$
@@ -1474,7 +1479,7 @@ Since error $\epsilon_{m,n}$ identically satisfies difference equations, we can 
 	\epsilon_{m,n+1} &= \left(1-2\lambda \right)\epsilon_{m,n} + \lambda \left(\epsilon_{m+1,n} + \epsilon_{m-1,n} \right) \tag{11.3} \label{eq:11.3}
 \end{align*}
 
-Let \( \epsilon_{m,n} = e^{(an \Delta t)} \cdot e^{(ik m \Delta x)} \)
+Let \( \epsilon_{m,n} = e^{(at)} \cdot e^{(ikx)} \)
 
 Since, \( t = n \Delta t \) and \( x = m \Delta x \);
 \begin{align*}
@@ -1489,9 +1494,9 @@ Substituting \myeqref{eq:11.4} in \myeqref{eq:11.3}, we obtain;
 
 Divide both sides of \myeqref{eq:11.5} by $e^{(ik m \Delta x)}$
 \begin{align*}
-	e^{(a\Delta t)} &= (1-2\lambda) + \lambda \underbrace{\left[e^{(ik \Delta x)} + e^{-(ik \Delta x)} \right]}_{2\cos(k\Delta x)} \\
-	e^{(a\Delta t)} &= (1-2\lambda) + 2\lambda \cos(k\Delta x) \\
-	e^{(a\Delta t)} &= 1- 2\lambda\left[1- \cos(k\Delta x)\right] \\
+	e^{(a\Delta t)} &= (1 - 2\lambda) + \lambda \underbrace{\left[e^{(ik \Delta x)} + e^{-(ik \Delta x)} \right]}_{2\cos(k\Delta x)} \\
+	e^{(a\Delta t)} &= (1 - 2\lambda) + 2\lambda \cos(k\Delta x) \\
+	e^{(a\Delta t)} &= 1- 2\lambda\left[ 1- \cos(k\Delta x) \right] \\
 	e^{(a\Delta t)} &= 1- 4\lambda\left[\sin^2\left(\frac{k\Delta x}{2}\right)\right] \tag{11.6} \label{eq:11.6}
 \end{align*}
 
@@ -1538,8 +1543,8 @@ Maximum magnitude of $\sin^2\left(k\Delta x/2\right)=1$
 \section{Lecture 12 04/02/2025}
 \subsection{BTCS Scheme}
 \begin{align*}
-	\frac{\partial T}{\partial t} &= k\frac{\partial^2 T}{\partial x^2} \tag{12.1} \label{eq:1dheateq1} \\
-	\frac{T_{m,n} - T_{m,n-1}}{\Delta t} &= k\left[\frac{T_{m+1,n} - 2\cdot T_{m,n} + T_{m-1,n}}{(\Delta x)^2}\right] \tag{12.2} \label{eq:btcs}
+	\mspace{-25mu} \frac{\partial T}{\partial t} &= k\frac{\partial^2 T}{\partial x^2} \tag{12.1} \label{eq:1dheateq1} \\
+	\mspace{-25mu} \frac{T_{m,n} - T_{m,n-1}}{\Delta t} &= k\left[\frac{T_{m+1,n} - 2\cdot T_{m,n} + T_{m-1,n}}{(\Delta x)^2}\right] \tag{12.2} \label{eq:btcs}
 \end{align*}
 
 Let $\lambda = k\Delta t/(\Delta x)^2$

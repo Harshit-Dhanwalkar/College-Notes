@@ -17,7 +17,7 @@
 \contentsline {subsection}{\numberline {6.1}1-D Linear Advection Equation}{11}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Triangular Property}{11}{subsection.6.2}%
 \contentsline {section}{\numberline {7}Lecture 7 22/01/2025}{12}{section.7}%
-\contentsline {section}{\numberline {8}Lecture 08/01/2025}{13}{section.8}%
+\contentsline {section}{\numberline {8}Lecture 8 08/01/2025}{13}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Heat Equation}{13}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}1-D Wave Equation}{13}{subsection.8.2}%
 \contentsline {subsection}{\numberline {8.3}Laplace Equation}{13}{subsection.8.3}%

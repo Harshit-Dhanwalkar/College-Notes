@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  3 MAR 2025 18:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  3 MAR 2025 21:52
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1057,7 +1057,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 559--560
 ] [8
 
 ]
-Overfull \hbox (3.82286pt too wide) detected at line 804
+Overfull \hbox (2.145pt too wide) detected at line 804
 []
  []
 
@@ -1099,12 +1099,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 1072--1072
 ] [19
 
 ]
-Overfull \hbox (7.3287pt too wide) in paragraph at lines 1631--1632
+Overfull \hbox (7.3287pt too wide) in paragraph at lines 1636--1637
 []\OT1/ptm/m/n/10 (-20) Averaging be-tween time $\OML/ztmcm/m/it/10 n$ \OT1/ptm/m/n/10 (-20) and $\OML/ztmcm/m/it/10 n \OT1/ztmcm/m/n/10 + 1$ \OT1/ptm/m/n/10 (-20) and sub-sti-tut-ing in Eq.[](13.2)[] 
  []
 
 
-Overfull \hbox (14.6576pt too wide) detected at line 1684
+Overfull \hbox (14.6576pt too wide) detected at line 1689
 []
  []
 
@@ -1115,19 +1115,19 @@ Overfull \hbox (14.6576pt too wide) detected at line 1684
 ] [22
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1832--1833
+Underfull \hbox (badness 10000) in paragraph at lines 1837--1838
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1863--1864
+Underfull \hbox (badness 10000) in paragraph at lines 1868--1869
 
  []
 
 [23
 
 ]
-Overfull \hbox (4.62277pt too wide) in paragraph at lines 1918--1919
+Overfull \hbox (4.62277pt too wide) in paragraph at lines 1923--1924
 []\OT1/ptm/b/n/10 (-20) Case 1: \OT1/ptm/m/n/10 (-20) Quan-tity un-der the square root, i.e., $[]$
  []
 
@@ -1135,37 +1135,37 @@ Overfull \hbox (4.62277pt too wide) in paragraph at lines 1918--1919
 
 
 ]
-Overfull \hbox (2.96184pt too wide) in paragraph at lines 1987--1987
+Overfull \hbox (2.96184pt too wide) in paragraph at lines 1992--1992
 []|\OT1/ptm/b/n/10 (-20) Characteristic| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1987--1987
+Underfull \hbox (badness 10000) in paragraph at lines 1992--1992
 []|\OT1/ptm/b/n/10 (+20) Physical
  []
 
 
-Overfull \hbox (0.56442pt too wide) in paragraph at lines 1987--1987
+Overfull \hbox (0.56442pt too wide) in paragraph at lines 1992--1992
 []|\OT1/ptm/b/n/10 (-20) Computational
  []
 
 
-Overfull \hbox (2.96184pt too wide) in paragraph at lines 2013--2013
+Overfull \hbox (2.96184pt too wide) in paragraph at lines 2018--2018
 []|\OT1/ptm/b/n/10 (-20) Characteristic| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2013--2013
+Underfull \hbox (badness 10000) in paragraph at lines 2018--2018
 []|\OT1/ptm/b/n/10 (+20) Physical
  []
 
 
-Overfull \hbox (0.56442pt too wide) in paragraph at lines 2013--2013
+Overfull \hbox (0.56442pt too wide) in paragraph at lines 2018--2018
 []|\OT1/ptm/b/n/10 (-20) Computational
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2020--2021
+Underfull \hbox (badness 10000) in paragraph at lines 2025--2026
 
  []
 
@@ -1174,36 +1174,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 2020--2021
 ] [26
 
 ]
-Underfull \hbox (badness 3849) in paragraph at lines 2238--2238
+Underfull \hbox (badness 3849) in paragraph at lines 2243--2243
 []\OT1/phv/m/n/7 (+20) Figures for these
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2257--2260
+Underfull \hbox (badness 10000) in paragraph at lines 2262--2265
 
  []
 
 
-Overfull \hbox (3.2908pt too wide) detected at line 2266
+Overfull \hbox (3.2908pt too wide) detected at line 2271
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2280--2283
+Underfull \hbox (badness 10000) in paragraph at lines 2285--2288
 
  []
 
 [27
 
 ]
-Overfull \hbox (3.2908pt too wide) detected at line 2296
+Overfull \hbox (3.2908pt too wide) detected at line 2301
 []
  []
 
 [28
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 2365--2366
+Underfull \hbox (badness 10000) in paragraph at lines 2370--2371
 
  []
 
@@ -1215,18 +1215,18 @@ No file Notes.bbl.
 AED: lastpage setting LastPage
 (./Notes.aux)
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: 2628199AD2079B6D47908610BED403C4;9172.
+(rerunfilecheck)             Checksum: 3E44C62C8889A788C5AC0F2BB79EA881;9185.
  ) 
 Here is how much of TeX's memory you used:
  45275 strings out of 480171
  1035098 string characters out of 5894490
- 1521613 words of memory out of 5000000
+ 1522637 words of memory out of 5000000
  61849 multiletter control sequences out of 15000+600000
  547627 words of font info for 349 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  98i,23n,94p,1002b,2130s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Notes.pdf (29 pages, 280469 bytes).
+Output written on Notes.pdf (29 pages, 280509 bytes).
 PDF statistics:
  857 PDF objects out of 1000 (max. 8388607)
  712 compressed objects within 8 object streams
