@@ -63,5 +63,7 @@
 \contentsline {subsubsection}{\numberline {14.2.1}Richardson Number \( (R_f) \)}{22}{subsubsection.14.2.1}%
 \contentsline {section}{\numberline {15}Lecture 15 12/03/2025}{23}{section.15}%
 \contentsline {subsection}{\numberline {15.1}Turbulent Kinetic Energy}{23}{subsection.15.1}%
-\contentsline {section}{References}{24}{AMS.140}%
+\contentsline {section}{\numberline {16}Lecture 16 13/03/2025}{24}{section.16}%
+\contentsline {subsection}{\numberline {16.1}Governing Equations for Boundary Condition}{24}{subsection.16.1}%
+\contentsline {section}{References}{25}{AMS.142}%
 \contentsfinish 

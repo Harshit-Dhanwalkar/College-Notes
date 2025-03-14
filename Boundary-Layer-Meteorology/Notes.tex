@@ -1651,7 +1651,7 @@ Time scaling factor:
 Therefore modified \myeqref{eq:13.2} after scaling factor will be:
 \begin{align*}
 	\begin{rcases}
-	\mspace{-10mu} \frac{z_i}{w^3_*}\frac{\partial \overline{e}}{\partial t} \!\!\!\!\!\! &= \frac{z_i}{w^3_*} g \overline{\frac{(w' \theta_v')}{\overline{\theta_v}}} - \frac{z_i}{w^3_*} \overline{w' \theta_v'}\frac{\partial \overline{w}}{\partial z} - \frac{z_i}{w^3_*} \frac{1}{\overline{\rho}}\frac{\partial w' p'}{\partial z} \\ &\quad - \frac{z_i}{w^3_*}\epsilon
+		\frac{z_i}{w^3_*}\frac{\partial \overline{e}}{\partial t} &= \frac{z_i}{w^3_*} g \overline{\frac{(w' \theta_v')}{\overline{\theta_v}}} - \frac{z_i}{w^3_*} \overline{w' \theta_v'}\frac{\partial \overline{w}}{\partial z} - \\ &\quad \frac{z_i}{w^3_*} \frac{1}{\overline{\rho}}\frac{\partial w' p'}{\partial z} - \frac{z_i}{w^3_*}\epsilon
 	\end{rcases} \tag{13.6} \label{eq:13.6}
 \end{align*}
 
@@ -1738,6 +1738,16 @@ Practically our measurements do not contain continous data but discrete. Therefo
 	R_B &= \frac{g}{\overline{\theta_v}}\frac{\frac{\Delta \overline{\theta}}{\Delta z}}{\left(\frac{\Delta \overline{u}}{\Delta z}\right)^2 + \left(\frac{\Delta \overline{v}}{\Delta z}\right)^2} \\
 	R_B &= \frac{g}{\overline{\theta_v}}\frac{\Delta \overline{\theta}\Delta z}{\left(\Delta \overline{u}\right)^2 + \left(\Delta \overline{v}\right)^2} \tag{15.4} \label{eq:15.4}
 \end{align*}
+
+\clearpage
+
+\section{Lecture 16 13/03/2025}
+\subsection{Governing Equations for Boundary Condition}
+\begin{align*}
+	\mspace{-20mu} \frac{\partial u_i'}{\partial t} \! &+ \overline{u_j}\frac{\partial u_j'}{\partial x_j} \! + u_j'\frac{\partial \overline{u_j}}{\partial x_j} \! + u_j'\frac{\partial u_j'}{\partial x_j} \! = \delta_{i3}g \overline{\frac{\theta_v'}{\overline{\theta_v}}} \\ &\! + f\epsilon_{ij3}u_j' \! - \frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_j} + \upnu \frac{\partial^2 u_i'}{\partial x_j^2} + \frac{\partial \overline{u_i'u_j'}}{\partial x_j} \tag{16.1} \label{eq:16.1}
+\end{align*}
+
+Multiply \myeqref{eq:16.1} by \( u_k' \)
 
 \clearpage
 \bibliographystyle{plain}
