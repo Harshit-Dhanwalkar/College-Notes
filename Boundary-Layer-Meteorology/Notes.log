@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  5 MAR 2025 18:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.8)  14 MAR 2025 19:28
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1117,14 +1117,14 @@ Underfull \vbox (badness 3039) has occurred while \output is active []
 ] [16
 
 ]
-Underfull \hbox (badness 1067) in paragraph at lines 1402--1402
+Underfull \hbox (badness 1067) in paragraph at lines 1406--1406
 \OT1/phv/m/n/7 (+20) bu-lent heat, mois-
  []
 
 [17
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1419--1420
+Underfull \hbox (badness 10000) in paragraph at lines 1423--1424
 
  []
 
@@ -1136,7 +1136,7 @@ Underfull \vbox (badness 8132) has occurred while \output is active []
  [19
 
 ]
-Underfull \hbox (badness 6173) in paragraph at lines 1616--1616
+Underfull \hbox (badness 6173) in paragraph at lines 1620--1620
 []\OT1/phv/m/n/7 (+20) question and an-
  []
 
@@ -1146,35 +1146,43 @@ Underfull \hbox (badness 6173) in paragraph at lines 1616--1616
 
 
 ]
-Underfull \hbox (badness 3536) in paragraph at lines 1684--1684
+Underfull \hbox (badness 3536) in paragraph at lines 1688--1688
 []\OT1/phv/m/n/7 (+20) Rf con-di-tons and
  []
 
 [22
 
 
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1712--1715
+
+ []
+
+[23
+
+
 ] (./Notes.bbl) 
 AED: lastpage setting LastPage
-[23
+[24
 
 
 ] (./Notes.aux)
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: 71DD3BB809FE7FEDCAFBDB7D94112B13;8857.
+(rerunfilecheck)             Checksum: ED58D234892617DDDC66937C607ABD16;9186.
  ) 
 Here is how much of TeX's memory you used:
- 45222 strings out of 480171
- 1035723 string characters out of 5894490
- 1517371 words of memory out of 5000000
- 61836 multiletter control sequences out of 15000+600000
- 557984 words of font info for 390 fonts, out of 8000000 for 9000
+ 45245 strings out of 480171
+ 1035939 string characters out of 5894490
+ 1517766 words of memory out of 5000000
+ 61846 multiletter control sequences out of 15000+600000
+ 558103 words of font info for 392 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  98i,29n,94p,1002b,2307s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Notes.pdf (23 pages, 268198 bytes).
+Output written on Notes.pdf (24 pages, 273239 bytes).
 PDF statistics:
- 728 PDF objects out of 1000 (max. 8388607)
- 591 compressed objects within 6 object streams
- 203 named destinations out of 1000 (max. 500000)
- 123387 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 755 PDF objects out of 1000 (max. 8388607)
+ 614 compressed objects within 7 object streams
+ 213 named destinations out of 1000 (max. 500000)
+ 123403 words of extra memory for PDF output out of 128383 (max. 10000000)
 

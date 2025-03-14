@@ -757,7 +757,7 @@ If $A$ and $B$ are variables dependent on time, then:
 \begin{align*}
 	\overline{\overline{A}}         & = \overline{\overline{A}+a'} = \overline{A}, \text{since } \overline{a'}=0                      \\
 	\overline{\overline{A \cdot B}} & = \overline{(\overline{A}+a')(\overline{B}+b')} = \overline{A}\overline{B} + \overline{(a'b')}, \\
-	\overline{(a'b')}               & \neq  \overline{a'}\overline{b'}                                                                \\
+	\overline{(a'b')}               & \neq  \overline{a' } \; \overline{b'}                                                                \\
 	\overline{a'^2}                 & \neq 0                                                                                          \\
 	\overline{b'^2}                 & \neq 0
 \end{align*}
@@ -779,7 +779,7 @@ If $A$ and $B$ are variables dependent on time, then:
 
 \subsubsection{Correlation}
 \begin{align*}
-	\gamma_{A,B} & = \frac{\overline{a'b'}}{\sigma_A\sigma_B}
+\gamma_{A,B} & = \frac{\sigma_{A,B}}{\sigma_A\sigma_B} = \frac{\overline{a'b'}}{\sqrt{\overline{a'^2}}\sqrt{\overline{b'^2}}}
 \end{align*}
 
 Mean Kinetic Energy (MKE) = $\frac{1}{2}(\overline{u}^2 + \overline{v}^2 +\overline{w}^2)$ \\
@@ -1153,24 +1153,24 @@ Now expanding with $m=3$, we get following equation:
 	\item Conservation of Momentum or Momentum equation
 	      \begin{align*}
 		      \begin{rcases}
-			    \mspace{-20mu} \frac{\partial U_i}{\partial t} + U_i\frac{\partial U_i}{\partial x_i} = & -\delta_{i3}g + f\epsilon_{ij3}U_j \\ &- \frac{1}{\rho}\frac{\partial P}{\partial x_i} + \underbrace{\gamma}_{\substack{\text{Kinetic} \\ \text{viscousity} \\ \text{coeff.}}}\underbrace{\frac{\partial^2 U_i}{\partial x_i^2}}_{\text{viscousity}}
+			    \mspace{-20mu} \frac{\partial U_i}{\partial t} + U_i\frac{\partial U_i}{\partial x_i} = & \!\!\!\!\!\! -\delta_{i3}g + f\epsilon_{ij3}U_j \\  & \!\!\!\!\!\! - \frac{1}{\rho}\frac{\partial P}{\partial x_i} + \underbrace{\gamma}_{\substack{\text{Kinetic} \\ \text{viscousity} \\ \text{coeff.}}}\underbrace{\frac{\partial^2 U_i}{\partial x_i^2}}_{\text{viscousity}} \quad
 		      \end{rcases} \tag{7.4} \label{eq:momentumeq}
 	      \end{align*}
 	\item Conservartion of Moisture
 	      \begin{align*}
 		      \begin{rcases}
-			    \mspace{-20mu} \frac{\partial q}{\partial t} + U_i\frac{\partial q}{\partial x_i} = \!\!\!\!\!\! \overbrace{\underbrace{\nu_q}_{\substack{\text{molecular} \\ \text{diffusivity} \\ \text{coeff.}}} \cdot \frac{\partial^2 q}{\partial x_i^2}}^{\text{Diffusion term}} &+ \underbrace{\frac{S}{\rho_{\text{air}}}}_{\text{Residue term}} \\ &+ \underbrace{\frac{E}{\rho_{\text{air}}}}_{\text{Phase change}}
+			    \mspace{-20mu} \frac{\partial q}{\partial t} + U_i\frac{\partial q}{\partial x_i} = \!\!\! \overbrace{\underbrace{\nu_q}_{\substack{\text{molecular} \\ \text{diffusivity} \\ \text{coeff.}}} \cdot \frac{\partial^2 q}{\partial x_i^2}}^{\text{Diffusion term}} & \!\!\!\!\! + \!\!\!\! \underbrace{\frac{S}{\rho_{\text{air}}}}_{\text{Residue term}} \\ & \!\!\!\! + \!\!\!\! \underbrace{\frac{E}{\rho_{\text{air}}}}_{\text{Phase change}} \quad
 		      \end{rcases} \tag{7.5} \label{eq:moistureeq}
 	      \end{align*}
-	\item Conservartion of Heat or Thermodynamic equation
+	\item Conservartion of Heat or Thermodynamic energy equation
 	      \begin{align*}
 		      \begin{rcases}
-			    \mspace{-20mu} \frac{\partial \theta}{\partial t} + U_i\frac{\partial \theta}{\partial x_i} = &  \!\!\!\!\!\!\underbrace{\overbrace{\nu_\theta}^{\substack{\text{molecular} \\ \text{diffusivity} \\ \text{heat coeff.}}} \cdot \frac{\partial^2 \theta}{\partial x_i^2}}_{\text{Diffusive heat}} - \underbrace{\frac{\partial Q_i^2}{\partial x_i}}_{\substack{\text{Radiative} \\ \text{divergence}}} \\ &- \underbrace{\frac{L_pE}{\rho_{\text{air}}C_p}}_{\text{Phase change}}
+			    \mspace{-20mu} \frac{\partial \theta}{\partial t} + U_i\frac{\partial \theta}{\partial x_i} = & \!\!\!\!\!\!\underbrace{\overbrace{\nu_\theta}^{\substack{\text{molecular} \\ \text{diffusivity} \\ \text{heat coeff.}}} \cdot \frac{\partial^2 \theta}{\partial x_i^2}}_{\text{Diffusive heat}} - \underbrace{\frac{\partial Q_i}{\partial x_i}}_{\substack{\text{Radiative} \\ \text{divergence}}} \quad \\ & - \underbrace{\frac{L_pE}{\rho_{\text{air}}C_p}}_{\text{Phase change}}
 		      \end{rcases} \tag{7.6} \label{eq:heateq}
 	      \end{align*}
 	\item Conservartion of Scalar quantity
 	      \begin{align*}
-		      \frac{\partial C}{\partial t} + U_i\frac{\partial C}{\partial x_i} = & \underbrace{\overbrace{\nu_c}^{\substack{\text{molecular} \\ \text{diffusivity} \\ \text{coeff.}}} \frac{\partial^2 C}{\partial x_i^2}}_{\text{Diffusion term}} + \underbrace{S_c}_{\text{Phase change}} \tag{7.7} \label{eq:scalarquantity}
+		      \frac{\partial C}{\partial t} + U_i\frac{\partial C}{\partial x_i} = \underbrace{\overbrace{\nu_c}^{\substack{\text{molecular} \\ \text{diffusivity} \\ \text{coeff.}}} \frac{\partial^2 C}{\partial x_i^2}}_{\text{Diffusion term}} + \!\!\!\! \underbrace{S_c}_{\text{Phase change}} \tag{7.7} \label{eq:scalarquantity}
 	      \end{align*}
 \end{enumerate}
 
@@ -1281,8 +1281,8 @@ Assuming density of boundary layer does not change, i.e., $\rho' = 0$
 \begin{align*}
 	\begin{rcases}
 		\mspace{-20mu} \frac{\partial \overline{u_i}}{\partial t} & \!\!\!\!\!\!\!\! + \frac{\partial u_i'}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} +\overline{u_j}\frac{\partial u_i'}{\partial x_j} + u_j'\frac{\partial \overline{u_i}}{\partial x_j} + u_j'\frac{\partial u_i'}{\partial x_j} \\
-		&= -\delta_{i3}g - \delta_{i3}\left(\frac{\theta_v'}{\theta_v}\right) + f \epsilon_{ij3}\overline{u_j} + f \epsilon_{ij3} u_j' \\ 
-		&\quad - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} - \frac{1}{\overline{\rho}}\frac{\partial P'}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j} + \gamma\frac{\partial^2 u_i'}{\partial x_j^2}
+		&= -\delta_{i3}g - \delta_{i3}\left(\frac{\theta_v'}{\theta_v}\right) + f \epsilon_{ij3}\overline{u_j} + f \epsilon_{ij3} u_j'  \quad \\
+		&\quad - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} - \frac{1}{\overline{\rho}}\frac{\partial P'}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j^2} + \gamma\frac{\partial^2 u_i'}{\partial x_j^2}
 	\end{rcases} & \tag{8.14} \label{eq:8.14}
 \end{align*}
 
@@ -1290,18 +1290,20 @@ Applying Reynold's averaging,
 \begin{align*}
 	\mspace{-20mu} \overline{\frac{\partial \overline{u_i}}{\partial t}} &+ 0 + \overline{\overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j}} + 0 + 0 + \overline{u_j'\frac{\partial u_i'}{\partial x_j}} \\ 
 	&= -\delta_{i3}g - 0 + f \epsilon_{ij3}\overline{\overline{u_j}} + 0 \\ 
-	&\quad - \frac{1}{\overline{\rho}}\overline{\frac{\partial\overline{P}}{\partial x_j}} - 0 + \gamma\overline{\frac{\partial^2 \overline{u_i}}{\partial x_j}} + 0
+	&\quad - \frac{1}{\overline{\rho}}\overline{\frac{\partial\overline{P}}{\partial x_j}} - 0 + \gamma\overline{\frac{\partial^2 \overline{u_i}}{\partial x_j^2}} + 0
 \end{align*}
 
 \begin{align*}
 	\begin{rcases}
-		\mspace{-20mu} \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \overline{u_j'\frac{\partial u_i'}{\partial x_j}} = \!\!\!\!\!\!\! &- \delta_{i3}g + f \epsilon_{ij3}\overline{u_j}- \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} \\ & + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j}
+		\mspace{-20mu} \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \overline{u_j'\frac{\partial u_i'}{\partial x_j}} = \!\!\!\!\!\!\! &- \delta_{i3}g + f \epsilon_{ij3}\overline{u_j} \qquad \quad\\
+		& - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j^2}
 	\end{rcases} & \tag{8.15} \label{eq:8.15}
 \end{align*}
 
 \begin{align*}
 	\frac{\partial u_j'}{\partial x_j} & = 0
 \end{align*}
+
 Multiply above equation by velocity ($u_i'$) and take Reynold's average
 \begin{align*}
 	\overline{u_i'\frac{\partial u_j'}{\partial x_j}} & = 0
@@ -1309,12 +1311,14 @@ Multiply above equation by velocity ($u_i'$) and take Reynold's average
 
 Add above equation in the \myeqref{eq:8.15}, we  obtain;
 \begin{align*}
-	& \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \overline{u_j'\frac{\partial u_i'}{\partial x_j}} + \overline{u_i'\frac{\partial u_j'}{\partial x_j}} = -\delta_{i3}g \\ &\hspace{2.1cm} + f \epsilon_{ij3}\overline{u_j} - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j}
+	\mspace{-20mu} \frac{\partial \overline{u_i}}{\partial t} & + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \overline{u_j'\frac{\partial u_i'}{\partial x_j}} + \overline{u_i'\frac{\partial u_j'}{\partial x_j}} =  - \delta_{i3}g \\ 
+	& + f \epsilon_{ij3}\overline{u_j} - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j^2}
 \end{align*}
+
 \begin{align*}
 	\begin{rcases}
-		\mspace{-20mu} \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \underbrace{\overline{\frac{\partial \left( u_i' u_j' \right)}{\partial x_j}}}_{\text{III}} = & \!\!\!\!\!\! - \delta_{i3}g + f \epsilon_{ij3}\overline{u_j} \\
-		&- \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j}
+		\mspace{-20mu} \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} + \underbrace{\overline{\frac{\partial \left( u_i' u_j' \right)}{\partial x_j}}}_{\text{III}} = & \!\!\!\!\!\! - \delta_{i3}g + f \epsilon_{ij3}\overline{u_j} \quad \\
+		& \!\!\!\!\!\! - \frac{1}{\overline{\rho}}\frac{\partial\overline{P}}{\partial x_j} + \gamma\frac{\partial^2 \overline{u_i}}{\partial x_j^2}
 	\end{rcases} & \tag{8.16} \label{eq:momentumfluxeqiation-turbulence}
 \end{align*}
 
@@ -1332,8 +1336,8 @@ General momentum equation:
 
 Turbulent form of momentum equation:
 \begin{align*}
-	\frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} &= -\delta_{i3}g + f\epsilon_{ij3}\overline{u_j} - \frac{1}{\rho}\frac{\partial \overline{p}}{\partial x_i} \\ &\quad + \nu\frac{\partial^2\overline{u}}{\partial x_i^2} + \frac{\overline{u_i'u_j}}{\partial x_j} \\
-	\frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} &= -\delta_{i3}g + f\epsilon_{ij3}\overline{u_j} - \frac{1}{\rho}\frac{\partial \overline{p}}{\partial x_i} \\ &\quad + \nu\frac{\partial^2\overline{u}}{\partial x_i^2} + \underbrace{\frac{1}{\overline{\rho}}\frac{\overline{\rho u_i'u_j}}{\partial x_j}}_{\text{Reynold's shress}}
+	\mspace{-20mu} \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} &= -\delta_{i3}g + f\epsilon_{ij3}\overline{u_j} - \frac{1}{\rho}\frac{\partial \overline{p}}{\partial x_i} \\ &\quad + \nu\frac{\partial^2\overline{u}}{\partial x_i^2} + \frac{\partial \overline{u_i'u_j}}{\partial x_j} \\
+	\mspace{-20mu} \frac{\partial \overline{u_i}}{\partial t} + \overline{u_j}\frac{\partial \overline{u_i}}{\partial x_j} &= -\delta_{i3}g + f\epsilon_{ij3}\overline{u_j} - \frac{1}{\rho}\frac{\partial \overline{p}}{\partial x_i} \\ &\quad + \nu\frac{\partial^2\overline{u}}{\partial x_i^2} + \!\!\!\! \underbrace{\frac{1}{\overline{\rho}}\frac{\overline{\rho \partial u_i'u_j}}{\partial x_j}}_{\text{Reynold's shress}}
 \end{align*}
 
 \subsubsection{Turbulent Heat Flux Equation}
@@ -1684,6 +1688,56 @@ There are 2 types of Stability:
 \yellownote{Rf conditons and cases}
 
 \textbf{Limitaton of Richardson number : } It assumes the flow to be turbulent (\( w'\theta_v' \) and \( u'w' \), so it can't be applid to laminar flow.
+
+\clearpage
+
+\section{Lecture 15 12/03/2025}
+\subsection{Turbulent Kinetic Energy}
+
+\begin{align*}
+	\mspace{-20mu} \frac{\partial \overline{e}}{\partial t} \! &= g \overline{\frac{(w' \theta_v')}{\overline{\theta_v}}} \! - \overline{u'w'}\frac{\partial \overline{u}}{\partial z} \! -\frac{\partial \overline{w'e}}{\partial z} \! - \frac{1}{\overline{\rho}}\frac{\partial w'p'}{\partial z} \! - \epsilon \tag{15.1} \label{eq:15.1}
+\end{align*}
+
+\textbf{Richarson No.} 
+\begin{align*}
+	R_f = \frac{\frac{g}{\theta_v}\left(\overline{w'\theta_v'}\right)}{\overline{u'w'}\frac{\partial \overline{u}}{\partial z} + \overline{v'w'}\frac{\partial \overline{v}}{\partial z}} \bfrac{\rightarrow\text{Heat flux}}{\rightarrow\text{Momentum flux}} \tag{15.2} \label{eq:15.2}
+\end{align*}
+
+\begin{enumerate}[noitemsep]
+	\item if \(R_f < 0\) the flow is always turbulent. 
+	\item if \(0 < R_f < 1\) the flow can be laminar or turbulent. 
+	\item if \(R_f > 1\) the flow is always laminar. 
+\end{enumerate}
+
+Flux Richarson number will tell us when a turbulent flow witll become laminar but not vice versa. So need to define new term which can tell both laminar and turbulent flow., i.e,\newline
+\textbf{Case i.} Laminar \(\rightarrow\) Turbulent \newline
+\textbf{Case ii.} Turbulent \(\rightarrow\) Laminar  \\
+
+Flux proportional gradients, approximating, using Eddy diffusivity theory,
+\begin{align*}
+	-\overline{w'\theta'} \propto \frac{\partial \overline{\theta}}{\partial z} = k\frac{\partial \overline{\theta}}{\partial z} \\
+	-\overline{u'w'} \propto \frac{\partial \overline{u}}{\partial z}, -\overline{v'w'} \propto \frac{\partial \overline{v}}{\partial z}
+\end{align*}
+
+Replacing all flux terms with gradients in \myeqref{eq:15.2}, we get \textbf{Gradient Richarson's Number}
+\begin{align*}
+	R_i = \frac{\frac{g}{\theta_v}\left(\overline{w'\theta_v'}\right)}{\left(\frac{\partial \overline{u}}{\partial z}\right)^2 + \left(\frac{\partial \overline{v}}{\partial z}\right)^2} \tag{15.3} \label{eq:15.3}
+\end{align*}
+
+\begin{itemize}[noitemsep]
+	\item \(R_c \approx 0.25 \) : Critical Richardson's No.
+	\item \(R_i < R_c\) : Flow is turbulent (dynamically unstable).
+	\item \( R_i > R_c \) : Flow \textit{not} is laminar.
+	\item \( R_i > R_T \) : Flow is laminar (dynamically stable)
+\end{itemize}
+
+Practically our measurements do not contain continous data but discrete. Therefore we will change partial differential equations into difference equations, i.e. \(\partial \rightarrow \Delta\)
+
+\textbf{Bulk Richardson's Number}
+\begin{align*}
+	R_B &= \frac{g}{\overline{\theta_v}}\frac{\frac{\Delta \overline{\theta}}{\Delta z}}{\left(\frac{\Delta \overline{u}}{\Delta z}\right)^2 + \left(\frac{\Delta \overline{v}}{\Delta z}\right)^2} \\
+	R_B &= \frac{g}{\overline{\theta_v}}\frac{\Delta \overline{\theta}\Delta z}{\left(\Delta \overline{u}\right)^2 + \left(\Delta \overline{v}\right)^2} \tag{15.4} \label{eq:15.4}
+\end{align*}
 
 \clearpage
 \bibliographystyle{plain}
