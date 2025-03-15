@@ -1748,6 +1748,31 @@ Practically our measurements do not contain continous data but discrete. Therefo
 \end{align*}
 
 Multiply \myeqref{eq:16.1} by \( u_k' \)
+\begin{align*}
+	\mspace{-28mu} u_k'\frac{\partial u_i'}{\partial t} \! &+ u_k'\overline{u_j}\frac{\partial u_j'}{\partial x_j} \! + u_k'u_j'\frac{\partial \overline{u_j}}{\partial x_j} \! + u_k'u_j'\frac{\partial u_j'}{\partial x_j} \! = u_k'\delta_{i3}g \frac{\theta_v'}{\overline{\theta_v}} \\ &\! + u_k'f\epsilon_{ij3}u_j' \! - u_k'\frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_j} \! + u_k'\upnu \frac{\partial^2 u_i'}{\partial x_j^2} \! + u_k'\frac{\partial \overline{u_i'u_j'}}{\partial x_j} \tag{16.2} \label{eq:16.2}
+\end{align*}
+
+Applying Reynold averaging,
+\begin{align*}
+	\mspace{-28mu} \overline{u_k'\frac{\partial u_i'}{\partial t}} \! &+ \overline{u_k'\overline{u_j}\frac{\partial u_j'}{\partial x_j}} \! + \overline{u_k'u_j'\frac{\partial \overline{u_j}}{\partial x_j}} \! + \overline{u_k'u_j'\frac{\partial u_j'}{\partial x_j}} \! = \overline{u_k'\delta_{i3}g\frac{\theta_v'}{\overline{\theta_v}}} \\ &\! + f\epsilon_{ij3}\overline{u_k'u_j'} \! - \overline{u_k'\frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_j}} \! + \upnu\overline{u_k'\frac{\partial^2 u_i'}{\partial x_j^2}} \tag{16.3} \label{eq:16.3}
+\end{align*}
+
+Every occurance of '\(k\)' will be replaced with '\(i\)' and every of occurance of '\(i\)' will be replaced with '\(k\)' respectively.
+\begin{itemize}[noitemsep]
+	\item Summed term will remain summed.
+	\item Unsummed terms continue to represent 3 components.
+\end{itemize}
+
+\begin{align*}
+	\mspace{-28mu} \overline{u_i'\frac{\partial u_k'}{\partial t}} \! &+ \overline{u_i'\overline{u_j}\frac{\partial u_j'}{\partial x_j}} \! + \overline{u_i'u_j'\frac{\partial \overline{u_j}}{\partial x_j}} \! + \overline{u_i'u_j'\frac{\partial u_j'}{\partial x_j}} \! = \overline{u_i'\delta_{k3}g\frac{\theta_v'}{\overline{\theta_v}}} \\ &\! + f\epsilon_{kj3}\overline{u_i'u_j'} \! - \overline{u_i'\frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_j}} \! + \upnu\overline{u_i'\frac{\partial^2 u_k'}{\partial x_j^2}} \tag{16.4} \label{eq:16.4}
+\end{align*}
+
+Add \myeqref{eq:16.3} and \myeqref{eq:16.4}
+\begin{align*}
+	\mspace{-30mu} \overline{\frac{\partial u_i'u_k'}{\partial t}} \! &+ \overline{u_j}\overline{\frac{\partial u_i'u_k'}{\partial x_j}} \! + \overline{u_i'u_j'\frac{\partial \overline{u_j}}{\partial x_j}} \! + \overline{u_i'u_j'\frac{\partial u_j'}{\partial x_j}} \! = \overline{u_i'\delta_{k3}g\frac{\theta_v'}{\overline{\theta_v}}} \\ &\! + f\epsilon_{kj3}\overline{u_i'u_j'} \! - \overline{u_i'\frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_j}} \! + \upnu\overline{u_i'\frac{\partial^2 u_k'}{\partial x_j^2}} \tag{16.5} \label{eq:16.5}
+\end{align*}
+
+
 
 \clearpage
 \bibliographystyle{plain}
