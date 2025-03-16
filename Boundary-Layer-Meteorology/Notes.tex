@@ -1744,17 +1744,17 @@ Practically our measurements do not contain continous data but discrete. Therefo
 \section{Lecture 16 13/03/2025}
 \subsection{Governing Equations for Boundary Condition}
 \begin{align*}
-	\mspace{-20mu} \frac{\partial u_i'}{\partial t} \! &+ \overline{u_j}\frac{\partial u_j'}{\partial x_j} \! + u_j'\frac{\partial \overline{u_j}}{\partial x_j} \! + u_j'\frac{\partial u_j'}{\partial x_j} \! = \delta_{i3}g \overline{\frac{\theta_v'}{\overline{\theta_v}}} \\ &\! + f\epsilon_{ij3}u_j' \! - \frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_j} + \upnu \frac{\partial^2 u_i'}{\partial x_j^2} + \frac{\partial \overline{u_i'u_j'}}{\partial x_j} \tag{16.1} \label{eq:16.1}
+	\mspace{-20mu} \frac{\partial u_i'}{\partial t} \! &+ \overline{u_j}\frac{\partial u_j'}{\partial x_j} \! + u_j'\frac{\partial \overline{u_j}}{\partial x_j} \! + u_j'\frac{\partial u_j'}{\partial x_j} \! = \delta_{i3}g \overline{\frac{\theta_v'}{\overline{\theta_v}}} \\ &\! + f\epsilon_{ij3}u_j' \! - \frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_i} + \upnu \frac{\partial^2 u_i'}{\partial x_j^2} + \frac{\partial \overline{u_i'u_j'}}{\partial x_j} \tag{16.1} \label{eq:16.1}
 \end{align*}
 
 Multiply \myeqref{eq:16.1} by \( u_k' \)
 \begin{align*}
-	\mspace{-28mu} u_k'\frac{\partial u_i'}{\partial t} \! &+ u_k'\overline{u_j}\frac{\partial u_j'}{\partial x_j} \! + u_k'u_j'\frac{\partial \overline{u_j}}{\partial x_j} \! + u_k'u_j'\frac{\partial u_j'}{\partial x_j} \! = u_k'\delta_{i3}g \frac{\theta_v'}{\overline{\theta_v}} \\ &\! + u_k'f\epsilon_{ij3}u_j' \! - u_k'\frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_j} \! + u_k'\upnu \frac{\partial^2 u_i'}{\partial x_j^2} \! + u_k'\frac{\partial \overline{u_i'u_j'}}{\partial x_j} \tag{16.2} \label{eq:16.2}
+	\mspace{-28mu} u_k'\frac{\partial u_i'}{\partial t} \! &+ u_k'\overline{u_j}\frac{\partial u_j'}{\partial x_j} \! + u_k'u_j'\frac{\partial \overline{u_j}}{\partial x_j} \! + u_k'u_j'\frac{\partial u_j'}{\partial x_j} \! = u_k'\delta_{i3}g \frac{\theta_v'}{\overline{\theta_v}} \\ &\! + u_k'f\epsilon_{ij3}u_j' \! - u_k'\frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_i} \! + u_k'\upnu \frac{\partial^2 u_i'}{\partial x_j^2} \! + u_k'\frac{\partial \overline{u_i'u_j'}}{\partial x_j} \tag{16.2} \label{eq:16.2}
 \end{align*}
 
 Applying Reynold averaging,
 \begin{align*}
-	\mspace{-28mu} \overline{u_k'\frac{\partial u_i'}{\partial t}} \! &+ \overline{u_k'\overline{u_j}\frac{\partial u_j'}{\partial x_j}} \! + \overline{u_k'u_j'\frac{\partial \overline{u_j}}{\partial x_j}} \! + \overline{u_k'u_j'\frac{\partial u_j'}{\partial x_j}} \! = \overline{u_k'\delta_{i3}g\frac{\theta_v'}{\overline{\theta_v}}} \\ &\! + f\epsilon_{ij3}\overline{u_k'u_j'} \! - \overline{u_k'\frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_j}} \! + \upnu\overline{u_k'\frac{\partial^2 u_i'}{\partial x_j^2}} \tag{16.3} \label{eq:16.3}
+	\mspace{-28mu} \overline{u_k'\frac{\partial u_i'}{\partial t}} \! &+ \overline{u_k'\overline{u_j}\frac{\partial u_j'}{\partial x_j}} \! + \overline{u_k'u_j'\frac{\partial \overline{u_j}}{\partial x_j}} \! + \overline{u_k'u_j'\frac{\partial u_j'}{\partial x_j}} \! = \overline{u_k'\delta_{i3}g\frac{\theta_v'}{\overline{\theta_v}}} \\ &\! + f\epsilon_{ij3}\overline{u_k'u_j'} \! - \overline{u_k'\frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_i}} \! + \upnu\overline{u_k'\frac{\partial^2 u_i'}{\partial x_j^2}} \tag{16.3} \label{eq:16.3}
 \end{align*}
 
 Every occurance of '\(k\)' will be replaced with '\(i\)' and every of occurance of '\(i\)' will be replaced with '\(k\)' respectively.
@@ -1764,14 +1764,31 @@ Every occurance of '\(k\)' will be replaced with '\(i\)' and every of occurance 
 \end{itemize}
 
 \begin{align*}
-	\mspace{-28mu} \overline{u_i'\frac{\partial u_k'}{\partial t}} \! &+ \overline{u_i'\overline{u_j}\frac{\partial u_j'}{\partial x_j}} \! + \overline{u_i'u_j'\frac{\partial \overline{u_j}}{\partial x_j}} \! + \overline{u_i'u_j'\frac{\partial u_j'}{\partial x_j}} \! = \overline{u_i'\delta_{k3}g\frac{\theta_v'}{\overline{\theta_v}}} \\ &\! + f\epsilon_{kj3}\overline{u_i'u_j'} \! - \overline{u_i'\frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_j}} \! + \upnu\overline{u_i'\frac{\partial^2 u_k'}{\partial x_j^2}} \tag{16.4} \label{eq:16.4}
+	\mspace{-28mu} \overline{u_i'\frac{\partial u_k'}{\partial t}} \! &+ \overline{u_i'\overline{u_j}\frac{\partial u_j'}{\partial x_j}} \! + \overline{u_i'u_j'\frac{\partial \overline{u_j}}{\partial x_j}} \! + \overline{u_i'u_j'\frac{\partial u_j'}{\partial x_j}} \! = \overline{u_i'\delta_{k3}g\frac{\theta_v'}{\overline{\theta_v}}} \\ &\! + f\epsilon_{kj3}\overline{u_i'u_j'} \! - \overline{u_i'\frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_k}} \! + \upnu\overline{u_i'\frac{\partial^2 u_k'}{\partial x_j^2}} \tag{16.4} \label{eq:16.4}
 \end{align*}
 
 Add \myeqref{eq:16.3} and \myeqref{eq:16.4}
 \begin{align*}
-	\mspace{-30mu} \overline{\frac{\partial u_i'u_k'}{\partial t}} \! &+ \overline{u_j}\overline{\frac{\partial u_i'u_k'}{\partial x_j}} \! + \overline{u_i'u_j'\frac{\partial \overline{u_j}}{\partial x_j}} \! + \overline{u_i'u_j'\frac{\partial u_j'}{\partial x_j}} \! = \overline{u_i'\delta_{k3}g\frac{\theta_v'}{\overline{\theta_v}}} \\ &\! + f\epsilon_{kj3}\overline{u_i'u_j'} \! - \overline{u_i'\frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_j}} \! + \upnu\overline{u_i'\frac{\partial^2 u_k'}{\partial x_j^2}} \tag{16.5} \label{eq:16.5}
+	\mspace{-30mu} \overline{\frac{\partial u_i'u_k'}{\partial t}} \! &+ \overline{u_j}\overline{\frac{\partial u_i'u_k'}{\partial x_j}} \! + \overline{u_i'u_j'\frac{\partial u_k}{\partial x_j}} \! + \overline{u_k'u_j'\frac{\partial u_i}{\partial x_j}} \! + \overline{u_j'\frac{\partial u_i'u_k'}{\partial x_j}} \\ &\!\!\!\! = \overline{\frac{\theta_v'g}{\overline{\theta_v}}\left(\delta_{k3}u_i' + \delta_{k3}u_k'\right)} \!+ f\epsilon_{ij3}\overline{u_k'u_j'} \! + f\epsilon_{kj3}\overline{u_i'u_j'} \\ &\!\!\! - \left[\overline{u_i'\frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_i}} + \overline{u_i'\frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_k}}\right] \!\! + \upnu\left[\overline{u_i'\frac{\partial^2 u_k'}{\partial x_j^2}} \!\! + \overline{u_k'\frac{\partial^2 u_i'}{\partial x_j^2}}\right] \tag{16.5} \label{eq:16.5}
 \end{align*}
 
+Using continuity equation;
+\begin{align*}
+	\overline{u_iu_k'\frac{\partial u_j'}{\partial x_j}} = 0
+\end{align*}
+
+\begin{align*}
+	\mspace{-30mu} \overline{\frac{\partial u_i'u_k'}{\partial t}} \! &+ \overline{u_j}\overline{\frac{\partial u_i'u_k'}{\partial x_j}} \! + \overline{u_i'u_j'\frac{\partial u_k}{\partial x_j}} \! + \overline{u_k'u_j'\frac{\partial u_i}{\partial x_j}} \! + \overline{\frac{\partial u_i'u_j'u_k'}{\partial x_j}} \\ &\!\!\!\! = \overline{\frac{\theta_v'g}{\overline{\theta_v}}\left(\delta_{k3}u_i' + \delta_{k3}u_k'\right)} \!+ f\epsilon_{ij3}\overline{u_k'u_j'} \! + f\epsilon_{kj3}\overline{u_i'u_j'} \\ &\!\!\! - \left[\overline{u_i'\frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_i}} + \overline{u_i'\frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_k}}\right] \!\! + \upnu\left[\frac{\partial^2 \overline{u_i'u_k'}}{\partial x_j^2} \!\! - 2\frac{\partial^2 \overline{u_k'u_i'}}{\partial x_j^2}\right] \tag{16.6} \label{eq:16.6}
+\end{align*}
+
+Simplifing pressure gradient term:
+\begin{align*}
+	\left[\overline{u_i'\frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_i}} + \overline{u_i'\frac{1}{\overline{\rho}}\frac{\partial p'}{\partial x_k}}\right] &= \frac{1}{\overline{\rho}}\left[\overline{\frac{\partial p'u_k'}{\partial x_i}} + \overline{\frac{\partial p'u_i'}{\partial x_k}}\right] \\ &\!- p'\left(\frac{\partial u_i'}{\partial x_k} + \frac{\partial u_k'}{\partial x_j}\right)
+\end{align*}
+
+\begin{align*}
+	\mspace{-30mu} \overline{\frac{\partial u_i'u_k'}{\partial t}} \! &+ \overline{u_j}\overline{\frac{\partial u_i'u_k'}{\partial x_j}} \! + \overline{u_i'u_j'\frac{\partial u_k}{\partial x_j}} \! + \overline{u_k'u_j'\frac{\partial u_i}{\partial x_j}} \! + \overline{\frac{\partial u_i'u_j'u_k'}{\partial x_j}} \\ &\!\!\!\! = \overline{\frac{\theta_v'g}{\overline{\theta_v}}\left(\delta_{k3}u_i' + \delta_{k3}u_k'\right)} \!+ f\epsilon_{ij3}\overline{u_k'u_j'} \! + f\epsilon_{kj3}\overline{u_i'u_j'} \\ &\!\! - \frac{1}{\overline{\rho}}\left[\overline{\frac{\partial p'u_k'}{\partial x_i}} + \overline{\frac{\partial p'u_i'}{\partial x_k}}\right] \!- p'\left(\frac{\partial u_i'}{\partial x_k} + \frac{\partial u_k'}{\partial x_j}\right) \\ &\! + \upnu\left[\frac{\partial^2 \overline{u_i'u_k'}}{\partial x_j^2} \!\! - 2\frac{\partial^2 \overline{u_k'u_i'}}{\partial x_j^2}\right] \tag{16.7} \label{eq:16.7}
+\end{align*}
 
 
 \clearpage
