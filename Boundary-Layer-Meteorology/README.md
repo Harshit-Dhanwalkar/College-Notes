@@ -1,10 +1,12 @@
-# NUMERICAL WEATHER PREDICTION
+# Numerical Weather Prediction
 
-Engineering Physics branch
-Earth science and system 
+## Repository contain my lecture notes on `Boundary Layer Meteorology`.
 
-This repo contain my lecture notes on cource `Boundary Layer Meteorology`.
+## **Repository Structure**
 
-Folder 'Figures' contain all the images used in notes. sources of all those images are given in footnotes where they are used in pdf.
+- **Notes**: A comprehensive collection of lecture notes on the subject.
+- **Figures**: This folder contains all the images used within the notes. The sources of these images are given in the footnotes within the PDF.
 
-Note: Multiple complilation might require to produce pdf output.
+> **Note:** Multiple compilations might be required to produce the final PDF output.
+
+---
